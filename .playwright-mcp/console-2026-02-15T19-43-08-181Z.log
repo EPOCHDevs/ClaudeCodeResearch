@@ -1,0 +1,4 @@
+[   11067ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[   11067ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241

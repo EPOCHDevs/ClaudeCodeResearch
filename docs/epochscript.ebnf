@@ -1,0 +1,114 @@
+# EpochScript Grammar (EBNF)
+# Auto-generated - DO NOT EDIT MANUALLY.
+
+# ===========================================================================
+# SYNTAX OVERVIEW
+# ===========================================================================
+# - Python-like syntax (True/False, #comments, indentation ignored)
+# - Two-stage calls: component(options)(inputs)
+# - Pipeline operator: input | transform1 | transform2
+# - Lag/Lead: series >> n (past), series << n (future)
+# - Enum access: EnumType.value (e.g., Color.Blue, MAType.ema) — search enum library
+# - Schema types: TypeName(key=value, ...) — search schema library
+
+# ===========================================================================
+# GRAMMAR RULES
+# ===========================================================================
+
+module          = statement* ;
+statement       = assignment | expression ;
+assignment      = target "=" expression ;
+target          = identifier | tuple_pattern ;
+tuple_pattern   = identifier ("," identifier)+ ","? ;
+
+# ---------------------------------------------------------------------------
+# Expressions (by precedence, lowest to highest)
+# ---------------------------------------------------------------------------
+
+expression      = pipeline | ternary | boolean | comparison | arithmetic | unary | power | postfix | primary ;
+
+# Pipeline: chains data through transforms
+pipeline        = expression "|" expression ;
+
+# Ternary: value if condition else other
+ternary         = expression "if" expression "else" expression ;
+
+# Boolean operators
+boolean         = expression ("and" | "or") expression | "not" expression ;
+
+# Comparison
+comparison      = expression ("<" | ">" | "<=" | ">=" | "==" | "!=") expression ;
+
+# Lag/Lead (shift time-series)
+lag             = expression ">>" expression ;    # Get past values
+lead            = expression "<<" expression ;    # Get future values (caution: look-ahead bias)
+
+# Arithmetic
+arithmetic      = expression ("+" | "-" | "*" | "/" | "%") expression ;
+unary           = ("-" | "+") expression ;
+power           = expression "**" expression ;    # Right-associative
+
+# Postfix
+postfix         = call | attribute | subscript ;
+call            = expression "(" arguments? ")" ;
+attribute       = expression "." identifier ;
+subscript       = expression "[" expression "]" ;
+
+arguments       = argument ("," argument)* ","? ;
+argument        = expression | identifier "=" expression ;
+
+# Primary
+primary         = "(" expression ")" | list | tuple | dict | literal | identifier ;
+list            = "[" (expression ("," expression)* ","?)? "]" ;
+tuple           = "(" ")" | "(" expression "," ")" | "(" expression ("," expression)+ ","? ")" ;
+dict            = "{" (dict_pair ("," dict_pair)* ","?)? "}" ;
+dict_pair       = (identifier | string) ":" expression ;
+
+# ---------------------------------------------------------------------------
+# Literals
+# ---------------------------------------------------------------------------
+
+literal         = number | string | boolean_lit ;
+boolean_lit     = "True" | "False" ;
+number          = integer | float ;
+integer         = "0" | [1-9][0-9]* ;
+float           = [0-9]+ "." [0-9]* ([eE][+-]?[0-9]+)? ;
+string          = "'" [^']* "'" | '"' [^"]* '"' | "'''" .* "'''" | '"""' .* '"""' ;
+
+identifier      = [a-zA-Z_][a-zA-Z0-9_]* ;
+comment         = "#" [^\n]* ;
+
+# ===========================================================================
+# BUILT-IN FUNCTIONS (Single-stage calls)
+# ===========================================================================
+# Usage: func(args) - NOT func()(args)
+
+builtin_func    = "abs" | "acos" | "asin" | "atan" | "ceil" | "cos" | "cosh" | "exp" | 
+                  "floor" | "ln" | "log10" | "round" | "sin" | "sinh" | "sqrt" | "tan" | 
+                  "tanh" | "todeg" | "torad" | "trunc" | "ffill" | "ffill_day" | "crossover" | "crossunder" | 
+                  "crossany" | "coalesce" | "conditional_select" | "where" ;
+
+# ===========================================================================
+# QUICK REFERENCE
+# ===========================================================================
+#
+# Two-Stage Pattern:
+#   result = component(period=20, type=MAType.ema)(input_series)
+#            ^-------options-------^  ^--input--^
+#
+# Pipeline (equivalent to nesting):
+#   price | sma(20) | ema(10)  ==  ema(10)(sma(20)(price))
+#
+# Data Access:
+#   src = market_data_source(timeframe=1D)()
+#   close = src.c    # .o .h .l .c .v for OHLCV
+#
+# Lag/Lead:
+#   prev_close = close >> 1    # 1 bar ago
+#   next_close = close << 1    # 1 bar ahead (look-ahead bias!)
+#
+# Conditional:
+#   signal = 1 if condition else 0
+#
+# NOT SUPPORTED (by design):
+#   def, class, lambda, for, while, if-statements, import, try/except

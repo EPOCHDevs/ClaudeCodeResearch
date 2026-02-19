@@ -1,0 +1,3 @@
+PASS: asset_class_trend_following_strategy
+PASS: currency_momentum_strategy
+PASS: dividend_month_anomaly_strategy

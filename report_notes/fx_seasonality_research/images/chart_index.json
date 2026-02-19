@@ -1,0 +1,125 @@
+{
+  "topic": "FX seasonality research",
+  "total_charts": 17,
+  "charts": [
+    {
+      "filename": "barchart_eurusd_seasonality.png",
+      "source": "Barchart",
+      "pair": "EUR/USD",
+      "type": "monthly_returns_heatmap",
+      "description": "15-year historical monthly returns showing seasonal patterns"
+    },
+    {
+      "filename": "barchart_eurjpy_seasonality.png",
+      "source": "Barchart",
+      "pair": "EUR/JPY",
+      "type": "monthly_returns_heatmap",
+      "description": "15-year historical monthly returns showing seasonal patterns"
+    },
+    {
+      "filename": "barchart_usdjpy_seasonality.png",
+      "source": "Barchart",
+      "pair": "USD/JPY",
+      "type": "monthly_returns_heatmap",
+      "description": "15-year historical monthly returns showing seasonal patterns"
+    },
+    {
+      "filename": "barchart_gbpusd_seasonality.png",
+      "source": "Barchart",
+      "pair": "GBP/USD",
+      "type": "monthly_returns_heatmap",
+      "description": "15-year historical monthly returns showing seasonal patterns"
+    },
+    {
+      "filename": "barchart_audusd_seasonality.png",
+      "source": "Barchart",
+      "pair": "AUD/USD",
+      "type": "monthly_returns_heatmap",
+      "description": "15-year historical monthly returns showing seasonal patterns"
+    },
+    {
+      "filename": "barchart_usdcad_seasonality.png",
+      "source": "Barchart",
+      "pair": "USD/CAD",
+      "type": "monthly_returns_heatmap",
+      "description": "15-year historical monthly returns showing seasonal patterns"
+    },
+    {
+      "filename": "forexcom_eurusd_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "EUR/USD",
+      "type": "monthly_bar_chart",
+      "description": "50+ year August historical performance"
+    },
+    {
+      "filename": "forexcom_gbpusd_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "GBP/USD",
+      "type": "monthly_bar_chart",
+      "description": "50+ year August historical performance - most bearish month"
+    },
+    {
+      "filename": "forexcom_usdjpy_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "USD/JPY",
+      "type": "monthly_bar_chart",
+      "description": "50+ year August historical performance"
+    },
+    {
+      "filename": "forexcom_audusd_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "AUD/USD",
+      "type": "monthly_bar_chart",
+      "description": "50+ year August historical performance - most bearish month"
+    },
+    {
+      "filename": "forexcom_usdcad_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "USD/CAD",
+      "type": "monthly_bar_chart",
+      "description": "50+ year August historical performance"
+    },
+    {
+      "filename": "quantpedia_fx_currency_returns.png",
+      "source": "Quantpedia",
+      "pair": "AD1, BF1, CD1, EC1, SF1, JY1 (FX futures)",
+      "type": "cumulative_returns_chart",
+      "description": "Cumulative returns for FX futures vs average (2007-2024)"
+    },
+    {
+      "filename": "quantpedia_fx_leverage_comparison.png",
+      "source": "Quantpedia",
+      "pair": "FX portfolio",
+      "type": "leverage_chart",
+      "description": "Linear vs exponential position sizing leverage comparison"
+    },
+    {
+      "filename": "quantpedia_fx_strategy_performance.png",
+      "source": "Quantpedia",
+      "pair": "FX portfolio",
+      "type": "equity_curve",
+      "description": "Linear vs exponential mean reversion strategy performance"
+    },
+    {
+      "filename": "quantpedia_fx_strategy_table.png",
+      "source": "Quantpedia",
+      "pair": "FX portfolio",
+      "type": "metrics_table",
+      "description": "Performance metrics: Sharpe, Calmar, Max DD for FX strategies"
+    },
+    {
+      "filename": "quantpedia_fx_mean_reversion_full.png",
+      "source": "Quantpedia",
+      "pair": "FX",
+      "type": "full_article",
+      "description": "Full article on FX mean reversion strategies"
+    },
+    {
+      "filename": "quantpedia_fed_days_stocks_dollar.jpg",
+      "source": "Quantpedia",
+      "pair": "USD",
+      "type": "fed_days_chart",
+      "description": "Performance around FOMC meeting days - stocks vs dollar"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+   "name": "FC Multi-Timeframe Cloning Test",
+   "description": "Test: futures_continuation at 1D should be auto-cloned to 5Min timeframe. Verifies cloneFuturesContinuations() compiler pass.",
+   "data": {
+      "assets": [
+         "ES-Futures"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "source": "# FC Multi-Timeframe Cloning Test\n# The futures_continuation node gets global timeframe (1D).\n# The market_data_source at 5Min introduces a second timeframe.\n# The compiler should auto-clone the FC node to 5Min.\n\n# Futures continuation — inherits global_timeframe = 1D\nfc = futures_continuation(s_rollover_method=\"FirstOfMonth\", s_adjustment_method=\"BackwardPanamaCanal\")()\ndaily_close = fc.c\n\n# Intraday data source at 5Min — introduces second timeframe\nsrc_5m = market_data_source(timeframe=5Min)()\nintraday_close = src_5m.c\n\n# Simple indicators on each timeframe\ndaily_sma = sma(period=20)(daily_close)\nintraday_sma = sma(period=20)(intraday_close)\n\n# Reports to make it a valid study\ncards(\n    layout=CardLayout(\n        title='Daily SMA',\n        cells=[\n            ColumnSpec(title='Daily SMA', card_agg=AggregationType.Last, type=CardRenderType.DecimalFormat, dp=2, card_slot=CardSlot.Hero)\n        ]\n    ),\n    category='Daily'\n)(daily_sma)\n\ncards(\n    layout=CardLayout(\n        title='5Min SMA',\n        cells=[\n            ColumnSpec(title='5Min SMA', card_agg=AggregationType.Last, type=CardRenderType.DecimalFormat, dp=2, card_slot=CardSlot.Hero)\n        ]\n    ),\n    category='Intraday'\n)(intraday_sma)\n",
+   "global_timeframe": "1D"
+}

@@ -1,0 +1,21 @@
+{
+   "name": "Sector Momentum - Rotational System",
+   "description": "Quantpedia #0003: Rotational momentum system. Pick top 3 sector ETFs by 12-month momentum, equal weight, monthly rebalance. Based on Mebane Faber's relative strength research (SSRN 1585517).",
+   "data": {
+      "assets": [
+         "VNQ-Stocks",
+         "XLK-Stocks",
+         "XLE-Stocks",
+         "XLV-Stocks",
+         "XLF-Stocks",
+         "XLI-Stocks",
+         "XLB-Stocks",
+         "XLY-Stocks",
+         "XLP-Stocks",
+         "XLU-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# Sector Momentum - Rotational System\n# Quantpedia #0003: Sector Momentum - Rotational System\n# Source: Faber \"Relative Strength Strategies for Investing\" (SSRN 1585517)\n#\n# RULES:\n# - Universe: 10 US sector ETFs (VNQ, XLK, XLE, XLV, XLF, XLI, XLB, XLY, XLP, XLU)\n# - Signal: 12-month momentum (252-day Rate of Change)\n# - Selection: Top 3 sectors by momentum\n# - Weighting: Equal weight (1/3 each)\n# - Rebalancing: Monthly (first trading day)\n\n# Data source - DAILY\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# 12-month momentum (252 trading days)\nmomentum_12m = roc(period=252)(close)\n\n# Cross-sectional selection: top 3 by momentum\n# cs_select returns boolean mask: True for top 3 sectors\nis_top_3 = cs_select(direction=CSSelectDirection.top, mode=CSSelectMode.count, k=3)(momentum_12m)\n\n# Detect first trading day of month\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# Monthly rebalance signals\n# Enter when sector enters top 3 at month start, exit when it leaves\nenter_long = is_new_month and is_top_3\nexit_long = is_new_month and not is_top_3\n\n# Hold position until next month rebalance\nheld_signal = hold_until()(enter=enter_long, exit=exit_long)\n\n# Entry/Exit zones\nlong_and_short_zone()(long_entry=held_signal)\n\n# Equal weight across selected sectors\nweights = equal_weight()(held_signal)\n\n# Position sizing - ONLY rebalance on first trading day of month\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\n",
+   "global_timeframe": "1D"
+}

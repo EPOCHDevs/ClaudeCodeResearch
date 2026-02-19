@@ -1,0 +1,353 @@
+{
+  "topic": "cross region equity correlation",
+  "slug": "cross_region_equity_correlation",
+  "created": "2026-02-04T08:05:08.716074Z",
+  "sources": [
+    {
+      "url": "https://www.morningstar.com/portfolios/does-case-investing-internationally-add-up",
+      "domain": "misc",
+      "title": "Where International Diversification Works\u2014and Where It Falls Short",
+      "crawled_at": "2026-02-04T08:07:27.996224+00:00",
+      "file": "sources/misc/001_where_international_diversification_worksand_where.md",
+      "charts": [
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_01.svg",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_02.jpg",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_03.jpg",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_04.png",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_05.png",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_06.jpg",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_07.png",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_08.png",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_09.svg",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_10.svg",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_11.svg",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_12.svg",
+        "sources/misc/001_where_international_diversification_worksand_where/charts/chart_13.svg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.trustnet.com/News/13447308/the-chart-showing-why-geographic-diversification-needs-a-radical-rethink/",
+      "domain": "misc",
+      "title": "The chart showing why geographic diversification needs a radical ...",
+      "crawled_at": "2026-02-04T08:07:31.102750+00:00",
+      "file": "sources/misc/002_the_chart_showing_why_geographic_diversification_n.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.lseg.com/content/dam/ftse-russell/en_us/documents/market-insights/asset-allocation/asset-allocation-insights-sept-2025.pdf",
+      "domain": "misc",
+      "title": "Asset Allocation Insights",
+      "crawled_at": "2026-02-04T08:07:31.110727+00:00",
+      "file": "sources/misc/003_asset_allocation_insights.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.lseg.com/content/dam/ftse-russell/en_us/documents/market-insights/global-equity-insights/global-equity-insights-november-2025.pdf",
+      "domain": "misc",
+      "title": "Global Equity Insights",
+      "crawled_at": "2026-02-04T08:07:31.111251+00:00",
+      "file": "sources/misc/004_global_equity_insights.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.msci.com/documents/10199/c0db0a48-01f2-4ba9-ad01-226fd5678111",
+      "domain": "misc",
+      "title": "MSCI Emerging Markets Index",
+      "crawled_at": "2026-02-04T08:07:31.111688+00:00",
+      "file": "sources/misc/005_msci_emerging_markets_index.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.troweprice.com/institutional/no/en/insights/articles/2025/q2/investing-in-emerging-markets-equity.html",
+      "domain": "misc",
+      "title": "Investing in emerging markets equity",
+      "crawled_at": "2026-02-04T08:07:31.112105+00:00",
+      "file": "sources/misc/006_investing_in_emerging_markets_equity.md",
+      "charts": [
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_01.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_02.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_03.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_04.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_05.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_06.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_07.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_08.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_09.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_10.svg",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_11.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_12.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_13.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_14.png",
+        "sources/misc/006_investing_in_emerging_markets_equity/charts/chart_15.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.ubs.com/us/en/assetmanagement/insights/market-updates/articles/2025-04-macro-monthly.html",
+      "domain": "misc",
+      "title": "Macro Monthly: Making diversification great again",
+      "crawled_at": "2026-02-04T08:07:37.060971+00:00",
+      "file": "sources/misc/007_macro_monthly_making_diversification_great_again.md",
+      "charts": [
+        "sources/misc/007_macro_monthly_making_diversification_great_again/charts/chart_01.gif",
+        "sources/misc/007_macro_monthly_making_diversification_great_again/charts/chart_02.jpg",
+        "sources/misc/007_macro_monthly_making_diversification_great_again/charts/chart_05.jpg",
+        "sources/misc/007_macro_monthly_making_diversification_great_again/charts/chart_06.png",
+        "sources/misc/007_macro_monthly_making_diversification_great_again/charts/chart_07.jpg",
+        "sources/misc/007_macro_monthly_making_diversification_great_again/charts/chart_08.png",
+        "sources/misc/007_macro_monthly_making_diversification_great_again/charts/chart_09.png",
+        "sources/misc/007_macro_monthly_making_diversification_great_again/charts/chart_10.png",
+        "sources/misc/007_macro_monthly_making_diversification_great_again/charts/chart_11.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.ubs.com/tw/en/assetmanagement/insights/investment-outlook/the-red-thread/trt-end-year-2024/articles/non-linearity-of-diversification.html",
+      "domain": "misc",
+      "title": "The Red Thread | The non-linearity of diversification | UBS Taiwan",
+      "crawled_at": "2026-02-04T08:07:54.793857+00:00",
+      "file": "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio.md",
+      "charts": [
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_01.gif",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_02.jpg",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_03.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_04.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_05.jpg",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_06.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_07.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_08.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_09.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_10.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_11.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_12.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_13.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_14.png",
+        "sources/misc/008_the_red_thread_the_non-linearity_of_diversificatio/charts/chart_15.jpg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://indexes.morningstar.com/insights/analysis/blt2c8784f887578684/when-gauging-the-impact-of-geopolitical-risk-on-equity-markets-consider-their-revenue-sources",
+      "domain": "misc",
+      "title": "When Gauging the Impact of Geopolitical Risk on Equity Markets, Consider Their Revenue Sources",
+      "crawled_at": "2026-02-04T08:08:12.890013+00:00",
+      "file": "sources/misc/009_when_gauging_the_impact_of_geopolitical_risk_on_eq.md",
+      "charts": [
+        "sources/misc/009_when_gauging_the_impact_of_geopolitical_risk_on_eq/charts/chart_01.svg",
+        "sources/misc/009_when_gauging_the_impact_of_geopolitical_risk_on_eq/charts/chart_02.jpg",
+        "sources/misc/009_when_gauging_the_impact_of_geopolitical_risk_on_eq/charts/chart_03.svg",
+        "sources/misc/009_when_gauging_the_impact_of_geopolitical_risk_on_eq/charts/chart_04.svg",
+        "sources/misc/009_when_gauging_the_impact_of_geopolitical_risk_on_eq/charts/chart_05.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://msci.com/downloads/web/msci-com/research-and-insights/paper/selected-geographic-issues-in-the-global-listed-equity-market/Research-Insight-Selected-geographic-issues-in-the-global-listed-equity-market.pdf",
+      "domain": "misc",
+      "title": "Selected geographical issues in the global listed equity market",
+      "crawled_at": "2026-02-04T08:08:13.271416+00:00",
+      "file": "sources/misc/010_selected_geographical_issues_in_the_global_listed_.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.msci.com/zh/research-and-insights/global-investing-trends/global-country-correlation-matrix",
+      "domain": "misc",
+      "title": "Global Investing: Global Country Correlation Matrix by Sub-Regions",
+      "crawled_at": "2026-02-04T08:08:13.279428+00:00",
+      "file": "sources/misc/011_global_investing_global_country_correlation_matrix.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2344817",
+      "domain": "academic",
+      "title": "Emerging Equity Markets in a Globalized World",
+      "crawled_at": "2026-02-04T08:08:13.279995+00:00",
+      "file": "sources/academic/001_emerging_equity_markets_in_a_globalized_world.md",
+      "charts": [
+        "sources/academic/001_emerging_equity_markets_in_a_globalized_world/charts/chart_01.gif"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.dimensional.com/gb-en/insights/ins-and-outs-of-emerging-markets-investing",
+      "domain": "misc",
+      "title": "Ins and Outs of Emerging Markets Investing | Dimensional",
+      "crawled_at": "2026-02-04T08:08:13.469758+00:00",
+      "file": "sources/misc/012_ins_and_outs_of_emerging_markets_investing_dimensi.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.portfoliovisualizer.com/asset-class-correlations",
+      "domain": "misc",
+      "title": "Asset Class Correlations - Portfolio Visualizer",
+      "crawled_at": "2026-02-04T08:08:13.477752+00:00",
+      "file": "sources/misc/013_asset_class_correlations_-_portfolio_visualizer.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.longtermtrends.com/emerging-vs-developed-markets/",
+      "domain": "misc",
+      "title": "Emerging vs. Developed Markets - Updated Chart - LongtermTrends",
+      "crawled_at": "2026-02-04T08:08:13.478294+00:00",
+      "file": "sources/misc/014_emerging_vs_developed_markets_-_updated_chart_-_lo.md",
+      "charts": [
+        "sources/misc/014_emerging_vs_developed_markets_-_updated_chart_-_lo/charts/chart_01.svg",
+        "sources/misc/014_emerging_vs_developed_markets_-_updated_chart_-_lo/charts/chart_02.svg",
+        "sources/misc/014_emerging_vs_developed_markets_-_updated_chart_-_lo/charts/chart_03.svg",
+        "sources/misc/014_emerging_vs_developed_markets_-_updated_chart_-_lo/charts/chart_04.png",
+        "sources/misc/014_emerging_vs_developed_markets_-_updated_chart_-_lo/charts/chart_05.svg",
+        "sources/misc/014_emerging_vs_developed_markets_-_updated_chart_-_lo/charts/chart_06.svg",
+        "sources/misc/014_emerging_vs_developed_markets_-_updated_chart_-_lo/charts/chart_07.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://saudijournals.com/media/articles/SJBMS_109_470-477_FT.pdf",
+      "domain": "misc",
+      "title": "[PDF] An Assessment of Contagion between Emerging Stock Markets and ...",
+      "crawled_at": "2026-02-04T08:08:17.205016+00:00",
+      "file": "sources/misc/015_pdf_an_assessment_of_contagion_between_emerging_st.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.mdpi.com/2227-7390/11/3/666",
+      "domain": "misc",
+      "title": "Exploring the Contagion Effect from Developed to Emerging CEE ...",
+      "crawled_at": "2026-02-04T08:08:17.213094+00:00",
+      "file": "sources/misc/016_exploring_the_contagion_effect_from_developed_to_e.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0927538X25001039",
+      "domain": "misc",
+      "title": "Risk contagion network and characteristic measurement among ...",
+      "crawled_at": "2026-02-04T08:08:17.213817+00:00",
+      "file": "sources/misc/017_risk_contagion_network_and_characteristic_measurem.md",
+      "charts": [
+        "sources/misc/017_risk_contagion_network_and_characteristic_measurem/charts/chart_02.gif"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8856889/",
+      "domain": "misc",
+      "title": "International stock market risk contagion during the COVID-19 ...",
+      "crawled_at": "2026-02-04T08:08:17.477302+00:00",
+      "file": "sources/misc/018_international_stock_market_risk_contagion_during_t.md",
+      "charts": [
+        "sources/misc/018_international_stock_market_risk_contagion_during_t/charts/chart_01.svg",
+        "sources/misc/018_international_stock_market_risk_contagion_during_t/charts/chart_02.jpg",
+        "sources/misc/018_international_stock_market_risk_contagion_during_t/charts/chart_03.jpg",
+        "sources/misc/018_international_stock_market_risk_contagion_during_t/charts/chart_04.jpg",
+        "sources/misc/018_international_stock_market_risk_contagion_during_t/charts/chart_05.jpg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://link.springer.com/article/10.1186/s40854-024-00687-3",
+      "domain": "misc",
+      "title": "Research on the cross-contagion between international stock ...",
+      "crawled_at": "2026-02-04T08:08:18.553200+00:00",
+      "file": "sources/misc/019_research_on_the_cross-contagion_between_internatio.md",
+      "charts": [
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_01.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_02.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_03.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_04.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_05.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_06.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_07.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_08.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_09.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_10.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_11.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_12.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_13.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_14.png",
+        "sources/misc/019_research_on_the_cross-contagion_between_internatio/charts/chart_15.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.eajournals.org/wp-content/uploads/Integration-Interdependence-and-Contagion-of-Emerging-and-Developed-Market.pdf",
+      "domain": "misc",
+      "title": "[PDF] Integration, Interdependence and Contagion of Emerging and ...",
+      "crawled_at": "2026-02-04T08:08:27.588307+00:00",
+      "file": "sources/misc/020_pdf_integration_interdependence_and_contagion_of_e.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.federalreserve.gov/pubs/ifdp/2010/1006/ifdp1006.htm",
+      "domain": "misc",
+      "title": "Has International Financial Co-Movement Changed? Emerging Markets in the 2007-2009 Financial Crisis",
+      "crawled_at": "2026-02-04T08:08:27.589032+00:00",
+      "file": "sources/misc/021_has_international_financial_co-movement_changed_em.md",
+      "charts": [
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_01.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_02.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_03.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_04.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_05.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_06.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_07.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_08.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_09.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_10.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_11.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_12.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_13.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_14.gif",
+        "sources/misc/021_has_international_financial_co-movement_changed_em/charts/chart_15.gif"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://dukespace.lib.duke.edu/server/api/core/bitstreams/fee71aba-f189-48fb-9107-c108e3fbaf10/content",
+      "domain": "misc",
+      "title": "[PDF] Contagion in Emerging Market Equities - DukeSpace",
+      "crawled_at": "2026-02-04T08:08:30.232971+00:00",
+      "file": "sources/misc/022_pdf_contagion_in_emerging_market_equities_-_dukesp.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecbwp1480.pdf",
+      "domain": "misc",
+      "title": "[PDF] Interdependence and contagion in global asset markets",
+      "crawled_at": "2026-02-04T08:08:30.241106+00:00",
+      "file": "sources/misc/023_pdf_interdependence_and_contagion_in_global_asset_.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://ideas.repec.org/p/nbr/nberwo/9510.html",
+      "domain": "misc",
+      "title": "Market Integration and Contagion",
+      "crawled_at": "2026-02-04T08:08:30.241854+00:00",
+      "file": "sources/misc/024_market_integration_and_contagion.md",
+      "charts": [
+        "sources/misc/024_market_integration_and_contagion/charts/chart_01.jpg",
+        "sources/misc/024_market_integration_and_contagion/charts/chart_02.svg",
+        "sources/misc/024_market_integration_and_contagion/charts/chart_03.svg"
+      ],
+      "tables": 0
+    }
+  ],
+  "stats": {
+    "total_sources": 25,
+    "total_charts": 104,
+    "total_tables": 0
+  }
+}

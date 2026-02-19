@@ -1,0 +1,12 @@
+{
+   "name": "S&P 500 Worst Performers Analysis",
+   "description": "Identify the 20 worst-performing S&P 500 stocks over the past week with technical analysis: 50-day SMA position, days since 52-week high, and days since all-time high.",
+   "data": {
+      "assets": [
+         "SP500"
+      ],
+      "source": "polygon"
+   },
+   "source": "# S&P 500 Worst Performers Analysis\n# Identify the 20 worst-performing stocks over the past week\n# with technical analysis of key support levels\n\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# 1-WEEK RETURN (5 trading days)\nweek_return = roc(period=5)(close)\n\n# 50-DAY SMA POSITION\nsma_50 = ma(period=50, type=MAType.sma)(close)\nabove_sma = close > sma_50\n\n# 52-WEEK HIGH ANALYSIS\nhigh_52week = max(period=252)(close)\nat_52week_high = close >= high_52week\ndays_since_52week_high = barssince()(at_52week_high)\ndays_since_52week_high_clean = coalesce(days_since_52week_high, 999)\n\n# ALL-TIME HIGH ANALYSIS (true expanding max)\nhigh_alltime = cumulative(agg=AggregationType.Max)(close)\nat_alltime_high = close >= high_alltime\ndays_since_alltime_high = barssince()(at_alltime_high)\ndays_since_alltime_high_clean = coalesce(days_since_alltime_high, 9999)\n\n# DISTRIBUTION\ncs_boxplot(\n    title=\"1-Week Return Distribution (All S&P 500 Stocks)\",\n    category=\"Overview\",\n    y_axis_label=\"1-Week Return\",\n    y_axis_format=AxisValueFormat.PercentFormat,\n    y_axis_dp=2\n)(week_return)\n\n# BOTTOM 20 PERFORMERS TABLE\n# Filter by week_return (column 0) using Bottom to get most negative returns\ncs_summary_table(\n    title=\"20 Worst Performers - Technical Analysis\",\n    category=\"Worst Performers\",\n    agg=AggregationType.Last,\n    filters=AssetFilterSchema(filters=[\n        AssetFilter(rank=AssetFilterRank.Bottom, count=20, column=0)\n    ]),\n    schema=TableReportSchema(\n        title=\"Bottom 20 by 1-Week Return\",\n        columns=[\n            ColumnSpec(title=\"1-Week Return %\", type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title=\"Above 50-Day SMA\", type=CardRenderType.BooleanFormat),\n            ColumnSpec(title=\"Days Since 52-Week High\", type=CardRenderType.IntegerFormat),\n            ColumnSpec(title=\"Days Since All-Time High\", type=CardRenderType.IntegerFormat)\n        ]\n    )\n)(week_return, above_sma, days_since_52week_high_clean, days_since_alltime_high_clean)\n",
+   "global_timeframe": "1D"
+}

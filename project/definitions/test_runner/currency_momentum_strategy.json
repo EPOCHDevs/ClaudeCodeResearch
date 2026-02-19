@@ -1,0 +1,19 @@
+{
+   "name": "Currency Momentum Factor",
+   "description": "Quantpedia #0008: Currency momentum strategy. Go long top 3 currencies and short bottom 3 currencies by 12-month momentum vs USD. Monthly rebalance. Based on Deutsche Bank Currency Returns research.",
+   "data": {
+      "assets": [
+         "^AUDUSD-FX",
+         "^EURUSD-FX",
+         "^GBPUSD-FX",
+         "^CADUSD-FX",
+         "^JPYUSD-FX",
+         "^MXNUSD-FX",
+         "^NZDUSD-FX",
+         "^CHFUSD-FX"
+      ],
+      "source": "polygon"
+   },
+   "source": "# Currency Momentum Factor\n# Quantpedia #0008: Currency Momentum Factor\n# Source: Deutsche Bank Currency Returns / Menkhoff et al. \"Currency Momentum Strategies\"\n#\n# RULES:\n# - Universe: 8 major currencies vs USD (AUD, EUR, GBP, CAD, JPY, MXN, NZD, CHF)\n# - Signal: 12-month momentum (252-day Rate of Change)\n# - Selection: Long top 3, Short bottom 3 by momentum\n# - Weighting: Equal weight within long/short portfolios\n# - Rebalancing: Monthly (first trading day)\n#\n# All pairs are quoted as XXX/USD (higher price = stronger foreign currency)\n\n# Data source - DAILY\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# 12-month momentum (252 trading days)\nmomentum_12m = roc(period=252)(close)\n\n# Cross-sectional selection: top 3 by momentum (long), bottom 3 (short)\nis_top_3 = cs_select(direction=CSSelectDirection.top, mode=CSSelectMode.count, k=3)(momentum_12m)\nis_bottom_3 = cs_select(direction=CSSelectDirection.bottom, mode=CSSelectMode.count, k=3)(momentum_12m)\n\n# Detect first trading day of month\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# Monthly rebalance signals for LONG positions\nenter_long = is_new_month and is_top_3\nexit_long = is_new_month and not is_top_3\nheld_long = hold_until()(enter=enter_long, exit=exit_long)\n\n# Monthly rebalance signals for SHORT positions\nenter_short = is_new_month and is_bottom_3\nexit_short = is_new_month and not is_bottom_3\nheld_short = hold_until()(enter=enter_short, exit=exit_short)\n\n# Entry/Exit zones (long-short strategy)\n# long_and_short_zone handles direction: long for held_long, short for held_short\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Equal weight across ALL active positions (both long and short)\n# position_size only takes magnitude; direction comes from long_and_short_zone\nis_active = held_long or held_short\nweights = equal_weight()(is_active)\n\n# Position sizing - ONLY rebalance on first trading day of month\n# Size is always positive; long_and_short_zone determines direction\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\n",
+   "global_timeframe": "1D"
+}

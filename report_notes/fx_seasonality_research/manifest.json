@@ -1,0 +1,200 @@
+{
+  "topic": "FX seasonality research",
+  "slug": "fx_seasonality_research",
+  "created": "2026-02-01T12:00:00Z",
+  "updated": "2026-02-01T12:50:00Z",
+  "sources": [
+    {
+      "domain": "academic",
+      "title": "Intra-Day Seasonality in Activities of the Foreign Exchange Markets",
+      "file": "sources/academic/001_nber_intraday_seasonality_fx.md",
+      "url": "https://www.nber.org/papers/w12413"
+    },
+    {
+      "domain": "academic",
+      "title": "Intra-Day Seasonality in Foreign Exchange Market Transactions",
+      "file": "sources/academic/002_arxiv_intraday_seasonality_fx_transactions.md",
+      "url": "https://arxiv.org/abs/1103.5664"
+    },
+    {
+      "domain": "academic",
+      "title": "Business Cycles and Currency Returns",
+      "file": "sources/academic/003_nber_business_cycles_currency_returns.md",
+      "url": "https://www.nber.org/papers/w26299"
+    },
+    {
+      "domain": "market_analysis",
+      "title": "FX Seasonality: What Still Works For Forex Trading in 2025",
+      "file": "sources/market_analysis/001_fxempire_seasonality_research_2025.md",
+      "url": "https://www.fxempire.com/education/article/fx-seasonality-what-still-works-and-what-doesnt-in-2025-1545003"
+    },
+    {
+      "domain": "market_analysis",
+      "title": "December FX Seasonality: Key Patterns for Major Currency Pairs",
+      "file": "sources/market_analysis/002_forexcom_december_2025_seasonality.md",
+      "url": "https://www.forex.com/en/news-and-analysis/forex-seasonality-december-2025/"
+    },
+    {
+      "domain": "quantpedia",
+      "title": "How to Build Mean Reversion Strategies in Currencies",
+      "file": "sources/quantpedia/002_mean_reversion_currencies.md",
+      "url": "https://quantpedia.com/how-to-build-mean-reversion-strategies-in-currencies/"
+    },
+    {
+      "domain": "educational",
+      "title": "Seasonal Trends in the Forex Market",
+      "file": "sources/investopedia/001_seasonal_trends_forex.md",
+      "url": "https://www.investopedia.com/articles/forex/07/forex_seasonality.asp"
+    },
+    {
+      "domain": "educational",
+      "title": "Key Seasonal Patterns in Forex",
+      "file": "sources/misc/002_axiory_seasonal_patterns_forex.md",
+      "url": "https://www.axiory.com/en/trading-resources/economic-indicators/seasonal-patterns-forex"
+    },
+    {
+      "domain": "educational",
+      "title": "Is There Seasonality in Forex?",
+      "file": "sources/misc/003_earnforex_seasonality_forex.md",
+      "url": "https://www.earnforex.com/guides/is-there-seasonality-in-forex/"
+    },
+    {
+      "domain": "educational",
+      "title": "Seasonal Trends in the Forex Market",
+      "file": "sources/misc/005_ig_seasonal_trends_forex.md",
+      "url": "https://www.ig.com/en/trading-strategies/seasonal-trends-in-the-forex-market-200717"
+    }
+  ],
+  "charts": [
+    {
+      "file": "barchart_eurusd_seasonality.png",
+      "source": "Barchart",
+      "pair": "EUR/USD",
+      "type": "monthly_returns_heatmap",
+      "method": "screenshot"
+    },
+    {
+      "file": "barchart_eurjpy_seasonality.png",
+      "source": "Barchart",
+      "pair": "EUR/JPY",
+      "type": "monthly_returns_heatmap",
+      "method": "screenshot"
+    },
+    {
+      "file": "barchart_usdjpy_seasonality.png",
+      "source": "Barchart",
+      "pair": "USD/JPY",
+      "type": "monthly_returns_heatmap",
+      "method": "screenshot"
+    },
+    {
+      "file": "barchart_gbpusd_seasonality.png",
+      "source": "Barchart",
+      "pair": "GBP/USD",
+      "type": "monthly_returns_heatmap",
+      "method": "screenshot"
+    },
+    {
+      "file": "barchart_audusd_seasonality.png",
+      "source": "Barchart",
+      "pair": "AUD/USD",
+      "type": "monthly_returns_heatmap",
+      "method": "screenshot"
+    },
+    {
+      "file": "barchart_usdcad_seasonality.png",
+      "source": "Barchart",
+      "pair": "USD/CAD",
+      "type": "monthly_returns_heatmap",
+      "method": "screenshot"
+    },
+    {
+      "file": "forexcom_eurusd_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "EUR/USD",
+      "type": "monthly_seasonality_chart",
+      "method": "downloaded"
+    },
+    {
+      "file": "forexcom_gbpusd_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "GBP/USD",
+      "type": "monthly_seasonality_chart",
+      "method": "downloaded"
+    },
+    {
+      "file": "forexcom_usdjpy_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "USD/JPY",
+      "type": "monthly_seasonality_chart",
+      "method": "downloaded"
+    },
+    {
+      "file": "forexcom_audusd_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "AUD/USD",
+      "type": "monthly_seasonality_chart",
+      "method": "downloaded"
+    },
+    {
+      "file": "forexcom_usdcad_august_seasonality.png",
+      "source": "Forex.com",
+      "pair": "USD/CAD",
+      "type": "monthly_seasonality_chart",
+      "method": "downloaded"
+    },
+    {
+      "file": "quantpedia_fx_currency_returns.png",
+      "source": "Quantpedia",
+      "pair": "Multiple FX futures",
+      "type": "cumulative_returns",
+      "method": "downloaded"
+    },
+    {
+      "file": "quantpedia_fx_leverage_comparison.png",
+      "source": "Quantpedia",
+      "pair": "FX portfolio",
+      "type": "leverage_comparison",
+      "method": "downloaded"
+    },
+    {
+      "file": "quantpedia_fx_strategy_performance.png",
+      "source": "Quantpedia",
+      "pair": "FX portfolio",
+      "type": "strategy_equity_curve",
+      "method": "downloaded"
+    },
+    {
+      "file": "quantpedia_fx_strategy_table.png",
+      "source": "Quantpedia",
+      "pair": "FX portfolio",
+      "type": "performance_metrics_table",
+      "method": "downloaded"
+    },
+    {
+      "file": "quantpedia_fx_mean_reversion_full.png",
+      "source": "Quantpedia",
+      "pair": "FX",
+      "type": "full_page_article",
+      "method": "screenshot"
+    },
+    {
+      "file": "quantpedia_fed_days_stocks_dollar.jpg",
+      "source": "Quantpedia",
+      "pair": "USD (vs stocks)",
+      "type": "fed_days_seasonality",
+      "method": "downloaded"
+    }
+  ],
+  "stats": {
+    "total_sources": 10,
+    "total_charts": 17,
+    "downloaded_charts": 11,
+    "screenshot_charts": 6
+  },
+  "coverage": {
+    "currency_pairs": ["EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD", "USD/CAD", "EUR/JPY"],
+    "seasonality_types": ["monthly", "intraday", "business_cycle"],
+    "source_types": ["academic", "market_analysis", "educational"]
+  }
+}

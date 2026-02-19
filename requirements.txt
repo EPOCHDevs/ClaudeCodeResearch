@@ -1,0 +1,31 @@
+# ClaudeCodeResearch Python dependencies
+#
+# Setup:
+#   cd /home/adesola/EpochDev/ClaudeCodeResearch
+#   python3 -m venv .venv
+#   source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+
+# Core data processing
+pyarrow>=14.0.0
+pandas>=2.0.0
+duckdb>=0.9.0
+
+# Protobuf for tearsheet parsing
+protobuf>=4.0.0
+
+# Optional: pyfolio comparison (for compare_with_pyfolio.py)
+# pyfolio-reloaded>=0.9.5
+# empyrical-reloaded>=0.5.9
+
+# Web scraping for research notes
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+html2text>=2024.2.26
+lxml>=5.0.0
+
+# Optional: Advanced scraping (for JS-heavy sites)
+# playwright>=1.40.0  # Run: playwright install chromium
+# selenium>=4.15.0
+# webdriver-manager>=4.0.0

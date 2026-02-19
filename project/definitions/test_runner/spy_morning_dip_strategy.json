@@ -1,0 +1,12 @@
+{
+   "name": "SPY Morning Dip Strategy",
+   "description": "Backtest: Buy SPY at 9:45 when price is down from the 9:30 open, sell at 10:30.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# SPY Morning Dip Mean Reversion Strategy\n# Entry: Buy at 9:45 when price is below 9:30 open\n# Exit: Sell at 10:30 (time-based)\n\n# Intraday 5-minute bars\nsrc = market_data_source(timeframe=5Min)()\nclose = src.c\n\n# Day's open price (first bar of regular trading hours)\nrth_sw = session_window(session=SessionType.EquityRTHSession)(src.o, src.h, src.l, src.c)\nday_open = rth_sw.open\n\n# 9:45-10:30 trading window\ntrade_session = session_window(session=Session(start='09:45', end='10:30', tz='America/New_York'))()\n\n# Entry signal: session opens AND price is down from open\nentry_signal = trade_session.opened and (trade_session.open < day_open)\n\n# Exit signal: session closes\nexit_signal = trade_session.closed\n\n# Hold position from entry to exit\nlong_position = hold_until()(enter=entry_signal, exit=exit_signal)\n\n# === EXECUTORS ===\n\n# Long-only zone\nlong_and_short_zone()(long_entry=long_position)\n\n# Position sizing: 100% of equity\nposition_size(type=SizeType.percent)(size=100)\n\n# === EVENT MARKERS ===\n\n# Entry markers\nevent_marker(\n    schema=EventMarkerSchema(\n        title=\"Entry Signals\",\n        icon=Icon.PlayIcon,\n        schemas=[\n            ColumnSpec(type=CardRenderType.BooleanFormat, table_is_filter=True),\n            ColumnSpec(card_slot=CardSlot.Hero, title=\"Entry Price\", type=CardRenderType.MonetaryFormat, dp=2),\n            ColumnSpec(card_slot=CardSlot.Details, title=\"Day Open\", type=CardRenderType.MonetaryFormat, dp=2),\n            ColumnSpec(card_slot=CardSlot.Subtitle, title=\"Gap from Open\", type=CardRenderType.PercentFormat, dp=2)\n        ]\n    )\n)(entry_signal, trade_session.open, day_open, (trade_session.open - day_open) / day_open)\n\n# Exit markers\nevent_marker(\n    schema=EventMarkerSchema(\n        title=\"Exit Signals\",\n        icon=Icon.SquareIcon,\n        schemas=[\n            ColumnSpec(type=CardRenderType.BooleanFormat, table_is_filter=True),\n            ColumnSpec(card_slot=CardSlot.Hero, title=\"Exit Price\", type=CardRenderType.MonetaryFormat, dp=2)\n        ]\n    )\n)(exit_signal, trade_session.close)\n",
+   "global_timeframe": "5Min"
+}

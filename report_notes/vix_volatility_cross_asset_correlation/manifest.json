@@ -1,0 +1,302 @@
+{
+  "topic": "VIX volatility cross asset correlation",
+  "slug": "vix_volatility_cross_asset_correlation",
+  "created": "2026-02-04T08:05:07.959572Z",
+  "sources": [
+    {
+      "url": "https://www.sciencedirect.com/science/article/pii/S2214845024001121",
+      "domain": "misc",
+      "title": "Quantile connectedness between VIX and global stock ...",
+      "crawled_at": "2026-02-04T08:07:10.275222+00:00",
+      "file": "sources/misc/001_quantile_connectedness_between_vix_and_global_stoc.md",
+      "charts": [
+        "sources/misc/001_quantile_connectedness_between_vix_and_global_stoc/charts/chart_01.gif",
+        "sources/misc/001_quantile_connectedness_between_vix_and_global_stoc/charts/chart_02.gif"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.berjournal.com/?file_id=853",
+      "domain": "misc",
+      "title": "[PDF] The Relationship Between the Indices of Volatility (VIX) and ...",
+      "crawled_at": "2026-02-04T08:07:10.542736+00:00",
+      "file": "sources/misc/002_pdf_the_relationship_between_the_indices_of_volati.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.academia.edu/105735322/Empirical_Analysis_of_Volatility_Spillover_Effects_in_International_Financial_Markets",
+      "domain": "misc",
+      "title": "(PDF) Empirical Analysis of Volatility Spillover Effects in International ...",
+      "crawled_at": "2026-02-04T08:07:10.550655+00:00",
+      "file": "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff.md",
+      "charts": [
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_01.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_02.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_03.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_04.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_05.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_06.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_07.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_08.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_09.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_10.jpg",
+        "sources/misc/003_pdf_empirical_analysis_of_volatility_spillover_eff/charts/chart_11.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.mdpi.com/1911-8074/13/4/69",
+      "domain": "misc",
+      "title": "Dynamic Spillovers between Gulf Cooperation Council's Stocks, VIX ...",
+      "crawled_at": "2026-02-04T08:07:15.931611+00:00",
+      "file": "sources/misc/004_dynamic_spillovers_between_gulf_cooperation_counci.md",
+      "charts": [
+        "sources/misc/004_dynamic_spillovers_between_gulf_cooperation_counci/charts/chart_02.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://ideas.repec.org/a/eee/pacfin/v58y2019ics0927538x18305912.html",
+      "domain": "misc",
+      "title": "Dynamic spillovers and connectedness between stock, commodities, bonds, and VIX markets",
+      "crawled_at": "2026-02-04T08:07:16.377974+00:00",
+      "file": "sources/misc/005_dynamic_spillovers_and_connectedness_between_stock.md",
+      "charts": [
+        "sources/misc/005_dynamic_spillovers_and_connectedness_between_stock/charts/chart_01.jpg",
+        "sources/misc/005_dynamic_spillovers_and_connectedness_between_stock/charts/chart_02.svg",
+        "sources/misc/005_dynamic_spillovers_and_connectedness_between_stock/charts/chart_03.svg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0927538X18305912",
+      "domain": "misc",
+      "title": "Dynamic spillovers and connectedness between stock, commodities, bonds, and VIX markets",
+      "crawled_at": "2026-02-04T08:07:17.441137+00:00",
+      "file": "sources/misc/006_dynamic_spillovers_and_connectedness_between_stock.md",
+      "charts": [
+        "sources/misc/006_dynamic_spillovers_and_connectedness_between_stock/charts/chart_02.gif",
+        "sources/misc/006_dynamic_spillovers_and_connectedness_between_stock/charts/chart_03.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4776457",
+      "domain": "academic",
+      "title": "Disturbed Correlations: On the varying Sensitivity of VIX Futures to Extreme S&P 500 Returns",
+      "crawled_at": "2026-02-04T08:07:17.966363+00:00",
+      "file": "sources/academic/001_disturbed_correlations_on_the_varying_sensitivity_.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4680092",
+      "domain": "academic",
+      "title": "Contagious Uncertainty: Implied Volatility Spillover Effects between the Credit VIX Indices and main Asset Classes in North America and Europe",
+      "crawled_at": "2026-02-04T08:07:17.974419+00:00",
+      "file": "sources/academic/002_contagious_uncertainty_implied_volatility_spillove.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://wire.insiderfinance.io/beyond-fear-can-the-vix-offer-operational-insights-or-predict-volatility-2d80de5aadbe",
+      "domain": "misc",
+      "title": "Beyond Fear: Can the VIX Offer Operational Insights or Predict Volatility?",
+      "crawled_at": "2026-02-04T08:07:17.975023+00:00",
+      "file": "sources/misc/007_beyond_fear_can_the_vix_offer_operational_insights.md",
+      "charts": [
+        "sources/misc/007_beyond_fear_can_the_vix_offer_operational_insights/charts/chart_01.png",
+        "sources/misc/007_beyond_fear_can_the_vix_offer_operational_insights/charts/chart_02.png",
+        "sources/misc/007_beyond_fear_can_the_vix_offer_operational_insights/charts/chart_03.png",
+        "sources/misc/007_beyond_fear_can_the_vix_offer_operational_insights/charts/chart_04.png",
+        "sources/misc/007_beyond_fear_can_the_vix_offer_operational_insights/charts/chart_05.png",
+        "sources/misc/007_beyond_fear_can_the_vix_offer_operational_insights/charts/chart_06.png",
+        "sources/misc/007_beyond_fear_can_the_vix_offer_operational_insights/charts/chart_07.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1544612324000667",
+      "domain": "misc",
+      "title": "The VIX's term structure of individual active stocks",
+      "crawled_at": "2026-02-04T08:07:18.714300+00:00",
+      "file": "sources/misc/008_the_vixs_term_structure_of_individual_active_stock.md",
+      "charts": [
+        "sources/misc/008_the_vixs_term_structure_of_individual_active_stock/charts/chart_02.gif"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.semanticscholar.org/paper/Modeling-the-Dynamics-of-Correlations-Among-Implied-Engle-Figlewski/7816a3b6b2da898458e49b23b3db4861a220cc55",
+      "domain": "misc",
+      "title": "Modeling the Dynamics of Correlations Among Implied Volatilities",
+      "crawled_at": "2026-02-04T08:07:18.926555+00:00",
+      "file": "sources/misc/009_modeling_the_dynamics_of_correlations_among_implie.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0250846",
+      "domain": "misc",
+      "title": "The predictive power of stock market\u2019s expectations volatility: A financial synchronization phenomenon",
+      "crawled_at": "2026-02-04T08:07:18.930038+00:00",
+      "file": "sources/misc/010_the_predictive_power_of_stock_markets_expectations.md",
+      "charts": [
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_01.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_02.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_03.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_04.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_05.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_06.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_07.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_08.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_09.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_10.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_11.png",
+        "sources/misc/010_the_predictive_power_of_stock_markets_expectations/charts/chart_12.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.scirp.org/journal/paperinformation?paperid=63346",
+      "domain": "misc",
+      "title": "On the Linkages between India VIX and US Financial Stress Index",
+      "crawled_at": "2026-02-04T08:07:23.863528+00:00",
+      "file": "sources/misc/011_on_the_linkages_between_india_vix_and_us_financial.md",
+      "charts": [
+        "sources/misc/011_on_the_linkages_between_india_vix_and_us_financial/charts/chart_01.svg",
+        "sources/misc/011_on_the_linkages_between_india_vix_and_us_financial/charts/chart_03.svg",
+        "sources/misc/011_on_the_linkages_between_india_vix_and_us_financial/charts/chart_04.svg",
+        "sources/misc/011_on_the_linkages_between_india_vix_and_us_financial/charts/chart_05.svg",
+        "sources/misc/011_on_the_linkages_between_india_vix_and_us_financial/charts/chart_06.jpg",
+        "sources/misc/011_on_the_linkages_between_india_vix_and_us_financial/charts/chart_07.jpg",
+        "sources/misc/011_on_the_linkages_between_india_vix_and_us_financial/charts/chart_08.jpg",
+        "sources/misc/011_on_the_linkages_between_india_vix_and_us_financial/charts/chart_09.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0378426613004172",
+      "domain": "misc",
+      "title": "Modeling and predicting the CBOE market volatility index",
+      "crawled_at": "2026-02-04T08:07:24.463650+00:00",
+      "file": "sources/misc/012_modeling_and_predicting_the_cboe_market_volatility.md",
+      "charts": [
+        "sources/misc/012_modeling_and_predicting_the_cboe_market_volatility/charts/chart_02.gif"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.cboe.com/insights/posts/inside-volatility-trading-breaking-down-the-vix-index-and-its-correlation-to-the-s-p-500-index/",
+      "domain": "misc",
+      "title": "Inside Volatility Trading: Breaking Down the VIX Index and its ...",
+      "crawled_at": "2026-02-04T08:07:24.786456+00:00",
+      "file": "sources/misc/013_inside_volatility_trading_breaking_down_the_vix_in.md",
+      "charts": [
+        "sources/misc/013_inside_volatility_trading_breaking_down_the_vix_in/charts/chart_01.png",
+        "sources/misc/013_inside_volatility_trading_breaking_down_the_vix_in/charts/chart_02.png",
+        "sources/misc/013_inside_volatility_trading_breaking_down_the_vix_in/charts/chart_04.png",
+        "sources/misc/013_inside_volatility_trading_breaking_down_the_vix_in/charts/chart_05.png",
+        "sources/misc/013_inside_volatility_trading_breaking_down_the_vix_in/charts/chart_06.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.oreateai.com/blog/understanding-the-vix-and-its-inverse-relationship-with-the-sp-500/6fc36021e4521fbdc6871940ad2590b8",
+      "domain": "misc",
+      "title": "Understanding the VIX and Its Inverse Relationship With the S&P 500",
+      "crawled_at": "2026-02-04T08:07:26.188745+00:00",
+      "file": "sources/misc/014_understanding_the_vix_and_its_inverse_relationship.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.scienpress.com/download.asp?ID=2402927",
+      "domain": "misc",
+      "title": "[PDF] An Empirical Examination of VIX Market Fluctuations",
+      "crawled_at": "2026-02-04T08:07:26.196920+00:00",
+      "file": "sources/misc/015_pdf_an_empirical_examination_of_vix_market_fluctua.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.vixfaq.com/correlation-vix-index-and-sp500-index/",
+      "domain": "misc",
+      "title": "What is the correlation between the VIX Index and the S&P500?",
+      "crawled_at": "2026-02-04T08:07:26.197661+00:00",
+      "file": "sources/misc/016_what_is_the_correlation_between_the_vix_index_and_.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.mdpi.com/1911-8074/6/1/6",
+      "domain": "misc",
+      "title": "A Non-Parametric and Entropy Based Analysis of the Relationship between the VIX and S&P 500",
+      "crawled_at": "2026-02-04T08:07:26.198354+00:00",
+      "file": "sources/misc/017_a_non-parametric_and_entropy_based_analysis_of_the.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://fastercapital.com/content/VIX-vs--S-P-500--Analyzing-Correlations-and-Market-Sentiment.html",
+      "domain": "misc",
+      "title": "VIX vs:'s P 500: Analyzing Correlations and Market Sentiment - FasterCapital",
+      "crawled_at": "2026-02-04T08:07:26.199065+00:00",
+      "file": "sources/misc/018_vix_vss_p_500_analyzing_correlations_and_market_se.md",
+      "charts": [
+        "sources/misc/018_vix_vss_p_500_analyzing_correlations_and_market_se/charts/chart_01.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S027553191730418X",
+      "domain": "misc",
+      "title": "Uncovering asymmetries in the relationship between fear and the ...",
+      "crawled_at": "2026-02-04T08:07:26.600671+00:00",
+      "file": "sources/misc/019_uncovering_asymmetries_in_the_relationship_between.md",
+      "charts": [
+        "sources/misc/019_uncovering_asymmetries_in_the_relationship_between/charts/chart_02.gif",
+        "sources/misc/019_uncovering_asymmetries_in_the_relationship_between/charts/chart_03.png",
+        "sources/misc/019_uncovering_asymmetries_in_the_relationship_between/charts/chart_04.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.acrn-journals.eu/resources/jfrp201402f.pdf",
+      "domain": "misc",
+      "title": "[PDF] WHAT DOES THE VIX ACTUALLY MEASURE? AN ANALYSIS OF ...",
+      "crawled_at": "2026-02-04T08:07:27.067753+00:00",
+      "file": "sources/misc/020_pdf_what_does_the_vix_actually_measure_an_analysis.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://investwithcarl.com/learning-center/investment-basics/beyond-the-fear-gauge-evaluating-the-vixs-evolving-predictive-power-in-dynamic-market-regimes",
+      "domain": "misc",
+      "title": "VIX Index: Predictive Power in Modern Market Regimes",
+      "crawled_at": "2026-02-04T08:07:27.075871+00:00",
+      "file": "sources/misc/021_vix_index_predictive_power_in_modern_market_regime.md",
+      "charts": [
+        "sources/misc/021_vix_index_predictive_power_in_modern_market_regime/charts/chart_01.svg",
+        "sources/misc/021_vix_index_predictive_power_in_modern_market_regime/charts/chart_02.svg",
+        "sources/misc/021_vix_index_predictive_power_in_modern_market_regime/charts/chart_03.svg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "http://arno.uvt.nl/show.cgi?fid=153799",
+      "domain": "misc",
+      "title": "[PDF] The relationship between the returns of the S&P 500 index and the ...",
+      "crawled_at": "2026-02-04T08:07:27.862729+00:00",
+      "file": "sources/misc/022_pdf_the_relationship_between_the_returns_of_the_sp.md",
+      "charts": [],
+      "tables": 0
+    }
+  ],
+  "stats": {
+    "total_sources": 24,
+    "total_charts": 60,
+    "total_tables": 0
+  }
+}

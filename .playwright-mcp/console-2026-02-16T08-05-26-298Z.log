@@ -1,0 +1,1771 @@
+[   14300ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[   14300ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[   45010ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[   45010ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[   88718ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[   88719ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  102456ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  102457ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  105520ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  105521ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  186553ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  186554ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  190333ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  190334ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  193849ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  193849ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  197444ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  197445ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  272824ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  272825ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  284156ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  284157ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  302002ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  302002ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  320289ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  320290ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  325201ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  325202ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  328505ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  328506ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  331734ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  331735ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  334980ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  334981ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  349555ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  349556ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  352979ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  352980ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  356760ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  356761ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  361177ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  361178ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  522588ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  522588ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  608374ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  608375ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  617825ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  617826ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  621298ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  621299ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  657967ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  657967ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  661785ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  661786ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  680677ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  680677ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  683997ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  683998ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  710631ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  710631ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  978193ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  978193ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  983650ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  983651ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  986906ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  986907ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  990619ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  990620ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  997488ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  997489ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  999415ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[  999416ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1020420ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1020420ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1069907ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1069908ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1072158ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1072159ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1075473ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1075474ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1079023ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1079024ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1081072ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1081073ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1085335ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1085336ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1090240ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1090241ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1092372ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1092373ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1095941ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1095941ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1194904ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1194904ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1207831ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1207832ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1225780ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1225781ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1227874ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1227875ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1232552ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1232553ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1237689ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1237690ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1239810ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1239811ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1256931ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception'
+
+Import trace for requested module:
+./node_modules/node-domexception/index.js
+./node_modules/fetch-blob/from.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 1256932ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob'
+
+Import trace for requested module:
+./node_modules/fetch-blob/streams.cjs
+./node_modules/fetch-blob/index.js
+./node_modules/node-fetch/src/body.js
+./node_modules/node-fetch/src/index.js
+./packages/stratifyx/core/fetcher/getFetchFn.js
+./packages/stratifyx/core/fetcher/Fetcher.js
+./packages/stratifyx/core/fetcher/index.js
+./packages/stratifyx/core/index.js
+./packages/stratifyx/api/resources/docs/client/Client.js
+./packages/stratifyx/Client.js
+./packages/stratifyx/index.js
+./src/libs/stratifyx/index.ts
+./src/services/hooks/stratifyx/useHealthCheck.ts
+./src/services/hooks/stratifyx/index.ts
+./src/app/(playground)/playground/studies/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 2242005ms] [WARNING] ./node_modules/node-domexception/index.js
+Module not found: Can't resolve 'worker_threads' in '/home/adesola/EpochDev/EpochPortal/node_modules/node-domexception' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241
+[ 2242005ms] [WARNING] ./node_modules/fetch-blob/streams.cjs
+Module not found: Can't resolve 'stream/web' in '/home/adesola/EpochDev/EpochPortal/node_modules/fetch-blob' @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:241

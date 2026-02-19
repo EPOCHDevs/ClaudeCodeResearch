@@ -1,0 +1,22 @@
+{
+  "defaults": {
+    "research": {
+      "1D":   {"start": "2020-01-01", "end": "2024-12-31"},
+      "1W":   {"start": "2010-01-01", "end": "2024-12-31"},
+      "5Min": {"start": "2024-01-01", "end": "2025-01-01"},
+      "1Min": {"start": "2024-06-01", "end": "2025-01-01"}
+    },
+    "campaign": {
+      "cash": 100000
+    }
+  },
+  "overrides": {
+    "rs007_fx_monthly_seasonality_research":    {"start": "2005-01-01", "end": "2024-12-31"},
+    "rs010_eurusd_monthly_seasonality_research": {"start": "2005-01-01", "end": "2024-12-31"},
+    "eng608_market_sentiment_dashboard_research": {"start": "2023-01-01", "end": "2024-12-31"},
+    "short_interest_effect_strategy":            {"cash": 100000},
+    "ct_session_structure_research":             {"start": "2022-01-01", "end": "2025-01-01"},
+    "ct_opening_level_touch_research":           {"start": "2022-01-01", "end": "2025-01-01"},
+    "ct_ib_close_analysis_research":             {"start": "2022-01-01", "end": "2025-01-01"}
+  }
+}

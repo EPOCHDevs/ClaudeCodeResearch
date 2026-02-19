@@ -1,0 +1,430 @@
+{
+  "topic": "equity bond correlation dynamics",
+  "slug": "equity_bond_correlation_dynamics",
+  "created": "2026-02-04T08:01:58.324499Z",
+  "sources": [
+    {
+      "url": "https://pure.eur.nl/ws/portalfiles/portal/189207773/Empirical_Evidence_on_the_Stock_Bond_Correlation.pdf",
+      "domain": "misc",
+      "title": "Empirical_Evidence_on_the_Stock_Bond_Correlation.p",
+      "crawled_at": "2026-02-04T08:03:01.858114+00:00",
+      "file": "sources/misc/001_empirical_evidence_on_the_stock_bond_correlationp.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://wealthmanagement.com/equities/implications-of-regime-shifting-stock-and-bond-correlations",
+      "domain": "misc",
+      "title": "Implications of Regime-Shifting Stock and Bond Correlations",
+      "crawled_at": "2026-02-04T08:03:01.858959+00:00",
+      "file": "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor.md",
+      "charts": [
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_01.jpg",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_02.jpg",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_03.png",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_04.jpg",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_05.jpg",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_06.jpg",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_07.jpg",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_08.jpg",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_09.png",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_10.png",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_11.png",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_12.png",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_13.png",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_14.png",
+        "sources/misc/002_implications_of_regime-shifting_stock_and_bond_cor/charts/chart_15.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.futurestandard.com/insights/report/playbook-for-a-new-stock-bond-correlation-regime",
+      "domain": "misc",
+      "title": "Playbook for a new stock-bond correlation regime",
+      "crawled_at": "2026-02-04T08:03:10.272336+00:00",
+      "file": "sources/misc/003_playbook_for_a_new_stock-bond_correlation_regime.md",
+      "charts": [
+        "sources/misc/003_playbook_for_a_new_stock-bond_correlation_regime/charts/chart_01.webp"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.top1000funds.com/wp-content/uploads/2024/11/Empirical-Evidence-on-the-Stock-Bond-Correlation.pdf",
+      "domain": "misc",
+      "title": "[PDF] Empirical Evidence on the Stock\u2013Bond Correlation",
+      "crawled_at": "2026-02-04T08:03:10.378408+00:00",
+      "file": "sources/misc/004_pdf_empirical_evidence_on_the_stockbond_correlatio.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.tandfonline.com/doi/full/10.1080/0015198X.2024.2317333",
+      "domain": "misc",
+      "title": "Full article: Empirical Evidence on the Stock\u2013Bond Correlation",
+      "crawled_at": "2026-02-04T08:03:10.378979+00:00",
+      "file": "sources/misc/005_full_article_empirical_evidence_on_the_stockbond_c.md",
+      "charts": [
+        "sources/misc/005_full_article_empirical_evidence_on_the_stockbond_c/charts/chart_01.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.robeco.com/en-us/insights/2024/05/new-research-into-the-stock-bond-correlation-shows-when-they-correlate-and-when-they-don-t",
+      "domain": "misc",
+      "title": "New research into the stock-bond correlation shows when they ...",
+      "crawled_at": "2026-02-04T08:03:11.085126+00:00",
+      "file": "sources/misc/006_new_research_into_the_stock-bond_correlation_shows.md",
+      "charts": [
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_03.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_04.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_06.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_07.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_08.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_09.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_10.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_11.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_12.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_13.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_14.jpg",
+        "sources/misc/006_new_research_into_the_stock-bond_correlation_shows/charts/chart_15.jpg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://research-center.amundi.com/files/nuxeo/dl/eb84a66b-ebac-4901-8d70-70f3ed02a0d4?inline=",
+      "domain": "misc",
+      "title": "[PDF] Rethinking the Stock-Bond Correlation - Amundi Research Center",
+      "crawled_at": "2026-02-04T08:03:15.609706+00:00",
+      "file": "sources/misc/007_pdf_rethinking_the_stock-bond_correlation_-_amundi.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://dspace.stir.ac.uk/retrieve/ec2513f8-8568-4e9c-9a79-648e7797f523/1-s2.0-S1042443125001325-main.pdf",
+      "domain": "misc",
+      "title": "Stock-bond return correlation: Understanding the changing behaviour",
+      "crawled_at": "2026-02-04T08:03:15.610767+00:00",
+      "file": "sources/misc/008_stock-bond_return_correlation_understanding_the_ch.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://ideas.repec.org/a/taf/ufajxx/v80y2024i3p17-36.html",
+      "domain": "misc",
+      "title": "Empirical Evidence on the Stock\u2013Bond Correlation",
+      "crawled_at": "2026-02-04T08:03:15.611313+00:00",
+      "file": "sources/misc/009_empirical_evidence_on_the_stockbond_correlation.md",
+      "charts": [
+        "sources/misc/009_empirical_evidence_on_the_stockbond_correlation/charts/chart_01.jpg",
+        "sources/misc/009_empirical_evidence_on_the_stockbond_correlation/charts/chart_02.svg",
+        "sources/misc/009_empirical_evidence_on_the_stockbond_correlation/charts/chart_03.svg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://alphaarchitect.com/stock-bond-correlation/",
+      "domain": "misc",
+      "title": "Implications of Regime-Shifting Stock-Bond Correlation",
+      "crawled_at": "2026-02-04T08:03:16.739942+00:00",
+      "file": "sources/misc/010_implications_of_regime-shifting_stock-bond_correla.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://digitalcommons.ursinus.edu/cgi/viewcontent.cgi?article=1058&context=bus_econ_hon",
+      "domain": "misc",
+      "title": "[PDF] A Deep Dive Into the Stock-Bond Correlation",
+      "crawled_at": "2026-02-04T08:03:16.740567+00:00",
+      "file": "sources/misc/011_pdf_a_deep_dive_into_the_stock-bond_correlation.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.aqr.com/-/media/AQR/Documents/Alternative-Thinking/A-Changing-Stock-Bond-Correlation_JPM.pdf?sc_lang=en",
+      "domain": "misc",
+      "title": "A Changing Stock\u2013Bond Correlation: Drivers and Implications",
+      "crawled_at": "2026-02-04T08:03:16.741143+00:00",
+      "file": "sources/misc/012_a_changing_stockbond_correlation_drivers_and_impli.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.aqr.com/Insights/Research/Journal-Article/A-Changing-Stock-Bond-Correlation",
+      "domain": "misc",
+      "title": "A Changing Stock-Bond Correlation - AQR Capital Management",
+      "crawled_at": "2026-02-04T08:03:16.741762+00:00",
+      "file": "sources/misc/013_a_changing_stock-bond_correlation_-_aqr_capital_ma.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://alphaarchitect.com/warning-stock-and-bond-correlation-assumptions-are-regime-dependent/",
+      "domain": "misc",
+      "title": "Warning: Stock and Bond Correlation Assumptions are Regime ...",
+      "crawled_at": "2026-02-04T08:03:16.742362+00:00",
+      "file": "sources/misc/014_warning_stock_and_bond_correlation_assumptions_are.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4514947",
+      "domain": "academic",
+      "title": "Empirical evidence on the stock-bond correlation",
+      "crawled_at": "2026-02-04T08:03:16.742956+00:00",
+      "file": "sources/academic/001_empirical_evidence_on_the_stock-bond_correlation.md",
+      "charts": [
+        "sources/academic/001_empirical_evidence_on_the_stock-bond_correlation/charts/chart_01.svg",
+        "sources/academic/001_empirical_evidence_on_the_stock-bond_correlation/charts/chart_02.svg",
+        "sources/academic/001_empirical_evidence_on_the_stock-bond_correlation/charts/chart_03.svg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.blackrock.com/us/individual/insights/60-40-portfolios-and-alternatives",
+      "domain": "misc",
+      "title": "Rebuilding 60/40 portfolios with alternatives - BlackRock",
+      "crawled_at": "2026-02-04T08:03:17.264761+00:00",
+      "file": "sources/misc/015_rebuilding_6040_portfolios_with_alternatives_-_bla.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.ssga.com/us/en/institutional/insights/mind-on-the-market-03-october-2025",
+      "domain": "misc",
+      "title": "60/40 strategy regains strength - State Street Global Advisors",
+      "crawled_at": "2026-02-04T08:03:17.265695+00:00",
+      "file": "sources/misc/016_6040_strategy_regains_strength_-_state_street_glob.md",
+      "charts": [
+        "sources/misc/016_6040_strategy_regains_strength_-_state_street_glob/charts/chart_01.jpg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://rpc.cfainstitute.org/research/reports/2025/performance-of-the-60-40-portfolio",
+      "domain": "misc",
+      "title": "The Performance of the 60/40 Portfolio: A Historical Perspective",
+      "crawled_at": "2026-02-04T08:03:17.709188+00:00",
+      "file": "sources/misc/017_the_performance_of_the_6040_portfolio_a_historical.md",
+      "charts": [
+        "sources/misc/017_the_performance_of_the_6040_portfolio_a_historical/charts/chart_01.jpg",
+        "sources/misc/017_the_performance_of_the_6040_portfolio_a_historical/charts/chart_02.jpg",
+        "sources/misc/017_the_performance_of_the_6040_portfolio_a_historical/charts/chart_03.jpg",
+        "sources/misc/017_the_performance_of_the_6040_portfolio_a_historical/charts/chart_04.jpg",
+        "sources/misc/017_the_performance_of_the_6040_portfolio_a_historical/charts/chart_05.jpg",
+        "sources/misc/017_the_performance_of_the_6040_portfolio_a_historical/charts/chart_06.jpg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.firstcommand.com/coaching-center/insights/does-a-60-40-portfolio-work/",
+      "domain": "misc",
+      "title": "Does a 60/40 Portfolio Still Work? - First Command",
+      "crawled_at": "2026-02-04T08:03:18.669082+00:00",
+      "file": "sources/misc/018_does_a_6040_portfolio_still_work_-_first_command.md",
+      "charts": [
+        "sources/misc/018_does_a_6040_portfolio_still_work_-_first_command/charts/chart_01.svg",
+        "sources/misc/018_does_a_6040_portfolio_still_work_-_first_command/charts/chart_02.svg",
+        "sources/misc/018_does_a_6040_portfolio_still_work_-_first_command/charts/chart_03.svg",
+        "sources/misc/018_does_a_6040_portfolio_still_work_-_first_command/charts/chart_04.svg",
+        "sources/misc/018_does_a_6040_portfolio_still_work_-_first_command/charts/chart_05.svg",
+        "sources/misc/018_does_a_6040_portfolio_still_work_-_first_command/charts/chart_06.jpg",
+        "sources/misc/018_does_a_6040_portfolio_still_work_-_first_command/charts/chart_07.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.vanguard.co.uk/professional/vanguard-365/investment-knowledge/portfolio-construction/understanding-stock-bond-correlations",
+      "domain": "misc",
+      "title": "Understanding the dynamics of stock/bond correlations - Vanguard",
+      "crawled_at": "2026-02-04T08:03:19.875292+00:00",
+      "file": "sources/misc/019_understanding_the_dynamics_of_stockbond_correlatio.md",
+      "charts": [
+        "sources/misc/019_understanding_the_dynamics_of_stockbond_correlatio/charts/chart_01.jpg",
+        "sources/misc/019_understanding_the_dynamics_of_stockbond_correlatio/charts/chart_02.jpg",
+        "sources/misc/019_understanding_the_dynamics_of_stockbond_correlatio/charts/chart_03.jpg",
+        "sources/misc/019_understanding_the_dynamics_of_stockbond_correlatio/charts/chart_04.jpg",
+        "sources/misc/019_understanding_the_dynamics_of_stockbond_correlatio/charts/chart_05.jpg",
+        "sources/misc/019_understanding_the_dynamics_of_stockbond_correlatio/charts/chart_06.jpg",
+        "sources/misc/019_understanding_the_dynamics_of_stockbond_correlatio/charts/chart_07.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.nasdaq.com/articles/the-60-40-portfolio:-what-happens-when-correlation-is-causation",
+      "domain": "misc",
+      "title": "The 60/40 Portfolio: What Happens When Correlation Is Causation",
+      "crawled_at": "2026-02-04T08:03:24.841877+00:00",
+      "file": "sources/misc/020_the_6040_portfolio_what_happens_when_correlation_i.md",
+      "charts": [
+        "sources/misc/020_the_6040_portfolio_what_happens_when_correlation_i/charts/chart_02.png",
+        "sources/misc/020_the_6040_portfolio_what_happens_when_correlation_i/charts/chart_03.png",
+        "sources/misc/020_the_6040_portfolio_what_happens_when_correlation_i/charts/chart_04.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.simplify.us/etfs-use-case/building-modern-6040-portfolio",
+      "domain": "misc",
+      "title": "Building a Modern 60/40 Portfolio - Simplify Asset Management",
+      "crawled_at": "2026-02-04T08:04:26.012634+00:00",
+      "file": "sources/misc/021_building_a_modern_6040_portfolio_-_simplify_asset_.md",
+      "charts": [
+        "sources/misc/021_building_a_modern_6040_portfolio_-_simplify_asset_/charts/chart_01.png",
+        "sources/misc/021_building_a_modern_6040_portfolio_-_simplify_asset_/charts/chart_02.png",
+        "sources/misc/021_building_a_modern_6040_portfolio_-_simplify_asset_/charts/chart_03.png",
+        "sources/misc/021_building_a_modern_6040_portfolio_-_simplify_asset_/charts/chart_04.png",
+        "sources/misc/021_building_a_modern_6040_portfolio_-_simplify_asset_/charts/chart_05.png",
+        "sources/misc/021_building_a_modern_6040_portfolio_-_simplify_asset_/charts/chart_06.png",
+        "sources/misc/021_building_a_modern_6040_portfolio_-_simplify_asset_/charts/chart_07.png",
+        "sources/misc/021_building_a_modern_6040_portfolio_-_simplify_asset_/charts/chart_08.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://equitymultiple.com/blog/60-40-portfolio",
+      "domain": "misc",
+      "title": "The 60/40 Portfolio: What It Is, and How Investors Can Go Further",
+      "crawled_at": "2026-02-04T08:04:29.709383+00:00",
+      "file": "sources/misc/022_the_6040_portfolio_what_it_is_and_how_investors_ca.md",
+      "charts": [
+        "sources/misc/022_the_6040_portfolio_what_it_is_and_how_investors_ca/charts/chart_01.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2959015",
+      "domain": "academic",
+      "title": "The 60/40 Problem: Examining the Traditional 60/40 Portfolio in an Uncertain Rate Environment",
+      "crawled_at": "2026-02-04T08:04:30.004094+00:00",
+      "file": "sources/academic/002_the_6040_problem_examining_the_traditional_6040_po.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.pimco.com/dk/en/documents/4c6412ab-771f-483b-a220-c6a53e251897",
+      "domain": "misc",
+      "title": "Are 60/40 Portfolio Returns Predictable?",
+      "crawled_at": "2026-02-04T08:04:30.012748+00:00",
+      "file": "sources/misc/023_are_6040_portfolio_returns_predictable.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.longtermtrends.com/stocks-vs-bonds/",
+      "domain": "misc",
+      "title": "Stocks vs. Bonds - Updated Chart",
+      "crawled_at": "2026-02-04T08:04:30.014087+00:00",
+      "file": "sources/misc/024_stocks_vs_bonds_-_updated_chart.md",
+      "charts": [
+        "sources/misc/024_stocks_vs_bonds_-_updated_chart/charts/chart_01.svg",
+        "sources/misc/024_stocks_vs_bonds_-_updated_chart/charts/chart_02.svg",
+        "sources/misc/024_stocks_vs_bonds_-_updated_chart/charts/chart_03.svg",
+        "sources/misc/024_stocks_vs_bonds_-_updated_chart/charts/chart_04.png",
+        "sources/misc/024_stocks_vs_bonds_-_updated_chart/charts/chart_05.svg",
+        "sources/misc/024_stocks_vs_bonds_-_updated_chart/charts/chart_06.svg",
+        "sources/misc/024_stocks_vs_bonds_-_updated_chart/charts/chart_07.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.grahamcapital.com/wp-content/uploads/2023/07/Equity-Bond-Correlation_Graham-Research_2017.pdf",
+      "domain": "misc",
+      "title": "Equity-Bond Correlation: A Historical Perspective",
+      "crawled_at": "2026-02-04T08:04:33.902460+00:00",
+      "file": "sources/misc/025_equity-bond_correlation_a_historical_perspective.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://www.guggenheiminvestments.com/advisor-resources/interactive-tools/asset-class-correlation-map",
+      "domain": "misc",
+      "title": "Asset Class Correlation Map",
+      "crawled_at": "2026-02-04T08:04:33.911895+00:00",
+      "file": "sources/misc/026_asset_class_correlation_map.md",
+      "charts": [],
+      "tables": 0
+    },
+    {
+      "url": "https://everon.swiss/en/correlation-between-stocks-and-bonds/",
+      "domain": "misc",
+      "title": "The Evolution of the Correlation Between Stocks and Bonds",
+      "crawled_at": "2026-02-04T08:04:33.913942+00:00",
+      "file": "sources/misc/027_the_evolution_of_the_correlation_between_stocks_an.md",
+      "charts": [
+        "sources/misc/027_the_evolution_of_the_correlation_between_stocks_an/charts/chart_01.svg",
+        "sources/misc/027_the_evolution_of_the_correlation_between_stocks_an/charts/chart_02.jpg",
+        "sources/misc/027_the_evolution_of_the_correlation_between_stocks_an/charts/chart_03.jpg",
+        "sources/misc/027_the_evolution_of_the_correlation_between_stocks_an/charts/chart_04.svg",
+        "sources/misc/027_the_evolution_of_the_correlation_between_stocks_an/charts/chart_05.svg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://en.macromicro.me/collections/34/us-stock-relative/17523/score-of-us-business-cycle",
+      "domain": "misc",
+      "title": "US - MM Equity-Fixed Income Asset Allocation Score",
+      "crawled_at": "2026-02-04T08:04:38.492678+00:00",
+      "file": "sources/misc/028_us_-_mm_equity-fixed_income_asset_allocation_score.md",
+      "charts": [
+        "sources/misc/028_us_-_mm_equity-fixed_income_asset_allocation_score/charts/chart_01.png",
+        "sources/misc/028_us_-_mm_equity-fixed_income_asset_allocation_score/charts/chart_02.png",
+        "sources/misc/028_us_-_mm_equity-fixed_income_asset_allocation_score/charts/chart_03.png",
+        "sources/misc/028_us_-_mm_equity-fixed_income_asset_allocation_score/charts/chart_04.png",
+        "sources/misc/028_us_-_mm_equity-fixed_income_asset_allocation_score/charts/chart_05.jpg",
+        "sources/misc/028_us_-_mm_equity-fixed_income_asset_allocation_score/charts/chart_06.png"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.nl.vanguard/professional/vanguard-365/understanding-stock-bond-correlations",
+      "domain": "misc",
+      "title": "Understanding the dynamics of stock bond correlations",
+      "crawled_at": "2026-02-04T08:04:40.856584+00:00",
+      "file": "sources/misc/029_understanding_the_dynamics_of_stock_bond_correlati.md",
+      "charts": [
+        "sources/misc/029_understanding_the_dynamics_of_stock_bond_correlati/charts/chart_01.jpg",
+        "sources/misc/029_understanding_the_dynamics_of_stock_bond_correlati/charts/chart_02.jpg",
+        "sources/misc/029_understanding_the_dynamics_of_stock_bond_correlati/charts/chart_03.jpg",
+        "sources/misc/029_understanding_the_dynamics_of_stock_bond_correlati/charts/chart_04.jpg",
+        "sources/misc/029_understanding_the_dynamics_of_stock_bond_correlati/charts/chart_05.png",
+        "sources/misc/029_understanding_the_dynamics_of_stock_bond_correlati/charts/chart_06.jpg",
+        "sources/misc/029_understanding_the_dynamics_of_stock_bond_correlati/charts/chart_07.jpg",
+        "sources/misc/029_understanding_the_dynamics_of_stock_bond_correlati/charts/chart_08.jpg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://www.bis.org/publ/qtrpdf/r_qt2312v.htm",
+      "domain": "misc",
+      "title": "The correlation of equity and bond returns",
+      "crawled_at": "2026-02-04T08:04:49.860387+00:00",
+      "file": "sources/misc/030_the_correlation_of_equity_and_bond_returns.md",
+      "charts": [
+        "sources/misc/030_the_correlation_of_equity_and_bond_returns/charts/chart_01.jpg",
+        "sources/misc/030_the_correlation_of_equity_and_bond_returns/charts/chart_02.jpg",
+        "sources/misc/030_the_correlation_of_equity_and_bond_returns/charts/chart_03.jpg",
+        "sources/misc/030_the_correlation_of_equity_and_bond_returns/charts/chart_04.jpg",
+        "sources/misc/030_the_correlation_of_equity_and_bond_returns/charts/chart_05.jpg",
+        "sources/misc/030_the_correlation_of_equity_and_bond_returns/charts/chart_06.jpg",
+        "sources/misc/030_the_correlation_of_equity_and_bond_returns/charts/chart_07.jpg"
+      ],
+      "tables": 0
+    },
+    {
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html",
+      "domain": "misc",
+      "title": "Historical Returns on Stocks, Bonds and Bills: 1928-2024",
+      "crawled_at": "2026-02-04T08:04:53.965907+00:00",
+      "file": "sources/misc/031_historical_returns_on_stocks_bonds_and_bills_1928-.md",
+      "charts": [
+        "sources/misc/031_historical_returns_on_stocks_bonds_and_bills_1928-/charts/chart_01.gif"
+      ],
+      "tables": 0
+    }
+  ],
+  "stats": {
+    "total_sources": 33,
+    "total_charts": 102,
+    "total_tables": 0
+  }
+}
