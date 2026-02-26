@@ -17,7 +17,8 @@ TARGET="generate_job_data"
 
 # Defaults
 BUILD_MODE="release"
-BUILD_DIR="/home/adesola/EpochDev/EpochBackend/build"
+BACKEND_DIR="$HOME/EpochDev/EpochBackend"
+BUILD_DIR="$BACKEND_DIR/build"
 NUM_JOBS=$(( $(nproc) > 16 ? 16 : $(nproc) ))
 
 # Parse arguments
@@ -25,12 +26,12 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --asan)
             BUILD_MODE="asan"
-            BUILD_DIR="/home/adesola/EpochDev/EpochBackend/build-asan"
+            BUILD_DIR="$BACKEND_DIR/build-asan"
             shift
             ;;
         --coverage)
             BUILD_MODE="coverage"
-            BUILD_DIR="/home/adesola/EpochDev/EpochBackend/build-coverage"
+            BUILD_DIR="$BACKEND_DIR/build-coverage"
             shift
             ;;
         -j|--jobs)

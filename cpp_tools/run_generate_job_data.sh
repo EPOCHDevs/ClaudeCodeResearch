@@ -18,17 +18,18 @@ SCRIPT_NAME="run_generate_job_data"
 BIN_NAME="generate_job_data"
 
 # Default to release build
-BUILD_DIR="/home/adesola/EpochDev/EpochBackend/build"
+BACKEND_DIR="$HOME/EpochDev/EpochBackend"
+BUILD_DIR="$BACKEND_DIR/build"
 BUILD_MODE="release"
 
 # Check for build mode flag (must be first argument)
 if [[ "$1" == "--asan" ]]; then
     BUILD_MODE="asan"
-    BUILD_DIR="/home/adesola/EpochDev/EpochBackend/build-asan"
+    BUILD_DIR="$BACKEND_DIR/build-asan"
     shift  # Remove flag from arguments
 elif [[ "$1" == "--coverage" ]]; then
     BUILD_MODE="coverage"
-    BUILD_DIR="/home/adesola/EpochDev/EpochBackend/build-coverage"
+    BUILD_DIR="$BACKEND_DIR/build-coverage"
     shift  # Remove flag from arguments
 fi
 

@@ -23,7 +23,7 @@
 set -e
 
 SCRIPT_NAME="run_tests"
-BACKEND_DIR="/home/adesola/EpochDev/EpochBackend"
+BACKEND_DIR="$HOME/EpochDev/EpochBackend"
 NUM_JOBS=$(( $(nproc) > 16 ? 16 : $(nproc) ))
 
 # Available test targets

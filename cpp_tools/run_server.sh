@@ -5,6 +5,8 @@
 # Usage:
 #   ./run_server.sh          # Release build, default port
 #   ./run_server.sh --asan   # Debug build with AddressSanitizer
+#   ./run_server.sh -j4      # Limit to 4 parallel build jobs
+#   ./run_server.sh --asan -j4  # ASAN build with 4 jobs
 #
 # The server runs on port 8080 by default.
 # Press Ctrl+C to stop.
@@ -14,23 +16,51 @@ set -e
 
 SCRIPT_NAME="run_server"
 TARGET="epoch_stratifyx_server"
-DEFAULT_PORT=8080
+DEFAULT_PORT=9000
+NUM_JOBS=$(( $(nproc) > 16 ? 16 : $(nproc) ))
 
 # Default to release build
 BUILD_MODE="release"
-BUILD_DIR="/home/adesola/EpochDev/EpochBackend/build"
+BUILD_DIR="../../EpochBackend/build"
 
-# Check for --asan flag
-if [[ "$1" == "--asan" ]]; then
-    BUILD_MODE="asan"
-    BUILD_DIR="/home/adesola/EpochDev/EpochBackend/build-asan"
-    shift
-fi
+# Parse flags
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --asan)
+            BUILD_MODE="asan"
+            BUILD_DIR="../../EpochBackend/build-asan"
+            shift
+            ;;
+        -j|--jobs)
+            if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
+                NUM_JOBS="$2"
+                shift 2
+            else
+                echo "[$SCRIPT_NAME] Error: -j requires a numeric argument"
+                exit 1
+            fi
+            ;;
+        -j*)
+            # Handle -jN format (no space)
+            NUM_JOBS="${1#-j}"
+            if [[ ! "$NUM_JOBS" =~ ^[0-9]+$ ]]; then
+                echo "[$SCRIPT_NAME] Error: Invalid job count: $NUM_JOBS"
+                exit 1
+            fi
+            shift
+            ;;
+        *)
+            echo "[$SCRIPT_NAME] Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
 
 BIN_PATH="$BUILD_DIR/bin/$TARGET"
 
 echo "[$SCRIPT_NAME] Mode: $BUILD_MODE"
 echo "[$SCRIPT_NAME] Build dir: $BUILD_DIR"
+echo "[$SCRIPT_NAME] Jobs: $NUM_JOBS"
 
 # Verify build directory exists
 if [[ ! -d "$BUILD_DIR" ]]; then
@@ -40,7 +70,7 @@ fi
 
 # Build if stale (ninja handles staleness check automatically)
 echo "[$SCRIPT_NAME] Building $TARGET (if stale)..."
-ninja -C "$BUILD_DIR" -j$(( $(nproc) > 16 ? 16 : $(nproc) )) "$TARGET"
+ninja -C "$BUILD_DIR" -j"$NUM_JOBS" "$TARGET"
 
 # Verify binary exists
 if [[ ! -x "$BIN_PATH" ]]; then

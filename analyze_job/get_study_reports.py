@@ -21,7 +21,8 @@ import argparse
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 
-sys.path.insert(0, "/home/adesola/EpochDev/EpochBackend/packages/epoch-protos/python")
+import os
+sys.path.insert(0, os.path.expanduser("~/EpochDev/EpochBackend/packages/epoch-protos/python"))
 
 try:
     from epoch_protos import tearsheet_pb2, table_def_pb2
@@ -85,19 +86,29 @@ def get_charts(job_dir: Path, category: Optional[str] = None) -> Dict[str, List[
             continue
 
         charts = []
-        for chart in ts.charts:
+        for chart in ts.charts.charts:
+            # Charts use a oneof - resolve the active variant
+            chart_type_name = chart.WhichOneof('chart_type') if hasattr(chart, 'WhichOneof') else None
+            if not chart_type_name:
+                continue
+            defn = getattr(chart, chart_type_name, None)
+            if defn is None:
+                continue
+            chart_def = getattr(defn, 'chart_def', None)
             chart_info = {
-                "title": chart.title,
-                "type": tearsheet_pb2.ChartType.Name(chart.type),
-                "category": chart.category,
+                "title": chart_def.title if chart_def else "?",
+                "type": chart_type_name.replace('_def', ''),
+                "category": chart_def.category if chart_def else "?",
             }
             # Add series count for line charts
-            if chart.type == tearsheet_pb2.ChartType.Lines:
-                chart_info["series_count"] = len(chart.lines.series)
-            elif chart.type == tearsheet_pb2.ChartType.Histogram:
-                chart_info["bin_count"] = len(chart.histogram.bins)
-            elif chart.type == tearsheet_pb2.ChartType.Box:
-                chart_info["box_count"] = len(chart.box.boxes)
+            if chart_type_name == 'numeric_lines_def':
+                chart_info["series_count"] = len(defn.lines)
+            elif chart_type_name == 'lines_def':
+                chart_info["series_count"] = len(defn.lines)
+            elif chart_type_name == 'histogram_def':
+                chart_info["bin_count"] = defn.bins_count
+            elif chart_type_name == 'box_plot_def':
+                chart_info["type"] = "box"
             charts.append(chart_info)
 
         result[cat] = charts

@@ -22,8 +22,8 @@
 set -e
 
 SCRIPT_NAME="dump_metadata"
-DOCS_DIR="/home/adesola/EpochDev/ClaudeCodeResearch/docs"
-BUILD_DIR="/home/adesola/EpochDev/EpochBackend/build"
+DOCS_DIR="$HOME/EpochDev/ClaudeCodeResearch/docs"
+BUILD_DIR="$HOME/EpochDev/EpochBackend/build"
 SERVER_BIN="$BUILD_DIR/bin/epoch_stratifyx_server"
 SERVER_PORT=9002
 SERVER_URL="http://localhost:$SERVER_PORT"
@@ -67,7 +67,7 @@ mkdir -p "$DOCS_DIR"
 
 # Generate grammar and copy EBNF
 GRAMMAR_BIN="$BUILD_DIR/bin/generate_grammars"
-RUNTIME_DIR="/home/adesola/EpochDev/EpochBackend/services/stratifyx/test/integration/test_runner"
+RUNTIME_DIR="$HOME/EpochDev/EpochBackend/services/stratifyx/test/integration/test_runner"
 echo "[$SCRIPT_NAME] Generating grammars..."
 (cd "$RUNTIME_DIR" && "$GRAMMAR_BIN" .) > /dev/null 2>&1
 cp "$RUNTIME_DIR/docs/epochscript.ebnf" "$DOCS_DIR/"
