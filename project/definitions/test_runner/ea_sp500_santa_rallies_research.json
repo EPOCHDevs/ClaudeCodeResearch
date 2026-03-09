@@ -1,0 +1,12 @@
+{
+   "name": "sp500-santa-rallies",
+   "description": "Average S&P 500 daily returns during the Santa Claus Rally: last 5 trading days before year-end and first 2 trading days of the new year.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# Putting Numbers Behind The Santa Claus Rally\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\ndaily_ret = (close - (close >> 1)) / (close >> 1)\n\nyear_num = datetime_extract(component=DatetimeExtractionType.year)(index())\n\n# Detect trading year boundaries (double: 1 or 0)\nis_last_td = 1 if year_num != (year_num << 1) else 0\nis_first_td = 1 if year_num != (year_num >> 1) else 0\n\n# Santa Claus Rally day flags (convert to boolean with > 0)\nd5 = (is_last_td << 4) > 0\nd4 = (is_last_td << 3) > 0\nd3 = (is_last_td << 2) > 0\nd2 = (is_last_td << 1) > 0\nd1 = is_last_td > 0\np1 = is_first_td > 0\np2 = (is_first_td >> 1) > 0\n\n# 7-day cumulative return: computed at p3 (3rd trading day of new year)\n# so it appears AFTER p2 in insertion order\np3 = (is_first_td >> 2) > 0\ncum_7d = ((close >> 1) / (close >> 8) - 1) if p3 else 0.0 / 0.0\n\n# Per-position daily returns\nd5_ret = daily_ret if d5 else 0.0 / 0.0\nd4_ret = daily_ret if d4 else 0.0 / 0.0\nd3_ret = daily_ret if d3 else 0.0 / 0.0\nd2_ret = daily_ret if d2 else 0.0 / 0.0\nd1_ret = daily_ret if d1 else 0.0 / 0.0\np1_ret = daily_ret if p1 else 0.0 / 0.0\np2_ret = daily_ret if p2 else 0.0 / 0.0\n\nxy_bars(\n    title='Putting Numbers Behind The Santa Claus Rally',\n    category='1. Santa Claus Rally',\n    agg=AggregationType.Mean,\n    x_axis_label='Trading Day Before Year-End (-) and After Year-End (+)',\n    y_axis_label='Average Return (%)',\n    y_axis_format=AxisValueFormat.PercentFormat,\n    y_axis_dp=2,\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0.0, color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    series=BarSeriesSchema(series=[\n        BarSeriesSpec(name='-5', color=Color.Blue),\n        BarSeriesSpec(name='-4', color=Color.Blue),\n        BarSeriesSpec(name='-3', color=Color.Blue),\n        BarSeriesSpec(name='-2', color=Color.Blue),\n        BarSeriesSpec(name='-1', color=Color.Blue),\n        BarSeriesSpec(name='+1', color=Color.Blue),\n        BarSeriesSpec(name='+2', color=Color.Blue),\n        BarSeriesSpec(name='Avg Cumulative Return', color=Color.Gray)\n    ])\n)(d5_ret, d4_ret, d3_ret, d2_ret, d1_ret, p1_ret, p2_ret, cum_7d)\n",
+   "global_timeframe": "1D"
+}

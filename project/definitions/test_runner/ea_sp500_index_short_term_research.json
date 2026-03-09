@@ -1,0 +1,12 @@
+{
+   "name": "sp500-index-short-term",
+   "description": "S&P 500 index level over the past two years, highlighting short-term volatility and overall trajectory.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# A Short-Term View Of Stocks\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# Approximate S&P 500 index level (SPY ~ 1/10th of index)\nsp500 = close * 10\n\nbar_ts = index()\n\nxy_lines(\n    title='A Short-Term View Of Stocks',\n    category='1. Short-Term View',\n    y_axis_label='S&P 500 Index',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='S&P 500', color=Color.Blue)\n    ])\n)(bar_ts, sp500)\n",
+   "global_timeframe": "1D"
+}

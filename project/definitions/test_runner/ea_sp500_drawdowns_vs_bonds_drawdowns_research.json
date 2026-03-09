@@ -1,0 +1,12 @@
+{
+   "name": "sp500-drawdowns-vs-bonds-drawdowns",
+   "description": "Compares drawdowns of bonds (AGG) vs stocks (SPY), showing bonds have historically smaller drawdowns.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# Bond vs Stock Historical Drawdowns\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# SPY drawdown\nspy_max = cumulative(agg=AggregationType.Max)(close)\nspy_dd = (close - spy_max) / spy_max\n\n# AGG via reference\nagg_o, agg_h, agg_l, agg_c, agg_v, agg_vw, agg_n = common_reference_stocks(ticker=ReferenceStock.AGG)()\nagg = ffill(agg_c)\nagg_max = cumulative(agg=AggregationType.Max)(agg)\nagg_dd = (agg - agg_max) / agg_max\n\nbar_ts = index()\n\nxy_lines(\n    title='Bond vs Stock Historical Drawdowns',\n    category='1. Drawdown Comparison',\n    area=False,\n    y_axis_label='Maximum Drawdown (%)',\n    y_axis_format=AxisValueFormat.PercentFormat,\n    y_axis_dp=1,\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0, color=Color.Gray, dash_style=DashStyle.Solid, title='0%')\n    ]),\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Bonds (Bloomberg Agg)', color=Color.Sky),\n        LineSeriesSpec(name='Stocks (S&P 500)', color=Color.Blue)\n    ])\n)(bar_ts, agg_dd, spy_dd)\n",
+   "global_timeframe": "1D"
+}

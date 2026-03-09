@@ -1,0 +1,8 @@
+Title: Job Loss in the United States
+Topic: Initial unemployment claims since 1970, reported weekly by the U.S. Department of Labor. This chart tracks the number of individuals who have filed for unemployment insurance for the first time, serving as a key real-time indicator of labor market health and economic stress.
+Question: What do initial unemployment claims tell us about the current state of the U.S. labor market, and how do they compare historically?
+Key Takeaways:
+- During the week ending February 21, 2026, the number of initial unemployment claims was 212,000 (212k), which remains at historically low levels and suggests a stable labor market.
+- The chart shows the massive spike during COVID-19 in early 2020, when initial claims briefly exceeded 1 million per week, dwarfing any prior recession period including the 2008-2009 financial crisis.
+- Rising claims can indicate an increase in layoffs or a weakening labor market, while falling or low claims typically suggest stronger employment conditions and a more stable labor market; current levels indicate continued labor market resilience.
+Source: ExhibitA for Advice

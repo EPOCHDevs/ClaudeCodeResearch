@@ -1,0 +1,8 @@
+Title: Volatility in a 60/40 is Historically Normal in All Years
+Topic: This chart shows the hypothetical annual returns and largest intra-year drawdowns of a 60/40 portfolio (60% S&P 500 and 40% Bloomberg U.S. Aggregate Bond Index) since 1990, demonstrating that mid-year declines are a normal part of investing even in years with positive returns.
+Question: How common are intra-year drawdowns in a balanced 60/40 portfolio, and do they prevent positive annual returns?
+Key Takeaways:
+- Intra-year drawdowns are a normal feature of every year: Even in years where the 60/40 portfolio finished with strong annual returns, it experienced meaningful peak-to-trough declines within the year, reinforcing that temporary pullbacks are part of the investing experience.
+- From 1990 to 2024, the hypothetical 60/40 portfolio delivered an average annual return of 9.3%, but that performance came with volatility, as the average intra-year drawdown over the same period was approximately -9.9%.
+- Current year performance shows the pattern continuing: So far this year, the hypothetical 60/40 portfolio has returned 1.3% with a maximum intra-year drawdown of -2.4%, illustrating that even modest years include periods of decline.
+Source: ExhibitA for Advice

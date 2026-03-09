@@ -1,0 +1,8 @@
+Title: Time Between S&P 500 All Time Highs
+Topic: This chart tracks the number of trading days between each new all-time high in the S&P 500 since 1950, illustrating how long investors have historically waited for markets to reach new peaks.
+Question: How long has it typically taken for the S&P 500 to recover and set a new all-time high after the previous one?
+Key Takeaways:
+- Markets have not hit new highs every day: Since 1950, the S&P 500 has experienced several periods where it went multiple years without reaching a new all-time high, including the mid-1970s, early 2000s, and post-2007.
+- Recovery periods have varied in length: Following the peaks in 2000 and 2007, it took over 1,500 trading days (roughly six years) for the index to reach new highs again, and such long gaps have occurred more than once.
+- Setting expectations supports long-term thinking: Understanding that new highs may not occur regularly can help investors stay focused on long-term goals, especially during prolonged market recoveries.
+Source: ExhibitA for Advice

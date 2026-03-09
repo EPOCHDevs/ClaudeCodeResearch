@@ -1,0 +1,41 @@
+{
+   "name": "When Margins Are Elevated, How Often Do They Persist?",
+   "description": "Cross-sectional margin sustainability study across 30 mega-cap S&P 500 stocks. Computes operating margin z-scores vs each stock's own 1Y history, tracks quarter-over-quarter margin changes, and calculates the probability that elevated margins (z>1) decline in the next quarter. Backed by Fama & French (1999) and Canarella et al. (2013) findings on margin mean reversion.",
+   "data": {
+      "assets": [
+         "AAPL-Stocks",
+         "MSFT-Stocks",
+         "NVDA-Stocks",
+         "GOOGL-Stocks",
+         "AMZN-Stocks",
+         "META-Stocks",
+         "CRM-Stocks",
+         "ADBE-Stocks",
+         "UNH-Stocks",
+         "LLY-Stocks",
+         "JNJ-Stocks",
+         "ABBV-Stocks",
+         "MRK-Stocks",
+         "PFE-Stocks",
+         "JPM-Stocks",
+         "BAC-Stocks",
+         "GS-Stocks",
+         "V-Stocks",
+         "MA-Stocks",
+         "WMT-Stocks",
+         "COST-Stocks",
+         "HD-Stocks",
+         "PG-Stocks",
+         "KO-Stocks",
+         "PEP-Stocks",
+         "XOM-Stocks",
+         "CVX-Stocks",
+         "CAT-Stocks",
+         "HON-Stocks",
+         "AVGO-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# WHEN MARGINS ARE ELEVATED, HOW OFTEN DO THEY PERSIST?\n# =============================================================================\n# Cross-sectional margin sustainability across 30 mega-cap S&P 500 stocks.\n# Tests academic finding that elevated margins mean-revert (Fama & French 1999).\n#\n# Charts:\n#   1. cs_cards — P(Decline | Elevated) hero card\n#   2. cs_bars — P(Decline) ranked by stock\n#   3. cs_summary_table — Sustainability Dashboard (30 stocks)\n# =============================================================================\n\nsrc = market_data_source(timeframe=1D)()\n\n# --- Fundamental Data ---\ninc_data = income_statement(period=ReportingPeriod.trailing_twelve_months)()\nrevenue = ffill(inc_data.revenue)\noperating_income = ffill(inc_data.operating_income)\n\n# Operating margin (TTM)\nop_margin = finance_ratio(ratio_type=FinanceRatioType.operating_margin, period=ReportingPeriod.trailing_twelve_months)(\n    operating_income=operating_income, revenue=revenue\n).value\n\n# 1Y average margin (reference level)\nmargin_avg = sma(period=252)(op_margin)\n\n# Margin z-score vs own 1Y history\nmargin_std = stddev(period=252)(op_margin)\nmargin_z = where(is_valid(margin_std) and margin_std > 0, (op_margin - margin_avg) / margin_std)\n\n# QoQ margin change (63 bars ≈ 1 quarter)\nmargin_prev = op_margin >> 63\nmargin_change = op_margin - margin_prev\n\n# Decline detection: margin fell vs 1 quarter ago\ndeclined = 1.0 if is_valid(margin_prev) and op_margin < margin_prev else 0.0\n\n# Elevated detection: z-score was > 1.0 one quarter ago\nlagged_z = margin_z >> 63\nwas_elevated = 1.0 if is_valid(lagged_z) and lagged_z > 1.0 else 0.0\n\n# Elevated AND declined\nelevated_declined = 1.0 if was_elevated > 0.5 and declined > 0.5 else 0.0\n\n# Running probability: P(decline | was elevated)\ncum_elevated = cumulative(agg=AggregationType.Sum)(was_elevated)\ncum_elev_declined = cumulative(agg=AggregationType.Sum)(elevated_declined)\nprob_decline = cum_elev_declined / cum_elevated if cum_elevated > 0 else 0.0\n\n\n# =============================================================================\n# REPORTS\n# =============================================================================\n\n# --- 1. Card: The punchline ---\nsummary_table(\n    layout=SummaryTableLayout(\n        title='Margin Sustainability',\n        row_size=1,\n        col_size=1,\n        row_headers=['Margin Sustainability'],\n        col_headers=['P(Decline | Elevated)'],\n        cells=[\n            ColumnSpec(grid_row=0, grid_col=0, grid_agg=AggregationType.Last, type=CardRenderType.PercentFormat, dp=1)\n        ]\n    ),\n    category='1. Sustainability'\n)\n(prob_decline)\n\n# --- 2. Bar Chart: Which stocks revert most? ---\ncs_bars(\n    title='Whose Elevated Margins Revert Most Often?',\n    category='1. Sustainability',\n    agg=AggregationType.Last,\n    max_assets=30,\n    data_labels=True,\n    y_axis_label='P(Decline | Elevated)',\n    y_axis_format=AxisValueFormat.PercentFormat,\n    y_axis_dp=1,\n    colors=[Color.Blue]\n)(prob_decline)\n\n# --- 3. Summary Table: Full sustainability dashboard ---\ncs_summary_table(\n    title='Margin Sustainability Dashboard',\n    category='2. Detail',\n    agg=AggregationType.Last,\n    max_assets=30,\n    schema=TableReportSchema(columns=[\n        ColumnSpec(title='Op Margin (%)', type=CardRenderType.PercentFormat, dp=1),\n        ColumnSpec(title='1Y Avg (%)', type=CardRenderType.PercentFormat, dp=1),\n        ColumnSpec(title='Z-Score', type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(title='QoQ Δ (pp)', type=CardRenderType.PercentFormat, dp=1),\n        ColumnSpec(title='P(Decline)', type=CardRenderType.PercentFormat, dp=1)\n    ])\n)(op_margin, margin_avg, margin_z, margin_change, prob_decline)\n",
+   "global_timeframe": "1D"
+}

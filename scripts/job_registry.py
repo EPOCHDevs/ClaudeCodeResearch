@@ -103,7 +103,10 @@ def build_command(definition: dict, params: dict) -> str:
     """Build the /run-job-data slash command string."""
     path = definition["path"]
     if definition["job_type"] == "campaign":
-        return f'/run-job-data "{path}" --cash {params.get("cash", 100000)}'
+        cmd = f'/run-job-data "{path}" --cash {params.get("cash", 100000)}'
+        if "start" in params:
+            cmd += f' --start {params["start"]} --end {params["end"]}'
+        return cmd
     else:
         return f'/run-job-data "{path}" --start {params["start"]} --end {params["end"]}'
 
@@ -118,6 +121,10 @@ def build_shell_command(definition: dict, params: dict, asan: bool = False) -> l
 
     if definition["job_type"] == "campaign":
         cmd.extend([def_path, "--cash", str(params.get("cash", 100000))])
+        if "start" in params:
+            cmd.extend(["--start", params["start"]])
+        if "end" in params:
+            cmd.extend(["--end", params["end"]])
     else:
         cmd.extend([def_path, "--start", params["start"], "--end", params["end"]])
 

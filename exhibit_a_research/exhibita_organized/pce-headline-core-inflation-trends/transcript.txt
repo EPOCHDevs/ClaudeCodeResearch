@@ -1,0 +1,8 @@
+Title: Trends in Consumption
+Topic: This chart tracks the year-over-year change in Headline vs Core Personal Consumption Expenditures (PCE) Price Index since 1960, which is the Federal Reserve's preferred measure of inflation tracking average changes in prices of goods and services consumed by households.
+Question: What do the headline and core PCE inflation measures indicate about current consumer-level inflationary pressures?
+Key Takeaways:
+- As of December 2025, Headline PCE year-over-year was 2.9%, reflecting the overall change in prices of goods and services consumed by households, while Core PCE (excluding food and energy) was 3.0%.
+- The PCE inflation measure experienced a sharp spike in 2021-2022, echoing the CPI trend, but has since declined substantially though it remains above the Fed's 2% target.
+- The Federal Reserve and other policymakers closely monitor PCE data to understand inflationary pressure at the consumer level, making it a key input for interest rate decisions and monetary policy guidance.
+Source: ExhibitA for Advice

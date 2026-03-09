@@ -1592,6 +1592,7 @@ Every visualization decision should serve the user's objective:
 3. **Missing context** - Numbers without comparison points are meaningless
 4. **Poor comparison** - Shifting baselines make trends hard to follow
 5. **Decoration over data** - Fancy visuals that obscure insights
+6. **reference_futures without continuation** - `reference_futures(ticker="ZC")` returns raw contract data with NO rollover logic — a different random contract each bar. Always pipe through `futures_continuation()` before using in calculations. Without it, ratios/spreads/z-scores will be garbage (prices jump between ZCU23, ZCN24, ZCZ26 etc. on consecutive bars). Same applies to any raw futures DataSource.
 
 ## Epoch-Specific Considerations
 

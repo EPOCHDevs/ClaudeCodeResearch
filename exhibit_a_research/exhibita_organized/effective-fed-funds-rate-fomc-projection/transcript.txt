@@ -1,0 +1,8 @@
+Title: Federal Funds Rate and FOMC Projection
+Topic: This chart shows the Effective Federal Funds Rate (actual) alongside the FOMC Summary of Economic Projections (median expected) since 2006, illustrating the Fed's key interest rate tool and its projected path forward.
+Question: Where is the federal funds rate currently, and what does the FOMC project for future rate levels?
+Key Takeaways:
+- The Effective Federal Funds Rate as of February 2026 was 3.64%, and the FOMC's median expectation from their most recent Summary of Economic Projections was 3.10% by the end of December 2028.
+- The chart clearly shows the dramatic rate hiking cycle from near-zero in 2022 to above 5% by 2023, followed by the beginning of rate cuts, reflecting the Fed's response to the post-pandemic inflation surge and subsequent normalization.
+- The FOMC projection line extending into 2028 indicates the Fed expects continued gradual rate reductions ahead, though actual results may vary substantially from projections based on evolving economic conditions.
+Source: ExhibitA for Advice

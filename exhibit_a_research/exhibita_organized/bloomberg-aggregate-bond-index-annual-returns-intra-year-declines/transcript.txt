@@ -1,0 +1,8 @@
+Title: Volatility in Bonds is Historically Normal In All Years
+Topic: This chart shows the U.S. Bloomberg Aggregate Bond Index annual returns (bars) alongside the largest intra-year drawdowns (diamonds) from 1990 to 2025, demonstrating that bond volatility is a normal feature even in years with positive annual returns.
+Question: How volatile are bonds within a given year, and do intra-year drawdowns in bonds typically recover by year-end?
+Key Takeaways:
+- From 1990 to 2025, the U.S. Bloomberg Aggregate Bond Index recorded an average annual return of 5.21%, but experienced an average intra-year drawdown of -3.53%, showing that temporary declines are normal even in a generally stable asset class.
+- Even in years with positive annual returns, bonds experienced meaningful intra-year drawdowns, illustrating that short-term volatility does not preclude positive full-year outcomes.
+- The current year shows the Bloomberg Aggregate Bond Index has experienced a year-to-date gain alongside an intra-year drawdown of approximately -1%, consistent with historical norms.
+Source: ExhibitA for Advice

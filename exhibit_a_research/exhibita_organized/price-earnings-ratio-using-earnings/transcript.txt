@@ -1,0 +1,8 @@
+Title: A Look at Valuations
+Topic: This chart displays the trailing price-to-earnings (P/E) ratio using actual earnings over the past 12 months for the S&P 500, S&P 400, and S&P 600 from 1999 through early 2026, providing a historical perspective on equity market valuations across market capitalizations.
+Question: How do current trailing P/E valuations compare across large-cap, mid-cap, and small-cap indices, and where do they stand relative to historical levels?
+Key Takeaways:
+- As of February 27, 2026, the S&P 500 (large cap) trades at a trailing P/E of 24.6x, significantly above the S&P 400 (mid cap) at 19.7x and the S&P 600 (small cap) at 17.0x, indicating a large-cap valuation premium.
+- The S&P 500's current trailing P/E of 24.6x is elevated relative to its historical range over the past 25 years, suggesting that large-cap stocks are priced for continued strong earnings growth.
+- Small-cap and mid-cap valuations remain more moderate and closer to their historical averages, potentially offering more attractive entry points for valuation-conscious investors.
+Source: ExhibitA for Advice

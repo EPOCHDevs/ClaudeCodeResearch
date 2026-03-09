@@ -1,0 +1,8 @@
+Title: A Manual for Bear Markets
+Topic: This chart presents S&P 500 returns during all bear markets since 1949 (defined as declines of 20% or more after a prior gain of 20% or more), along with the average decline across all bear markets.
+Question: How severe have past bear markets been, and what is the average decline investors should expect?
+Key Takeaways:
+- Bear market declines since 1949 have ranged from -22% to -57%, with the average return across all bear markets being approximately -35%, providing a historical reference for potential downside risk.
+- The most severe bear markets occurred in 1973 (-48%), 2000 (-49%), and 2007 (-57%), while the mildest were approximately -22% in 1956 and 2022 (-26%).
+- The data from previous bear markets serves as a reminder of the potential for significant downside risk and volatility, reinforcing the importance of staying disciplined and adhering to a long-term investment strategy.
+Source: ExhibitA for Advice

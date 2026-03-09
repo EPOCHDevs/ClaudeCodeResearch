@@ -1,0 +1,8 @@
+Title: Major U.S. Index Performance In 2026
+Topic: This bar chart shows the year-to-date total return of the S&P 500, Dow Jones Industrial Average, and NASDAQ Composite as of late February 2026, comparing early-year performance across the three indices.
+Question: What are the year-to-date returns for the major U.S. stock indices in 2026, and how do they compare?
+Key Takeaways:
+- The Dow Jones Industrial Average is the only index with a meaningfully positive YTD return at 2.1%, while the S&P 500 is nearly flat at 0.7%.
+- The NASDAQ Composite is the clear laggard, down approximately 2.4% YTD, suggesting a rotation away from growth and tech-heavy stocks.
+- The divergence between the Dow (value-oriented) and NASDAQ (growth-oriented) signals a potential shift in market leadership compared to 2025.
+Source: ExhibitA for Advice

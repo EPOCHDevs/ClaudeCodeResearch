@@ -4,6 +4,40 @@ Quantitative research and strategy development workspace for Epoch.
 
 ---
 
+## Exhibit A Quality Standard
+
+All research definitions must follow the Exhibit A (EA) chart quality standard. Before writing or reviewing any definition, consult these references:
+
+| Document | Path | Purpose |
+|----------|------|---------|
+| **Style Guide** | `exhibit_a_research/EXHIBIT_A_STYLE_GUIDE.md` | Chart type vocabulary, color palette, EpochScript patterns, design principles |
+| **Antipatterns** | `exhibit_a_research/ANTIPATTERNS.md` | 11 documented mistakes with BAD/GOOD examples and EA fixes |
+
+### Core Principles (from EA)
+
+1. **One chart, one insight** — every definition answers ONE question
+2. **Blue monochromatic palette** — `Color.Blue` primary, `Color.Gray` secondary, 3 colors max
+3. **Annotation-driven** — `data_labels=True` on all bar charts, reference lines for context
+4. **Question-framed titles** — titles answer "so what?", not describe the data type
+5. **2-3 charts max per definition** — bar (snapshot) + line (timing) is the ideal pair
+6. **Cards must earn their space** — only add cards that show information no chart already displays
+
+### EA Quality Checklist
+
+Before submitting any definition:
+
+- [ ] Can you state the ONE question this answers?
+- [ ] 3 charts or fewer?
+- [ ] `Color.Blue` is primary on every chart?
+- [ ] `data_labels=True` on every bar chart?
+- [ ] Reference lines on every chart (zero line, average, median)?
+- [ ] Title hints at the answer, not the data type?
+- [ ] No redundancy between charts/cards?
+- [ ] 3 series max per chart?
+- [ ] Cards show something charts don't already display?
+
+---
+
 ## Research Workflow
 
 Research sources are cataloged in `research.csv` and stored in `report_notes/`. Two skills handle the workflow:

@@ -1,0 +1,8 @@
+Title: Putting Numbers Behind The Santa Claus Rally
+Topic: This chart shows the average S&P 500 daily returns during the Santa Claus Rally period -- the five trading days before year-end and the first two trading days of the new year -- since 1950, along with the average cumulative return across the full seven-day window.
+Question: Is the Santa Claus Rally a real seasonal pattern, and how significant are the returns during this period?
+Key Takeaways:
+- Since 1950, the S&P 500 has posted positive average daily returns across each of the seven trading days in the Santa Claus Rally window, with individual daily averages ranging from approximately 0.08% to 0.31%, suggesting a consistent seasonal tailwind during this period.
+- The average cumulative return across all Santa Claus Rally periods since 1950 is approximately +1.27%, a meaningful contribution to annual returns concentrated in just seven trading days.
+- While the historical pattern is informative, it is not predictive; outcomes vary year to year and should not be relied upon as a forecast, as market returns are influenced by many factors beyond the calendar.
+Source: ExhibitA for Advice

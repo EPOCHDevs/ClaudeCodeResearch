@@ -1,0 +1,8 @@
+Title: Continuing Unemployment Claims
+Topic: Continuing claims for unemployment insurance since 1970. This chart tracks the number of individuals who have filed an initial unemployment claim and are still receiving benefits for subsequent weeks, serving as a measure of prolonged unemployment and labor market recovery pace.
+Question: What do continuing unemployment claims indicate about the duration of joblessness and the overall health of the U.S. labor market?
+Key Takeaways:
+- For the week ending February 14, 2026, the number of continuing claims was 1,833,000 (1,833k), which is elevated compared to pre-pandemic lows but well below recessionary peaks.
+- The chart shows the extraordinary spike during COVID-19 when continuing claims surged to nearly 6,000k, far exceeding levels during the 2008-2009 financial crisis and the early 1980s recession.
+- Rising continuing claims may signal prolonged unemployment and a slower labor market recovery, while falling claims indicate improving job prospects and shorter durations of unemployment; current levels suggest the labor market remains relatively healthy but with some softening.
+Source: ExhibitA for Advice

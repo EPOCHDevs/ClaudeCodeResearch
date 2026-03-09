@@ -1,0 +1,8 @@
+Title: Valuations Are a Solid Predictor in the Long-Term
+Topic: This scatter plot charts the S&P 500's forward P/E ratio against its subsequent 10-year forward annualized return since 1990, demonstrating the inverse relationship between starting valuations and long-term equity returns.
+Question: Does the S&P 500's forward P/E ratio reliably predict long-term returns, and what does the current valuation imply for future performance?
+Key Takeaways:
+- There is a clear inverse relationship: higher forward P/E ratios at the time of investment have historically been associated with lower 10-year forward annualized returns, and vice versa.
+- Periods where the forward P/E was below 12x generally produced 10-year annualized returns of 10-18%, while forward P/Es above 20x have historically corresponded to returns closer to 0-6%.
+- With the current S&P 500 forward P/E near 21.5x, the historical data suggests more muted long-term annualized returns over the next decade, reinforcing the importance of valuation awareness for long-term investors.
+Source: ExhibitA for Advice

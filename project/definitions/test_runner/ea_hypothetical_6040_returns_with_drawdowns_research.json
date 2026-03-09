@@ -1,0 +1,10 @@
+{
+   "name": "hypothetical-6040-returns-with-drawdowns",
+   "description": "60/40 portfolio (SPY/AGG) annual returns and intra-year drawdowns by year, showing how diversification dampens volatility.",
+   "data": {
+      "assets": [],
+      "source": "polygon"
+   },
+   "source": "# Volatility in a 60/40 is Historically Normal\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\nclose = ffill(spy_c)\n\nagg_o, agg_h, agg_l, agg_c, agg_v, agg_vw, agg_n = common_reference_stocks(ticker=ReferenceStock.AGG)()\nagg = ffill(agg_c)\n\n# Daily returns\nspy_ret = (close - (close >> 1)) / (close >> 1)\nagg_ret = (agg - (agg >> 1)) / (agg >> 1)\n\n# 60/40 portfolio daily return\nport_ret = spy_ret * 0.6 + agg_ret * 0.4\n\n# Cumulative portfolio value (growth of $1)\ncum_port = cumulative(agg=AggregationType.Sum)(port_ret) + 1\n\nyear_num = datetime_extract(component=DatetimeExtractionType.year)(index())\n\n# YTD return (resets at each year start)\nis_yr1 = year_num != (year_num >> 1)\nport_yr_open = ffill(cum_port if is_yr1 else 0.0 / 0.0)\nport_ytd = cum_port / port_yr_open - 1\n\n# All-time peak drawdown (for intra-year min)\npk_port = cumulative(agg=AggregationType.Max)(cum_port)\ndd_port = (cum_port - pk_port) / pk_port\n\nxy_bars(\n    title='Volatility in a 60/40 is Historically Normal in All Years',\n    category='1. Annual Returns & Drawdowns',\n    agg=AggregationType.Last,\n    y_axis_label='Return / Drawdown',\n    y_axis_format=AxisValueFormat.PercentFormat,\n    y_axis_dp=0,\n    data_labels=True,\n    color_by_value=True,\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0.0, color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    series=BarSeriesSchema(series=[\n        BarSeriesSpec(name='Annual Return', color=Color.Blue)\n    ]),\n    overlay_series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Largest Intra-Year Drawdown', color=Color.Gray, marker=MarkerSymbol.DiamondMarker, agg=AggregationType.Min, data_labels=True)\n    ])\n)(values=port_ytd, label=year_num, overlays=dd_port)\n",
+   "global_timeframe": "1D"
+}

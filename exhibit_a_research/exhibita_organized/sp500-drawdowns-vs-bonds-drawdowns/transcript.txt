@@ -1,0 +1,8 @@
+Title: Bond vs Stock Historical Drawdowns
+Topic: This chart compares the maximum drawdown of the U.S. Bloomberg Aggregate Bond Index versus the S&P 500 since 1990, showing that bond drawdowns have historically been far less severe than stock drawdowns.
+Question: How do the worst drawdowns in bonds compare to the worst drawdowns in stocks over the same time period?
+Key Takeaways:
+- Stock drawdowns in the S&P 500 have been dramatically deeper than bond drawdowns, with stocks experiencing maximum declines exceeding -50% while bond drawdowns have generally stayed above -20%.
+- As of February 27, 2026, the U.S. Bloomberg Aggregate Bond Index is in a -0.5% drawdown compared to the S&P 500's drawdown of -1.4%, illustrating bonds' relative stability.
+- Bonds are often viewed as a lower-volatility asset class and, as part of a diversified portfolio, may help reduce overall portfolio volatility and support long-term risk management goals.
+Source: ExhibitA for Advice

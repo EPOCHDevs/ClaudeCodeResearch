@@ -1,0 +1,8 @@
+Title: Feelings About The U.S. Economy
+Topic: This chart tracks the University of Michigan Consumer Sentiment Index since 1978, a widely followed measure of U.S. consumer confidence reflecting how optimistic or pessimistic consumers feel about the economy, job prospects, and personal finances.
+Question: How do American consumers currently feel about the economy, and how does present sentiment compare to historical levels?
+Key Takeaways:
+- As of January 2026, the Consumer Sentiment Index stood at 56.4, which is well below the long-term historical average and suggests subdued consumer confidence.
+- Consumer sentiment plays a critical role in economic growth as it influences consumer spending, one of the largest drivers of the U.S. economy.
+- The index has experienced significant swings over the decades, with notable lows during recessions (early 1980s, 2008 financial crisis, and 2022), and the current reading remains in a historically depressed range.
+Source: ExhibitA for Advice

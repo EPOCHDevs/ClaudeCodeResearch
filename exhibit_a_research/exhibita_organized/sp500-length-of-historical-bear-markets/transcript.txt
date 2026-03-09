@@ -1,0 +1,8 @@
+Title: Length of Historical Bear Markets
+Topic: This chart shows the length of time (in calendar days) of all S&P 500 bear markets since 1956, illustrating how long each downturn has lasted.
+Question: How long have historical bear markets in the S&P 500 lasted, and what does this tell us about the temporary nature of market downturns?
+Key Takeaways:
+- Bear markets since 1956 have varied significantly in length, ranging from as short as 33 days (2020 COVID crash) to as long as 929 days (2000-2002 dot-com bust), with an average duration of approximately 410 days.
+- Notable bear markets include the 1973-1974 period (630 days), the 1980-1982 period (622 days), and the 2007-2009 financial crisis (517 days), while the most recent bear market in 2022 lasted 282 days.
+- The chart underscores the importance of staying focused on long-term investment goals during bear markets; while they can be unsettling, history shows that they have been temporary and are eventually followed by recoveries.
+Source: ExhibitA for Advice

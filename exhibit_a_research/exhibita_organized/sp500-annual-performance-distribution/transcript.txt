@@ -1,0 +1,8 @@
+Title: Distribution of S&P 500 Annual Returns
+Topic: This chart shows the number of years the S&P 500 has fallen into various annual return buckets since 1928, illustrating the range and frequency distribution of market performance over time.
+Question: How are S&P 500 annual returns distributed across different return ranges, and what is the most common outcome?
+Key Takeaways:
+- The most common annual return bucket for the S&P 500 is between 10% to 20%, occurring 24 times, followed by 20% to 30% with 19 occurrences, showing a strong positive skew.
+- Negative years are less frequent but still meaningful: returns of -10% to 0% occurred 13 times, -20% to -10% occurred 14 times, and losses worse than -30% occurred 5 times combined.
+- The S&P 500 tends to skew toward positive annual returns historically, but investors should be prepared for the mix of good and bad years as part of long-term investing.
+Source: ExhibitA for Advice

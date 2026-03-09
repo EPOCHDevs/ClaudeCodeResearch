@@ -1,0 +1,8 @@
+Title: # of 5% Pullbacks by Different Stock / Bond Splits
+Topic: This chart compares the number of 5% pullbacks experienced by portfolios with different stock-to-bond allocations (S&P 500 vs. U.S. Bloomberg Agg) since 1990, showing how asset allocation affects drawdown frequency.
+Question: How does the stock-to-bond allocation in a portfolio affect the frequency of 5% pullbacks?
+Key Takeaways:
+- Portfolios with higher stock allocations (e.g., 100/0 or 90/10 stock/bond) have historically experienced significantly more 5% pullbacks (42 and 38, respectively) than bond-heavy portfolios (e.g., 10/90 with only 4).
+- There is a clear, roughly linear decline in pullback frequency as the bond allocation increases, highlighting the risk-dampening effect of bonds.
+- Understanding the trade-off between risk and reward is crucial for investors when deciding on the appropriate mix of stocks and bonds in their portfolio.
+Source: ExhibitA for Advice

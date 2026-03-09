@@ -1,0 +1,8 @@
+Title: Actual Earnings Trends
+Topic: This chart tracks the trailing 12-month actual earnings per share (EPS) for the S&P 500 (large cap), S&P 400 (mid cap), and S&P 600 (small cap) from 2000 through early 2026, illustrating long-term earnings growth across market capitalizations.
+Question: How have actual earnings per share evolved across large-cap, mid-cap, and small-cap indices over the past two decades?
+Key Takeaways:
+- The S&P 500 (large cap) has dramatically outpaced mid-cap and small-cap earnings growth, reaching $280.30 in trailing 12-month EPS as of February 2026, compared to $183.01 for the S&P 400 and $88.98 for the S&P 600.
+- Large-cap earnings have shown an accelerating growth trajectory since approximately 2020, widening the gap versus mid-cap and small-cap indices, which reflects the outsized earnings power of mega-cap technology companies.
+- All three indices experienced notable earnings declines during the 2008-2009 financial crisis and the 2020 pandemic, but large caps recovered faster and more strongly each time.
+Source: ExhibitA for Advice

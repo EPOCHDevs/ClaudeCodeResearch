@@ -1,0 +1,10 @@
+{
+   "name": "major-us-index-performance-this-year",
+   "description": "Year-to-date performance comparison of S&P 500 (SPY), Dow Jones (DIA), and NASDAQ-100 (QQQ).",
+   "data": {
+      "assets": [],
+      "source": "polygon"
+   },
+   "source": "# Major U.S. Index Performance\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\nclose = ffill(spy_c)\n\n# Load reference indices\ndia_o, dia_h, dia_l, dia_c, dia_v, dia_vw, dia_n = common_reference_stocks(ticker=ReferenceStock.DIA)()\nqqq_o, qqq_h, qqq_l, qqq_c, qqq_v, qqq_vw, qqq_n = common_reference_stocks(ticker=ReferenceStock.QQQ)()\ndia = ffill(dia_c)\nqqq = ffill(qqq_c)\n\n# Get first bar price using cumulative First\nspy_first = cumulative(agg=AggregationType.First)(close)\ndia_first = cumulative(agg=AggregationType.First)(dia)\nqqq_first = cumulative(agg=AggregationType.First)(qqq)\n\nspy_ret = (close - spy_first) / spy_first\ndia_ret = (dia - dia_first) / dia_first\nqqq_ret = (qqq - qqq_first) / qqq_first\n\nxy_bars(\n    title='Major U.S. Index Performance',\n    category='1. Index Performance',\n    agg=AggregationType.Last,\n    y_axis_label='Return',\n    y_axis_format=AxisValueFormat.PercentFormat,\n    data_labels=True,\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0.0, color=Color.Gray, dash_style=DashStyle.Dash, title='0%')\n    ]),\n    series=BarSeriesSchema(series=[\n        BarSeriesSpec(name='S&P 500 (SPY)', color=Color.Blue),\n        BarSeriesSpec(name='Dow Jones (DIA)', color=Color.Blue),\n        BarSeriesSpec(name='NASDAQ-100 (QQQ)', color=Color.Blue)\n    ])\n)(spy_ret, dia_ret, qqq_ret)\n",
+   "global_timeframe": "1D"
+}

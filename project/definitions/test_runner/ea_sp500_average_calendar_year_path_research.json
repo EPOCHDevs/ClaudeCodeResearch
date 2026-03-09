@@ -1,0 +1,12 @@
+{
+   "name": "sp500-average-calendar-year-path",
+   "description": "S&P 500 2026 YTD path vs historical average calendar-year path since 2004.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# Average Calendar-Year Path of the S&P 500\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\nyear_num = datetime_extract(component=DatetimeExtractionType.year)(index())\nday_of_year = datetime_extract(component=DatetimeExtractionType.day_of_year)(index())\n\n# Year-open price via forward fill\nis_yr1 = year_num != (year_num >> 1)\nyr_open = ffill(close if is_yr1 else 0.0 / 0.0)\nytd = close / yr_open - 1\n\nis_c = year_num == 2026\nc_ytd = where(is_c, ytd)\nh_ytd = where(not is_c and year_num >= 2004, ytd)\n\nxy_lines(\n    title='Average Calendar-Year Path of the S&P 500',\n    category='1. Calendar Year Path',\n    y_axis_label='2026 S&P 500 Path vs 2004-2025 Average S&P 500 Path',\n    y_axis_format=AxisValueFormat.PercentFormat,\n    y_axis_dp=1,\n    x_category_type=CategoryAxisType.DayOfYear,\n    smooth=True,\n    data_labels=False,\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0.0, color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='2026 S&P 500 Path', color=Color.Blue, agg=AggregationType.Last),\n        LineSeriesSpec(name='Average S&P 500 Path', color=Color.Gray, agg=AggregationType.Mean)\n    ])\n)(day_of_year, c_ytd, h_ytd)",
+   "global_timeframe": "1D"
+}

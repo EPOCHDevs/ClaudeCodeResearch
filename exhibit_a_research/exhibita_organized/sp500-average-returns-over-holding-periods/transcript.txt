@@ -1,0 +1,8 @@
+Title: Gains Increase with Holding Period
+Topic: This chart shows the average S&P 500 returns over various rolling holding periods since 1950, from 1 day to 20 years. It demonstrates that longer holding periods have historically been associated with significantly higher average returns.
+Question: How do average S&P 500 returns change as the investment holding period increases?
+Key Takeaways:
+- Average returns increase dramatically with longer holding periods: 1 day (0.04%), 1 week (0.17%), 1 month (0.73%), 6 months (4.42%), 1 year (8.97%), 5 years (50.29%), 10 years (116.51%), and 20 years (322.66%).
+- The length of time an investment is held appears to be a critical factor in improving performance outcomes, with the data showing a clear pattern of escalating returns over extended timeframes.
+- This data suggests that time in the market is a fundamental component of investment decision-making, reinforcing the value of patience and long-term portfolio planning over short-term trading.
+Source: ExhibitA for Advice

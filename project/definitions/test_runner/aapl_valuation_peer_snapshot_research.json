@@ -1,0 +1,17 @@
+{
+  "name": "Mega-Cap Tech Valuation Snapshot: Who's Cheapest?",
+  "description": "Cross-sectional bar charts of P/E, P/S, EV/EBITDA, P/B across mega-cap tech peers with summary table and time series. Answers: which mega-cap tech stock is cheapest on each valuation metric today? Run with --start 2019-01-01.",
+  "data": {
+    "assets": [
+      "AAPL-Stocks",
+      "MSFT-Stocks",
+      "GOOGL-Stocks",
+      "AMZN-Stocks",
+      "META-Stocks",
+      "NVDA-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# MEGA-CAP TECH VALUATION SNAPSHOT: WHO'S CHEAPEST?\n# =============================================================================\n# Question: Which mega-cap tech stock is cheapest on each valuation metric today?\n#\n# Charts:\n#   1. cs_bars — Grouped bars: P/E, P/S, EV/EBITDA per asset\n#\n# Note: P/B excluded — book value is unreliable for tech (intangibles),\n#   and mixing quarterly balance_sheet P/B with TTM income_statement\n#   ratios in cs_summary_table triggers a data pipeline bug.\n# =============================================================================\n\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# Fundamental data\ninc_data = income_statement(period=ReportingPeriod.trailing_twelve_months)()\nbs_data = balance_sheet(period=ReportingPeriod.quarterly)()\n\n# Forward-fill to daily frequency\neps = ffill(inc_data.basic_eps)\nshares = ffill(inc_data.basic_shares)\nrevenue = ffill(inc_data.revenue)\nebitda_val = ffill(inc_data.ebitda)\nlt_debt = ffill(bs_data.lt_debt)\ncash_val = ffill(bs_data.cash)\n\n# Valuation multiples\npe = finance_ratio(ratio_type=FinanceRatioType.price_to_earnings, period=ReportingPeriod.trailing_twelve_months)(\n    c=close, basic_eps=eps, basic_shares=shares\n).value\n\nps = finance_ratio(ratio_type=FinanceRatioType.price_to_sales, period=ReportingPeriod.trailing_twelve_months)(\n    c=close, revenue=revenue, basic_shares=shares\n).value\n\nev_ebitda = finance_ratio(ratio_type=FinanceRatioType.ev_to_ebitda, period=ReportingPeriod.trailing_twelve_months)(\n    c=close, basic_shares=shares, ebitda=ebitda_val, lt_debt=lt_debt, cash=cash_val\n).value\n\n# Bar-safe values (0.0 when NaN — asset may lack sufficient fundamental data)\npe_bar = pe if is_valid(pe) else 0.0\nps_bar = ps if is_valid(ps) else 0.0\neve_bar = ev_ebitda if is_valid(ev_ebitda) else 0.0\n\n# =============================================================================\n# REPORTS\n# =============================================================================\n\ncs_bars(\n    title='Valuation Multiples at a Glance',\n    category='Valuation Snapshot',\n    agg=AggregationType.Last,\n    data_labels=True,\n    y_axis_label='Multiple',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=1,\n    colors=[Color.Blue, Color.Slate, Color.Cyan],\n    series_names=['P/E', 'P/S', 'EV/EBITDA']\n)(pe_bar, ps_bar, eve_bar)\n",
+  "global_timeframe": "1D"
+}

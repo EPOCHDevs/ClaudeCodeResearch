@@ -1,0 +1,8 @@
+Title: Price Has Bottomed Before Earnings in Bear Markets
+Topic: This chart overlays actual trailing 12-month earnings per share for the S&P 500 with S&P 500 price bottoms during bear markets since 2005, showing that stock prices typically recover before earnings hit their lows.
+Question: Do S&P 500 prices bottom before or after corporate earnings bottom during bear markets?
+Key Takeaways:
+- Waiting for the dust to settle has been a painful strategy in past bear markets: While it may feel safer to wait until things look better, history shows that the market often recovers while fundamentals still appear weak, as prices anticipate recovery before earnings reflect it.
+- In 2009, 2020, and 2022, S&P 500 price bottomed months before earnings hit their lows: The market anticipates recovery and begins to rebound even as reported earnings continue to fall, meaning waiting for earnings to catch up has historically meant buying back in at much higher levels.
+- Many investors sitting on the sidelines waiting for the economy or earnings to look better before getting back in may miss the recovery: History suggests that by the time things feel safe, markets have already moved, with trailing 12-month earnings reaching $280.30 at the latest data point.
+Source: ExhibitA for Advice

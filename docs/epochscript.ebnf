@@ -85,8 +85,8 @@ comment         = "#" [^\n]* ;
 
 builtin_func    = "abs" | "acos" | "asin" | "atan" | "ceil" | "cos" | "cosh" | "exp" | 
                   "floor" | "ln" | "log10" | "round" | "sin" | "sinh" | "sqrt" | "tan" | 
-                  "tanh" | "todeg" | "torad" | "trunc" | "ffill" | "ffill_day" | "crossover" | "crossunder" | 
-                  "crossany" | "coalesce" | "conditional_select" | "where" ;
+                  "tanh" | "todeg" | "torad" | "trunc" | "ffill" | "ffill_day" | "str" | "crossover" | 
+                  "crossunder" | "crossany" | "coalesce" | "conditional_select" | "where" ;
 
 # ===========================================================================
 # QUICK REFERENCE

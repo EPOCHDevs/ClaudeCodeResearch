@@ -1,0 +1,12 @@
+{
+  "name": "Do Stocks and Bonds Still Diversify Each Other?",
+  "description": "Rolling 2-year correlation between SPY and TLT weekly returns. Negative = diversification working, positive = moving together. Area fill makes regime shifts instantly visible.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "global_timeframe": "1W",
+  "source": "# =============================================================================\n# DO STOCKS AND BONDS STILL DIVERSIFY EACH OTHER?\n# =============================================================================\n# 2-year rolling correlation between SPY and TLT weekly returns\n# Below zero = diversifying (blue), above zero = moving together (gray)\n# =============================================================================\n\nspy_src = market_data_source()()\nclose_spy = spy_src.c\n\ntlt_src = reference_stocks(ticker='TLT')()\nclose_tlt = tlt_src.c\n\n# Weekly returns\nret_spy = returns(period=1)(close_spy)\nret_tlt = returns(period=1)(close_tlt)\n\n# 2-year rolling correlation (104 weeks)\nsbc = rolling_corr(window=104, window_type=WindowType.rolling, method=CorrelationMethod.pearson)(x=ret_spy, y=ret_tlt)\n\n# Split into positive and negative for area fill\ncorr_positive = where(sbc >= 0, sbc)\ncorr_negative = where(sbc < 0, sbc)\n\nidx = index()\n\n# =============================================================================\n# REPORTS\n# =============================================================================\n\nxy_lines(\n    title='Do Stocks and Bonds Still Diversify Each Other?',\n    category='Stock-Bond Correlation',\n    y_axis_label='Rolling 2Y Correlation',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=2,\n    area=True,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Moving Together', color=Color.Gray),\n        LineSeriesSpec(name='Diversifying', color=Color.Blue)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0, title='Zero', color=Color.Slate, dash_style=DashStyle.Solid)\n    ])\n)(idx, corr_positive, corr_negative)\n"
+}

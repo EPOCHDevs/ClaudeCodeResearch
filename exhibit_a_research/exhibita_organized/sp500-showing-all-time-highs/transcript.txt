@@ -1,0 +1,8 @@
+Title: All Time Highs in the S&P 500 are Common
+Topic: This chart displays the S&P 500 price over time on a logarithmic scale with dots marking when the index reached new all-time highs, demonstrating that new highs are a regular and frequent occurrence.
+Question: How frequently does the S&P 500 reach new all-time highs, and should investors be concerned when the market hits a new peak?
+Key Takeaways:
+- The S&P 500 has consistently achieved new all-time highs throughout its history, with dense clusters of dots appearing across every decade from the 1950s through 2020s (reaching 6,878.88).
+- New all-time highs occur despite inevitable market fluctuations and periodic downturns, showing they are a normal part of long-term market behavior.
+- Reaching an all-time high is not a reason to sell stocks; the consistent occurrence of new highs underscores the importance of maintaining a long-term investment strategy.
+Source: ExhibitA for Advice

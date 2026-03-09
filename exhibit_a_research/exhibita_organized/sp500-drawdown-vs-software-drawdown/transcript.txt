@@ -1,0 +1,8 @@
+Title: Diversification At Work: Software vs The S&P 500
+Topic: This chart compares the maximum drawdown of the Software industry versus the S&P 500 index since 2005, illustrating how concentrated sector exposure can lead to significantly deeper losses compared to a diversified index.
+Question: How do drawdowns in the Software sector compare to drawdowns in the broader S&P 500, and what does this say about diversification?
+Key Takeaways:
+- As of February 27, 2026, the Software industry drawdown was approximately -30.8%, while the S&P 500's drawdown was only about -1.4%, demonstrating a dramatic divergence in risk exposure between a single sector and the broad market.
+- The Software sector has experienced multiple deep drawdowns over the period (exceeding -40% and even approaching -50% during the 2008-2009 financial crisis and other periods), whereas the S&P 500's drawdowns, while significant, have been considerably more contained.
+- This chart illustrates the potential benefits of diversification across multiple sectors and industry groups, as concentrated bets in a single sector can result in much deeper and more prolonged losses than a broad index approach.
+Source: ExhibitA for Advice

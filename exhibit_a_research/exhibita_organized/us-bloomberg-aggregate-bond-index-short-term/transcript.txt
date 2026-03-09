@@ -1,0 +1,8 @@
+Title: A Short-Term View Of Bonds
+Topic: The U.S. Bloomberg Aggregate Bond Index over the short term (past 2 years). This chart tracks the performance of the broad U.S. investment-grade bond market, including government, corporate, and mortgage-backed securities.
+Question: How has the U.S. investment-grade bond market performed over the past two years as measured by the Bloomberg U.S. Aggregate Bond Index?
+Key Takeaways:
+- As of February 27, 2026, the Bloomberg U.S. Aggregate Bond Index is trading at 2,390, reflecting a strong upward trend over the past two years from around 2,050 in early 2024.
+- The bond market has experienced notable fluctuations due to changes in interest rates, inflation expectations, and economic data, but the overall trajectory has been positive as yields have come down from their peaks.
+- The steady climb in the index indicates that bond investors have benefited from both coupon income and price appreciation as the market has increasingly priced in Federal Reserve rate cuts and a favorable environment for fixed income.
+Source: ExhibitA for Advice

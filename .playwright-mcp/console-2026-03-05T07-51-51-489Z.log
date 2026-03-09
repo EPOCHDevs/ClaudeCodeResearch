@@ -1,0 +1,4 @@
+[     105ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://code.highcharts.com/highcharts.js:0
+[     115ms] ReferenceError: Highcharts is not defined
+    at http://localhost:8765/test_grouped_bars.html:15:1
+[     126ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8765/favicon.ico:0

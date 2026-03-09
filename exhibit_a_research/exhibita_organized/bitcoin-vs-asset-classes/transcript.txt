@@ -1,0 +1,8 @@
+Title: Historically, Bitcoin Returns Have Come With Volatility
+Topic: This chart compares the annualized return and average intra-year drawdown of Bitcoin against U.S. Large Cap Stocks, U.S. Core Bonds, and Gold since 2019, highlighting that Bitcoin's strong returns come paired with extreme volatility.
+Question: How does Bitcoin's return and volatility profile compare to traditional asset classes like stocks, bonds, and gold?
+Key Takeaways:
+- Bitcoin has led all compared asset classes with a 20.9% annualized return since 2019, but it has also faced average intra-year declines of more than 50%, far exceeding the drawdowns of stocks, bonds, or gold.
+- The question for investors is not just about returns but whether they can stay invested through that level of volatility: Gold returned 18.9% annualized with a -12.2% average drawdown, while U.S. Large Cap Stocks returned 14.4% with a -15.8% drawdown, and U.S. Core Bonds returned 2.0% with smaller drawdowns.
+- This comparison reinforces the importance of aligning investments with an investor's risk tolerance, time horizon, and ability to withstand sharp market moves.
+Source: ExhibitA for Advice

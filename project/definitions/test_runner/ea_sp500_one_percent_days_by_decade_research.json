@@ -1,0 +1,10 @@
+{
+   "name": "sp500-one-percent-days-by-decade",
+   "description": "Total number of 1% up and 1% down days in the S&P 500 by decade, showing the frequency of volatile trading days.",
+   "data": {
+      "assets": [],
+      "source": "polygon"
+   },
+   "source": "# A Decade's Worth of Volatility In The 2020s\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\nclose = ffill(spy_c)\n\n# Daily return (guard first bar NaN)\nprev_close = close >> 1\nhas_prev = is_valid(prev_close)\ndaily_ret = (close - prev_close) / prev_close if has_prev else 0.0\n\n# Flag 1%+ moves (up or down combined)\nis_1pct_day = 1.0 if (daily_ret > 0.01 or daily_ret < -0.01) else 0.0\n\n# Compute decade bucket: year - (year mod 10)\nyear_num = datetime_extract(component=DatetimeExtractionType.year)(index())\ndecade = year_num - (year_num % 10.0)\n\nxy_bars(\n    title='Total # of 1% Up and 1% Down Days in the S&P 500 by Decade',\n    category='1. Volatility by Decade',\n    agg=AggregationType.Sum,\n    y_axis_label='Total # of 1% Up and 1% Down Days in the S&P 500',\n    y_axis_format=AxisValueFormat.IntegerFormat,\n    x_axis_label='Decades',\n    x_category_type=CategoryAxisType.Exact,\n    data_labels=True,\n    series=BarSeriesSchema(series=[\n        BarSeriesSpec(name='1%+ Days', color=Color.Blue)\n    ])\n)(is_1pct_day, label=decade)\n",
+   "global_timeframe": "1D"
+}

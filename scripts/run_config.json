@@ -1,22 +1,238 @@
 {
   "defaults": {
     "research": {
-      "1D":   {"start": "2020-01-01", "end": "2024-12-31"},
-      "1W":   {"start": "2010-01-01", "end": "2024-12-31"},
-      "5Min": {"start": "2024-01-01", "end": "2025-01-01"},
-      "1Min": {"start": "2024-06-01", "end": "2025-01-01"}
+      "1D": {
+        "start": "2020-01-01",
+        "end": "2024-12-31"
+      },
+      "1W": {
+        "start": "2010-01-01",
+        "end": "2024-12-31"
+      },
+      "5Min": {
+        "start": "2024-01-01",
+        "end": "2025-01-01"
+      },
+      "1Min": {
+        "start": "2024-06-01",
+        "end": "2025-01-01"
+      }
     },
     "campaign": {
       "cash": 100000
     }
   },
   "overrides": {
-    "rs007_fx_monthly_seasonality_research":    {"start": "2005-01-01", "end": "2024-12-31"},
-    "rs010_eurusd_monthly_seasonality_research": {"start": "2005-01-01", "end": "2024-12-31"},
-    "eng608_market_sentiment_dashboard_research": {"start": "2023-01-01", "end": "2024-12-31"},
-    "short_interest_effect_strategy":            {"cash": 100000},
-    "ct_session_structure_research":             {"start": "2022-01-01", "end": "2025-01-01"},
-    "ct_opening_level_touch_research":           {"start": "2022-01-01", "end": "2025-01-01"},
-    "ct_ib_close_analysis_research":             {"start": "2022-01-01", "end": "2025-01-01"}
+    "rs007_fx_monthly_seasonality_research": {
+      "start": "2005-01-01",
+      "end": "2024-12-31"
+    },
+    "rs010_eurusd_monthly_seasonality_research": {
+      "start": "2005-01-01",
+      "end": "2024-12-31"
+    },
+    "eng608_market_sentiment_dashboard_research": {
+      "start": "2023-01-01",
+      "end": "2024-12-31"
+    },
+    "short_interest_effect_strategy": {
+      "cash": 100000,
+      "start": "2023-01-01",
+      "end": "2024-12-31"
+    },
+    "post_earnings_drift_strategy": {
+      "cash": 100000,
+      "start": "2023-01-01",
+      "end": "2024-12-31"
+    },
+    "fed_model_strategy": {
+      "cash": 100000,
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "ct_session_structure_research": {
+      "start": "2022-01-01",
+      "end": "2025-01-01"
+    },
+    "ct_opening_level_touch_research": {
+      "start": "2022-01-01",
+      "end": "2025-01-01"
+    },
+    "ct_ib_close_analysis_research": {
+      "start": "2022-01-01",
+      "end": "2025-01-01"
+    },
+    "ea_sp500_with_recessions_research": {
+      "start": "1990-01-01",
+      "end": "2025-12-31"
+    },
+    "ea_sp500_price_during_presidential_terms_research": {
+      "start": "1990-01-01",
+      "end": "2026-02-28"
+    },
+    "ea_sp500_since_1990_with_and_without_dividends_research": {
+      "start": "2003-01-01",
+      "end": "2026-02-28"
+    },
+    "ea_sp500_one_percent_days_by_decade_research": {
+      "start": "2003-01-01",
+      "end": "2026-02-28"
+    },
+    "ea_retail_sales_month_over_month_research": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "ea_sp500_average_return_by_month_research": {
+      "start": "2019-12-01",
+      "end": "2024-12-31"
+    },
+    "ea_sp500_all_time_highs_cluster_research": {
+      "start": "2003-01-01",
+      "end": "2026-02-28"
+    },
+    "ea_real_gdp_research": {
+      "start": "1950-01-01",
+      "end": "2026-02-28"
+    },
+    "ea_ppi_headline_core_trends_research": {
+      "start": "2015-01-01",
+      "end": "2026-02-28"
+    },
+    "ea_real_gdp_with_gdpnow_research": {
+      "start": "2022-10-01",
+      "end": "2026-06-30"
+    },
+    "ea_sp500_after_government_shutdowns_research": {
+      "start": "2003-09-01",
+      "end": "2026-02-28"
+    },
+    "ea_major_us_index_performance_ytd_path_research": {
+      "start": "2025-12-31",
+      "end": "2026-03-02"
+    },
+    "ea_pce_headline_core_inflation_trends_research": {
+      "start": "1960-01-01",
+      "end": "2024-12-01"
+    },
+    "ea_effective_fed_funds_rate_research": {
+      "start": "2005-01-01",
+      "end": "2028-12-31"
+    },
+    "ea_equity_performance_by_country_2025_research": {
+      "start": "2025-12-31",
+      "end": "2026-03-02"
+    },
+    "ea_equity_performance_by_country_this_year_research": {
+      "start": "2025-12-31",
+      "end": "2026-03-02"
+    },
+    "ea_bitcoin_vs_asset_classes_research": {
+      "start": "2019-01-01",
+      "end": "2026-03-03"
+    },
+    "ea_sp500_returns_during_bull_markets_research": {
+      "start": "2003-09-01",
+      "end": "2026-03-03"
+    },
+    "ea_sp500_returns_during_bear_markets_research": {
+      "start": "2003-01-01",
+      "end": "2026-03-03"
+    },
+    "aapl_valuation_peer_snapshot_research": {
+      "start": "2019-01-01",
+      "end": "2024-12-31"
+    },
+    "aapl_valuation_profitability_research": {
+      "start": "2019-01-01",
+      "end": "2024-12-31"
+    },
+    "aapl_valuation_historical_context_research": {
+      "start": "2019-01-01",
+      "end": "2024-12-31"
+    },
+    "sp500_margin_sustainability_research": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "amzn_valuation_range_research": {
+      "start": "2019-01-01",
+      "end": "2026-03-03"
+    },
+    "msft_return_drivers_research": {
+      "start": "2023-01-01",
+      "end": "2024-12-31"
+    },
+    "msft_rate_sensitivity_research": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "msft_earnings_trajectory_research": {
+      "start": "2021-01-01",
+      "end": "2024-12-31"
+    },
+    "spy_opex_week_return_research": {
+      "start": "2015-01-01",
+      "end": "2024-12-31"
+    },
+    "spy_opex_reversal_backtest_research": {
+      "start": "2015-01-01",
+      "end": "2024-12-31"
+    },
+    "eurusd_seasonality_research": {
+      "start": "2005-01-01",
+      "end": "2024-12-31"
+    },
+    "gc_nfp_reaction_research": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "gc_nfp_intraday_research": {
+      "start": "2024-01-01",
+      "end": "2025-01-01"
+    },
+    "sp500_worst_performers_screener": {
+      "start": "2024-01-01",
+      "end": "2025-01-01"
+    },
+    "slv_momentum_dashboard": {
+      "start": "2025-01-01",
+      "end": "2026-01-01"
+    },
+    "slv_trend_dashboard": {
+      "start": "2025-01-01",
+      "end": "2026-01-01"
+    },
+    "slv_support_resistance_levels": {
+      "start": "2020-01-01",
+      "end": "2026-01-01"
+    },
+    "aapl_post_earnings_drift_research": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "tlt_cpi_reaction_research": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "zb_cpi_intraday_research": {
+      "start": "2024-01-01",
+      "end": "2025-01-01"
+    },
+    "spy_fed_rate_reaction_research": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "spy_ism_reaction_research": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "spy_ism_intraday_research": {
+      "start": "2024-01-01",
+      "end": "2025-01-01"
+    },
+    "spy_claims_yield_curve_research": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    }
   }
 }

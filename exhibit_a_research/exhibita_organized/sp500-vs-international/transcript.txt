@@ -1,0 +1,8 @@
+Title: Cycles of International vs U.S. Performance
+Topic: This chart shows the rolling 1-year return spread between international equities and U.S. equities since 2003, illustrating the cyclical nature of relative performance leadership between the two regions.
+Question: Do international stocks and U.S. stocks take turns outperforming each other, and what is the current trend?
+Key Takeaways:
+- The performance spread between international and U.S. stocks has been highly cyclical, swinging from international outperformance of over +25% (around 2003-2004 and 2007) to U.S. outperformance of nearly -30% (around 2014 and 2024), demonstrating that leadership rotates meaningfully over time.
+- As of late February 2026, the rolling 1-year spread stood at approximately +12.2%, indicating that international stocks were outperforming U.S. stocks over the trailing year, a notable reversal from the prolonged U.S. dominance of the prior decade.
+- The observed shifts in relative performance highlight that returns across global equity markets can change across different market environments, suggesting that diversifying across regions rather than concentrating in a single geography may help manage risk over full market cycles.
+Source: ExhibitA for Advice

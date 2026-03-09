@@ -1,0 +1,8 @@
+Title: A Look at the U.S. Treasury Yield Curve
+Topic: The yield-to-maturity of the U.S. Treasury yield curve across maturities from 1 Month to 30 Years, shown as of the latest date and compared to 1 year ago. This chart illustrates the term structure of interest rates and its shape as a key economic indicator.
+Question: What does the current shape of the U.S. Treasury yield curve look like, and how has it changed from a year ago?
+Key Takeaways:
+- The current U.S. Treasury yield curve is uninverted (normal), meaning yields on longer-term bonds (10-year at 4.57%, 30-year at 4.63%) are higher than yields on shorter-term bonds (2-year at 3.52%, 1-year at 3.48%), which is a sign of more normal economic expectations.
+- Short-term yields (1 month to 1 year) range from 3.58% to 3.68%, while intermediate to long-term yields rise from 3.39% at 2 years to 4.63% at 30 years, reflecting expectations for modestly higher rates over time.
+- Compared to one year ago, the yield curve has shifted meaningfully, moving from an inverted shape to a positively sloped one, which historically has been associated with improving economic outlooks and reduced recession risk.
+Source: ExhibitA for Advice

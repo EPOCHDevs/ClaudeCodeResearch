@@ -1,0 +1,8 @@
+Title: Length of Historical Bull Markets
+Topic: This chart shows the length of time (in calendar days) of all S&P 500 bull markets since 1949, comparing historical bull market durations to the current one.
+Question: How long have historical bull markets in the S&P 500 lasted, and how does the current bull market compare?
+Key Takeaways:
+- Bull markets since 1949 have varied widely in duration, from 784 days (1968-1970 cycle) to 4,494 days (1987-2000) and 3,999 days (2009-2020), with an average length of approximately 1,957 days.
+- The current bull market, which began on 10/12/2022, has lasted approximately 1,235 days so far, which is below the historical average of 1,957 days, suggesting it may still have room to run based on historical patterns.
+- Staying invested during bull market periods of growth has been a key driver of long-term portfolio outcomes, as these expansions can endure for years and have historically lasted several times longer than bear markets.
+Source: ExhibitA for Advice

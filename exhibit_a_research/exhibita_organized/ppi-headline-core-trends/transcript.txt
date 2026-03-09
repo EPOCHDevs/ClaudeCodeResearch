@@ -1,0 +1,8 @@
+Title: Trends in Producer Prices
+Topic: This chart displays the year-over-year change in Headline vs Core Producer Price Index (PPI) since 2016, tracking the average change over time in selling prices received by domestic producers for their output.
+Question: What are the recent trends in producer-level inflation, and how do headline and core PPI compare?
+Key Takeaways:
+- As of January 2026, the Headline PPI year-over-year was 2.9%, indicating the overall change in prices producers are receiving for their goods and services, while the Core PPI (excluding food and energy) was 3.6%.
+- Producer prices spiked dramatically in 2021-2022, with headline PPI reaching above 12%, before declining significantly back toward more normal levels by 2023-2025.
+- The Federal Reserve and other policymakers closely monitor producer price data to understand inflationary pressures at the wholesale level, as PPI can be an early indicator of price trends that eventually pass through to consumers.
+Source: ExhibitA for Advice
