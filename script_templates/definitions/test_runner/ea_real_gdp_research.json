@@ -1,0 +1,10 @@
+{
+   "name": "real-gdp",
+   "description": "U.S. Real GDP seasonally adjusted annual rate, measuring the total value of goods and services produced adjusted for inflation.",
+   "data": {
+      "assets": [],
+      "source": "polygon"
+   },
+   "source": "# Historical Growth of the U.S. Economy - Real GDP\ngdp_src = economic_indicators(series_id='GDPC1')()\ngdp_filled = ffill(gdp_src.result)\n\n# Convert billions to trillions\ngdp_trillions = gdp_filled / 1000\n\nbar_ts = index()\n\nxy_lines(\n    title='Historical Growth of the U.S. Economy',\n    category='1. GDP',\n    area=True,\n    y_axis_label='Seasonally Adjusted Annual Rate ($Trillions)',\n    y_axis_format=AxisValueFormat.MonetaryFormat,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='U.S. Real GDP in $Trillions', color=Color.Blue)\n    ])\n)(bar_ts, gdp_trillions)\n",
+   "global_timeframe": "1D"
+}

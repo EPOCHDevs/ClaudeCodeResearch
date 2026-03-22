@@ -1,0 +1,19 @@
+{
+   "name": "Sector Rotation Monetary Policy Strategy",
+   "description": "Quantpedia #0010: Sector Rotation based on Monetary Policy. Go long cyclical sectors during Fed easing, long defensive sectors during Fed tightening. Monthly rebalance based on 3-month Fed rate change.",
+   "data": {
+      "assets": [
+         "XLY-Stocks",
+         "XLI-Stocks",
+         "XLF-Stocks",
+         "XLK-Stocks",
+         "XLB-Stocks",
+         "XLP-Stocks",
+         "XLV-Stocks",
+         "XLU-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# Sector Rotation Monetary Policy Strategy\n# Quantpedia #0010: Sector Rotation based on Monetary Conditions\n# Source: Conover, Jensen, Johnson, Mercer\n#\n# RULES:\n# - Universe: 8 SPDR sector ETFs (cyclical + defensive)\n# - Signal: Fed Funds Rate 3-month change\n# - Easing (rate decrease): Go long cyclical sectors (XLY, XLI, XLF, XLK, XLB)\n# - Tightening (rate increase): Go long defensive sectors (XLP, XLV, XLU)\n# - Neutral (no change): Equal weight all sectors\n# - Weighting: Equal weight within selected group\n# - Rebalancing: Monthly (first trading day)\n#\n# Sector ETFs:\n# Cyclical: XLY (Consumer Disc), XLI (Industrials), XLF (Financials), XLK (Tech), XLB (Materials)\n# Defensive: XLP (Consumer Staples), XLV (Healthcare), XLU (Utilities)\n\n# Data source - DAILY\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# Load Fed Funds Rate\nfed_rate_src = economic_indicators(series_id='FEDFUNDS')()\n\n# Forward fill Fed rate to get daily values\nfed_rate_filled = ffill(fed_rate_src.result)\n\n# Calculate 3-month rate change (in percentage points)\nfed_rate_change_3m = mom(period=63)(fed_rate_filled)\n\n# Define monetary policy regimes with threshold\n# Easing: Fed rate decreased by more than 0.25% (25 bps) over 3 months\n# Tightening: Fed rate increased by more than 0.25% (25 bps) over 3 months\n# Neutral: Rate change within +/- 0.25%\n# Visualize Fed rate momentum signal\n\nthreshold = 0.25\nis_easing = fed_rate_change_3m < -threshold\nis_tightening = fed_rate_change_3m > threshold\nis_neutral = not is_easing and not is_tightening\n\n# Sector classification using is_asset_ref\nis_xly = is_asset_ref(ticker=\"XLY\")()\nis_xli = is_asset_ref(ticker=\"XLI\")()\nis_xlf = is_asset_ref(ticker=\"XLF\")()\nis_xlk = is_asset_ref(ticker=\"XLK\")()\nis_xlb = is_asset_ref(ticker=\"XLB\")()\nis_xlp = is_asset_ref(ticker=\"XLP\")()\nis_xlv = is_asset_ref(ticker=\"XLV\")()\nis_xlu = is_asset_ref(ticker=\"XLU\")()\n\n# Cyclical = XLY, XLI, XLF, XLK, XLB (5 sectors)\nis_cyclical = is_xly or is_xli or is_xlf or is_xlk or is_xlb\n# Defensive = XLP, XLV, XLU (3 sectors)\nis_defensive = is_xlp or is_xlv or is_xlu\n\n# Detect first trading day of month\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# Selection logic:\n# During easing: select cyclical sectors\n# During tightening: select defensive sectors\n# During neutral: select all sectors\nis_selected = conditional_select(is_easing, is_cyclical, is_tightening, is_defensive, True)\n\n# Monthly rebalance signals\nenter_long = is_new_month and is_selected\nexit_long = is_new_month and not is_selected\n\n# Hold position until next month rebalance\nheld_signal = hold_until()(enter=enter_long, exit=exit_long)\n\n# Entry/Exit zones\nlong_and_short_zone()(long_entry=held_signal)\n\n# Equal weight across selected sectors\nweights = equal_weight()(held_signal)\n\n# Position sizing - ONLY rebalance on first trading day of month\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\n",
+   "global_timeframe": "1D"
+}

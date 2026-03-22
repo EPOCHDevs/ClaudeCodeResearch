@@ -1,0 +1,28 @@
+Title: Optimism Index Components: Hard vs Soft Data (1986-2022)
+Source: AMFX 23NOV22.pdf (page 3)
+Date: 2022-11-23
+Type: chart
+
+Insight: Compares hard economic data (job creation, inventory, earnings) against soft sentiment indicators, showing a significant divergence with soft data declining sharply in 2022 while hard data remains relatively resilient, reflecting pessimistic business psychology ahead of potential recession.
+
+Context (above):
+• 
+Yield curve shows Fed is restrictive. 
+• 
+Housing and autos look bad. 
+• 
+Soft data looks bad. Here’s the soft vs. hard NFIB Survey data for October.
+
+Context (below):
+• 
+Credit card debt is picking up. 
+• 
+Europe, the UK, and China are not looking great. 
+• 
+Huge savings from stimmies are almost spent. 
+• 
+Recession psychology is widespread. See chart at right. 
+• 
+Lagged impact of rising rates will be felt over time and 
+has barely hit so far. More layoffs coming as consumers 
+tighten belts and tech reels.

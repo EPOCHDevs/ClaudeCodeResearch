@@ -1,0 +1,10 @@
+{
+    "name": "DS Cluster D09: Economic Revisions (FRED Vintage Analysis)",
+    "description": "Tests: economic_revisions for PAYEMS (NFP), revision_delta, revision_count outputs.",
+    "data": {
+        "assets": ["SPY-Stocks"],
+        "source": "polygon"
+    },
+    "source": "# =============================================================================\n# DS CLUSTER D09: Economic Revisions\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nrets = returns()(close)\n\n# === NFP REVISIONS ===\nrev = economic_revisions(series_id=\"PAYEMS\")()\ninitial = ffill(rev.initial_value)\nlatest = ffill(rev.latest_value)\nrevision_delta = ffill(rev.revision_delta)\nrevision_count = ffill(rev.revision_count)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"NFP: Initial vs Latest Value\",\n    category=\"Revisions\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Initial\", color=Color.Orange),\n        LineSeriesSpec(name=\"Latest\", color=Color.Blue)\n    ])\n)(x_values=index(), y_values=(initial, latest))\n\nxy_lines(\n    title=\"NFP Revision Delta (Latest - Initial)\",\n    category=\"Revisions\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Delta\", color=Color.Cyan)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[ReferenceLine(value=0, title=\"Zero\")])\n)(x_values=index(), y_values=revision_delta)\n",
+    "global_timeframe": "1D"
+}

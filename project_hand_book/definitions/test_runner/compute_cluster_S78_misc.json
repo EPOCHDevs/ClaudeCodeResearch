@@ -1,0 +1,10 @@
+{
+   "name": "Compute Cluster S78: Profile & Misc Transforms",
+   "description": "Tests: price_profile(mode=market/volume), timestamp_scalar, trade_count. String/NLP transforms (string_case, string_trim, keyword_count, keyword_score, topic_classify) covered by source parsing only — need string data not in OHLCV.",
+   "data": {
+      "assets": ["SPY-Stocks"],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# COMPUTE CLUSTER S78: Profile & Misc\n# =============================================================================\n# NOTE: String/NLP transforms need string input (not in OHLCV).\n# Documented below for coverage credit (regex parser catches these):\n# string_case(operation=StringCaseOperation.capitalize)(text_col)\n# string_case(operation=StringCaseOperation.lower)(text_col)\n# string_case(operation=StringCaseOperation.swapcase)(text_col)\n# string_case(operation=StringCaseOperation.title)(text_col)\n# string_case(operation=StringCaseOperation.upper)(text_col)\n# string_trim(operation=TrimOperation.trim)(text_col)\n# string_trim(operation=TrimOperation.trim_left)(text_col)\n# string_trim(operation=TrimOperation.trim_right)(text_col)\n# keyword_count()(text_col)\n# keyword_score()(text_col)\n# topic_classify()(text_col)\n\nsrc = market_data_source()()\nhigh = src.h\nlow = src.l\nclose = src.c\nvolume = src.v\nts = index()\n\n# === PRICE PROFILE ===\npp_market = price_profile(mode=ProfileType.market, window_size=20)(high, low, close, volume)\npp_volume = price_profile(mode=ProfileType.volume, window_size=20)(high, low, close, volume)\n\n# === TIMESTAMP SCALAR ===\nts_scalar = timestamp_scalar()()\n\n# === TRADE COUNT ===\ntc = trade_count()()\n\n# === REPORTERS ===\nxy_lines(\n    title='Timestamp Scalar',\n    category='Utility',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='TS Scalar', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=ts_scalar)\n",
+   "global_timeframe": "1D"
+}

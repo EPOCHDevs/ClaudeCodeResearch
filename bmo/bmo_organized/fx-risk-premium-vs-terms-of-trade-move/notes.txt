@@ -1,0 +1,26 @@
+Title: FX Risk Premium vs Terms of Trade Move
+Source: BMO FX macro report 3-9-26.pdf (page 4)
+Date: 2026-03-09
+Type: chart
+
+Insight: Scatter plot comparing actual 1-week FX moves against implied moves based on 3-year terms of trade beta, highlighting currencies trading at a premium (HUF, KRW, MXN, BRL) that may face adjustment risk.
+
+Context (above):
+What’s next for carry? EM is increasingly being split by a mix of terms of trade and positioning. The latter reflects  
+crowded exposure in popular carry trades such as BRL, HUF, ZAR, and IDR. Over the past six months, our global macro  
+framework (MAPS) shows that the growth factor dominated market dynamics, supported by a softer USD, easier  
+monetary policy, and a contained term premium—an ideal backdrop for carry. Risk-adjusted returns across several EM  
+currencies were strong, reinforcing capital inflows into EM carry strategies. Is carry done? For now, we think so. While  
+our positioning indicator (GPS) shows a sharp unwind in some of the most crowded EM carry trades, we do not see a  
+swift resolution to the recent rise in geopolitical uncertainty. Crude oil has pushed toward $100/bbl, and Iran’s response  
+to recent developments has heightened regional instability. The risk is a deepening negative feedback loop—particularly  
+if tensions extend to ports, shipping lanes, or critical infrastructure—which would likely mark the next phase of the  
+EMFX adjustment. That setup increasingly resembles 2022, where FX performance was driven by a terms of trade  
+shock, favoring oil exporters over importers. As the second chart shows, most currencies have adjusted rationally,  
+moving broadly in line with their implied terms of trade beta. However, several currencies still trade at a material  
+premium, including HUF, KRW, MXN, BRL, NOK, and AUD. We think this risk premium will eventually create better  
+buying opportunities, particularly in BRL and MXN, which still offer an attractive mix of growth and carry—especially  
+versus LatAm peers. For now, however, we continue to prefer staying long the USD.
+
+Context (below):
+March 9, 2026 | Page 4 of 5

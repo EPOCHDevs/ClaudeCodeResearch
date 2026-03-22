@@ -1,0 +1,12 @@
+Title: GOOG Hourly Chart with RSI Indicator
+Source: AMFX 24JAN23.pdf (page 3)
+Date: 2023-01-24
+Type: chart
+
+Insight: This hourly price chart of Google (GOOG) stock from January 2023 shows price movement between approximately $85-$125 USD with an RSI (Relative Strength Index) indicator below, revealing recent upward momentum after a mid-period decline.
+
+Context (above):
+GOOG hourly chart with RSI
+
+Context (below):
+3

@@ -1,0 +1,9 @@
+{
+   "name": "amfx-us-federal-debt-research",
+   "description": "amFX reproduction (09FEB24 p2, Panel 4): US Federal Debt Held by the Public ($T), 2013-2024. Part of the Mehlman Consulting 'polycrisis' dashboard. Shows accelerating federal debt growth from ~$12T (2013) to ~$29T (2024), with a massive step-up during COVID (2020). Data: FRED FYGFDPUN (quarterly, millions) converted to trillions + FYGFGDQ188S (debt as % GDP). Original chart extended to 2028 with CBO projections; this reproduction covers available actuals only.",
+   "data": {
+      "assets": []
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: US FEDERAL DEBT HELD BY THE PUBLIC (09FEB24 p2, Panel 4)\n# =============================================================================\n# Part of the Mehlman Consulting four-panel polycrisis dashboard.\n# FYGFDPUN: Federal Debt Held by the Public, quarterly, in millions.\n# =============================================================================\n\ndebt_src = economic_indicators(series_id='FYGFDPUN')()\ndebt_filled = ffill(debt_src.result)\n\n# Convert millions to trillions\ndebt_trillions = debt_filled / 1000000.0\n\nidx = index()\n\nxy_lines(\n    title='US Federal Debt Held by the Public: The $29 Trillion Question',\n    category='Polycrisis Dashboard',\n    y_axis_label='Debt ($T)',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=1,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Federal Debt ($T)', color=Color.Blue)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=17.0, title='Pre-COVID ~$17T', color=Color.Gray, dash_style=DashStyle.Dot),\n        ReferenceLine(value=22.0, title='Post-COVID ~$22T', color=Color.Orange, dash_style=DashStyle.Dot)\n    ]),\n    order=0\n)(x_values=idx, y_values=debt_trillions)\n"
+}

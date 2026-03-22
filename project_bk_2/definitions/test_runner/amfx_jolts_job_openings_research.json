@@ -1,0 +1,9 @@
+{
+   "name": "amfx-jolts-job-openings-research",
+   "description": "amFX reproduction (23NOV22 p5): JOLTS total nonfarm job openings 2001-2022. The massive post-COVID spike to 10.7M openings vs 4.4M entering prior recessions is the key counter-argument to the recession thesis. Uses common_economic_indicators JobOpenings.",
+   "data": {
+      "assets": []
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: JOLTS JOB OPENINGS (23NOV22 p5)\n# =============================================================================\n# JOLTS total nonfarm job openings, USA, 2001 to Nov 2022.\n# The unprecedented spike to 10.7M (vs 4.4M pre-prior recessions)\n# was the strongest counter-argument to recession calls.\n# Uses common_economic_indicators JobOpenings.\n# =============================================================================\n\n# JOLTS Total Nonfarm Job Openings via common indicator\njolts_src = common_economic_indicators(category=MacroEconomicsIndicator.JobOpenings)()\njolts = ffill(jolts_src.result)\n\n# Time index for x-axis\nidx = index()\n\n# =============================================================================\n# CHART 1: JOLTS Job Openings Time Series\n# =============================================================================\nxy_lines(\n    title='JOLTS Job Openings: How Large Is the Labor Buffer?',\n    category='Labor Market',\n    y_axis_label='Job Openings (Thousands)',\n    y_axis_format=AxisValueFormat.IntegerFormat,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='JOLTS Job Openings', color=Color.Blue)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=4400, title='Pre-Recession Level (~4.4M)', color=Color.Red, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(idx, jolts)\n"
+}

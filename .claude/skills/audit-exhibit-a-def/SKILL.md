@@ -83,7 +83,7 @@ Compare the definition against the Exhibit A reference using this checklist:
 - Are event markers used where appropriate?
 
 #### F. EpochScript Correctness
-- Are transforms used correctly? (check known bugs: `timestamp_scalar` returns NaT, `valuewhen(occurrence=0)` returns current bar)
+- Are transforms used correctly? (check known bugs: `Timestamp()` returns NaT, `valuewhen(occurrence=0)` returns current bar)
 - Are enum values fully qualified? (e.g., `AggregationType.Max` not bare `Max`)
 - Is the null handling correct? (consider `nullPolicy: DropNulls` in reporters)
 

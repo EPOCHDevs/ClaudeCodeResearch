@@ -1,0 +1,12 @@
+Title: AUDUSD Hourly Chart Around Last FOMC Meeting
+Source: AMFX 16JUN22.pdf (page 1)
+Date: 2022-06-16
+Type: chart
+
+Insight: This hourly chart illustrates AUDUSD price action around the June 2022 FOMC meeting, annotating key moments including a 75 basis point rate hike and Powell's commentary on the rarity of such large moves.
+
+Context (above):
+AUDUSD hourly chart around the last FOMC
+
+Context (below):
+3. The BOJ news has become deafening and the situation tonight is binary.

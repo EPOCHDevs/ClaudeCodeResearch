@@ -1,0 +1,12 @@
+Title: FX Momentum by G10 Currency Pair
+Source: AMFX 21DEC22.pdf (page 5)
+Date: 2022-12-21
+Type: chart
+
+Insight: Bar chart comparing FX momentum across major currency pairs (USD, EUR, CHF, JPY, GBP, AUD, NZD, CAD) between last week and this week, showing USD and CAD in downtrend while EUR and NZD show strongest positive momentum.
+
+Context (above):
+G10 FX Positioning and Momentum
+
+Context (below):
+5

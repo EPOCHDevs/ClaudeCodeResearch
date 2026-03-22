@@ -17,77 +17,67 @@ Examples:
 """
 
 import sys
+import os
+import asyncio
 import argparse
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 
-import os
+# Add EpochAI to path for provider imports
+sys.path.insert(0, os.path.expanduser("~/EpochDev/EpochAI"))
+# Add proto path for tearsheet parsing helpers
 sys.path.insert(0, os.path.expanduser("~/EpochDev/EpochBackend/packages/epoch-protos/python"))
 
+from agent_src.providers import LocalDataProvider
+
 try:
-    from epoch_protos import tearsheet_pb2, table_def_pb2
+    from epoch_protos import table_def_pb2
     from epoch_protos.summary import format_tearsheet_summary
-    from epoch_protos.converters import cards_to_compact_list, tearsheet_to_dict
+    from epoch_protos.converters import cards_to_compact_list
     HAS_PROTOS = True
 except ImportError:
     HAS_PROTOS = False
 
 
-def load_tearsheet(path: Path) -> Optional[tearsheet_pb2.TearSheet]:
-    """Load a tearsheet protobuf file."""
-    if not HAS_PROTOS:
-        return None
-    with open(path, 'rb') as f:
-        ts = tearsheet_pb2.TearSheet()
-        ts.ParseFromString(f.read())
-        return ts
+def _load_provider_data(job_dir: Path, category: Optional[str] = None):
+    """Load tearsheet data via LocalDataProvider.
+
+    Returns (provider, categories, tearsheets) where tearsheets maps
+    category -> proto object.
+    """
+    provider = LocalDataProvider(job_dir)
+
+    async def _load():
+        cats = await provider.list_tearsheet_categories("")
+        if category:
+            cats = [c for c in cats if c == category]
+        tearsheets = {}
+        for cat in cats:
+            try:
+                tearsheets[cat] = await provider.get_tearsheet_proto("", cat)
+            except FileNotFoundError:
+                pass
+        return cats, tearsheets
+
+    cats, tearsheets = asyncio.run(_load())
+    return provider, cats, tearsheets
 
 
-def list_categories(job_dir: Path) -> List[str]:
-    """List available tearsheet categories."""
-    tearsheets_dir = job_dir / "tearsheets"
-    if not tearsheets_dir.exists():
-        return []
-    return [d.name for d in tearsheets_dir.iterdir() if d.is_dir() and (d / "tearsheet.pb").exists()]
-
-
-def get_cards(job_dir: Path, category: Optional[str] = None) -> Dict[str, Any]:
-    """Get card metrics from tearsheet."""
-    categories = [category] if category else list_categories(job_dir)
+def get_cards(tearsheets: Dict) -> Dict[str, Any]:
+    """Get card metrics from tearsheets."""
     result = {}
-
-    for cat in categories:
-        ts_path = job_dir / "tearsheets" / cat / "tearsheet.pb"
-        if not ts_path.exists():
-            continue
-
-        ts = load_tearsheet(ts_path)
-        if ts is None:
-            continue
-
+    for cat, ts in tearsheets.items():
         cards = cards_to_compact_list(ts)
         result[cat] = {title: {"value": value, "type": vtype} for title, value, vtype in cards}
-
     return result
 
 
-def get_charts(job_dir: Path, category: Optional[str] = None) -> Dict[str, List[Dict]]:
-    """Get chart info from tearsheet."""
-    categories = [category] if category else list_categories(job_dir)
+def get_charts(tearsheets: Dict) -> Dict[str, List[Dict]]:
+    """Get chart info from tearsheets."""
     result = {}
-
-    for cat in categories:
-        ts_path = job_dir / "tearsheets" / cat / "tearsheet.pb"
-        if not ts_path.exists():
-            continue
-
-        ts = load_tearsheet(ts_path)
-        if ts is None:
-            continue
-
+    for cat, ts in tearsheets.items():
         charts = []
         for chart in ts.charts.charts:
-            # Charts use a oneof - resolve the active variant
             chart_type_name = chart.WhichOneof('chart_type') if hasattr(chart, 'WhichOneof') else None
             if not chart_type_name:
                 continue
@@ -100,55 +90,58 @@ def get_charts(job_dir: Path, category: Optional[str] = None) -> Dict[str, List[
                 "type": chart_type_name.replace('_def', ''),
                 "category": chart_def.category if chart_def else "?",
             }
-            # Add series count for line charts
-            if chart_type_name == 'numeric_lines_def':
+            if chart_type_name in ('numeric_lines_def', 'lines_def'):
                 chart_info["series_count"] = len(defn.lines)
-            elif chart_type_name == 'lines_def':
-                chart_info["series_count"] = len(defn.lines)
+            elif chart_type_name == 'pie_def':
+                slices = []
+                for ring in defn.data:
+                    for pt in ring.points:
+                        slices.append({"name": pt.name, "value": pt.y})
+                chart_info["slice_count"] = len(slices)
+                chart_info["slices"] = slices
             elif chart_type_name == 'histogram_def':
-                chart_info["bin_count"] = defn.bins_count
+                if defn.series:
+                    chart_info["series_count"] = len(defn.series)
+                    chart_info["bin_count"] = sum(len(s.bins) for s in defn.series)
+                    bins_data = []
+                    for s in defn.series:
+                        series_bins = [{"start": b.bin_start, "end": b.bin_end, "count": b.count} for b in s.bins]
+                        bins_data.append({"name": s.name, "bins": series_bins})
+                    chart_info["histogram_series"] = bins_data
+                    if defn.HasField('analytics'):
+                        chart_info["analytics"] = {
+                            "mean": defn.analytics.mean,
+                            "std_dev": defn.analytics.std_dev,
+                            "sample_count": defn.analytics.sample_count,
+                        }
+                else:
+                    chart_info["bin_count"] = defn.bins_count
             elif chart_type_name == 'box_plot_def':
                 chart_info["type"] = "box"
             charts.append(chart_info)
-
         result[cat] = charts
-
     return result
 
 
-def get_tables(job_dir: Path, category: Optional[str] = None) -> Dict[str, List[Dict]]:
-    """Get table info from tearsheet."""
-    categories = [category] if category else list_categories(job_dir)
+def get_tables(tearsheets: Dict) -> Dict[str, List[Dict]]:
+    """Get table info from tearsheets."""
     result = {}
-
-    for cat in categories:
-        ts_path = job_dir / "tearsheets" / cat / "tearsheet.pb"
-        if not ts_path.exists():
-            continue
-
-        ts = load_tearsheet(ts_path)
-        if ts is None:
-            continue
-
+    for cat, ts in tearsheets.items():
         tables = []
         for table in ts.tables.tables:
-            # Get row/col counts based on flavor
             row_count = 0
             col_count = len(table.columns)
 
             if table.flavor == table_def_pb2.TABLE_FLAVOR_DETAILED:
-                # Detailed tables use data.rows
                 if table.HasField('data') and table.data.rows:
                     row_count = len(table.data.rows)
             elif table.flavor == table_def_pb2.TABLE_FLAVOR_SUMMARY:
-                # Summary tables use layout dimensions and summary_data.cells
                 if table.HasField('layout'):
                     row_count = table.layout.row_size
                     col_count = table.layout.col_size
                 elif table.HasField('summary_data'):
                     row_count = len(table.summary_data.cells)
             elif table.flavor == table_def_pb2.TABLE_FLAVOR_CARDS:
-                # Cards use cards_data.cells
                 if table.HasField('cards_data'):
                     row_count = len(table.cards_data.cells)
 
@@ -159,25 +152,13 @@ def get_tables(job_dir: Path, category: Optional[str] = None) -> Dict[str, List[
                 "category": table.category,
                 "flavor": table_def_pb2.TableFlavor.Name(table.flavor) if table.flavor else "Unknown",
             })
-
         result[cat] = tables
-
     return result
 
 
-def print_summary(job_dir: Path, category: Optional[str] = None, verbose: bool = False) -> None:
+def print_summary(tearsheets: Dict, verbose: bool = False) -> None:
     """Print full tearsheet summary."""
-    categories = [category] if category else list_categories(job_dir)
-
-    for cat in categories:
-        ts_path = job_dir / "tearsheets" / cat / "tearsheet.pb"
-        if not ts_path.exists():
-            continue
-
-        ts = load_tearsheet(ts_path)
-        if ts is None:
-            continue
-
+    for cat, ts in tearsheets.items():
         print("=" * 70)
         print(f"TEARSHEET: {cat}")
         print("=" * 70)
@@ -192,23 +173,35 @@ def print_summary(job_dir: Path, category: Optional[str] = None, verbose: bool =
                 print(f"  {title}: {value} ({vtype})")
 
 
-def print_cards(job_dir: Path, category: Optional[str] = None) -> None:
+def print_cards(tearsheets: Dict) -> None:
     """Print card metrics."""
-    cards = get_cards(job_dir, category)
+    cards = get_cards(tearsheets)
     for cat, metrics in cards.items():
         print(f"\n{cat}:")
         for name, info in metrics.items():
             print(f"  {name}: {info['value']} ({info['type']})")
 
 
-def print_charts(job_dir: Path, category: Optional[str] = None) -> None:
+def print_charts(tearsheets: Dict) -> None:
     """Print chart info."""
-    charts = get_charts(job_dir, category)
+    charts = get_charts(tearsheets)
     for cat, chart_list in charts.items():
         print(f"\n{cat} Charts:")
         for chart in chart_list:
             extra = ""
-            if "series_count" in chart:
+            if "slice_count" in chart:
+                total = sum(s["value"] for s in chart["slices"])
+                if total > 0:
+                    parts = [f"{s['name']}={s['value']/total*100:.1f}%" for s in chart["slices"]]
+                else:
+                    parts = [f"{s['name']}={s['value']:.2f}" for s in chart["slices"]]
+                extra = f" ({chart['slice_count']} slices: {', '.join(parts)})"
+            elif "series_count" in chart and "histogram_series" in chart:
+                extra = f" ({chart['bin_count']} bins, {chart['series_count']} series)"
+                if "analytics" in chart:
+                    a = chart["analytics"]
+                    extra += f" [mean={a['mean']:.4f}, std={a['std_dev']:.4f}, n={a['sample_count']}]"
+            elif "series_count" in chart:
                 extra = f" ({chart['series_count']} series)"
             elif "bin_count" in chart:
                 extra = f" ({chart['bin_count']} bins)"
@@ -217,9 +210,9 @@ def print_charts(job_dir: Path, category: Optional[str] = None) -> None:
             print(f"  {chart['title']}: {chart['type']}{extra} [{chart['category']}]")
 
 
-def print_tables(job_dir: Path, category: Optional[str] = None) -> None:
+def print_tables(tearsheets: Dict) -> None:
     """Print table info."""
-    tables = get_tables(job_dir, category)
+    tables = get_tables(tearsheets)
     for cat, table_list in tables.items():
         print(f"\n{cat} Tables:")
         for table in table_list:
@@ -245,19 +238,20 @@ def main():
         print(f"Error: Directory not found: {args.job_folder}")
         sys.exit(1)
 
-    categories = list_categories(args.job_folder)
-    if not categories:
+    _, cats, tearsheets = _load_provider_data(args.job_folder, args.category)
+
+    if not tearsheets:
         print(f"No tearsheets found in {args.job_folder}")
         sys.exit(1)
 
     if args.cards:
-        print_cards(args.job_folder, args.category)
+        print_cards(tearsheets)
     elif args.charts:
-        print_charts(args.job_folder, args.category)
+        print_charts(tearsheets)
     elif args.tables:
-        print_tables(args.job_folder, args.category)
+        print_tables(tearsheets)
     else:
-        print_summary(args.job_folder, args.category, args.verbose)
+        print_summary(tearsheets, args.verbose)
 
 
 if __name__ == "__main__":

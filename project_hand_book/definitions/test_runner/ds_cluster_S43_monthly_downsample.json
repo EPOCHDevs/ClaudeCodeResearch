@@ -1,0 +1,10 @@
+{
+    "name": "DS Cluster S43: Monthly Downsample (correct monthly returns)",
+    "description": "Tests: downsample(target_timeframe=1M, how=NumericDownsampleAgg.last) for monthly close. forward_returns on monthly grid.",
+    "data": {
+        "assets": ["SPY-Stocks"],
+        "source": "polygon"
+    },
+    "source": "# =============================================================================\n# DS CLUSTER S43: Monthly Downsample\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nrets = returns()(close)\n\n# === MONTHLY CLOSE ===\nmonthly_close = downsample(target_timeframe=1M, how=NumericDownsampleAgg.last)(close)\n\n# === MONTHLY RETURNS (sum of daily) ===\nmonthly_ret = downsample(target_timeframe=1M, how=NumericDownsampleAgg.sum)(rets)\n\n# === MONTHLY VOLUME (sum) ===\nmonthly_vol = downsample(target_timeframe=1M, how=NumericDownsampleAgg.sum)(src.v)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Monthly Close\",\n    category=\"Monthly\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Close\", color=Color.Blue)\n    ])\n)(x_values=index(), y_values=monthly_close)\n\nhistogram(\n    title=\"Monthly Return Distribution\",\n    category=\"Monthly\",\n    bins=20\n)(monthly_ret)\n",
+    "global_timeframe": "1D"
+}

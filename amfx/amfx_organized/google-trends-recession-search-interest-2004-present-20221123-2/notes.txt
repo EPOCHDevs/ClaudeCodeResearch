@@ -1,0 +1,17 @@
+Title: Google Trends: Recession Search Interest Over Time (2004-Present)
+Source: AMFX 23NOV22.pdf (page 3)
+Date: 2022-11-23
+Type: chart
+
+Insight: This chart shows search volume for the term 'recession' has spiked dramatically during economic downturns, with major peaks around 2008-2009 (financial crisis) and 2020 (pandemic), and notably elevated levels in 2022 amid Fed rate hikes and economic slowdown concerns.
+
+Context (above):
+• 
+Yield curve shows Fed is restrictive. 
+• 
+Housing and autos look bad. 
+• 
+Soft data looks bad. Here’s the soft vs. hard NFIB Survey data for October.
+
+Context (below):
+3

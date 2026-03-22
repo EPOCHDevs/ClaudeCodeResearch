@@ -1,0 +1,12 @@
+Title: G10 FX Positioning and Momentum Summary Scores
+Source: AMFX 24JAN23.pdf (page 5)
+Date: 2023-01-24
+Type: table
+
+Insight: Summary scores across positioning and momentum indicators for major currency pairs (USD, EUR, CHF, JPY, GBP, AUD, NZD, CAD) on a -10 to +10 scale, showing relative strength and directional bias for each currency.
+
+Context (above):
+G10 FX Positioning and Momentum
+
+Context (below):
+5

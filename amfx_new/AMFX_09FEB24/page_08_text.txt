@@ -1,0 +1,37 @@
+8 
+ 
+Contrary to previously-held beliefs, abundant research has shown that the brain remains 
+plastic throughout life, with the most significant changes occurring until the mid-twenties. 
+This is because the prefrontal cortex takes nearly two decades to fully mature. It is during 
+the gradual development of this brain region that the majority of mental illnesses 
+emerge—at least 50% of disorders are diagnosed by the age of 14, and 75% are identified by 
+24, according to the UK’s Mental Health Foundation.[5] Yet, as kids start using devices at 
+younger ages, the growth of the prefrontal cortex is impaired, exacerbating difficulties in 
+emotion regulation. 
+Smartphone addiction is getting worse among younger demographics, but all of us have 
+experienced attachment to a device no matter what age. This stems from the feedback 
+loops that smartphone apps operate on—fueled by dopamine, or the “feel-good” 
+neurotransmitter that powers pleasure systems. Dopamine feeds motivation, learning, 
+and reward centers—prompting the repetition of previously-satisfying activities.[6] 
+Contributing to the success of smartphone apps is the leveraging of reward prediction 
+error (RPE) encoding.[7] As we interact with a certain stimulus, we learn to associate a 
+reward with a cue—in the case of social media, this takes the form of likes, comments, and 
+shares. RPE is reinforced when unexpected rewards heighten stimulation of dopamine 
+neurons, serving as positive feedback signals. If the anticipated reward is not received 
+(e.g. no notifications), dopamine activity decreases and is linked to depressive 
+symptoms. 
+When rewards (e.g. notifications) are delivered randomly and checking for them has 
+minimal cost, the habit of frequent-phone monitoring develops. The benefit of a dopamine 
+spike from an alert far exceeds the time cost of checking your device. For example, 
+Instagram’s algorithm uses a variable-ratio reward schedule in which notifications are not 
+displayed in their real-time. Instead, they are spaced out so that users receive them in 
+bursts. The initial disappointment surrounding content that acquires fewer likes is soon 
+followed by a surge in positive feedback.[8]  
+Studies most notably conducted at Harvard and Stanford have demonstrated that social 
+media and messaging notifications are equally—if not more—effective at eliciting 
+dopamine production as real-world interactions.[9] The effortless replacement of real 
+connections with virtual ones even concerns Chamath Palihapitiya, former Vice President 
+of User Growth at Facebook. At a 2018 lecture at Stanford Graduate School of Business, 
+Palihapitiya remarked, “I feel tremendous guilt… The short-term, dopamine-driven 
+feedback loops that we created are destroying how society works.” [10] Essentially, the 
+always-accessible social world that smartphones offer is chipping away at our humanity.

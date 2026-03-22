@@ -1,0 +1,12 @@
+Title: G10 FX Positioning and Momentum Summary
+Source: AMFX 21DEC22.pdf (page 5)
+Date: 2022-12-21
+Type: table
+
+Insight: Summary scores across positioning, sentiment, and momentum indicators for major currency pairs versus USD, showing EUR and GBP with strongest bullish signals while USD shows weakness across multiple timeframes.
+
+Context (above):
+G10 FX Positioning and Momentum
+
+Context (below):
+5

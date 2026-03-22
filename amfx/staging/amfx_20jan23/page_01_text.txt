@@ -1,0 +1,95 @@
+Brent Donnelly 
+ 
+ 
+bdonnelly@spectramarkets.com 
+(212) 398-6230 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Proportion of sons employed 
+with an employer their father 
+had worked for at any time vs. 
+father’s earnings percentile. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Current Views 
+ 
+ 
+ 
+Long 07FEB EURGBP call 
+spread 0.8870/0.8920 risking 
+22 GBP bps to make 50 
+ 
+Spot ref. 0.8850 
+ 
+ 
+ 
+January 20, 2023 
+ 
+ 
+ 
+Five Main Outcomes 
+ 
+ 
+If you think of the market as a big information discounting machine, you can see that in 
+action right now. There is a strange combination of weak consumer, weak housing, and 
+weak business sentiment coupled with a strong labor market, high and falling inflation, 
+and hope for a rebirth of China growth. Each data point triggers a Bayesian recalibration 
+of prior assumptions of the probability of the five main outcomes: 
+ 
+1. No landing 
+2. Soft landing 
+3. Recession lite 
+4. Hard landing 
+5. Crash landing 
+ 
+We entered 2023 with probabilities leaning something like 5/10/40/30/15 and we got up 
+to a more optimistic spread of maybe: 10/25/40/20/5 late last week. Now, we are back 
+to something more like 5/15/40/30/10 after a string of bad hard data in the US, and 
+elsewhere. I have been skeptical of soft data because in a nominal world with high 
+inflation, sentiment is bad (inflation feels bad) but hard data might outperform on a 
+nominal basis (inflation boosts nominal data, even though it feels bad). I am becoming 
+less optimistic and will continue to update my odds of the five outcomes. 
+ 
+Now, we are seeing bad hard data, especially global retail sales, but also US Industrial 
+Production. Wednesday, I showed a chart of NZ retail sales printing their worst 
+December in 20 years. UK Retail Sales came out last night and they were also bad. 
+ 
+6-month rolling sum of MoM Retail Sales in the UK 
+ 
+ 
+2020 and 2021 are cut out to avoid y-axis dilation 
+ 
+The chart is a bit distorted, perhaps, by the outperformance of retail sales in 2018 and 
+2019, but however you slice and dice it, negative retail sales in a world of 6% inflation 
+are almost unbelievably bad. Remember that Retail Sales is a nominal release so the 
+minus 6.1% YoY figure with, say, 6% inflation on those components is a 12% real drop 
+in retail sales. Pretty epic.

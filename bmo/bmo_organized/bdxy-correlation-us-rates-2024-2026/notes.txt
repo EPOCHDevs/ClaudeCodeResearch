@@ -1,0 +1,34 @@
+Title: 3m Rolling Correlation of BDXY to US Market Variables (2024-2026)
+Source: BMO FX macro report 3-9-26.pdf (page 2)
+Date: 2026-03-09
+Type: chart
+
+Insight: The USD is re-establishing its correlation with 2-year and 10-year rate differentials while its relationship with yield curve shape has broken down, signaling a shift in FX dynamics toward rate-driven moves rather than traditional steepening-induced weakness.
+
+Context (above):
+There’s more to the move than simple risk-on/risk-off. Recent price action across global markets reflects an  
+intersection of positioning and short-term valuation, the prevailing narrative, and the latest macro shock. FX moves,  
+in particular, are not just about risk aversion or crowded positioning. A more important theme is that the US macro  
+backdrop has improved—both absolutely and relative to the rest of the world. Our high-frequency growth and inflation  
+factors place the USD among the strongest currencies across the G10 and EM universe. As shown in the first chart, the  
+USD sits firmly in the top-right quadrant—the most constructive macro position—alongside a small group of currencies  
+including MXN, AUD, BRL, and KRW. By contrast, EUR, GBP, CHF, and JPY sit in the lower half of the distribution,  
+reflecting a deceleration in inflation momentum. While growth remains positive for several of these economies, the 
+USD growth signal sits above both the G10 and EM aggregates and is still accelerating. This configuration suggests  
+the US macro story is stronger than what is currently priced, while Europe’s outlook looks increasingly fragile. Consistent  
+with this shift, the USD’s correlation structure is changing. As shown in the second chart, the dollar is re-engaging  
+with 2y and 10y rate differentials, while its relationship with the shape of the yield curve has effectively broken down.  
+In other words, the familiar “weaker USD, steeper curve” dynamic is off the table for now.
+
+Context (below):
+Safe havens aren’t equal. One extension of recent market themes is that some traditional havens are no longer doing  
+their job. Our risk-sentiment index (MOOD) has flipped decisively into risk-off territory for the first time in nearly  
+a year, with the speed of the move notable. The main drivers have been the credit and volatility components; equities  
+and fixed income had been dragging the index lower earlier this year, but not enough to trigger a full risk-off signal. Our  
+global macro framework (MAPS) treats this as a growth shock, with uneven implications across countries and currencies.  
+That’s also showing up in shifting FX relationships to MOOD. A spike in risk-off is now broadly bullish for the USD and  
+gold—a clear change from last year. By contrast, CHF and JPY, while still havens, are behaving more like pro-cyclical  
+currencies, falling as MOOD deteriorates. For JPY, this likely reflects the energy-driven nature of the shock and a negative  
+terms of trade impulse; for CHF, rising SNB discomfort with currency strength and renewed intervention risk are key. The  
+broader message is clear: when MOOD sours, the USD strengthens, increasingly versus TWD, ZAR, BRL, AUD, MXN, HUF,  
+PLN, and EUR. We continue to prefer USD longs against low-yielding G10 currencies such as EUR, CHF, GBP, and SEK.

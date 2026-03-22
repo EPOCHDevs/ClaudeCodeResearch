@@ -1,0 +1,10 @@
+{
+   "name": "pce-headline-core-inflation-trends",
+   "description": "Year-over-year change in Headline vs Core PCE Price Index, the Federal Reserve's preferred inflation measure.",
+   "data": {
+      "assets": [],
+      "source": "polygon"
+   },
+   "source": "# Trends in Consumption - PCE Inflation\n# YoY change in PCE and Core PCE\n\npce_src = economic_indicators(series_id='PCEPI')()\ncore_src = economic_indicators(series_id='PCEPILFE')()\n\nhad_pce = is_valid(pce_src.result)\nhad_core = is_valid(core_src.result)\n\npce_filled = ffill(pce_src.result)\ncore_filled = ffill(core_src.result)\n\npce_12m_ago = valuewhen(occurrence=12)(had_pce, pce_src.result)\ncore_12m_ago = valuewhen(occurrence=12)(had_core, core_src.result)\n\npce_yoy = (pce_filled - ffill(pce_12m_ago)) / ffill(pce_12m_ago)\ncore_yoy = (core_filled - ffill(core_12m_ago)) / ffill(core_12m_ago)\n\nbar_ts = index()\n\nxy_lines(\n    title='Headline vs Core PCE (Year-over-Year)',\n    category='1. PCE Trends',\n    y_axis_label='YoY Change',\n    y_axis_format=AxisValueFormat.PercentFormat,\n    y_axis_dp=1,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Headline PCE', color=Color.Blue),\n        LineSeriesSpec(name='Core PCE', color=Color.Orange)\n    ])\n)(bar_ts, pce_yoy, core_yoy)\n",
+   "global_timeframe": "1D"
+}

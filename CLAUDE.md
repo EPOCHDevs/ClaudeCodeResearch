@@ -168,6 +168,7 @@ pip install pyfolio-reloaded empyrical-reloaded
 | `/research-topic <topic>` | Crawl sources for a research topic |
 | `/research-evaluate <id/query>` | Evaluate research source, create Linear issue |
 | `/research-implement <issue>` | Build definition and run research study |
+| `/publish-research <name>` | Publish EpochScript template to definition + manifest |
 | `/quantpedia-evaluate <url>` | Evaluate Quantpedia strategy for eligibility |
 | `/quantpedia-implement <issue>` | Implement strategy from ELIGIBLE to IN_REVIEW |
 | `/review <issue>` | Review Linear issue, address comments |

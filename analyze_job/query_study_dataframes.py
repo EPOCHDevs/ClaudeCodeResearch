@@ -16,14 +16,18 @@ Examples:
 """
 
 import sys
-import json
+import os
+import asyncio
 import argparse
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict
 
-import pyarrow as pa
-import pyarrow.ipc as ipc
 import pandas as pd
+
+# Add EpochAI to path for provider imports
+sys.path.insert(0, os.path.expanduser("~/EpochDev/EpochAI"))
+
+from agent_src.providers import LocalDataProvider, sanitize_name
 
 try:
     import duckdb
@@ -32,41 +36,23 @@ except ImportError:
     HAS_DUCKDB = False
 
 
-def read_arrow_file(path: Path) -> pa.Table:
-    """Read an Arrow IPC file."""
-    with pa.memory_map(str(path), 'r') as source:
-        reader = ipc.open_file(source)
-        return reader.read_all()
-
-
-def sanitize_name(name: str) -> str:
-    """Sanitize a name for use as SQL identifier."""
-    return name.replace('#', '_').replace(':', '_').replace('-', '_').lower()
-
-
 def load_dataframes(job_dir: Path) -> Dict[str, pd.DataFrame]:
-    """Load all arrow files from a job directory into DataFrames."""
-    data = {}
+    """Load all data from a job directory into DataFrames via LocalDataProvider."""
+    provider = LocalDataProvider(job_dir)
 
-    # Load from tables/ directory (campaigns)
-    tables_dir = job_dir / "tables"
-    if tables_dir.exists():
-        for arrow_file in tables_dir.glob("*.arrow"):
-            table = read_arrow_file(arrow_file)
-            key = sanitize_name(arrow_file.stem)
-            data[key] = table.to_pandas()
+    async def _load():
+        # Market data + orders + positions + account
+        dfs = await provider.get_raw_dataframes("")
 
-    # Load from timeframe directories (1D/, 1W-FRI/, etc.)
-    timeframe_patterns = ["1D", "1W-*", "1ME", "1Min", "5Min", "15Min", "1H"]
-    for pattern in timeframe_patterns:
-        for tf_dir in job_dir.glob(pattern):
-            if tf_dir.is_dir():
-                for arrow_file in tf_dir.glob("*.arrow"):
-                    table = read_arrow_file(arrow_file)
-                    key = f"market_data_{sanitize_name(tf_dir.name)}_{sanitize_name(arrow_file.stem)}"
-                    data[key] = table.to_pandas()
+        # Event markers as DataFrames (provider returns row dicts)
+        _, cached_markers = await provider.get_all_event_markers("")
+        for key, items in cached_markers.items():
+            if items:
+                dfs[f"event_marker_{sanitize_name(key)}"] = pd.DataFrame(items)
 
-    return data
+        return dfs
+
+    return asyncio.run(_load())
 
 
 def create_connection(dataframes: Dict[str, pd.DataFrame]) -> "duckdb.DuckDBPyConnection":

@@ -1,0 +1,127 @@
+Brent Donnelly 
+ 
+ 
+bdonnelly@spectramarkets.com 
+(212) 398-6230 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Clock version here 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Current Views 
+ 
+ 
+ 
+1-month 0.99 EURUSD 
+digital put at 18% 
+Expires August 18 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Soft leads hard (usually) 
+ 
+The survey data is bad! US and European PMIs overnight along with Philly Fed yesterday 
+show a business community that now expects the worst. While Initial Claims tick higher, 
+the hard data is still relatively robust. It is not unusual for hard and soft data to diverge, this 
+was a feature of the narrative in 2017 (people confident, but economy lagged for a while) 
+and 2019 (people losing confidence, but hard data stayed strong). 
+ 
+There are a few things to think about here: 
+ 
+1. Negative consumer sentiment is probably driven to a large part by inflation. This is 
+captured by the difference in Michigan and Conference Board data as the Michigan 
+Survey is much more impacted by inflation that the Conference Board’s. Therefore, 
+consumer sentiment is less important than business sentiment. 
+2. Business sentiment should be less impacted by inflation because higher prices can 
+be either good or bad for businesses, depending on their pricing power, labor intensity 
+and so on. Therefore, I would not expect the real vs. nominal dichotomy to distort 
+business sentiment all that much. 
+3. Hard data is supported somewhat by inflation. If I spend $60 to fill up my tank and I 
+was spending $40 before, that’s a 50% increase in Fuel Sales. Not really bullish. 
+4. Soft data almost always leads hard data. But not always. There are occasions, in mid-
+cycle slowdowns, where the soft data turns, and the hard data holds firm. 
+ 
+I gathered ISM New Orders (most timely and reliable soft data) and Initial Claims (most 
+timely and reliable hard data) and ranked each month since 1996 according to its percentile 
+in the series. Then, I created a chart so you can see the ebb and flow over time. I know the 
+chart is wild and wooly, but don’t worry, the takeaways are labelled with green numbers (!) 
+ 
+ 
+ 
+ 
+ 
+Friday, July 22, 2022

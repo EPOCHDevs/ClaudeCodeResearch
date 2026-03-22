@@ -23,29 +23,74 @@
     }
   },
   "overrides": {
-    "rs007_fx_monthly_seasonality_research": {
-      "start": "2005-01-01",
-      "end": "2024-12-31"
-    },
-    "rs010_eurusd_monthly_seasonality_research": {
-      "start": "2005-01-01",
-      "end": "2024-12-31"
-    },
-    "eng608_market_sentiment_dashboard_research": {
-      "start": "2023-01-01",
-      "end": "2024-12-31"
-    },
     "short_interest_effect_strategy": {
       "cash": 100000,
       "start": "2023-01-01",
-      "end": "2024-12-31"
+      "end": "2024-12-31",
+      "cost": "us_equity"
     },
     "post_earnings_drift_strategy": {
       "cash": 100000,
       "start": "2023-01-01",
-      "end": "2024-12-31"
+      "end": "2024-12-31",
+      "cost": "us_equity"
     },
     "fed_model_strategy": {
+      "cash": 100000,
+      "start": "2020-01-01",
+      "end": "2024-12-31",
+      "cost": "us_equity"
+    },
+    "asset_class_trend_following_strategy": {
+      "cost": "us_equity"
+    },
+    "currency_momentum_strategy": {
+      "cost": "fx"
+    },
+    "dividend_month_anomaly_strategy": {
+      "cost": "us_equity"
+    },
+    "donchian_chandelier_strategy": {
+      "cost": "us_equity"
+    },
+    "fx_carry_trade_strategy": {
+      "cost": "futures"
+    },
+    "low_volatility_factor_strategy": {
+      "cost": "us_equity",
+      "cash": 100000,
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "sector_momentum_strategy": {
+      "cost": "us_equity",
+      "cash": 100000,
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "sector_rotation_monetary_policy_strategy": {
+      "cost": "us_equity"
+    },
+    "sector_seasonality_momentum_strategy": {
+      "cost": "us_equity",
+      "cash": 100000,
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "spy_morning_dip_strategy": {
+      "cost": "us_equity"
+    },
+    "stock_reversal_within_sectors_strategy": {
+      "cost": "us_equity"
+    },
+    "term_structure_commodities_strategy": {
+      "cost": "futures"
+    },
+    "value_book_to_market_strategy": {
+      "cost": "us_equity"
+    },
+    "sma_crossover_futures_strategy": {
+      "cost": "us_equity",
       "cash": 100000,
       "start": "2020-01-01",
       "end": "2024-12-31"
@@ -142,10 +187,6 @@
       "start": "2019-01-01",
       "end": "2024-12-31"
     },
-    "aapl_valuation_profitability_research": {
-      "start": "2019-01-01",
-      "end": "2024-12-31"
-    },
     "aapl_valuation_historical_context_research": {
       "start": "2019-01-01",
       "end": "2024-12-31"
@@ -187,35 +228,19 @@
       "end": "2024-12-31"
     },
     "gc_nfp_intraday_research": {
-      "start": "2024-01-01",
+      "start": "2023-06-01",
       "end": "2025-01-01"
-    },
-    "sp500_worst_performers_screener": {
-      "start": "2024-01-01",
-      "end": "2025-01-01"
-    },
-    "slv_momentum_dashboard": {
-      "start": "2025-01-01",
-      "end": "2026-01-01"
-    },
-    "slv_trend_dashboard": {
-      "start": "2025-01-01",
-      "end": "2026-01-01"
-    },
-    "slv_support_resistance_levels": {
-      "start": "2020-01-01",
-      "end": "2026-01-01"
     },
     "aapl_post_earnings_drift_research": {
       "start": "2020-01-01",
       "end": "2024-12-31"
     },
     "tlt_cpi_reaction_research": {
-      "start": "2020-01-01",
+      "start": "2018-01-01",
       "end": "2024-12-31"
     },
     "zb_cpi_intraday_research": {
-      "start": "2024-01-01",
+      "start": "2023-06-01",
       "end": "2025-01-01"
     },
     "spy_fed_rate_reaction_research": {
@@ -231,7 +256,214 @@
       "end": "2025-01-01"
     },
     "spy_claims_yield_curve_research": {
+      "start": "2018-01-01",
+      "end": "2024-12-31"
+    },
+    "audnzd_macro_fair_value_research": {
+      "start": "2015-01-01",
+      "end": "2026-03-09"
+    },
+    "bmo_fx_mood_correlation_research": {
+      "start": "2024-01-01",
+      "end": "2026-03-10"
+    },
+    "bmo_global_risk_sentiment_mood_research": {
       "start": "2020-01-01",
+      "end": "2026-03-10"
+    },
+    "builtin_cluster_intraday_returns": {
+      "start": "2024-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S11_calendar_detection": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S11_calendar_full": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S16_crossover_under": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S17_hold_until": {
+      "start": "2020-01-01",
+      "end": "2023-12-31"
+    },
+    "signal_cluster_S18_streak_counting": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S50_breakout_freshness": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S51_gap_analysis": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S52_regime_change": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S53_null_data_quality": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S54_S56_S57_text": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S55_percentile_normalize": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S58_candlestick_patterns": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_S59_order_flow": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "signal_cluster_intraday_validation": {
+      "start": "2024-10-01",
+      "end": "2024-12-31"
+    },
+    "exec_cluster_E01_zone_basic": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E01_hold_strict": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E03_sizing_modes": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E03_notional": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E03_unit_notional": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E04_risk_unit_trailing": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E04_fixed_risk_rr": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E04_pips_risk": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E04_ticks_stop": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E05_kelly_sizing": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E05_optimal_f": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E06_cppi_insurance": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E06_tipp_insurance": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E07_pips_stop": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E07_ticks_stop": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E08_tiered_tp": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E09_stepped_trailing": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E09_trailing_alone": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E10_indicator_exits": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E11_futures_rollover": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E17_exit_combos": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_E18_directional_wiring": {
+      "start": "2020-01-01",
+      "end": "2024-06-30"
+    },
+    "exec_cluster_cost_us_equity": {
+      "start": "2020-01-01",
+      "end": "2024-06-30",
+      "cost": "us_equity"
+    },
+    "exec_cluster_cost_futures": {
+      "start": "2020-01-01",
+      "end": "2024-06-30",
+      "cost": "futures"
+    },
+    "exec_cluster_cost_crypto": {
+      "start": "2020-01-01",
+      "end": "2024-06-30",
+      "cost": "crypto"
+    },
+    "exec_cluster_cost_fx": {
+      "start": "2020-01-01",
+      "end": "2024-06-30",
+      "cost": "fx"
+    },
+    "exec_cluster_cost_ib_equity": {
+      "start": "2020-01-01",
+      "end": "2024-06-30",
+      "cost": "ib_equity"
+    },
+    "exec_cluster_cost_flat_fee": {
+      "start": "2020-01-01",
+      "end": "2024-06-30",
+      "cost": "flat_fee"
+    },
+    "exec_cluster_cost_volume_impact": {
+      "start": "2020-01-01",
+      "end": "2024-06-30",
+      "cost": "volume_impact"
+    },
+    "ea_sp500_average_returns_over_holding_periods_research": {
+      "start": "2003-01-01",
+      "end": "2024-12-31"
+    },
+    "tsla_short_squeeze_earnings_research": {
+      "start": "2018-01-01",
+      "end": "2024-12-31"
+    },
+    "ea_hypothetical_6040_returns_with_drawdowns_research": {
+      "start": "2019-01-01",
       "end": "2024-12-31"
     }
   }

@@ -1,0 +1,12 @@
+Title: Canada 2-Year Yield, July 2021 to October 2022
+Source: AMFX 25OCT22.pdf (page 5)
+Date: 2022-10-25
+Type: chart
+
+Insight: This chart tracks the Canadian 2-year government bond yield over a 15-month period with moving averages, showing a significant upward trend from near 0.5% to over 4.1% as of October 2022, reflecting the impact of central bank rate hikes.
+
+Context (above):
+Canada 2-year yield, July 2021 to now (with 40-day and 80-day moving averages)
+
+Context (below):
+5

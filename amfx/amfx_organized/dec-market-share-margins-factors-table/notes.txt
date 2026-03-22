@@ -1,0 +1,12 @@
+Title: Factors Influencing DEC's Market Share and Margins Gains
+Source: AMFX 12DEC25.pdf (page 4)
+Date: 2025-12-12
+Type: table
+
+Insight: This table outlines negative and positive factors affecting DEC's ability to gain market share and maintain profitability, including competitive threats from IBM/HP and positive drivers like lower dollar and revenue growth.
+
+Context (above):
+See it here: https://archive.computerhistory.org/resources/access/text/2023/06/102791369-05-01-acc.pdf
+
+Context (below):
+Chart design and layout has improved a lot since 1987, however!

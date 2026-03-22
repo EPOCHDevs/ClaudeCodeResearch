@@ -1,0 +1,84 @@
+AMFX Rankings - Batch 1 (AMFX_01APR22, AMFX_02AUG23, AMFX_09FEB24, AMFX_12DEC25)
+======================================================================================
+Sorted by tier (1 = highest priority), then alphabetically within tiers.
+
+[TIER 1] AMFX_12DEC25 | Page 2 | TIME Person of the Year - Corporate Leader Stock Performance Table
+  Data: TIME Person of the Year covers (Wikipedia/TIME archive), stock prices for featured companies (Yahoo Finance)
+  Why: Directly backtestable contrarian indicator with clear rules -- short stocks when corporate leaders make the cover; avg -25.7% in year after, n=9 over 97 years.
+
+[TIER 2] AMFX_02AUG23 | Page 1 | US Unemployment Rate vs. US Budget Deficit Scatter Plot
+  Data: US unemployment rate (FRED: UNRATE), US budget deficit as % of GDP (FRED: FYFSGDA188S)
+  Why: Reproducible macro regime analysis showing structural break in Keynesian fiscal relationship post-2017; scatter by decade reveals procyclical spending shift.
+
+[TIER 2] AMFX_02AUG23 | Page 2 | US Manufacturing PMI vs. New Orders (dual-line chart)
+  Data: ISM Manufacturing PMI (FRED: NAPM), ISM New Orders sub-index (FRED: NAPMNOI)
+  Why: Classic lead-lag relationship -- New Orders leads headline PMI; testable as manufacturing cycle turning point signal.
+
+[TIER 3] AMFX_02AUG23 | Page 2 | API Crude Oil Inventory Data 2018 to now (bar chart)
+  Data: API weekly crude oil inventory changes (EIA/API data, freely available)
+  Why: Longer-term context for inventory extremes; useful for energy supply/demand regime detection but less directly actionable as standalone signal.
+
+[TIER 3] AMFX_02AUG23 | Page 2 | API Crude Oil Inventory Data for 2023 (bar chart)
+  Data: API weekly crude oil inventory changes (EIA/API data, freely available)
+  Why: Record 40-year inventory draw is a notable fundamental signal for energy; reproducible but event-specific rather than systematic.
+
+[TIER 3] AMFX_09FEB24 | Page 2 | Four-Panel Macro/Societal Trends Chart (Natural Disasters, Immigration, Overdoses, Debt)
+  Data: NOAA billion-dollar disasters, USBP border encounters, CDC overdose deaths, CBO debt projections (all publicly available)
+  Why: Macro polycrisis dashboard with public data; useful as regime/context indicators but not directly tradeable signals.
+
+[TIER 3] AMFX_12DEC25 | Page 3 | TSLA Weekly Price Chart 2020-2023 with TIME Cover Annotation
+  Data: TSLA weekly price (Yahoo Finance)
+  Why: Visual confirmation of the TIME contrarian indicator on TSLA (-65% after 2021 cover); supportive evidence for KEPT #1 but not independently actionable.
+
+[TIER 4] AMFX_02AUG23 | Page 3 | Crude Oil 2022 to now (candlestick chart with technical levels)
+  Data: WTI crude oil futures (CL, publicly available)
+  Why: Point-in-time technical analysis with support/resistance levels; not a systematic pattern, specific to Aug 2023 market structure.
+
+[TIER 4] AMFX_02AUG23 | Page 3 | RBOB Gasoline 2023 Bull Flag Chart
+  Data: RBOB gasoline futures (RB, publicly available)
+  Why: Single-instance technical pattern (bull flag); not backtestable as a systematic strategy without broader pattern recognition framework.
+
+[TIER 4] AMFX_12DEC25 | Page 5 | Goldman Sachs 1987 Computer Hardware Industry Charts (Price/Performance + 32-Bit Micro Evolution)
+  Data: Historical hardware specs from 1987 GS research (not reproducible with standard data sources)
+  Why: Interesting historical parallel to AI hardware commoditization cycle but qualitative analogy, not a testable hypothesis.
+
+[TIER 4] AMFX_12DEC25 | Page 4 | Goldman Sachs 1987 Research Note - DEC Market Share Factors Table
+  Data: Qualitative factor table from archived 1987 GS research
+  Why: Narrative-supporting historical document; qualitative comparison to current AI leaders, no quantitative methodology.
+
+[TIER 4] AMFX_12DEC25 | Page 6 | Next Week's Trading Calendar (Dec 15-19, 2025)
+  Data: Economic calendar (freely available from multiple sources)
+  Why: Operational/ephemeral data for a specific week; no research value beyond event density observation.
+
+[TIER 5] AMFX_01APR22 | Page 1 | Kahneman/Deaton Money vs. Happiness Chart
+  Data: Academic survey data (Kahneman & Deaton 2010 study)
+  Why: Behavioral economics research with no financial market application; income vs. well-being is social science, not market data.
+
+[TIER 5] AMFX_01APR22 | Page 2 | Killingsworth Well-Being vs. Household Income Chart
+  Data: Academic survey data (Killingsworth, Wharton, 33K adults)
+  Why: Behavioral economics contradicting Kahneman/Deaton plateau; interesting psychology but zero market signal content.
+
+[TIER 5] AMFX_01APR22 | Page 5 | The Fulfillment Curve (conceptual diagram)
+  Data: None (conceptual illustration, not data-driven)
+  Why: Conceptual personal finance diagram with no empirical data; not reproducible or testable.
+
+[TIER 5] AMFX_09FEB24 | Page 6 | Smartphone Usage vs. Mental Health Outcomes (Six-Panel PLOS One)
+  Data: Korean adolescent survey data (PLOS One, 50K teens)
+  Why: Public health dose-response study; no financial market application despite being rigorous quantitative research.
+
+[TIER 5] AMFX_09FEB24 | Page 7 | Mental Wellbeing vs. Age of First Smartphone (Global Mind Project)
+  Data: Sapien Labs Global Mind Project survey (28K individuals, 41 countries)
+  Why: Neurodevelopment/mental health survey data; no market signal or trading application.
+
+[TIER 5] AMFX_09FEB24 | Page 10 | Brain Neuroimaging - Reward vs. Control Systems
+  Data: fMRI neuroimaging from Frontiers Media 2021 study
+  Why: Neuroscience imaging with no financial data; completely outside scope of quantitative market research.
+
+======================================================================================
+SUMMARY BY TIER
+  Tier 1 (HIGH PRIORITY):  1 item   -- TIME Person of the Year contrarian indicator
+  Tier 2 (STRONG):         2 items  -- Unemployment/deficit regime, PMI lead-lag
+  Tier 3 (MODERATE):       4 items  -- API inventories, macro dashboard, TSLA confirmation
+  Tier 4 (LOW):            5 items  -- Technical charts, historical GS research, calendar
+  Tier 5 (SKIP):           6 items  -- Behavioral econ, neuroscience, conceptual diagrams
+  TOTAL KEPT:             18 items across 4 newsletters

@@ -1,0 +1,21 @@
+Title: P&L of Autocorrelation Buy Strategy in AUDUSD and EURUSD (2010-2022)
+Source: AMFX 24JAN23.pdf (page 2)
+Date: 2023-01-24
+Type: chart
+
+Insight: Line charts tracking cumulative P&L from an autocorrelation trading strategy in AUDUSD and EURUSD from 2010 to 2022, showing significant gains concentrated in 2020-2022 periods, with AUDUSD reaching +4.4% and EURUSD reaching +3.2% in the 10am-11am window.
+
+Context (above):
+P&L of autocorrelation buy strategy in AUDUSD and EURUSD (2010 to now)
+
+Context (below):
+You can see that the 2020 madness created a lot of autocorrelation between WMR fixes, and the same pattern was 
+evident in 2022. Overall, if AUDUSD rallied more than 0.4% on a given day from 10am to 11am, there was a 62% 
+chance it went higher in the 10am to 11am window the next day. Sample size is 94 occurrences back to 2010. But as 
+you can see in the chart, a lot of that win rate is just in the past few years. This points to some mild evidence that there 
+are some very large flows split up into chunks over a few WMR fixes. If you are bearish AUD (or bearish NZD as I am) 
+watch out for a spike to sell into at 11am NY / 4pm LDN. 
+ 
+Out of curiosity, I also ran the strategy of simply going long AUD every day from 10am to 11am, regardless of what 
+happened yesterday. The result looked totally random, but when I plunked all the currencies in there one by one, there 
+was a chart that stood out as mildly interesting. Look at the persistent real money selling of GBPUSD through Brexit.

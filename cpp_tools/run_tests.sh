@@ -1,11 +1,11 @@
 #!/bin/bash
 #
 # Run Catch3 tests by target name
-# Builds with ASAN by default, then runs the specified test targets
+# Builds with release by default, then runs the specified test targets
 #
 # Usage:
-#   ./run_tests.sh <target1> [target2] [...]              # Run specific tests (ASAN)
-#   ./run_tests.sh --release <target1> [target2] [...]    # Run with release build
+#   ./run_tests.sh <target1> [target2] [...]              # Run specific tests (release)
+#   ./run_tests.sh --asan <target1> [target2] [...]       # Run with ASAN build
 #   ./run_tests.sh -j4 <target1> [target2] [...]          # Limit to 4 build jobs
 #   ./run_tests.sh --list                                 # List available test targets
 #   ./run_tests.sh <target> -- [catch3 args]              # Pass args to Catch3
@@ -16,7 +16,7 @@
 #   ./run_tests.sh epoch_frame_test -- --list-tests
 #   ./run_tests.sh epoch_frame_test -- "[datetime]"       # Run tests with tag
 #   ./run_tests.sh epoch_frame_test -- -s                 # Show successful tests
-#   ./run_tests.sh --release epoch_trading_test
+#   ./run_tests.sh --asan epoch_trading_test
 #   ./run_tests.sh -j4 epoch_frame_test                   # Use 4 parallel jobs
 #
 
@@ -57,7 +57,7 @@ print_usage() {
     echo "Usage: $0 [options] <target1> [target2] [...] [-- catch3_args]"
     echo ""
     echo "Options:"
-    echo "  --release    Use release build instead of ASAN (default: ASAN)"
+    echo "  --asan       Use ASAN build instead of release (default: release)"
     echo "  --no-build   Skip building, just run existing executables"
     echo "  -j, --jobs N Limit parallel build jobs (default: $(nproc))"
     echo "  --list       List available test targets"
@@ -69,8 +69,8 @@ print_usage() {
     done
     echo ""
     echo "Examples:"
-    echo "  $0 epoch_frame_test                    # Build and run with ASAN"
-    echo "  $0 --release epoch_trading_test        # Build and run with release"
+    echo "  $0 epoch_frame_test                    # Build and run with release"
+    echo "  $0 --asan epoch_trading_test           # Build and run with ASAN"
     echo "  $0 epoch_frame_test -- --list-tests    # List all test cases"
     echo "  $0 epoch_frame_test -- \"[datetime]\"    # Run tests with [datetime] tag"
     echo "  $0 epoch_frame_test -- -s              # Show successful tests"
@@ -100,8 +100,8 @@ validate_target() {
 }
 
 # Parse arguments
-BUILD_MODE="asan"
-BUILD_DIR="${BACKEND_DIR}/build-asan"
+BUILD_MODE="release"
+BUILD_DIR="${BACKEND_DIR}/build"
 SKIP_BUILD=false
 TARGETS=()
 CATCH_ARGS=()
@@ -109,9 +109,9 @@ PARSING_CATCH_ARGS=false
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --release)
-            BUILD_MODE="release"
-            BUILD_DIR="${BACKEND_DIR}/build"
+        --asan)
+            BUILD_MODE="asan"
+            BUILD_DIR="${BACKEND_DIR}/build-asan"
             shift
             ;;
         --no-build)
@@ -181,7 +181,7 @@ done
 if [[ ! -d "$BUILD_DIR" ]]; then
     echo -e "${RED}Error: Build directory does not exist: $BUILD_DIR${NC}"
     if [[ "$BUILD_MODE" == "asan" ]]; then
-        echo "Hint: You may need to configure the ASAN build first"
+        echo "Hint: You may need to configure the ASAN build first (cmake preset)"
     fi
     exit 1
 fi

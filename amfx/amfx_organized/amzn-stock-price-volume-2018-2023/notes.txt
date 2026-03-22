@@ -1,0 +1,14 @@
+Title: Amazon (AMZN) Stock Price Chart 2018-2023 with Volume Analysis
+Source: AMFX 21DEC22.pdf (page 2)
+Date: 2022-12-21
+Type: chart
+
+Insight: Long-term price chart showing Amazon's rise from ~$55 to $187 and subsequent decline back to $85, with annotated volume spikes marking potential trading reversal points.
+
+Context (above):
+AMZN, 2018 to now
+
+Context (below):
+I am a big believer in market symmetry and the move from $85 to $187 back to $85 is almost perfectly symmetrical. Also 
+note the purple ovals where I marked the volumes spikes as they tend to coincide with major lows. And of course, ARKK, 
+the poster-girl of 2021 excess, is already trading far below where it started.

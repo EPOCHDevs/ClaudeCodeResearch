@@ -1,0 +1,9 @@
+{
+   "name": "amfx-claims-vs-nfp-research",
+   "description": "amFX reproduction (25OCT22 p1): US Initial Claims vs Nonfarm Payrolls monthly change overlay. NFP is 86% noise, 14% signal \u2014 Claims are cleaner and more timely. Both series normalized to percentile rankings. Claims inverted so correlation is visible. Period: 1996-2019 (excludes COVID distortion). Source: Brent Donnelly, Spectra Markets.",
+   "data": {
+      "assets": []
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: INITIAL CLAIMS VS NONFARM PAYROLLS (25OCT22 p1)\n# =============================================================================\n# \"NFP is 86% noise and 14% signal\" \u2014 Brent Donnelly\n# Orange line: NFP month-over-month change (noisy)\n# =============================================================================\n\n# Total Nonfarm Payrolls (monthly, FRED: PAYEMS) \u2014 level in thousands\npayems_src = economic_indicators(series_id='PAYEMS')()\n\n# Compute month-over-month change in thousands\nnfp_change = returns(type=ReturnsType.monetary)(payems_src.result)\nnfp = ffill(nfp_change)\n\nidx = index()\n\nxy_lines(\n    title='Nonfarm Payrolls: Monthly Change (Noisy Signal)',\n    category='Claims vs NFP',\n    y_axis_label='NFP Change (thousands)',\n    y_axis_format=AxisValueFormat.IntegerFormat,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='NFP Monthly Change', color=Color.Orange)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0, title='Zero', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(idx, nfp)\n"
+}

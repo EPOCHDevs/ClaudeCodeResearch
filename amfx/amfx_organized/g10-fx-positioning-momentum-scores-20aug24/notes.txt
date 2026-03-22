@@ -1,0 +1,12 @@
+Title: G10 FX Positioning and Momentum Scores
+Source: AMFX 20AUG24.pdf (page 7)
+Date: 2024-08-20
+Type: table
+
+Insight: Summary scores on -10 to +10 scale showing positioning and momentum metrics across USD, EUR, CHF, JPY, GBP, AUD, NZD, and CAD currency pairs versus USD.
+
+Context (above):
+G10 FX Positioning and Momentum Scores
+
+Context (below):
+7

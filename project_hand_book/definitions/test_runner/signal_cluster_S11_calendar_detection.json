@@ -1,0 +1,10 @@
+{
+   "name": "Signal Cluster S11: Calendar Detection (Period Boundaries)",
+   "description": "Tests: is_period_boundary(period, boundary, ordinal, day_anchor, day_of_month, offset). Monthly/quarterly/OPEX detection, T-1 offset.",
+   "data": {
+      "assets": ["SPY-Stocks"],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# SIGNAL CLUSTER S11: is_period_boundary\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nrets = returns()(close)\n\n# === PERIOD BOUNDARIES ===\nmonth_start = is_period_boundary(period=PeriodType.month)(index())\nmonth_end = is_period_boundary(period=PeriodType.month, boundary=BoundaryType.end)(index())\nquarter_start = is_period_boundary(period=PeriodType.quarter, boundary=BoundaryType.start)(index())\n\n# === OPEX (3rd Friday) ===\nopex = is_period_boundary(period=PeriodType.month, ordinal=OrdinalType.third, day_anchor=DayAnchorType.friday)(index())\n\n# === T-1 PRE-POSITIONING ===\nt_minus_1 = is_period_boundary(period=PeriodType.month, boundary=BoundaryType.end, offset=-1)(index())\n\n# === REPORTERS ===\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.CalendarIcon,\n        schemas=[\n            ColumnSpec(title='Return', dp=4, type=CardRenderType.PercentFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title='Month Start'\n    )\n)(rets, month_start)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.TargetIcon,\n        schemas=[\n            ColumnSpec(title='Close', dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title='OPEX (3rd Friday)'\n    )\n)(close, opex)\n",
+   "global_timeframe": "1D"
+}

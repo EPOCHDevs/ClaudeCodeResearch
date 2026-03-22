@@ -1,0 +1,12 @@
+Title: FX Momentum Comparison - Last Week vs This Week
+Source: AMFX 24JAN23.pdf (page 5)
+Date: 2023-01-24
+Type: chart
+
+Insight: This bar chart displays momentum indicators for major G10 currency pairs, comparing last week's values (gray bars) against this week's values (light blue bars), with USD showing notably negative momentum while most other currencies display positive readings.
+
+Context (above):
+G10 FX Positioning and Momentum
+
+Context (below):
+5

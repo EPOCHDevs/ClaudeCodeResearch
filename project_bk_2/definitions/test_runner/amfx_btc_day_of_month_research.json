@@ -1,0 +1,13 @@
+{
+   "name": "amfx-btc-day-of-month-research",
+   "description": "amFX reproduction (16JUN22 p3): BTC average daily return by day of month since November 2021. During the crypto bear market, BTC was sold steadily throughout the month but bounced in the final week from institutional inflows being deployed at month boundaries. Bar chart shows mean daily return by day of month. Source: Brent Donnelly, Spectra Markets.",
+   "data": {
+      "assets": [
+         "BTCUSD-Crypto"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: BTC DAY-OF-MONTH PATTERN (16JUN22 p3)\n# =============================================================================\n# Original shows cumulative BTC return through the month since Nov 2021.\n# Pattern: steady selling throughout the month, bounce in final week\n# from new institutional allocations being deployed.\n#\n# We show average daily return by day of month using xy_bars.\n# Negative returns cluster in early/mid month, positive at month end.\n# =============================================================================\n\nbtc = crypto_pairs(ticker='BTCUSD')()\nclose = btc.c\nidx = index()\n\n# Daily return\nret = returns(period=1)(close) * 100\n\n# Day of month for categorization\ndom = datetime_extract(component=DatetimeExtractionType.day)(idx)\n\nxy_bars(\n    title='BTC Average Daily Return by Day of Month (Bear Market Pattern)',\n    category='BTC Day-of-Month',\n    agg=AggregationType.Mean,\n    data_labels=True,\n    x_axis_label='Day of Month',\n    y_axis_label='Avg Daily Return (%)',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=2,\n    x_category_type=CategoryAxisType.Exact,\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0, title='Zero', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    series=BarSeriesSchema(series=[\n        BarSeriesSpec(name='Avg Daily Return', color=Color.Blue)\n    ]),\n    order=0\n)(ret, label=dom)\n"
+}

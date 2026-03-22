@@ -1,0 +1,64 @@
+SPECTRA MARKETS: LOOK FORWARD 
+ 
+2 
+ 
+Takeaways: 
+ 
+A. In 1999/2000, ISM new orders was a great lead indicator. Peaked November 1999. 
+B. 2005 ISM false alarm (mid-cycle). 
+C. 2006 ISM early warning. 
+D. 2007/2008 sentiment good lead indicator. 
+E. Sentiment was an excellent bullish lead indicator at the turn in 2009/2010. 
+F. 2013 ISM false alarm on taper tantrum, slowdown fear. 
+G. 2015/2016 ISM false alarm on China deval and global growth dump. 
+H. 2019 ISM good lead indicator but COVID obviously random wildcard. 
+I. 
+TBD but not looking bueno. 
+ 
+With global soft data moving uniformly and rapidly weaker, the base case has to be that US employment and inflation is 
+about to turn aggressively weak. That said (as discussed a few days ago as I tried to consider the alternative hypothesis 
+of a better outcome), there are so many distortions in the current economy and things are moving so quickly… An open 
+mind is always good. 
+ 
+If we are entering a meaningful (not just technical) global recession, USDJPY and cross/JPY are probably 10 big 
+figures too high. If you are a macro person looking for multi-month ideas, short EURJPY and AUDJPY are 
+sensible. The BOJ YCC story is moot if yields collapse. 
+ 
+ 
+Coinbase 
+ 
+ 
+I don’t usually talk much about crypto in am/FX because I have another publication for that (MacroTactical Crypto). But 
+there is so much interesting stuff to chew on in the Coinbase inside trading story, I’m going to comment here today. 
+ 
+You can read the full complaint here: 
+ 
+https://sec.gov/litigation/complaints/2022/comp-pr2022-127.pdf 
+ 
+This case is interesting as it provides specific token-by-token reasoning from the SEC arguing why each of nine crypto 
+tokens is a security by law (list below). This has broad implications for most crypto ex-BTC. I’m definitely not a lawyer, 
+but it seems to me that bitcoin is ~100% NOT a security under the Howey Test. 
+ 
+Key excerpt from the complaint: 
+ 
+A digital token or crypto asset is a crypto asset security if it meets the 
+definition of a security, which the Securities Act defines to include “investment 
+contract,” i.e., if it constitutes an investment of money... ... in a common 
+enterprise, with a reasonable expectation of profit derived from the efforts of 
+others. As described below, Ishan provided material, nonpublic information about, 
+and Nikhil and Ramani traded in, nine crypto asset securities that meet this 
+definition. 
+ 
+***Boom*** 
+ 
+"Our message with these charges is clear: fraud is fraud is fraud, whether it occurs on the blockchain or on Wall Street. 
+We are not concerned with labels, but rather the economic realities of an offering,” said Gurbir Grewal, SEC’s Director 
+of Enforcement. 
+ 
+“In this case, those realities affirm that a number of the crypto assets at issue were securities, and, as alleged, the 
+defendants engaged in typical insider trading ahead of their listing on Coinbase. Rest assured, we’ll continue to ensure 
+a level playing field for investors, regardless of the label placed on the securities involved.” 
+ 
+Pages 23 to 59 of the document go into great detail, applying the Howey Test to explain why AMP, RLY, DDX, XYO, 
+RGT, LCX, POWR, DFX, KROM are securities. Each explanation includes detailed history showing how the issuers of 
+the tokens emphasized the security-like properties of the tokens.

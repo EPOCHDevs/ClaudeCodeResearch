@@ -1,0 +1,13 @@
+Title: USGG10YR Index - 15 Day 30-Minute Candlestick Chart
+Source: AMFX   Recession For and Against  23NOV22 (1).pdf (page 2)
+Date: 2022-11-23
+Type: chart
+
+Insight: This 30-minute candlestick chart tracks US 10-year Treasury yields over 15 days, with analysis identifying 3.50% as a key short-term target level representing the previous YTD high and 100-day moving average.
+
+Context (above):
+US 10-year yields, 15 days of 30-minute increments
+
+Context (below):
+Zooming out, a good short-term target for 10-year yields is 3.50%, that is the old YTD high as of June 2022 and just above 
+the 100-day moving average. Here is the chart.

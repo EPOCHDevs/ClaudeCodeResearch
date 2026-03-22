@@ -1,0 +1,123 @@
+AMFX Rankings - Batch 2
+=======================
+Sources: AMFX_12JUN23, AMFX_13JUN25, AMFX_13NOV23, AMFX_16JUN22
+Generated: 2026-03-11
+
+================================================================================
+TIER 1 - HIGH PRIORITY (implement first)
+================================================================================
+
+[TIER 1] AMFX_12JUN23 | Page 3 | P&L of Fading 10-Day Momentum Before Quarterly OPEX
+  Data: NASDAQ 100 daily prices, quarterly OPEX dates (third Friday of Mar/Jun/Sep/Dec)
+  Why: Fully backtestable contrarian strategy with clear rules -- fade 10-day momentum on Monday before quarterly OPEX, cover 10 days after; all data publicly available
+
+[TIER 1] AMFX_13NOV23 | Page 2 | 2023 Almanac Seasonality Trade Statistics (Table)
+  Data: Cross-asset seasonal patterns (FX, equities, commodities, bonds) with entry/exit dates
+  Why: Out-of-sample track record (60.6% win rate, 109 trades, avg 42-day hold) proves seasonal signals have predictive value; fully reproducible with public price data
+
+[TIER 1] AMFX_13NOV23 | Page 2 | Cumulative Return of 2023 Almanac Seasonality Trades YTD
+  Data: Cross-asset daily prices for seasonal trade portfolio
+  Why: Companion to the stats table -- shows the equity curve of a calendar-based seasonal strategy with ~190% cumulative return; validates systematic seasonality approach
+
+[TIER 1] AMFX_16JUN22 | Page 3 | BTC Cumulative Performance Through the Month (Since Nov 2021)
+  Data: Bitcoin daily prices, day-of-month aggregation
+  Why: Clear intra-month seasonal pattern (sell throughout month, bounce last week) driven by institutional flow mechanics; testable across different regimes with public crypto data
+
+================================================================================
+TIER 2 - STRONG
+================================================================================
+
+[TIER 2] AMFX_12JUN23 | Page 1 | EURGBP vs. Germany/UK 10-Year Rate Differential
+  Data: EURGBP spot (Yahoo/FRED), German 10Y Bund yield, UK 10Y Gilt yield (FRED/ECB/BoE)
+  Why: Quantifiable FX-rates relationship showing dislocation and reconvergence; rate differentials are a proven FX driver and the spread is computable from public data
+
+[TIER 2] AMFX_12JUN23 | Page 1 | GBPUSD vs. UK/USA 10-Year Rate Differential
+  Data: GBPUSD spot, UK 10Y Gilt yield, US 10Y Treasury yield (all FRED-available)
+  Why: Same rate-differential-to-FX framework as EURGBP chart; systematic z-score of FX vs rate spread could generate mean-reversion signals
+
+[TIER 2] AMFX_12JUN23 | Page 2 | USDCAD vs. NYMEX Crude Oil (Inverted)
+  Data: USDCAD spot, NYMEX WTI crude front-month (CL1) -- both on Yahoo Finance/FRED
+  Why: Classic commodity-currency relationship; rolling correlation regime changes are measurable and the decoupling/recoupling pattern is tradeable
+
+[TIER 2] AMFX_12JUN23 | Page 3 | NASDAQ with Monday of Quarterly Expiry Week Marked
+  Data: NASDAQ 100 daily prices, quarterly OPEX calendar dates
+  Why: Visual companion to the OPEX P&L chart; documents 7 consecutive quarterly reversals around OPEX -- small sample but pattern is testable over longer history
+
+[TIER 2] AMFX_13JUN25 | Page 2 | Real Policy Rates Using Core CPI (Multi-Line Chart)
+  Data: 10 central bank policy rates + core CPI for each country (FRED, BIS, national statistics offices)
+  Why: Cross-country real rate comparison identifies policy divergence regimes; real rate differentials are a proven driver of FX carry and could generate systematic FX signals
+
+[TIER 2] AMFX_13JUN25 | Page 2 | Real Policy Rates Current Readings (Table)
+  Data: Same as above -- current policy rates and core CPI for 10 central banks
+  Why: Snapshot companion to the time series chart; ranking central banks by real rate restrictiveness directly maps to carry trade attractiveness
+
+[TIER 2] AMFX_16JUN22 | Page 2 | US 10-Year Yields vs. NYMEX Crude
+  Data: US 10Y Treasury yield (FRED), NYMEX crude oil front-month (Yahoo Finance)
+  Why: Quantifiable yield-commodity correlation with regime-change hypothesis (aggressive tightening eventually breaks oil, which then pulls yields down); testable lead-lag relationship
+
+[TIER 2] AMFX_16JUN22 | Page 3 | BTC Since November 2021 with End of Month Circled
+  Data: Bitcoin daily prices (public), month-end date identification
+  Why: Visual evidence supporting the BTC intra-month seasonal pattern; documents where the pattern held and where it broke (LUNA/3AC forced liquidation), useful for regime-conditional analysis
+
+[TIER 2] AMFX_16JUN22 | Page 5 | EURJPY vs. HYG (February to April 2008)
+  Data: EURJPY daily (Yahoo/FRED), HYG ETF daily (Yahoo Finance)
+  Why: Forced-liquidation-driven decorrelation is a repeatable pattern in crises; measurable via rolling correlation breakdowns between carry FX and high-yield credit; applicable to regime detection
+
+================================================================================
+TIER 3 - MODERATE
+================================================================================
+
+[TIER 3] AMFX_13JUN25 | Page 1 | NASDAQ September to November 2024 (Geopolitical Events)
+  Data: NASDAQ daily prices, geopolitical event dates (public news archives)
+  Why: Interesting for geopolitical-event-impact research but limited to a single episode; would need aggregation across many geopolitical events to be systematic
+
+[TIER 3] AMFX_13JUN25 | Page 1 | NYMEX Crude October/November 2024 (Iran-Israel)
+  Data: NYMEX crude daily/hourly prices, geopolitical event timestamps
+  Why: Useful for oil-geopolitical-shock research; single event study but could be aggregated with historical Middle East escalation data
+
+[TIER 3] AMFX_16JUN22 | Page 1 | AUDUSD Hourly Chart Around the Last FOMC
+  Data: AUDUSD hourly prices, FOMC statement/press conference timestamps
+  Why: Documents Fed-communication-driven FX pattern (rally on dovish guidance, reversal after); would need aggregation across many FOMC events for systematic value
+
+[TIER 3] AMFX_16JUN22 | Page 4 | Weekly Crypto Asset Flows (US$m)
+  Data: CoinShares weekly flow data (publicly available from CoinShares reports)
+  Why: Institutional flow tracking is valuable for sentiment analysis, but weekly frequency limits signal generation; useful as a regime indicator for crypto positioning
+
+================================================================================
+TIER 4 - LOW
+================================================================================
+
+[TIER 4] AMFX_13JUN25 | Page 1 | NYMEX Crude Oil, Last Two Days (Intraday Spike)
+  Data: NYMEX crude 1-minute data around June 12-13, 2025
+  Why: Single intraday event observation; interesting for volatility compression analysis but not a repeatable pattern on its own
+
+[TIER 4] AMFX_13JUN25 | Page 3 | GameStop 1-Minute Chart (Microstructure Anomaly)
+  Data: GME 1-minute data for a single trading day
+  Why: One-off microstructure curiosity (massive resting bid); no repeatable trading hypothesis and meme stock dynamics are idiosyncratic
+
+[TIER 4] AMFX_13JUN25 | Page 4 | Trading Calendar for Week of June 16, 2025
+  Data: Economic calendar data
+  Why: Time-specific reference material with no lasting analytical value; calendar data is ephemeral
+
+[TIER 4] AMFX_13NOV23 | Page 3 | This Week's Calendar (November 13-17, 2023)
+  Data: Economic calendar data, seasonality highlights (TLT bullish, GBPUSD seasonal low)
+  Why: Time-specific calendar; the embedded seasonality highlights (TLT, GBPUSD) are interesting but better captured via the Almanac statistics above
+
+================================================================================
+SUMMARY
+================================================================================
+
+Tier 1 (High Priority):     4 items
+Tier 2 (Strong):            9 items
+Tier 3 (Moderate):          4 items
+Tier 4 (Low):               4 items
+Tier 5 (Skip):              0 items
+----------------------------------
+Total KEPT items ranked:    21 items
+
+TOP IMPLEMENTATION CANDIDATES:
+1. OPEX momentum-fading strategy (AMFX_12JUN23) -- clearest backtest rules
+2. Cross-asset seasonality system (AMFX_13NOV23) -- proven out-of-sample results
+3. BTC intra-month seasonal pattern (AMFX_16JUN22) -- simple, clear, data-rich
+4. FX vs rate differential mean-reversion (AMFX_12JUN23) -- multiple pairs, proven macro driver
+5. Real policy rate divergence for FX carry (AMFX_13JUN25) -- systematic cross-country framework

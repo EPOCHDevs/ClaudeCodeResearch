@@ -1,0 +1,13 @@
+Title: Z-Score Changes and Market Outcomes Analysis
+Source: AMFX 20AUG24.pdf (page 6)
+Date: 2024-08-20
+Type: table
+
+Insight: Historical comparison of currency and index positioning shifts (measured by z-score changes) against subsequent price action outcomes, suggesting that large positioning moves tend to precede price moves in the same direction.
+
+Context (below):
+On balance, the price action has tended to follow the direction of the big positioning 
+shift. That bodes ill for the likes of NZD/JPY, as the kiwi futures position has dropped 
+by just over 5 sigma over the last six weeks as well. Granted, the sample size of the 
+study above is not particularly large, but the only time when the price action clearly 
+moved against the positioning was a Russell 2000 rally nearly 20 years ago.

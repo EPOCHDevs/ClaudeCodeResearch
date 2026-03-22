@@ -1,0 +1,14 @@
+Title: JGB 0.1 03/20/30 Holder Distribution - BOJ Ownership at 114.76%
+Source: AMFX 24JAN23.pdf (page 3)
+Date: 2023-01-24
+Type: table
+
+Insight: This holdings table shows the Bank of Japan owns 114.76% of the 2030 JGB issue, indicating significant overweight position and reflecting BOJ's aggressive QE program in Japanese government bonds.
+
+Context (above):
+The HDS page for the 2030 JGB is interesting. 
+ 
+BOJ owns 114.76% of the issue. Neat.
+
+Context (below):
+HT JJ

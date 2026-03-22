@@ -1,0 +1,12 @@
+Title: Next Week's Economic Calendar (December 15-19, 2025)
+Source: AMFX 12DEC25.pdf (page 6)
+Date: 2025-12-12
+Type: table
+
+Insight: Weekly economic calendar showing key central bank interest rate decisions (BOE, ECB, Riksbank, Norges Bank, BOJ) and major economic data releases across multiple time zones with precise UTC times for traders.
+
+Context (above):
+Next week’s trading calendar
+
+Context (below):
+6

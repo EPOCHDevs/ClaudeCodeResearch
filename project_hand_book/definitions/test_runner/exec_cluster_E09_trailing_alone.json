@@ -1,0 +1,10 @@
+{
+   "name": "Exec Cluster E09: Trailing Stop ALONE (No SL, No risk_unit)",
+   "description": "REPRO: trailing_stop without any stop_loss or risk_unit — does it place stops?",
+   "data": {
+      "assets": ["AAPL-Stocks", "MSFT-Stocks"],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# REPRO: trailing_stop alone — no stop_loss, no risk_unit\n# Expected: trailing_stop should place its own stop at entry - distance\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\natr_val = atr(period=14)(src.h, src.l, src.c)\n\n# === SIGNAL: Donchian breakout ===\ndonchian = donchian_channel(window=20)(src.h, src.l)\nupper_prior = donchian.donchian_upper >> 1\nlower_prior = donchian.donchian_lower >> 1\n\nentry_long = close > upper_prior\nentry_short = close < lower_prior\nheld_long = hold_until()(enter=entry_long, exit=entry_short)\nheld_short = hold_until()(enter=entry_short, exit=entry_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\nposition_size(type=SizeType.percent)(size=20)\n\n# trailing_stop ONLY — no stop_loss, no risk_unit\ntrailing_stop()(distance=atr_val * 2)\n",
+   "global_timeframe": "1D"
+}

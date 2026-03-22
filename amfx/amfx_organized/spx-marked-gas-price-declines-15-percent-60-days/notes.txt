@@ -1,0 +1,9 @@
+Title: S&P 500 with Gas Price Decline Periods (15%+ in 60 days)
+Source: AMFX 21DEC22.pdf (page 1)
+Date: 2022-12-21
+Type: chart
+
+Insight: This chart overlays the S&P 500 price action with blue bars indicating periods when gas prices declined 15% or more within 60-day windows, showing the historical correlation between energy price drops and equity market movements from 2004-2022.
+
+Context (above):
+SPX marked with times when gas prices down 15% or more in 60 days

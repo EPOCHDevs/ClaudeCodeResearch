@@ -1,0 +1,10 @@
+Title: Distribution of daily EURUSD closes >1.08 since Aug2022
+Source: AMFX 20AUG24.pdf (page 2)
+Date: 2024-08-20
+Type: chart
+
+Insight: This histogram shows that EURUSD closes above 1.08 have been heavily concentrated in the 1.0800-1.1050 range since August 2022, with very few occurrences above 1.1100, highlighting the rarity of the current elevated price levels.
+
+Context (above):
+Much like USDCAD, the euro is right at a huge level as we have closed above 1.1100 just nine times in the past 
+two years. We have only closed above 1.1130 five times in the last two years. We are in rarified air.

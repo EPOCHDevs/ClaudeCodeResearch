@@ -1,0 +1,13 @@
+Title: Cathie Wood's ARK Innovation ETF (ARKK) Performance 2018-2023
+Source: AMFX 21DEC22.pdf (page 2)
+Date: 2022-12-21
+Type: chart
+
+Insight: The chart illustrates ARKK's dramatic rise from ~$45 in 2020 to a peak of ~$160 in late 2021, followed by a sharp decline to ~$32 by December 2022, exemplifying the boom-bust cycle in speculative tech investments.
+
+Context (above):
+ARKK, 2018 to now
+
+Context (below):
+So, while this boom/bust cycle feels highly similar to 2001, an argument could be made that we are much further along 
+than we were going into that year. Here is the chart of the NASDAQ in that period:

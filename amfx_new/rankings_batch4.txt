@@ -1,0 +1,143 @@
+AMFX Rankings - Batch 4
+=======================
+Sources: AMFX_21JUL23, AMFX_22JUL22, AMFX_23NOV22, AMFX_24JAN23
+Generated: 2026-03-11
+
+Note: AMFX_21JUL23 (Hagakure / Rabbit Hole #9) contained zero quantitative
+charts or tables. All items are text-based trading philosophy. No KEPT items.
+
+===============================================================================
+TIER 1 - HIGH PRIORITY (implement first)
+===============================================================================
+
+[TIER 1] AMFX_23NOV22 | Page 3 | How Long Until the Recession? Yield Curve Inversion Table
+  Data: US Treasury 3M and 10Y yields (FRED: DGS3MO, DGS10Y), NBER recession dates
+  Why: Perfectly backtestable signal -- 3M/10Y inversion for 10 consecutive days predicts recessions with 311-day avg lead; 8/8 historical track record
+
+[TIER 1] AMFX_23NOV22 | Page 4 | Conference Board LEI vs Recessions (1960 to now)
+  Data: Conference Board LEI (FRED: USSLIND), NBER recession dates
+  Why: LEI threshold signal (-2.7) has perfect recession prediction record since 1960; clear threshold-based rule with long history
+
+[TIER 1] AMFX_24JAN23 | Page 2 | P&L of Autocorrelation Buy Strategy - AUDUSD and EURUSD
+  Data: AUDUSD and EURUSD 1-minute or hourly data (10am-11am NY window), freely available from OANDA/Dukascopy
+  Why: Fully specified systematic strategy -- if >0.4% rally in fix window, go long next day same window; 62% win rate, 94 occurrences since 2010
+
+[TIER 1] AMFX_24JAN23 | Page 2 | Cumulative Performance of GBPUSD 10am-11am NY (2010 to now)
+  Data: GBPUSD intraday data (10am-11am NY), freely available from OANDA/Dukascopy
+  Why: Reveals persistent structural FX flow pattern at WMR fix; cumulative return shows years-long regime driven by hedging flows; directly backtestable
+
+[TIER 1] AMFX_22JUL22 | Page 1 | Initial Claims vs ISM New Orders Percentile Ranking (1996-2022)
+  Data: ISM New Orders (FRED: NEWORDER or ISM report), Initial Claims (FRED: ICSA)
+  Why: Clear lead-lag relationship between soft and hard data at turning points; percentile ranking methodology is reproducible; directly applicable to recession/expansion timing
+
+===============================================================================
+TIER 2 - STRONG
+===============================================================================
+
+[TIER 2] AMFX_23NOV22 | Page 3 | NFIB Optimism Index Components (Hard vs Soft)
+  Data: NFIB Small Business Optimism Index components (available from NFIB monthly reports, some on FRED)
+  Why: Hard vs soft data divergence is a documented leading indicator; decomposition methodology is reproducible and shows regime shifts
+
+[TIER 2] AMFX_23NOV22 | Page 1 | S&P Performance Around Thanksgiving (2009-2021)
+  Data: S&P 500 daily returns (Yahoo Finance: SPY), US holiday calendar
+  Why: Well-defined seasonality study with clear date rules; 77% hit rate on Wednesday, 38% on Black Friday; easily extendable to more years and other holidays
+
+[TIER 2] AMFX_23NOV22 | Page 5 | JOLTS Job Openings (2001 to now)
+  Data: JOLTS total nonfarm job openings (FRED: JTSJOL)
+  Why: Key macro indicator with clear threshold analysis (10.7M vs 4.4M pre-recession levels); reproducible regime framework for labor market health
+
+[TIER 2] AMFX_24JAN23 | Page 5 | G10 FX Positioning and Momentum - Summary Scores
+  Data: CFTC COT reports (free), risk reversals (Bloomberg), RSI/MA deviations (computable from spot prices)
+  Why: Composite positioning/momentum scoring framework is reproducible; contrarian signal when positioning and momentum diverge
+
+[TIER 2] AMFX_24JAN23 | Page 5 | G10 FX Positioning and Sentiment - Detailed Breakdown
+  Data: CFTC COT (free: FRED/CFTC site), risk reversals (Bloomberg), Daily Sentiment Index (trade-futures.com)
+  Why: Multi-factor positioning model with 6 sub-components; CFTC level + 4-week change are freely available and backtestable as contrarian signals
+
+[TIER 2] AMFX_24JAN23 | Page 5 | G10 FX Momentum Table
+  Data: G10 FX spot rates (freely available), RSI, 20-day MA, 100-day MA
+  Why: Simple, fully reproducible momentum scoring using standard technical indicators; cross-currency momentum ranking is a well-documented FX factor
+
+[TIER 2] AMFX_24JAN23 | Page 6 | Bloomberg US Financial Conditions Index
+  Data: Bloomberg Financial Conditions Index (Bloomberg terminal), or Chicago Fed NFCI (FRED: NFCI) as free proxy
+  Why: Financial conditions vs Fed policy divergence is a tradeable regime indicator; Chicago Fed NFCI is a free alternative with similar properties
+
+[TIER 2] AMFX_24JAN23 | Page 1 | EURUSD Volume by Time of Day
+  Data: EBS/Reuters tick data or hourly volume (partially available from Dukascopy/OANDA)
+  Why: Intraday volume seasonality pattern is structural and persistent; identifies optimal execution windows (London open, data releases, options expiry, WMR fix)
+
+===============================================================================
+TIER 3 - MODERATE
+===============================================================================
+
+[TIER 3] AMFX_23NOV22 | Page 3 | Google Trends - "Recession" Search Interest
+  Data: Google Trends API (free, "recession" keyword)
+  Why: Interesting contrarian sentiment proxy but noisy; spike in searches could signal consensus fear (contrarian buy) or genuine leading indicator; needs more rigorous backtest framework
+
+[TIER 3] AMFX_23NOV22 | Page 4 | Tech Layoffs in 2022
+  Data: layoffs.fyi (free scraping), Challenger job cuts report (FRED: JCGDM)
+  Why: Sector-specific labor data; informative as context but tech is a small share of total employment; hard to build systematic signal from layoff announcements alone
+
+[TIER 3] AMFX_24JAN23 | Page 5 | FX Positioning and Momentum Bar Charts (Last Week vs This Week)
+  Data: Same as positioning/momentum tables above
+  Why: Visual comparison only; the underlying data is already captured in the tables ranked at Tier 2; this is a presentation format, not additional information
+
+[TIER 3] AMFX_24JAN23 | Page 4 | Hours of Work to Buy a Gallon of Gasoline
+  Data: BLS average hourly earnings (FRED: CES0500000003), EIA gasoline prices (FRED: GASREGW)
+  Why: Interesting real purchasing power ratio with long history; more descriptive/contextual than directly tradeable; useful as background for inflation regime analysis
+
+[TIER 3] AMFX_24JAN23 | Page 3 | Bloomberg HDS - 2030 JGB Holders (BOJ 114.76% ownership)
+  Data: Bloomberg HDS function (proprietary), BOJ balance sheet data (BOJ website, partially free)
+  Why: Extreme positioning data point (>100% ownership) illustrating YCC distortions; hard to build systematic strategy from single-issue ownership data
+
+===============================================================================
+TIER 4 - LOW
+===============================================================================
+
+[TIER 4] AMFX_23NOV22 | Page 2 | US 10-Year Yields - Bloomberg Market Profile (15 days, 30-min)
+  Data: US 10Y yield intraday data (Bloomberg MKTP proprietary format)
+  Why: Proprietary Bloomberg visualization; market profile construction requires tick data and specialized methodology; one-off technical observation
+
+[TIER 4] AMFX_23NOV22 | Page 2 | US 10-Year Yields - Longer-Term Chart with Moving Averages
+  Data: US 10Y yield (FRED: DGS10), standard moving averages
+  Why: Generic technical analysis chart with support/resistance levels; no systematic rule or novel insight beyond standard charting
+
+[TIER 4] AMFX_24JAN23 | Page 1 | AUDUSD 1-Minute Chart (January 23, 2023)
+  Data: AUDUSD 1-minute data
+  Why: Single-day price action example illustrating fix flow impact; anecdotal rather than systematic; the autocorrelation strategy (Tier 1) already captures this pattern quantitatively
+
+[TIER 4] AMFX_22JUL22 | Page 3 | Japan YCC Survey Results
+  Data: Fred Goodwin weekly poll (proprietary, no longer running)
+  Why: One-off sentiment snapshot from a proprietary survey; not reproducible; YCC policy has since been abandoned
+
+===============================================================================
+TIER 5 - SKIP
+===============================================================================
+
+[TIER 5] AMFX_24JAN23 | Page 3 | GOOG Hourly Chart with RSI
+  Data: GOOG hourly price, 14-period RSI
+  Why: Pure single-stock technical analysis on one instance; no backtest, no systematic rule; overbought RSI on one stock at one point in time
+
+===============================================================================
+SUMMARY
+===============================================================================
+
+Total KEPT items across 4 newsletters: 22
+  AMFX_21JUL23: 0 items (all text, no charts/tables)
+  AMFX_22JUL22: 2 items
+  AMFX_23NOV22: 9 items
+  AMFX_24JAN23: 12 items (includes 1 item counted as single despite dual bar chart)
+
+By Tier:
+  Tier 1 (High Priority):  5 items
+  Tier 2 (Strong):         8 items
+  Tier 3 (Moderate):       5 items
+  Tier 4 (Low):            4 items
+  Tier 5 (Skip):           1 item
+
+Top implementation candidates:
+  1. Yield curve inversion recession predictor (3M/10Y, 10-day rule)
+  2. Conference Board LEI recession threshold signal (-2.7)
+  3. FX fix autocorrelation strategy (AUDUSD/EURUSD, 0.4% threshold)
+  4. GBPUSD fix window cumulative flow pattern
+  5. ISM New Orders vs Initial Claims lead-lag percentile model

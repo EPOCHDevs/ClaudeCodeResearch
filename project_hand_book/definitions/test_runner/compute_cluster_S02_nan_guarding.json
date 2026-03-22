@@ -1,0 +1,10 @@
+{
+   "name": "Compute Cluster S02: NaN Guarding",
+   "description": "Tests: is_valid() guard in conditions, NaN-safe ternary patterns.",
+   "data": {
+      "assets": ["SPY-Stocks"],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# COMPUTE CLUSTER S02: NaN Guarding\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nvol = volatility(period=21)(close)\n\n# is_valid() guards NaN — prevents NaN propagation in conditions\nlow_vol = is_valid(vol) and vol < 0.15\n\n# === REPORTERS ===\nxy_lines(\n    title='NaN-Safe Low Vol Flag',\n    category='NaN Guard',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Volatility', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=vol)\n",
+   "global_timeframe": "1D"
+}

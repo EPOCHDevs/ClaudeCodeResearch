@@ -1,0 +1,12 @@
+Title: S&P 500 Performance Around Thanksgiving by Day of Week (2009-2022)
+Source: AMFX   Recession For and Against  23NOV22 (1).pdf (page 1)
+Date: 2022-11-23
+Type: table
+
+Insight: Historical analysis showing S&P 500 average returns for Wednesday through Tuesday around Thanksgiving, revealing that Mondays and Tuesdays have positive average returns (0.3% and 0.2%) while Fridays average negative returns (-0.4%).
+
+Context (above):
+S&P performance around Thanksgiving
+
+Context (below):
+Current Views

@@ -1,0 +1,13 @@
+{
+   "name": "amfx-tsla-time-cover-research",
+   "description": "amFX reproduction (12DEC25 p3): TSLA price chart 2020-2023 showing TIME Person of the Year contrarian indicator. Elon Musk named Person of the Year in Dec 2021, marking the exact top. TSLA fell ~65% in the year after. Chart shows daily close with 50d/200d MAs and a vertical reference at the cover date.",
+   "data": {
+      "assets": [
+         "TSLA-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: TSLA x TIME Person of the Year (12DEC25 p3)\n# =============================================================================\n# Elon Musk named TIME Person of the Year: December 13, 2021\n# TSLA peaked near $400 around that time, then crashed ~65% in 2022.\n# This chart visualizes the contrarian indicator in action.\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nidx = index()\n\n# Moving averages for trend context\nma50 = ma(period=50)(close)\nma200 = ma(period=200)(close)\n\nxy_lines(\n    title='TSLA: Did TIME Person of the Year Mark the Top?',\n    category='TIME Cover Indicator',\n    y_axis_label='Price (USD)',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='TSLA Close', color=Color.Blue),\n        LineSeriesSpec(name='50d MA', color=Color.Sky, dash_style=DashStyle.Dot),\n        LineSeriesSpec(name='200d MA', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=352.26, title='Cover Date Price ~$352', color=Color.Red, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(x_values=idx, y_values=(close, ma50, ma200))\n"
+}

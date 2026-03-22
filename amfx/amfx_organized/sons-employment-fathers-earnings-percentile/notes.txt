@@ -1,0 +1,12 @@
+Title: Proportion of Sons Employed by Father's Earnings Percentile
+Source: AMFX 20JAN23.pdf (page 1)
+Date: 2023-01-20
+Type: chart
+
+Insight: This chart demonstrates intergenerational employment patterns, showing that sons whose fathers earned in the highest percentiles have significantly higher employment rates (approaching 70%) compared to those from lower-earning families (around 40%), indicating potential correlation between paternal earnings and offspring employment outcomes.
+
+Context (above):
+(212) 398-6230
+
+Context (below):
+Proportion of sons employed

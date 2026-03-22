@@ -1,0 +1,14 @@
+{
+   "name": "LWC Test: Trend-Following Strategy",
+   "description": "LWC chart integration test. Campaign/strategy that exercises RoundTrip trade markers (entry/exit triangles, P&L coloring, connection lines), SMA crossover signals.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "GLD-Stocks",
+         "QQQ-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# LWC TEST: TREND-FOLLOWING STRATEGY (CAMPAIGN)\n# Tests: RoundTrip markers, trade entry/exit, P&L visualization, equity curve\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# === TREND SIGNALS ===\nsma_50 = ma(period=50, type=MAType.sma)(close)\nsma_200 = ma(period=200, type=MAType.sma)(close)\n\n# Golden cross = bullish entry, Death cross = bearish exit\ngolden_cross = crossover(sma_50, sma_200)\ndeath_cross = crossunder(sma_50, sma_200)\n\n# === ENTRY / EXIT LOGIC ===\nheld = hold_until()(enter=golden_cross, exit=death_cross)\nlong_and_short_zone()(long_entry=held)\n\n# === POSITION SIZING ===\nposition_size(type=SizeType.percent)(size=33.33)\n\n# =============================================================================\n# REPORTERS (overlay lines on price pane)\n# =============================================================================\n\nxy_lines(\n    title='Moving Averages',\n    category='Price',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='SMA 50', color=Color.Orange),\n        LineSeriesSpec(name='SMA 200', color=Color.Blue, dash_style=DashStyle.Dash)\n    ])\n)(x_values=index(), y_values=(sma_50, sma_200))\n",
+   "global_timeframe": "1D"
+}

@@ -1,0 +1,99 @@
+AMFX Rankings - Batch 5
+=======================
+Sources: AMFX_25OCT22, AMFX_27SEP23, AMFX_29MAY24, AMFX_30MAR23
+Generated: 2026-03-11
+
+Tier Criteria:
+  1 = HIGH PRIORITY (testable hypothesis, clear data + methodology, backtestable)
+  2 = STRONG (good quant relationship, reproducible with available data)
+  3 = MODERATE (interesting but less actionable, may need proprietary data)
+  4 = LOW (descriptive, hard to reproduce, one-off observation)
+  5 = SKIP (non-financial, no market application)
+
+================================================================================
+
+[TIER 1] AMFX_25OCT22 | Page 2 | US Initial Claims vs. NAHB Housing Index
+  Data: FRED (ICSA - Initial Claims, NAHBSCCI - NAHB Housing Index), ~1985-present
+  Why: Testable lead-lag signal (6-24 months) with annotated turning points; both series freely available on FRED for systematic cycle-turn detection
+
+[TIER 1] AMFX_27SEP23 | Page 1 | Seasonal Path of Four Major Equity Indices (Pre-Election Years, 1998-2023)
+  Data: Yahoo Finance or FRED (SPX, NASDAQ, Russell 2000, DAX daily prices), filter pre-election years
+  Why: Directly backtestable seasonality strategy with clear entry window (early October) and measurable edge across four indices
+
+[TIER 1] AMFX_29MAY24 | Page 2 | South Park Jinx -- Company Performance Table
+  Data: South Park episode air dates (public), stock tickers (public), Yahoo Finance for returns, SPX benchmark
+  Why: Fully reproducible contrarian indicator with 30+ data points showing median -7% underperformance vs SPX at 1yr; classic mean-reversion signal from cultural zeitgeist
+
+[TIER 1] AMFX_30MAR23 | Page 4 | AUDUSD vs. Copper, Gold, and Hang Seng Index
+  Data: Yahoo Finance / FRED (AUDUSD, HG copper futures, XAU gold, HSI index)
+  Why: Multi-factor fair-value model for AUD with measurable divergences; backtestable mean-reversion when AUD deviates from commodity/risk basket
+
+[TIER 2] AMFX_25OCT22 | Page 1 | US Initial Claims vs. US Nonfarm Payrolls
+  Data: FRED (ICSA - Initial Claims, PAYEMS - Nonfarm Payrolls)
+  Why: Quantitative comparison of signal-to-noise ratio between two labor indicators; supports building claims-based regime filters over NFP
+
+[TIER 2] AMFX_25OCT22 | Page 1 | US Initial Claims vs. US Unemployment Rate
+  Data: FRED (ICSA - Initial Claims, UNRATE - Unemployment Rate), ~1980-present
+  Why: Well-documented lead-lag relationship (3-22 months) at cycle turns; reproducible with public data for recession probability models
+
+[TIER 2] AMFX_25OCT22 | Page 2 | US Initial Claims vs. 3-Month Average of US Nonfarm Payrolls
+  Data: FRED (ICSA, PAYEMS with 3MMA smoothing)
+  Why: Demonstrates that even smoothed NFP lags raw claims; useful for building composite labor market leading indicators
+
+[TIER 2] AMFX_25OCT22 | Page 4 | USDCNH vs. US/China 10-Year Rate Differential
+  Data: FRED/Yahoo Finance (USDCNH spot, US 10Y yield DGS10, China 10Y yield via investing.com or Bloomberg)
+  Why: Rate differential as FX fair-value anchor with measurable lag and snap-back; backtestable mean-reversion when FX diverges from rate spread
+
+[TIER 2] AMFX_29MAY24 | Page 3 | Bitcoin 2016-2018 with CME Futures Launch Annotation
+  Data: Yahoo Finance (BTC-USD), CME futures launch date (Dec 17, 2017)
+  Why: Part of a broader backtestable "new product launch as contrarian indicator" framework; event date is precise and return measurement straightforward
+
+[TIER 2] AMFX_29MAY24 | Page 3 | SPX Late 2021 to Now with NOPE ETF Launch Annotation
+  Data: Yahoo Finance (SPX), ETF launch dates (public SEC filings)
+  Why: Quantifiable contrarian signal -- thematic/inverse ETF launches as trend exhaustion markers; can systematically catalog ETF launch dates and measure subsequent returns
+
+[TIER 2] AMFX_29MAY24 | Page 4 | Japan 10-Year Yield vs. US 10-Year Yield
+  Data: FRED (DGS10 for US, Japan 10Y from investing.com or FRED IRLTLT01JPM156N)
+  Why: Yield divergence between US and Japan is measurable and trackable; implications for global bond flow rotation (GPIF repatriation) create testable cross-market signals
+
+[TIER 2] AMFX_30MAR23 | Page 2 | USD, EUR, CNY, GBP, JPY -- Share of International Transactions (BIS Data)
+  Data: BIS Triennial Survey (free download from bis.org), triennial snapshots 1989-2022
+  Why: Definitive dataset for testing dedollarization claims; reproducible structural analysis with official BIS data
+
+[TIER 2] AMFX_30MAR23 | Page 2 | Foreign Exchange Reserves Composition (IMF COFER)
+  Data: IMF COFER database (free, quarterly updates)
+  Why: Central bank reserve allocation trends are systematic and publicly available; useful for long-term USD demand modeling
+
+[TIER 3] AMFX_25OCT22 | Page 3 | Housing Share of GDP, 1980 to Now (USA)
+  Data: BEA NIPA tables (Residential Fixed Investment + Housing Services as % of GDP)
+  Why: Structural macro context chart; reproducible from BEA data but more descriptive than actionable as a trading signal
+
+[TIER 3] AMFX_25OCT22 | Page 3 | Residential Investment as % of GDP (USA, Canada, Ireland, Spain)
+  Data: OECD / Refinitiv Datastream (Gross Fixed Capital Formation by country)
+  Why: Cross-country housing bubble comparison is compelling but requires OECD data and is more of a macro thesis framework than a tradeable signal
+
+[TIER 3] AMFX_27SEP23 | Page 2 | US 10-Year Yield Long-Term Chart with Regime Annotations
+  Data: FRED (DGS10), ~1960-present
+  Why: Easy to reproduce the data but the value is in the regime interpretation (hand-drawn annotations); useful as context for rate regime classification models
+
+[TIER 3] AMFX_30MAR23 | Page 3 | Dollar Index, 1972 to Now
+  Data: FRED (DTWEXBGS or DXY from Yahoo Finance)
+  Why: Long-term DXY is easily reproducible but the insight is descriptive (no secular decline); more useful as a reference chart than a standalone signal
+
+[TIER 4] AMFX_25OCT22 | Page 5 | Canada 2-Year Yield with 40-Day and 80-Day Moving Averages
+  Data: Yahoo Finance or FRED (Canada 2Y yield), standard SMA calculations
+  Why: Single-instrument technical analysis with arbitrary MA parameters; illustrates "macro view with tech trigger" concept but not a systematic strategy
+
+[TIER 4] AMFX_25OCT22 | Page 5 | USDCAD Price Chart with Annotations
+  Data: Yahoo Finance (USDCAD)
+  Why: Narrative chart showing BoC events did not move CAD; one-off observation about USD dominance in USDCAD moves, not a systematic pattern
+
+================================================================================
+
+SUMMARY BY TIER:
+  Tier 1 (HIGH PRIORITY):  4 items
+  Tier 2 (STRONG):         9 items
+  Tier 3 (MODERATE):       4 items
+  Tier 4 (LOW):            2 items
+  Tier 5 (SKIP):           0 items
+  TOTAL KEPT:             19 items

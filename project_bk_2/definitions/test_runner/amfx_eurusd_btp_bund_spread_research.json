@@ -1,0 +1,13 @@
+{
+   "name": "amfx-eurusd-btp-bund-spread",
+   "description": "amFX reproduction (17JUN22 p1): EURUSD vs Germany/Italy 10-year spread (BTP-Bund). Shows how peripheral spreads drive EUR -- when Italy/Germany spread widens, EUR sells off. ECB anti-fragmentation pledge was tightening spreads, supporting EUR buy thesis. Spread inverted to show directional alignment with EURUSD.",
+   "data": {
+      "assets": [
+         "EURUSD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: EURUSD vs BTP-BUND SPREAD (17JUN22 p1)\n# =============================================================================\n# Brent Donnelly's EUR buy-the-dip thesis:\n# - ECB anti-fragmentation pledge tightening peripheral spreads\n# - Italy/Germany 10Y spread (BTP-Bund) co-moves with EURUSD\n# - Spread inverted on chart: tighter spread = higher on chart = EUR positive\n#\n# Data: EURUSD daily, German 10Y monthly (FRED IRLTLT01DEM156N),\n#       Italian 10Y monthly (FRED IRLTLT01ITM156N), ffilled to daily\n# =============================================================================\n\nsrc = market_data_source()()\neurusd = src.c\nidx = index()\n\n# German 10Y yield (monthly, OECD via FRED, observation date indexing)\nde10_src = economic_indicators(series_id='IRLTLT01DEM156N')()\nde10 = ffill(de10_src.result)\n\n# Italian 10Y yield (monthly, OECD via FRED, observation date indexing)\nit10_src = economic_indicators(series_id='IRLTLT01ITM156N')()\nit10 = ffill(it10_src.result)\n\n# BTP-Bund spread: Italy 10Y minus Germany 10Y\n# Invert so tighter spread = higher value (aligns with EURUSD direction)\nbtp_bund_spread = -(it10 - de10)\n\n# =============================================================================\n# CHART 1: EURUSD and Inverted BTP-Bund Spread Overlay\n# =============================================================================\nxy_lines(\n    title='Does the ECB Fragmentation Pledge Matter? BTP-Bund Says Yes',\n    category='EUR Peripheral Stress',\n    y_axis_label='Inverted BTP-Bund Spread (%)',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Inverted BTP-Bund 10Y Spread', color=Color.Blue),\n        LineSeriesSpec(name='EURUSD', color=Color.Gray)\n    ]),\n    order=0\n)(x_values=idx, y_values=(btp_bund_spread, eurusd))\n"
+}

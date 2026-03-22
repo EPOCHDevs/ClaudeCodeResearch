@@ -1,0 +1,21 @@
+Title: BTC Cumulative Performance by Day of Month Since November 2021
+Source: AMFX 16JUN22.pdf (page 3)
+Date: 2022-06-16
+Type: chart
+
+Insight: Bitcoin shows consistent selling pressure throughout each month followed by a bounce in the final week, suggesting institutional inflows ahead of month-end.
+
+Context (above):
+You can track crypto flows various ways but my favorite way to track flows in any market is to look at the movement 
+of price by day of the month (and sometimes by time of day). Here is the cumulative return of bitcoin by day of the 
+month since crypto peaked in November 2021. 
+ 
+BTC cumulative performance through the month (since November 2021)
+
+Context (below):
+This shows that bitcoin is sold continuously at a steady pace throughout the month but then bounces in the final 
+week. This is most likely new institutional inflows being put to work ahead of the turn of the month. This next chart 
+displays the same idea in a different format. I have circled the last week of each month so you can see how the end 
+of month effect has dissipated. 
+ 
+BTC since November 2021 with end of month circled

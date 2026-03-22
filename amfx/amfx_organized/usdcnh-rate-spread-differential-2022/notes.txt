@@ -1,0 +1,13 @@
+Title: USDCNH vs. US/China 10-Year Rate Differential
+Source: AMFX 25OCT22.pdf (page 4)
+Date: 2022-10-25
+Type: chart
+
+Insight: Demonstrates the correlation between USD/CNH exchange rate and the widening spread between US and China 10-year bond yields, with annotations highlighting the Evergrande crisis and subsequent rate spread expansion.
+
+Context (above):
+USDCNH vs. US / China 10-year rate differential
+
+Context (below):
+“People have tried this many times and it never worked before” is not a good reason to exclude a thesis, though it is a 
+reason to look for triggers and signals before getting involved. Timing is hard. In trading, early is a synonym for wrong.

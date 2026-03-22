@@ -1,0 +1,13 @@
+{
+   "name": "amfx-eurgbp-rate-diff",
+   "description": "amFX reproduction (12JUN23 p1 top): EURGBP vs Germany/UK 10-year rate differential overlay. Shows FX-rates dislocation and reconvergence after UK CPI release. Rate diff = German 10Y minus UK 10Y. Monthly FRED yields forward-filled to daily. Source: Brent Donnelly, Spectra Markets.",
+   "data": {
+      "assets": [
+         "^EURGBP-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: EURGBP vs Germany/UK 10-Year Rate Differential\n# =============================================================================\n# Reproduces top chart from page 1 of amFX 12JUN23 newsletter.\n# Dual overlay: EURGBP spot vs (German 10Y - UK 10Y) rate spread.\n# The divergence after UK CPI release and subsequent reconvergence\n# tells the trade story: higher UK yields attracted capital into GBP.\n# =============================================================================\n\nsrc = market_data_source()()\neurgbp = src.c\n\n# German 10-year Bund yield (monthly, forward-filled to daily)\nde10y_src = economic_indicators(series_id='IRLTLT01DEM156N')()\nde10y = ffill(de10y_src.result)\n\n# UK 10-year Gilt yield (monthly, forward-filled to daily)\nuk10y_src = economic_indicators(series_id='IRLTLT01GBM156N')()\nuk10y = ffill(uk10y_src.result)\n\n# Rate differential: Germany minus UK (negative = UK yields higher)\nrate_diff = de10y - uk10y\n\n# Time index\nidx = index()\n\n# =============================================================================\n# CHART 1: EURGBP vs Rate Differential Overlay\n# =============================================================================\nxy_lines(\n    title='EURGBP vs Germany/UK 10Y Rate Differential: Has the Dislocation Closed?',\n    category='FX vs Rates',\n    y_axis_label='Rate Diff (pp)',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='DE-UK 10Y Rate Diff', color=Color.Blue),\n        LineSeriesSpec(name='EURGBP', color=Color.Gray, dash_style=DashStyle.Solid)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0, title='Zero Spread', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(idx, rate_diff, eurgbp)\n"
+}

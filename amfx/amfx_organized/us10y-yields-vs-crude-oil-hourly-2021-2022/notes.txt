@@ -1,0 +1,31 @@
+Title: US 10-Year Treasury Yields vs. NYMEX Crude Oil (Hourly, Jul 2021 - Jun 2022)
+Source: AMFX 16JUN22.pdf (page 2)
+Date: 2022-06-16
+Type: chart
+
+Insight: This dual-axis chart shows the hourly relationship between 10-year Treasury yields (black line) and crude oil prices (blue line) over a one-year period, demonstrating their correlation during a period of rising yields and volatile commodity prices.
+
+Context (above):
+US 10-year yields vs. NYMEX crude
+
+Context (below):
+Crypto 
+ 
+I sent MacroTactical Crypto (MTC) #22 out to paid subscribers yesterday. If you would like to subscribe, please click 
+here (MTC is not related to am/FX, it’s a separate, paid product). Here is a significant excerpt to whet your appetite.  
+ 
+MTC22: The next two weeks are critical (reprinted with author’s permission) 
+ 
+The most stunning feature of this bear market in crypto is its monotonic relentlessness. There is no sneaky underlying 
+bull narrative to catch the market short. Nobody cares how oversold things get. The bounces are miniscule. What 
+was once a massive flood of FOMO money trying to get in is now an equally raging torrent the other way. 
+ 
+Recent news that Three Arrows Capital is struggling and unconfirmed reports that it may be insolvent is the tip of the 
+iceberg as many smaller funds quietly liquidate levered positions. The nature of the biz is that most crypto hedge 
+funds are run by true believers and as such, there is very rarely much of a short base on the institutional side. Long 
+only, pretty much. 
+ 
+The tide takes a while to turn in a bear market because allocators and real money flows are slow. You have a meeting 
+in October, another meeting in December, authorize the $40 million disbursement in February and the money gets 
+deployed in March. Flows into and out of hedge funds always lag performance and market prices because there are 
+delays in the process in both directions. You can’t just drop money in and take it out on a whim like an ATM. There

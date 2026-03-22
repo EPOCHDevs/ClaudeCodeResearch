@@ -1,0 +1,10 @@
+{
+   "name": "Exec Cluster Cost: Flat Fee — $1/Trade Commission + Fixed Slippage",
+   "description": "Tests: FlatFee commission ($1/trade) + Fixed slippage ($0.01). Run with --cost flat_fee",
+   "data": {
+      "assets": ["SPY-Stocks", "QQQ-Stocks"],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# EXEC CLUSTER COST: Flat Fee Commission\n# Run with: --cost flat_fee --cash 100000\n# Validates: flat dollar-per-trade commission, fixed dollar slippage\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: RSI oversold ===\nrsi_val = rsi(period=14)(close)\nentry = rsi_val < 30\nexit = rsi_val > 70\nheld = hold_until()(enter=entry, exit=exit)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\n\n# Risk-based sizing with bundled 2:1 R:R\natr_val = atr(period=14)(src.h, src.l, src.c)\nrisk_unit(stop_unit=StopUnit.price, rr_ratio=2.0)(risk_pct=1.5, stop_distance=atr_val * 2)\n",
+   "global_timeframe": "1D"
+}

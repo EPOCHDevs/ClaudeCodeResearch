@@ -1,0 +1,12 @@
+Title: EURUSD vs. Germany/Italy 10-year Spread
+Source: AMFX 17JUN22.pdf (page 1)
+Date: 2022-06-17
+Type: chart
+
+Insight: This dual-line chart shows the inverse relationship between EURUSD exchange rate (blue line) and the Germany/Italy 10-year bond yield spread (black line) from November 2021 to June 2022, illustrating how widening sovereign debt spreads correlate with euro weakness.
+
+Context (above):
+EURUSD vs. Germany/Italy 10-year spread
+
+Context (below):
+Meanwhile, Germany, USA rate differentials are doing this:

@@ -1,0 +1,13 @@
+{
+   "name": "amfx-preelection-seasonal-spx-research",
+   "description": "amFX reproduction (27SEP23 p1): S&P 500 average seasonal return path during pre-election years (1999-2023). Shows consistent pattern of bottoming in early October then rallying hard into year-end. Pre-election years: year % 4 == 3. Source: Brent Donnelly, Spectra Markets.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: PRE-ELECTION YEAR SEASONAL — S&P 500 (27SEP23 p1)\n# =============================================================================\n# Average calendar-year return path across pre-election years (year%4==3).\n# Pre-election years since 1998: 1999, 2003, 2007, 2011, 2015, 2019, 2023.\n# Pattern: trough in early October, then rally into year-end.\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\nyear_num = datetime_extract(component=DatetimeExtractionType.year)(index())\nday_of_year = datetime_extract(component=DatetimeExtractionType.day_of_year)(index())\n\n# Year-open price via forward fill\nis_yr1 = year_num != (year_num >> 1)\nyr_open = ffill(close if is_yr1 else 0.0 / 0.0)\nytd = (close / yr_open - 1) * 100\n\n# Pre-election year filter: year % 4 == 3\nis_pre_election = (year_num % 4) == 3\n\n# Current year (2023) shown separately\nis_2023 = year_num == 2023\nis_hist = is_pre_election and not is_2023\n\nhist_ytd = where(is_hist, ytd)\ncurr_ytd = where(is_2023, ytd)\n\n# =============================================================================\n# CHART: S&P 500 Pre-Election Year Average Seasonal Path\n# =============================================================================\nxy_lines(\n    title='S&P 500: Pre-Election Year Seasonal Path (Avg 1999-2019)',\n    category='Pre-Election Seasonality',\n    y_axis_label='Cumulative Return (%)',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=1,\n    x_category_type=CategoryAxisType.DayOfYear,\n    smooth=True,\n    data_labels=False,\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0.0, color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='2023 Path', color=Color.Blue, agg=AggregationType.Last),\n        LineSeriesSpec(name='Avg Pre-Election Year (1999-2019)', color=Color.Gray, agg=AggregationType.Mean)\n    ]),\n    order=0\n)(day_of_year, curr_ytd, hist_ytd)\n"
+}

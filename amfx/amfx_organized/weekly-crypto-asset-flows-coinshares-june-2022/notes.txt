@@ -1,0 +1,45 @@
+Title: Weekly Crypto Asset Flows (US$m)
+Source: AMFX 16JUN22.pdf (page 4)
+Date: 2022-06-16
+Type: chart
+
+Insight: This bar chart shows institutional cryptocurrency fund flows from late 2021 through June 2022, revealing massive inflows peaking at 1447 US$m in late 2021, followed by a transition to outflows from April onwards, illustrating the decline in institutional crypto investment during the market downturn.
+
+Context (above):
+You can see that inflows appear to continue until March… and then April and May there’s pretty much nada. This is 
+consistent with institutional flow stories such as: 
+ 
+March 29: Institutional crypto funds see largest capital inflows for 3 months 
+ 
+The last big surge of institutional inflows was at the end of March. This is confirmed by news stories, price action, 
+and Coinshares data. Here is that Coinshares data, which shows massive inflows at the peak in late 2021 and a 
+slow move to outflows with the exception of some big inflows at the end of Q1. Those are the last of the late-approved 
+allocations into crypto for a while.
+
+Context (below):
+https://blog.coinshares.com/volume-84-digital-asset-fund-flows-weekly-report-72f7fdda557b 
+ 
+Keep monitoring this data, but also watch out at the end of this month as the LUNA debacle, Celsius, 3AC and other 
+scary things could have triggered many withdrawal requests since May and some of those withdrawals will be 
+satisfied as we approach the end of the month, the quarter, and the half. 
+ 
+Quarter end and half-year end are always most important when looking at flows because most gates and redemption 
+agreements are timed around these points on the calendar. Whether it’s equities, crypto, bonds, or FX… Quarter 
+end and half-year end are go time for flows. 
+ 
+If BTC can hold the 20000 level through the turn of the month, that would be a super bullish sign. I have been 
+eyeing this 20k level for six months and it’s a good level to be adding to long-term bullish exposure BUT… If you are 
+a trader, I would be extremely cautious with longs into half-year end because the volume of outflows to process could 
+be large and those flows are not price sensitive. Those flows will hit literally whatever bid they can. 
+ 
+Flashback 
+I still remember the Bear Stearns liquidations by JPM in March 2008. Those were a fierce example of how markets 
+can go completely nuts and dislocate completely from correlated variables, oversold signals and so on when forced 
+liquidation happens. The execution person doesn’t really care about what bid they hit. The risk manager behind them 
+is yelling: “Just hit a bid!” 
+ 
+In 2008, I was trading EURJPY at Lehman Brothers, and the currency pair was just about 100% correlated to high-
+yield credit and the S&P 500. The market was in complete disarray. Volatility was at all-time highs. EURJPY was a 
+risky asset proxy so if SPX and HYG went up, EURJPY would go up… 99 times out of 100 (and vice versa). I actively 
+traded these correlations and I still have vivid memories of how boggled my mind was as HYG ripped and EURJPY 
+would just keep getting pummeled by JPM in wave after wave of selling.

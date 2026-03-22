@@ -1,0 +1,410 @@
+//
+// EpochScript Grammar (Lezer)
+// Auto-generated from C++ definitions - DO NOT EDIT MANUALLY.
+//
+// ===========================================================================
+// IMPORTANT NOTE ON SESSIONS
+// ===========================================================================
+// Session(start, end, tz) requires start < end within the SAME DAY.
+//
+// INVALID: Session(start="16:00", end="09:30", tz="America/New_York")
+//   - This does NOT create an overnight session! start must be < end.
+//
+// For overnight sessions (e.g., 16:00 to 09:30), use daily bars and lag:
+//   daily_close = src.c  # on 1D bars
+//   overnight_return = daily_close / (daily_close >> 1) - 1
+//
+// ===========================================================================
+
+@top Module { statement* }
+
+@skip { space | Comment }
+
+// ===========================================================================
+// STATEMENTS
+// ===========================================================================
+
+statement {
+  AssignmentStatement |
+  ExpressionStatement
+}
+
+// Assignment binds expression result to variable(s)
+// Supports tuple unpacking: a, b = multi_output_component()(input)
+AssignmentStatement {
+  assignmentTarget "=" expression
+}
+
+assignmentTarget {
+  Identifier |
+  TuplePattern
+}
+
+TuplePattern {
+  Identifier ("," Identifier)+ ","?
+}
+
+ExpressionStatement {
+  expression
+}
+
+// ===========================================================================
+// EXPRESSIONS (Ordered by Precedence - Lowest to Highest)
+// ===========================================================================
+//
+// Precedence levels (matches Python, plus EpochScript extensions):
+//   1.  pipeline (|)         - Data flow chaining
+//   2.  ternary (if/else)    - Conditional selection
+//   3.  or                   - Boolean disjunction
+//   4.  and                  - Boolean conjunction
+//   5.  not                  - Boolean negation
+//   6.  comparison           - <, >, <=, >=, ==, !=
+//   7.  shift (>>, <<)       - Lag/Lead operators
+//   8.  additive (+, -)      - Addition/Subtraction
+//   9.  multiplicative       - *, /, %
+//   10. unary (-, +)         - Negation/Positive
+//   11. power (**)           - Exponentiation
+//   12. call ()              - Function invocation
+//   13. subscript []         - Indexing
+//   14. attribute .          - Member access
+//
+
+expression {
+  PipelineExpression |
+  TernaryExpression |
+  OrExpression |
+  AndExpression |
+  NotExpression |
+  ComparisonExpression |
+  LagExpression |
+  LeadExpression |
+  BinaryExpression |
+  UnaryExpression |
+  PowerExpression |
+  CallExpression |
+  AttributeExpression |
+  SubscriptExpression |
+  ParenthesizedExpression |
+  BuiltinType |
+  BuiltinFunction |
+  EnumType |
+  Identifier |
+  Timeframe |
+  Number |
+  String |
+  Boolean |
+  ListLiteral |
+  TupleLiteral |
+  DictLiteral
+}
+
+// ---------------------------------------------------------------------------
+// PIPELINE: left | right
+// ---------------------------------------------------------------------------
+// Passes left expression as input to right expression.
+//
+PipelineExpression {
+  expression !pipeline "|" expression
+}
+
+// ---------------------------------------------------------------------------
+// LAG: value >> periods
+// ---------------------------------------------------------------------------
+// Shifts time-series backward (gets previous values).
+//
+LagExpression {
+  expression !shift ">>" expression
+}
+
+// ---------------------------------------------------------------------------
+// LEAD: value << periods
+// ---------------------------------------------------------------------------
+// Shifts time-series forward (gets future values).
+// WARNING: Creates look-ahead bias! Only for target variables.
+//
+LeadExpression {
+  expression !shift "<<" expression
+}
+
+// ---------------------------------------------------------------------------
+// TERNARY: value if condition else other_value
+// ---------------------------------------------------------------------------
+// Element-wise conditional selection on time-series.
+// Returns 'value' where condition is True, 'other_value' where False.
+//
+TernaryExpression {
+  expression !ternary kw<"if"> expression kw<"else"> expression
+}
+
+// ---------------------------------------------------------------------------
+// BOOLEAN OPERATORS: and, or, not
+// ---------------------------------------------------------------------------
+// Element-wise boolean operations on time-series.
+//
+OrExpression {
+  expression !or kw<"or"> expression
+}
+
+AndExpression {
+  expression !and kw<"and"> expression
+}
+
+NotExpression {
+  !not kw<"not"> expression
+}
+
+// ---------------------------------------------------------------------------
+// COMPARISON: <, >, <=, >=, ==, !=
+// ---------------------------------------------------------------------------
+// Element-wise comparison returning boolean series.
+//
+ComparisonExpression {
+  expression !compare ComparisonOp expression
+}
+
+ComparisonOp {
+  "<" | ">" | "<=" | ">=" | "==" | "!="
+}
+
+// ---------------------------------------------------------------------------
+// ARITHMETIC: +, -, *, /, %, **
+// ---------------------------------------------------------------------------
+// Element-wise arithmetic on time-series.
+// Broadcast: scalar op series applies scalar to each element.
+//
+BinaryExpression {
+  expression !add ("+" | "-") expression |
+  expression !mul ("*" | "/" | "%") expression
+}
+
+UnaryExpression {
+  !unary ("-" | "+") expression
+}
+
+// Power is right-associative: 2 ** 3 ** 4 = 2 ** (3 ** 4)
+PowerExpression {
+  expression !power "**" expression
+}
+
+// ---------------------------------------------------------------------------
+// CALL: Two-Stage Pattern
+// ---------------------------------------------------------------------------
+// EpochScript uses two-stage calls:
+//   Stage 1: component(options) - Configure the component
+//   Stage 2: (inputs)           - Wire the data inputs
+//
+// Single option shorthand: sma(20)(close) == sma(period=20)(close)
+//
+CallExpression {
+  expression !call ArgumentList
+}
+
+// ---------------------------------------------------------------------------
+// ATTRIBUTE ACCESS: obj.attr
+// ---------------------------------------------------------------------------
+// Access component outputs or data fields.
+//
+AttributeExpression {
+  expression !member "." Identifier
+}
+
+// ---------------------------------------------------------------------------
+// SUBSCRIPT: expr[index]
+// ---------------------------------------------------------------------------
+// Index into tuples or lists. NOT for time-series lagging!
+//
+SubscriptExpression {
+  expression !subscript "[" expression "]"
+}
+
+ParenthesizedExpression {
+  "(" expression ")"
+}
+
+ArgumentList {
+  "(" (argument ("," argument)* ","?)? ")"
+}
+
+argument {
+  KeywordArgument |
+  expression
+}
+
+KeywordArgument {
+  Identifier "=" expression
+}
+
+// ---------------------------------------------------------------------------
+// CONTAINER LITERALS
+// ---------------------------------------------------------------------------
+
+// List: Ordered collection for weights or multiple inputs
+ListLiteral {
+  "[" (expression ("," expression)* ","?)? "]"
+}
+
+// Tuple: Fixed-size for multi-output unpacking
+// Single element requires trailing comma: (a,) vs (a) which is grouping
+TupleLiteral {
+  "(" ")" |
+  "(" expression "," ")" |
+  "(" expression ("," expression)+ ","? ")"
+}
+
+// Dict: Key-value mapping for schema constructors
+DictLiteral {
+  "{" (DictPair ("," DictPair)* ","?)? "}"
+}
+
+// Dict keys: identifier, string, or enum access (Color.Success)
+DictPair {
+  (EnumAccess | Identifier | String) ":" expression
+}
+
+// Enum access for dict keys: Color.Success, Icon.ChartIcon
+EnumAccess {
+  Identifier "." Identifier
+}
+
+// ===========================================================================
+// BUILT-IN TYPES (Schema Constructors) - Auto-generated
+// ===========================================================================
+
+BuiltinType {
+  @specialize[@name=BuiltinType]<Identifier,
+    "Time" | "Duration" | "Session" | "SessionDelta" | "EventMarkerSchema" | "TableReportSchema" | "CardLayout" | "SummaryTableLayout" | 
+    "ReferenceLineSchema" | "ReferenceLine" | "LineSeriesSchema" | "LineSeriesSpec" | "LabeledLineSeriesSchema" | "LabeledLineSeriesSpec" | "PlotBandSchema" | "PlotBand" | 
+    "ScatterSeriesSchema" | "ScatterSeriesSpec" | "BarSeriesSchema" | "BarSeriesSpec" | "WeightedKeywordSchema" | "TopicDictionarySchema" | "KeywordPatternSchema" | "AssetFilterSchema" | 
+    "AssetFilter" | "ColumnSpec" | "RowSpec"
+  >
+}
+
+BuiltinFunction {
+  @specialize[@name=BuiltinFunction]<Identifier,
+    "abs" | "acos" | "asin" | "atan" | "ceil" | "cos" | "cosh" | "exp" | 
+    "floor" | "ln" | "log10" | "round" | "sin" | "sinh" | "sqrt" | "tan" | 
+    "tanh" | "todeg" | "torad" | "trunc" | "ffill" | "ffill_day" | "str" | "crossover" | 
+    "crossunder" | "crossany" | "coalesce" | "conditional_select" | "where" | "is_valid" | "is_null" | "logical_xor" | 
+    "logical_and_not"
+  >
+}
+
+// ===========================================================================
+// ENUM TYPES - Use: Color.Blue, Icon.ChartIcon, DashStyle.Solid
+// ===========================================================================
+
+EnumType {
+  @specialize[@name=EnumType]<Identifier,
+    "AdjustmentType" | "AggregationType" | "ArrayMatchMode" | "AssetCategory" | "AssetClassUI" | "AssetFilterOp" | "AssetFilterRank" | "AssetGroupingMode" | 
+    "AxisValueFormat" | "BalanceSheetTimeframe" | "BarMode" | "BasicVolatilityType" | "BooleanDownsampleAgg" | "BoostingType" | "BoundaryType" | "BoxplotMode" | 
+    "CSBarMode" | "CSBoxplotMode" | "CSSelectDirection" | "CSSelectMode" | "CalendarSource" | "CardRenderType" | "CardSlot" | "CategoryAxisType" | 
+    "Color" | "ContainsOperation" | "CorrelationMethod" | "DashStyle" | "DatetimeExtractionType" | "DayAnchorType" | "DistributionType" | "DividendType" | 
+    "EiaFrequency" | "FillDirection" | "FillMethod" | "FinanceRatioType" | "HeatmapMode" | "HolidayCalendar" | "Icon" | "KalmanModelType" | 
+    "LinkageMethod" | "MAType" | "MLWindowType" | "MacroEconomicsIndicator" | "MarkerSymbol" | "Month" | "NumericDownsampleAgg" | "OrdinalType" | 
+    "PeriodType" | "ProfileType" | "Quarter" | "ReferenceCryptoPair" | "ReferenceFXPair" | "ReferenceFutures" | "ReferenceIndex" | "ReferenceStock" | 
+    "ReportingPeriod" | "ReturnType" | "ReturnsType" | "RiskMeasure" | "RiskMode" | "RolloverType" | "SessionAnchor" | "SessionTimeframe" | 
+    "SessionType" | "SizeBy" | "SizeType" | "SortByValue" | "StackType" | "StepType" | "StockExchange" | "StockSector" | 
+    "StopUnit" | "StreakDirection" | "StringCaseOperation" | "StringCheckOperation" | "StringDownsampleAgg" | "TableMode" | "TimeDiffUnit" | "TimestampDownsampleAgg" | 
+    "TreasuryAuctionType" | "TreasurySecurityType" | "TreasuryTerm" | "TrimOperation" | "VolatilityEstimatorType" | "WeekOfMonth" | "Weekday" | "WindowType"
+  >
+}
+
+
+// ===========================================================================
+// TOKENS
+// ===========================================================================
+
+@tokens {
+  space { @whitespace+ }
+  Comment { "#" ![\n]* }
+
+  // ---------------------------------------------------------------------------
+  // TIMEFRAME LITERALS (Pandas Offset Style)
+  // ---------------------------------------------------------------------------
+  // Specify data aggregation/resampling frequency.
+  //
+  // Basic: 30s, 1Min, 5Min, 15Min, 1H, 4H, 1D, 1W, 1M, 1Q, 1Y
+  // With anchor: 1MS (month start), 1ME (month end), 1QS, 1QE, 1YS, 1YE
+  // Weekly anchored: 1W-MON, 1W-FRI, 1W-FRI-Last (last Friday of period)
+  //
+  Timeframe {
+    $[1-9] $[0-9]* "Min" |
+    $[1-9] $[0-9]* "W-" ("SUN" | "MON" | "TUE" | "WED" | "THU" | "FRI" | "SAT") ("-" ("1st" | "2nd" | "3rd" | "4th" | "Last"))? |
+    $[1-9] $[0-9]* $[MQY] $[SE] |
+    $[1-9] $[0-9]* $[sHDWMQY]
+  }
+
+  Identifier { $[a-zA-Z_] $[a-zA-Z0-9_]* }
+
+  // Numbers: Integer or floating-point with optional exponent
+  Number {
+    "0" |
+    $[1-9] $[0-9]* |
+    $[0-9]+ "." $[0-9]* |
+    $[0-9]+ $[eE] $[+-]? $[0-9]+ |
+    $[0-9]+ "." $[0-9]* $[eE] $[+-]? $[0-9]+
+  }
+
+  // Strings: Single, double, or triple quoted
+  String {
+    "'''" (!['] | "'" !['] | "''" !['])* "'''" |
+    '"""' (!["] | '"' !["] | '""' !["])* '"""' |
+    "'" (!['\\\n] | "\\" _)* "'" |
+    '"' (!["\\\n] | "\\" _)* '"'
+  }
+
+  // Python-style booleans
+  Boolean { "True" | "False" }
+
+  // Operators and delimiters
+  "(" ")" "[" "]" "{" "}" "," ":" "." "="
+  "+" "-" "*" "/" "%" "**"
+  "<" ">" "<=" ">=" "==" "!="
+  "|" ">>" "<<"
+
+  @precedence { Timeframe, Number, Identifier }
+  @precedence { Boolean, Identifier }
+}
+
+kw<term> { @specialize[@name={term}]<Identifier, term> }
+
+// ===========================================================================
+// OPERATOR PRECEDENCE (Highest to Lowest binding)
+// ===========================================================================
+// Matches Python semantics with EpochScript extensions (|, >>, <<)
+//
+@precedence {
+  call @left,
+  subscript @left,
+  member @left,
+  power @right,
+  unary @right,
+  mul @left,
+  add @left,
+  shift @left,
+  compare @left,
+  not @right,
+  and @left,
+  or @left,
+  ternary @right,
+  pipeline @left
+}
+
+@detectDelim
+
+// ===========================================================================
+// DISALLOWED PYTHON CONSTRUCTS
+// ===========================================================================
+// The following are NOT supported (parse errors ensure declarative-only code):
+//
+// - def, lambda, class      -> No definitions
+// - if/else statements      -> Use ternary expressions
+// - for, while              -> No loops (use vectorized ops)
+// - try/except/finally      -> No exception handling
+// - import/from             -> No imports (components built-in)
+// - with, async/await       -> No context managers or async
+// - return/yield/break      -> No control flow
+// - +=, -=, *=              -> No augmented assignment
+// - [x for x in ...]        -> No comprehensions
+// - x[1:5]                  -> No slicing (subscript for indexing only)
+//

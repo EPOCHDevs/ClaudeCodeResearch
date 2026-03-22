@@ -1,0 +1,13 @@
+{
+   "name": "amfx-nasdaq-opex-markers",
+   "description": "amFX reproduction (12JUN23 p3 top): NASDAQ 100 (QQQ) with vertical markers at Monday of quarterly OPEX week. The NASDAQ reversed direction near every quarterly expiry from Q1 2022 to Q2 2023 (seven consecutive quarters). Purple line with black vertical band markers. Source: Brent Donnelly, Spectra Markets.",
+   "data": {
+      "assets": [
+         "QQQ-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: NASDAQ WITH QUARTERLY OPEX WEEK MARKERS\n# =============================================================================\n# Reproduces page 3 top chart from amFX 12JUN23 newsletter.\n# QQQ price line with vertical bands marking the Monday of each\n# quarterly OPEX week (3rd Friday of Mar, Jun, Sep, Dec).\n# Pattern: NASDAQ reversed direction at every quarterly OPEX\n# from Jan 2022 to Jun 2023 — seven consecutive quarters.\n#\n# OPEX Monday identification:\n# - Quarterly months: March (3), June (6), September (9), December (12)\n# - 3rd Friday of month falls on days 15-21\n# - Monday of that week = days 11-17\n# - day_of_week == 0 = Monday\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# Extract date components\nts = index()\nmonth_num = datetime_extract(component='month')(ts)\nday_num = datetime_extract(component='day')(ts)\ndow = datetime_extract(component='day_of_week')(ts)\n\n# Identify quarterly months (Mar=3, Jun=6, Sep=9, Dec=12)\nis_q_month = (month_num == 3) or (month_num == 6) or (month_num == 9) or (month_num == 12)\n\n# Identify Monday of 3rd week: day_of_week=0 (Monday), day 11-17\nis_monday = dow == 0\nis_third_week_monday = is_monday and (day_num >= 11) and (day_num <= 17)\n\n# OPEX Monday: quarterly month + 3rd week Monday\nis_opex_monday = is_q_month and is_third_week_monday\n\n# Band value: large number when OPEX Monday, NaN otherwise\nband_val = 1000000.0 if is_opex_monday else 0.0 / 0.0\n\nxy_lines(\n    title='Does NASDAQ Reverse at Every Quarterly OPEX?',\n    category='OPEX Pattern',\n    y_axis_label='QQQ Price',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='QQQ (NASDAQ 100)', color=Color.Purple),\n        LineSeriesSpec(name='Quarterly OPEX Monday', color=Color.Black, is_band=true)\n    ]),\n    order=0\n)(ts, close, band_val)\n"
+}

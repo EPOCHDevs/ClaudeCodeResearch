@@ -27,7 +27,11 @@ from typing import Optional
 # ─── Paths ───────────────────────────────────────────────────────────────────
 
 WORKSPACE_ROOT = Path(__file__).parent.parent
-DEFINITIONS_DIR = WORKSPACE_ROOT / "project" / "definitions" / "test_runner"
+DEFINITIONS_DIRS = [
+    WORKSPACE_ROOT / "project" / "definitions" / "test_runner",
+    WORKSPACE_ROOT / "project_hand_book" / "definitions" / "test_runner",
+    WORKSPACE_ROOT / "script_templates" / "definitions" / "test_runner",
+]
 RUN_CONFIG_FILE = WORKSPACE_ROOT / "scripts" / "run_config.json"
 RUN_SCRIPT = WORKSPACE_ROOT / "cpp_tools" / "run_generate_job_data.sh"
 
@@ -55,9 +59,13 @@ def load_run_config() -> dict:
 
 
 def discover_definitions() -> list:
-    """Auto-discover all definition JSON files from the definitions folder."""
+    """Auto-discover all definition JSON files from all definitions folders."""
     definitions = []
-    for f in sorted(DEFINITIONS_DIR.glob("*.json")):
+    all_files = []
+    for ddir in DEFINITIONS_DIRS:
+        if ddir.exists():
+            all_files.extend(ddir.glob("*.json"))
+    for f in sorted(all_files):
         def_id = f.stem
         try:
             with open(f) as fh:
@@ -65,7 +73,11 @@ def discover_definitions() -> list:
         except (json.JSONDecodeError, FileNotFoundError):
             continue
 
-        job_type = "campaign" if def_id.endswith("_strategy") else "research"
+        # Determine job type: campaigns need --cash (strategies, exec_cluster tests)
+        if def_id.endswith("_strategy") or def_id.startswith("exec_cluster_"):
+            job_type = "campaign"
+        else:
+            job_type = "research"
 
         definitions.append({
             "id": def_id,
@@ -106,6 +118,8 @@ def build_command(definition: dict, params: dict) -> str:
         cmd = f'/run-job-data "{path}" --cash {params.get("cash", 100000)}'
         if "start" in params:
             cmd += f' --start {params["start"]} --end {params["end"]}'
+        if "cost" in params:
+            cmd += f' --cost {params["cost"]}'
         return cmd
     else:
         return f'/run-job-data "{path}" --start {params["start"]} --end {params["end"]}'
@@ -125,6 +139,8 @@ def build_shell_command(definition: dict, params: dict, asan: bool = False) -> l
             cmd.extend(["--start", params["start"]])
         if "end" in params:
             cmd.extend(["--end", params["end"]])
+        if "cost" in params:
+            cmd.extend(["--cost", params["cost"]])
     else:
         cmd.extend([def_path, "--start", params["start"], "--end", params["end"]])
 

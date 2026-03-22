@@ -1,0 +1,10 @@
+{
+   "name": "Exec Cluster Cost: FX — Percent Commission + Fixed Slippage",
+   "description": "Tests: Percent commission (0.002%) + Fixed slippage ($0.0001). Run with --cost fx",
+   "data": {
+      "assets": ["SPY-Stocks", "QQQ-Stocks"],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# EXEC CLUSTER COST: FX-Style Percent Commission + Fixed Slippage\n# Run with: --cost fx --cash 100000\n# Validates: percentage-of-trade commission model, fixed dollar slippage\n# Uses equity assets as proxy (validates cost model, not asset class)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: EMA crossover ===\nfast = ma(period=12, type=MAType.ema)(close)\nslow = ma(period=26, type=MAType.ema)(close)\nis_bull = fast > slow\nis_bear = fast < slow\nheld_long = hold_until()(enter=is_bull, exit=is_bear)\nheld_short = hold_until()(enter=is_bear, exit=is_bull)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\nposition_size(type=SizeType.percent)(size=20)\n\natr_val = atr(period=14)(src.h, src.l, src.c)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 2)\n",
+   "global_timeframe": "1D"
+}

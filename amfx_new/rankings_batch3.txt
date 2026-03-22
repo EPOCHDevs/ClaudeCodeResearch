@@ -1,0 +1,140 @@
+AMFX Rankings - Batch 3
+=======================
+Sources: AMFX_17JUN22, AMFX_20AUG24, AMFX_20JAN23, AMFX_21DEC22
+Total KEPT items: 24
+Date ranked: 2026-03-11
+
+================================================================================
+TIER 1 - HIGH PRIORITY (implement first)
+================================================================================
+
+[TIER 1] AMFX_20AUG24 | Page 6 | Extreme Futures Positioning Z-Score Shifts (Table)
+  Data: CFTC Commitments of Traders (IMM futures positioning for EUR, AUD, NZD, JPY, TY, NQ, DOW, RTY, VIX)
+  Why: Systematic contrarian signal -- 5+ sigma positioning shifts with forward return outcomes across multiple asset classes, directly backtestable
+
+[TIER 1] AMFX_20AUG24 | Page 4 | Abrupt Shift - JPY Positioning Z-Score
+  Data: CFTC IMM JPY net speculative positioning (weekly), USDJPY spot
+  Why: Z-score of 6-week rolling change in net positioning as a directional signal -- clear methodology, 20+ year backtest window, public CFTC data
+
+[TIER 1] AMFX_20AUG24 | Page 2 | Distribution of Daily EURUSD Closes >1.08 Since Aug 2022
+  Data: EURUSD daily closes (Yahoo Finance, FRED, or any FX data source)
+  Why: Mean-reversion signal based on price distribution extremes -- directly testable as a contrarian fade when price enters the thin tail of the 2-year distribution
+
+[TIER 1] AMFX_21DEC22 | Page 1 | SPX Marked with Times When Gas Prices Down 15%+ in 60 Days
+  Data: S&P 500 (SPX), US retail gasoline prices (FRED series GASREGW or EIA data)
+  Why: Event study with clear trigger (60-day -15% gasoline drawdown), publicly available data, testable forward equity returns after each signal
+
+[TIER 1] AMFX_21DEC22 | Page 6 | SPX vs. US 2-Year Yield 1992-1998 (Rate Cycle Analog)
+  Data: S&P 500, US 2-year Treasury yield (FRED: GS2, DGS2)
+  Why: Regime-based signal -- equity performance around Fed pivot points; backtestable across multiple rate cycles (1994, 2000, 2006, 2018, 2022)
+
+================================================================================
+TIER 2 - STRONG
+================================================================================
+
+[TIER 2] AMFX_17JUN22 | Page 1 | EURUSD vs. Germany/USA 5-Year Rate Differential
+  Data: EURUSD spot, German 5Y Bund yield, US 5Y Treasury yield (FRED: DGS5; ECB data for Bund)
+  Why: Classic rate differential driver of FX -- strong co-movement enables regression-based fair value model and deviation signals
+
+[TIER 2] AMFX_17JUN22 | Page 1 | EURUSD vs. Germany/Italy 10-Year Spread
+  Data: EURUSD spot, German 10Y Bund yield, Italian 10Y BTP yield (ECB, Eurostat, or FRED)
+  Why: Peripheral spread as EUR risk premium indicator -- testable lead-lag relationship between spread compression/widening and EURUSD direction
+
+[TIER 2] AMFX_17JUN22 | Page 2 | EURUSD vs. Europe/USA Equity Ratio
+  Data: EURUSD spot, Euro Stoxx index (SX5E or SX7P), S&P 500 (SPX)
+  Why: Cross-asset relative value signal -- equity ratio as FX driver; reproducible with public index data though author notes limited real-time utility
+
+[TIER 2] AMFX_20AUG24 | Page 6 | CFTC Speculative JPY Position (Long-Term)
+  Data: CFTC Commitments of Traders -- JPY futures (weekly, 1992-present)
+  Why: 30+ year positioning history enables regime analysis; extreme long/short readings as contrarian signals for USDJPY direction
+
+[TIER 2] AMFX_20JAN23 | Page 1 | 6-Month Rolling Sum of MoM Retail Sales in the UK
+  Data: UK retail sales MoM % change (ONS, FRED series GBRETSA or similar)
+  Why: Macro momentum indicator at multi-decade extremes -- testable as recession predictor and GBP signal when reading hits historical lows
+
+[TIER 2] AMFX_20JAN23 | Page 2 | Implied Overnight Rate & Number of Hikes/Cuts
+  Data: Fed funds futures (CME), OIS rates (FRED: DFEDTAR, FF series)
+  Why: Market-implied vs. Fed guidance divergence as a systematic signal -- when markets disbelieve the Fed, subsequent rate moves tend to follow market pricing
+
+[TIER 2] AMFX_21DEC22 | Page 4 | Deutsche Bank - Japan Foreign Bond Sales & USD Cash Holdings
+  Data: Japan MOF capital flow data (BOJ, MOF weekly/monthly), Japanese institutional USD cash holdings
+  Why: Capital flow analysis for USDJPY -- foreign bond sales without JPY repatriation creates a measurable flow divergence that can be tracked as a positioning signal
+
+[TIER 2] AMFX_21DEC22 | Page 6 | FX Strategy Bulls and Bears for 2023 by Currency
+  Data: Compilation of bank FX strategy forecasts (Bloomberg consensus, Reuters polls)
+  Why: Consensus crowding indicator -- extreme agreement among forecasters as a contrarian signal; testable across multiple year-ahead forecast vintages
+
+================================================================================
+TIER 3 - MODERATE
+================================================================================
+
+[TIER 3] AMFX_20AUG24 | Page 7 | G10 FX Positioning and Momentum Scores (Aug 2024)
+  Data: CFTC positioning, Daily Sentiment Index, FX risk reversals, RSI, moving average deviations
+  Why: Composite scorecard framework is reproducible; individual components available publicly (CFTC, RSI) but risk reversals and DSI require Bloomberg/proprietary feeds
+
+[TIER 3] AMFX_21DEC22 | Page 5 | G10 FX Positioning and Momentum Scores (Dec 2022)
+  Data: CFTC positioning, Daily Sentiment Index, FX risk reversals, RSI, moving average deviations
+  Why: Same scorecard framework as Aug 2024 version -- useful as a template for building a composite FX signal, but proprietary weighting/scoring methodology
+
+[TIER 3] AMFX_21DEC22 | Page 3 | NASDAQ 1996 to 2004 (Dot-Com Bubble Analog)
+  Data: NASDAQ Composite (FRED: NASDAQCOM), reference levels (LTCM bailout price)
+  Why: Bubble round-trip framework is interesting for regime comparison, but analog-based reasoning is hard to systematize beyond narrative
+
+[TIER 3] AMFX_20AUG24 | Page 5 | Dollar Bears Emerged in 2003 - USDJPY Historical
+  Data: USDJPY daily spot (2003-2004)
+  Why: Historical analog to current positioning shift; useful context for the z-score signal but single-instance analog has limited standalone backtest value
+
+================================================================================
+TIER 4 - LOW
+================================================================================
+
+[TIER 4] AMFX_20AUG24 | Page 1 | USDCAD Daily Price Chart
+  Data: USDCAD daily spot
+  Why: Pure price action with support/resistance levels -- descriptive chart supporting a trade idea, no systematic signal to extract
+
+[TIER 4] AMFX_20AUG24 | Page 1 | USDCAD Hourly Price Chart
+  Data: USDCAD hourly spot
+  Why: Zoomed-in view of same support/resistance analysis -- single-instance level observation, not backtestable
+
+[TIER 4] AMFX_20AUG24 | Page 3 | EURUSD Daily Price Chart (2022-2024)
+  Data: EURUSD daily spot
+  Why: Standard price chart with single resistance level annotation -- narrative support, no systematic methodology
+
+[TIER 4] AMFX_21DEC22 | Page 2 | AMZN 2018 to Now (Bubble Round Trip)
+  Data: AMZN daily stock price
+  Why: Single-stock narrative illustration of bubble deflation -- supports a qualitative argument but no systematic signal
+
+[TIER 4] AMFX_21DEC22 | Page 2 | ARKK 2018 to Now (Bubble Round Trip)
+  Data: ARKK daily ETF price
+  Why: Same as AMZN -- single-instrument narrative, no backtestable methodology
+
+[TIER 4] AMFX_21DEC22 | Page 3 | Nike and FedEx Post-Earnings Charts
+  Data: NKE, FDX daily stock prices
+  Why: Two-stock earnings surprise anecdote -- illustrates a point about pessimism but too specific to be systematic research
+
+================================================================================
+TIER 5 - SKIP
+================================================================================
+
+[TIER 5] AMFX_20JAN23 | Page 3 | Proportion of Sons Employed at Father's Employer
+  Data: Academic labor economics dataset (intergenerational employment)
+  Why: Social science / labor economics chart with no market application -- interesting but outside quantitative finance scope
+
+================================================================================
+SUMMARY
+================================================================================
+
+Tier 1 (HIGH PRIORITY):     5 items
+Tier 2 (STRONG):            8 items
+Tier 3 (MODERATE):          4 items
+Tier 4 (LOW):               6 items
+Tier 5 (SKIP):              1 item
+                            --------
+Total:                      24 items
+
+TOP IMPLEMENTATION CANDIDATES (Tier 1):
+1. Extreme positioning z-score shifts table -- multi-asset contrarian signal with 20+ years of data
+2. JPY positioning z-score -- single-asset deep dive with clear signal construction
+3. EURUSD distribution extremes -- mean-reversion fade at distributional tails
+4. Gas price drop as equity signal -- event study with FRED-available data
+5. Rate cycle analog (SPX vs 2Y yield) -- regime-based equity signal around Fed pivots

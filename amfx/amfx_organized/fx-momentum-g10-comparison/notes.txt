@@ -1,0 +1,12 @@
+Title: FX Momentum
+Source: AMFX 20AUG24.pdf (page 7)
+Date: 2024-08-20
+Type: chart
+
+Insight: Bar chart comparing FX momentum scores across G10 currencies for last week versus this week, with USD showing significant negative momentum and JPY showing the strongest positive momentum this week.
+
+Context (above):
+G10 FX Positioning and Momentum Scores
+
+Context (below):
+7

@@ -1,0 +1,39 @@
+Task 5: Crude Oil 2022-Now with Equilibrium Zones
+==================================================
+Status: DONE (definition created)
+
+Reference: page_03_img_00.jpeg
+Original: TradingView candlestick chart of WTI crude oil (2022-Sep 2023)
+          with horizontal reference lines at 63.50, 76.70, 83.50, 93.50
+
+Reproduction approach:
+- Asset: CL-Futures (EOD data available from 1983)
+- The TradingView chart panel natively displays candlesticks for
+  futures assets when using market_data_source()
+- futures_continuation() with NoAdjustment provides continuous
+  front-month price levels (preserving actual dollar prices)
+- Dashboard xy_lines chart shows close + 50d/200d MAs with
+  horizontal reference_lines at all four equilibrium levels
+- Second chart shows distance from floor ($63.50) and ceiling ($83.50)
+- Summary table shows current price positioning
+
+What IS reproduced:
+- WTI crude oil price for the exact period (2022-01 to 2023-09)
+- All four horizontal equilibrium levels (63.50, 76.70, 83.50, 93.50)
+- Price context with moving averages
+- TV chart candlesticks (native)
+
+What is NOT reproduced:
+- Text annotations ("Equilibrium all year", "New equilibrium zone if
+  we close above $84") — EpochScript has no text annotation capability
+  on charts; reference line titles provide partial equivalent
+- The exact color coding of zones (red lines with purple annotations)
+  is approximated with Color.Red and Color.Purple reference lines
+
+Date range override in run_config.json:
+  "amfx_crude_equilibrium_zones_research": {
+    "start": "2022-01-01",
+    "end": "2023-09-30"
+  }
+
+Definition: project/definitions/test_runner/amfx_crude_equilibrium_zones_research.json

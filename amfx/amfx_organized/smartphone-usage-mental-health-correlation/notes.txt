@@ -1,0 +1,13 @@
+Title: Correlation Between Smartphone Usage and Mental Health Outcomes
+Source: AMFX 09FEB24.pdf (page 6)
+Date: 2024-02-09
+Type: chart
+
+Insight: The figure demonstrates a direct correlation between daily smartphone usage and worsening mental health indicators including stress perception, sleep dissatisfaction, depressive symptoms, suicidal ideation, substance use, and smartphone overdependence.
+
+Context (above):
+As demonstrated by the figure below, researchers have identified a direct correlation 
+between smartphone use and worsening mental well-being:
+
+Context (below):
+Source: PLOS One

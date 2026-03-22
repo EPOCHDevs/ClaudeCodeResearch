@@ -1,0 +1,10 @@
+{
+   "name": "Exec Cluster Cost: Futures — Per-Contract Commission + Tick Slippage",
+   "description": "Tests: Futures commission ($1.87/contract) + TickBased slippage (1 tick). Run with --cost futures",
+   "data": {
+      "assets": ["ES-Futures"],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# EXEC CLUSTER COST: Futures Commission + Tick Slippage\n# Run with: --cost futures --cash 100000\n# Validates: per-contract commission (exchange+clearing+NFA+broker), tick-based slippage\n# =============================================================================\n\nsrc = market_data_source()()\n\ncont = futures_continuation(\n    s_rollover_method=RolloverType.FirstOfMonth,\n    s_adjustment_method=AdjustmentType.BackwardRatio\n)(src.o, src.h, src.l, src.c, src.v, src.oi, src.s)\n\nclose = cont.c\natr_val = atr(period=14)(cont.h, cont.l, cont.c)\n\n# === SIGNAL: Donchian breakout ===\ndonchian = donchian_channel(window=20)(cont.h, cont.l)\nupper = donchian.donchian_upper >> 1\nentry_long = close > upper\nheld = hold_until()(enter=entry_long, exit=close < donchian.donchian_lower)\n\n# === EXECUTION ===\nrollover_policy()(active=cont.s)\nlong_and_short_zone()(long_entry=held)\nrisk_unit(stop_unit=StopUnit.price, contract_multiplier=50)(\n    risk_pct=2, stop_distance=atr_val * 2\n)\ntrailing_stop()(distance=atr_val * 3)\n",
+   "global_timeframe": "1D"
+}

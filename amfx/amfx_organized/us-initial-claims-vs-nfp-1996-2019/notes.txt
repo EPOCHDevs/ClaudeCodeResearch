@@ -1,0 +1,13 @@
+Title: US Initial Claims vs. 3-Month Average of US Nonfarm Payrolls (1996-2019)
+Source: AMFX 25OCT22.pdf (page 2)
+Date: 2022-10-25
+Type: chart
+
+Insight: This dual-axis chart compares initial jobless claims (blue line) with the 3-month average of nonfarm payrolls (orange line) from 1996 to 2019, showing inverse relationship between these labor market indicators with notable divergences during recessions.
+
+Context (above):
+US Initial Claims vs. 3-month average of US Nonfarm Payrolls
+
+Context (below):
+Charts show 1996 to 2019. 
+I left out 2020- because COVID blows up the y-axis and there is no useful information in that data.

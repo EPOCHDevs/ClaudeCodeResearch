@@ -1,0 +1,10 @@
+{
+   "name": "Signal Cluster S53: Null Detection & Data Quality",
+   "description": "Tests: is_null(), is_valid(). Warm-up detection, data gap identification, conditional execution guard.",
+   "data": {
+      "assets": ["SPY-Stocks"],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# SIGNAL CLUSTER S53: is_null / is_valid\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === WARM-UP DETECTION ===\nsma_200 = ma(period=200, type=MAType.sma)(close)\nma_ready = is_valid()(sma_200)\n\n# Only generate signals when MA has warmed up\nraw_signal = crossover(close, sma_200)\nclean_signal = raw_signal and ma_ready\n\n# === DATA QUALITY ===\nhas_close = is_valid()(close)\nmissing_close = is_null()(close)\n\n# === CONDITIONAL EXECUTION ===\nrsi_val = rsi(period=14)(close)\nboth_valid = is_valid()(sma_200) and is_valid()(rsi_val)\ncombined = where(both_valid, close - sma_200)\n\n# === REPORTERS ===\nxy_lines(\n    title='MA Ready (Warm-up)',\n    category='Data Quality',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='MA Ready', color=Color.Green)\n    ])\n)(x_values=index(), y_values=static_cast_to_decimal()(ma_ready))\n\nxy_lines(\n    title='Close - SMA (guarded)',\n    category='Signal',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Spread', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=combined)\n",
+   "global_timeframe": "1D"
+}

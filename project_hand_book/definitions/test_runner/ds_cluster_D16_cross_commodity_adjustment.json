@@ -1,0 +1,10 @@
+{
+    "name": "DS Cluster D16: Cross-Commodity Adjustment Rules",
+    "description": "Tests: NoAdjustment for ratios/spreads between assets, BackwardRatio for single-asset momentum. The adjustment trap.",
+    "data": {
+        "assets": ["SPY-Stocks"],
+        "source": "polygon"
+    },
+    "source": "# =============================================================================\n# DS CLUSTER D16: Cross-Commodity Adjustment Rules\n# =============================================================================\n# Rule: NoAdjustment for ratios/spreads, BackwardRatio for single-asset returns.\n\nsrc = market_data_source()()\nclose = src.c\n\n# === Two reference assets for ratio ===\ngld = common_reference_stocks(ticker=ReferenceStock.GLD)()\ntlt = common_reference_stocks(ticker=ReferenceStock.TLT)()\n\n# === RATIO: GLD/TLT (uses raw prices — NoAdjustment equivalent) ===\n# Reference stocks don't need continuation, but the principle applies:\n# For cross-asset ratios, use RAW (unadjusted) prices.\nratio = gld.c / tlt.c\nratio_ma = ma(period=50, type=MAType.sma)(ratio)\n\n# === SPREAD: GLD - TLT ===\nspread = gld.c - tlt.c\n\n# === SINGLE-ASSET RETURNS (BackwardRatio equivalent) ===\n# For returns/momentum on a single asset, adjusted prices are correct\ngld_ret = returns()(gld.c)\ntlt_ret = returns()(tlt.c)\nspread_ret = gld_ret - tlt_ret\n\n# === REPORTERS ===\nxy_lines(\n    title=\"GLD/TLT Ratio (raw prices for ratio)\",\n    category=\"Adjustment\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Ratio\", color=Color.Orange),\n        LineSeriesSpec(name=\"50d MA\", color=Color.White)\n    ])\n)(x_values=index(), y_values=(ratio, ratio_ma))\n\nxy_lines(\n    title=\"GLD - TLT Return Spread\",\n    category=\"Adjustment\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Spread Return\", color=Color.Cyan)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[ReferenceLine(value=0, title=\"Zero\")])\n)(x_values=index(), y_values=cumulative()(spread_ret))\n",
+    "global_timeframe": "1D"
+}

@@ -27,6 +27,10 @@ venv
 epoch_ai
 
 futures-projhect
-project/campaigns
-project/research_studies
-project/market_data
+
+# Arrow data dirs (keep definitions/ only)
+**/campaigns/
+**/market_data/
+**/research_studies/
+*.arrow
+*.zip

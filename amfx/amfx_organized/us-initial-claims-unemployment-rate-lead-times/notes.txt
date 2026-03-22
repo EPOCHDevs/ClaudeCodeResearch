@@ -1,0 +1,12 @@
+Title: US Initial Claims vs Unemployment Rate with Lead Time Indicators
+Source: AMFX 25OCT22.pdf (page 1)
+Date: 2022-10-25
+Type: chart
+
+Insight: This chart shows the historical relationship between US initial jobless claims (blue line) and the unemployment rate (black line) from 1980-2019, with annotations indicating the typical lead time (ranging from 3-22 months) that initial claims precede changes in the unemployment rate.
+
+Context (above):
+Marked with Initial Claims lead vs. UR at each turn
+
+Context (below):
+Left y-axis is US Jobless Claims, right y-axis is US Unemployment Rate (U3)

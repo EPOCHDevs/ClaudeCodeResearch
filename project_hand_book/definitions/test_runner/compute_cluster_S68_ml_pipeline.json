@@ -1,0 +1,10 @@
+{
+   "name": "Compute Cluster S68: ML Classification Pipeline",
+   "description": "Tests: tuple_pack, ml_robust(window_size, step), lightgbm_classifier(num_estimators, learning_rate, num_leaves, min_data_in_leaf, window_size, step). Walk-forward ML prediction.",
+   "data": {
+      "assets": ["SPY-Stocks"],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# COMPUTE CLUSTER S68: ML Classification Pipeline\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nhigh = src.h\nlow = src.l\nvolume = src.v\n\n# === FEATURES ===\nfeat_mom = returns(period=21)(close)\nfeat_vol = volatility(period=21)(close)\nfeat_rsi = rsi(period=14)(close)\n# === TARGET: next day up/down ===\nnext_ret = returns()(close) << 1\ntarget = next_ret > 0\n\n# === CLASSIFIER (pass individual feature series, NOT tuple_pack) ===\nmodel = lightgbm_classifier(\n    num_estimators=100,\n    learning_rate=0.05,\n    num_leaves=15,\n    min_data_in_leaf=50,\n    window_size=126,\n    step=21\n)(feat_mom, feat_vol, feat_rsi, target=target)\n\npred = model.prediction\nprob = model.probability\n\n# === REPORTERS ===\nxy_lines(\n    title='LightGBM Probability of Up Day',\n    category='ML',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='P(up)', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=prob)\n\nxy_lines(\n    title='Features: Momentum & Vol',\n    category='Features',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='21d Momentum', color=Color.Green),\n        LineSeriesSpec(name='21d Vol', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(feat_mom, feat_vol))\n",
+   "global_timeframe": "1D"
+}

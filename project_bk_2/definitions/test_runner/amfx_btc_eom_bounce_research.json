@@ -1,0 +1,13 @@
+{
+   "name": "amfx-btc-eom-bounce-research",
+   "description": "amFX reproduction (16JUN22 p3): BTC price from Nov 2021 peak to Jun 2022 crash with end-of-month periods highlighted. Bloomberg-style area chart. End-of-month periods (day >= 25) are highlighted as a band to show the recurring bounce pattern before LUNA/Celsius/3AC forced liquidations overwhelmed normal flows in May-Jun 2022.",
+   "data": {
+      "assets": [
+         "BTCUSD-Crypto"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: BTC WITH END-OF-MONTH BOUNCES (16JUN22 p3)\n# =============================================================================\n# BTC from $69K peak (Nov 2021) to $21K crash (Jun 2022).\n# End-of-month periods highlighted -- circles in original show how BTC\n# consistently bounced in the last week of each month (new allocations)\n# until LUNA/Celsius/3AC broke the pattern in May-Jun 2022.\n#\n# Band series marks day-of-month >= 25 as end-of-month window.\n# =============================================================================\n\nbtc = crypto_pairs(ticker='BTCUSD')()\nclose = btc.c\nidx = index()\n\n# Day of month\ndom = datetime_extract(component=DatetimeExtractionType.day)(idx)\n\n# End-of-month flag: 1 when day >= 25, 0 otherwise\neom_flag = dom >= 25\neom_band = eom_flag * 1.0\n\nxy_lines(\n    title='BTC: Did End-of-Month Bounces Persist Through the Crash?',\n    category='BTC EOM Bounce',\n    y_axis_label='BTC Price (USD)',\n    y_axis_format=AxisValueFormat.MonetaryFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='BTC/USD', color=Color.Blue, area=True),\n        LineSeriesSpec(name='End-of-Month Window (day >= 25)', color=Color.Sky, is_band=True)\n    ]),\n    order=0\n)(idx, close, eom_band)\n"
+}

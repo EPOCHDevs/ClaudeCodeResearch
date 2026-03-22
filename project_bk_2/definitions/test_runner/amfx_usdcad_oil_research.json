@@ -1,0 +1,13 @@
+{
+   "name": "amfx-usdcad-oil",
+   "description": "amFX reproduction (12JUN23 p2): USDCAD vs NYMEX WTI Crude Oil overlay. Oil plotted as negative values to simulate inverted axis (oil down = USDCAD up visual correlation). Shows historically tight correlation and May 2023 decoupling. Source: Brent Donnelly, Spectra Markets.",
+   "data": {
+      "assets": [
+         "^USDCAD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: USDCAD vs NYMEX WTI Crude Oil (Inverted)\n# =============================================================================\n# Reproduces page 2 chart from amFX 12JUN23 newsletter.\n# USDCAD vs crude oil with oil on inverted axis.\n# Oil price is negated to simulate inverted right axis:\n# when oil falls (goes more negative), line moves up like USDCAD.\n# Shows correlation breakdown in May 2023.\n# =============================================================================\n\nsrc = market_data_source()()\nusdcad = src.c\n\n# WTI Crude Oil price from FRED (daily)\noil_src = economic_indicators(series_id='DCOILWTICO')()\noil_raw = ffill(oil_src.result)\n\n# Negate oil to simulate inverted axis\noil_inverted = 0 - oil_raw\n\n# Time index\nidx = index()\n\n# =============================================================================\n# CHART 1: USDCAD vs Oil (Inverted) Overlay\n# =============================================================================\nxy_lines(\n    title='USDCAD vs WTI Crude (Inverted): Is the Correlation Breaking Down?',\n    category='FX vs Commodities',\n    y_axis_label='USDCAD / Oil (inverted)',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='USDCAD', color=Color.Blue),\n        LineSeriesSpec(name='WTI Crude (inverted)', color=Color.Red)\n    ]),\n    order=0\n)(idx, usdcad, oil_inverted)\n"
+}

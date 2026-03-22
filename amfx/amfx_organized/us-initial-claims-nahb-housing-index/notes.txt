@@ -1,0 +1,12 @@
+Title: US Initial Claims vs. NAHB Housing Index (1985-2022)
+Source: AMFX 25OCT22.pdf (page 2)
+Date: 2022-10-25
+Type: chart
+
+Insight: This dual-axis chart demonstrates the inverse relationship between jobless claims and housing market sentiment over 37 years, with annotations highlighting key correlation periods ranging from 2 to 24 months.
+
+Context (above):
+US Initial Claims vs. NAHB Housing Index
+
+Context (below):
+Left y-axis is US Jobless Claims (inverted), right y-axis is NAHB Housing Index

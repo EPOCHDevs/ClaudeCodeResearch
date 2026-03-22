@@ -1,0 +1,9 @@
+Title: US Initial Claims vs. US Nonfarm Payrolls (1997-2019)
+Source: AMFX 25OCT22.pdf (page 1)
+Date: 2022-10-25
+Type: chart
+
+Insight: This dual-axis chart shows the inverse relationship between initial jobless claims (blue line) and nonfarm payroll employment (orange line), with a dramatic spike in claims and drop in payrolls visible around 2008-2009 during the financial crisis.
+
+Context (above):
+US Initial Claims vs. US Nonfarm Payrolls

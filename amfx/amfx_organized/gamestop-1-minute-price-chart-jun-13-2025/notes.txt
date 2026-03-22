@@ -1,0 +1,24 @@
+Title: GameStop 1-minute chart
+Source: AMFX 13JUN25.pdf (page 3)
+Date: 2025-06-13
+Type: chart
+
+Insight: Intraday price movement of GameStop stock showing a general downtrend from 09:00 to 14:30 with a brief recovery spike around 14:30, demonstrating significant volatility over the trading session.
+
+Context (above):
+Revenue in covid 2.6mm 
+Revenue this year 1.2mm 
+Revenue next year 400k 
+ 
+"The main issue is that the grad recruitment market has fallen off a cliff - most of our employers are using AI 
+to do what the grads would have done and what little recruitment they ARE doing, they are using AI for too." 
+ 
+I am always skeptical of narratives suggesting that technology and automation will lead to massive job losses 
+because this has been a fear for the past 100+ years and it never happens. New technologies create job market 
+disruption but have never generated massive unemployment. Bare minimum AI is going to lead to some severe 
+job market disruption in the next 24 months. Maybe worse. Good for productivity and bad for coders. Interesting 
+because “learn to code” was the common knowledge advice just a few years ago, while truck drivers were at 
+greatest risk of job losses due to self-driving trucks. That has not worked out so far.
+
+Context (below):
+Have a safe weekend.

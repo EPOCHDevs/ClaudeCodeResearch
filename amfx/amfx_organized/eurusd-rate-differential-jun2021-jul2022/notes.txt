@@ -1,0 +1,12 @@
+Title: Hourly EUR/USD vs. Germany/USA 5-Year Rate Differential
+Source: AMFX 17JUN22.pdf (page 1)
+Date: 2022-06-17
+Type: chart
+
+Insight: This hourly chart shows the EUR/USD exchange rate (black line) tracked against the Germany/USA 5-year rate differential (blue line) from June 2021 to July 2022, demonstrating the correlation between interest rate spreads and currency valuation during a period of significant monetary policy divergence.
+
+Context (above):
+EURUSD vs. Germany/USA 5-year rate differential
+
+Context (below):
+Current Views

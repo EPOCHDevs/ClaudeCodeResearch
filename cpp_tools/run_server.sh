@@ -3,10 +3,11 @@
 # Build (if stale) and run epoch_stratifyx_server
 #
 # Usage:
-#   ./run_server.sh          # Release build, default port
-#   ./run_server.sh --asan   # Debug build with AddressSanitizer
-#   ./run_server.sh -j4      # Limit to 4 parallel build jobs
-#   ./run_server.sh --asan -j4  # ASAN build with 4 jobs
+#   ./run_server.sh              # Release build, default port
+#   ./run_server.sh --no-build   # Skip build, run existing binary
+#   ./run_server.sh --asan       # Debug build with AddressSanitizer
+#   ./run_server.sh -j4          # Limit to 4 parallel build jobs
+#   ./run_server.sh --asan -j4   # ASAN build with 4 jobs
 #
 # The server runs on port 8080 by default.
 # Press Ctrl+C to stop.
@@ -22,10 +23,15 @@ NUM_JOBS=$(( $(nproc) > 16 ? 16 : $(nproc) ))
 # Default to release build
 BUILD_MODE="release"
 BUILD_DIR="../../EpochBackend/build"
+SKIP_BUILD=false
 
 # Parse flags
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        --no-build)
+            SKIP_BUILD=true
+            shift
+            ;;
         --asan)
             BUILD_MODE="asan"
             BUILD_DIR="../../EpochBackend/build-asan"
@@ -69,8 +75,12 @@ if [[ ! -d "$BUILD_DIR" ]]; then
 fi
 
 # Build if stale (ninja handles staleness check automatically)
-echo "[$SCRIPT_NAME] Building $TARGET (if stale)..."
-ninja -C "$BUILD_DIR" -j"$NUM_JOBS" "$TARGET"
+if [[ "$SKIP_BUILD" == true ]]; then
+    echo "[$SCRIPT_NAME] Skipping build (--no-build)"
+else
+    echo "[$SCRIPT_NAME] Building $TARGET (if stale)..."
+    ninja -C "$BUILD_DIR" -j"$NUM_JOBS" "$TARGET"
+fi
 
 # Verify binary exists
 if [[ ! -x "$BIN_PATH" ]]; then

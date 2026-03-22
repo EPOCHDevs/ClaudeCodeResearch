@@ -1,0 +1,13 @@
+Title: US 10-Year Yields - 15 Days of 30-Minute Increments
+Source: AMFX 23NOV22.pdf (page 2)
+Date: 2022-11-23
+Type: chart
+
+Insight: A detailed 30-minute interval price chart showing US 10-year Treasury yields over 15 days, with technical annotations identifying support/resistance levels and the 100-day moving average around the 3.50% target level.
+
+Context (above):
+US 10-year yields, 15 days of 30-minute increments
+
+Context (below):
+Zooming out, a good short-term target for 10-year yields is 3.50%, that is the old YTD high as of June 2022 and just above 
+the 100-day moving average. Here is the chart.

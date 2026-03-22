@@ -1,0 +1,28 @@
+SPECTRA MARKETS: LOOK FORWARD 
+ 
+2 
+ 
+ 
+Even if you smooth NFP using a 3-month average, you get this: 
+ 
+US Initial Claims vs. 3-month average of US Nonfarm Payrolls 
+ 
+ 
+Charts show 1996 to 2019. 
+I left out 2020- because COVID blows up the y-axis and there is no useful information in that data. 
+ 
+But obviously a 3-month smoothed series of monthly data is not going to be as timely as the raw weekly data you get 
+from Initial Claims. This is why I think the labor market vs. housing chart is more informative if you plot NAHB vs. Initial 
+Claims. So here you go: 
+ 
+US Initial Claims vs. NAHB Housing Index 
+ 
+ 
+Left y-axis is US Jobless Claims (inverted), right y-axis is NAHB Housing Index 
+ 
+I have labelled the lags between housing and claims, and you can see that NAHB usually leads the turn when the 
+economy turns down. In the recovery part of the cycle, the two series are coincident. This cycle, NAHB peaked in 
+November 2020 and started to collapse in early 2022. Prior lags between housing and the labor market were 6 to 24 
+months, but the abnormally long lag in 2006 is probably not going to happen again given that was a housing bubble 
+that played out slowly and gradually over years and the 2021 all-you-can-eat housing binge is a spike and reverse that 
+is unwinding as quickly as it boomed. So we’ve entered the danger zone for Claims, but lags are long and variable.

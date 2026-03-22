@@ -1,0 +1,10 @@
+Title: Well-Being and Life Satisfaction by Household Income
+Source: AMFX 01APR22.pdf (page 2)
+Date: 2022-04-01
+Type: chart
+
+Insight: Both experienced well-being and life satisfaction increase with household income, with a notable acceleration in life satisfaction gains after the $75,000 income threshold.
+
+Context (below):
+Mean levels of experienced well-being (real-time feeling reports on a good–bad continuum) 
+and evaluative well-being (overall life satisfaction) for each income band. Income axis is log transformed.

@@ -1,0 +1,9 @@
+Title: Major Index Performance Comparison with October Corrections Marked
+Source: AMFX 27SEP23.pdf (page 1)
+Date: 2023-09-27
+Type: chart
+
+Insight: Four major indices (S&P 500, NASDAQ, Russell 2000, and DAX) show year-to-date performance with red arrows highlighting significant corrections in early-to-mid October (090CT and 020CT dates), demonstrating synchronized market volatility across US and European markets.
+
+Context (above):
+syndrome syndrome")

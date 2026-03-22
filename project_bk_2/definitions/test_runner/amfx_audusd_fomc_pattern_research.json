@@ -1,0 +1,13 @@
+{
+   "name": "amfx-audusd-fomc-pattern-research",
+   "description": "amFX reproduction (16JUN22 p1): AUDUSD daily chart Apr-Jul 2022 showing the repeating FOMC pattern. AUD ripped higher on dovish throwaway lines at two consecutive FOMC meetings, then reversed. Powell said '75bps not being actively considered' then hiked 75bps. Reference lines mark key FOMC dates (May 4, Jun 15 2022). Daily timeframe approximation of original hourly chart.",
+   "data": {
+      "assets": [
+         "AUDUSD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: AUDUSD FOMC PATTERN (16JUN22 p1)\n# =============================================================================\n# Brent Donnelly's observation: AUDUSD did 'exactly the same thing' at two\n# consecutive FOMC meetings -- ripped higher on dovish throwaway lines,\n# peaked around 10pm NY, then reversed hard.\n# - May 4 FOMC: 'Powell: 75bps not something FOMC is actively considering'\n# - Jun 15 FOMC: 'Powell: don't expect 75bp moves to be common'\n# - Jun 15: Fed hikes 75bps anyway\n# Daily timeframe captures the multi-day rally/reversal pattern.\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nidx = index()\n\n# Moving averages for context\nma20 = ma(period=20)(close)\n\n# =============================================================================\n# CHART 1: AUDUSD Price with FOMC Reference Lines\n# =============================================================================\nxy_lines(\n    title='AUDUSD: Did the Fed Repeat the Same Mistake Twice?',\n    category='FOMC Pattern',\n    y_axis_label='AUDUSD',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=4,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='AUDUSD Close', color=Color.Blue),\n        LineSeriesSpec(name='20d MA', color=Color.Gray, dash_style=DashStyle.Dot)\n    ]),\n    order=0\n)(idx, close, ma20)\n"
+}

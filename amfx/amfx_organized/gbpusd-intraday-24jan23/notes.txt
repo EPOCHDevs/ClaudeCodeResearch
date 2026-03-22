@@ -1,0 +1,25 @@
+Title: GBP/USD Exchange Rate 11am NY / 4pm LDN
+Source: AMFX 24JAN23.pdf (page 1)
+Date: 2023-01-24
+Type: chart
+
+Insight: Intraday GBP/USD price action showing volatility around 0.6970-0.7040 range with a sharp rally in the final hour, relevant to the text reference of 22 GBP bps movement
+
+Context (above):
+And once again that familiar 
+numbing beat of routine rolling 
+along its familiar tracks. 
+ 
+Commuter trains loading and 
+unloading passengers… 
+sleepwalkers, shoppers, solicitors, 
+the ambitious and the hopeless, 
+the contented and the wretched… 
+ 
+human electrons shuffling through 
+the circuitry of civilization, 
+enacting corporate spreadsheets 
+and other such things.
+
+Context (below):
+22 GBP bps to make 50

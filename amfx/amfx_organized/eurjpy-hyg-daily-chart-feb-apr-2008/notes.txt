@@ -1,0 +1,13 @@
+Title: EURJPY vs. HYG Daily Candlestick Chart (February-April 2008)
+Source: AMFX 16JUN22.pdf (page 5)
+Date: 2022-06-16
+Type: chart
+
+Insight: This chart illustrates how EURJPY decoupled from high-yield assets (HYG) during the March 2008 financial crisis, with annotations showing JPM's Bear Stears acquisition and forced selling pressure on the currency pair.
+
+Context (above):
+EURJPY vs. HYG (February to April 2008)
+
+Context (below):
+You can see in the chart, EURJPY “should have been” 500 points higher on March 18th, but it got slammed over and 
+over. Finally, once the outflow was done:

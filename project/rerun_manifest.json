@@ -1,0 +1,780 @@
+{
+  "campaigns": [
+    {
+      "name": "lwc_test_trend_strategy",
+      "definition_id": "lwc_test_trend_strategy",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2020-01-01"
+      },
+      "has_execution": true
+    }
+  ],
+  "research_studies": [
+    {
+      "name": "ag_carry_factor_relationship",
+      "definition_id": "ag_carry_factor_relationship",
+      "period": {
+        "end": "2025-03-12",
+        "start": "2010-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "ag_carry_quintile_exhibit_research",
+      "definition_id": "ag_carry_quintile_exhibit_research",
+      "period": {
+        "end": "2025-12-31",
+        "start": "2010-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_audusd_divergence_research",
+      "definition_id": "amfx_audusd_divergence_research",
+      "period": {
+        "end": "2023-04-30",
+        "start": "2022-06-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_audusd_fomc_pattern_research",
+      "definition_id": "amfx_audusd_fomc_pattern_research",
+      "period": {
+        "end": "2022-07-31",
+        "start": "2022-03-15"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_btc_cme_futures_contrarian_research",
+      "definition_id": "amfx_btc_cme_futures_contrarian_research",
+      "period": {
+        "end": "2018-09-01",
+        "start": "2016-08-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_btc_day_of_month_research",
+      "definition_id": "amfx_btc_day_of_month_research",
+      "period": {
+        "end": "2022-06-30",
+        "start": "2021-11-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_btc_eom_bounce_research",
+      "definition_id": "amfx_btc_eom_bounce_research",
+      "period": {
+        "end": "2022-06-30",
+        "start": "2021-11-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_claims_vs_ism_percentile_research",
+      "definition_id": "amfx_claims_vs_ism_percentile_research",
+      "period": {
+        "end": "2022-07-22",
+        "start": "2003-09-10"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_claims_vs_nfp_3mma_research",
+      "definition_id": "amfx_claims_vs_nfp_3mma_research",
+      "period": {
+        "end": "2019-12-31",
+        "start": "1996-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_claims_vs_nfp_research",
+      "definition_id": "amfx_claims_vs_nfp_research",
+      "period": {
+        "end": "2019-12-31",
+        "start": "1996-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_claims_vs_unemployment_research",
+      "definition_id": "amfx_claims_vs_unemployment_research",
+      "period": {
+        "end": "2019-12-31",
+        "start": "1980-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_crude_equilibrium_zones_research",
+      "definition_id": "amfx_crude_equilibrium_zones_research",
+      "period": {
+        "end": "2023-09-30",
+        "start": "2022-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_crude_geopolitical_2024_research",
+      "definition_id": "amfx_crude_geopolitical_2024_research",
+      "period": {
+        "end": "2024-11-25",
+        "start": "2024-09-25"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_dollar_index_longterm_research",
+      "definition_id": "amfx_dollar_index_longterm_research",
+      "period": {
+        "end": "2023-03-31",
+        "start": "2006-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_eurgbp_rate_diff_research",
+      "definition_id": "amfx_eurgbp_rate_diff_research",
+      "period": {
+        "end": "2023-06-30",
+        "start": "2023-03-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_eurjpy_hyg_bear_stearns_research",
+      "definition_id": "amfx_eurjpy_hyg_bear_stearns_research",
+      "period": {
+        "end": "2008-04-30",
+        "start": "2007-11-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_eurusd_btp_bund_spread_research",
+      "definition_id": "amfx_eurusd_btp_bund_spread_research",
+      "period": {
+        "end": "2022-07-01",
+        "start": "2021-10-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_eurusd_close_distribution_research",
+      "definition_id": "amfx_eurusd_close_distribution_research",
+      "period": {
+        "end": "2024-08-21",
+        "start": "2022-08-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_eurusd_equity_ratio_research",
+      "definition_id": "amfx_eurusd_equity_ratio_research",
+      "period": {
+        "end": "2022-07-01",
+        "start": "2022-01-15"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_eurusd_rate_differential_research",
+      "definition_id": "amfx_eurusd_rate_differential_research",
+      "period": {
+        "end": "2022-07-01",
+        "start": "2021-06-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_eurusd_volume_by_tod_research",
+      "definition_id": "amfx_eurusd_volume_by_tod_research",
+      "period": {
+        "end": "2025-01-01",
+        "start": "2024-06-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_gasoline_labor_hours_research",
+      "definition_id": "amfx_gasoline_labor_hours_research",
+      "period": {
+        "end": "2023-01-31",
+        "start": "2003-09-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_gbpusd_fix_cumret_research",
+      "definition_id": "amfx_gbpusd_fix_cumret_research",
+      "period": {
+        "end": "2023-01-31",
+        "start": "2010-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_gbpusd_rate_diff_research",
+      "definition_id": "amfx_gbpusd_rate_diff_research",
+      "period": {
+        "end": "2023-06-30",
+        "start": "2023-03-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_gme_microstructure_research",
+      "definition_id": "amfx_gme_microstructure_research",
+      "period": {
+        "end": "2025-06-13",
+        "start": "2025-06-11"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_housing_gdp_share_research",
+      "definition_id": "amfx_housing_gdp_share_research",
+      "period": {
+        "end": "2022-12-31",
+        "start": "1980-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_japan_us_10y_divergence_research",
+      "definition_id": "amfx_japan_us_10y_divergence_research",
+      "period": {
+        "end": "2024-06-01",
+        "start": "2023-06-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_jolts_job_openings_research",
+      "definition_id": "amfx_jolts_job_openings_research",
+      "period": {
+        "end": "2023-01-31",
+        "start": "2003-09-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_lei_vs_recessions_research",
+      "definition_id": "amfx_lei_vs_recessions_research",
+      "period": {
+        "end": "2023-01-31",
+        "start": "2003-09-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_nahb_vs_claims_research",
+      "definition_id": "amfx_nahb_vs_claims_research",
+      "period": {
+        "end": "2022-10-25",
+        "start": "1985-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_nasdaq_dotcom_roundtrip_research",
+      "definition_id": "amfx_nasdaq_dotcom_roundtrip_research",
+      "period": {
+        "end": "2004-12-31",
+        "start": "1995-12-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_nasdaq_geopolitical_2024_research",
+      "definition_id": "amfx_nasdaq_geopolitical_2024_research",
+      "period": {
+        "end": "2024-11-15",
+        "start": "2024-09-15"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_nasdaq_opex_fade_pnl_research",
+      "definition_id": "amfx_nasdaq_opex_fade_pnl_research",
+      "period": {
+        "end": "2023-06-30",
+        "start": "2020-06-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_nasdaq_opex_markers_research",
+      "definition_id": "amfx_nasdaq_opex_markers_research",
+      "period": {
+        "end": "2023-06-30",
+        "start": "2021-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_preelection_seasonal_dax_research",
+      "definition_id": "amfx_preelection_seasonal_dax_research",
+      "period": {
+        "end": "2023-12-31",
+        "start": "1998-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_preelection_seasonal_ndx_research",
+      "definition_id": "amfx_preelection_seasonal_ndx_research",
+      "period": {
+        "end": "2023-12-31",
+        "start": "1998-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_preelection_seasonal_rut_research",
+      "definition_id": "amfx_preelection_seasonal_rut_research",
+      "period": {
+        "end": "2023-12-31",
+        "start": "1998-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_preelection_seasonal_spx_research",
+      "definition_id": "amfx_preelection_seasonal_spx_research",
+      "period": {
+        "end": "2023-12-31",
+        "start": "1998-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_rbob_bull_flag_research",
+      "definition_id": "amfx_rbob_bull_flag_research",
+      "period": {
+        "end": "2023-08-31",
+        "start": "2022-12-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_real_policy_rates_research",
+      "definition_id": "amfx_real_policy_rates_research",
+      "period": {
+        "end": "2025-06-13",
+        "start": "2019-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_seasonal_cumret_research",
+      "definition_id": "amfx_seasonal_cumret_research",
+      "period": {
+        "end": "2023-11-15",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_sp500_thanksgiving_research",
+      "definition_id": "amfx_sp500_thanksgiving_research",
+      "period": {
+        "end": "2022-12-31",
+        "start": "2009-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_spx_gas_price_drop_research",
+      "definition_id": "amfx_spx_gas_price_drop_research",
+      "period": {
+        "end": "2022-12-31",
+        "start": "2003-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_spx_nope_etf_contrarian_research",
+      "definition_id": "amfx_spx_nope_etf_contrarian_research",
+      "period": {
+        "end": "2024-06-01",
+        "start": "2021-08-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_spx_vs_2y_yield_1994_research",
+      "definition_id": "amfx_spx_vs_2y_yield_1994_research",
+      "period": {
+        "end": "1998-12-31",
+        "start": "1991-06-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_time_poty_contrarian_research",
+      "definition_id": "amfx_time_poty_contrarian_research",
+      "period": {
+        "end": "2024-01-01",
+        "start": "2019-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_tsla_time_cover_research",
+      "definition_id": "amfx_tsla_time_cover_research",
+      "period": {
+        "end": "2024-01-01",
+        "start": "2020-04-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_uk_retail_sales_rolling_sum_research",
+      "definition_id": "amfx_uk_retail_sales_rolling_sum_research",
+      "period": {
+        "end": "2023-01-20",
+        "start": "2003-10-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_unemployment_deficit_scatter_research",
+      "definition_id": "amfx_unemployment_deficit_scatter_research",
+      "period": {
+        "end": "2023-08-02",
+        "start": "1970-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_us10y_regime_zones_research",
+      "definition_id": "amfx_us10y_regime_zones_research",
+      "period": {
+        "end": "2023-09-30",
+        "start": "1962-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_us_federal_debt_research",
+      "definition_id": "amfx_us_federal_debt_research",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2013-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_us_financial_conditions_research",
+      "definition_id": "amfx_us_financial_conditions_research",
+      "period": {
+        "end": "2023-01-31",
+        "start": "2020-12-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_usdcad_oil_research",
+      "definition_id": "amfx_usdcad_oil_research",
+      "period": {
+        "end": "2023-06-30",
+        "start": "2022-11-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_usdcnh_rate_spread_research",
+      "definition_id": "amfx_usdcnh_rate_spread_research",
+      "period": {
+        "end": "2022-11-30",
+        "start": "2021-02-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_wmr_fix_audusd_research",
+      "definition_id": "amfx_wmr_fix_audusd_research",
+      "period": {
+        "end": "2023-01-31",
+        "start": "2010-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_wmr_fix_eurusd_research",
+      "definition_id": "amfx_wmr_fix_eurusd_research",
+      "period": {
+        "end": "2023-01-31",
+        "start": "2010-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_yield_curve_recession_research",
+      "definition_id": "amfx_yield_curve_recession_research",
+      "period": {
+        "end": "2023-01-31",
+        "start": "2003-09-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "amfx_yields_vs_crude_research",
+      "definition_id": "amfx_yields_vs_crude_research",
+      "period": {
+        "end": "2022-07-15",
+        "start": "2021-07-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "audnzd_macro_fair_value_research",
+      "definition_id": "audnzd_macro_fair_value_research",
+      "period": {
+        "end": "2026-03-09",
+        "start": "2015-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "bars_handbook",
+      "definition_id": "bars_handbook",
+      "period": {
+        "end": "2023-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "bdxy_correlation_us_rates_1min_research",
+      "definition_id": "bdxy_correlation_us_rates_1min_research",
+      "period": {
+        "end": "2026-03-10",
+        "start": "2024-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "bdxy_correlation_us_rates_research",
+      "definition_id": "bdxy_correlation_us_rates_research",
+      "period": {
+        "end": "2026-03-10",
+        "start": "2024-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "bmo_carry_vs_growth_em_research",
+      "definition_id": "bmo_carry_vs_growth_em_research",
+      "period": {
+        "end": "2023-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "bmo_dxy_decomposition_research",
+      "definition_id": "bmo_dxy_decomposition_research",
+      "period": {
+        "end": "2026-03-11",
+        "start": "2025-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "bmo_fx_mood_correlation_research",
+      "definition_id": "bmo_fx_mood_correlation_research",
+      "period": {
+        "end": "2026-03-10",
+        "start": "2024-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "bmo_global_risk_sentiment_mood_research",
+      "definition_id": "bmo_global_risk_sentiment_mood_research",
+      "period": {
+        "end": "2026-03-10",
+        "start": "2020-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "bmo_growth_inflation_factor_scatter_research",
+      "definition_id": "bmo_growth_inflation_factor_scatter_research",
+      "period": {
+        "end": "2026-03-11",
+        "start": "2017-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "boxplot_handbook",
+      "definition_id": "boxplot_handbook",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2020-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "bubble_handbook",
+      "definition_id": "bubble_handbook",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2020-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "em_carry_calendar_shift",
+      "definition_id": "em_carry_calendar_shift",
+      "period": {
+        "end": "2026-03-09",
+        "start": "2006-03-09"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "gauge_handbook",
+      "definition_id": "gauge_handbook",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2020-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "heatmap_handbook",
+      "definition_id": "heatmap_handbook",
+      "period": {
+        "end": "2023-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "histogram_handbook",
+      "definition_id": "histogram_handbook",
+      "period": {
+        "end": "2023-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "lines_handbook",
+      "definition_id": "lines_handbook",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2020-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "lwc_test_daily_multi_indicator_research",
+      "definition_id": "lwc_test_daily_multi_indicator_research",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "lwc_test_event_markers_1h_research",
+      "definition_id": "lwc_test_event_markers_1h_research",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2024-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "lwc_test_event_markers_1m_research",
+      "definition_id": "lwc_test_event_markers_1m_research",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2020-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "lwc_test_event_markers_research",
+      "definition_id": "lwc_test_event_markers_research",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "lwc_test_intraday_sessions_research",
+      "definition_id": "lwc_test_intraday_sessions_research",
+      "period": {
+        "end": "2024-09-30",
+        "start": "2024-06-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "repro_downsample_basic",
+      "definition_id": "repro_downsample_basic",
+      "period": {
+        "end": "2023-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "repro_downsample_sparse_bug",
+      "definition_id": "repro_downsample_sparse_bug",
+      "period": {
+        "end": "2023-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "scatter_handbook",
+      "definition_id": "scatter_handbook",
+      "period": {
+        "end": "2024-12-31",
+        "start": "2020-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "spy_tlt_correlation_regime",
+      "definition_id": "spy_tlt_correlation_regime",
+      "period": {
+        "end": "2025-12-31",
+        "start": "2006-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "tables_handbook",
+      "definition_id": "tables_handbook",
+      "period": {
+        "end": "2023-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    },
+    {
+      "name": "tables_handbook_minimal",
+      "definition_id": "tables_handbook_minimal",
+      "period": {
+        "end": "2023-12-31",
+        "start": "2023-01-01"
+      },
+      "has_execution": false
+    }
+  ]
+}
