@@ -1,0 +1,33 @@
+[ERROR] 2026-03-23 04:12:18.981 AuthCredentialsProvider [137845539380352] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:12:18.989 AuthCredentialsProvider [137845539380352] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:12:18.992] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:12:18.992] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/lwc_test_event_markers_1m_research.json
+[2026-03-23 04:12:18.992] [info] [generate_job_data.cpp:241] Study: LWC Test: Event Markers (1M)
+[2026-03-23 04:12:18.992] [info] [generate_job_data.cpp:242] Output: lwc_test_event_markers_1m_research
+[2026-03-23 04:12:18.992] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:12:18.992] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:12:18.992] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:12:18.992] [info] [generate_job_data.cpp:251] Timeframe: 1Min
+[2026-03-23 04:12:18.992] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:12:18.994] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:12:18.998] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:12:19.444] [warning] [cache_orchestrator.cpp:945] loadDayBuckets: SPY-Stocks is missing 58 weekday files in range [2020-01-01 - 2025-12-31]. First missing: 2020-01-01, Last missing: 2025-12-25. Data may have gaps.
+[2026-03-23 04:12:22.259] [info] [IReporter::TransformData] xy_lines rows=510228
+[2026-03-23 04:12:22.259] [info] [IReporter::GetDashboard] xy_lines rows=510228
+[2026-03-23 04:12:22.281] [info] [IReporter::TransformData] xy_lines rows=510228
+[2026-03-23 04:12:22.282] [info] [IReporter::GetDashboard] xy_lines rows=510228
+[2026-03-23 04:12:24.081] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:12:24.473] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:12:28.065] [info] [job_persister.cpp:109] Persisting job data for user test_runner job lwc_test_event_markers_1m_research to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_event_markers_1m_research
+[2026-03-23 04:12:28.105] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_event_markers_1m_research/config.json
+[2026-03-23 04:12:28.105] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_event_markers_1m_research/metadata.json
+[2026-03-23 04:12:28.113] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job lwc_test_event_markers_1m_research (total: 20412572 bytes)
+[2026-03-23 04:12:28.113] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job lwc_test_event_markers_1m_research
+[2026-03-23 04:12:28.117] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_event_markers_1m_research/manifest.json
+
+=== Generation Complete ===
+Study: LWC Test: Event Markers (1M)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_event_markers_1m_research"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_event_markers_1m_research/tearsheets"

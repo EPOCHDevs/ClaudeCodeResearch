@@ -1,0 +1,297 @@
+[ERROR] 2026-03-23 04:13:24.271 AuthCredentialsProvider [128420172631168] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:24.279 AuthCredentialsProvider [128420172631168] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:24.282] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:24.282] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_lines_handbook.json
+[2026-03-23 04:13:24.282] [info] [generate_job_data.cpp:241] Study: reporter_cluster_lines_handbook
+[2026-03-23 04:13:24.282] [info] [generate_job_data.cpp:242] Output: reporter_cluster_lines_handbook
+[2026-03-23 04:13:24.282] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:24.282] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:24.282] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:24.282] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:24.282] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:24.292] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:24.298] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:24.367] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.367] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.372] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.372] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.375] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.375] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.375] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.377] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.377] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.379] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.379] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.380] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.380] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.380] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.380] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.380] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.380] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.383] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.383] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.384] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.385] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.385] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.385] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.385] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.386] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.386] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.386] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.386] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.386] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.386] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.386] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.387] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.387] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.388] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.389] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.389] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.389] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.390] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.390] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.391] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.391] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.391] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.391] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.391] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.391] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.391] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.393] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.393] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.393] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.393] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.393] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.393] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.393] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.393] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.393] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.393] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.394] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.394] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.395] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.395] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.396] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.398] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.398] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.398] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.399] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.399] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.399] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.399] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.399] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.399] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.399] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.400] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.400] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.400] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::TransformData] labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::TransformData] labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::TransformData] labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] labeled_lines rows=1508
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.401] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.402] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.402] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::TransformData] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::TransformData] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::TransformData] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.403] [info] [IReporter::TransformData] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::TransformData] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::TransformData] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] labeled_lines rows=1508
+[2026-03-23 04:13:24.403] [info] [IReporter::GetDashboard] labeled_lines rows=1508
+[2026-03-23 04:13:24.404] [info] [IReporter::GetDashboard] labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.404] [info] [IReporter::GetDashboard] labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.404] [info] [IReporter::GetDashboard] cs_labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.404] [info] [IReporter::GetDashboard] labeled_lines charts=1 tables=0
+[2026-03-23 04:13:24.407] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.407] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.407] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.409] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.409] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.410] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.410] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.410] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.411] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.411] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.411] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.411] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.411] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.411] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.411] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.412] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.416] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.416] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.417] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.417] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.417] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.417] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.417] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.417] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.418] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.418] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.420] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.420] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.420] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.420] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.420] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.420] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.420] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.420] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.420] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.420] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.420] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.421] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.421] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.421] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.421] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.421] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.421] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.421] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.421] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.425] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.427] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.428] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.429] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.429] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.429] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.431] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.431] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.434] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.434] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.434] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.434] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.434] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.436] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.436] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.438] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.438] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.439] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.439] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.440] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.440] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.441] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.441] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.441] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.441] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.442] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.442] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:24.443] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.443] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.446] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.447] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.447] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.447] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.447] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.448] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.448] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.448] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.448] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.449] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.449] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:24.450] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.450] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.450] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.450] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.452] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.452] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.453] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.453] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:13:24.453] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:13:24.455] [info] [cs_lines] Aggregated 3 assets into single line (1508 points)
+[2026-03-23 04:13:24.455] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:24.490] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_lines_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_lines_handbook
+[2026-03-23 04:13:24.496] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_lines_handbook/config.json
+[2026-03-23 04:13:24.496] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_lines_handbook/metadata.json
+[2026-03-23 04:13:24.503] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_lines_handbook (total: 1984654 bytes)
+[2026-03-23 04:13:24.503] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_lines_handbook
+[2026-03-23 04:13:24.515] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_lines_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_lines_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_lines_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_lines_handbook/tearsheets"

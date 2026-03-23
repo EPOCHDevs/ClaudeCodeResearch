@@ -1,0 +1,13 @@
+{
+   "name": "Bitcoin Multi-Timeframe SMA Monitor",
+   "description": "Monitor Bitcoin price trends across daily and 30-minute timeframes using simple moving averages. Daily view shows 20, 50, and 200-day SMAs for long-term trend identification. Intraday 30-minute view shows 240-period SMA (5-day equivalent for 24/7 crypto markets) for short-term trend analysis.",
+   "data": {
+      "assets": [
+         "^BTCUSD-Crypto"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Daily data source\nsrc_daily = market_data_source(timeframe=1D)()\nclose = src_daily.c\n\n# Daily SMAs\nsma_20 = ma(period=20, type=MAType.sma)(close)\nsma_50 = ma(period=50, type=MAType.sma)(close)\nsma_200 = ma(period=200, type=MAType.sma)(close)\n\n# 30-minute data source\nsrc_30min = market_data_source(timeframe=30Min)()\nclose_30min = src_30min.c\n\n# 30-minute SMA (240 periods = 5 days for 24/7 crypto)\nsma_240 = ma(period=240, type=MAType.sma)(close_30min)\n\n# Daily chart\ntimeseries_lines(\n    title=\"Bitcoin Daily Price with SMAs\",\n    category=\"Daily Analysis\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Close\", color=Color.Blue),\n        LineSeriesSpec(name=\"SMA 20\", color=Color.Green),\n        LineSeriesSpec(name=\"SMA 50\", color=Color.Orange),\n        LineSeriesSpec(name=\"SMA 200\", color=Color.Red)\n    ])\n)(close, sma_20, sma_50, sma_200)\n\n# 30-minute chart\ntimeseries_lines(\n    title=\"Bitcoin 30-Min Price with 5-Day SMA\",\n    category=\"Intraday Analysis\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Close 30Min\", color=Color.Blue),\n        LineSeriesSpec(name=\"SMA 240\", color=Color.Purple)\n    ])\n)(close_30min, sma_240)",
+   "global_timeframe": "1D"
+}

@@ -1,0 +1,32 @@
+[ERROR] 2026-03-23 04:01:34.100 AuthCredentialsProvider [127841023175808] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:01:34.108 AuthCredentialsProvider [127841023175808] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:01:34.111] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:01:34.111] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/compute_cluster_S70_fractional_diff.json
+[2026-03-23 04:01:34.111] [info] [generate_job_data.cpp:241] Study: Compute Cluster S70: Fractional Differentiation
+[2026-03-23 04:01:34.111] [info] [generate_job_data.cpp:242] Output: compute_cluster_S70_fractional_diff
+[2026-03-23 04:01:34.111] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:01:34.111] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:01:34.111] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:01:34.111] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:01:34.111] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:01:34.113] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:01:34.116] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:01:34.278] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:34.278] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:34.293] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:34.349] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:34.349] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:34.351] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:01:34.365] [info] [job_persister.cpp:109] Persisting job data for user test_runner job compute_cluster_S70_fractional_diff to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S70_fractional_diff
+[2026-03-23 04:01:34.366] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S70_fractional_diff/config.json
+[2026-03-23 04:01:34.366] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S70_fractional_diff/metadata.json
+[2026-03-23 04:01:34.367] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job compute_cluster_S70_fractional_diff (total: 88222 bytes)
+[2026-03-23 04:01:34.367] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job compute_cluster_S70_fractional_diff
+[2026-03-23 04:01:34.367] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S70_fractional_diff/manifest.json
+
+=== Generation Complete ===
+Study: Compute Cluster S70: Fractional Differentiation
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S70_fractional_diff"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S70_fractional_diff/tearsheets"

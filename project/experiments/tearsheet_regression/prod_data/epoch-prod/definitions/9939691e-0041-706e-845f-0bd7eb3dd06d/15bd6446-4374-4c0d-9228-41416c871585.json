@@ -1,0 +1,13 @@
+{
+   "name": "USDCHF Mean Reversion - Low Volatility Bollinger Band Strategy",
+   "description": "Mean reversion strategy for USDCHF that trades when price reaches Bollinger Band extremes during low volatility periods (low ATR). Enters both long and short positions, exits when price returns to the mean.",
+   "data": {
+      "assets": [
+         "^USDCHF-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# USDCHF Mean Reversion - Low Volatility Bollinger Band Strategy\n# Mean reversion during quiet markets using Bollinger Band extremes\n\n# Data source - DAILY\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# Bollinger Bands (20-period, 2 std dev)\nbb = bbands(period=20, stddev=2)(close)\nlower_band = bb.bbands_lower\nmiddle_band = bb.bbands_middle\nupper_band = bb.bbands_upper\n\n# ATR (14-period default)\natr_value = atr(period=14)()\n\n# Low volatility filter: ATR below its 20-period moving average\natr_ma = ma(period=20, type=MAType.sma)(atr_value)\nis_low_volatility = atr_value < atr_ma\n\n# Entry conditions\n# Long: Price at or below lower band during low volatility\nlong_entry_signal = (close <= lower_band) and is_low_volatility\n\n# Short: Price at or above upper band during low volatility\nshort_entry_signal = (close >= upper_band) and is_low_volatility\n\n# Exit conditions\n# Long exit: Price returns to middle band (crosses above)\nlong_exit_signal = close >= middle_band\n\n# Short exit: Price returns to middle band (crosses below)\nshort_exit_signal = close <= middle_band\n\n# Hold signals from entry to exit\nlong_held = hold_until()(enter=long_entry_signal, exit=long_exit_signal)\nshort_held = hold_until()(enter=short_entry_signal, exit=short_exit_signal)\n\n# Execution zone\nlong_and_short_zone()(long_entry=long_held, short_entry=short_held)\n\n# Position sizing: 10% per trade\nposition_size(type=SizeType.percent)(size=10)",
+   "global_timeframe": "1D"
+}

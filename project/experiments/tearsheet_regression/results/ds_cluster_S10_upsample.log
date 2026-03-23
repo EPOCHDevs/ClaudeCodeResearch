@@ -1,0 +1,30 @@
+[ERROR] 2026-03-23 04:10:17.143 AuthCredentialsProvider [130978700373120] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:10:17.150 AuthCredentialsProvider [130978700373120] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:10:17.154] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:10:17.154] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_S10_upsample.json
+[2026-03-23 04:10:17.154] [info] [generate_job_data.cpp:241] Study: DS Cluster S10c: Upsample Fill Methods
+[2026-03-23 04:10:17.154] [info] [generate_job_data.cpp:242] Output: ds_cluster_S10_upsample
+[2026-03-23 04:10:17.154] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:10:17.154] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:10:17.154] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:10:17.154] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:10:17.154] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:10:17.155] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:10:17.158] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=EconomicIndicator
+[2026-03-23 04:10:17.216] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:10:17.235] [info] [IReporter::TransformData] xy_lines rows=1533
+[2026-03-23 04:10:17.235] [info] [IReporter::GetDashboard] xy_lines rows=1533
+[2026-03-23 04:10:17.238] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:10:17.251] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_S10_upsample to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S10_upsample
+[2026-03-23 04:10:17.252] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S10_upsample/config.json
+[2026-03-23 04:10:17.252] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S10_upsample/metadata.json
+[2026-03-23 04:10:17.252] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_S10_upsample (total: 51041 bytes)
+[2026-03-23 04:10:17.252] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_S10_upsample
+[2026-03-23 04:10:17.253] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S10_upsample/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster S10c: Upsample Fill Methods
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S10_upsample"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S10_upsample/tearsheets"

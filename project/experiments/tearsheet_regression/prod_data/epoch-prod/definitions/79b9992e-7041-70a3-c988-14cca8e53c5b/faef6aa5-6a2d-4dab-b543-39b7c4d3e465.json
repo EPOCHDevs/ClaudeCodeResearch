@@ -1,0 +1,13 @@
+{
+   "name": "SMA Crossover Trend Following — CL Crude Oil (4H)",
+   "description": "Long-only trend-following strategy on CL (WTI Crude Oil) continuous futures using 4-hour bars. Goes long when the 50-period SMA crosses above the 200-period SMA, exits when the 50-period SMA crosses below. Uses BackwardPanamaCanal adjustment with FirstOfMonth rollover. Fixed 1-contract position sizing per signal.",
+   "data": {
+      "assets": [
+         "CL-Futures"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# SMA Crossover Trend Following — CL Crude Oil (4H)\n# 50/200 SMA crossover on 4-hour continuation-adjusted prices\n# Long when fast SMA > slow SMA, flat otherwise\n# Single asset: CL (WTI Crude Oil) futures, 1 contract per trade\n\n# --- Data ---\nsrc = market_data_source(timeframe=4H)()\n\n# Continuation series (BackwardPanamaCanal + FirstOfMonth)\ncont = futures_continuation(timeframe=4H, s_rollover_method=RolloverType.FirstOfMonth, s_adjustment_method=AdjustmentType.BackwardPanamaCanal)(src.o, src.h, src.l, src.c, src.v, src.oi, src.s)\nclose = cont.c\n\n# --- Signal Logic ---\n# Fast (50-period) and Slow (200-period) SMA on 4H bars\nfast_sma = ma(period=50, type=MAType.sma)(close)\nslow_sma = ma(period=200, type=MAType.sma)(close)\n\n# Trend state: bullish when fast > slow, bearish when fast < slow\nis_bullish = fast_sma > slow_sma\nis_bearish = fast_sma < slow_sma\n\n# Hold long position from golden cross until death cross\nheld = hold_until()(enter=is_bullish, exit=is_bearish)\n\n# --- Execution ---\n# Contract selection for futures rollover\nrollover_policy()(active=cont.s)\n\n# Long-only: enter on bullish state, no short positions\nlong_and_short_zone()(long_entry=held)\n\n# Fixed 1 contract per trade\nposition_size(type=SizeType.unit)(size=1)\n",
+   "global_timeframe": "1Min"
+}

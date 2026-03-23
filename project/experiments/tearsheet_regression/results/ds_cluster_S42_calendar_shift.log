@@ -1,0 +1,29 @@
+[ERROR] 2026-03-23 04:10:32.411 AuthCredentialsProvider [135611835219072] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:10:32.418 AuthCredentialsProvider [135611835219072] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:10:32.421] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:10:32.421] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_S42_calendar_shift.json
+[2026-03-23 04:10:32.421] [info] [generate_job_data.cpp:241] Study: DS Cluster S42: Calendar Shift (multi-asset alignment)
+[2026-03-23 04:10:32.421] [info] [generate_job_data.cpp:242] Output: ds_cluster_S42_calendar_shift
+[2026-03-23 04:10:32.421] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:10:32.421] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:10:32.421] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:10:32.421] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:10:32.421] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:10:32.423] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:10:32.426] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:10:32.500] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:10:32.500] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:10:32.503] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:10:32.515] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_S42_calendar_shift to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S42_calendar_shift
+[2026-03-23 04:10:32.516] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S42_calendar_shift/config.json
+[2026-03-23 04:10:32.516] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S42_calendar_shift/metadata.json
+[2026-03-23 04:10:32.516] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_S42_calendar_shift (total: 37998 bytes)
+[2026-03-23 04:10:32.516] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_S42_calendar_shift
+[2026-03-23 04:10:32.517] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S42_calendar_shift/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster S42: Calendar Shift (multi-asset alignment)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S42_calendar_shift"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S42_calendar_shift/tearsheets"

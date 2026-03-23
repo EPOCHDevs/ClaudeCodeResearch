@@ -1,0 +1,222 @@
+[ERROR] 2026-03-23 04:13:27.354 AuthCredentialsProvider [127116197112960] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:27.362 AuthCredentialsProvider [127116197112960] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:27.365] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:27.365] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_scatter_handbook.json
+[2026-03-23 04:13:27.365] [info] [generate_job_data.cpp:241] Study: reporter_cluster_scatter_handbook
+[2026-03-23 04:13:27.365] [info] [generate_job_data.cpp:242] Output: reporter_cluster_scatter_handbook
+[2026-03-23 04:13:27.365] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:27.365] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:27.365] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:27.365] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:27.365] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:27.373] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:27.378] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:27.447] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.447] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.447] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.447] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.447] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.447] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.448] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.452] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.452] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.452] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.452] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.455] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.455] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.455] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.456] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.456] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.456] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.456] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.456] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.456] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.456] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.457] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.458] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.458] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.458] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.458] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.458] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.458] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.458] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.458] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.459] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.460] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.462] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.462] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.462] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.462] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.462] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.462] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.462] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.462] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.462] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.462] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.463] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.463] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.463] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.464] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_scatter rows=1508
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.465] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.466] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.466] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.467] [info] [IReporter::TransformData] labeled_scatter rows=1508
+[2026-03-23 04:13:27.467] [info] [IReporter::GetDashboard] labeled_scatter rows=1508
+[2026-03-23 04:13:27.467] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.467] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.467] [info] [IReporter::GetDashboard] labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.467] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.467] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.467] [info] [IReporter::GetDashboard] cs_labeled_scatter rows=1508
+[2026-03-23 04:13:27.467] [info] [IReporter::GetDashboard] cs_labeled_scatter charts=1 tables=0
+[2026-03-23 04:13:27.468] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.468] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.468] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.468] [info] [IReporter::TransformData] xy_scatter rows=1508
+[2026-03-23 04:13:27.468] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.468] [info] [IReporter::GetDashboard] xy_scatter rows=1508
+[2026-03-23 04:13:27.468] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.468] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.469] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.469] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.470] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.471] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.474] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.474] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+[2026-03-23 04:13:27.474] [info] [IReporter::GetDashboard] xy_scatter charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:27.508] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_scatter_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_scatter_handbook
+[2026-03-23 04:13:27.511] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_scatter_handbook/config.json
+[2026-03-23 04:13:27.511] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_scatter_handbook/metadata.json
+[2026-03-23 04:13:27.516] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_scatter_handbook (total: 753375 bytes)
+[2026-03-23 04:13:27.516] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_scatter_handbook
+[2026-03-23 04:13:27.524] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_scatter_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_scatter_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_scatter_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_scatter_handbook/tearsheets"

@@ -1,0 +1,15 @@
+{
+   "name": "FCX/NEM Pairs Trade — Z-Score Mean Reversion",
+   "description": "Pairs trade strategy on FCX vs NEM. Computes the FCX/NEM price ratio z-score (60-day rolling window). Enters long FCX / short NEM when z-score crosses below -2.0, and long NEM / short FCX when z-score crosses above +2.0. Time-based exit after 63 trading days. 15% stop loss. Dollar-neutral sizing (50% per leg).",
+   "data": {
+      "assets": [
+         "FCX-Stocks",
+         "NEM-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# FCX/NEM Pairs Trade — Z-Score Mean Reversion\n# Signal: 60-day rolling z-score of FCX/NEM price ratio\n# Entry: z < -2.0 → long FCX / short NEM; z > +2.0 → short FCX / long NEM\n# Exit: time-based after 63 bars, or 15% stop loss\n# Sizing: dollar-neutral, 50% per leg\n\n# --- Data (shared context — identical for both assets) ---\nfcx_ref = reference_stocks(ticker='FCX')()\nnem_ref = reference_stocks(ticker='NEM')()\n\n# --- Price Ratio & Z-Score ---\nratio = fcx_ref.c / nem_ref.c\nz = zscore(window=60)(ratio)\n\n# --- Signal Detection ---\n# z crosses below -2.0: FCX is cheap relative to NEM → long FCX, short NEM\nsignal_low = crossunder(z, -2.0)\n# z crosses above +2.0: FCX is expensive relative to NEM → short FCX, long NEM\nsignal_high = crossover(z, 2.0)\n\n# --- Per-Asset Direction Routing ---\nis_fcx = is_asset_ref(ticker='FCX')()\nis_nem = is_asset_ref(ticker='NEM')()\n\n# FCX: long on signal_low (cheap), short on signal_high (expensive)\nfcx_long_entry = signal_low and is_fcx\nfcx_short_entry = signal_high and is_fcx\n\n# NEM: short on signal_low (FCX cheap = NEM expensive), long on signal_high\nnem_long_entry = signal_high and is_nem\nnem_short_entry = signal_low and is_nem\n\n# Combined entries per asset context\nlong_entry = fcx_long_entry or nem_long_entry\nshort_entry = fcx_short_entry or nem_short_entry\n\n# --- Execution (wiring order: zone → sizing → exits) ---\n# Hold for 63 bars (time-based exit), strict_hold ignores opposing signals during hold\nlong_and_short_zone(hold_long=63, hold_short=63, strict_hold=True)(long_entry=long_entry, short_entry=short_entry)\n\n# Dollar-neutral: 50% of equity per leg\nposition_size(type=SizeType.percent)(size=50)\n\n# 15% stop loss on each leg\nstop_loss(unit=StopUnit.percent)(distance=15)\n",
+   "global_timeframe": "1D",
+   "thread_id": "c0d9aefd-05cb-416e-ab8b-a2545cd1a686"
+}

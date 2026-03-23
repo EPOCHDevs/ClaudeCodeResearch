@@ -1,0 +1,17 @@
+{
+   "name": "Weekly Inverse-Vol Portfolio (SPY/TLT/GLD/DBC)",
+   "description": "Weekly rebalanced inverse-volatility portfolio across SPY, TLT, GLD, and DBC. 200-day SMA trend filter: assets below their SMA are excluded at each weekly rebalance and their allocation redistributes to active assets. Inverse-volatility weighting using 60-day rolling annualized vol with a 5% vol floor to prevent any single asset from dominating. Rebalances on the first trading day of each week.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Weekly Inverse-Volatility Portfolio: SPY, TLT, GLD, DBC\n# ─────────────────────────────────────────────────────────\n# Rules:\n#   1. Rebalance every Monday (first trading day of week)\n#   2. Trend filter: only hold asset if close > 200-day SMA on rebalance day\n#   3. Weighting: inverse-volatility using 60-day rolling vol, 5% floor\n#   4. Assets failing trend filter → allocation redistributes to active assets\n#   5. If ALL assets fail trend filter → fully in cash (no positions)\n\n# --- Data ---\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# --- Rebalance Signal ---\n# Fire on the first trading day of each week (Monday or next available)\nis_new_week = is_period_boundary(period=PeriodType.week)(index())\n\n# --- Trend Filter ---\n# 200-day SMA — check on rebalance day only\nsma_200 = ma(period=200, type=MAType.sma)(close)\nabove_sma = close > sma_200\n\n# Gate entry/exit to weekly rebalance dates only\n# Enter when: new week AND above SMA\n# Exit when:  new week AND below SMA (move to cash)\nenter_long = is_new_week and above_sma\nexit_long  = is_new_week and not above_sma\n\n# Hold position between rebalance dates (state machine)\nheld = hold_until()(enter=enter_long, exit=exit_long)\n\n# --- Inverse-Volatility Weighting ---\n# 60-day rolling annualized vol (feed close prices directly per S47)\n# 5% floor prevents low-vol assets (e.g., TLT in calm regimes) from dominating\nvol_60d = volatility(period=60)(close)\n\n# inv_vol_weight: cross-sectional, weights sum to 1.0 across active assets\n# Inactive assets (held=False) get weight=0 automatically\nweights = inv_vol_weight(min_volatility=0.05)(active_mask=held, volatility=vol_60d)\n\n# --- Execution (wiring order: zone → sizing) ---\n# Long-only: enter when held, exit when not held\nlong_and_short_zone()(long_entry=held)\n\n# Size as % of equity, locked until next weekly rebalance\n# weights.weight sums to 1.0 across active assets → multiply by 100 for percent\nposition_size(type=SizeType.percent)(size=weights.weight * 100, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D",
+   "thread_id": "9dddebab-9e34-4291-8654-58723c70f5b7"
+}

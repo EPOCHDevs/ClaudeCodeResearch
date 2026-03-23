@@ -1,0 +1,13 @@
+{
+   "name": "Ichimoku Cloud Strategy - EURUSD",
+   "description": "Classic Ichimoku Cloud trading strategy using Tenkan-sen/Kijun-sen crossovers with cloud confirmation for EURUSD forex pair",
+   "data": {
+      "assets": [
+         "^EURUSD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Data source\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# Ichimoku Cloud indicator\ntenkan, kijun, senkou_a, senkou_b, chikou = ichimoku(timeframe=1D)()\n\n# Cloud conditions\nprice_above_cloud = close > senkou_a and close > senkou_b\nprice_below_cloud = close < senkou_a and close < senkou_b\n\n# Crossover signals\ntenkan_cross_above_kijun = crossover(tenkan, kijun)\ntenkan_cross_below_kijun = crossunder(tenkan, kijun)\n\n# Entry signals\nlong_entry = price_above_cloud and tenkan_cross_above_kijun\nshort_entry = price_below_cloud and tenkan_cross_below_kijun\n\n# Exit signals\nlong_exit = tenkan_cross_below_kijun or price_below_cloud\nshort_exit = tenkan_cross_above_kijun or price_above_cloud\n\n# Hold positions using hold_until\nlong_signal = hold_until()(enter=long_entry, exit=long_exit)\nshort_signal = hold_until()(enter=short_entry, exit=short_exit)\n\n# Position execution\nlong_and_short_zone()(long_entry=long_signal, short_entry=short_signal)\n\n# Default position sizing\nposition_size(type=\"percent\")(size=100)\n\n# Event markers\nevent_marker(\n    schema=EventMarkerSchema(\n        title=\"Long Entry\",\n        icon=Icon.TrendingUpIcon,\n        schemas=[\n            ColumnSpec(title=\"Close\", type=CardRenderType.MonetaryFormat, dp=5),\n            ColumnSpec(title=\"Tenkan\", type=CardRenderType.DecimalFormat, dp=5),\n            ColumnSpec(title=\"Kijun\", type=CardRenderType.DecimalFormat, dp=5),\n            ColumnSpec(title=\"Entry Signal\", type=CardRenderType.BooleanFormat, table_is_filter=True)\n        ]\n    )\n)(close, tenkan, kijun, long_entry)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        title=\"Short Entry\",\n        icon=Icon.TrendingDownIcon,\n        schemas=[\n            ColumnSpec(title=\"Close\", type=CardRenderType.MonetaryFormat, dp=5),\n            ColumnSpec(title=\"Tenkan\", type=CardRenderType.DecimalFormat, dp=5),\n            ColumnSpec(title=\"Kijun\", type=CardRenderType.DecimalFormat, dp=5),\n            ColumnSpec(title=\"Entry Signal\", type=CardRenderType.BooleanFormat, table_is_filter=True)\n        ]\n    )\n)(close, tenkan, kijun, short_entry)",
+   "global_timeframe": "1D"
+}

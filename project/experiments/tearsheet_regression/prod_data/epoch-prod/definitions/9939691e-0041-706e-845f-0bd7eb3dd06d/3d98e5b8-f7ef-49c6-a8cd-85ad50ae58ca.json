@@ -1,0 +1,14 @@
+{
+   "name": "NVDA/AMD Pairs Trading Strategy",
+   "description": "Pairs trading strategy on NVDA vs AMD using SMA crossover on the price ratio. Computes the NVDA/AMD daily close ratio, then applies 20-day and 50-day SMAs. When the 20d SMA crosses above the 50d SMA, goes long NVDA / short AMD. When it crosses below, goes short NVDA / long AMD. Always in a position after the first crossover — no neutral zone. Each leg sized at 50% of account equity for dollar-neutral exposure.",
+   "data": {
+      "assets": [
+         "NVDA-Stocks",
+         "AMD-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# NVDA/AMD Pairs Trading Strategy\n# Signal: SMA crossover on the NVDA/AMD price ratio\n# 20d SMA > 50d SMA → Long NVDA, Short AMD\n# 20d SMA < 50d SMA → Short NVDA, Long AMD\n# Always in a position (no flat zone), 50% allocation per leg\n\n# --- Reference Data (consistent across both asset pages) ---\nnvda_ref = reference_stocks(ticker=\"NVDA\")()\namd_ref = reference_stocks(ticker=\"AMD\")()\n\n# --- Price Ratio ---\nratio = nvda_ref.c / amd_ref.c\n\n# --- SMA Crossover on Ratio ---\nfast_ratio_sma = ma(period=20, type=MAType.sma)(ratio)\nslow_ratio_sma = ma(period=50, type=MAType.sma)(ratio)\n\n# Crossover signals\nratio_cross_up = crossover(fast_ratio_sma, slow_ratio_sma)\nratio_cross_down = crossunder(fast_ratio_sma, slow_ratio_sma)\n\n# Persistent state: ratio trending up or down\nratio_up = hold_until()(enter=ratio_cross_up, exit=ratio_cross_down)\nratio_down = hold_until()(enter=ratio_cross_down, exit=ratio_cross_up)\n\n# --- Per-Asset Signal Routing ---\nis_nvda = is_asset_ref(ticker=\"NVDA\")()\nis_amd = is_asset_ref(ticker=\"AMD\")()\n\n# NVDA: long when ratio trending up, short when ratio trending down\n# AMD: short when ratio trending up, long when ratio trending down\nlong_entry = (is_nvda and ratio_up) or (is_amd and ratio_down)\nshort_entry = (is_nvda and ratio_down) or (is_amd and ratio_up)\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\n\n# 50% of account equity per leg\nposition_size(type=SizeType.percent)(size=50)\n",
+   "global_timeframe": "1D"
+}

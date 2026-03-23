@@ -1,0 +1,13 @@
+{
+   "name": "USD/CHF Triple SMA Crossover - 3 Lot Sizing",
+   "description": "Multi-timeframe moving average crossover strategy on USD/CHF using 20/50/200-day SMAs on 1H timeframe. Long when 20 crosses above 50 or 200, short when crossing below. Position sizing: 3 standard lots (300,000 units) for 20×50 crosses, 6 standard lots (600,000 units) for 20×200 crosses.",
+   "data": {
+      "assets": [
+         "^USDCHF-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# USD/CHF Triple SMA Crossover Strategy\n# Long when 20-day SMA crosses above 50-day or 200-day SMA\n# Short when 20-day SMA crosses below 50-day or 200-day SMA\n# Position sizing: 300,000 units for 20×50, 600,000 units for 20×200\n\n# Data source - 1H timeframe\nsrc = market_data_source(timeframe=1H)()\nclose = src.c\n\n# Calculate SMAs (converting days to hourly periods: 24 hours per day)\nsma_20 = ma(period=480, type=MAType.sma)(close)    # 20-day = 480 hours\nsma_50 = ma(period=1200, type=MAType.sma)(close)   # 50-day = 1200 hours\nsma_200 = ma(period=4800, type=MAType.sma)(close)  # 200-day = 4800 hours\n\n# Crossover signals for 20×50\ncross_up_50 = crossover(sma_20, sma_50)\ncross_down_50 = crossunder(sma_20, sma_50)\n\n# Crossover signals for 20×200\ncross_up_200 = crossover(sma_20, sma_200)\ncross_down_200 = crossunder(sma_20, sma_200)\n\n# Combined long/short entry signals\nlong_signal = cross_up_50 or cross_up_200\nshort_signal = cross_down_50 or cross_down_200\n\n# Entry/exit zones - each crossover closes current and opens new position\nlong_and_short_zone()(long_entry=long_signal, short_entry=short_signal)\n\n# Position sizing based on which crossover triggered\n# 600,000 units (6 lots) for 20×200 crossovers, 300,000 units (3 lots) for 20×50 crossovers\nis_200_cross = cross_up_200 or cross_down_200\nis_50_cross = cross_up_50 or cross_down_50\n\ntrade_size = 600000 if is_200_cross else (300000 if is_50_cross else 0)\n\n# Position sizing with unit type (fixed lot sizing)\nposition_size(type=\"unit\")(size=trade_size)\n\n# Visualize SMAs\ntimeseries_lines(\n    title=\"Triple SMA Crossover\",\n    category=\"Indicators\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"20-Day SMA\", color=Color.Blue),\n        LineSeriesSpec(name=\"50-Day SMA\", color=Color.Orange),\n        LineSeriesSpec(name=\"200-Day SMA\", color=Color.Red)\n    ])\n)(sma_20, sma_50, sma_200)",
+   "global_timeframe": "1H"
+}

@@ -1,0 +1,16 @@
+{
+   "name": "Inverse-Volatility Weighted Portfolio (SPY/TLT/GLD/DBC)",
+   "description": "Weekly-rebalanced inverse-volatility portfolio across SPY (equities), TLT (bonds), GLD (gold), and DBC (commodities). Uses 63-day realized volatility to compute inv-vol weights: lower-vol assets receive higher allocations. Rebalances every Monday. Long all 4 assets at all times — pure rotation, no stops. Measures risk-adjusted returns and drawdowns via auto-generated tearsheet.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "Norgate",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Inverse-Volatility Weighted Portfolio\n# Universe: SPY (equities), TLT (bonds), GLD (gold), DBC (commodities)\n# Signal: 63-day realized annualized volatility (inv-vol weighting)\n# Rebalance: Weekly (first trading day of each week)\n# Direction: Always long all 4 assets — pure rotation, no stops\n#\n# Weight formula: w_i = (1/vol_i) / sum(1/vol_j)\n# Lower-volatility assets (typically TLT/GLD) receive higher allocations.\n# Higher-volatility assets (typically DBC/SPY) receive lower allocations.\n\n# --- Data ---\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# --- Volatility Signal ---\n# 63-day realized annualized volatility (feeds close prices directly — S47)\nvol_63d = volatility(period=63)(close)\n\n# --- Rebalance Trigger ---\n# First trading day of each week\nis_new_week = is_period_boundary(period=PeriodType.week)(index())\n\n# --- Inv-Vol Weights ---\n# Cross-sectional: w_i = (1/vol_i) / sum(1/vol_j) across all 4 assets\n# inv_vol_weight handles the normalization automatically\nweights = inv_vol_weight()(volatility=vol_63d)\n\n# --- Entry Signal ---\n# Always long — enter on first bar with valid vol, hold forever\n# Use hold_until with a permanent enter (True once vol is valid) and no exit\nhas_vol = is_valid(vol_63d)\nheld = hold_until()(enter=has_vol, exit=False)\n\n# --- Execution (wiring order: zone → sizing) ---\nlong_and_short_zone()(long_entry=held)\n\n# Position sizing: inv-vol weight × 100 = percent of equity\n# Rebalance only on first trading day of each week to avoid daily churn\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D"
+}

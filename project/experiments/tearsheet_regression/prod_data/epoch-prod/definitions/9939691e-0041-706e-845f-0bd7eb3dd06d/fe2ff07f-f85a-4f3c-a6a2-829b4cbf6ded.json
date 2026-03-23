@@ -1,0 +1,17 @@
+{
+   "name": "Weekly Inverse Volatility Portfolio (SPY/TLT/GLD/DBC)",
+   "description": "Backtest a weekly volatility-scaled long-only portfolio across SPY, TLT, GLD, and DBC. Rebalances every Friday close using inverse volatility weighting (1/σ per asset, normalized to 100%) with a 42-day rolling volatility window. Fully invested at all times.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Weekly Inverse Volatility Portfolio\n# Assets: SPY (equities), TLT (bonds), GLD (gold), DBC (commodities)\n#\n# RULES:\n# - Signal: 42-day (8-week) rolling annualized close-to-close volatility\n# - Weighting: Inverse volatility (1/σ), normalized to sum to 100%\n# - Rebalancing: Every Friday close (~52x/year)\n# - Direction: Long-only, fully invested at all times\n\n# --- Data ---\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# --- Volatility Signal ---\n# 42-day annualized historical volatility (close-to-close std dev × √252)\n# volatility() expects price levels directly — do NOT pre-compute returns\nvol_42d = volatility(period=42)(close)\n\n# --- Cross-Sectional Inverse Volatility Weights ---\n# inv_vol_weight computes w_i = (1/vol_i) / sum(1/vol_j) across all assets\n# Output: weight per asset in [0, 1], sums to 1.0 across all 4 assets\ninv_vol_weights = inv_vol_weight()(vol_42d)\n\n# --- Rebalance Trigger: Every Friday ---\n# day_of_week fires True on every Friday (Weekday.Friday)\nis_friday = day_of_week(weekday=Weekday.Friday)\n\n# --- Always Invested Signal ---\n# Long-only, fully invested from the first bar — never exit\n# hold_until latches ON at bar 1 and stays on indefinitely\nalways_long = True\n\n# --- Execution ---\n# Long-only: no short_entry wired (E18 directional wiring)\nlong_and_short_zone()(long_entry=always_long)\n\n# Position sizing: inv_vol weight × 100 = % of equity per asset\n# rebalance_on=is_friday: weights only recalculate on Friday close\n# Between Fridays, positions are held at last Friday's weights\nposition_size(type=SizeType.percent)(\n    size=inv_vol_weights * 100,\n    rebalance_on=is_friday\n)\n",
+   "global_timeframe": "1D",
+   "thread_id": "150dd26a-df5c-437a-9464-e0803e4d99b4"
+}

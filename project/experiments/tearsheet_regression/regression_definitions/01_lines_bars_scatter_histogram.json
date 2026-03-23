@@ -1,0 +1,11 @@
+{
+    "name": "Regression: Lines, Bars, Scatter, Histogram",
+    "description": "Covers Lines, NumericLines, Bar, Scatter, Histogram chart types + Cards table",
+    "data": {
+        "assets": ["SPY-Stocks"],
+        "source": "polygon",
+        "cache_dir": "/home/ubuntu/EpochDev/ClaudeCodeResearch/project/market_data"
+    },
+    "source": "src = market_data_source(timeframe=1D)()\nclose = src.c\nhigh = src.h\nlow = src.l\nvolume = src.v\n\n# Rolling stats\nret = returns(period=1)(close)\nma20 = sma(period=20)(close)\nma50 = sma(period=50)(close)\nvol20 = stdev(period=20)(ret)\n\n# 1. Lines chart (temporal)\nxy_lines(\n    title='Price with Moving Averages',\n    category='1. Price',\n    y_axis_label='Price ($)',\n    y_axis_format=AxisValueFormat.MonetaryFormat,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Close', color=Color.Blue),\n        LineSeriesSpec(name='SMA 20', color=Color.Orange, dash_style=DashStyle.Dash),\n        LineSeriesSpec(name='SMA 50', color=Color.Red, dash_style=DashStyle.LongDash)\n    ])\n)(close, ma20, ma50)\n\n# 2. Bar chart\nmonthly_ret = returns(period=21)(close)\nxy_bars(\n    title='Monthly Returns',\n    category='2. Returns',\n    y_axis_label='Return',\n    y_axis_format=AxisValueFormat.PercentFormat,\n    mode=required,\n    series=BarSeriesSchema(series=[\n        BarSeriesSpec(name='Monthly Return', color=Color.Teal)\n    ])\n)(monthly_ret)\n\n# 3. Scatter\nxy_scatter(\n    title='Return vs Volatility',\n    category='3. Risk',\n    x_axis_label='20-Day Volatility',\n    y_axis_label='Daily Return',\n    series=ScatterSeriesSchema(series=[\n        ScatterSeriesSpec(name='Daily', color=Color.Indigo, marker=MarkerSymbol.CircleMarker)\n    ])\n)(vol20, ret)\n\n# 4. Histogram\nhistogram(\n    title='Return Distribution',\n    category='3. Risk',\n    bins=30,\n    fill_color=Color.Cyan,\n    x_axis_label='Daily Return'\n)(ret)\n\n# 5. Summary table with cards\nsummary_table(\n    title='Key Metrics',\n    category='1. Price',\n    mode=required\n)(close, ma20, vol20)\n",
+    "global_timeframe": "1D"
+}

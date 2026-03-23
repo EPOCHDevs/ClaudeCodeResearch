@@ -1,0 +1,32 @@
+[ERROR] 2026-03-23 04:15:13.707 AuthCredentialsProvider [123309057047680] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:15:13.714 AuthCredentialsProvider [123309057047680] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:15:13.718] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:15:13.718] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/signal_cluster_S52_regime_change.json
+[2026-03-23 04:15:13.718] [info] [generate_job_data.cpp:241] Study: Signal Cluster S52: Regime Change Detection (CUSUM)
+[2026-03-23 04:15:13.718] [info] [generate_job_data.cpp:242] Output: signal_cluster_S52_regime_change
+[2026-03-23 04:15:13.718] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:15:13.718] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:15:13.718] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:15:13.718] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:15:13.718] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:15:13.719] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:15:13.722] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:15:13.789] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:15:13.789] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:15:13.789] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:15:13.789] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:15:13.793] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:15:13.793] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:15:13.805] [info] [job_persister.cpp:109] Persisting job data for user test_runner job signal_cluster_S52_regime_change to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S52_regime_change
+[2026-03-23 04:15:13.805] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S52_regime_change/config.json
+[2026-03-23 04:15:13.806] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S52_regime_change/metadata.json
+[2026-03-23 04:15:13.806] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job signal_cluster_S52_regime_change (total: 63584 bytes)
+[2026-03-23 04:15:13.806] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job signal_cluster_S52_regime_change
+[2026-03-23 04:15:13.807] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S52_regime_change/manifest.json
+
+=== Generation Complete ===
+Study: Signal Cluster S52: Regime Change Detection (CUSUM)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S52_regime_change"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S52_regime_change/tearsheets"

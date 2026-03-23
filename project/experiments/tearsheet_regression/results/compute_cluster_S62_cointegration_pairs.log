@@ -1,0 +1,45 @@
+[ERROR] 2026-03-23 04:01:16.182 AuthCredentialsProvider [129858877508736] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:01:16.190 AuthCredentialsProvider [129858877508736] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:01:16.193] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:01:16.193] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/compute_cluster_S62_cointegration_pairs.json
+[2026-03-23 04:01:16.193] [info] [generate_job_data.cpp:241] Study: Compute Cluster S62: Cointegration & Pairs Trading Pipeline
+[2026-03-23 04:01:16.193] [info] [generate_job_data.cpp:242] Output: compute_cluster_S62_cointegration_pairs
+[2026-03-23 04:01:16.193] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:01:16.193] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:01:16.193] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:01:16.193] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:01:16.193] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:01:16.195] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:01:16.199] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=ReferenceAgg
+[2026-03-23 04:01:16.218] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+BLAS : Bad memory unallocation! :   50  0x761a74000000
+BLAS : Bad memory unallocation! :   50  0x761a6c000000
+BLAS : Bad memory unallocation! :   50  0x761a64000000
+BLAS : Bad memory unallocation! :   50  0x761a4c000000
+BLAS : Bad memory unallocation! :   50  0x761a54000000
+BLAS : Bad memory unallocation! :   50  0x761a44000000
+[2026-03-23 04:01:16.353] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:16.354] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:16.360] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:16.368] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:16.368] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:16.377] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:16.448] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:16.448] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:16.449] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:16.463] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:16.463] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:16.464] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:01:16.478] [info] [job_persister.cpp:109] Persisting job data for user test_runner job compute_cluster_S62_cointegration_pairs to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S62_cointegration_pairs
+[2026-03-23 04:01:16.479] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S62_cointegration_pairs/config.json
+[2026-03-23 04:01:16.479] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S62_cointegration_pairs/metadata.json
+[2026-03-23 04:01:16.480] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job compute_cluster_S62_cointegration_pairs (total: 102588 bytes)
+[2026-03-23 04:01:16.480] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job compute_cluster_S62_cointegration_pairs
+[2026-03-23 04:01:16.481] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S62_cointegration_pairs/manifest.json
+
+=== Generation Complete ===
+Study: Compute Cluster S62: Cointegration & Pairs Trading Pipeline
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S62_cointegration_pairs"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S62_cointegration_pairs/tearsheets"

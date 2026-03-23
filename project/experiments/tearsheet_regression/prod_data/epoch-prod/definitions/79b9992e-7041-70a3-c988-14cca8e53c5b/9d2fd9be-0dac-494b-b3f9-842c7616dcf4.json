@@ -1,0 +1,13 @@
+{
+   "name": "S&P 500 Top 20 Weekly Losers",
+   "description": "Identifies the 20 worst performing S&P 500 stocks over the last week and displays key technical metrics including weekly return, position relative to 50-day MA, days since 52-week high, and days since all-time high",
+   "data": {
+      "assets": [
+         "SP500"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# S&P 500 Top 20 Weekly Losers\n# Identifies worst performers with key technical metrics\n\n# Data source\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# 1-week return (5 trading days)\nweekly_return = returns(period=5, type=ReturnsType.simple)(close)\n\n# 50-day moving average\nma_50 = ma(period=50)(close)\n\n# Price vs MA (percentage above/below)\nprice_vs_ma = (close - ma_50) / ma_50\n\n# 52-week high (252 trading days)\nhigh_52w = max(period=252)(close)\nat_52w_high = close >= high_52w\ndays_since_52w_high = barssince()(at_52w_high)\n\n# All-time high - using large period (10 years = 2520 trading days)\nhigh_all_time = max(period=2520)(close)\nat_ath = close >= high_all_time\ndays_since_ath = barssince()(at_ath)\n\n# Select bottom 20 by weekly return\nis_bottom_20 = cs_select(direction=CSSelectDirection.bottom, mode=CSSelectMode.count, k=20)(weekly_return)\n\n# Display table with assets as rows and metrics as columns\ncs_summary_table(\n    title=\"Top 20 S&P 500 Worst Weekly Performers\",\n    category=\"Analysis\",\n    agg=AggregationType.Last,\n    max_assets=20,\n    schema=TableReportSchema(\n        columns=[\n            ColumnSpec(title=\"1-Week Return %\", type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title=\"Current Price\", type=CardRenderType.MonetaryFormat, dp=2),\n            ColumnSpec(title=\"50-Day MA\", type=CardRenderType.MonetaryFormat, dp=2),\n            ColumnSpec(title=\"Price vs MA %\", type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title=\"Days Since 52W High\", type=CardRenderType.IntegerFormat, dp=0),\n            ColumnSpec(title=\"Days Since ATH\", type=CardRenderType.IntegerFormat, dp=0),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ]\n    )\n)(weekly_return, close, ma_50, price_vs_ma, days_since_52w_high, days_since_ath, is_bottom_20)",
+   "global_timeframe": "1D"
+}

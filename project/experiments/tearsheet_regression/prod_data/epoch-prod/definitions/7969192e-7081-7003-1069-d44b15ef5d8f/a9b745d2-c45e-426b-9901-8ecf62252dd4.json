@@ -1,0 +1,13 @@
+{
+   "name": "BTC Yield Reversal Strategy",
+   "description": "Long/short BTC/USD strategy that goes long when US 10-year Treasury yields have fallen for 3 consecutive days and short when yields have risen for 3 consecutive days. Always in market with position reversals on opposite signals.",
+   "data": {
+      "assets": [
+         "^BTCUSD-Crypto"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# BTC Yield Reversal Strategy\n# Long BTC when 10Y yields fall for 3 consecutive days\n# Short BTC when 10Y yields rise for 3 consecutive days\n\n# Market data source for BTC at 1H timeframe\nsrc = market_data_source(timeframe=1H)()\nclose = src.c\n\n# Load US 10-Year Treasury yield data\n# Data is indexed by announcement date to avoid forward-looking bias\nyield_obs_date, yield_10y, yield_revision = common_economic_indicators(category=MacroEconomicsIndicator.Treasury10Y)()\n\n# Forward-fill daily yield data to align with 1H BTC bars\nyield_filled = ffill(yield_10y)\n\n# Detect consecutive falling yields (3 days = long signal)\nyields_falling = falling(length=3)(yield_filled)\n\n# Detect consecutive rising yields (3 days = short signal)\nyields_rising = rising(length=3)(yield_filled)\n\n# Position management - always in market with reversals\n# Long when yields falling, short when yields rising\nsignal = long_and_short_zone()(long_entry=yields_falling, short_entry=yields_rising)\n\n# Fixed notional sizing - 100% exposure\n# Signal is 1 for long, -1 for short, 0 for flat\nposition_size(type=SizeType.percent)(size=signal.signal * 100)\n\n# Visualization - Yield data\ntimeseries_lines(\n    title=\"US 10-Year Treasury Yield\",\n    category=\"Indicators\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"10Y Yield\", color=Color.Blue)\n    ])\n)(yield_filled)\n\n# Visualization - Signal indicators\ntimeseries_lines(\n    title=\"Yield Direction Signals\",\n    category=\"Indicators\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Yields Falling (Long)\", color=Color.Green),\n        LineSeriesSpec(name=\"Yields Rising (Short)\", color=Color.Red)\n    ])\n)(yields_falling, yields_rising)\n\n# Visualization - Position signal\ntimeseries_lines(\n    title=\"Position Signal\",\n    category=\"Signals\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Signal (1=Long, -1=Short)\", color=Color.Purple)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0, title=\"Neutral\", color=Color.Gray, dash_style=DashStyle.Dash)\n    ])\n)(signal.signal)\n",
+   "global_timeframe": "1H"
+}

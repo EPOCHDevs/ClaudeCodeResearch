@@ -1,0 +1,17 @@
+{
+   "name": "Weekly Volatility-Scaled Portfolio (SPY/TLT/GLD/DBC)",
+   "description": "Inverse-volatility weighted portfolio across SPY, TLT, GLD, and DBC. Weights are computed weekly using 60-day realized volatility (rolling std of returns). Rebalances every Monday. Long-only, fully invested — weights sum to 100%. No stop loss or take profit; the strategy relies on diversification and vol-scaling for risk management.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Weekly Volatility-Scaled Portfolio — SPY, TLT, GLD, DBC\n# Inverse-volatility weighting: lower-vol assets receive higher allocations\n# Vol estimated as 60-day rolling realized volatility (annualized std of returns)\n# Rebalances every Monday; always fully invested (weights sum to 100%)\n\n# --- Data ---\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# --- Volatility Estimation ---\n# volatility() takes price levels directly (S47: do NOT pre-compute returns)\n# Output is annualized decimal vol (e.g., 0.15 = 15% annualized)\nvol_60d = volatility(period=60)(close)\n\n# --- Rebalance Trigger ---\n# Fire on the first trading bar of each week (Monday or next available day)\nis_new_week = is_period_boundary(period=PeriodType.week, boundary=BoundaryType.start)(index())\n\n# --- Inverse-Volatility Weights ---\n# All 4 assets are always active (long-only, fully invested)\n# inv_vol_weight cross-sectionally assigns w_i = (1/vol_i) / sum(1/vol_j)\n# min_volatility=0.05 prevents any single asset from dominating during low-vol regimes\nalways_active = is_valid(vol_60d)   # True once 60-day warmup is complete\nweights = inv_vol_weight(min_volatility=0.05)(active_mask=always_active, volatility=vol_60d)\n\n# --- Execution ---\n# Always long; entry fires once warmup is complete, never exits\nlong_and_short_zone()(long_entry=always_active)\n\n# Size as percent of equity using inverse-vol weight, rebalance weekly\nposition_size(type=SizeType.percent)(size=weights.weight * 100, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D",
+   "thread_id": "9dddebab-9e34-4291-8654-58723c70f5b7"
+}

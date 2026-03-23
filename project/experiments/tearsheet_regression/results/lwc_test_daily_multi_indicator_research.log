@@ -1,0 +1,50 @@
+[ERROR] 2026-03-23 04:11:23.174 AuthCredentialsProvider [139327569439872] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:11:23.182 AuthCredentialsProvider [139327569439872] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:11:23.186] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:11:23.186] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/lwc_test_daily_multi_indicator_research.json
+[2026-03-23 04:11:23.186] [info] [generate_job_data.cpp:241] Study: LWC Test: Daily Multi-Indicator
+[2026-03-23 04:11:23.186] [info] [generate_job_data.cpp:242] Output: lwc_test_daily_multi_indicator_research
+[2026-03-23 04:11:23.186] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:11:23.186] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:11:23.186] [info] [generate_job_data.cpp:250] Assets: 2
+[2026-03-23 04:11:23.186] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:11:23.186] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:11:23.188] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:11:23.192] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 2 assets
+[2026-03-23 04:11:23.264] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:11:23.264] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:11:23.264] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:11:23.264] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:11:23.264] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:11:23.264] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:11:23.264] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:11:23.264] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:11:23.264] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:11:23.264] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:11:23.265] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:11:23.265] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:11:23.265] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:11:23.265] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:11:23.265] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:11:23.265] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:11:23.270] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:11:23.271] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:11:23.273] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:11:23.273] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:11:23.273] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:11:23.273] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:11:23.274] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:11:23.274] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:11:23.297] [info] [job_persister.cpp:109] Persisting job data for user test_runner job lwc_test_daily_multi_indicator_research to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_daily_multi_indicator_research
+[2026-03-23 04:11:23.298] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_daily_multi_indicator_research/config.json
+[2026-03-23 04:11:23.298] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_daily_multi_indicator_research/metadata.json
+[2026-03-23 04:11:23.300] [info] [tearsheet_persistence.cpp:208] Persisted 2 tearsheets for job lwc_test_daily_multi_indicator_research (total: 328542 bytes)
+[2026-03-23 04:11:23.300] [info] [job_persister.cpp:255] Successfully persisted 2 tearsheets for job lwc_test_daily_multi_indicator_research
+[2026-03-23 04:11:23.301] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_daily_multi_indicator_research/manifest.json
+
+=== Generation Complete ===
+Study: LWC Test: Daily Multi-Indicator
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_daily_multi_indicator_research"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_daily_multi_indicator_research/tearsheets"

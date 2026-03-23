@@ -1,0 +1,13 @@
+{
+   "name": "BTC Long on Falling Treasury Yields",
+   "description": "Long-only BTC/USD strategy that enters positions when US 10-year Treasury yields are falling (bullish for risk assets) and exits when yields start rising again. Uses 7-day rate of change on yield data to identify directional trends.",
+   "data": {
+      "assets": [
+         "^BTCUSD-Crypto"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# BTC Long on Falling Treasury Yields\n\n# Market data source for BTC\nsrc = market_data_source(timeframe=4H)()\nclose = src.c\n\n# Load US 10-year Treasury yield data\nobs_date, yield_value, revision = common_economic_indicators(category=MacroEconomicsIndicator.Treasury10Y)()\n\n# Forward-fill yield data to align with 4H bars\nyield_filled = ffill(yield_value)\n\n# Calculate 7-day rate of change on yield (7 days = 42 4H bars)\nyield_roc = roc(period=42)(yield_filled)\n\n# Entry: yield ROC is negative (yields falling)\nlong_entry = yield_roc < 0\n\n# Exit: yield ROC turns positive (yields rising)\nlong_exit = yield_roc >= 0\n\n# Hold position using entry/exit signals\nheld_long = hold_until()(enter=long_entry, exit=long_exit)\n\n# Execute long positions\nlong_and_short_zone()(long_entry=held_long)\n\n# Position sizing: 100% equity when signal is active\nposition_size(type=\"percent\")(size=100 if held_long else 0)",
+   "global_timeframe": "4H"
+}

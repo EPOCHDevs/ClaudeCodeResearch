@@ -1,0 +1,44 @@
+[ERROR] 2026-03-23 04:01:00.590 AuthCredentialsProvider [133354760604800] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:01:00.598 AuthCredentialsProvider [133354760604800] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:01:00.601] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:01:00.601] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/builtin_cluster_returns_variants.json
+[2026-03-23 04:01:00.601] [info] [generate_job_data.cpp:241] Study: Builtin Cluster: Returns, Volatility & Decay Variants
+[2026-03-23 04:01:00.601] [info] [generate_job_data.cpp:242] Output: builtin_cluster_returns_variants
+[2026-03-23 04:01:00.601] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:01:00.601] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:01:00.601] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:01:00.601] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:01:00.601] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:01:00.604] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:01:00.607] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:01:00.637] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:00.637] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:00.637] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:00.638] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:00.638] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:00.638] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:00.638] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:00.638] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:00.648] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:00.649] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:00.654] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:00.654] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:00.654] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:00.658] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:00.660] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:00.660] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:00.661] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:00.663] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:01:00.675] [info] [job_persister.cpp:109] Persisting job data for user test_runner job builtin_cluster_returns_variants to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_returns_variants
+[2026-03-23 04:01:00.676] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_returns_variants/config.json
+[2026-03-23 04:01:00.676] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_returns_variants/metadata.json
+[2026-03-23 04:01:00.677] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job builtin_cluster_returns_variants (total: 215313 bytes)
+[2026-03-23 04:01:00.677] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job builtin_cluster_returns_variants
+[2026-03-23 04:01:00.679] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_returns_variants/manifest.json
+
+=== Generation Complete ===
+Study: Builtin Cluster: Returns, Volatility & Decay Variants
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_returns_variants"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_returns_variants/tearsheets"

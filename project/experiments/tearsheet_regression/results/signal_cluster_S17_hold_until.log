@@ -1,0 +1,32 @@
+[ERROR] 2026-03-23 04:15:08.133 AuthCredentialsProvider [124296232307840] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:15:08.140 AuthCredentialsProvider [124296232307840] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:15:08.143] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:15:08.143] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/signal_cluster_S17_hold_until.json
+[2026-03-23 04:15:08.143] [info] [generate_job_data.cpp:241] Study: Signal Cluster S17: Hold Until (Pulse to Zone)
+[2026-03-23 04:15:08.143] [info] [generate_job_data.cpp:242] Output: signal_cluster_S17_hold_until
+[2026-03-23 04:15:08.143] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:15:08.143] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:15:08.143] [info] [generate_job_data.cpp:250] Assets: 2
+[2026-03-23 04:15:08.143] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:15:08.143] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:15:08.145] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:15:08.148] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 2 assets
+[2026-03-23 04:15:08.215] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:15:08.215] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:15:08.215] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:15:08.215] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:15:08.220] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:15:08.220] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:15:08.241] [info] [job_persister.cpp:109] Persisting job data for user test_runner job signal_cluster_S17_hold_until to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S17_hold_until
+[2026-03-23 04:15:08.242] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S17_hold_until/config.json
+[2026-03-23 04:15:08.242] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S17_hold_until/metadata.json
+[2026-03-23 04:15:08.243] [info] [tearsheet_persistence.cpp:208] Persisted 2 tearsheets for job signal_cluster_S17_hold_until (total: 75908 bytes)
+[2026-03-23 04:15:08.243] [info] [job_persister.cpp:255] Successfully persisted 2 tearsheets for job signal_cluster_S17_hold_until
+[2026-03-23 04:15:08.244] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S17_hold_until/manifest.json
+
+=== Generation Complete ===
+Study: Signal Cluster S17: Hold Until (Pulse to Zone)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S17_hold_until"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S17_hold_until/tearsheets"

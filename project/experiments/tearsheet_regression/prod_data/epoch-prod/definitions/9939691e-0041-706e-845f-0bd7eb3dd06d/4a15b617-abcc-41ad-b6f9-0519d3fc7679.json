@@ -1,0 +1,13 @@
+{
+   "name": "Copper/Gold Ratio Momentum – SPY Long/Flat",
+   "description": "Macro regime strategy that goes long SPY when the copper/gold ratio 60-day ROC is above 0% (ratio rising at all), and stays flat otherwise. Uses HG/GC futures with NoAdjustment continuation. Position: 100% SPY when long, 0% when flat. Daily signal recalculation.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "Norgate",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Copper/Gold Ratio Momentum – SPY Long/Flat Strategy\n# Signal: Long SPY when 60-day ROC of copper/gold ratio > 10%\n# Flat otherwise — pure macro regime filter\n#\n# Copper/gold ratio is a classic risk appetite barometer:\n#   Rising ratio → economic expansion, risk-on → long equities\n#   Falling ratio → economic slowdown, risk-off → stay flat\n\n# --- Primary asset data (SPY) ---\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# --- Reference futures for copper (HG) and gold (GC) ---\n# NoAdjustment preserves true price levels for cross-commodity ratio\nhg_ref = reference_futures(ticker=\"HG\")()\nhg_cont = futures_continuation(s_rollover_method=RolloverType.FirstOfMonth, s_adjustment_method=AdjustmentType.NoAdjustment)(hg_ref.o, hg_ref.h, hg_ref.l, hg_ref.c, hg_ref.v, hg_ref.oi, hg_ref.s)\n\ngc_ref = reference_futures(ticker=\"GC\")()\ngc_cont = futures_continuation(s_rollover_method=RolloverType.FirstOfMonth, s_adjustment_method=AdjustmentType.NoAdjustment)(gc_ref.o, gc_ref.h, gc_ref.l, gc_ref.c, gc_ref.v, gc_ref.oi, gc_ref.s)\n\n# Forward-fill to handle weekends/holidays in reference data\ncopper_close = ffill(hg_cont.c)\ngold_close = ffill(gc_cont.c)\n\n# --- Copper/Gold ratio and 60-day rate of change ---\ncu_au_ratio = copper_close / gold_close\n\n# roc() returns decimal fraction: 0.10 = 10%\nroc_60d = roc(period=60)(cu_au_ratio)\n\n# --- Signal logic ---\n# Long SPY when ratio momentum is strong (ROC > 10%)\n# Flat when momentum fades (ROC <= 10%)\nsignal_on = roc_60d > 0.0\nsignal_off = roc_60d <= 0.0\n\n# Persist signal state between crossings\nheld_long = hold_until()(enter=signal_on, exit=signal_off)\n\n# --- Execution: long-only, 100% allocation when signal is active ---\n# rollover_policy required by validator when futures_continuation is present\n# No-op for SPY (stock), but satisfies the contract routing requirement\nrollover_policy()(active=hg_cont.s)\nlong_and_short_zone()(long_entry=held_long)\nposition_size(type=SizeType.percent)(size=100)\n",
+   "global_timeframe": "1D"
+}

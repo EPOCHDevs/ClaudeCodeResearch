@@ -1,0 +1,190 @@
+[ERROR] 2026-03-23 04:13:18.213 AuthCredentialsProvider [129619015867520] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:18.220 AuthCredentialsProvider [129619015867520] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:18.224] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:18.224] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_bubble_handbook.json
+[2026-03-23 04:13:18.224] [info] [generate_job_data.cpp:241] Study: reporter_cluster_bubble_handbook
+[2026-03-23 04:13:18.224] [info] [generate_job_data.cpp:242] Output: reporter_cluster_bubble_handbook
+[2026-03-23 04:13:18.224] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:18.224] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:18.224] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:18.224] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:18.224] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:18.229] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:18.234] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:18.307] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.307] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.307] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.307] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.307] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.307] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.307] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.307] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.307] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.311] [info] [IReporter::GetDashboard] cs_bubble rows=1508
+[2026-03-23 04:13:18.311] [info] [IReporter::GetDashboard] cs_bubble rows=1508
+[2026-03-23 04:13:18.311] [info] [IReporter::GetDashboard] cs_bubble rows=1508
+[2026-03-23 04:13:18.311] [info] [IReporter::GetDashboard] cs_bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] cs_bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.314] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.314] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.314] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::TransformData] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.315] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=0 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.316] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::TransformData] labeled_bubble rows=1508
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble rows=1508
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] cs_labeled_bubble rows=1508
+[2026-03-23 04:13:18.317] [info] [IReporter::GetDashboard] cs_labeled_bubble charts=1 tables=0
+[2026-03-23 04:13:18.321] [info] [IReporter::GetDashboard] cs_bubble charts=1 tables=0
+[2026-03-23 04:13:18.322] [info] [IReporter::GetDashboard] cs_bubble charts=1 tables=0
+[2026-03-23 04:13:18.322] [info] [IReporter::GetDashboard] cs_bubble charts=1 tables=0
+[2026-03-23 04:13:18.322] [info] [IReporter::GetDashboard] cs_bubble charts=1 tables=0
+[2026-03-23 04:13:18.322] [info] [IReporter::GetDashboard] cs_bubble charts=1 tables=0
+[2026-03-23 04:13:18.323] [info] [IReporter::GetDashboard] cs_bubble charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:18.356] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_bubble_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bubble_handbook
+[2026-03-23 04:13:18.358] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bubble_handbook/config.json
+[2026-03-23 04:13:18.358] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bubble_handbook/metadata.json
+[2026-03-23 04:13:18.364] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_bubble_handbook (total: 2067860 bytes)
+[2026-03-23 04:13:18.364] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_bubble_handbook
+[2026-03-23 04:13:18.369] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bubble_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_bubble_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bubble_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bubble_handbook/tearsheets"

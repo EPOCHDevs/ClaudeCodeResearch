@@ -1,0 +1,296 @@
+[ERROR] 2026-03-23 04:13:28.857 AuthCredentialsProvider [138302961618048] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:28.865 AuthCredentialsProvider [138302961618048] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:28.868] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:28.868] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_tables_handbook.json
+[2026-03-23 04:13:28.868] [info] [generate_job_data.cpp:241] Study: reporter_cluster_tables_handbook
+[2026-03-23 04:13:28.868] [info] [generate_job_data.cpp:242] Output: reporter_cluster_tables_handbook
+[2026-03-23 04:13:28.868] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:28.868] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:28.868] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:28.868] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:28.868] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:28.875] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:28.879] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:28.945] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.945] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.945] [info] [Table<Summary>] Expanding struct column 'tuple_pack_0#result'
+[2026-03-23 04:13:28.945] [info] [Table<Summary>::renderSummary] start, rows=1, cells=1, dfCols=1
+[2026-03-23 04:13:28.946] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.946] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.946] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.946] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.946] [info] [Table<Summary>] Expanding struct column 'tuple_pack_0#result'
+[2026-03-23 04:13:28.946] [info] [Table<Summary>::renderSummary] start, rows=1, cells=1, dfCols=1
+[2026-03-23 04:13:28.946] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.946] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.946] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.946] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.946] [info] [Table<Summary>] Expanding struct column 'tuple_pack_0#result'
+[2026-03-23 04:13:28.946] [info] [Table<Summary>::renderSummary] start, rows=1, cells=1, dfCols=1
+[2026-03-23 04:13:28.946] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.946] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 2 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 2 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.951] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.951] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 3 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary>] Expanding struct column 'tuple_pack_15#result'
+[2026-03-23 04:13:28.951] [info] [Table<Summary>] Expanding struct column 'tuple_pack_15#result'
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [Table<Summary>] Expanding struct column 'tuple_pack_15#result'
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 3 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.951] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.951] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.952] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.952] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.952] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.952] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.952] [info] [Table<Summary, CS>] Building table with 3 assets, 2 metrics
+[2026-03-23 04:13:28.952] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.952] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.952] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.952] [info] [Table<Summary>] Expanding struct column 'tuple_pack_2#result'
+[2026-03-23 04:13:28.952] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.952] [info] [Table<Summary>] Expanding struct column 'tuple_pack_2#result'
+[2026-03-23 04:13:28.952] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.952] [info] [Table<Summary>] Expanding struct column 'tuple_pack_2#result'
+[2026-03-23 04:13:28.952] [info] [Table<Summary>::renderSummary] start, rows=2, cells=6, dfCols=6
+[2026-03-23 04:13:28.953] [info] [Table<Summary>::renderSummary] start, rows=2, cells=6, dfCols=6
+[2026-03-23 04:13:28.953] [info] [Table<Summary>::renderSummary] start, rows=2, cells=6, dfCols=6
+[2026-03-23 04:13:28.953] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.953] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.953] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.953] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.953] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.953] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_6#result'
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_6#result'
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=3, cells=15, dfCols=2
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Using RowSpec GROUP BY mode
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_6#result'
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=3, cells=15, dfCols=2
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Using RowSpec GROUP BY mode
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=3, cells=15, dfCols=2
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Using RowSpec GROUP BY mode
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Found 5 unique group keys
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_1#result'
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Found 5 unique group keys
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_5#result'
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=4, cells=48, dfCols=2
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Using RowSpec GROUP BY mode
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Found 5 unique group keys
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_5#result'
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_14#result'
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_1#result'
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=1, cells=3, dfCols=3
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_14#result'
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:13:28.954] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=1, cells=3, dfCols=3
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=4, cells=48, dfCols=2
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Found 12 unique group keys
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_1#result'
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_14#result'
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Expanding struct column 'tuple_pack_5#result'
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Using RowSpec GROUP BY mode
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.954] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=4, cells=48, dfCols=2
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:13:28.954] [info] [Table<Summary>::renderSummary] start, rows=1, cells=3, dfCols=3
+[2026-03-23 04:13:28.954] [info] [Table<Summary, CS>] Building table with 3 assets, 3 metrics
+[2026-03-23 04:13:28.955] [info] [Table<Summary>] Found 12 unique group keys
+[2026-03-23 04:13:28.954] [info] [Table<Summary>] Using RowSpec GROUP BY mode
+[2026-03-23 04:13:28.955] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.955] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.955] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.955] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.955] [info] [Table<Summary>] Found 12 unique group keys
+[2026-03-23 04:13:28.955] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.955] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.955] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.955] [info] [Table<Summary, CS>] Building table with 3 assets, 5 metrics
+[2026-03-23 04:13:28.955] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.955] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.955] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.955] [info] [Table<Summary>] Expanding struct column 'tuple_pack_3#result'
+[2026-03-23 04:13:28.955] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.955] [info] [Table<Summary>] Expanding struct column 'tuple_pack_3#result'
+[2026-03-23 04:13:28.955] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.955] [info] [Table<Summary>::renderSummary] start, rows=1, cells=3, dfCols=3
+[2026-03-23 04:13:28.955] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.955] [info] [Table<Summary>::renderSummary] start, rows=1, cells=3, dfCols=3
+[2026-03-23 04:13:28.955] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.956] [info] [IReporter::GetDashboard] cs_summary_table rows=1508
+[2026-03-23 04:13:28.955] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.956] [info] [Table<Summary, CS>] Building table with 3 assets, 3 metrics
+[2026-03-23 04:13:28.956] [info] [Table<Summary>] Expanding struct column 'tuple_pack_3#result'
+[2026-03-23 04:13:28.955] [info] [Table<Summary, CS>] Building table with 3 assets, 3 metrics
+[2026-03-23 04:13:28.956] [info] [Table<Summary, CS>] Building table with 3 assets, 3 metrics
+[2026-03-23 04:13:28.956] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.956] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.956] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.956] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.956] [info] [Table<Summary>::renderSummary] start, rows=1, cells=3, dfCols=3
+[2026-03-23 04:13:28.956] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.956] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.956] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.956] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.956] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.956] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.956] [info] [Table<Summary, CS>] Transposed table added with 3 rows (metrics)
+[2026-03-23 04:13:28.956] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.956] [info] [Table<Summary, CS>] Table added with 3 rows
+[2026-03-23 04:13:28.956] [info] [IReporter::GetDashboard] cs_summary_table charts=0 tables=1
+[2026-03-23 04:13:28.958] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.958] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.959] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.959] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.959] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.959] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.959] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.959] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.959] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.959] [info] [Table<Summary>] Expanding struct column 'tuple_pack_4#result'
+[2026-03-23 04:13:28.959] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.959] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:13:28.959] [info] [IReporter::GetDashboard] summary_table rows=1508
+[2026-03-23 04:13:28.959] [info] [Table<Summary>] Expanding struct column 'tuple_pack_4#result'
+[2026-03-23 04:13:28.959] [info] [Table<Summary>] Expanding struct column 'tuple_pack_4#result'
+[2026-03-23 04:13:28.959] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:13:28.959] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:13:28.959] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:13:28.959] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.959] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.959] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.959] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.959] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.959] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.961] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.961] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.962] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.962] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+[2026-03-23 04:13:28.962] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:13:28.962] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+Study completed successfully
+[2026-03-23 04:13:28.994] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_tables_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_tables_handbook
+[2026-03-23 04:13:28.997] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_tables_handbook/config.json
+[2026-03-23 04:13:28.997] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_tables_handbook/metadata.json
+[2026-03-23 04:13:28.999] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_tables_handbook (total: 62012 bytes)
+[2026-03-23 04:13:28.999] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_tables_handbook
+[2026-03-23 04:13:29.002] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_tables_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_tables_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_tables_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_tables_handbook/tearsheets"

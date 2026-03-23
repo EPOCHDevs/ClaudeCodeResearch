@@ -1,0 +1,27 @@
+{
+   "name": "7/21 EMA Crossover with Stop Loss",
+   "description": "Trend-following strategy that enters long positions when the 7-day EMA crosses above the 21-day EMA and exits when it crosses below. Uses a 2% stop loss and fixed $1000 position sizing per trade.",
+   "data": {
+      "assets": [
+         "AAPL-Stocks",
+         "MSFT-Stocks",
+         "NVDA-Stocks",
+         "AMZN-Stocks",
+         "GOOGL-Stocks",
+         "META-Stocks",
+         "TSLA-Stocks",
+         "BRK.B-Stocks",
+         "LLY-Stocks",
+         "AVGO-Stocks",
+         "JPM-Stocks",
+         "V-Stocks",
+         "UNH-Stocks",
+         "WMT-Stocks",
+         "XOM-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Data source\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# Calculate EMAs\nema_7 = ma(period=7, type=MAType.ema)(close)\nema_21 = ma(period=21, type=MAType.ema)(close)\n\n# Entry/Exit signals\nentry_signal = crossover(ema_7, ema_21)\nexit_signal = crossunder(ema_7, ema_21)\n\n# Hold position from entry to exit\nheld_long = hold_until()(enter=entry_signal, exit=exit_signal)\n\n# Execute long positions\nlong_and_short_zone()(long_entry=held_long)\n\n# Position sizing - $1000 notional per trade\nposition_size(type=\"notional\")(size=1000)\n\n# Stop loss - 2%\nstop_loss(unit=\"percent\")(distance=2)",
+   "global_timeframe": "1D"
+}

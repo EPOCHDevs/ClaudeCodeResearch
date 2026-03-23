@@ -1,0 +1,286 @@
+[ERROR] 2026-03-23 04:13:19.710 AuthCredentialsProvider [138990502587520] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:19.717 AuthCredentialsProvider [138990502587520] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:19.721] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:19.721] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_gauge_handbook.json
+[2026-03-23 04:13:19.721] [info] [generate_job_data.cpp:241] Study: reporter_cluster_gauge_handbook
+[2026-03-23 04:13:19.721] [info] [generate_job_data.cpp:242] Output: reporter_cluster_gauge_handbook
+[2026-03-23 04:13:19.721] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:19.721] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:19.721] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:19.721] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:19.721] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:19.725] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:19.729] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.800] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.801] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.802] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.803] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.804] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.804] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.804] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.804] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.805] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.806] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.806] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.806] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.806] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.806] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.806] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.806] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.806] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.807] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.807] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.807] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.807] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.807] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.808] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+[2026-03-23 04:13:19.809] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.809] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.809] [info] [IReporter::TransformData] gauge rows=1508
+[2026-03-23 04:13:19.809] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.809] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.809] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.809] [info] [IReporter::GetDashboard] gauge rows=1508
+[2026-03-23 04:13:19.809] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.809] [info] [IReporter::GetDashboard] gauge charts=1 tables=0
+[2026-03-23 04:13:19.810] [info] [IReporter::GetDashboard] cs_gauge rows=1508
+[2026-03-23 04:13:19.810] [info] [IReporter::GetDashboard] cs_gauge charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:19.843] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_gauge_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_gauge_handbook
+[2026-03-23 04:13:19.844] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_gauge_handbook/config.json
+[2026-03-23 04:13:19.845] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_gauge_handbook/metadata.json
+[2026-03-23 04:13:19.845] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_gauge_handbook (total: 83793 bytes)
+[2026-03-23 04:13:19.845] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_gauge_handbook
+[2026-03-23 04:13:19.850] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_gauge_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_gauge_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_gauge_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_gauge_handbook/tearsheets"

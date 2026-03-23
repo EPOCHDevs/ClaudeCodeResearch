@@ -1,0 +1,23 @@
+[ERROR] 2026-03-23 04:10:42.961 AuthCredentialsProvider [124208460381312] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:10:42.969 AuthCredentialsProvider [124208460381312] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:10:42.972] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:10:42.972] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/exec_cluster_E03_unit_notional.json
+[2026-03-23 04:10:42.972] [info] [generate_job_data.cpp:241] Study: Exec Cluster E03: Unit + Notional Sizing Modes
+[2026-03-23 04:10:42.972] [info] [generate_job_data.cpp:242] Output: exec_cluster_E03_unit_notional
+[2026-03-23 04:10:42.972] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:10:42.972] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:10:42.972] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:10:42.972] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:10:42.972] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:10:42.973] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:10:42.976] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+Study completed successfully
+[2026-03-23 04:10:43.059] [info] [job_persister.cpp:109] Persisting job data for user test_runner job exec_cluster_E03_unit_notional to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E03_unit_notional
+[2026-03-23 04:10:43.060] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E03_unit_notional/config.json
+[2026-03-23 04:10:43.060] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E03_unit_notional/metadata.json
+[2026-03-23 04:10:43.061] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E03_unit_notional/manifest.json
+
+=== Generation Complete ===
+Study: Exec Cluster E03: Unit + Notional Sizing Modes
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E03_unit_notional"
+Type: Research Study

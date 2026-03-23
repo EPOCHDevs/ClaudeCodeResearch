@@ -1,0 +1,14 @@
+{
+   "name": "Static 80/20 SPY/GLD Allocation",
+   "description": "Simple buy-and-hold strategy allocating 80% to SPY and 20% to GLD, rebalanced monthly on the first trading day of each month. No timing signals or trend filters — purely static allocation with periodic rebalancing back to target weights.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "GLD-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Static 80/20 SPY/GLD Allocation Strategy\n# Simple buy-and-hold with monthly rebalancing\n#\n# RULES:\n# - Universe: SPY (80%) and GLD (20%)\n# - No timing signals — always fully invested\n# - Rebalancing: Monthly (first trading day)\n\n# Data source - DAILY\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# Detect first trading day of month for rebalancing\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# Always long — enter on each monthly rebalance, never exit\n# hold_until persists the signal; with exit=False, position is permanent\nheld_signal = hold_until()(enter=is_new_month, exit=False)\n\n# Entry zone — always long once first rebalance fires\nlong_and_short_zone()(long_entry=held_signal)\n\n# Asset identification for weight assignment\nis_spy = is_asset_ref(ticker=\"SPY\")()\n\n# Fixed weights: SPY 80%, GLD 20%\nweight = 80 if is_spy else 20\n\n# Position sizing - rebalance on first trading day of month\nposition_size(type=SizeType.percent)(size=weight, rebalance_on=is_new_month)\n",
+   "global_timeframe": "1D"
+}

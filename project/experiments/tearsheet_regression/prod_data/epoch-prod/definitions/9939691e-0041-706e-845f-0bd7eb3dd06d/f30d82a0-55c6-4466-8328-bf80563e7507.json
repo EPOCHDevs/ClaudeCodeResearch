@@ -1,0 +1,14 @@
+{
+   "name": "NVDA/AMD Pairs Trading Strategy",
+   "description": "Pairs trading strategy on NVDA vs AMD using price ratio SMA crossover. Computes daily NVDA/AMD price ratio, then applies 20-day vs 50-day SMA crossover on the ratio. When fast SMA crosses above slow SMA, goes long NVDA (50% allocation) and short AMD (50% allocation) for dollar-neutral exposure. Exits when fast SMA crosses below slow SMA. No stop loss — exits only on signal reversal.",
+   "data": {
+      "assets": [
+         "NVDA-Stocks",
+         "AMD-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# NVDA/AMD Pairs Trading Strategy - Dollar-Neutral SMA Crossover\n# Ratio: NVDA close / AMD close\n# Signal: 20-day SMA of ratio crosses above 50-day SMA → long NVDA, short AMD\n# Exit: 20-day SMA crosses below 50-day SMA → go flat\n# Sizing: 50% long NVDA, 50% short AMD (dollar-neutral)\n\n# --- Data ---\n# Load both assets explicitly via reference_stocks for consistent ratio computation\nnvda_ref = reference_stocks(ticker=\"NVDA\")()\namd_ref = reference_stocks(ticker=\"AMD\")()\nnvda_close = nvda_ref.c\namd_close = amd_ref.c\n\n# --- Ratio and SMA signals ---\n# Price ratio: NVDA / AMD\nratio = nvda_close / amd_close\n\n# Fast (20-day) and Slow (50-day) SMA of the ratio\nratio_fast = ma(period=20, type=MAType.sma)(ratio)\nratio_slow = ma(period=50, type=MAType.sma)(ratio)\n\n# Entry: fast SMA crosses above slow SMA (ratio trending up → NVDA outperforming)\nentry_signal = crossover(ratio_fast, ratio_slow)\n# Exit: fast SMA crosses below slow SMA (ratio trending down → NVDA underperforming)\nexit_signal = crossunder(ratio_fast, ratio_slow)\n\n# Persistent state: in trade from entry until exit\nin_trade = hold_until()(enter=entry_signal, exit=exit_signal)\n\n# --- Per-asset directional logic ---\n# Determine which asset context we're running on\nis_nvda = is_asset_ref(ticker=\"NVDA\")()\nis_amd = is_asset_ref(ticker=\"AMD\")()\n\n# NVDA: long entry when in trade\n# AMD: short entry when in trade\nlong_entry = is_nvda and in_trade\nshort_entry = is_amd and in_trade\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\n\n# Dollar-neutral: 50% of account equity per side\nposition_size(type=SizeType.percent)(size=50)\n",
+   "global_timeframe": "1D"
+}

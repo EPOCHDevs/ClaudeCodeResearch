@@ -1,0 +1,14 @@
+{
+   "name": "CAT-DE Pairs Mean Reversion Strategy",
+   "description": "Pairs mean-reversion strategy on CAT (Caterpillar) and DE (Deere). Computes log price spread (log(CAT) - log(DE)), normalizes with a 60-day rolling z-score, and enters dollar-neutral positions when z exceeds ±2. Exits when z-score crosses back through zero. 50% allocation per leg for dollar-neutral exposure.",
+   "data": {
+      "assets": [
+         "CAT-Stocks",
+         "DE-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# CAT-DE Pairs Mean Reversion Strategy\n# Spread: log(CAT) - log(DE)\n# Entry: z-score > +2 → Long DE / Short CAT\n#         z-score < -2 → Long CAT / Short DE\n# Exit: z-score crosses back through 0\n# Sizing: 50% per leg (dollar-neutral)\n\n# --- Data Sources ---\nsrc = market_data_source()()\nclose = src.c\n\n# Reference the other asset's price for spread calculation\ncat_ref = reference_stocks(ticker=\"CAT\")()\nde_ref = reference_stocks(ticker=\"DE\")()\ncat_close = cat_ref.c\nde_close = de_ref.c\n\n# --- Identify which asset is currently being processed ---\nis_cat = is_asset_ref(ticker=\"CAT\")()\n\n# --- Spread Calculation ---\n# Always compute spread as log(CAT) - log(DE) regardless of which asset is running\n# When running on CAT: own price is CAT, reference is DE\n# When running on DE: own price is DE, reference is CAT\nspread = ln(cat_close) - ln(de_close)\n\n# --- Z-Score of the Spread (60-day rolling window) ---\nz = zscore(window=60)(spread)\n\n# --- Entry Signals ---\n# z > +2: CAT overpriced vs DE → Short CAT, Long DE\n# z < -2: CAT underpriced vs DE → Long CAT, Short DE\nz_high = z > 2.0\nz_low = z < -2.0\n\n# --- Exit Signals ---\n# Exit when z-score crosses back through zero (mean reversion complete)\nz_cross_above_zero = crossover(z, 0)\nz_cross_below_zero = crossunder(z, 0)\n\n# --- Per-Asset Signal Assignment ---\n# CAT: long when z < -2 (CAT cheap), short when z > +2 (CAT expensive)\n# DE:  long when z > +2 (DE cheap),  short when z < -2 (DE expensive)\nlong_enter = where(is_cat, z_low, z_high)\nlong_exit = where(is_cat, z_cross_above_zero, z_cross_below_zero)\nshort_enter = where(is_cat, z_high, z_low)\nshort_exit = where(is_cat, z_cross_below_zero, z_cross_above_zero)\n\n# --- Hold State: persist entry signal until exit fires ---\nlong_state = hold_until()(enter=long_enter, exit=long_exit)\nshort_state = hold_until()(enter=short_enter, exit=short_exit)\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=long_state, short_entry=short_state)\n\n# 50% of equity per leg for dollar-neutral exposure\nposition_size(type=SizeType.percent)(size=50)\n",
+   "global_timeframe": "1D"
+}

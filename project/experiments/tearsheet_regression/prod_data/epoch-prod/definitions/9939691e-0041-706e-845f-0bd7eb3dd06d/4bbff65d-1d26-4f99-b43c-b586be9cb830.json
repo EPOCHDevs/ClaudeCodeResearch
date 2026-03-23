@@ -1,0 +1,27 @@
+{
+   "name": "EMA 7/21 Crossover Trend Following",
+   "description": "Trend-following strategy that enters long positions when the 7-day EMA crosses above the 21-day EMA. Uses 2% stop loss with $1000 risk per trade. Trades 15 large-cap S&P 500 stocks over 4-year backtest period.",
+   "data": {
+      "assets": [
+         "AAPL-Stocks",
+         "MSFT-Stocks",
+         "NVDA-Stocks",
+         "GOOGL-Stocks",
+         "AMZN-Stocks",
+         "META-Stocks",
+         "BRK.B-Stocks",
+         "TSLA-Stocks",
+         "LLY-Stocks",
+         "V-Stocks",
+         "JPM-Stocks",
+         "UNH-Stocks",
+         "WMT-Stocks",
+         "XOM-Stocks",
+         "MA-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# EMA 7/21 Crossover Trend Following Strategy\n# Entry: 7 EMA crosses above 21 EMA\n# Exit: 2% stop loss\n# Risk: $1000 per trade\n\n# Data source\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# Calculate EMAs\nema_7 = ma(period=7, type=MAType.ema)(close)\nema_21 = ma(period=21, type=MAType.ema)(close)\n\n# Crossover signal: 7 EMA crosses above 21 EMA\n# Using crossunder with reversed inputs: when slow crosses under fast = fast crosses over slow\nentry_signal = crossunder()(ema_21, ema_7)\n\n# Crossunder signal for exits: 7 EMA crosses below 21 EMA\nexit_signal = crossunder()(ema_7, ema_21)\n\n# Convert pulse signals to held position using hold_until\nin_position = hold_until()(enter=entry_signal, exit=exit_signal)\n\n# Entry/Exit zone management\nlong_and_short_zone()(long_entry=in_position)\n\n# Risk-based position sizing\n# Risk $1000 per trade = 1% of $100,000 portfolio\n# Stop distance = 2% of price\nstop_dist = close * 0.02\nrisk_unit(stop_unit=StopUnit.price)(\n    risk_pct=1.0,\n    stop_distance=stop_dist\n)\n\n# Visualize EMAs\ntimeseries_lines(\n    title=\"Price and EMAs\",\n    category=\"Indicators\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Close\", color=Color.Gray),\n        LineSeriesSpec(name=\"7 EMA\", color=Color.Blue),\n        LineSeriesSpec(name=\"21 EMA\", color=Color.Orange)\n    ])\n)(close, ema_7, ema_21)\n",
+   "global_timeframe": "1D"
+}

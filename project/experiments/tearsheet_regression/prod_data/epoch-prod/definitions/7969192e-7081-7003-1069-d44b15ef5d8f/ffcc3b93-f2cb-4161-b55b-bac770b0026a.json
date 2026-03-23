@@ -1,0 +1,13 @@
+{
+   "name": "USD/CAD Triple SMA Crossover - 3 Lot Sizing",
+   "description": "Multi-timeframe moving average crossover strategy on USD/CAD using 20/50/200-day SMAs on 1H timeframe. Long when 20 crosses above 50 or 200, short when crossing below. Position sizing: 3 standard lots (300,000 units) for 20×50 crosses, 6 standard lots (600,000 units) for 20×200 crosses.",
+   "data": {
+      "assets": [
+         "^USDCAD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Data source - 1H timeframe\nsrc = market_data_source(timeframe=1H)()\nclose = src.c\n\n# Moving Averages (converted to hourly periods)\n# 20-day = 480 hours, 50-day = 1200 hours, 200-day = 4800 hours\nsma_20 = ma(period=480, type=MAType.sma)(close)\nsma_50 = ma(period=1200, type=MAType.sma)(close)\nsma_200 = ma(period=4800, type=MAType.sma)(close)\n\n# Crossover signals for 20×50\ncross_20_above_50 = crossover(sma_20, sma_50)\ncross_20_below_50 = crossunder(sma_20, sma_50)\n\n# Crossover signals for 20×200\ncross_20_above_200 = crossover(sma_20, sma_200)\ncross_20_below_200 = crossunder(sma_20, sma_200)\n\n# Aggregate entry signals\nlong_entry = cross_20_above_50 or cross_20_above_200\nshort_entry = cross_20_below_50 or cross_20_below_200\n\n# Determine size based on which crossover (200 takes priority for larger size)\nis_200_cross = cross_20_above_200 or cross_20_below_200\nis_50_cross = cross_20_above_50 or cross_20_below_50\n\n# Size: 600,000 for 200-cross, 300,000 for 50-cross\nsize_units = 600000 if is_200_cross else (300000 if is_50_cross else 0)\n\n# Entry/Exit zones - each crossover closes previous and opens new\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\n\n# Position sizing with unit type (notional units)\nposition_size(type=SizeType.unit)(size=size_units)\n\n# Visualization - SMAs\ntimeseries_lines(\n    title=\"Triple SMA\",\n    category=\"Indicators\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"SMA 20-day\", color=Color.Blue),\n        LineSeriesSpec(name=\"SMA 50-day\", color=Color.Orange),\n        LineSeriesSpec(name=\"SMA 200-day\", color=Color.Red)\n    ])\n)(sma_20, sma_50, sma_200)",
+   "global_timeframe": "1H"
+}

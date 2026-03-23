@@ -1,0 +1,13 @@
+{
+   "name": "USD/CHF Dual MA Crossover - Variable Position Sizing",
+   "description": "Long/short strategy on USD/CHF using 20/50/200-day SMAs on 1-hour timeframe. Enters long when 20-day SMA crosses above 50 or 200, enters short when crossing below. Position size: 1 contract for 20×50 cross, 2 contracts for 20×200 cross. Holds until next crossover signal.",
+   "data": {
+      "assets": [
+         "^USDCHF-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# USD/CHF Dual MA Crossover - Variable Position Sizing\n# Long/short on 20/50/200-day SMA crossovers with variable sizing\n\n# Data source - 1H timeframe\nsrc = market_data_source(timeframe=1H)()\nclose = src.c\n\n# Moving averages (converting days to 1H periods: 20d=480, 50d=1200, 200d=4800)\nsma_20 = ma(period=480, type=MAType.sma)(close)\nsma_50 = ma(period=1200, type=MAType.sma)(close)\nsma_200 = ma(period=4800, type=MAType.sma)(close)\n\n# Crossover signals for 20×50\ncross_up_50 = crossover(sma_20, sma_50)\ncross_down_50 = crossunder(sma_20, sma_50)\n\n# Crossover signals for 20×200\ncross_up_200 = crossover(sma_20, sma_200)\ncross_down_200 = crossunder(sma_20, sma_200)\n\n# Combined entry signals\nlong_entry = cross_up_50 or cross_up_200\nshort_entry = cross_down_50 or cross_down_200\n\n# Hold signals until opposite crossover\nheld_long = hold_until()(enter=long_entry, exit=short_entry)\nheld_short = hold_until()(enter=short_entry, exit=long_entry)\n\n# Execute long/short zones\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Position sizing: 2 contracts for 200-day cross, 1 contract for 50-day cross\n# Determine size at signal time\nis_200_cross = cross_up_200 or cross_down_200\nsize_at_cross = 2.0 if is_200_cross else 1.0\n\n# Capture size when any crossover signal fires\nany_cross = long_entry or short_entry\ncaptured_size = valuewhen()(condition=any_cross, source=size_at_cross)\n\n# Apply position sizing (unit = contracts)\nposition_size(type=\"unit\")(size=captured_size)",
+   "global_timeframe": "1H"
+}

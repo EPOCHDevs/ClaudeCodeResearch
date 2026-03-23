@@ -1,0 +1,17 @@
+{
+   "name": "Weekly Inverse-Volatility Portfolio",
+   "description": "Volatility-scaled portfolio across SPY, TLT, GLD, and DBC. Inverse-volatility weighting with 21-day realized vol lookback, rebalanced weekly on Mondays. 100% fully invested — lower-vol assets receive higher allocation. Measures risk-adjusted returns and drawdowns via auto-generated tearsheet.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Weekly Inverse-Volatility Portfolio\n# Universe: SPY, TLT, GLD, DBC\n# Weighting: Inverse volatility (21-day realized vol)\n# Rebalance: Weekly on Monday open\n# Allocation: 100% fully invested across all 4 assets\n\n# --- Data ---\nsrc = market_data_source()()\nclose = src.c\n\n# --- Rebalance Detection ---\n# Fire on Monday (start of each trading week)\nis_new_week = is_period_boundary(period=PeriodType.week, day_anchor=DayAnchorType.monday)(index())\n\n# --- Volatility Estimation ---\n# 21-day annualized realized volatility (feeds close prices per S47)\nvol_21d = volatility(period=21)(close)\n\n# --- Inverse-Volatility Weights ---\n# All assets always active (always long all 4)\nalways_active = True\n\n# inv_vol_weight computes w_i = (1/vol_i) / sum(1/vol_j) across active assets\n# Weights sum to 1.0 across the 4 assets\nweights = inv_vol_weight()(active_mask=always_active, volatility=vol_21d)\n\n# --- Signal: Always Long ---\n# Persistent long signal — all 4 assets held at all times\n# Gate entry to rebalance day so hold_until state is clean\nenter_long = is_new_week\nheld_long = hold_until()(enter=enter_long, exit=False)\n\n# --- Execution ---\n# 1. Zone: always long, no short leg\nlong_and_short_zone()(long_entry=held_long)\n\n# 2. Sizing: inv-vol weights × 100 = percent of equity, locked between rebalances\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D",
+   "thread_id": "8fec1dea-4f0a-4f3c-a794-6214b6da3dca"
+}

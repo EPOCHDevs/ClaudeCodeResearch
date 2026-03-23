@@ -1,0 +1,14 @@
+{
+   "name": "NVDA/AMD Dollar-Neutral Pairs MA Crossover",
+   "description": "Dollar-neutral pairs trading strategy on NVDA and AMD. Computes the NVDA/AMD price ratio and applies a 20/60 SMA crossover on the ratio. When the fast SMA crosses above the slow SMA (NVDA outperforming), goes long NVDA and short AMD. When the fast SMA crosses below (AMD outperforming), goes long AMD and short NVDA. Always in the market with 50% allocation per leg for ~100% gross exposure. Flips sides on each crossover signal.",
+   "data": {
+      "assets": [
+         "NVDA-Stocks",
+         "AMD-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# NVDA/AMD Dollar-Neutral Pairs MA Crossover Strategy\n# Ratio: NVDA/AMD price ratio\n# Signal: 20-day SMA vs 60-day SMA of the ratio\n# When fast > slow: long NVDA, short AMD (NVDA outperforming)\n# When fast < slow: long AMD, short NVDA (AMD outperforming)\n# Always in market, 50% per leg (~100% gross exposure)\n\n# --- Load explicit price data for both assets ---\nnvda_data = reference_stocks(ticker=\"NVDA\")()\namd_data = reference_stocks(ticker=\"AMD\")()\n\nnvda_close = nvda_data.c\namd_close = amd_data.c\n\n# --- Compute NVDA/AMD price ratio ---\nratio = nvda_close / amd_close\n\n# --- SMA crossover on the ratio ---\nfast_sma = ma(period=20, type=MAType.sma)(ratio)\nslow_sma = ma(period=60, type=MAType.sma)(ratio)\n\n# Crossover signals (pulses)\nratio_bull = crossover(fast_sma, slow_sma)   # Fast crosses above slow → NVDA outperforming\nratio_bear = crossunder(fast_sma, slow_sma)  # Fast crosses below slow → AMD outperforming\n\n# Hold state between crossovers (always in market)\n# nvda_long_state = True when NVDA should be long (and AMD short)\nnvda_long_state = hold_until()(enter=ratio_bull, exit=ratio_bear)\n# amd_long_state = True when AMD should be long (and NVDA short)\namd_long_state = hold_until()(enter=ratio_bear, exit=ratio_bull)\n\n# --- Per-asset signal routing ---\nis_nvda = is_asset_ref(ticker=\"NVDA\")()\nis_amd = is_asset_ref(ticker=\"AMD\")()\n\n# NVDA: long when nvda_long_state, short when amd_long_state\n# AMD: long when amd_long_state, short when nvda_long_state\nlong_entry = (is_nvda and nvda_long_state) or (is_amd and amd_long_state)\nshort_entry = (is_nvda and amd_long_state) or (is_amd and nvda_long_state)\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\n\n# 50% per leg for dollar-neutral positioning (~100% gross exposure)\nposition_size(type=SizeType.percent)(size=50)\n",
+   "global_timeframe": "1D"
+}

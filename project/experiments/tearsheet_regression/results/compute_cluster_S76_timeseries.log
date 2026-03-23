@@ -1,0 +1,40 @@
+[ERROR] 2026-03-23 04:01:43.088 AuthCredentialsProvider [136718810766464] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:01:43.096 AuthCredentialsProvider [136718810766464] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:01:43.099] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:01:43.099] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/compute_cluster_S76_timeseries.json
+[2026-03-23 04:01:43.099] [info] [generate_job_data.cpp:241] Study: Compute Cluster S76: Time Series Models
+[2026-03-23 04:01:43.099] [info] [generate_job_data.cpp:242] Output: compute_cluster_S76_timeseries
+[2026-03-23 04:01:43.099] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:01:43.099] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:01:43.099] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:01:43.099] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:01:43.099] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:01:43.102] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:01:43.106] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=ReferenceAgg
+[2026-03-23 04:01:43.126] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+BLAS : Bad memory unallocation! :   50  0x7c5798000000
+[2026-03-23 04:01:43.159] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:43.159] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:43.178] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:43.330] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:43.330] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:43.332] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:43.565] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:43.565] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:43.567] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:57.454] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:57.454] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:57.455] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:01:57.470] [info] [job_persister.cpp:109] Persisting job data for user test_runner job compute_cluster_S76_timeseries to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S76_timeseries
+[2026-03-23 04:01:57.471] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S76_timeseries/config.json
+[2026-03-23 04:01:57.471] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S76_timeseries/metadata.json
+[2026-03-23 04:01:57.472] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job compute_cluster_S76_timeseries (total: 164024 bytes)
+[2026-03-23 04:01:57.472] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job compute_cluster_S76_timeseries
+[2026-03-23 04:01:57.474] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S76_timeseries/manifest.json
+
+=== Generation Complete ===
+Study: Compute Cluster S76: Time Series Models
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S76_timeseries"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S76_timeseries/tearsheets"

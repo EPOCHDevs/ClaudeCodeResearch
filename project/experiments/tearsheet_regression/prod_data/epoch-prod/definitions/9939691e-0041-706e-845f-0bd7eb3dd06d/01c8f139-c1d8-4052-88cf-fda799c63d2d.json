@@ -1,0 +1,17 @@
+{
+   "name": "Weekly Inverse-Volatility Portfolio",
+   "description": "Long-only weekly-rebalanced portfolio across SPY, TLT, GLD, and DBC. Weights are inversely proportional to 20-day annualized realized volatility — lower-vol assets get higher allocation. Rebalances at the start of each week. Fully invested at all times (weights sum to 100%).",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Weekly Inverse-Volatility Portfolio\n# SPY, TLT, GLD, DBC — long-only, weekly rebalance\n# Weights = 1/vol_i / sum(1/vol_j) using 20-day annualized vol\n\n# --- Data ---\nsrc = market_data_source()()\nclose = src.c\n\n# --- Volatility ---\n# 20-day annualized historical volatility (close-to-close)\nvol_20d = volatility(period=20)(close)\n\n# --- Rebalance Schedule ---\nis_new_week = is_period_boundary(period=PeriodType.week)(index())\n\n# --- Signal ---\n# All 4 assets are always held (long-only, fully invested)\n# Entry on first week boundary, never exit\nalways_long = is_valid(vol_20d)\nheld = hold_until()(enter=is_new_week and always_long, exit=False)\n\n# --- Inverse Volatility Weights ---\n# w_i = (1/vol_i) / sum(1/vol_j) across active assets\nweights = inv_vol_weight()(active_mask=held, volatility=vol_20d)\n\n# --- Execution (wiring order: zone → sizing) ---\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D",
+   "thread_id": "5633a4a9-1452-4853-bfd2-c225f81ffbc5"
+}

@@ -1,0 +1,32 @@
+[ERROR] 2026-03-23 04:01:37.214 AuthCredentialsProvider [124004877073536] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:01:37.222 AuthCredentialsProvider [124004877073536] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:01:37.225] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:01:37.225] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/compute_cluster_S72_cs_advanced.json
+[2026-03-23 04:01:37.225] [info] [generate_job_data.cpp:241] Study: Compute Cluster S72: Advanced Cross-Sectional Transforms
+[2026-03-23 04:01:37.225] [info] [generate_job_data.cpp:242] Output: compute_cluster_S72_cs_advanced
+[2026-03-23 04:01:37.225] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:01:37.225] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:01:37.225] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:01:37.225] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:01:37.225] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:01:37.227] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:01:37.230] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:01:37.266] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:01:37.269] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:01:37.274] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:01:37.277] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:01:37.286] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:01:37.289] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:01:37.321] [info] [job_persister.cpp:109] Persisting job data for user test_runner job compute_cluster_S72_cs_advanced to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S72_cs_advanced
+[2026-03-23 04:01:37.322] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S72_cs_advanced/config.json
+[2026-03-23 04:01:37.322] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S72_cs_advanced/metadata.json
+[2026-03-23 04:01:37.323] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job compute_cluster_S72_cs_advanced (total: 77355 bytes)
+[2026-03-23 04:01:37.323] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job compute_cluster_S72_cs_advanced
+[2026-03-23 04:01:37.324] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S72_cs_advanced/manifest.json
+
+=== Generation Complete ===
+Study: Compute Cluster S72: Advanced Cross-Sectional Transforms
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S72_cs_advanced"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S72_cs_advanced/tearsheets"

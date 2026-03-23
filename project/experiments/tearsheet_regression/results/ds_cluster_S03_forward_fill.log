@@ -1,0 +1,39 @@
+[ERROR] 2026-03-23 04:10:01.563 AuthCredentialsProvider [133437384436864] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:10:01.571 AuthCredentialsProvider [133437384436864] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:10:01.574] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:10:01.574] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_S03_forward_fill.json
+[2026-03-23 04:10:01.574] [info] [generate_job_data.cpp:241] Study: DS Cluster S03: Forward Fill (ffill vs ffill_day)
+[2026-03-23 04:10:01.574] [info] [generate_job_data.cpp:242] Output: ds_cluster_S03_forward_fill
+[2026-03-23 04:10:01.574] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:10:01.574] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:10:01.574] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:10:01.574] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:10:01.574] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:10:01.576] [info] [fred_releases.cpp:51] Loaded 322 FRED releases from: /home/ubuntu/EpochDev/EpochBackend/build/data/fred_releases.parquet.gzip
+[2026-03-23 04:10:01.577] [info] [fred_releases.cpp:74] Processed 322 FRED releases
+[2026-03-23 04:10:01.577] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:10:01.581] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=EconomicIndicator
+[2026-03-23 04:10:01.581] [info] [api_cache_dataloader.cpp:781] CrossSectional request [1]: category=EconomicCalendar
+[2026-03-23 04:10:01.638] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:10:01.655] [info] [Table::TransformData] start, 1535 rows, 1 columns
+[2026-03-23 04:10:01.655] [info] [IReporter::GetDashboard] cards rows=1535
+[2026-03-23 04:10:01.655] [info] [IReporter::TransformData] xy_lines rows=1535
+[2026-03-23 04:10:01.655] [info] [Table<Cards>] Expanding struct column 'tuple_pack_1#result'
+[2026-03-23 04:10:01.655] [info] [Table<Cards>::renderCards] start, cells=2, dfCols=2
+[2026-03-23 04:10:01.655] [info] [IReporter::GetDashboard] xy_lines rows=1535
+[2026-03-23 04:10:01.655] [info] [Table<Cards>::renderCards] cards table added successfully
+[2026-03-23 04:10:01.655] [info] [IReporter::GetDashboard] cards charts=0 tables=1
+[2026-03-23 04:10:01.658] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:10:01.671] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_S03_forward_fill to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill
+[2026-03-23 04:10:01.672] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill/config.json
+[2026-03-23 04:10:01.672] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill/metadata.json
+[2026-03-23 04:10:01.672] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_S03_forward_fill (total: 38914 bytes)
+[2026-03-23 04:10:01.672] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_S03_forward_fill
+[2026-03-23 04:10:01.673] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster S03: Forward Fill (ffill vs ffill_day)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill/tearsheets"

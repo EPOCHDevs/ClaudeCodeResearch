@@ -1,0 +1,17 @@
+{
+   "name": "Inverse Volatility Portfolio: SPY/TLT/GLD/DBC",
+   "description": "Weekly-rebalanced inverse volatility portfolio across SPY (equities), TLT (bonds), GLD (gold), and DBC (commodities). Weights are proportional to inverse 63-day realized volatility, summing to 100%. Lower-vol assets receive higher allocation, providing natural risk diversification. Rebalanced at weekly boundaries.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Inverse Volatility Portfolio: SPY / TLT / GLD / DBC\n# Weekly rebalance, 63-day vol lookback, 100% invested\n# Lower volatility assets get higher weight\n\n# --- Data ---\nsrc = market_data_source()()\nclose = src.c\n\n# --- Rebalance Detection ---\nis_new_week = is_period_boundary(period=PeriodType.week)(index())\n\n# --- Volatility Estimation ---\n# 63-day annualized vol (feeds price levels, not returns — per S47)\nvol = volatility(period=63)(close)\n\n# --- Signal: Always Long All Assets ---\n# All 4 assets are permanently held — this is a strategic allocation\nalways_long = True\n\n# --- Inverse Volatility Weights ---\n# inv_vol_weight normalizes so weights sum to 1.0 across active assets\n# Lower vol → higher weight (natural risk balancing)\nivw = inv_vol_weight()(active_mask=always_long, volatility=vol)\nweight_pct = ivw.weight * 100\n\n# --- Execution ---\n# Long-only: all assets always held\nlong_and_short_zone()(long_entry=always_long)\n\n# Size by inverse vol weights, locked between weekly rebalances\nposition_size(type=SizeType.percent)(size=weight_pct, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D",
+   "thread_id": "2ca9a576-90d2-4297-847b-de1652c14c1c"
+}

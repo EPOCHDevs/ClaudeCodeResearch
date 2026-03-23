@@ -1,0 +1,37 @@
+[ERROR] 2026-03-23 04:10:03.013 AuthCredentialsProvider [126861022416000] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:10:03.020 AuthCredentialsProvider [126861022416000] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:10:03.024] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:10:03.024] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_S03_forward_fill_intraday.json
+[2026-03-23 04:10:03.024] [info] [generate_job_data.cpp:241] Study: DS Cluster S03: Forward Fill (Intraday — ffill_day is critical)
+[2026-03-23 04:10:03.024] [info] [generate_job_data.cpp:242] Output: ds_cluster_S03_forward_fill_intraday
+[2026-03-23 04:10:03.024] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:10:03.024] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:10:03.024] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:10:03.024] [info] [generate_job_data.cpp:251] Timeframe: 1Min
+[2026-03-23 04:10:03.024] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:10:03.025] [info] [fred_releases.cpp:51] Loaded 322 FRED releases from: /home/ubuntu/EpochDev/EpochBackend/build/data/fred_releases.parquet.gzip
+[2026-03-23 04:10:03.026] [info] [fred_releases.cpp:74] Processed 322 FRED releases
+[2026-03-23 04:10:03.027] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:10:03.030] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=EconomicIndicator
+[2026-03-23 04:10:03.030] [info] [api_cache_dataloader.cpp:781] CrossSectional request [1]: category=EconomicCalendar
+[2026-03-23 04:10:03.092] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:10:03.473] [warning] [cache_orchestrator.cpp:945] loadDayBuckets: SPY-Stocks is missing 58 weekday files in range [2020-01-01 - 2025-12-31]. First missing: 2020-01-01, Last missing: 2025-12-25. Data may have gaps.
+[2026-03-23 04:10:07.867] [info] [IReporter::TransformData] histogram rows=510370
+[2026-03-23 04:10:07.867] [info] [IReporter::GetDashboard] histogram rows=510370
+[2026-03-23 04:10:07.923] [info] [IReporter::TransformData] xy_lines rows=510370
+[2026-03-23 04:10:07.923] [info] [IReporter::GetDashboard] xy_lines rows=510370
+[2026-03-23 04:10:07.935] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:10:08.897] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:10:12.519] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_S03_forward_fill_intraday to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill_intraday
+[2026-03-23 04:10:12.547] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill_intraday/config.json
+[2026-03-23 04:10:12.547] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill_intraday/metadata.json
+[2026-03-23 04:10:12.552] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_S03_forward_fill_intraday (total: 12253269 bytes)
+[2026-03-23 04:10:12.552] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_S03_forward_fill_intraday
+[2026-03-23 04:10:12.553] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill_intraday/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster S03: Forward Fill (Intraday — ffill_day is critical)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill_intraday"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S03_forward_fill_intraday/tearsheets"

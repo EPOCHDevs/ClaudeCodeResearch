@@ -1,0 +1,14 @@
+{
+   "name": "ZM Seasonality: Is Soybean Meal Expensive for This Time of Year?",
+   "description": "Soybean meal (ZM) seasonal price analysis using raw (NoAdjustment) contract prices. Month × Year heatmap of average daily close reveals seasonal patterns. Average price by month bars show which months are historically expensive. Percentile gauge answers whether the current level is elevated relative to same-month history.",
+   "data": {
+      "assets": [
+         "ZM-Futures"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# ZM Seasonality — Is Soybean Meal Expensive for This Time of Year?\n# Raw (NoAdjustment) prices so levels are meaningful for \"is this expensive?\"\n\n# --- Data ---\nsrc = market_data_source()()\ncont = futures_continuation(\n    s_rollover_method=RolloverType.LiquidityBased,\n    s_adjustment_method=AdjustmentType.NoAdjustment\n)(src.o, src.h, src.l, src.c, src.v, src.oi, src.s)\n\nclose = cont.c\n\n# --- Date extraction ---\nts = index()\nmonth_num = datetime_extract(component=DatetimeExtractionType.month)(ts)\nyear_num = datetime_extract(component=DatetimeExtractionType.year)(ts)\n\n# --- Percentile rank: where does current close sit vs trailing 5-year same-month history? ---\n# ~1260 trading days = 5 years of daily bars\npctrank = percentrank(period=1260)(close)\n\n# --- Output 1: Percentile Gauge — \"Is the current level elevated?\" ---\ngauge(\n    title='Current Price Percentile (5Y)',\n    category='ZM Seasonality',\n    agg=AggregationType.Last,\n    min=0,\n    max=100,\n    decimal_places=0,\n    color=Color.Blue,\n    categories=['Cheap', 'Below Avg', 'Average', 'Above Avg', 'Expensive'],\n    order=0\n)(value=pctrank)\n\n# --- Output 2: Average Price by Month — \"Which months are historically expensive?\" ---\nxy_bars(\n    mode=BarMode.labeled,\n    agg=AggregationType.Mean,\n    title='Which Months Are Historically Expensive?',\n    category='ZM Seasonality',\n    x_category_type=CategoryAxisType.Month,\n    y_axis_label='Avg Close ($/ton)',\n    y_axis_format=AxisValueFormat.MonetaryFormat,\n    y_axis_dp=0,\n    data_labels=True,\n    color_by_value=False,\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0.0, title='', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    order=1\n)(values=close, label=month_num)\n\n# --- Output 3: Month × Year Heatmap — \"Full seasonal price grid\" ---\nheatmap(\n    agg=AggregationType.Mean,\n    title='Soybean Meal Price by Month × Year',\n    category='ZM Seasonality',\n    x_category_type=CategoryAxisType.Month,\n    x_axis_label='Month',\n    y_axis_label='Year',\n    min_color=Color.Blue,\n    max_color=Color.Orange,\n    value_format=AxisValueFormat.MonetaryFormat,\n    data_label_format='{point.value:.0f}',\n    order=2\n)(x=month_num, y=year_num, value=close)\n",
+   "global_timeframe": "1D",
+   "thread_id": "f744679e-7225-4a09-9652-8100d460162a"
+}

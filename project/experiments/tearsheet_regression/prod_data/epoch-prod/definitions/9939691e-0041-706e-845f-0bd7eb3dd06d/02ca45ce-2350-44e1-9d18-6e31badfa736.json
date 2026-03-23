@@ -1,0 +1,21 @@
+{
+   "name": "Metals & Mining Momentum Breakout",
+   "description": "Momentum breakout strategy for metals and mining stocks (AA, CENX, NUE, STLD, FCX, SCCO, X, CLF, RS). Entry: close breaks above prior bar's 60-day Donchian upper band. Exit: close breaks below prior bar's 20-day Donchian lower band. Position sizing: 10% equal weight per signal. Long-only.",
+   "data": {
+      "assets": [
+         "AA-Stocks",
+         "CENX-Stocks",
+         "NUE-Stocks",
+         "STLD-Stocks",
+         "FCX-Stocks",
+         "SCCO-Stocks",
+         "X-Stocks",
+         "CLF-Stocks",
+         "RS-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Metals & Mining Momentum Breakout\n# =============================================================================\n# Trend-following breakout strategy on metals and mining stocks:\n# AA, CENX, NUE, STLD, FCX, SCCO, X, CLF, RS\n#\n# RULES:\n# - Entry: Close > Prior bar's 60-day Donchian Upper Band (highest high)\n# - Exit:  Close < Prior bar's 20-day Donchian Lower Band (lowest low)\n# - Sizing: 10% of equity per position (equal weight)\n# - Long-only strategy\n# =============================================================================\n\n# =============================================================================\n# DATA SOURCE\n# =============================================================================\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# =============================================================================\n# INDICATORS\n# =============================================================================\n\n# 60-Day Donchian Channel for ENTRY (highest high over 60 days)\ndonchian_entry = donchian_channel(window=60)(high, low)\nupper_band_60 = donchian_entry.donchian_upper\n\n# 20-Day Donchian Channel for EXIT (lowest low over 20 days)\ndonchian_exit = donchian_channel(window=20)(high, low)\nlower_band_20 = donchian_exit.donchian_lower\n\n# Lag bands by 1 bar to avoid look-ahead bias\n# Today's high/low contributes to today's channel — compare against PRIOR bar\nupper_60_prior = upper_band_60 >> 1\nlower_20_prior = lower_band_20 >> 1\n\n# =============================================================================\n# ENTRY / EXIT SIGNALS\n# =============================================================================\n\n# ENTRY: Close breaks above prior bar's 60-day high (new breakout)\nentry_signal = close > upper_60_prior\n\n# EXIT: Close breaks below prior bar's 20-day low (trend breakdown)\nexit_signal = close < lower_20_prior\n\n# Hold position from entry breakout until exit breakdown fires\nheld = hold_until()(enter=entry_signal, exit=exit_signal)\n\n# =============================================================================\n# EXECUTION\n# =============================================================================\n\n# Long-only zone\nlong_and_short_zone()(long_entry=held)\n\n# Equal-weight position sizing: 10% of equity per position\nposition_size(type=SizeType.percent)(size=10)\n\n# =============================================================================\n# EVENT MARKERS\n# =============================================================================\n\n# Mark breakout entries (60-day high breakout)\nevent_marker(schema=EventMarkerSchema(\n    title=\"60-Day Breakout Entry\",\n    icon=Icon.TrendingUpIcon,\n    schemas=[\n        ColumnSpec(title=\"Close\", type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(title=\"Breakout Level\", type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(title=\"Signal\", type=CardRenderType.BooleanFormat, table_is_filter=True, table_visible=False)\n    ]\n))(close, upper_60_prior, entry_signal)\n\n# Mark breakdown exits (20-day low breakdown)\nevent_marker(schema=EventMarkerSchema(\n    title=\"20-Day Breakdown Exit\",\n    icon=Icon.TrendingDownIcon,\n    schemas=[\n        ColumnSpec(title=\"Close\", type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(title=\"Breakdown Level\", type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(title=\"Signal\", type=CardRenderType.BooleanFormat, table_is_filter=True, table_visible=False)\n    ]\n))(close, lower_20_prior, exit_signal)\n",
+   "global_timeframe": "1D"
+}

@@ -1,0 +1,32 @@
+[ERROR] 2026-03-23 03:58:35.870 AuthCredentialsProvider [131413572377728] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 03:58:35.878 AuthCredentialsProvider [131413572377728] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 03:58:35.881] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 03:58:35.881] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/builtin_cluster_cs_variants.json
+[2026-03-23 03:58:35.881] [info] [generate_job_data.cpp:241] Study: Builtin Cluster: Cross-Sectional Variants (group_by=none)
+[2026-03-23 03:58:35.881] [info] [generate_job_data.cpp:242] Output: builtin_cluster_cs_variants
+[2026-03-23 03:58:35.881] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 03:58:35.881] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 03:58:35.881] [info] [generate_job_data.cpp:250] Assets: 5
+[2026-03-23 03:58:35.881] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 03:58:35.881] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 03:58:35.883] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 03:58:35.886] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 5 assets
+[2026-03-23 03:58:37.090] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 03:58:37.095] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 03:58:37.101] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 03:58:37.105] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 03:58:37.126] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 03:58:37.130] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 03:58:37.180] [info] [job_persister.cpp:109] Persisting job data for user test_runner job builtin_cluster_cs_variants to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_cs_variants
+[2026-03-23 03:58:37.182] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_cs_variants/config.json
+[2026-03-23 03:58:37.182] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_cs_variants/metadata.json
+[2026-03-23 03:58:37.182] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job builtin_cluster_cs_variants (total: 77706 bytes)
+[2026-03-23 03:58:37.182] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job builtin_cluster_cs_variants
+[2026-03-23 03:58:37.183] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_cs_variants/manifest.json
+
+=== Generation Complete ===
+Study: Builtin Cluster: Cross-Sectional Variants (group_by=none)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_cs_variants"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_cs_variants/tearsheets"
