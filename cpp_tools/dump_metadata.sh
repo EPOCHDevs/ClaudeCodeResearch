@@ -54,7 +54,7 @@ trap cleanup EXIT
 
 # Build targets
 echo "[$SCRIPT_NAME] Building epoch_stratifyx_server and generate_grammars..."
-ninja -C "$BUILD_DIR" -j$(( $(nproc) > 16 ? 16 : $(nproc) )) epoch_stratifyx_server generate_grammars
+ninja -C "$BUILD_DIR" -j$(( $(nproc) > 8 ? 8 : $(nproc) )) epoch_stratifyx_server generate_grammars
 
 # Verify binary exists
 if [[ ! -x "$SERVER_BIN" ]]; then

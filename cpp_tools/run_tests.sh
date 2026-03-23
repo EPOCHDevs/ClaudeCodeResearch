@@ -24,7 +24,7 @@ set -e
 
 SCRIPT_NAME="run_tests"
 BACKEND_DIR="$HOME/EpochDev/EpochBackend"
-NUM_JOBS=$(( $(nproc) > 16 ? 16 : $(nproc) ))
+NUM_JOBS=$(( $(nproc) > 8 ? 8 : $(nproc) ))
 
 # Available test targets
 AVAILABLE_TESTS=(

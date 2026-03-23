@@ -19,7 +19,7 @@ TARGET="generate_job_data"
 BUILD_MODE="release"
 BACKEND_DIR="$HOME/EpochDev/EpochBackend"
 BUILD_DIR="$BACKEND_DIR/build"
-NUM_JOBS=$(( $(nproc) > 16 ? 16 : $(nproc) ))
+NUM_JOBS=$(( $(nproc) > 8 ? 8 : $(nproc) ))
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
