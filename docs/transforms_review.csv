@@ -1,0 +1,300 @@
+reviewed,id,name,layer,category,package,inputs,outputs,options
+[ ],asset_spec,Asset Specification,Internal,ControlFlow,Compute,0,7,-
+[ ],bar_gap,Bar Gap,L3 Registered,ControlFlow,Compute,4,5,fill_percent min_gap_size
+[ ],barssince,Bars Since,L1 Builtin,ControlFlow,Compute,1,1,-
+[ ],crossunder,Vector Crossunder,L1 Builtin,ControlFlow,Compute,2,1,-
+[ ],cusum,CUSUM Change Point Detector,L3 Registered,ControlFlow,Compute,1,5,threshold drift use_std_threshold std_multiplier
+[ ],day_of_week,Day of Week,L1 Builtin,ControlFlow,Sessions,0,1,weekday
+[ ],falling,Falling,L1 Builtin,ControlFlow,Compute,1,1,length
+[ ],hold_until,Hold Until,L1 Builtin,ControlFlow,Compute,2,1,-
+[ ],holiday,Holiday Effect,L3 Registered,ControlFlow,Sessions,0,1,days_before days_after holiday_calendar include_special_closes
+[ ],is_asset_ref,Is Asset Reference,Internal,ControlFlow,Compute,0,1,ticker tickers exclude_ticker exclude_tickers asset_class sector category base_currency counter_currency exchange
+[ ],is_period_boundary,Is Period Boundary,L3 Registered,ControlFlow,Sessions,1,1,period boundary ordinal day_anchor day_of_month month_anchor offset timezone
+[ ],keyword_match,Keyword Match,L3 Registered,ControlFlow,NLP,1,1,keywords
+[ ],month_of_year,Month of Year,L1 Builtin,ControlFlow,Sessions,0,1,month
+[ ],quarter,Quarter,L1 Builtin,ControlFlow,Sessions,0,1,quarter
+[ ],rising,Rising,L1 Builtin,ControlFlow,Compute,1,1,length
+[ ],session_gap,Session Gap,L3 Registered,ControlFlow,Sessions,4,5,fill_percent
+[ ],session_window,Session Window,L3 Registered,ControlFlow,Sessions,6,9,agg
+[ ],string_check,String Check,L3 Registered,ControlFlow,NLP,1,1,operation
+[ ],string_contains,String Contains,L3 Registered,ControlFlow,NLP,1,1,operation pattern
+[ ],switch,Switch,L1 Builtin,ControlFlow,Compute,2,1,-
+[ ],turn_of_month,Turn of Month,L3 Registered,ControlFlow,Sessions,0,2,days_before days_after
+[ ],valuewhen,Value When,L1 Builtin,ControlFlow,Compute,2,1,occurrence
+[ ],week_of_month,Week of Month,L1 Builtin,ControlFlow,Sessions,0,1,week
+[ ],downsample,Downsample,Internal,DataPrep,Compute,1,1,target_timeframe agg
+[ ],futures_continuation,Futures Continuation,L3 Registered,DataPrep,MarketData,7,10,s_rollover_method s_adjustment_method i_offset spread_depth
+[ ],upsample,Upsample,Internal,DataPrep,Compute,1,1,target_timeframe how limit
+[ ],upsample_by_interpolate,Upsample by Interpolation,Internal,DataPrep,Compute,1,1,target_timeframe limit limit_direction
+[ ],analyst_ratings,Analyst Ratings,L1 Builtin,DataSource,Fundamental,0,11,-
+[ ],balance_sheet,Balance Sheet,L1 Builtin,DataSource,Fundamental,0,29,period
+[ ],cash_flow,Cash Flow,L1 Builtin,DataSource,Fundamental,0,23,period
+[ ],common_crypto_pairs,Common Crypto Pairs,Internal,DataSource,MarketData,0,7,ticker
+[ ],common_fx_pairs,Common FX Pairs,Internal,DataSource,MarketData,0,7,ticker
+[ ],common_indicators,Common Indicators,Internal,DataSource,Macroeconomics,0,1,category
+[ ],common_indices,Common Indices,Internal,DataSource,MarketData,0,7,ticker
+[ ],common_reference_futures,Common Reference Futures,Internal,DataSource,MarketData,0,9,ticker
+[ ],common_reference_stocks,Common Reference Stocks,Internal,DataSource,MarketData,0,7,ticker
+[ ],common_treasury_auctions,Treasury Auctions,L1 Builtin,DataSource,Macroeconomics,0,3,auction_type
+[ ],crypto_pairs,Crypto Pairs,L3 Registered,DataSource,MarketData,0,7,ticker
+[ ],cs_news,Cross-Sectional News,L3 Registered,DataSource,News,0,3,tickers channels channels_match_mode tags tags_match_mode author_any_of
+[ ],dividends,Dividends,L1 Builtin,DataSource,Fundamental,0,8,dividend_type
+[ ],earnings,Earnings,L1 Builtin,DataSource,Fundamental,0,14,-
+[ ],economic_calendar,Economic Calendar,L3 Registered,DataSource,Macroeconomics,0,1,source release_id security_type term
+[ ],economic_indicators,Economic Indicators,L1 Builtin,DataSource,Macroeconomics,0,1,series_id eia_route eia_data_frequency
+[ ],economic_revisions,Economic Revisions,L1 Builtin,DataSource,Macroeconomics,0,4,series_id
+[ ],fx_pairs,FX Pairs,L3 Registered,DataSource,MarketData,0,7,ticker
+[ ],income_statement,Income Statement,L1 Builtin,DataSource,Fundamental,0,31,period
+[ ],indices,Indices,L3 Registered,DataSource,MarketData,0,7,ticker
+[ ],ipos,IPOs,L1 Builtin,DataSource,CorporateEvents,0,5,-
+[ ],market_data_source,Market Data Source,Internal,DataSource,MarketData,0,7,target_timeframe
+[ ],news,News,L3 Registered,DataSource,News,0,3,channels channels_match_mode tags tags_match_mode author_any_of tickers
+[ ],reference_assets,Reference Assets,Internal,DataSource,Compute,0,5,sources
+[ ],reference_futures,Reference Futures,L3 Registered,DataSource,MarketData,0,9,ticker
+[ ],reference_stocks,Reference Stocks,L3 Registered,DataSource,MarketData,0,7,ticker
+[ ],short_interest,Short Interest,L1 Builtin,DataSource,CorporateEvents,0,3,-
+[ ],short_volume,Short Volume,L1 Builtin,DataSource,CorporateEvents,0,5,-
+[ ],splits,Stock Splits,L1 Builtin,DataSource,CorporateEvents,0,5,-
+[ ],study_assets,Study Assets,Internal,DataSource,Compute,0,5,target_timeframe trading_hours
+[ ],ticker_events,Ticker Events,L1 Builtin,DataSource,CorporateEvents,0,2,-
+[ ],event_marker,Event Marker,Internal,EventMarker,Compute,1,0,schema
+[ ],cppi,CPPI,L3 Registered,Executor,Execution,0,0,multiplier floor_pct
+[ ],kelly,Kelly,L3 Registered,Executor,Execution,0,0,fraction min_trades fallback_pct
+[ ],long_and_short_zone,Long & Short Zone,L3 Registered,Executor,Execution,2,1,hold_long hold_short strict_hold
+[ ],optimal_f,Optimal f,L3 Registered,Executor,Execution,0,0,min_trades fallback_pct max_leverage
+[ ],position_size,Position Size,L3 Registered,Executor,Execution,2,1,type
+[ ],risk_unit,Risk Unit,L3 Registered,Executor,Execution,4,3,risk_mode rr_ratio min_size max_size lot_size size_scalar contract_multiplier stop_unit
+[ ],rollover_policy,Rollover Policy,L3 Registered,Executor,Execution,1,1,-
+[ ],stop_loss,Stop Loss,L3 Registered,Executor,Execution,1,1,unit
+[ ],take_profit,Take Profit,L3 Registered,Executor,Execution,2,2,unit r_levels exit_pcts
+[ ],tipp,TIPP,L3 Registered,Executor,Execution,0,0,multiplier floor_pct
+[ ],trailing_stop,Trailing Stop,L3 Registered,Executor,Execution,2,2,step
+[ ],highestbars,Highest Bars,L1 Builtin,Indicator,Compute,1,1,period
+[ ],intraday_returns,Intraday Returns,L1 Builtin,Indicator,Compute,2,1,return_type
+[ ],lowestbars,Lowest Bars,L1 Builtin,Indicator,Compute,1,1,period
+[ ],pivot_point_sr,Pivot Point Support & Resistance,L2 Macro,Indicator,Compute,3,7,-
+[ ],price_profile,Price Profile,L3 Registered,Indicator,Compute,4,6,window_size tick_size value_area_pct mode ib_periods
+[ ],dbscan,DBSCAN,L3 Registered,ML,MachineLearning,1,3,epsilon min_points window_size step window_type min_training_samples
+[ ],hmm,Hidden Markov Model,L3 Registered,ML,MachineLearning,1,2,num_states max_iterations tolerance window_size step window_type min_training_samples
+[ ],kmeans,K-Means Clustering,L3 Registered,ML,MachineLearning,1,2,num_clusters max_iterations window_size step window_type min_training_samples
+[ ],lightgbm_classifier,LightGBM Classifier,L3 Registered,ML,MachineLearning,2,2,num_estimators learning_rate num_leaves min_data_in_leaf max_depth boosting_type lambda_l1 lambda_l2 window_size step window_type min_training_samples
+[ ],lightgbm_regressor,LightGBM Regressor,L3 Registered,ML,MachineLearning,2,1,num_estimators learning_rate num_leaves min_data_in_leaf max_depth boosting_type lambda_l1 lambda_l2 window_size step window_type min_training_samples
+[ ],logistic_l1,Logistic L1,L3 Registered,ML,MachineLearning,2,3,C epsilon window_size step window_type min_training_samples
+[ ],logistic_l2,Logistic L2,L3 Registered,ML,MachineLearning,2,3,C epsilon window_size step window_type min_training_samples
+[ ],ml_minmax,ML Min-Max,L3 Registered,ML,MachineLearning,1,1,window_size step window_type min_training_samples
+[ ],ml_robust,ML Robust,L3 Registered,ML,MachineLearning,1,1,window_size step window_type min_training_samples
+[ ],ml_zscore,ML Z-Score,L3 Registered,ML,MachineLearning,1,1,window_size step window_type min_training_samples
+[ ],pca,PCA,L3 Registered,ML,MachineLearning,1,2,n_components window_size step window_type min_training_samples
+[ ],svr_l1,SVR L1,L3 Registered,ML,MachineLearning,2,1,C epsilon window_size step window_type min_training_samples
+[ ],svr_l2,SVR L2,L3 Registered,ML,MachineLearning,2,1,C epsilon window_size step window_type min_training_samples
+[ ],arg_max,ArgMax (Timestamp),L1 Builtin,Math,Compute,1,1,expanding
+[ ],arg_min,ArgMin (Timestamp),L1 Builtin,Math,Compute,1,1,expanding
+[ ],arg_minmax,ArgMinMax (Timestamps),L3 Registered,Math,Compute,1,2,expanding
+[ ],cumulative,Cumulative,Internal,Math,Compute,2,1,agg q ddof bias
+[ ],decay,Linear Decay,L1 Builtin,Math,Compute,1,1,period
+[ ],edecay,Exponential Decay,L1 Builtin,Math,Compute,1,1,period
+[ ],returns,Returns,Internal,Math,Compute,1,1,period type
+[ ],stddev,Standard Deviation Over Period,Internal,Math,Compute,1,1,period
+[ ],stderr,Standard Error Over Period,L1 Builtin,Math,Compute,1,1,period
+[ ],sum,Sum Over Period,Internal,Math,Compute,1,1,period
+[ ],var,Variance Over Period,Internal,Math,Compute,1,1,period
+[ ],ao,Awesome Oscillator,L1 Builtin,Momentum,Compute,2,1,-
+[ ],apo,Absolute Price Oscillator,L1 Builtin,Momentum,Compute,1,1,short_period long_period
+[ ],bop,Balance of Power,L1 Builtin,Momentum,Compute,4,1,-
+[ ],cci,Commodity Channel Index,L1 Builtin,Momentum,Compute,3,1,period
+[ ],cmo,Chande Momentum Oscillator,L1 Builtin,Momentum,Compute,1,1,period
+[ ],cs_momentum,Cross-Sectional Momentum,L3 Registered,Momentum,Compute,1,1,group_by
+[ ],cs_select,Cross-Sectional Selection,Internal,Momentum,Compute,1,1,direction mode k group_by
+[ ],fisher,Fisher Transform,L3 Registered,Momentum,Compute,2,2,period
+[ ],fosc,Forecast Oscillator,L1 Builtin,Momentum,Compute,1,1,period
+[ ],macd,Moving Average Convergence/Divergence,L2 Macro,Momentum,Compute,1,3,short_period long_period signal_period
+[ ],mfi,Money Flow Index,L1 Builtin,Momentum,Compute,4,1,period
+[ ],mom,Momentum,Internal,Momentum,Compute,1,1,period
+[ ],msw,Mesa Sine Wave,L3 Registered,Momentum,Compute,1,2,period
+[ ],ppo,Percentage Price Oscillator,L1 Builtin,Momentum,Compute,1,1,short_period long_period
+[ ],psar,Parabolic SAR,L1 Builtin,Momentum,Compute,2,1,acceleration_factor_step acceleration_factor_maximum
+[ ],psl,Psychological Support Levels (PSL),L1 Builtin,Momentum,Compute,2,1,period
+[ ],qqe,Quantitative Qualitative Estimation (QQE),L3 Registered,Momentum,Compute,1,4,avg_period smooth_period width_factor
+[ ],roc,Rate of Change,L1 Builtin,Momentum,Compute,1,1,period
+[ ],rocr,Rate of Change Ratio,L1 Builtin,Momentum,Compute,1,1,period
+[ ],rsi,Relative Strength Index,L1 Builtin,Momentum,Compute,1,1,period
+[ ],stoch,Stochastic Oscillator,L2 Macro,Momentum,Compute,3,2,k_period k_slowing_period d_period
+[ ],stochrsi,Stochastic RSI,L1 Builtin,Momentum,Compute,1,1,period
+[ ],trix,Trix,L1 Builtin,Momentum,Compute,1,1,period
+[ ],ultosc,Ultimate Oscillator,L1 Builtin,Momentum,Compute,3,1,short_period medium_period long_period
+[ ],willr,Williams %R,L1 Builtin,Momentum,Compute,3,1,period
+[ ],black_litterman,Black-Litterman,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type tau risk_aversion annualization max_weight
+[ ],equal_weight,Equal Weight,L3 Registered,Portfolio,PortfolioAllocation,1,1,max_weight
+[ ],herc,Hierarchical Equal Risk Contribution,L3 Registered,Portfolio,PortfolioAllocation,1,1,linkage lookback step_size window_type max_k risk_measure max_weight
+[ ],hrp,Hierarchical Risk Parity,L3 Registered,Portfolio,PortfolioAllocation,1,1,linkage lookback step_size window_type max_weight
+[ ],inv_vol_weight,Inverse Volatility Weight,L3 Registered,Portfolio,PortfolioAllocation,2,1,max_weight min_volatility
+[ ],max_diversification,Maximum Diversification,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type max_weight
+[ ],max_sharpe,Maximum Sharpe Ratio,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type risk_free_rate annualization max_weight
+[ ],min_cvar,Minimum CVaR,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type alpha max_weight
+[ ],min_semivariance,Minimum Semivariance,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type benchmark max_weight
+[ ],min_variance,Minimum Variance,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type max_weight
+[ ],risk_budgeting,Risk Budgeting,L3 Registered,Portfolio,PortfolioAllocation,2,1,lookback step_size window_type max_weight
+[ ],risk_parity,Risk Parity,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type max_iter tol max_weight
+[ ],abandoned_baby_bear,Abandoned Baby Bear,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],abandoned_baby_bull,Abandoned Baby Bull,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],big_black_candle,Big Black Candle,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],big_white_candle,Big White Candle,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],black_marubozu,Black Marubozu,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],bos_choch,Break of Structure & Change of Character,L3 Registered,PriceAction,SMC,6,4,close_break
+[ ],doji,Doji,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],dragonfly_doji,Dragonfly Doji,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],engulfing_bear,Engulfing Bear,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],engulfing_bull,Engulfing Bull,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],evening_doji_star,Evening Doji Star,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],evening_star,Evening Star,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],fair_value_gap,Fair Value Gap,L3 Registered,PriceAction,SMC,4,4,join_consecutive
+[ ],four_price_doji,Four Price Doji,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],gravestone_doji,Gravestone Doji,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],hammer,Hammer,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],hanging_man,Hanging Man,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],inverted_hammer,Inverted Hammer,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],liquidity,Liquidity,L3 Registered,PriceAction,SMC,4,4,range_percent
+[ ],long_legged_doji,Long Legged Doji,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],marubozu,Marubozu,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],morning_doji_star,Morning Doji Star,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],morning_star,Morning Star,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],order_blocks,Order Blocks,L3 Registered,PriceAction,SMC,6,6,close_mitigation
+[ ],previous_high_low,Previous High Low,L3 Registered,PriceAction,SMC,2,4,interval type
+[ ],qstick,Qstick,L1 Builtin,PriceAction,Compute,2,1,period
+[ ],retracements,Retracements,L3 Registered,PriceAction,SMC,4,3,-
+[ ],shooting_star,Shooting Star,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],spinning_top,Spinning Top,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],star,Star,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],swing_highs_lows,Swing Highs and Lows,L3 Registered,PriceAction,SMC,2,2,swing_length
+[ ],three_black_crows,Three Black Crows,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],three_white_soldiers,Three White Soldiers,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],white_marubozu,White Marubozu,L3 Registered,PriceAction,Compute,4,1,period body_none body_short body_long wick_none wick_long near
+[ ],boxplot,Boxplot - ONE PER ASSET,L3 Registered,Reporter,Distributions,2,0,mode title x_axis_label y_axis_label category show_outliers whisker_iqr colors fill_color median_color median_width stem_color stem_width whisker_color whisker_width whisker_length outlier_color outlier_line_color outlier_line_width outlier_radius line_width show_data_labels data_label_format y_axis_format y_axis_dp x_category_type order series_names
+[ ],bubble,Bubble Chart - ONE PER ASSET,L3 Registered,Reporter,Scatter,3,0,title x_axis_label y_axis_label category min_size max_size y_axis_format y_axis_dp x_axis_format x_axis_dp size_by reference_lines series_name color order
+[ ],cs_bars,Cross-Sectional Bars - ONE FOR ALL ASSETS,L3 Registered,Reporter,Bars,3,0,mode agg title x_axis_label y_axis_label category vertical stack_type data_labels stack_labels border_radius color_by_value y_axis_format y_axis_dp x_category_type bar_width point_padding group_padding y_plot_bands x_plot_bands sort_by_value order colors series_names reference_lines overlay_series label_as_x_axis filters max_assets
+[ ],cs_boxplot,Cross-Sectional Boxplot - ONE FOR ALL ASSETS,L3 Registered,Reporter,Distributions,1,0,mode title x_axis_label y_axis_label category show_outliers whisker_iqr colors fill_color median_color median_width stem_color stem_width whisker_color whisker_width whisker_length outlier_color outlier_line_color outlier_line_width outlier_radius line_width show_data_labels data_label_format y_axis_format y_axis_dp x_category_type order metric_names filters max_assets
+[ ],cs_bubble,Cross-Sectional Bubble Chart - ONE FOR ALL ASSETS,L3 Registered,Reporter,Scatter,2,0,title x_axis_label y_axis_label category min_size max_size y_axis_format y_axis_dp x_axis_format x_axis_dp size_by reference_lines colors order filters max_assets
+[ ],cs_gauge,Cross-Sectional Gauge - ONE FOR ALL ASSETS,L3 Registered,Reporter,Cards,1,0,title category agg min max value_type decimal_places solid color use_traffic_light_colors categories order
+[ ],cs_heatmap,Cross-Sectional Heatmap - ONE FOR ALL ASSETS,L3 Registered,Reporter,Heatmaps,1,0,mode agg title category min_color max_color null_color show_data_labels data_label_format border_width border_color color_axis_min color_axis_max color_stops order value_format filters max_assets
+[ ],cs_histogram,Cross-Sectional Histogram - ONE FOR ALL ASSETS,L3 Registered,Reporter,Distributions,1,0,title bins bin_width x_axis_label y_axis_label category fill_color fill_opacity show_analytics reference_lines y_plot_bands y_axis_format y_axis_dp x_axis_format x_axis_dp order filters max_assets
+[ ],cs_labeled_bubble,Cross-Sectional Labeled Bubble - ONE FOR ALL ASSETS,L3 Registered,Reporter,Scatter,3,0,title x_axis_label y_axis_label category x_reference_lines y_reference_lines y_axis_format y_axis_dp x_axis_format x_axis_dp agg data_labels colors min_size max_size size_by filters max_assets order
+[ ],cs_labeled_lines,Cross-Sectional Labeled Lines - ONE FOR ALL ASSETS,L3 Registered,Reporter,Lines,1,0,title x_axis_label y_axis_label category x_labels y_reference_lines y_axis_format y_axis_dp agg smooth data_labels colors filters max_assets order
+[ ],cs_labeled_scatter,Cross-Sectional Labeled Scatter - ONE FOR ALL ASSETS,L3 Registered,Reporter,Scatter,2,0,title x_axis_label y_axis_label category x_reference_lines y_reference_lines y_plot_bands x_plot_bands y_axis_format y_axis_dp x_axis_format x_axis_dp agg data_labels colors show_trend_line filters max_assets order
+[ ],cs_lines,Cross-Sectional Lines - ONE FOR ALL ASSETS,L3 Registered,Reporter,Lines,2,0,title y_axis_label y_axis_format y_axis_dp category stack_type smooth area step log_scale y_plot_bands x_plot_bands x_axis_label x_axis_format x_axis_dp line_width dash_style reference_lines data_labels colors filters max_assets agg agg_filtered order
+[ ],cs_pie,Cross-Sectional Pie Chart - ONE FOR ALL ASSETS,L3 Registered,Reporter,Cards,1,0,title category inner_size colors agg max_assets order
+[ ],cs_scatter,Cross-Sectional Scatter - ONE FOR ALL ASSETS,L3 Registered,Reporter,Scatter,2,0,title x_axis_label y_axis_label category y_axis_format y_axis_dp x_axis_format x_axis_dp reference_lines y_plot_bands x_plot_bands agg colors filters max_assets order
+[ ],cs_summary_table,Cross-Sectional Summary Table - ONE FOR ALL ASSETS,L3 Registered,Reporter,Tables,1,0,title category agg filters max_assets order schema transpose
+[ ],gauge,Gauge Chart - ONE PER ASSET,L3 Registered,Reporter,Cards,1,0,title category agg min max value_type decimal_places solid color use_traffic_light_colors categories order
+[ ],heatmap,Heatmap - ONE PER ASSET,L3 Registered,Reporter,Heatmaps,4,0,agg title category y_axis_label x_axis_label min_color max_color null_color show_data_labels data_label_format border_width border_color color_axis_min color_axis_max color_stops order value_format x_category_type y_category_type
+[ ],histogram,Histogram - ONE PER ASSET,L3 Registered,Reporter,Distributions,1,0,title bins bin_width x_axis_label y_axis_label category fill_color fill_opacity show_analytics reference_lines y_plot_bands y_axis_format y_axis_dp x_axis_format x_axis_dp order
+[ ],labeled_bubble,Labeled Bubble - ONE PER ASSET,L3 Registered,Reporter,Scatter,1,0,title x_axis_label y_axis_label category points x_reference_lines y_reference_lines y_axis_format y_axis_dp x_axis_format x_axis_dp min_size max_size size_by order
+[ ],labeled_lines,Labeled Lines - ONE PER ASSET,L3 Registered,Reporter,Lines,1,0,title x_axis_label y_axis_label category series y_reference_lines y_axis_format y_axis_dp smooth data_labels order
+[ ],labeled_scatter,Labeled Scatter - ONE PER ASSET,L3 Registered,Reporter,Scatter,1,0,title x_axis_label y_axis_label category points x_reference_lines y_reference_lines y_plot_bands x_plot_bands y_axis_format y_axis_dp x_axis_format x_axis_dp show_trend_line order
+[ ],pie,Pie Chart - ONE PER ASSET,L3 Registered,Reporter,Cards,2,0,title category inner_size colors order
+[ ],summary_table,Summary Table - ONE PER ASSET,L3 Registered,Reporter,Tables,1,0,mode layout category order
+[ ],xy_bars,XY Bars - ONE PER ASSET,L3 Registered,Reporter,Bars,3,0,mode agg title x_axis_label y_axis_label category vertical stack_type data_labels stack_labels border_radius color_by_value y_axis_format y_axis_dp x_category_type bar_width point_padding group_padding y_plot_bands x_plot_bands sort_by_value order series overlay_series reference_lines
+[ ],xy_lines,XY Lines - ONE PER ASSET,L3 Registered,Reporter,Lines,4,0,title y_axis_label y_axis_format y_axis_dp category stack_type smooth area step log_scale y_plot_bands x_plot_bands x_axis_label x_axis_format x_axis_dp series reference_lines x_category_type data_labels overlay_series split_by_label order
+[ ],xy_scatter,XY Scatter - ONE PER ASSET,L3 Registered,Reporter,Scatter,2,0,title x_axis_label y_axis_label category y_axis_format y_axis_dp x_axis_format x_axis_dp reference_lines y_plot_bands x_plot_bands series show_trend_line order
+[ ],beta,Beta (Rolling),L1 Builtin,Statistical,Compute,2,1,window
+[ ],cs_agg,Cross-Sectional Aggregation,Internal,Statistical,Compute,1,1,type group_by
+[ ],cs_factor_analysis,Cross-Sectional Factor Analysis,L3 Registered,Statistical,Compute,2,4,method min_obs ir_window
+[ ],cs_first_last,Cross-Sectional First/Last,L3 Registered,Statistical,Compute,1,2,group_by
+[ ],cs_quantile,Cross-Sectional Quantile,Internal,Statistical,Compute,1,1,q group_by
+[ ],cs_rank,Cross-Sectional Rank,Internal,Statistical,Compute,1,1,ascending
+[ ],cs_rank_quantile,Cross-Sectional Rank Quantile,L3 Registered,Statistical,Compute,1,1,ascending
+[ ],cs_weighted_mean,Cross-Sectional Weighted Mean,Internal,Statistical,Compute,2,1,group_by
+[ ],cs_winsorize,Cross-Sectional Winsorize,Internal,Statistical,Compute,1,1,lower_limit upper_limit
+[ ],cs_zscore,Cross-Sectional Z-Score,Internal,Statistical,Compute,1,1,group_by
+[ ],engle_granger,Engle-Granger Cointegration,L3 Registered,Statistical,Compute,2,9,window adf_lag significance
+[ ],ewm_corr,Exponentially Weighted Moving Correlation,Internal,Statistical,Compute,2,1,span
+[ ],ewm_cov,Exponentially Weighted Moving Covariance,L1 Builtin,Statistical,Compute,2,1,span
+[ ],finance_ratio,Financial Ratio,L3 Registered,Statistical,Compute,18,1,ratio_type period
+[ ],frac_diff,Fractional Differentiation (FFD),L3 Registered,Statistical,Compute,1,1,d threshold
+[ ],half_life_ar1,Half-Life AR(1),L3 Registered,Statistical,Compute,1,3,window
+[ ],hurst_exponent,Hurst Exponent (Expanding),L1 Builtin,Statistical,Compute,1,1,min_period
+[ ],johansen,Johansen Cointegration,L3 Registered,Statistical,Compute,1,6,num_vars window lag_p det_order significance
+[ ],kalman_filter,Kalman Filter,L3 Registered,Statistical,Compute,1,9,model_type process_noise obs_noise initial_state_cov confidence_level
+[ ],linear_fit,Linear Fit (Rolling OLS),L3 Registered,Statistical,Compute,2,3,window
+[ ],linreg,Linear Regression,Internal,Statistical,Compute,1,1,period
+[ ],linregintercept,Linear Regression Intercept,Internal,Statistical,Compute,1,1,period
+[ ],linregslope,Linear Regression Slope,Internal,Statistical,Compute,1,1,period
+[ ],multi_linear_fit,Multi-Linear Fit (Multi-Factor Regression),L3 Registered,Statistical,Compute,2,4,num_vars window
+[ ],nlargest,N Largest,L1 Builtin,Statistical,Compute,1,1,n
+[ ],nsmallest,N Smallest,L1 Builtin,Statistical,Compute,1,1,n
+[ ],percentrank,Percent Rank,L1 Builtin,Statistical,Compute,1,1,period
+[ ],rolling_adf,Rolling ADF Test,L3 Registered,Statistical,Compute,1,6,window adf_lag significance deterministic
+[ ],rolling_arima,Rolling ARIMA Forecast,L3 Registered,Statistical,Compute,1,7,p d q with_constant max_iterations tolerance confidence_level window_size step_size window_type forecast_horizon min_training_samples
+[ ],rolling_corr,Rolling Correlation,Internal,Statistical,Compute,2,1,window window_type method
+[ ],rolling_cov,Rolling Covariance,Internal,Statistical,Compute,2,1,window window_type
+[ ],rolling_hurst_exponent,Rolling Hurst Exponent,L1 Builtin,Statistical,Compute,1,1,window
+[ ],streak_length,Streak Length,L1 Builtin,Statistical,Compute,1,1,direction
+[ ],winsorize,Winsorize (Time-Series),L3 Registered,Statistical,Compute,1,1,lower_limit upper_limit
+[ ],zscore,Z-Score,L3 Registered,Statistical,Compute,1,1,window
+[ ],adx,Average Directional Movement Index,L1 Builtin,Trend,Compute,2,1,period
+[ ],adxr,Average Directional Movement Rating,L1 Builtin,Trend,Compute,2,1,period
+[ ],alligator,Bill Williams Alligator,L3 Registered,Trend,Compute,1,3,jaw teeth lips apply_offset
+[ ],aroon,Aroon,L2 Macro,Trend,Compute,2,2,period
+[ ],aroonosc,Aroon Oscillator,L1 Builtin,Trend,Compute,2,1,period
+[ ],avgprice,Average Price,L1 Builtin,Trend,Compute,4,1,-
+[ ],calendar_shift,Calendar Shift,L1 Builtin,Trend,Compute,1,1,period
+[ ],di,Directional Indicator,L3 Registered,Trend,Compute,3,2,period
+[ ],dm,Directional Movement,L3 Registered,Trend,Compute,2,2,period
+[ ],dpo,Detrended Price Oscillator,L1 Builtin,Trend,Compute,1,1,period
+[ ],dx,Directional Movement Index,L1 Builtin,Trend,Compute,2,1,period
+[ ],forward_returns,Forward Returns,L1 Builtin,Trend,Compute,1,1,period return_type
+[ ],ichimoku,Ichimoku Kinko Hyo,L2 Macro,Trend,Compute,3,5,p_tenkan p_kijun p_senkou_b
+[ ],ma,Moving Average,Internal,Trend,Compute,1,1,period type
+[ ],max,Maximum In Period,Internal,Trend,Compute,1,1,period
+[ ],md,Mean Deviation Over Period,L1 Builtin,Trend,Compute,1,1,period
+[ ],medprice,Median Price,L1 Builtin,Trend,Compute,2,1,-
+[ ],min,Minimum In Period,Internal,Trend,Compute,1,1,period
+[ ],supertrend,SuperTrend,L2 Macro,Trend,Compute,3,2,atr_period multiplier
+[ ],tsf,Time Series Forecast,Internal,Trend,Compute,1,1,period
+[ ],typprice,Typical Price,L1 Builtin,Trend,Compute,3,1,-
+[ ],vhf,Vertical Horizontal Filter,L1 Builtin,Trend,Compute,1,1,period
+[ ],vidya,Variable Index Dynamic Average,L3 Registered,Trend,Compute,1,1,short_period long_period alpha
+[ ],vortex,Vortex Indicator,L3 Registered,Trend,Compute,3,2,period
+[ ],vwma,Volume Weighted Moving Average,L1 Builtin,Trend,Compute,2,1,period
+[ ],wcprice,Weighted Close Price,L1 Builtin,Trend,Compute,3,1,-
+[ ],datetime_diff,Datetime Difference,L3 Registered,Utility,Compute,2,1,unit
+[ ],datetime_extract,Datetime Extract,L3 Registered,Utility,Compute,1,1,component timezone
+[ ],group_by,Group By,Internal,Utility,Compute,2,1,agg q ddof
+[ ],index,Index,Internal,Utility,Compute,0,1,-
+[ ],keyword_count,Keyword Count,L3 Registered,Utility,NLP,1,1,keywords
+[ ],keyword_score,Keyword Score,L3 Registered,Utility,NLP,1,1,keywords
+[ ],pivot_wider,Pivot Wider,Internal,Utility,Compute,2,1,lookback
+[ ],string_case,String Case,L3 Registered,Utility,NLP,1,1,operation
+[ ],string_trim,String Trim,L3 Registered,Utility,NLP,1,1,operation trim_chars
+[ ],topic_classify,Topic Classify,L3 Registered,Utility,NLP,1,1,topics
+[ ],acceleration_bands,Acceleration Bands,L3 Registered,Volatility,Compute,3,3,period multiplier
+[ ],atr,Average True Range,L1 Builtin,Volatility,Compute,3,1,period
+[ ],basic_volatility,Basic Volatility,Internal,Volatility,Compute,1,1,type period
+[ ],bband_percent,Bollinger Bands %B,L1 Builtin,Volatility,Compute,3,1,-
+[ ],bband_width,Bollinger Bands Width,L1 Builtin,Volatility,Compute,3,1,-
+[ ],bbands,Bollinger Bands,L2 Macro,Volatility,Compute,1,3,period stddev
+[ ],chande_kroll_stop,Chande Kroll Stop,L3 Registered,Volatility,Compute,3,2,p_period q_period multiplier
+[ ],chandelier_exit,Chandelier Exit,L3 Registered,Volatility,Compute,3,3,length atr_length multiplier use_close
+[ ],cvi,Chaikins Volatility,L1 Builtin,Volatility,Compute,2,1,period
+[ ],donchian_channel,Donchian Channel,L2 Macro,Volatility,Compute,2,3,window
+[ ],elders_thermometer,Elder's Market Thermometer,L3 Registered,Volatility,Compute,2,4,period buy_factor sell_factor
+[ ],keltner_channels,Keltner Channels,L2 Macro,Volatility,Compute,3,2,roll_period band_multiplier
+[ ],mass,Mass Index,L1 Builtin,Volatility,Compute,2,1,period
+[ ],natr,Normalized Average True Range,L1 Builtin,Volatility,Compute,3,1,period
+[ ],price_distance,Price Distance,L1 Builtin,Volatility,Compute,4,1,-
+[ ],rolling_garch,Rolling GARCH Volatility,L3 Registered,Volatility,Compute,1,7,p q distribution max_iterations tolerance window_size step_size window_type forecast_horizon min_training_samples
+[ ],tr,True Range,L1 Builtin,Volatility,Compute,3,1,-
+[ ],ulcer_index,Ulcer Index,L1 Builtin,Volatility,Compute,1,1,period use_sum
+[ ],volatility,Annualized Historical Volatility,L2 Macro,Volatility,Compute,1,1,period
+[ ],volatility_estimator,Volatility Estimator,L3 Registered,Volatility,Compute,4,1,type period trading_periods
+[ ],ad,Accumulation/Distribution Line,L1 Builtin,Volume,Compute,4,1,-
+[ ],adosc,Accumulation/Distribution Oscillator,L1 Builtin,Volume,Compute,4,1,short_period long_period
+[ ],emv,Ease of Movement,L1 Builtin,Volume,Compute,3,1,-
+[ ],kvo,Klinger Volume Oscillator,L1 Builtin,Volume,Compute,4,1,short_period long_period
+[ ],marketfi,Market Facilitation Index,L1 Builtin,Volume,Compute,3,1,-
+[ ],nvi,Negative Volume Index,L1 Builtin,Volume,Compute,2,1,-
+[ ],obv,On Balance Volume,L1 Builtin,Volume,Compute,2,1,-
+[ ],pvi,Positive Volume Index,L1 Builtin,Volume,Compute,2,1,-
+[ ],trade_count,Trade Count,L1 Builtin,Volume,Compute,0,1,-
+[ ],vosc,Volume Oscillator,L1 Builtin,Volume,Compute,1,1,short_period long_period
+[ ],vwap,VWAP,L1 Builtin,Volume,Compute,0,1,-
+[ ],wad,Williams Accumulation/Distribution,L1 Builtin,Volume,Compute,3,1,-
