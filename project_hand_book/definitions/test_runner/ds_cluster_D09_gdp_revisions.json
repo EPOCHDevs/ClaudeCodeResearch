@@ -1,11 +1,11 @@
 {
-   "name": "DS Cluster D09: GDP Revisions (known heavy revisions)",
-   "description": "Tests economic_revisions with GDPC1 (Real GDP) which has significant quarterly revisions.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "src = market_data_source()()\nclose = src.c\nrev = economic_revisions(series_id=\"GDPC1\")()\ninitial = ffill(rev.initial_value)\nlatest = ffill(rev.latest_value)\nrevision_delta = ffill(rev.revision_delta)\nhistogram(category=\"Revisions\", title=\"GDP Initial\", bins=20)(initial)\n"
+  "name": "DS Cluster D09: GDP Revisions (known heavy revisions)",
+  "description": "Tests economic_revisions with GDPC1 (Real GDP) which has significant quarterly revisions.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "src = study_assets()\nclose = src.c\nrev = economic_revisions(series_id=\"GDPC1\")()\ninitial = ffill(rev.initial_value)\nlatest = ffill(rev.latest_value)\nrevision_delta = ffill(rev.revision_delta)\nhistogram(category=\"Revisions\", title=\"GDP Initial\", bins=20)(initial)\n"
 }

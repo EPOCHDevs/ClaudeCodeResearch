@@ -1,12 +1,12 @@
 {
-   "name": "DS Cluster D08: Economic Calendar (Intraday \u2014 ffill_day pattern)",
-   "description": "Tests: is_released fires on 1 bar on intraday, ffill_day carries it through session. CRITICAL intraday pattern.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER D08 INTRADAY: Calendar + ffill_day\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nrets = returns(close)\n\n# === NFP CALENDAR ===\nnfp_cal = economic_calendar(source=CalendarSource.FRED, release_id=50)()\n\n# WRONG on intraday: only 1 bar is True per event\nraw_nfp = nfp_cal.is_released\n\n# CORRECT: carry True through entire trading day\nis_nfp_day = ffill_day(nfp_cal.is_released)\n\n# === EVENT-DAY RETURNS ===\nnfp_day_return = where(is_nfp_day, rets)\n\n# === REPORTERS ===\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.NewspaperIcon,\n        schemas=[\n            ColumnSpec(title=\"Return\", dp=4, type=CardRenderType.PercentFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"NFP Day (ffill_day)\"\n    )\n)(rets, is_nfp_day)\n\nhistogram(\n    title=\"Returns on NFP Days (intraday bars)\",\n    category=\"Calendar\",\n    bins=30\n)(nfp_day_return)\n",
-   "data_foundation": "Intraday"
+  "name": "DS Cluster D08: Economic Calendar (Intraday \u2014 ffill_day pattern)",
+  "description": "Tests: is_released fires on 1 bar on intraday, ffill_day carries it through session. CRITICAL intraday pattern.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D08 INTRADAY: Calendar + ffill_day\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nrets = returns(close)\n\n# === NFP CALENDAR ===\nnfp_cal = economic_calendar(source=CalendarSource.FRED, release_id=50)()\n\n# WRONG on intraday: only 1 bar is True per event\nraw_nfp = nfp_cal.is_released\n\n# CORRECT: carry True through entire trading day\nis_nfp_day = ffill_day(nfp_cal.is_released)\n\n# === EVENT-DAY RETURNS ===\nnfp_day_return = where(is_nfp_day, rets)\n\n# === REPORTERS ===\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.NewspaperIcon,\n        schemas=[\n            ColumnSpec(title=\"Return\", dp=4, type=CardRenderType.PercentFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"NFP Day (ffill_day)\"\n    )\n)(rets, is_nfp_day)\n\nhistogram(\n    title=\"Returns on NFP Days (intraday bars)\",\n    category=\"Calendar\",\n    bins=30\n)(nfp_day_return)\n",
+  "data_foundation": "Intraday"
 }

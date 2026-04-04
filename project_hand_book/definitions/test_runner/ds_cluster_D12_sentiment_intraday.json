@@ -1,12 +1,12 @@
 {
-   "name": "DS Cluster D12: Market Sentiment (Intraday \u2014 ffill_day for daily sources)",
-   "description": "Tests: short_volume_ratio on intraday appears on 1 bar/day, ffill_day carries through session. short_interest always ffill.",
-   "data": {
-      "assets": [
-         "AAPL-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER D12 INTRADAY: Sentiment + ffill_day\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SHORT INTEREST (bi-monthly \u2014 always ffill) ===\nsi = short_interest()()\ndtc = ffill(si.days_to_cover)\n\n# === SHORT VOLUME (daily \u2014 use ffill_day on intraday) ===\nsv = short_volume()()\nsv_ratio_raw = sv.short_volume_ratio\nsv_ratio = ffill_day(sv.short_volume_ratio)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Days to Cover (ffill'd)\",\n    category=\"Sentiment\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"DTC\", color=Color.Red)\n    ])\n)(x_values=index(), y_values=dtc)\n\nxy_lines(\n    title=\"Short Volume Ratio (ffill_day on intraday)\",\n    category=\"Sentiment\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"SV Ratio\", color=Color.Orange)\n    ])\n)(x_values=index(), y_values=sv_ratio)\n",
-   "data_foundation": "Intraday"
+  "name": "DS Cluster D12: Market Sentiment (Intraday \u2014 ffill_day for daily sources)",
+  "description": "Tests: short_volume_ratio on intraday appears on 1 bar/day, ffill_day carries through session. short_interest always ffill.",
+  "data": {
+    "assets": [
+      "AAPL-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D12 INTRADAY: Sentiment + ffill_day\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SHORT INTEREST (bi-monthly \u2014 always ffill) ===\nsi = short_interest()()\ndtc = ffill(si.days_to_cover)\n\n# === SHORT VOLUME (daily \u2014 use ffill_day on intraday) ===\nsv = short_volume()()\nsv_ratio_raw = sv.short_volume_ratio\nsv_ratio = ffill_day(sv.short_volume_ratio)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Days to Cover (ffill'd)\",\n    category=\"Sentiment\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"DTC\", color=Color.Red)\n    ])\n)(x_values=index(), y_values=dtc)\n\nxy_lines(\n    title=\"Short Volume Ratio (ffill_day on intraday)\",\n    category=\"Sentiment\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"SV Ratio\", color=Color.Orange)\n    ])\n)(x_values=index(), y_values=sv_ratio)\n",
+  "data_foundation": "Intraday"
 }

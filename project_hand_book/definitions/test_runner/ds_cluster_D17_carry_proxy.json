@@ -1,11 +1,11 @@
 {
-   "name": "DS Cluster D17: Carry Proxy Trap",
-   "description": "Tests: futures_continuation cont.carry output vs returns-based proxy. Validates cont.carry and cont.dte exist on futures pass-through.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER D17: Carry Proxy Trap\n# =============================================================================\n# Rule: Use cont.carry for term structure, NOT returns-based annualization.\n# On non-futures assets, cont.carry is NaN \u2014 guard with is_valid().\n\nsrc = market_data_source()()\nclose = src.c\n\n# === CONTINUATION (pass-through on stocks) ===\ncont = futures_continuation(\n    s_rollover_method=RolloverType.LiquidityBased,\n    s_adjustment_method=AdjustmentType.NoAdjustment\n)(src.o, src.h, src.l, src.c, src.v, src.oi, src.s)\n\n# === CARRY: guard with is_valid (NaN on non-futures) ===\nhas_carry = is_valid(cont.carry) and is_valid(cont.dte) and (cont.dte > 0)\n\n# CORRECT: use cont.carry directly\nraw_carry = where(has_carry, cont.carry)\n\n# CORRECT: annualize only when DTE is available\nannualized_carry = where(has_carry, cont.carry * (365.0 / cont.dte))\n\n# WRONG (on futures): returns-based proxy loses term structure info\n# returns_proxy = (close - (close >> 1)) / (close >> 1) * 365\n# This measures PRICE returns, not CARRY.\n\n# === REPORTERS ===\ncards(\n    category=\"Carry\",\n    layout=CardLayout(title=\"Carry Availability\", cells=[\n        ColumnSpec(title=\"Has Carry\", card_agg=AggregationType.Count, type=CardRenderType.BooleanFormat)\n    ])\n)(has_carry)\n\nhistogram(\n    title=\"Raw Carry (NaN on stocks \u2014 expected)\",\n    category=\"Carry\",\n    bins=20\n)(raw_carry)\n"
+  "name": "DS Cluster D17: Carry Proxy Trap",
+  "description": "Tests: futures_continuation cont.carry output vs returns-based proxy. Validates cont.carry and cont.dte exist on futures pass-through.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D17: Carry Proxy Trap\n# =============================================================================\n# Rule: Use cont.carry for term structure, NOT returns-based annualization.\n# On non-futures assets, cont.carry is NaN \u2014 guard with is_valid().\n\nsrc = study_assets()\nclose = src.c\n\n# === CONTINUATION (pass-through on stocks) ===\ncont = futures_continuation(\n    s_rollover_method=RolloverType.LiquidityBased,\n    s_adjustment_method=AdjustmentType.NoAdjustment\n)(src.o, src.h, src.l, src.c, src.v, src.oi, src.s)\n\n# === CARRY: guard with is_valid (NaN on non-futures) ===\nhas_carry = is_valid(cont.carry) and is_valid(cont.dte) and (cont.dte > 0)\n\n# CORRECT: use cont.carry directly\nraw_carry = where(has_carry, cont.carry)\n\n# CORRECT: annualize only when DTE is available\nannualized_carry = where(has_carry, cont.carry * (365.0 / cont.dte))\n\n# WRONG (on futures): returns-based proxy loses term structure info\n# returns_proxy = (close - (close >> 1)) / (close >> 1) * 365\n# This measures PRICE returns, not CARRY.\n\n# === REPORTERS ===\ncards(\n    category=\"Carry\",\n    layout=CardLayout(title=\"Carry Availability\", cells=[\n        ColumnSpec(title=\"Has Carry\", card_agg=AggregationType.Count, type=CardRenderType.BooleanFormat)\n    ])\n)(has_carry)\n\nhistogram(\n    title=\"Raw Carry (NaN on stocks \u2014 expected)\",\n    category=\"Carry\",\n    bins=20\n)(raw_carry)\n"
 }

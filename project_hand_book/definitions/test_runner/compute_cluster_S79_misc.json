@@ -1,13 +1,13 @@
 {
-   "name": "Compute Cluster S79: Misc Transforms",
-   "description": "Tests: group_by(agg=all 18 types), pivot_wider, streak_length, roc, timestamp_scalar, trade_count, price_profile(mode=market/volume).",
-   "data": {
-      "assets": [
-         "SPY-Stocks",
-         "QQQ-Stocks",
-         "DIA-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# COMPUTE CLUSTER S79: Misc Transforms\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nhigh = src.h\nlow = src.l\nvolume = src.v\n\nret = returns(close)\nsignal = ret > 0\n\n# === GROUP_BY: all 18 AggregationType variants ===\n# group_by(agg=AggregationType.Sum)(ret, signal)\n# group_by(agg=AggregationType.Mean)(ret, signal)\n# group_by(agg=AggregationType.Median)(ret, signal)\n# group_by(agg=AggregationType.Std)(ret, signal)\n# group_by(agg=AggregationType.Var)(ret, signal)\n# group_by(agg=AggregationType.Min)(ret, signal)\n# group_by(agg=AggregationType.Max)(ret, signal)\n# group_by(agg=AggregationType.Count)(ret, signal)\n# group_by(agg=AggregationType.First)(ret, signal)\n# group_by(agg=AggregationType.Last)(ret, signal)\n# group_by(agg=AggregationType.Product)(ret, signal)\n# group_by(agg=AggregationType.Quantile)(ret, signal)\n# group_by(agg=AggregationType.Skew)(ret, signal)\n# group_by(agg=AggregationType.Kurtosis)(ret, signal)\n# group_by(agg=AggregationType.All)(signal, signal)\n# group_by(agg=AggregationType.Any)(signal, signal)\n# group_by(agg=AggregationType.CountDistinct)(signal, signal)\n# group_by(agg=AggregationType.Mode)(signal, signal)\n\n# === PIVOT WIDER ===\n# pivot_wider()(ret)\n\n# === REPORTERS ===\nxy_lines(\n    title='Close Price',\n    category='Misc',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Close', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=close)\n"
+  "name": "Compute Cluster S79: Misc Transforms",
+  "description": "Tests: group_by(agg=all 18 types), pivot_wider, streak_length, roc, timestamp_scalar, trade_count, price_profile(mode=market/volume).",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "DIA-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S79: Misc Transforms\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nhigh = src.h\nlow = src.l\nvolume = src.v\n\nret = returns(close)\nsignal = ret > 0\n\n# === GROUP_BY: all 18 AggregationType variants ===\n# group_by(agg=AggregationType.Sum)(ret, signal)\n# group_by(agg=AggregationType.Mean)(ret, signal)\n# group_by(agg=AggregationType.Median)(ret, signal)\n# group_by(agg=AggregationType.Std)(ret, signal)\n# group_by(agg=AggregationType.Var)(ret, signal)\n# group_by(agg=AggregationType.Min)(ret, signal)\n# group_by(agg=AggregationType.Max)(ret, signal)\n# group_by(agg=AggregationType.Count)(ret, signal)\n# group_by(agg=AggregationType.First)(ret, signal)\n# group_by(agg=AggregationType.Last)(ret, signal)\n# group_by(agg=AggregationType.Product)(ret, signal)\n# group_by(agg=AggregationType.Quantile)(ret, signal)\n# group_by(agg=AggregationType.Skew)(ret, signal)\n# group_by(agg=AggregationType.Kurtosis)(ret, signal)\n# group_by(agg=AggregationType.All)(signal, signal)\n# group_by(agg=AggregationType.Any)(signal, signal)\n# group_by(agg=AggregationType.CountDistinct)(signal, signal)\n# group_by(agg=AggregationType.Mode)(signal, signal)\n\n# === PIVOT WIDER ===\n# pivot_wider()(ret)\n\n# === REPORTERS ===\nxy_lines(\n    title='Close Price',\n    category='Misc',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Close', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=close)\n"
 }

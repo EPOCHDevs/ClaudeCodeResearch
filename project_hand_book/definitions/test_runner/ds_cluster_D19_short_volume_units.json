@@ -1,11 +1,11 @@
 {
-   "name": "DS Cluster D19: Short Volume Units (0-100 not 0-1)",
-   "description": "Tests: short_volume_ratio range is 0-100 (percentage), not 0-1 (decimal). Common agent mistake.",
-   "data": {
-      "assets": [
-         "AAPL-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER D19: Short Volume Units\n# =============================================================================\n# short_volume_ratio is PERCENTAGE (0-100), NOT decimal (0-1).\n# Threshold of 50% = 50.0, not 0.50.\n\nsrc = market_data_source()()\nclose = src.c\n\nsv = short_volume()()\nratio = sv.short_volume_ratio\n\n# === CORRECT: threshold in percentage units ===\nhigh_short = ratio > 50.0    # 50% = heavy shorting\nlow_short = ratio < 30.0     # 30% = light shorting\n\n# === WRONG: decimal threshold would NEVER fire ===\n# wrong_high = ratio > 0.50  # This would match 0.5% \u2014 virtually never true\n\n# === REPORTERS ===\nhistogram(\n    title=\"Short Volume Ratio Distribution (0-100 scale)\",\n    category=\"Units\",\n    bins=30\n)(ratio)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.ArrowDownIcon,\n        schemas=[\n            ColumnSpec(title=\"SV Ratio\", dp=1, type=CardRenderType.PercentFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"High Short Volume (>50%)\"\n    )\n)(ratio, high_short)\n"
+  "name": "DS Cluster D19: Short Volume Units (0-100 not 0-1)",
+  "description": "Tests: short_volume_ratio range is 0-100 (percentage), not 0-1 (decimal). Common agent mistake.",
+  "data": {
+    "assets": [
+      "AAPL-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D19: Short Volume Units\n# =============================================================================\n# short_volume_ratio is PERCENTAGE (0-100), NOT decimal (0-1).\n# Threshold of 50% = 50.0, not 0.50.\n\nsrc = study_assets()\nclose = src.c\n\nsv = short_volume()()\nratio = sv.short_volume_ratio\n\n# === CORRECT: threshold in percentage units ===\nhigh_short = ratio > 50.0    # 50% = heavy shorting\nlow_short = ratio < 30.0     # 30% = light shorting\n\n# === WRONG: decimal threshold would NEVER fire ===\n# wrong_high = ratio > 0.50  # This would match 0.5% \u2014 virtually never true\n\n# === REPORTERS ===\nhistogram(\n    title=\"Short Volume Ratio Distribution (0-100 scale)\",\n    category=\"Units\",\n    bins=30\n)(ratio)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.ArrowDownIcon,\n        schemas=[\n            ColumnSpec(title=\"SV Ratio\", dp=1, type=CardRenderType.PercentFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"High Short Volume (>50%)\"\n    )\n)(ratio, high_short)\n"
 }

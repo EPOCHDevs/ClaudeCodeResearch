@@ -1,12 +1,12 @@
 {
-   "name": "Signal Cluster S17: Hold Until (Pulse to Zone)",
-   "description": "Tests: hold_until with crossover/crossunder, enter priority over exit, zone execution with long_and_short_zone.",
-   "data": {
-      "assets": [
-         "SPY-Stocks",
-         "QQQ-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# SIGNAL CLUSTER S17: Hold Until \u2014 Pulse to Zone Conversion\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === INDICATORS ===\nfast_sma = ma(period=50, type=MAType.sma)(close)\nslow_sma = ma(period=200, type=MAType.sma)(close)\n\n# === PULSE SIGNALS ===\nentry = crossover(fast_sma, slow_sma)\nexit_sig = crossunder(fast_sma, slow_sma)\n\n# === HOLD UNTIL \u2014 convert pulse to continuous zone ===\nheld_long = hold_until(entry, exit_sig)\nheld_short = hold_until(exit_sig, entry)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\nposition_size(type=SizeType.percent)(size=100)\nstop_loss(unit=StopUnit.percent)(distance=10)\n\n# === REPORTERS ===\nxy_lines(\n    title='SMA Crossover Signal',\n    category='Signal',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Fast SMA', color=Color.Green),\n        LineSeriesSpec(name='Slow SMA', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(fast_sma, slow_sma))\n"
+  "name": "Signal Cluster S17: Hold Until (Pulse to Zone)",
+  "description": "Tests: hold_until with crossover/crossunder, enter priority over exit, zone execution with long_and_short_zone.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# SIGNAL CLUSTER S17: Hold Until \u2014 Pulse to Zone Conversion\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === INDICATORS ===\nfast_sma = ma(period=50, type=MAType.sma)(close)\nslow_sma = ma(period=200, type=MAType.sma)(close)\n\n# === PULSE SIGNALS ===\nentry = crossover(fast_sma, slow_sma)\nexit_sig = crossunder(fast_sma, slow_sma)\n\n# === HOLD UNTIL \u2014 convert pulse to continuous zone ===\nheld_long = hold_until(entry, exit_sig)\nheld_short = hold_until(exit_sig, entry)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\nposition_size(type=SizeType.percent)(size=100)\nstop_loss(unit=StopUnit.percent)(distance=10)\n\n# === REPORTERS ===\nxy_lines(\n    title='SMA Crossover Signal',\n    category='Signal',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Fast SMA', color=Color.Green),\n        LineSeriesSpec(name='Slow SMA', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(fast_sma, slow_sma))\n"
 }

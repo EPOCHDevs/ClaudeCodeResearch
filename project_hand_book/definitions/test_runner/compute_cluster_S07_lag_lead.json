@@ -1,11 +1,11 @@
 {
-   "name": "Compute Cluster S07: Lag, Lead & Calendar Shift",
-   "description": "Tests: >> (lag), << (lead), calendar_shift.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "src = market_data_source()()\nclose = src.c\n\nlag_1 = close >> 1\nlag_5 = close >> 5\nlead_1 = close << 1\nshifted_63d = calendar_shift(period=63D)(close)\nshifted_365d = calendar_shift(period=365D)(close)\n\nxy_lines(title='Lag/Lead/Shift', category='Temporal', series=LineSeriesSchema(series=[LineSeriesSpec(name='Close', color=Color.Blue), LineSeriesSpec(name='Lag 1', color=Color.Red), LineSeriesSpec(name='Shift 63D', color=Color.Green)]))(x_values=index(), y_values=(close, lag_1, shifted_63d))\n"
+  "name": "Compute Cluster S07: Lag, Lead & Calendar Shift",
+  "description": "Tests: >> (lag), << (lead), calendar_shift.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "src = study_assets()\nclose = src.c\n\nlag_1 = close >> 1\nlag_5 = close >> 5\nlead_1 = close << 1\nshifted_63d = calendar_shift(period=63D)(close)\nshifted_365d = calendar_shift(period=365D)(close)\n\nxy_lines(title='Lag/Lead/Shift', category='Temporal', series=LineSeriesSchema(series=[LineSeriesSpec(name='Close', color=Color.Blue), LineSeriesSpec(name='Lag 1', color=Color.Red), LineSeriesSpec(name='Shift 63D', color=Color.Green)]))(x_values=index(), y_values=(close, lag_1, shifted_63d))\n"
 }

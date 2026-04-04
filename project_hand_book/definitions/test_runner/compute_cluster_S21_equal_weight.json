@@ -1,13 +1,13 @@
 {
-   "name": "Compute Cluster S21: Equal Weight",
-   "description": "Tests: equal_weight across assets.",
-   "data": {
-      "assets": [
-         "SPY-Stocks",
-         "QQQ-Stocks",
-         "DIA-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "src = market_data_source()()\nclose = src.c\nret = returns(close)\n\nw = equal_weight()(ret)\n\ncs_lines(title='Equal Weights', category='Weighting')(x_values=index(), y_values=w)\n"
+  "name": "Compute Cluster S21: Equal Weight",
+  "description": "Tests: equal_weight across assets.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "DIA-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "src = study_assets()\nclose = src.c\nret = returns(close)\n\nw = equal_weight()(ret)\n\ncs_lines(title='Equal Weights', category='Weighting')(x_values=index(), y_values=w)\n"
 }

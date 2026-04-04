@@ -1,11 +1,11 @@
 {
-   "name": "DS Cluster S10d: Upsample by Interpolate",
-   "description": "Tests: upsample_by_interpolate with FillDirection.forward/backward/both on monthly CPI \u2192 daily.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER S10d: Upsample by Interpolate\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\ncpi_raw = common_indicators(category=MacroEconomicsIndicator.CPI)().result\n\n# === ALL limit_direction= VARIANTS ===\ninterp_fwd = upsample_by_interpolate(target_timeframe=1D, limit_direction=FillDirection.forward)(cpi_raw)\ninterp_bwd = upsample_by_interpolate(target_timeframe=1D, limit_direction=FillDirection.backward)(cpi_raw)\ninterp_both = upsample_by_interpolate(target_timeframe=1D, limit_direction=FillDirection.both)(cpi_raw)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"CPI Interpolate: forward vs backward vs both\",\n    category=\"Interpolate\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Forward\", color=Color.Cyan),\n        LineSeriesSpec(name=\"Backward\", color=Color.Red),\n        LineSeriesSpec(name=\"Both\", color=Color.White)\n    ])\n)(x_values=index(), y_values=(interp_fwd, interp_bwd, interp_both))\n"
+  "name": "DS Cluster S10d: Upsample by Interpolate",
+  "description": "Tests: upsample_by_interpolate with FillDirection.forward/backward/both on monthly CPI \u2192 daily.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER S10d: Upsample by Interpolate\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\ncpi_raw = common_indicators(category=MacroEconomicsIndicator.CPI)().result\n\n# === ALL limit_direction= VARIANTS ===\ninterp_fwd = upsample_by_interpolate(target_timeframe=1D, limit_direction=FillDirection.forward)(cpi_raw)\ninterp_bwd = upsample_by_interpolate(target_timeframe=1D, limit_direction=FillDirection.backward)(cpi_raw)\ninterp_both = upsample_by_interpolate(target_timeframe=1D, limit_direction=FillDirection.both)(cpi_raw)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"CPI Interpolate: forward vs backward vs both\",\n    category=\"Interpolate\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Forward\", color=Color.Cyan),\n        LineSeriesSpec(name=\"Backward\", color=Color.Red),\n        LineSeriesSpec(name=\"Both\", color=Color.White)\n    ])\n)(x_values=index(), y_values=(interp_fwd, interp_bwd, interp_both))\n"
 }

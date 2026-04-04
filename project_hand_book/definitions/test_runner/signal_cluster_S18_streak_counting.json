@@ -1,11 +1,11 @@
 {
-   "name": "Signal Cluster S18: Streak & Freshness Counting",
-   "description": "Tests: streak_length(direction=up/down/bidirectional), barssince. Consecutive up/down days, signal freshness, time-based exit gate.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# SIGNAL CLUSTER S18: Streak Length & Bars Since\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === STREAK COUNTING ===\nis_up_day = close > (close >> 1)\nup_streak = streak_length(is_up_day)\ndown_streak = streak_length(is_up_day)\nsigned_streak = streak_length(is_up_day)\n\n# === SIGNAL FRESHNESS ===\nsma_200 = ma(period=200, type=MAType.sma)(close)\nentry_signal = crossover(close, sma_200)\nsignal_age = barssince(entry_signal)\nis_fresh = signal_age < 5\n\n# === REPORTERS ===\nxy_lines(\n    title='Consecutive Up/Down Days',\n    category='Streak',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Signed Streak', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=signed_streak)\n\nxy_lines(\n    title='Signal Age (bars since entry)',\n    category='Freshness',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Bars Since Entry', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=signal_age)\n"
+  "name": "Signal Cluster S18: Streak & Freshness Counting",
+  "description": "Tests: streak_length(direction=up/down/bidirectional), barssince. Consecutive up/down days, signal freshness, time-based exit gate.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# SIGNAL CLUSTER S18: Streak Length & Bars Since\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === STREAK COUNTING ===\nis_up_day = close > (close >> 1)\nup_streak = streak_length(is_up_day)\ndown_streak = streak_length(is_up_day)\nsigned_streak = streak_length(is_up_day)\n\n# === SIGNAL FRESHNESS ===\nsma_200 = ma(period=200, type=MAType.sma)(close)\nentry_signal = crossover(close, sma_200)\nsignal_age = barssince(entry_signal)\nis_fresh = signal_age < 5\n\n# === REPORTERS ===\nxy_lines(\n    title='Consecutive Up/Down Days',\n    category='Streak',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Signed Streak', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=signed_streak)\n\nxy_lines(\n    title='Signal Age (bars since entry)',\n    category='Freshness',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Bars Since Entry', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=signal_age)\n"
 }

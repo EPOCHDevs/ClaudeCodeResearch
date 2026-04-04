@@ -1,11 +1,11 @@
 {
-   "name": "DS Cluster D11: Corporate Events (Earnings, Dividends)",
-   "description": "Tests: earnings outputs (eps_surprise_percent), dividends, barssince pattern, is_valid guard on sparse data.",
-   "data": {
-      "assets": [
-         "AAPL-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER D11: Corporate Events\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nrets = returns(close)\n\n# === EARNINGS ===\nearn = earnings()()\nhad_earnings = is_valid(earn.actual_eps)\nbars_since_earn = barssince(had_earnings)\nin_drift_window = bars_since_earn <= 60\n\n# Earnings surprise (guarded with is_valid)\nsurprise_pct = where(is_valid(earn.eps_surprise_percent), earn.eps_surprise_percent)\n\n# === DIVIDENDS ===\ndiv = dividends(dividend_type=DividendType.CD)()\nhad_div = is_valid(div.cash_amount)\ndiv_amount = ffill(div.cash_amount)\n\n# === REPORTERS ===\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.TrendingUpIcon,\n        schemas=[\n            ColumnSpec(title=\"EPS Surprise %\", dp=2, type=CardRenderType.PercentFormat),\n            ColumnSpec(title=\"Actual EPS\", dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"Earnings\"\n    )\n)(earn.eps_surprise_percent, earn.actual_eps, had_earnings)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.BanknoteIcon,\n        schemas=[\n            ColumnSpec(title=\"Cash Amount\", dp=4, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"Dividend\"\n    )\n)(div.cash_amount, had_div)\n\nhistogram(\n    title=\"Post-Earnings Returns (60d window)\",\n    category=\"Events\",\n    bins=30\n)(where(in_drift_window, rets))\n"
+  "name": "DS Cluster D11: Corporate Events (Earnings, Dividends)",
+  "description": "Tests: earnings outputs (eps_surprise_percent), dividends, barssince pattern, is_valid guard on sparse data.",
+  "data": {
+    "assets": [
+      "AAPL-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D11: Corporate Events\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nrets = returns(close)\n\n# === EARNINGS ===\nearn = earnings()()\nhad_earnings = is_valid(earn.actual_eps)\nbars_since_earn = barssince(had_earnings)\nin_drift_window = bars_since_earn <= 60\n\n# Earnings surprise (guarded with is_valid)\nsurprise_pct = where(is_valid(earn.eps_surprise_percent), earn.eps_surprise_percent)\n\n# === DIVIDENDS ===\ndiv = dividends(dividend_type=DividendType.CD)()\nhad_div = is_valid(div.cash_amount)\ndiv_amount = ffill(div.cash_amount)\n\n# === REPORTERS ===\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.TrendingUpIcon,\n        schemas=[\n            ColumnSpec(title=\"EPS Surprise %\", dp=2, type=CardRenderType.PercentFormat),\n            ColumnSpec(title=\"Actual EPS\", dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"Earnings\"\n    )\n)(earn.eps_surprise_percent, earn.actual_eps, had_earnings)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.BanknoteIcon,\n        schemas=[\n            ColumnSpec(title=\"Cash Amount\", dp=4, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"Dividend\"\n    )\n)(div.cash_amount, had_div)\n\nhistogram(\n    title=\"Post-Earnings Returns (60d window)\",\n    category=\"Events\",\n    bins=30\n)(where(in_drift_window, rets))\n"
 }

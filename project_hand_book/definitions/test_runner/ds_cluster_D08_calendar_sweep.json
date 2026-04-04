@@ -1,11 +1,11 @@
 {
-   "name": "DS Cluster D08: Calendar Release ID Sweep",
-   "description": "Tests all documented FRED release IDs + Treasury + release_id=0 to find which have data.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER D08: Calendar Release ID Sweep\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === Every documented FRED release_id ===\ncal_0 = economic_calendar(source=CalendarSource.FRED, release_id=0)()\ncal_10 = economic_calendar(source=CalendarSource.FRED, release_id=10)()\ncal_21 = economic_calendar(source=CalendarSource.FRED, release_id=21)()\ncal_46 = economic_calendar(source=CalendarSource.FRED, release_id=46)()\ncal_50 = economic_calendar(source=CalendarSource.FRED, release_id=50)()\ncal_53 = economic_calendar(source=CalendarSource.FRED, release_id=53)()\n\n# === Treasury mode ===\ncal_note = economic_calendar(source=CalendarSource.Treasury, security_type=TreasurySecurityType.Note, term=TreasuryTerm.Y10)()\ncal_bond = economic_calendar(source=CalendarSource.Treasury, security_type=TreasurySecurityType.Bond)()\ncal_bill = economic_calendar(source=CalendarSource.Treasury, security_type=TreasurySecurityType.Bill)()\n\n# === Reporters (just need data to exist) ===\nhistogram(category=\"Calendar\", title=\"Close\", bins=20)(close)\n"
+  "name": "DS Cluster D08: Calendar Release ID Sweep",
+  "description": "Tests all documented FRED release IDs + Treasury + release_id=0 to find which have data.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D08: Calendar Release ID Sweep\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === Every documented FRED release_id ===\ncal_0 = economic_calendar(source=CalendarSource.FRED, release_id=0)()\ncal_10 = economic_calendar(source=CalendarSource.FRED, release_id=10)()\ncal_21 = economic_calendar(source=CalendarSource.FRED, release_id=21)()\ncal_46 = economic_calendar(source=CalendarSource.FRED, release_id=46)()\ncal_50 = economic_calendar(source=CalendarSource.FRED, release_id=50)()\ncal_53 = economic_calendar(source=CalendarSource.FRED, release_id=53)()\n\n# === Treasury mode ===\ncal_note = economic_calendar(source=CalendarSource.Treasury, security_type=TreasurySecurityType.Note, term=TreasuryTerm.Y10)()\ncal_bond = economic_calendar(source=CalendarSource.Treasury, security_type=TreasurySecurityType.Bond)()\ncal_bill = economic_calendar(source=CalendarSource.Treasury, security_type=TreasurySecurityType.Bill)()\n\n# === Reporters (just need data to exist) ===\nhistogram(category=\"Calendar\", title=\"Close\", bins=20)(close)\n"
 }

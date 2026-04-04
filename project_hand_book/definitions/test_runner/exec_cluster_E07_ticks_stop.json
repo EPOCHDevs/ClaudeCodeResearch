@@ -1,11 +1,11 @@
 {
-   "name": "Exec Cluster E07: Tick-Based Stop Loss",
-   "description": "Tests: stop_loss unit=ticks, take_profit unit=ticks, risk_unit stop_unit=ticks",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC CLUSTER E07: Tick-Based Stops\n# Tests: stop_loss(unit=StopUnit.ticks), take_profit(unit=StopUnit.ticks)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\nfast = ma(period=20, type=MAType.ema)(close)\nslow = ma(period=50, type=MAType.ema)(close)\nis_bull = fast > slow\nheld = hold_until(is_bull, not is_bull)\n\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=20)\nstop_loss(unit=StopUnit.ticks)(distance=10)\ntake_profit(unit=StopUnit.ticks)(distance=20)\n"
+  "name": "Exec Cluster E07: Tick-Based Stop Loss",
+  "description": "Tests: stop_loss unit=ticks, take_profit unit=ticks, risk_unit stop_unit=ticks",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER E07: Tick-Based Stops\n# Tests: stop_loss(unit=StopUnit.ticks), take_profit(unit=StopUnit.ticks)\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\nfast = ma(period=20, type=MAType.ema)(close)\nslow = ma(period=50, type=MAType.ema)(close)\nis_bull = fast > slow\nheld = hold_until(is_bull, not is_bull)\n\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=20)\nstop_loss(unit=StopUnit.ticks)(distance=10)\ntake_profit(unit=StopUnit.ticks)(distance=20)\n"
 }

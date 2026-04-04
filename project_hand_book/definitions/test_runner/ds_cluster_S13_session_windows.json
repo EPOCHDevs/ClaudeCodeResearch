@@ -1,12 +1,12 @@
 {
-   "name": "DS Cluster S13: Session Windows (RTH, custom, IB)",
-   "description": "Tests: session_window with EquityRTHSession and custom session. Outputs: .open .high .low .close .opened .closed.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "data_foundation": "Intraday",
-   "source": "# =============================================================================\n# DS CLUSTER S13: Session Windows\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === RTH SESSION ===\nrth = session_window(session=SessionType.EquityRTHSession)(src.o, src.h, src.l, src.c)\nrth_range = rth.high - rth.low\n\n# === INITIAL BALANCE (first 30 min) ===\nib = session_window(session=Session(start=\"09:30\", end=\"10:00\", tz=\"America/New_York\"))(src.o, src.h, src.l, src.c)\nib_high = ffill_day(where(ib.closed, ib.high))\nib_low = ffill_day(where(ib.closed, ib.low))\n\n# === REPORTERS ===\nxy_lines(\n    title=\"RTH Range\",\n    category=\"Sessions\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Range\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=rth_range)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.ClockIcon,\n        schemas=[\n            ColumnSpec(title=\"IB High\", dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"IB Closed\"\n    )\n)(ib_high, ib.closed)\n"
+  "name": "DS Cluster S13: Session Windows (RTH, custom, IB)",
+  "description": "Tests: session_window with EquityRTHSession and custom session. Outputs: .open .high .low .close .opened .closed.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "data_foundation": "Intraday",
+  "source": "# =============================================================================\n# DS CLUSTER S13: Session Windows\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === RTH SESSION ===\nrth = session_window(session=SessionType.EquityRTHSession)(src.o, src.h, src.l, src.c)\nrth_range = rth.high - rth.low\n\n# === INITIAL BALANCE (first 30 min) ===\nib = session_window(session=Session(start=\"09:30\", end=\"10:00\", tz=\"America/New_York\"))(src.o, src.h, src.l, src.c)\nib_high = ffill_day(where(ib.closed, ib.high))\nib_low = ffill_day(where(ib.closed, ib.low))\n\n# === REPORTERS ===\nxy_lines(\n    title=\"RTH Range\",\n    category=\"Sessions\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Range\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=rth_range)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.ClockIcon,\n        schemas=[\n            ColumnSpec(title=\"IB High\", dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"IB Closed\"\n    )\n)(ib_high, ib.closed)\n"
 }

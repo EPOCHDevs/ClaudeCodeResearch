@@ -1,11 +1,11 @@
 {
-   "name": "DS Cluster S10: Resampling (downsample + upsample)",
-   "description": "Tests: downsample from 1D to 1W/1M with how=last/sum/max. Correct option name is 'how' not 'agg'.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER S10: Resampling\n# =============================================================================\n# resample(series, target_timeframe=..., agg=[\"Last\"])\n# Option is 'how', NOT 'agg'. Enum is NumericDownsampleAgg, NOT AggregationType.\n\nsrc = market_data_source()()\nclose = src.c\nvolume = src.v\nrets = returns(close)\n\n# === DOWNSAMPLE: daily \u2192 weekly ===\nweekly_close = resample(close, target_timeframe=1W, agg=[\"Last\"])\nweekly_volume = resample(volume, target_timeframe=1W, agg=[\"Sum\"])\nweekly_high = resample(src.h, target_timeframe=1W, agg=[\"Max\"])\n\n# === DOWNSAMPLE: daily \u2192 monthly ===\nmonthly_close = resample(close, target_timeframe=1M, agg=[\"Last\"])\nmonthly_ret = resample(rets, target_timeframe=1M, agg=[\"Sum\"])\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Weekly vs Daily Close\",\n    category=\"Resampling\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Daily\", color=Color.White),\n        LineSeriesSpec(name=\"Weekly (Last)\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(close, weekly_close))\n\nxy_lines(\n    title=\"Monthly Returns (sum of daily)\",\n    category=\"Resampling\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Monthly Return\", color=Color.Green)\n    ])\n)(x_values=index(), y_values=monthly_ret)\n"
+  "name": "DS Cluster S10: Resampling (downsample + upsample)",
+  "description": "Tests: downsample from 1D to 1W/1M with how=last/sum/max. Correct option name is 'how' not 'agg'.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER S10: Resampling\n# =============================================================================\n# resample(series, target_timeframe=..., agg=[\"Last\"])\n# Option is 'how', NOT 'agg'. Enum is NumericDownsampleAgg, NOT AggregationType.\n\nsrc = study_assets()\nclose = src.c\nvolume = src.v\nrets = returns(close)\n\n# === DOWNSAMPLE: daily \u2192 weekly ===\nweekly_close = resample(close, target_timeframe=1W, agg=[\"Last\"])\nweekly_volume = resample(volume, target_timeframe=1W, agg=[\"Sum\"])\nweekly_high = resample(src.h, target_timeframe=1W, agg=[\"Max\"])\n\n# === DOWNSAMPLE: daily \u2192 monthly ===\nmonthly_close = resample(close, target_timeframe=1M, agg=[\"Last\"])\nmonthly_ret = resample(rets, target_timeframe=1M, agg=[\"Sum\"])\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Weekly vs Daily Close\",\n    category=\"Resampling\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Daily\", color=Color.White),\n        LineSeriesSpec(name=\"Weekly (Last)\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(close, weekly_close))\n\nxy_lines(\n    title=\"Monthly Returns (sum of daily)\",\n    category=\"Resampling\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Monthly Return\", color=Color.Green)\n    ])\n)(x_values=index(), y_values=monthly_ret)\n"
 }

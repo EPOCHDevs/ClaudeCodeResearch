@@ -1,12 +1,12 @@
 {
-   "name": "Exec Cluster E09: Stepped Trailing Stop",
-   "description": "Tests: trailing_stop with step option for discrete ratcheting",
-   "data": {
-      "assets": [
-         "AAPL-Stocks",
-         "MSFT-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC CLUSTER E09: Stepped Trailing Stop\n# Tests: trailing_stop(step=1.0) \u2014 discrete ratcheting vs continuous\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === VOLATILITY ===\natr_val = atr(src.h, src.l, src.c, 14)\n\n# === SIGNAL: Donchian breakout ===\ndonchian = donchian_channel(src.h, src.l, window=20)\nupper_prior = donchian.donchian_upper >> 1\nlower_prior = donchian.donchian_lower >> 1\n\nentry_long = close > upper_prior\nentry_short = close < lower_prior\nheld_long = hold_until(entry_long, entry_short)\nheld_short = hold_until(entry_short, entry_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Fixed percent sizing\nposition_size(type=SizeType.percent)(size=20)\n\n# Fixed stop as floor (required for trailing to activate)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 3)\n\n# E09: Stepped trailing stop \u2014 ratchets in $1.00 increments, tightens above SL\ntrailing_stop(step=1.0)(distance=atr_val * 2)\n"
+  "name": "Exec Cluster E09: Stepped Trailing Stop",
+  "description": "Tests: trailing_stop with step option for discrete ratcheting",
+  "data": {
+    "assets": [
+      "AAPL-Stocks",
+      "MSFT-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER E09: Stepped Trailing Stop\n# Tests: trailing_stop(step=1.0) \u2014 discrete ratcheting vs continuous\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === VOLATILITY ===\natr_val = atr(src.h, src.l, src.c, 14)\n\n# === SIGNAL: Donchian breakout ===\ndonchian = donchian_channel(src.h, src.l, window=20)\nupper_prior = donchian.donchian_upper >> 1\nlower_prior = donchian.donchian_lower >> 1\n\nentry_long = close > upper_prior\nentry_short = close < lower_prior\nheld_long = hold_until(entry_long, entry_short)\nheld_short = hold_until(entry_short, entry_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Fixed percent sizing\nposition_size(type=SizeType.percent)(size=20)\n\n# Fixed stop as floor (required for trailing to activate)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 3)\n\n# E09: Stepped trailing stop \u2014 ratchets in $1.00 increments, tightens above SL\ntrailing_stop(step=1.0)(distance=atr_val * 2)\n"
 }

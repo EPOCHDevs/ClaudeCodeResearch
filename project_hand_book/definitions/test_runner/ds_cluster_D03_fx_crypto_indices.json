@@ -1,11 +1,11 @@
 {
-   "name": "DS Cluster D03/D04: FX, Crypto, Indices (curated + free-text)",
-   "description": "Tests: common_fx_pairs, fx_pairs with ^ prefix, common_crypto_pairs, crypto_pairs with ^ prefix, indices with ^ prefix.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER D03/D04: FX, Crypto, Indices\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === CURATED FX ===\neur = common_fx_pairs(ticker=ReferenceFXPair.EURUSD)()\neur_close = eur.c\n\n# === FREE-TEXT FX (^ prefix) ===\ngbp = fx_pairs(ticker=\"GBPUSD\")()\ngbp_close = gbp.c\n\n# === CURATED CRYPTO ===\nbtc = common_crypto_pairs(ticker=ReferenceCryptoPair.BTCUSD)()\nbtc_close = btc.c\n\n# === FREE-TEXT CRYPTO (^ prefix) ===\neth = crypto_pairs(ticker=\"ETHUSD\")()\neth_close = eth.c\n\n# === FREE-TEXT INDEX (^ prefix) ===\nrut = indices(ticker=\"RUT\")()\nrut_close = rut.c\n\n# === REPORTERS ===\nxy_lines(\n    title=\"FX: EURUSD vs GBPUSD\",\n    category=\"FX\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"EURUSD\", color=Color.Blue),\n        LineSeriesSpec(name=\"GBPUSD\", color=Color.Orange)\n    ])\n)(x_values=index(), y_values=(eur_close, gbp_close))\n\nxy_lines(\n    title=\"Crypto: BTC vs ETH\",\n    category=\"Crypto\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"BTC\", color=Color.Orange),\n        LineSeriesSpec(name=\"ETH\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(btc_close, eth_close))\n\nhistogram(category=\"Indices\", title=\"Russell 2000\", bins=30)(rut_close)\n"
+  "name": "DS Cluster D03/D04: FX, Crypto, Indices (curated + free-text)",
+  "description": "Tests: common_fx_pairs, fx_pairs with ^ prefix, common_crypto_pairs, crypto_pairs with ^ prefix, indices with ^ prefix.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D03/D04: FX, Crypto, Indices\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === CURATED FX ===\neur = common_fx_pairs(ticker=ReferenceFXPair.EURUSD)()\neur_close = eur.c\n\n# === FREE-TEXT FX (^ prefix) ===\ngbp = fx_pairs(ticker=\"GBPUSD\")()\ngbp_close = gbp.c\n\n# === CURATED CRYPTO ===\nbtc = common_crypto_pairs(ticker=ReferenceCryptoPair.BTCUSD)()\nbtc_close = btc.c\n\n# === FREE-TEXT CRYPTO (^ prefix) ===\neth = crypto_pairs(ticker=\"ETHUSD\")()\neth_close = eth.c\n\n# === FREE-TEXT INDEX (^ prefix) ===\nrut = indices(ticker=\"RUT\")()\nrut_close = rut.c\n\n# === REPORTERS ===\nxy_lines(\n    title=\"FX: EURUSD vs GBPUSD\",\n    category=\"FX\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"EURUSD\", color=Color.Blue),\n        LineSeriesSpec(name=\"GBPUSD\", color=Color.Orange)\n    ])\n)(x_values=index(), y_values=(eur_close, gbp_close))\n\nxy_lines(\n    title=\"Crypto: BTC vs ETH\",\n    category=\"Crypto\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"BTC\", color=Color.Orange),\n        LineSeriesSpec(name=\"ETH\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(btc_close, eth_close))\n\nhistogram(category=\"Indices\", title=\"Russell 2000\", bins=30)(rut_close)\n"
 }

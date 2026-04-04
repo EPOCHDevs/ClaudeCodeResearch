@@ -1,11 +1,11 @@
 {
-   "name": "Compute Cluster S01: NaN Production",
-   "description": "Tests: where(cond, val) for NaN injection.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "src = market_data_source()()\nclose = src.c\nret = returns(close)\nbig_up = ret > 0.01\nbig_moves = where(big_up, ret)\nxy_lines(title='NaN Production', category='NaN', series=LineSeriesSchema(series=[LineSeriesSpec(name='Big Moves', color=Color.Blue)]))(x_values=index(), y_values=big_moves)\n"
+  "name": "Compute Cluster S01: NaN Production",
+  "description": "Tests: where(cond, val) for NaN injection.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "src = study_assets()\nclose = src.c\nret = returns(close)\nbig_up = ret > 0.01\nbig_moves = where(big_up, ret)\nxy_lines(title='NaN Production', category='NaN', series=LineSeriesSchema(series=[LineSeriesSpec(name='Big Moves', color=Color.Blue)]))(x_values=index(), y_values=big_moves)\n"
 }

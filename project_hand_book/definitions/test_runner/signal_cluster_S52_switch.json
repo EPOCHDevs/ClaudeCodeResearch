@@ -1,11 +1,11 @@
 {
-   "name": "Signal Cluster S52: Switch Routing",
-   "description": "Tests: switch(index, slot0, slot1, ...) \u2014 integer-indexed multi-value selection. Validates numeric and string switch variants.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# SIGNAL CLUSTER S52: Switch Transform\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nvolume = src.v\n\n# === Build an integer index: 0 when RSI < 30, 1 when RSI > 70, else 0 ===\nrsi_val = rsi(close, 14)\nrsi_high = rsi_val > 70\nrsi_low = rsi_val < 30\n\n# Use boolean_select to create 0/1 index\nidx = boolean_select_number()(rsi_high, 1, 0)\n\n# === SWITCH: select between two signals based on index ===\nsma_20 = ma(period=20, type=MAType.sma)(close)\nsma_50 = ma(period=50, type=MAType.sma)(close)\nselected_ma = switch(idx, sma_20, sma_50)\n\n# === REPORTERS ===\nxy_lines(\n    title='Switch: Selected MA (RSI-routed)',\n    category='Switch',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Selected MA', color=Color.Orange),\n        LineSeriesSpec(name='SMA 20', color=Color.Blue),\n        LineSeriesSpec(name='SMA 50', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(selected_ma, sma_20, sma_50))\n"
+  "name": "Signal Cluster S52: Switch Routing",
+  "description": "Tests: switch(index, slot0, slot1, ...) \u2014 integer-indexed multi-value selection. Validates numeric and string switch variants.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# SIGNAL CLUSTER S52: Switch Transform\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nvolume = src.v\n\n# === Build an integer index: 0 when RSI < 30, 1 when RSI > 70, else 0 ===\nrsi_val = rsi(close, 14)\nrsi_high = rsi_val > 70\nrsi_low = rsi_val < 30\n\n# Use boolean_select to create 0/1 index\nidx = boolean_select_number()(rsi_high, 1, 0)\n\n# === SWITCH: select between two signals based on index ===\nsma_20 = ma(period=20, type=MAType.sma)(close)\nsma_50 = ma(period=50, type=MAType.sma)(close)\nselected_ma = switch(idx, sma_20, sma_50)\n\n# === REPORTERS ===\nxy_lines(\n    title='Switch: Selected MA (RSI-routed)',\n    category='Switch',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Selected MA', color=Color.Orange),\n        LineSeriesSpec(name='SMA 20', color=Color.Blue),\n        LineSeriesSpec(name='SMA 50', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(selected_ma, sma_20, sma_50))\n"
 }

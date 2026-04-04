@@ -1,11 +1,11 @@
 {
-   "name": "Compute Cluster S60: Correlation, Covariance & Beta",
-   "description": "Tests: rolling_corr(window, method, window_type), ewm_corr(span), rolling_cov(window), ewm_cov(span), beta(window). Pairwise statistical measures on SPY vs QQQ.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# COMPUTE CLUSTER S60: Correlation, Covariance & Beta\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\nref = reference_stocks(ticker=\"QQQ\")()\nref_close = ref.c\n\nret = returns(close)\nref_ret = returns(ref_close)\n\n# === ROLLING CORRELATION ===\ncorr_60 = rolling_corr(window=60)(ret, ref_ret)\n\n# === EWM CORRELATION ===\ncorr_ewm = ewm_corr(span=30)(ret, ref_ret)\n\n# === ROLLING COVARIANCE ===\ncov_60 = rolling_cov(window=60)(ret, ref_ret)\n\n# === EWM COVARIANCE ===\ncov_ewm = ewm_cov(span=30)(ret, ref_ret)\n\n# === BETA ===\nb = beta(window=60)(ret, ref_ret)\n\n# === REPORTERS ===\nxy_lines(\n    title='Rolling Correlation SPY vs QQQ (60d)',\n    category='Correlation',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Pearson Corr', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=corr_60)\n\nxy_lines(\n    title='EWM Correlation (span=30)',\n    category='Correlation',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='EWM Corr', color=Color.Green)\n    ])\n)(x_values=index(), y_values=corr_ewm)\n\nxy_lines(\n    title='Rolling Beta (60d)',\n    category='Beta',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Beta', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=b)\n\nxy_lines(\n    title='Rolling Covariance (60d)',\n    category='Covariance',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Covariance', color=Color.Red)\n    ])\n)(x_values=index(), y_values=cov_60)\n"
+  "name": "Compute Cluster S60: Correlation, Covariance & Beta",
+  "description": "Tests: rolling_corr(window, method, window_type), ewm_corr(span), rolling_cov(window), ewm_cov(span), beta(window). Pairwise statistical measures on SPY vs QQQ.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S60: Correlation, Covariance & Beta\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\nref = reference_stocks(ticker=\"QQQ\")()\nref_close = ref.c\n\nret = returns(close)\nref_ret = returns(ref_close)\n\n# === ROLLING CORRELATION ===\ncorr_60 = rolling_corr(window=60)(ret, ref_ret)\n\n# === EWM CORRELATION ===\ncorr_ewm = ewm_corr(span=30)(ret, ref_ret)\n\n# === ROLLING COVARIANCE ===\ncov_60 = rolling_cov(window=60)(ret, ref_ret)\n\n# === EWM COVARIANCE ===\ncov_ewm = ewm_cov(span=30)(ret, ref_ret)\n\n# === BETA ===\nb = beta(window=60)(ret, ref_ret)\n\n# === REPORTERS ===\nxy_lines(\n    title='Rolling Correlation SPY vs QQQ (60d)',\n    category='Correlation',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Pearson Corr', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=corr_60)\n\nxy_lines(\n    title='EWM Correlation (span=30)',\n    category='Correlation',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='EWM Corr', color=Color.Green)\n    ])\n)(x_values=index(), y_values=corr_ewm)\n\nxy_lines(\n    title='Rolling Beta (60d)',\n    category='Beta',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Beta', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=b)\n\nxy_lines(\n    title='Rolling Covariance (60d)',\n    category='Covariance',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Covariance', color=Color.Red)\n    ])\n)(x_values=index(), y_values=cov_60)\n"
 }

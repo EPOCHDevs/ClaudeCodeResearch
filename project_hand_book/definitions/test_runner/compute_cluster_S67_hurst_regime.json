@@ -1,11 +1,11 @@
 {
-   "name": "Compute Cluster S67: Hurst Exponent Regime Detection",
-   "description": "Tests: rolling_hurst_exponent(window), hurst_exponent(min_period). H<0.5=mean-reverting, H=0.5=random, H>0.5=trending. Strategy selection by regime.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# COMPUTE CLUSTER S67: Hurst Exponent\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === ROLLING HURST (time-varying regime detection) ===\nh_roll = rolling_hurst_exponent(window=100)(close)\n\n# === EXPANDING HURST (stable long-term estimate) ===\nh_exp = hurst_exponent(min_period=50)(close)\n\n# === REGIME CLASSIFICATION ===\nmean_revert = h_roll < 0.45\ntrending = h_roll > 0.55\n\n# === REPORTERS ===\nxy_lines(\n    title='Rolling Hurst Exponent (100d)',\n    category='Regime',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Rolling H', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=h_roll)\n\nxy_lines(\n    title='Expanding Hurst Exponent',\n    category='Regime',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Expanding H', color=Color.Green)\n    ])\n)(x_values=index(), y_values=h_exp)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.ArrowDownIcon,\n        schemas=[\n            ColumnSpec(title='Hurst', dp=3, type=CardRenderType.DecimalFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title='Mean-Reverting Regime (H < 0.45)'\n    )\n)(h_roll, mean_revert)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.TrendingUpIcon,\n        schemas=[\n            ColumnSpec(title='Hurst', dp=3, type=CardRenderType.DecimalFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title='Trending Regime (H > 0.55)'\n    )\n)(h_roll, trending)\n"
+  "name": "Compute Cluster S67: Hurst Exponent Regime Detection",
+  "description": "Tests: rolling_hurst_exponent(window), hurst_exponent(min_period). H<0.5=mean-reverting, H=0.5=random, H>0.5=trending. Strategy selection by regime.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S67: Hurst Exponent\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === ROLLING HURST (time-varying regime detection) ===\nh_roll = rolling_hurst_exponent(window=100)(close)\n\n# === EXPANDING HURST (stable long-term estimate) ===\nh_exp = hurst_exponent(min_period=50)(close)\n\n# === REGIME CLASSIFICATION ===\nmean_revert = h_roll < 0.45\ntrending = h_roll > 0.55\n\n# === REPORTERS ===\nxy_lines(\n    title='Rolling Hurst Exponent (100d)',\n    category='Regime',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Rolling H', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=h_roll)\n\nxy_lines(\n    title='Expanding Hurst Exponent',\n    category='Regime',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Expanding H', color=Color.Green)\n    ])\n)(x_values=index(), y_values=h_exp)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.ArrowDownIcon,\n        schemas=[\n            ColumnSpec(title='Hurst', dp=3, type=CardRenderType.DecimalFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title='Mean-Reverting Regime (H < 0.45)'\n    )\n)(h_roll, mean_revert)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.TrendingUpIcon,\n        schemas=[\n            ColumnSpec(title='Hurst', dp=3, type=CardRenderType.DecimalFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title='Trending Regime (H > 0.55)'\n    )\n)(h_roll, trending)\n"
 }

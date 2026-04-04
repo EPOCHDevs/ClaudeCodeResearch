@@ -1,13 +1,13 @@
 {
-   "name": "Exec Cluster E04: Risk Unit + Trailing Stop with Activation",
-   "description": "Tests: risk_unit with ATR-based stop distance, trailing_stop with activation",
-   "data": {
-      "assets": [
-         "SPY-Stocks",
-         "QQQ-Stocks",
-         "GLD-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC TEST: Risk-Based Sizing + Trailing Stop\n# Tests: E04 (risk_unit), E09 (trailing_stop)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === VOLATILITY MEASURE ===\natr_val = atr(src.h, src.l, src.c, 14)\n\n# === SIGNAL: Donchian breakout ===\ndonchian = donchian_channel(src.h, src.l, window=20)\nupper_prior = donchian.donchian_upper >> 1\nlower_prior = donchian.donchian_lower >> 1\n\nentry_long = close > upper_prior\nentry_short = close < lower_prior\n\nheld_long = hold_until(entry_long, entry_short)\nheld_short = hold_until(entry_short, entry_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# E04: Risk-based sizing (2% risk, 2x ATR stop)\nstop_dist = atr_val * 2\nrisk_unit(stop_unit=StopUnit.price)(risk_pct=2, stop_distance=stop_dist)\n\n# E09: Trailing stop with activation (starts trailing after 1.5x ATR profit)\ntrailing_stop()(distance=atr_val * 3, activation=atr_val * 1.5)\n"
+  "name": "Exec Cluster E04: Risk Unit + Trailing Stop with Activation",
+  "description": "Tests: risk_unit with ATR-based stop distance, trailing_stop with activation",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "GLD-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC TEST: Risk-Based Sizing + Trailing Stop\n# Tests: E04 (risk_unit), E09 (trailing_stop)\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === VOLATILITY MEASURE ===\natr_val = atr(src.h, src.l, src.c, 14)\n\n# === SIGNAL: Donchian breakout ===\ndonchian = donchian_channel(src.h, src.l, window=20)\nupper_prior = donchian.donchian_upper >> 1\nlower_prior = donchian.donchian_lower >> 1\n\nentry_long = close > upper_prior\nentry_short = close < lower_prior\n\nheld_long = hold_until(entry_long, entry_short)\nheld_short = hold_until(entry_short, entry_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# E04: Risk-based sizing (2% risk, 2x ATR stop)\nstop_dist = atr_val * 2\nrisk_unit(stop_unit=StopUnit.price)(risk_pct=2, stop_distance=stop_dist)\n\n# E09: Trailing stop with activation (starts trailing after 1.5x ATR profit)\ntrailing_stop()(distance=atr_val * 3, activation=atr_val * 1.5)\n"
 }

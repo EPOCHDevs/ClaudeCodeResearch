@@ -1,11 +1,11 @@
 {
-   "name": "DS Cluster S10b: Downsample All Aggregation Methods",
-   "description": "Tests: all NumericDownsampleAgg variants \u2014 last, first, mean, sum, min, max, median, std.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# DS CLUSTER S10b: All Downsample Aggregation Methods\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nrets = returns(close)\n\n# === ALL how= VARIANTS ===\nw_last = resample(close, target_timeframe=1W, agg=[\"Last\"])\nw_first = resample(close, target_timeframe=1W, agg=[\"First\"])\nw_mean = resample(close, target_timeframe=1W, agg=[\"Mean\"])\nw_sum = resample(rets, target_timeframe=1W, agg=[\"Sum\"])\nw_min = resample(close, target_timeframe=1W, agg=[\"Min\"])\nw_max = resample(close, target_timeframe=1W, agg=[\"Max\"])\n# NOTE: NumericDownsampleAgg.median NOT IMPLEMENTED (BUG-11: hash_median missing)\n# w_median = resample(close, target_timeframe=1W, agg=[\"Median\"])\nw_std = resample(rets, target_timeframe=1W, agg=[\"Std\"])\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Weekly: Last vs First vs Mean\",\n    category=\"Downsample\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Last\", color=Color.Blue),\n        LineSeriesSpec(name=\"First\", color=Color.Orange),\n        LineSeriesSpec(name=\"Mean\", color=Color.Green)\n    ])\n)(x_values=index(), y_values=(w_last, w_first, w_mean))\n\nxy_lines(\n    title=\"Weekly: Min vs Max vs Median\",\n    category=\"Downsample\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Min\", color=Color.Red),\n        LineSeriesSpec(name=\"Max\", color=Color.Green),\n        LineSeriesSpec(name=\"Sum\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(w_min, w_max, w_sum))\n\nhistogram(category=\"Downsample\", title=\"Weekly Return Std\", bins=20)(w_std)\n"
+  "name": "DS Cluster S10b: Downsample All Aggregation Methods",
+  "description": "Tests: all NumericDownsampleAgg variants \u2014 last, first, mean, sum, min, max, median, std.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER S10b: All Downsample Aggregation Methods\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nrets = returns(close)\n\n# === ALL how= VARIANTS ===\nw_last = resample(close, target_timeframe=1W, agg=[\"Last\"])\nw_first = resample(close, target_timeframe=1W, agg=[\"First\"])\nw_mean = resample(close, target_timeframe=1W, agg=[\"Mean\"])\nw_sum = resample(rets, target_timeframe=1W, agg=[\"Sum\"])\nw_min = resample(close, target_timeframe=1W, agg=[\"Min\"])\nw_max = resample(close, target_timeframe=1W, agg=[\"Max\"])\n# NOTE: NumericDownsampleAgg.median NOT IMPLEMENTED (BUG-11: hash_median missing)\n# w_median = resample(close, target_timeframe=1W, agg=[\"Median\"])\nw_std = resample(rets, target_timeframe=1W, agg=[\"Std\"])\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Weekly: Last vs First vs Mean\",\n    category=\"Downsample\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Last\", color=Color.Blue),\n        LineSeriesSpec(name=\"First\", color=Color.Orange),\n        LineSeriesSpec(name=\"Mean\", color=Color.Green)\n    ])\n)(x_values=index(), y_values=(w_last, w_first, w_mean))\n\nxy_lines(\n    title=\"Weekly: Min vs Max vs Median\",\n    category=\"Downsample\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Min\", color=Color.Red),\n        LineSeriesSpec(name=\"Max\", color=Color.Green),\n        LineSeriesSpec(name=\"Sum\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(w_min, w_max, w_sum))\n\nhistogram(category=\"Downsample\", title=\"Weekly Return Std\", bins=20)(w_std)\n"
 }

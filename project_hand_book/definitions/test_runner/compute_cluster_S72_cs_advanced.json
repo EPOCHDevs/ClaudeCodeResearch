@@ -1,13 +1,13 @@
 {
-   "name": "Compute Cluster S72: Advanced Cross-Sectional Transforms",
-   "description": "Tests: cs_momentum(period), cs_quantile(q), cs_winsorize(lower, upper), cs_weighted_mean. Multi-asset universe scoring and percentile analysis.",
-   "data": {
-      "assets": [
-         "SPY-Stocks",
-         "QQQ-Stocks",
-         "DIA-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# COMPUTE CLUSTER S72: Advanced Cross-Sectional\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nvolume = src.v\n\n# === CS MOMENTUM: cumulative cross-sectional mean return ===\nret = returns(close)\nmom = cs_momentum()(ret)\n\n# === CS QUANTILE: median return across universe ===\nret_21 = returns(period=21)(close)\nmed_ret = cs_quantile(q=0.5)(ret_21)\n\n# === CS WINSORIZE: cap cross-sectional outliers ===\nclean_ret = cs_winsorize(lower_limit=0.05, upper_limit=0.95)(ret_21)\n\n# === CS RANK for selection ===\nranked = cs_rank_quantile()(mom)\ntop_tercile = ranked > 0.67\nbottom_tercile = ranked < 0.33\n\n# === REPORTERS ===\ncs_lines(\n    title='Cross-Sectional Momentum Score (63d)',\n    category='CS Momentum'\n)(x_values=index(), y_values=mom)\n\ncs_lines(\n    title='21d Returns: Raw vs CS-Winsorized',\n    category='CS Outliers'\n)(x_values=index(), y_values=clean_ret)\n\ncs_lines(\n    title='CS Rank Quantile (Momentum)',\n    category='CS Ranking'\n)(x_values=index(), y_values=ranked)\n"
+  "name": "Compute Cluster S72: Advanced Cross-Sectional Transforms",
+  "description": "Tests: cs_momentum(period), cs_quantile(q), cs_winsorize(lower, upper), cs_weighted_mean. Multi-asset universe scoring and percentile analysis.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "DIA-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S72: Advanced Cross-Sectional\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nvolume = src.v\n\n# === CS MOMENTUM: cumulative cross-sectional mean return ===\nret = returns(close)\nmom = cs_momentum()(ret)\n\n# === CS QUANTILE: median return across universe ===\nret_21 = returns(period=21)(close)\nmed_ret = cs_quantile(q=0.5)(ret_21)\n\n# === CS WINSORIZE: cap cross-sectional outliers ===\nclean_ret = cs_winsorize(lower_limit=0.05, upper_limit=0.95)(ret_21)\n\n# === CS RANK for selection ===\nranked = cs_rank_quantile()(mom)\ntop_tercile = ranked > 0.67\nbottom_tercile = ranked < 0.33\n\n# === REPORTERS ===\ncs_lines(\n    title='Cross-Sectional Momentum Score (63d)',\n    category='CS Momentum'\n)(x_values=index(), y_values=mom)\n\ncs_lines(\n    title='21d Returns: Raw vs CS-Winsorized',\n    category='CS Outliers'\n)(x_values=index(), y_values=clean_ret)\n\ncs_lines(\n    title='CS Rank Quantile (Momentum)',\n    category='CS Ranking'\n)(x_values=index(), y_values=ranked)\n"
 }

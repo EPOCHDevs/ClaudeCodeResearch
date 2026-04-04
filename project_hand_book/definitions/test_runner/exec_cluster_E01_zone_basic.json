@@ -1,13 +1,13 @@
 {
-   "name": "Exec Cluster E01: Zone Executor \u2014 SMA Crossover with Exits",
-   "description": "Tests: long_and_short_zone, hold_until, position_size percent, stop_loss, take_profit",
-   "data": {
-      "assets": [
-         "SPY-Stocks",
-         "QQQ-Stocks",
-         "GLD-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC TEST: Basic SMA Crossover Strategy\n# Tests: E01 (long_and_short_zone), E02 (hold_until), E03 (position_size),\n#        E07 (stop_loss), E08 (take_profit), E16 (wiring order)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL LOGIC ===\nfast_sma = ma(period=20, type=MAType.sma)(close)\nslow_sma = ma(period=50, type=MAType.sma)(close)\n\n# Crossover detection (faster MAs for reliable signal generation)\ngolden_cross = crossover(fast_sma, slow_sma)\ndeath_cross = crossunder(fast_sma, slow_sma)\n\n# E02: hold_until persists pulse signal\nheld_long = hold_until(golden_cross, death_cross)\nheld_short = hold_until(death_cross, golden_cross)\n\n# === EXECUTION (E16 wiring order) ===\n# Step 1: Signal executor (E01)\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Step 2: Position sizing (E03)\nposition_size(type=SizeType.percent)(size=50)\n\n# Step 3: Exits (E07, E08)\nstop_loss(unit=StopUnit.percent)(distance=5)\ntake_profit(unit=StopUnit.percent)(distance=15)\n"
+  "name": "Exec Cluster E01: Zone Executor \u2014 SMA Crossover with Exits",
+  "description": "Tests: long_and_short_zone, hold_until, position_size percent, stop_loss, take_profit",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "GLD-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC TEST: Basic SMA Crossover Strategy\n# Tests: E01 (long_and_short_zone), E02 (hold_until), E03 (position_size),\n#        E07 (stop_loss), E08 (take_profit), E16 (wiring order)\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SIGNAL LOGIC ===\nfast_sma = ma(period=20, type=MAType.sma)(close)\nslow_sma = ma(period=50, type=MAType.sma)(close)\n\n# Crossover detection (faster MAs for reliable signal generation)\ngolden_cross = crossover(fast_sma, slow_sma)\ndeath_cross = crossunder(fast_sma, slow_sma)\n\n# E02: hold_until persists pulse signal\nheld_long = hold_until(golden_cross, death_cross)\nheld_short = hold_until(death_cross, golden_cross)\n\n# === EXECUTION (E16 wiring order) ===\n# Step 1: Signal executor (E01)\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Step 2: Position sizing (E03)\nposition_size(type=SizeType.percent)(size=50)\n\n# Step 3: Exits (E07, E08)\nstop_loss(unit=StopUnit.percent)(distance=5)\ntake_profit(unit=StopUnit.percent)(distance=15)\n"
 }

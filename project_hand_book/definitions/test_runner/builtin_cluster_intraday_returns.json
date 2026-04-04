@@ -1,12 +1,12 @@
 {
-   "name": "Builtin Cluster: Intraday Returns Variants",
-   "description": "Tests: intraday_returns(return_type=simple/log/cumulative/directional/monetary). All 5 intraday return type variants on 5-minute bars.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# BUILTIN CLUSTER: Intraday Returns Variants\n# =============================================================================\n\nsrc = market_data_source()()\nopen_p = src.o\nclose = src.c\n\n# === INTRADAY RETURNS: all 5 return types (needs o + c inputs) ===\nir_simple = intraday_returns(return_type=ReturnsType.simple)(open_p, close)\nir_log = intraday_returns(return_type=ReturnsType.log)(open_p, close)\nir_cum = intraday_returns(return_type=ReturnsType.cumulative)(open_p, close)\nir_dir = intraday_returns(return_type=ReturnsType.directional)(open_p, close)\nir_mon = intraday_returns(return_type=ReturnsType.monetary)(open_p, close)\n\n# === REPORTERS ===\nxy_lines(\n    title='Intraday Returns: Simple vs Log',\n    category='Intraday',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Simple', color=Color.Blue),\n        LineSeriesSpec(name='Log', color=Color.Green)\n    ])\n)(x_values=index(), y_values=(ir_simple, ir_log))\n\nxy_lines(\n    title='Intraday Returns: Cumulative',\n    category='Intraday',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Cumulative', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=ir_cum)\n\nxy_lines(\n    title='Intraday Returns: Directional vs Monetary',\n    category='Intraday',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Directional', color=Color.Blue),\n        LineSeriesSpec(name='Monetary', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(ir_dir, ir_mon))\n",
-   "data_foundation": "Intraday"
+  "name": "Builtin Cluster: Intraday Returns Variants",
+  "description": "Tests: intraday_returns(return_type=simple/log/cumulative/directional/monetary). All 5 intraday return type variants on 5-minute bars.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# BUILTIN CLUSTER: Intraday Returns Variants\n# =============================================================================\n\nsrc = study_assets()\nopen_p = src.o\nclose = src.c\n\n# === INTRADAY RETURNS: all 5 return types (needs o + c inputs) ===\nir_simple = intraday_returns(return_type=ReturnsType.simple)(open_p, close)\nir_log = intraday_returns(return_type=ReturnsType.log)(open_p, close)\nir_cum = intraday_returns(return_type=ReturnsType.cumulative)(open_p, close)\nir_dir = intraday_returns(return_type=ReturnsType.directional)(open_p, close)\nir_mon = intraday_returns(return_type=ReturnsType.monetary)(open_p, close)\n\n# === REPORTERS ===\nxy_lines(\n    title='Intraday Returns: Simple vs Log',\n    category='Intraday',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Simple', color=Color.Blue),\n        LineSeriesSpec(name='Log', color=Color.Green)\n    ])\n)(x_values=index(), y_values=(ir_simple, ir_log))\n\nxy_lines(\n    title='Intraday Returns: Cumulative',\n    category='Intraday',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Cumulative', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=ir_cum)\n\nxy_lines(\n    title='Intraday Returns: Directional vs Monetary',\n    category='Intraday',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Directional', color=Color.Blue),\n        LineSeriesSpec(name='Monetary', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(ir_dir, ir_mon))\n",
+  "data_foundation": "Intraday"
 }
