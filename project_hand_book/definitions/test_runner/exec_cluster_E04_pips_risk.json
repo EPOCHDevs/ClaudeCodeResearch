@@ -2,9 +2,10 @@
    "name": "Exec Cluster E04: Pip-Based Risk Unit (FX Scale)",
    "description": "Tests: risk_unit stop_unit=pips with FX-scale stop distance",
    "data": {
-      "assets": ["SPY-Stocks"],
+      "assets": [
+         "SPY-Stocks"
+      ],
       "source": "polygon"
    },
-   "source": "# =============================================================================\n# EXEC CLUSTER E04: Pip-Based Risk Unit\n# Tests: risk_unit(stop_unit=StopUnit.pips) with large pip distance\n# On equities: 1 pip = 0.0001, so 500000 pips ≈ $50 stop distance\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\nfast = ma(period=20, type=MAType.ema)(close)\nslow = ma(period=50, type=MAType.ema)(close)\nis_bull = fast > slow\nheld = hold_until()(enter=is_bull, exit=not is_bull)\n\nlong_and_short_zone()(long_entry=held)\nrisk_unit(stop_unit=StopUnit.pips, lot_size=1)(risk_pct=1, stop_distance=500000)\n",
-   "global_timeframe": "1D"
+   "source": "# =============================================================================\n# EXEC CLUSTER E04: Pip-Based Risk Unit\n# Tests: risk_unit(stop_unit=StopUnit.pips) with large pip distance\n# On equities: 1 pip = 0.0001, so 500000 pips \u2248 $50 stop distance\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\nfast = ma(period=20, type=MAType.ema)(close)\nslow = ma(period=50, type=MAType.ema)(close)\nis_bull = fast > slow\nheld = hold_until(is_bull, not is_bull)\n\nlong_and_short_zone()(long_entry=held)\nrisk_unit(stop_unit=StopUnit.pips, lot_size=1)(risk_pct=1, stop_distance=500000)\n"
 }

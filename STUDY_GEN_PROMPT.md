@@ -117,7 +117,7 @@ builtin_func    = "abs" | "acos" | "asin" | "atan" | "ceil" | "cos" | "cosh" | "
 # ENUM TYPES (for EnumType.value syntax)
 # ===========================================================================
 
-enum_type       = "AggregationType" | "AxisValueFormat" | "BoostingType" | "CardRenderType" | "CardSlot" | "Color" | 
+enum_type       = "AggregationType" | "BoostingType" | "CardRenderType" | "CardSlot" | "Color" | 
                   "CorrelationMethod" | "DashStyle" | "DistributionType" | "DuplicateHandling" | "FillDirection" | "FirstSalesCommodity_group" | 
                   "FirstSalesCountry" | "FirstSalesMain_commercial_species" | "FuturesCategory" | "Icon" | "InterpolationMethod" | "KalmanModelType" | 
                   "LandingsCollection" | "LandingsSpecies" | "LandingsState_name" | "LinkageMethod" | "MAType" | "MarkerSymbol" | 
@@ -132,7 +132,6 @@ enum_type       = "AggregationType" | "AxisValueFormat" | "BoostingType" | "Card
 # ---------------------------------------------------------------------------
 
 # AggregationType: All, Any, Count, First, Kurtosis, Last, Max, Mean, Median, Min, Product, Skew, Std, Sum, Var
-# AxisValueFormat: AutoFormat, DecimalFormat, IntegerFormat, MonetaryFormat, PercentFormat
 # BoostingType: dart, gbdt, rf
 # CardRenderType: BadgeFormat, BooleanFormat, DecimalFormat, DurationFormat, HTMLFormat, IntegerFormat, MonetaryFormat, PercentFormat, TextFormat, TimestampFormat, URLFormat
 # CardSlot: Details, Footer, Hero, PrimaryBadge, SecondaryBadge, Subtitle

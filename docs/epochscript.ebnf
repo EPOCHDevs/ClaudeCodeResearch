@@ -1,115 +1,364 @@
-# EpochScript Grammar (EBNF)
-# Auto-generated - DO NOT EDIT MANUALLY.
-
-# ===========================================================================
-# SYNTAX OVERVIEW
-# ===========================================================================
-# - Python-like syntax (True/False, #comments, indentation ignored)
-# - Two-stage calls: component(options)(inputs)
-# - Pipeline operator: input | transform1 | transform2
-# - Lag/Lead: series >> n (past), series << n (future)
-# - Enum access: EnumType.value (e.g., Color.Blue, MAType.ema) — search enum library
-# - Schema types: TypeName(key=value, ...) — search schema library
-
-# ===========================================================================
-# GRAMMAR RULES
-# ===========================================================================
-
-module          = statement* ;
-statement       = assignment | expression ;
-assignment      = target "=" expression ;
-target          = identifier | tuple_pattern ;
-tuple_pattern   = identifier ("," identifier)+ ","? ;
-
-# ---------------------------------------------------------------------------
-# Expressions (by precedence, lowest to highest)
-# ---------------------------------------------------------------------------
-
-expression      = pipeline | ternary | boolean | comparison | arithmetic | unary | power | postfix | primary ;
-
-# Pipeline: chains data through transforms
-pipeline        = expression "|" expression ;
-
-# Ternary: value if condition else other
-ternary         = expression "if" expression "else" expression ;
-
-# Boolean operators
-boolean         = expression ("and" | "or") expression | "not" expression ;
-
-# Comparison
-comparison      = expression ("<" | ">" | "<=" | ">=" | "==" | "!=") expression ;
-
-# Lag/Lead (shift time-series)
-lag             = expression ">>" expression ;    # Get past values
-lead            = expression "<<" expression ;    # Get future values (caution: look-ahead bias)
-
-# Arithmetic
-arithmetic      = expression ("+" | "-" | "*" | "/" | "%") expression ;
-unary           = ("-" | "+") expression ;
-power           = expression "**" expression ;    # Right-associative
-
-# Postfix
-postfix         = call | attribute | subscript ;
-call            = expression "(" arguments? ")" ;
-attribute       = expression "." identifier ;
-subscript       = expression "[" expression "]" ;
-
-arguments       = argument ("," argument)* ","? ;
-argument        = expression | identifier "=" expression ;
-
-# Primary
-primary         = "(" expression ")" | list | tuple | dict | literal | identifier ;
-list            = "[" (expression ("," expression)* ","?)? "]" ;
-tuple           = "(" ")" | "(" expression "," ")" | "(" expression ("," expression)+ ","? ")" ;
-dict            = "{" (dict_pair ("," dict_pair)* ","?)? "}" ;
-dict_pair       = (identifier | string) ":" expression ;
-
-# ---------------------------------------------------------------------------
-# Literals
-# ---------------------------------------------------------------------------
-
-literal         = number | string | boolean_lit ;
-boolean_lit     = "True" | "False" ;
-number          = integer | float ;
-integer         = "0" | [1-9][0-9]* ;
-float           = [0-9]+ "." [0-9]* ([eE][+-]?[0-9]+)? ;
-string          = "'" [^']* "'" | '"' [^"]* '"' | "'''" .* "'''" | '"""' .* '"""' ;
-
-identifier      = [a-zA-Z_][a-zA-Z0-9_]* ;
-comment         = "#" [^\n]* ;
-
-# ===========================================================================
-# BUILT-IN FUNCTIONS (Single-stage calls)
-# ===========================================================================
-# Usage: func(args) - NOT func()(args)
-
-builtin_func    = "abs" | "acos" | "asin" | "atan" | "ceil" | "cos" | "cosh" | "exp" | 
-                  "floor" | "ln" | "log10" | "round" | "sin" | "sinh" | "sqrt" | "tan" | 
-                  "tanh" | "todeg" | "torad" | "trunc" | "ffill" | "ffill_day" | "str" | "crossover" | 
-                  "crossunder" | "crossany" | "coalesce" | "conditional_select" | "where" | "is_valid" | "is_null" | "logical_xor" | 
-                  "logical_and_not" ;
-
-# ===========================================================================
-# QUICK REFERENCE
-# ===========================================================================
+# EpochScript Grammar — Auto-generated. DO NOT EDIT.
 #
-# Two-Stage Pattern:
-#   result = component(period=20, type=MAType.ema)(input_series)
-#            ^-------options-------^  ^--input--^
+# Python-like but RESTRICTED. No def, class, lambda, for, while, if-blocks, import, try/except.
+# Expressions only: assignments, operators, function calls.
 #
-# Pipeline (equivalent to nesting):
-#   price | sma(20) | ema(10)  ==  ema(10)(sma(20)(price))
+# result = 1 if condition else 0          # ternary expression (NOT if-block)
+# signal = src.c > ema(src.c, 20)        # boolean expression
+# a, b, c = macd(src.c)                  # tuple unpacking
+# smoothed = src.c | sma(20) | ema(10)   # pipeline = ema(10)(sma(20)(src.c))
+# prev_val = series >> 1                 # lag (past), << for lead (future, look-ahead bias!)
+# val = EnumType.Value                   # enum access: Color.Blue, AggregationType.Mean
+
+# ===========================================================================
+# TWO CALL SHAPES — this is the key distinction
+# ===========================================================================
+#   fn(inputs, options)       — builtin or macro (Layer 1/2). Signatures below.
+#   fn(options)(inputs)       — registered transform (Layer 3). Searchable by name/tag.
 #
-# Data Access:
-#   src = market_data_source(timeframe=1D)()
-#   close = src.c    # .o .h .l .c .v for OHLCV
+#   src = study_assets()
+#   r = rsi(src.c, 14)                               # builtin (Layer 1)
+#   upper, mid, lower = bbands(src.c, period=20)      # macro (Layer 2)
+#   kf = kalman_filter(obs_noise=0.1)(src.c)          # registered (Layer 3)
+
+# ===========================================================================
+# LAYER 1: BUILTINS — fn(inputs, options) → Type
+# ===========================================================================
+# Signatures below are the full contract. No further lookup needed.
 #
-# Lag/Lead:
-#   prev_close = close >> 1    # 1 bar ago
-#   next_close = close << 1    # 1 bar ahead (look-ahead bias!)
+# ── Data Access ──────────────────────────────────────────────────
+#   src = study_assets()              # Decimal: .o .h .l .c .v
+#   spy, eur, cl = reference_assets(
+#       stock("SPY"), fx("EURUSD"), futures("CL"))
+#   # types: stock  fx  crypto  futures  commodity
+#   # Decimal: .o .h .l .c .v .vw  Int: .n  (futures: .oi  String: .s)
+#   # multi-TF: d, h = study_assets(target_timeframe=["1D","1H"])()
+#   # extended: study_assets(trading_hours=TradingHoursType.Extended)()
+#   #   @TradingHoursType: RTH  Extended  PreMarket  PostMarket
 #
-# Conditional:
-#   signal = 1 if condition else 0
+#   earn = earnings()
+#     Decimal: .eps_surprise .eps_surprise_percent .actual_eps
+#     .estimated_eps .actual_revenue .estimated_revenue
+#     .date_status: Literal["confirmed","projected"]
+#     String: .fiscal_period  Int: .fiscal_year
+#   rat = analyst_ratings()
+#     Decimal: .price_target .price_percent_change
+#     String: .firm .rating
+#     .rating_action: Literal["upgrades","downgrades","maintains",
+#       "initiates_coverage_on","reiterates","suspends","removes"]
+#   ipo = ipos()
+#     Decimal: .final_issue_price .total_offer_size
+#     .ipo_status: Literal["history","pending","withdrawn",
+#       "new","rumor","postponed"]
+#     String: .primary_exchange
+#   sp = splits()
+#     Decimal: .split_ratio .split_from .split_to
+#     .adjustment_type: Literal["forward_split","reverse_split",
+#       "stock_dividend"]
+#   te = ticker_events()       # String: .event_type .ticker
+#   si = short_interest()
+#     Int: .short_interest .avg_daily_volume .days_to_cover
+#   sv = short_volume()
+#     Int: .short_volume .total_volume .short_volume_ratio
+#   bs = balance_sheet(period=BalanceSheetTimeframe.quarterly)
+#     Decimal: .total_assets .total_liabilities .total_equity
+#     .current_assets .current_liabilities .cash .lt_debt
+#     Timestamp: .filing_date .period_end
+#     @BalanceSheetTimeframe: quarterly  annual
+#   cf = cash_flow(period=BalanceSheetTimeframe.quarterly)
+#     Decimal: .net_income .cfo .ncf_investing .ncf_financing .capex
+#     Timestamp: .filing_date
+#   inc = income_statement(period=BalanceSheetTimeframe.quarterly)
+#     Decimal: .revenue .net_income .operating_income .ebitda
+#     .basic_eps .diluted_eps  Timestamp: .filing_date
+#   div = dividends(dividend_type=DividendType.CD)
+#     Decimal: .cash_amount  Timestamp: .pay_date .record_date
+#     Int: .frequency
+#     .distribution_type: Literal["recurring","special",
+#       "supplemental","irregular"]
+#     @DividendType: CD(cash)  SC(special)  LT(long-term)  ST(short-term)
+#   econ = economic_indicators(series_id="CPIAUCSL")
+#     Decimal: .result
+#   rev = economic_revisions(series_id="PAYEMS")
+#     Decimal: .initial_value .latest_value .revision_delta
+#     Int: .revision_count
+#   cal = economic_calendar(source=CalendarSource.FRED, release_id=50)
+#   tsy = economic_calendar(source=CalendarSource.Treasury,
+#     security_type=TreasurySecurityType.Note, term=TreasuryTerm.Y10)
+#     @CalendarSource: FRED  Treasury
+#     @TreasurySecurityType: Note  Bond  Bill
+#     @TreasuryTerm: Y2 Y3 Y5 Y7 Y10 Y20 Y30  W4 W8 W13 W26 W52
 #
-# NOT SUPPORTED (by design):
-#   def, class, lambda, for, while, if-statements, import, try/except
+# ── Math (unary) ─────────────────────────────────────────────────────────
+#   fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10
+#           sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad
+#   str(x)    ffill(x, limit=0) — forward fill    ffill_day(x) — fill, reset daily
+#
+# ── Comparison / Logic ───────────────────────────────────────────────────
+#   crossover(a, b) → Bool    crossunder(a, b) → Bool    crossany(a, b) → Bool
+#   where(cond, true_val, false_val) — 2 args: null on false. 3 args: false_val on false
+#   coalesce(a, b, ...) — first non-null, left-to-right, min 2 args
+#   conditional_select(c0, v0, c1, v1, ..., default) — case-when: alternating cond/value pairs
+#   is_valid(x) → Bool   is_null(x) → Bool   isna(x) → Bool   notna(x) → Bool
+#   # Logical: and  or  not  (Python operators, not functions)
+#
+# ── Aggregation ──────────────────────────────────────────────────────────
+#   agg(src, N, Agg.X)                       — rolling: agg(close, 20, Agg.Mean)
+#   agg(src, Agg.X, cross_sectional=True)    — cross-sectional across assets
+#   agg(src, Agg.X, AssetGroupingMode.sector)  — grouped cross-sectional
+#   @AggregationType: Mean Sum Min Max Median Std Var Skew Kurtosis Count First Last Product
+#
+# ── Time-Series Primitives ───────────────────────────────────────────────
+#   diff(src, N=1) — absolute change          prev(src) — 1 bar ago
+#   nz(src, fallback=0) — replace null        valuewhen(cond, src, occurrence=0)
+#   barssince(cond) → Int                     hold_until(enter, exit) → Bool
+#   switch(index, v0, v1, ...) — 0-indexed selector, min 2 args
+#
+# ── Moving Averages: fn(src, N) ──────────────────────────────────────────
+#   ema  sma  wma  hma  dema  tema  kama  trima  wilders  zlema
+#
+# ── Indicators: fn(src, N) ───────────────────────────────────────────────
+#   rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank
+#   decay  edecay  stderr  ulcer_index
+#   forward_returns(src, N, return_type=ReturnsType.simple)
+#   nlargest(src, N)  nsmallest(src, N)
+#   hurst_exponent(src, min_period=20)   rolling_hurst_exponent(src, window)
+#   arg_max(src) → Timestamp             arg_min(src) → Timestamp
+#   streak_length(src) → Int             highestbars(src, N) → Int   lowestbars(src, N) → Int
+#   apo(src, short_period=12, long_period=26)   ppo(src, short_period=12, long_period=26)
+#
+# ── Multi-Input Indicators ───────────────────────────────────────────────
+#   fn(h, l, c, N):  atr  natr  cci  willr  adx  adxr  dx
+#   fn(h, l, N):  cvi  mass  aroonosc  psl
+#   fn(h, l, c, v, N):  mfi
+#   fn(src, vol, N):  vwma     fn(o, c, N):  qstick
+#   adosc(h, l, c, v, short_period=3, long_period=10)
+#   kvo(c, v, short_period=34, long_period=55)
+#   vosc(v, short_period=12, long_period=26)
+#   ultosc(h, l, c, period1=7, period2=14, period3=28)
+#   psar(h, l)   intraday_returns(c, o, return_type=ReturnsType.simple)
+#   rising(src, length=1) → Bool   falling(src, length=1) → Bool
+#
+# ── No-Period Indicators ─────────────────────────────────────────────────
+#   fn(h, l, c):  tr  wad  typprice       fn(h, l):  medprice
+#   fn(o, h, l, c):  avgprice  bop  price_distance
+#   fn(h, l, c, v):  ad  wcprice          fn(h, l, v):  emv  marketfi
+#   fn(c, v):  obv  nvi  pvi              fn(src):  ao
+#   vwap()  trade_count() → Int  is_study_asset() → Bool  # 0-input, datasource-aware
+#   bband_percent(upper, mid, lower)       bband_width(upper, mid, lower)
+#
+# ── Pair Statistics ──────────────────────────────────────────────────────
+#   corr(a, b, window=60)   cov(a, b, window=60)   beta(a, b, window=252)
+#   ewm_cov(a, b, span=20)
+#
+# ── Cross-Sectional ─────────────────────────────────────────────────────
+#   rank(src)   quantile(src, q=0.5)   weighted_mean(src, weights)
+#   zscore(cross_sectional=True)(src)         # add flag to rolling zscore
+#   winsorize(cross_sectional=True)(src)      # add flag to rolling winsorize
+#
+# ── Calendar → Bool ──────────────────────────────────────────────────────
+#   day_of_week(DayOfWeek.Monday)   month_of_year(Month.January)
+#   quarter(Quarter.Q1)             week_of_month(WeekOfMonth.First)
+#   fn(offset=0) → Bool:  is_month_start  is_month_end  is_quarter_start  is_quarter_end
+#                         is_year_start  is_year_end  is_week_start  is_week_end  is_opex
+#   calendar_shift(src, "1M")    # durations: "1D" "1W" "1M" "3M" "1Y" "-7D" (negative=lead)
+#   @DayOfWeek: Monday Tuesday Wednesday Thursday Friday
+#   @Month: January February March April May June July August September October November December
+#   @Quarter: Q1 Q2 Q3 Q4   @WeekOfMonth: First Second Third Fourth Last
+
+# ===========================================================================
+# LAYER 2: MACROS — fn(inputs, options) → (tuple outputs)
+# ===========================================================================
+# ── Resampling ───────────────────────────────────────────────────────────
+#   resampled = resample(src.c, target_timeframe="1W")         # auto direction
+#   d, w = resample(src.c, target_timeframe=["1D", "1W"])      # multi-TF expansion
+#   # downsample agg: agg=["Last"] (default). upsample how: how="ffill"
+#   # timeframes: "1Min" "5Min" "15Min" "30Min" "1H" "4H" "1D" "1W" "1M"
+#
+# ── Multi-Output Indicators ──────────────────────────────────────────────
+#   ml, sl, hist = macd(src.c, short_period=12, long_period=26, signal_period=9)
+#   upper, mid, lower = bbands(src.c, period=20, stddev=2.0)
+#   k, d = stoch(h, l, c, k_period=5, d_period=3)
+#   au, ad_val = aroon(h, l, period=14)
+#   line, direction = supertrend(h, l, c, atr_period=10, multiplier=3.0)
+#   tenkan, kijun, span_a, span_b, chikou = ichimoku(h, l, c)
+#   du, dl, dm = donchian_channel(h, l, window=20)
+#   ku, kl = keltner_channels(h, l, c, period=20, multiplier=2.0)
+#   pp, r1, s1, r2, s2, r3, s3 = pivot_point_sr(h, l, c)
+#
+# ── Variadic Macros ──────────────────────────────────────────────────────
+#   doji_s, hammer_s = candlestick_pattern(o, h, l, c,
+#       patterns=[CandlestickPattern.doji, CandlestickPattern.hammer])
+#   cpi, pce = macro_data(MacroEconomicsIndicator.CPI, MacroEconomicsIndicator.PCE)
+#   corr_v, cov_v = pair_stat(a, b,
+#       metrics=[PairMetric.correlation, PairMetric.covariance], window=60)
+#   vol = volatility(src.c, method=VolMethod.annualized, period=14)
+#   top5 = select(momentum, n=5, direction=SelectDirection.Top)
+
+# ===========================================================================
+# VISUALIZATION ENUMS (for Reporter transforms)
+# ===========================================================================
+# @Color: Blue Gray Green Red Orange Yellow Purple Teal Cyan Indigo ...
+# @DashStyle: Solid Dash Dot DashDot LongDash ShortDash ...
+# @Icon: (110 values) TrendingUpIcon TrendingDownIcon TargetIcon ShieldIcon BellIcon ...
+# @AxisValueFormat: AutoFormat DecimalFormat IntegerFormat MonetaryFormat PercentFormat
+
+# ===========================================================================
+# LAYER 3: REGISTERED TRANSFORMS — fn(options)(inputs)
+# ===========================================================================
+# Searchable by name/tag. Grouped by package.
+# Builtins/macros (documented above) excluded — use single-stage form.
+#
+# ── Bars (2) ────────────────────────────────────────────────────────────
+#   cs_bars — Cross-Sectional Bars - ONE FOR ALL ASSETS
+#   xy_bars — XY Bars - ONE PER ASSET
+#
+# ── Cards (4) ───────────────────────────────────────────────────────────
+#   cs_gauge — Cross-Sectional Gauge - ONE FOR ALL ASSETS
+#   cs_pie — Cross-Sectional Pie Chart - ONE FOR ALL ASSETS
+#   gauge — Gauge Chart - ONE PER ASSET
+#   pie — Pie Chart - ONE PER ASSET
+#
+# ── Compute (36) ────────────────────────────────────────────────────────
+#   acceleration_bands — Acceleration Bands
+#   alligator — Bill Williams Alligator
+#   arg_minmax — ArgMinMax (Timestamps)
+#   bar_gap — Bar Gap
+#   chande_kroll_stop — Chande Kroll Stop
+#   chandelier_exit — Chandelier Exit
+#   cs_factor_analysis — Cross-Sectional Factor Analysis
+#   cs_first_last — Cross-Sectional First/Last
+#   cs_momentum — Cross-Sectional Momentum
+#   cs_rank_quantile — Cross-Sectional Rank Quantile
+#   cusum — CUSUM Change Point Detector
+#   datetime_diff — Datetime Difference
+#   datetime_extract — Datetime Extract
+#   di — Directional Indicator
+#   dm — Directional Movement
+#   elders_thermometer — Elder's Market Thermometer
+#   engle_granger — Engle-Granger Cointegration
+#   finance_ratio — Financial Ratio
+#   fisher — Fisher Transform
+#   frac_diff — Fractional Differentiation (FFD)
+#   half_life_ar1 — Half-Life AR(1)
+#   johansen — Johansen Cointegration
+#   kalman_filter — Kalman Filter
+#   linear_fit — Linear Fit (Rolling OLS)
+#   msw — Mesa Sine Wave
+#   multi_linear_fit — Multi-Linear Fit (Multi-Factor Regression)
+#   price_profile — Price Profile
+#   qqe — Quantitative Qualitative Estimation (QQE)
+#   rolling_adf — Rolling ADF Test
+#   rolling_arima — Rolling ARIMA Forecast
+#   rolling_garch — Rolling GARCH Volatility
+#   vidya — Variable Index Dynamic Average
+#   volatility_estimator — Volatility Estimator
+#   vortex — Vortex Indicator
+#   winsorize — Winsorize (Time-Series)
+#   zscore — Z-Score
+#
+# ── Distributions (4) ───────────────────────────────────────────────────
+#   boxplot — Boxplot - ONE PER ASSET
+#   cs_boxplot — Cross-Sectional Boxplot - ONE FOR ALL ASSETS
+#   cs_histogram — Cross-Sectional Histogram - ONE FOR ALL ASSETS
+#   histogram — Histogram - ONE PER ASSET
+#
+# ── Execution (11) ──────────────────────────────────────────────────────
+#   cppi — CPPI
+#   kelly — Kelly
+#   long_and_short_zone — Long & Short Zone
+#   optimal_f — Optimal f
+#   position_size — Position Size
+#   risk_unit — Risk Unit
+#   rollover_policy — Rollover Policy
+#   stop_loss — Stop Loss
+#   take_profit — Take Profit
+#   tipp — TIPP
+#   trailing_stop — Trailing Stop
+#
+# ── Heatmaps (2) ────────────────────────────────────────────────────────
+#   cs_heatmap — Cross-Sectional Heatmap - ONE FOR ALL ASSETS
+#   heatmap — Heatmap - ONE PER ASSET
+#
+# ── Lines (4) ───────────────────────────────────────────────────────────
+#   cs_labeled_lines — Cross-Sectional Labeled Lines - ONE FOR ALL ASSETS
+#   cs_lines — Cross-Sectional Lines - ONE FOR ALL ASSETS
+#   labeled_lines — Labeled Lines - ONE PER ASSET
+#   xy_lines — XY Lines - ONE PER ASSET
+#
+# ── MachineLearning (13) ────────────────────────────────────────────────
+#   dbscan — DBSCAN
+#   hmm — Hidden Markov Model
+#   kmeans — K-Means Clustering
+#   lightgbm_classifier — LightGBM Classifier
+#   lightgbm_regressor — LightGBM Regressor
+#   logistic_l1 — Logistic L1
+#   logistic_l2 — Logistic L2
+#   ml_minmax — ML Min-Max
+#   ml_robust — ML Robust
+#   ml_zscore — ML Z-Score
+#   pca — PCA
+#   svr_l1 — SVR L1
+#   svr_l2 — SVR L2
+#
+# ── MarketData (1) ──────────────────────────────────────────────────────
+#   futures_continuation — Futures Continuation
+#
+# ── NLP (8) ─────────────────────────────────────────────────────────────
+#   keyword_count — Keyword Count
+#   keyword_match — Keyword Match
+#   keyword_score — Keyword Score
+#   string_case — String Case
+#   string_check — String Check
+#   string_contains — String Contains
+#   string_trim — String Trim
+#   topic_classify — Topic Classify
+#
+# ── News (2) ────────────────────────────────────────────────────────────
+#   cs_news — Cross-Sectional News
+#   news — News
+#
+# ── PortfolioAllocation (12) ────────────────────────────────────────────
+#   black_litterman — Black-Litterman
+#   equal_weight — Equal Weight
+#   herc — Hierarchical Equal Risk Contribution
+#   hrp — Hierarchical Risk Parity
+#   inv_vol_weight — Inverse Volatility Weight
+#   max_diversification — Maximum Diversification
+#   max_sharpe — Maximum Sharpe Ratio
+#   min_cvar — Minimum CVaR
+#   min_semivariance — Minimum Semivariance
+#   min_variance — Minimum Variance
+#   risk_budgeting — Risk Budgeting
+#   risk_parity — Risk Parity
+#
+# ── SMC (7) ─────────────────────────────────────────────────────────────
+#   bos_choch — Break of Structure & Change of Character
+#   fair_value_gap — Fair Value Gap
+#   liquidity — Liquidity
+#   order_blocks — Order Blocks
+#   previous_high_low — Previous High Low
+#   retracements — Retracements
+#   swing_highs_lows — Swing Highs and Lows
+#
+# ── Scatter (8) ─────────────────────────────────────────────────────────
+#   bubble — Bubble Chart - ONE PER ASSET
+#   cs_bubble — Cross-Sectional Bubble Chart - ONE FOR ALL ASSETS
+#   cs_labeled_bubble — Cross-Sectional Labeled Bubble - ONE FOR ALL ASSETS
+#   cs_labeled_scatter — Cross-Sectional Labeled Scatter - ONE FOR ALL ASSETS
+#   cs_scatter — Cross-Sectional Scatter - ONE FOR ALL ASSETS
+#   labeled_bubble — Labeled Bubble - ONE PER ASSET
+#   labeled_scatter — Labeled Scatter - ONE PER ASSET
+#   xy_scatter — XY Scatter - ONE PER ASSET
+#
+# ── Sessions (5) ────────────────────────────────────────────────────────
+#   holiday — Holiday Effect
+#   is_period_boundary — Is Period Boundary
+#   session_gap — Session Gap
+#   session_window — Session Window
+#   turn_of_month — Turn of Month
+#
+# ── Tables (2) ──────────────────────────────────────────────────────────
+#   cs_summary_table — Cross-Sectional Summary Table - ONE FOR ALL ASSETS
+#   summary_table — Summary Table - ONE PER ASSET
+#

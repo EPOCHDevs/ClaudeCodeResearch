@@ -1,10 +1,11 @@
 {
-   "name": "Exec Cluster E10: Indicator Exits — Chandelier, Chande Kroll, PSAR",
+   "name": "Exec Cluster E10: Indicator Exits \u2014 Chandelier, Chande Kroll, PSAR",
    "description": "Tests: chandelier_exit direction as signal, chande_kroll_stop as trend filter, psar as stop-and-reverse",
    "data": {
-      "assets": ["SPY-Stocks"],
+      "assets": [
+         "SPY-Stocks"
+      ],
       "source": "polygon"
    },
-   "source": "# =============================================================================\n# EXEC CLUSTER E10: Indicator-Based Exit Signals\n# Tests: chandelier_exit, chande_kroll_stop, psar as signal sources\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# === INDICATOR EXIT SIGNALS ===\n# Chandelier Exit — ATR trailing stop indicator\nce = chandelier_exit(length=22, atr_length=14, multiplier=2)(high, low, close)\nis_uptrend = ce.direction > 0\n\n# Chande Kroll Stop — two-step volatility-adaptive stop\ncks = chande_kroll_stop(p_period=10, q_period=20, multiplier=3)(high, low, close)\ncks_uptrend = cks.long_stop > cks.short_stop\n\n# PSAR — stop-and-reverse\nsar = psar(acceleration_factor_step=0.02, acceleration_factor_maximum=0.2)(high, low)\nsar_bullish = crossunder(sar.result, close)\nsar_bearish = crossover(sar.result, close)\n\n# === USE CHANDELIER DIRECTION AS PRIMARY SIGNAL ===\nlong_and_short_zone()(long_entry=is_uptrend, short_entry=not is_uptrend)\n\n# Fixed sizing\nposition_size(type=SizeType.percent)(size=25)\n\n# ATR-based stop\natr_val = atr(period=14)(high, low, close)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 3)\n",
-   "global_timeframe": "1D"
+   "source": "# =============================================================================\n# EXEC CLUSTER E10: Indicator-Based Exit Signals\n# Tests: chandelier_exit, chande_kroll_stop, psar as signal sources\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# === INDICATOR EXIT SIGNALS ===\n# Chandelier Exit \u2014 ATR trailing stop indicator\nce = chandelier_exit(length=22, atr_length=14, multiplier=2)(high, low, close)\nis_uptrend = ce.direction > 0\n\n# Chande Kroll Stop \u2014 two-step volatility-adaptive stop\ncks = chande_kroll_stop(p_period=10, q_period=20, multiplier=3)(high, low, close)\ncks_uptrend = cks.long_stop > cks.short_stop\n\n# PSAR \u2014 stop-and-reverse\nsar = psar(acceleration_factor_step=0.02, acceleration_factor_maximum=0.2)(high, low)\nsar_bullish = crossunder(sar.result, close)\nsar_bearish = crossover(sar.result, close)\n\n# === USE CHANDELIER DIRECTION AS PRIMARY SIGNAL ===\nlong_and_short_zone()(long_entry=is_uptrend, short_entry=not is_uptrend)\n\n# Fixed sizing\nposition_size(type=SizeType.percent)(size=25)\n\n# ATR-based stop\natr_val = atr(high, low, close, 14)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 3)\n"
 }

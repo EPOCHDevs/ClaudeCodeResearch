@@ -1,10 +1,11 @@
 {
-    "name": "DS Cluster D05: Futures Reference (curated + free-text)",
-    "description": "Tests: common_reference_futures, reference_futures free-text ticker.",
-    "data": {
-        "assets": ["SPY-Stocks"],
-        "source": "polygon"
-    },
-    "source": "# =============================================================================\n# DS CLUSTER D05: Futures Reference\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === CURATED FUTURES ===\nes = common_reference_futures(ticker=ReferenceFutures.ES)()\nes_close = es.c\n\n# === FREE-TEXT FUTURES ===\ngc = reference_futures(ticker=\"GC\")()\ngc_close = gc.c\n\n# === REPORTERS ===\nxy_lines(\n    title=\"ES vs GC Reference\",\n    category=\"Futures\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"ES\", color=Color.Blue),\n        LineSeriesSpec(name=\"GC\", color=Color.Orange)\n    ])\n)(x_values=index(), y_values=(es_close, gc_close))\n",
-    "global_timeframe": "1D"
+   "name": "DS Cluster D05: Futures Reference (curated + free-text)",
+   "description": "Tests: common_reference_futures, reference_futures free-text ticker.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# DS CLUSTER D05: Futures Reference\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === CURATED FUTURES ===\nes = common_reference_futures(ticker=ReferenceFutures.ES)()\nes_close = es.c\n\n# === FREE-TEXT FUTURES ===\ngc = reference_futures(ticker=\"GC\")()\ngc_close = gc.c\n\n# === REPORTERS ===\nxy_lines(\n    title=\"ES vs GC Reference\",\n    category=\"Futures\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"ES\", color=Color.Blue),\n        LineSeriesSpec(name=\"GC\", color=Color.Orange)\n    ])\n)(x_values=index(), y_values=(es_close, gc_close))\n"
 }

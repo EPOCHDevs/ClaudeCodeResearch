@@ -2,9 +2,10 @@
    "name": "Exec Cluster E03: Unit + Notional Sizing Modes",
    "description": "Tests: position_size type=unit and type=notional",
    "data": {
-      "assets": ["AAPL-Stocks"],
+      "assets": [
+         "AAPL-Stocks"
+      ],
       "source": "polygon"
    },
-   "source": "# =============================================================================\n# EXEC CLUSTER E03: Unit + Notional Sizing Modes\n# Tests: position_size(type=SizeType.unit) and position_size(type=SizeType.notional)\n# Using unit mode here (100 shares fixed)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\nfast = ma(period=20, type=MAType.ema)(close)\nslow = ma(period=50, type=MAType.ema)(close)\nis_bull = fast > slow\nheld = hold_until()(enter=is_bull, exit=not is_bull)\n\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.unit)(size=100)\n\natr_val = atr(period=14)(src.h, src.l, src.c)\nstop_loss(unit=StopUnit.percent)(distance=5)\n",
-   "global_timeframe": "1D"
+   "source": "# =============================================================================\n# EXEC CLUSTER E03: Unit + Notional Sizing Modes\n# Tests: position_size(type=SizeType.unit) and position_size(type=SizeType.notional)\n# Using unit mode here (100 shares fixed)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\nfast = ma(period=20, type=MAType.ema)(close)\nslow = ma(period=50, type=MAType.ema)(close)\nis_bull = fast > slow\nheld = hold_until(is_bull, not is_bull)\n\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.unit)(size=100)\n\natr_val = atr(src.h, src.l, src.c, 14)\nstop_loss(unit=StopUnit.percent)(distance=5)\n"
 }

@@ -1,12 +1,12 @@
 {
-  "name": "Repro: downsample basic 1Min to 1D",
-  "description": "Tests whether downsample(1D) works at all on 1Min data. Control: close price. Test: session_window range.",
-  "data": {
-    "assets": [
-      "SPY-Stocks"
-    ],
-    "source": "polygon"
-  },
-  "source": "src = market_data_source()()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# CONTROL: downsample close price (dense, 83k non-null values)\ndaily_close = downsample(target_timeframe=1D, how=NumericDownsampleAgg.last)(close)\n\n# TEST 1: downsample high-low range (dense, no session_window)\nintraday_range = high - low\ndaily_range = downsample(target_timeframe=1D, how=NumericDownsampleAgg.max)(intraday_range)\n\n# TEST 2: session_window then downsample\nrth_sw = session_window(session=SessionType.EquityRTHSession)(src.o, high, low, close)\nsession_range = rth_sw.high - rth_sw.low\ndaily_session_range = downsample(target_timeframe=1D, how=NumericDownsampleAgg.max)(session_range)\n\n# TEST 3: where(closed) path\ndaily_where = where(rth_sw.closed, session_range)\n\nxy_lines(\n    title='All Paths',\n    category='Comparison',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Control: Close', color=Color.Blue),\n        LineSeriesSpec(name='Test1: Range', color=Color.Red),\n        LineSeriesSpec(name='Test2: Session Range', color=Color.Green),\n        LineSeriesSpec(name='Test3: Where', color=Color.Gray)\n    ])\n)(x_values=index(), y_values=(daily_close, daily_range, daily_session_range, daily_where))\n",
-  "global_timeframe": "1Min"
+   "name": "Repro: downsample basic 1Min to 1D",
+   "description": "Tests whether downsample(1D) works at all on 1Min data. Control: close price. Test: session_window range.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "data_foundation": "Intraday",
+   "source": "src = market_data_source()()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# CONTROL: downsample close price (dense, 83k non-null values)\ndaily_close = resample(close, target_timeframe=1D, agg=[\"Last\"])\n\n# TEST 1: downsample high-low range (dense, no session_window)\nintraday_range = high - low\ndaily_range = resample(intraday_range, target_timeframe=1D, agg=[\"Max\"])\n\n# TEST 2: session_window then downsample\nrth_sw = session_window(session=SessionType.EquityRTHSession)(src.o, high, low, close)\nsession_range = rth_sw.high - rth_sw.low\ndaily_session_range = resample(session_range, target_timeframe=1D, agg=[\"Max\"])\n\n# TEST 3: where(closed) path\ndaily_where = where(rth_sw.closed, session_range)\n\nxy_lines(\n    title='All Paths',\n    category='Comparison',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Control: Close', color=Color.Blue),\n        LineSeriesSpec(name='Test1: Range', color=Color.Red),\n        LineSeriesSpec(name='Test2: Session Range', color=Color.Green),\n        LineSeriesSpec(name='Test3: Where', color=Color.Gray)\n    ])\n)(x_values=index(), y_values=(daily_close, daily_range, daily_session_range, daily_where))\n"
 }

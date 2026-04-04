@@ -2,9 +2,11 @@
    "name": "Exec Cluster E04: Fixed Dollar Risk + R:R Take Profit",
    "description": "Tests: risk_unit with risk_mode=fixed and rr_ratio for bundled TP",
    "data": {
-      "assets": ["AAPL-Stocks", "MSFT-Stocks"],
+      "assets": [
+         "AAPL-Stocks",
+         "MSFT-Stocks"
+      ],
       "source": "polygon"
    },
-   "source": "# =============================================================================\n# EXEC CLUSTER E04: Fixed Dollar Risk + Bundled R:R Take Profit\n# Tests: risk_mode=\"fixed\", rr_ratio=2.0, stop_unit=\"percent\"\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === VOLATILITY ===\natr_val = atr(period=14)(src.h, src.l, src.c)\n\n# === SIGNAL: RSI mean reversion ===\nrsi_val = rsi(period=14)(close)\nentry_long = rsi_val < 30\nexit_long = rsi_val > 70\nheld = hold_until()(enter=entry_long, exit=exit_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\n\n# E04: Fixed $500 risk per trade, percent-based stop, 2:1 R:R bundled TP\nrisk_unit(\n    risk_mode=\"fixed\",\n    stop_unit=StopUnit.percent,\n    rr_ratio=2.0,\n    min_size=1,\n    lot_size=1\n)(risk_pct=500, stop_distance=3)\n",
-   "global_timeframe": "1D"
+   "source": "# =============================================================================\n# EXEC CLUSTER E04: Fixed Dollar Risk + Bundled R:R Take Profit\n# Tests: risk_mode=\"fixed\", rr_ratio=2.0, stop_unit=\"percent\"\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === VOLATILITY ===\natr_val = atr(src.h, src.l, src.c, 14)\n\n# === SIGNAL: RSI mean reversion ===\nrsi_val = rsi(close, 14)\nentry_long = rsi_val < 30\nexit_long = rsi_val > 70\nheld = hold_until(entry_long, exit_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\n\n# E04: Fixed $500 risk per trade, percent-based stop, 2:1 R:R bundled TP\nrisk_unit(\n    risk_mode=\"fixed\",\n    stop_unit=StopUnit.percent,\n    rr_ratio=2.0,\n    min_size=1,\n    lot_size=1\n)(risk_pct=500, stop_distance=3)\n"
 }

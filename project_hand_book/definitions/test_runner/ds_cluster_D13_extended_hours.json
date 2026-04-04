@@ -1,1 +1,11 @@
-{"name": "DS Cluster D13: Extended Hours", "description": "Tests: extended_market_data_source with pre/post market. Intraday only (5min bars).", "data": {"assets": ["SPY-Stocks"], "source": "polygon"}, "source": "# =============================================================================\n# DS CLUSTER D13: Extended Hours\n# =============================================================================\n\nsrc = market_data_source()()\nrth_close = src.c\n\n# === EXTENDED HOURS: PRE + POST ===\next = extended_market_data_source(include_pre_market=True, include_post_market=True)()\next_close = ext.c\n\n# === GAP ANALYSIS ===\ngap = src.o - ext.c\n\n# === REPORTERS ===\nxy_lines(\n    title=\"RTH vs Extended Close\",\n    category=\"Extended\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"RTH\", color=Color.Blue),\n        LineSeriesSpec(name=\"Extended\", color=Color.Orange)\n    ])\n)(x_values=index(), y_values=(rth_close, ext_close))\n", "global_timeframe": "1Min"}
+{
+   "name": "DS Cluster D13: Extended Hours",
+   "description": "Tests: extended_market_data_source with pre/post market. Intraday only (5min bars).",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# DS CLUSTER D13: Extended Hours\n# =============================================================================\n\nsrc = market_data_source()()\nrth_close = src.c\n\n# === EXTENDED HOURS: PRE + POST ===\next = extended_market_data_source(include_pre_market=True, include_post_market=True)()\next_close = ext.c\n\n# === GAP ANALYSIS ===\ngap = src.o - ext.c\n\n# === REPORTERS ===\nxy_lines(\n    title=\"RTH vs Extended Close\",\n    category=\"Extended\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"RTH\", color=Color.Blue),\n        LineSeriesSpec(name=\"Extended\", color=Color.Orange)\n    ])\n)(x_values=index(), y_values=(rth_close, ext_close))\n"
+}

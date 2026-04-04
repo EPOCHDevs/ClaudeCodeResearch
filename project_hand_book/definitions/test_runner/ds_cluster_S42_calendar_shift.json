@@ -1,10 +1,11 @@
 {
-    "name": "DS Cluster S42: Calendar Shift (multi-asset alignment)",
-    "description": "Tests: calendar_shift(period=91D) vs >> 63 positional lag. Calendar-aware lookback for quarterly returns.",
-    "data": {
-        "assets": ["SPY-Stocks"],
-        "source": "polygon"
-    },
-    "source": "# =============================================================================\n# DS CLUSTER S42: Calendar Shift\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === POSITIONAL LAG (bar-based) ===\nclose_63bars = close >> 63\nbar_ret = (close - close_63bars) / close_63bars\n\n# === CALENDAR SHIFT (calendar-day based) ===\nclose_91d = calendar_shift(period=91D)(close)\ncal_ret = (close - close_91d) / close_91d\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Quarterly Returns: Bar-based (>>63) vs Calendar (91D)\",\n    category=\"Calendar Shift\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Bar-based\", color=Color.Orange),\n        LineSeriesSpec(name=\"Calendar\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(bar_ret, cal_ret))\n",
-    "global_timeframe": "1D"
+   "name": "DS Cluster S42: Calendar Shift (multi-asset alignment)",
+   "description": "Tests: calendar_shift(period=91D) vs >> 63 positional lag. Calendar-aware lookback for quarterly returns.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# DS CLUSTER S42: Calendar Shift\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === POSITIONAL LAG (bar-based) ===\nclose_63bars = close >> 63\nbar_ret = (close - close_63bars) / close_63bars\n\n# === CALENDAR SHIFT (calendar-day based) ===\nclose_91d = calendar_shift(period=91D)(close)\ncal_ret = (close - close_91d) / close_91d\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Quarterly Returns: Bar-based (>>63) vs Calendar (91D)\",\n    category=\"Calendar Shift\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Bar-based\", color=Color.Orange),\n        LineSeriesSpec(name=\"Calendar\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(bar_ret, cal_ret))\n"
 }

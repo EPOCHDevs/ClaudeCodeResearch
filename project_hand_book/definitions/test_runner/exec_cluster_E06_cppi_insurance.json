@@ -1,10 +1,13 @@
 {
-   "name": "Exec Cluster E06: CPPI Portfolio Insurance — Fixed Floor",
+   "name": "Exec Cluster E06: CPPI Portfolio Insurance \u2014 Fixed Floor",
    "description": "Tests: cppi dynamic allocation with floor protection",
    "data": {
-      "assets": ["SPY-Stocks", "QQQ-Stocks", "GLD-Stocks"],
+      "assets": [
+         "SPY-Stocks",
+         "QQQ-Stocks",
+         "GLD-Stocks"
+      ],
       "source": "polygon"
    },
-   "source": "# =============================================================================\n# EXEC TEST: CPPI Portfolio Insurance\n# Tests: E06 (cppi with multiplier=3, floor_pct=0.8)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: SMA trend filter ===\nsma_200 = ma(period=200, type=MAType.sma)(close)\nis_above = close > sma_200\nis_below = close < sma_200\n\nheld_long = hold_until()(enter=is_above, exit=is_below)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long)\n\n# E06: CPPI with 80% floor, 3x multiplier\ncppi(multiplier=3, floor_pct=0.8)\n\n# Protective stop\nstop_loss(unit=StopUnit.percent)(distance=10)\n",
-   "global_timeframe": "1D"
+   "source": "# =============================================================================\n# EXEC TEST: CPPI Portfolio Insurance\n# Tests: E06 (cppi with multiplier=3, floor_pct=0.8)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: SMA trend filter ===\nsma_200 = ma(period=200, type=MAType.sma)(close)\nis_above = close > sma_200\nis_below = close < sma_200\n\nheld_long = hold_until(is_above, is_below)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long)\n\n# E06: CPPI with 80% floor, 3x multiplier\ncppi(multiplier=3, floor_pct=0.8)\n\n# Protective stop\nstop_loss(unit=StopUnit.percent)(distance=10)\n"
 }

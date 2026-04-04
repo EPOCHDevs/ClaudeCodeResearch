@@ -1,10 +1,12 @@
 {
-   "name": "Exec Cluster Cost: Volume Impact — PerShare Commission + Almgren-Chriss",
+   "name": "Exec Cluster Cost: Volume Impact \u2014 PerShare Commission + Almgren-Chriss",
    "description": "Tests: PerShare commission + VolumeImpact slippage (Almgren-Chriss market impact). Run with --cost volume_impact",
    "data": {
-      "assets": ["SPY-Stocks", "AAPL-Stocks"],
+      "assets": [
+         "SPY-Stocks",
+         "AAPL-Stocks"
+      ],
       "source": "polygon"
    },
-   "source": "# =============================================================================\n# EXEC CLUSTER COST: Volume Impact (Market Impact Model)\n# Run with: --cost volume_impact --cash 100000\n# Validates: VolumeImpact slippage = coefficient * sqrt(order_qty / ADV)\n# Stress-tests large-position cost modeling\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: SMA trend ===\nsma_200 = ma(period=200, type=MAType.sma)(close)\nis_above = close > sma_200\nheld = hold_until()(enter=is_above, exit=not is_above)\n\n# === EXECUTION: Large position to exercise volume impact ===\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=40)\n\natr_val = atr(period=14)(src.h, src.l, src.c)\nstop_loss(unit=StopUnit.percent)(distance=7)\ntrailing_stop()(distance=atr_val * 3)\n",
-   "global_timeframe": "1D"
+   "source": "# =============================================================================\n# EXEC CLUSTER COST: Volume Impact (Market Impact Model)\n# Run with: --cost volume_impact --cash 100000\n# Validates: VolumeImpact slippage = coefficient * sqrt(order_qty / ADV)\n# Stress-tests large-position cost modeling\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: SMA trend ===\nsma_200 = ma(period=200, type=MAType.sma)(close)\nis_above = close > sma_200\nheld = hold_until(is_above, not is_above)\n\n# === EXECUTION: Large position to exercise volume impact ===\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=40)\n\natr_val = atr(src.h, src.l, src.c, 14)\nstop_loss(unit=StopUnit.percent)(distance=7)\ntrailing_stop()(distance=atr_val * 3)\n"
 }

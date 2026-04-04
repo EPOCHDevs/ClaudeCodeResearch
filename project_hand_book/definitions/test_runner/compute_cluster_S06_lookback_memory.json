@@ -2,9 +2,10 @@
    "name": "Compute Cluster S06: Lookback Memory",
    "description": "Tests: valuewhen for sparse historical access.",
    "data": {
-      "assets": ["SPY-Stocks"],
+      "assets": [
+         "SPY-Stocks"
+      ],
       "source": "polygon"
    },
-   "source": "src = market_data_source()()\nclose = src.c\nret = returns()(close)\n\n# Sparse signal\nbig_up = ret > 0.02\n\n# Last occurrence value\nlast_big = valuewhen()(big_up, close)\n\nxy_lines(title='Lookback Memory', category='Memory', series=LineSeriesSchema(series=[LineSeriesSpec(name='Last Big Up Close', color=Color.Blue)]))(x_values=index(), y_values=last_big)\n",
-   "global_timeframe": "1D"
+   "source": "src = market_data_source()()\nclose = src.c\nret = returns(close)\n\n# Sparse signal\nbig_up = ret > 0.02\n\n# Last occurrence value\nlast_big = valuewhen()(big_up, close)\n\nxy_lines(title='Lookback Memory', category='Memory', series=LineSeriesSchema(series=[LineSeriesSpec(name='Last Big Up Close', color=Color.Blue)]))(x_values=index(), y_values=last_big)\n"
 }

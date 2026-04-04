@@ -1,10 +1,11 @@
 {
-    "name": "DS Cluster S10c: Upsample Fill Methods",
-    "description": "Tests: upsample with FillMethod.ffill/bfill/nearest/asfreq on monthly CPI → daily.",
-    "data": {
-        "assets": ["SPY-Stocks"],
-        "source": "polygon"
-    },
-    "source": "# =============================================================================\n# DS CLUSTER S10c: Upsample Fill Methods\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\ncpi_raw = common_indicators(category=MacroEconomicsIndicator.CPI)().result\n\n# === ALL upsample how= VARIANTS ===\nup_ffill = upsample(target_timeframe=1D, how=FillMethod.ffill)(cpi_raw)\nup_bfill = upsample(target_timeframe=1D, how=FillMethod.bfill)(cpi_raw)\nup_nearest = upsample(target_timeframe=1D, how=FillMethod.nearest)(cpi_raw)\nup_asfreq = upsample(target_timeframe=1D, how=FillMethod.asfreq)(cpi_raw)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"CPI Upsample: ffill vs bfill vs nearest\",\n    category=\"Upsample\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"ffill\", color=Color.Blue),\n        LineSeriesSpec(name=\"bfill\", color=Color.Orange),\n        LineSeriesSpec(name=\"nearest\", color=Color.Green)\n    ])\n)(x_values=index(), y_values=(up_ffill, up_bfill, up_nearest))\n",
-    "global_timeframe": "1D"
+   "name": "DS Cluster S10c: Upsample Fill Methods",
+   "description": "Tests: upsample with FillMethod.ffill/bfill/nearest/asfreq on monthly CPI \u2192 daily.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# DS CLUSTER S10c: Upsample Fill Methods\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\ncpi_raw = common_indicators(category=MacroEconomicsIndicator.CPI)().result\n\n# === ALL resample upsample how= VARIANTS ===\nup_ffill = upsample(target_timeframe=\"1D\", how=FillMethod.ffill)(cpi_raw)\nup_bfill = upsample(target_timeframe=\"1D\", how=FillMethod.bfill)(cpi_raw)\nup_nearest = upsample(target_timeframe=\"1D\", how=FillMethod.nearest)(cpi_raw)\nup_asfreq = upsample(target_timeframe=\"1D\", how=FillMethod.asfreq)(cpi_raw)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"CPI Upsample: ffill vs bfill vs nearest\",\n    category=\"Upsample\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"ffill\", color=Color.Blue),\n        LineSeriesSpec(name=\"bfill\", color=Color.Orange),\n        LineSeriesSpec(name=\"nearest\", color=Color.Green)\n    ])\n)(x_values=index(), y_values=(up_ffill, up_bfill, up_nearest))\n"
 }

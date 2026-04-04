@@ -41,10 +41,10 @@ const PREC = {
 
 // Built-in schema types (reserved keywords)
 const BUILTIN_TYPES = [
-  'Time', 'Duration', 'Session', 'SessionDelta', 'EventMarkerSchema', 'TableReportSchema', 'CardLayout', 'SummaryTableLayout',
-  'ReferenceLineSchema', 'ReferenceLine', 'LineSeriesSchema', 'LineSeriesSpec', 'LabeledLineSeriesSchema', 'LabeledLineSeriesSpec', 'PlotBandSchema', 'PlotBand',
-  'ScatterSeriesSchema', 'ScatterSeriesSpec', 'BarSeriesSchema', 'BarSeriesSpec', 'WeightedKeywordSchema', 'TopicDictionarySchema', 'KeywordPatternSchema', 'AssetFilterSchema',
-  'AssetFilter', 'ColumnSpec', 'RowSpec',
+  'Timestamp', 'Time', 'Duration', 'Session', 'SessionDelta', 'EventMarkerSchema', 'TableReportSchema', 'CardLayout',
+  'SummaryTableLayout', 'ReferenceLineSchema', 'ReferenceLine', 'LineSeriesSchema', 'LineSeriesSpec', 'LabeledLineSeriesSchema', 'LabeledLineSeriesSpec', 'PlotBandSchema',
+  'PlotBand', 'ScatterSeriesSchema', 'ScatterSeriesSpec', 'BarSeriesSchema', 'BarSeriesSpec', 'WeightedKeywordSchema', 'TopicDictionarySchema', 'KeywordPatternSchema',
+  'AssetFilterSchema', 'AssetFilter', 'ColumnSpec', 'RowSpec',
 ];
 
 // Built-in functions (use fn(args) syntax, not fn()(args))
@@ -53,22 +53,44 @@ const BUILTIN_FUNCTIONS = [
   'floor', 'ln', 'log10', 'round', 'sin', 'sinh', 'sqrt', 'tan',
   'tanh', 'todeg', 'torad', 'trunc', 'ffill', 'ffill_day', 'str', 'crossover',
   'crossunder', 'crossany', 'coalesce', 'conditional_select', 'where', 'is_valid', 'is_null', 'logical_xor',
-  'logical_and_not',
+  'logical_and_not', 'earnings', 'analyst_ratings', 'ipos', 'splits', 'ticker_events', 'short_interest', 'short_volume',
+  'balance_sheet', 'cash_flow', 'income_statement', 'dividends', 'economic_indicators', 'economic_revisions', 'common_treasury_auctions', 'agg',
+  'valuewhen', 'barssince', 'diff', 'nz', 'isna', 'notna', 'prev', 'returns',
+  'rank', 'quantile', 'weighted_mean', 'ema', 'sma', 'wma', 'hma', 'dema',
+  'tema', 'kama', 'trima', 'wilders', 'zlema', 'rsi', 'trix', 'cmo',
+  'fosc', 'roc', 'rocr', 'stochrsi', 'apo', 'ppo', 'dpo', 'vhf',
+  'md', 'ulcer_index', 'percentrank', 'streak_length', 'nlargest', 'nsmallest', 'hurst_exponent', 'rolling_hurst_exponent',
+  'decay', 'edecay', 'stderr', 'forward_returns', 'arg_max', 'arg_min', 'highestbars', 'lowestbars',
+  'cci', 'mfi', 'willr', 'atr', 'natr', 'cvi', 'mass', 'adx',
+  'adxr', 'dx', 'aroonosc', 'vwma', 'qstick', 'psl', 'ultosc', 'psar',
+  'adosc', 'kvo', 'vosc', 'intraday_returns', 'rising', 'falling', 'corr', 'cov',
+  'beta', 'ewm_cov', 'tr', 'price_distance', 'bband_percent', 'bband_width', 'ao', 'bop',
+  'avgprice', 'medprice', 'typprice', 'wcprice', 'obv', 'ad', 'emv', 'nvi',
+  'pvi', 'marketfi', 'wad', 'vwap', 'hold_until', 'trade_count', 'switch', 'is_study_asset',
+  'day_of_week', 'month_of_year', 'quarter', 'week_of_month', 'is_month_start', 'is_month_end', 'is_quarter_start', 'is_quarter_end',
+  'is_year_start', 'is_year_end', 'is_week_start', 'is_week_end', 'is_opex', 'calendar_shift',
+];
+
+// Compiler macros (single-stage, expand to N impl nodes)
+const COMPILER_MACROS = [
+  'resample', 'candlestick_pattern', 'macro_data', 'pair_stat', 'volatility', 'select', 'aroon', 'supertrend',
+  'ichimoku', 'macd', 'stoch', 'bbands', 'donchian_channel', 'keltner_channels', 'pivot_point_sr',
 ];
 
 // Enum types - Use: Color.Blue, Icon.ChartIcon, DashStyle.Solid
 const ENUM_TYPES = [
   'AdjustmentType', 'AggregationType', 'ArrayMatchMode', 'AssetCategory', 'AssetClassUI', 'AssetFilterOp', 'AssetFilterRank', 'AssetGroupingMode',
-  'AxisValueFormat', 'BalanceSheetTimeframe', 'BarMode', 'BasicVolatilityType', 'BooleanDownsampleAgg', 'BoostingType', 'BoundaryType', 'BoxplotMode',
-  'CSBarMode', 'CSBoxplotMode', 'CSSelectDirection', 'CSSelectMode', 'CalendarSource', 'CardRenderType', 'CardSlot', 'CategoryAxisType',
-  'Color', 'ContainsOperation', 'CorrelationMethod', 'DashStyle', 'DatetimeExtractionType', 'DayAnchorType', 'DistributionType', 'DividendType',
+  'BalanceSheetTimeframe', 'BarMode', 'BasicVolatilityType', 'BoostingType', 'BoundaryType', 'BoxplotMode', 'CSBarMode', 'CSBoxplotMode',
+  'CSSelectDirection', 'CSSelectMode', 'CalendarSource', 'CandlestickPattern', 'CardRenderType', 'CardSlot', 'CategoryAxisType', 'Color',
+  'ContainsOperation', 'CorrelationMethod', 'DashStyle', 'DatetimeExtractionType', 'DayAnchorType', 'DayOfWeek', 'DistributionType', 'DividendType',
   'EiaFrequency', 'FillDirection', 'FillMethod', 'FinanceRatioType', 'HeatmapMode', 'HolidayCalendar', 'Icon', 'KalmanModelType',
-  'LinkageMethod', 'MAType', 'MLWindowType', 'MacroEconomicsIndicator', 'MarkerSymbol', 'Month', 'NumericDownsampleAgg', 'OrdinalType',
+  'LinkageMethod', 'MAType', 'MLWindowType', 'MacroEconomicsIndicator', 'MarkerSymbol', 'Month', 'OrdinalType', 'PairMetric',
   'PeriodType', 'ProfileType', 'Quarter', 'ReferenceCryptoPair', 'ReferenceFXPair', 'ReferenceFutures', 'ReferenceIndex', 'ReferenceStock',
-  'ReportingPeriod', 'ReturnType', 'ReturnsType', 'RiskMeasure', 'RiskMode', 'RolloverType', 'SessionAnchor', 'SessionTimeframe',
-  'SessionType', 'SizeBy', 'SizeType', 'SortByValue', 'StackType', 'StepType', 'StockExchange', 'StockSector',
-  'StopUnit', 'StreakDirection', 'StringCaseOperation', 'StringCheckOperation', 'StringDownsampleAgg', 'TableMode', 'TimeDiffUnit', 'TimestampDownsampleAgg',
-  'TreasuryAuctionType', 'TreasurySecurityType', 'TreasuryTerm', 'TrimOperation', 'VolatilityEstimatorType', 'WeekOfMonth', 'Weekday', 'WindowType',
+  'ReportingPeriod', 'ReturnType', 'ReturnsType', 'RiskMeasure', 'RiskMode', 'RolloverType', 'SelectDirection', 'SessionAnchor',
+  'SessionTimeframe', 'SessionType', 'SizeBy', 'SizeType', 'SortByValue', 'StackType', 'StepType', 'StockExchange',
+  'StockSector', 'StopUnit', 'StreakDirection', 'StringCaseOperation', 'StringCheckOperation', 'TableMode', 'TimeDiffUnit', 'TradingHoursType',
+  'TreasuryAuctionType', 'TreasurySecurityType', 'TreasuryTerm', 'TrimOperation', 'VolMethod', 'VolatilityEstimatorType', 'WeekOfMonth', 'Weekday',
+  'WindowType',
 ];
 
 module.exports = grammar({
@@ -149,6 +171,7 @@ module.exports = grammar({
       $.parenthesized_expression,
       $.builtin_type,
       $.builtin_function,
+      ...(COMPILER_MACROS.length > 0 ? [$.compiler_macro] : []),
       $.enum_type,
       $.identifier,
       $.timeframe,
@@ -326,7 +349,7 @@ module.exports = grammar({
     ),
 
     keyword_argument: $ => seq(
-      field('name', $.identifier),
+      field('name', choice($.identifier, $.builtin_function, $.compiler_macro, $.enum_type)),
       '=',
       field('value', $.expression),
     ),
@@ -354,6 +377,15 @@ module.exports = grammar({
     // =========================================================================
 
     builtin_function: $ => choice(...BUILTIN_FUNCTIONS),
+
+    // =========================================================================
+    // COMPILER MACROS (single-stage, expand to N impl nodes)
+    // Uses COMPILER_MACROS constant defined at top of file
+    // =========================================================================
+
+    ...(COMPILER_MACROS.length > 0 ? {
+      compiler_macro: $ => choice(...COMPILER_MACROS),
+    } : {}),
 
     // Enum types - Use: Color.Blue, Icon.ChartIcon, DashStyle.Solid
     enum_type: $ => choice(...ENUM_TYPES),
@@ -409,9 +441,9 @@ module.exports = grammar({
     string_content_triple_single: $ => token.immediate(prec(1, /([^']|'[^']|''[^'])*/)),
     string_content_triple_double: $ => token.immediate(prec(1, /([^"]|"[^"]|""[^"])*/)),
 
-    // Boolean literals
-    true: $ => 'True',
-    false: $ => 'False',
+    // Boolean literals (accept both Python-style and lowercase)
+    true: $ => choice('True', 'true'),
+    false: $ => choice('False', 'false'),
 
     // =========================================================================
     // CONTAINER LITERALS

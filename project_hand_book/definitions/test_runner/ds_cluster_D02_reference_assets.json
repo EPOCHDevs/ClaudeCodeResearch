@@ -1,10 +1,11 @@
 {
-    "name": "DS Cluster D02: Reference Assets (Stocks, Indices, FX, Crypto)",
-    "description": "Tests: reference_stocks, common_indices, fx_pairs, crypto_pairs with ^ prefix, relative strength pattern.",
-    "data": {
-        "assets": ["AAPL-Stocks"],
-        "source": "polygon"
-    },
-    "source": "# =============================================================================\n# DS CLUSTER D02: Reference Assets\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === REFERENCE STOCK (curated) ===\nspy_src = common_reference_stocks(ticker=ReferenceStock.SPY)()\nspy_close = spy_src.c\n\n# === REFERENCE STOCK (free-text) ===\nqqq_src = reference_stocks(ticker=\"QQQ\")()\nqqq_close = qqq_src.c\n\n# === INDEX (curated) ===\nvix_src = common_indices(ticker=ReferenceIndex.VIX)()\nvix = vix_src.c\n\n# === RELATIVE STRENGTH ===\naapl_ret = returns()(close)\nspy_ret = returns()(spy_close)\nrelative = aapl_ret - spy_ret\nrel_cum = cumulative()(relative)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"AAPL vs SPY (Cumulative Relative Return)\",\n    category=\"Reference\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Relative\", color=Color.Cyan)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[ReferenceLine(value=0, title=\"Flat\")])\n)(x_values=index(), y_values=rel_cum)\n\nxy_lines(\n    title=\"VIX\",\n    category=\"Reference\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"VIX\", color=Color.Red)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[ReferenceLine(value=20, title=\"20 Level\")])\n)(x_values=index(), y_values=vix)\n",
-    "global_timeframe": "1D"
+   "name": "DS Cluster D02: Reference Assets (Stocks, Indices, FX, Crypto)",
+   "description": "Tests: reference_stocks, common_indices, fx_pairs, crypto_pairs with ^ prefix, relative strength pattern.",
+   "data": {
+      "assets": [
+         "AAPL-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# =============================================================================\n# DS CLUSTER D02: Reference Assets\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === REFERENCE STOCK (curated) ===\nspy_src = common_reference_stocks(ticker=ReferenceStock.SPY)()\nspy_close = spy_src.c\n\n# === REFERENCE STOCK (free-text) ===\nqqq_src = reference_stocks(ticker=\"QQQ\")()\nqqq_close = qqq_src.c\n\n# === INDEX (curated) ===\nvix_src = common_indices(ticker=ReferenceIndex.VIX)()\nvix = vix_src.c\n\n# === RELATIVE STRENGTH ===\naapl_ret = returns(close)\nspy_ret = returns(spy_close)\nrelative = aapl_ret - spy_ret\nrel_cum = cumulative()(relative)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"AAPL vs SPY (Cumulative Relative Return)\",\n    category=\"Reference\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Relative\", color=Color.Cyan)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[ReferenceLine(value=0, title=\"Flat\")])\n)(x_values=index(), y_values=rel_cum)\n\nxy_lines(\n    title=\"VIX\",\n    category=\"Reference\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"VIX\", color=Color.Red)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[ReferenceLine(value=20, title=\"20 Level\")])\n)(x_values=index(), y_values=vix)\n"
 }
