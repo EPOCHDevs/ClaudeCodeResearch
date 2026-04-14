@@ -1,0 +1,12 @@
+{
+  "name": "Exec Cluster E02: Signal Persistence (Pulse vs Zone)",
+  "description": "Tests: hold_until for pulse-to-zone conversion, pulse AND filter pattern, persistent comparison signals without hold_until, hold_long bar-count hold.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER E02: Signal Persistence\n# Tests: hold_until, pulse AND filter, persistent signals, hold_long\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === INDICATORS ===\nfast_sma = ma(period=20, type=MAType.sma)(close)\nslow_sma = ma(period=50, type=MAType.sma)(close)\nrsi_val = rsi(close, 14)\n\n# === PATTERN 1: Pulse + filter requires hold_until ===\n# crossover is pulse (1 bar). ANDing with filter drops it.\n# CORRECT: persist with hold_until first, then filter\ngolden = crossover(fast_sma, slow_sma)\ndeath = crossunder(fast_sma, slow_sma)\nheld_long = hold_until(golden, death)\nheld_short = hold_until(death, golden)\n\n# Filter: only trade when RSI confirms\nlong_entry = held_long and (rsi_val > 50)\nshort_entry = held_short and (rsi_val < 50)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\nposition_size(type=SizeType.percent)(size=50)\nstop_loss(unit=StopUnit.percent)(distance=5)\ntake_profit(unit=StopUnit.percent)(distance=15)\n\n# === REPORTERS ===\nxy_lines(\n    title='Signal Persistence: SMA + RSI Filter',\n    category='Signals',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Fast SMA', color=Color.Green),\n        LineSeriesSpec(name='Slow SMA', color=Color.Red),\n        LineSeriesSpec(name='RSI', color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(fast_sma, slow_sma, rsi_val))\n"
+}

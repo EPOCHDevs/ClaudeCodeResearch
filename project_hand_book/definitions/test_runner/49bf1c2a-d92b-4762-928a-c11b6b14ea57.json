@@ -1,0 +1,20 @@
+{
+   "name": "Magnificent 7 — Quarterly Fundamentals Snapshot",
+   "description": "Cross-sectional summary of the latest quarterly income statement data for the Magnificent 7 stocks. Shows Diluted EPS, Revenue ($B), Revenue QoQ and YoY growth, and EBITDA ($B). All values reflect the most recent quarterly filing.",
+   "data": {
+      "assets": [
+         "AAPL-Stocks",
+         "MSFT-Stocks",
+         "GOOGL-Stocks",
+         "AMZN-Stocks",
+         "NVDA-Stocks",
+         "META-Stocks",
+         "TSLA-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/market_data"
+   },
+   "source": "\n# --- Magnificent 7: Quarterly Fundamentals Snapshot ---\n# Pulls latest quarterly income statement for each study asset.\n# Displays EPS, Revenue ($B), QoQ/YoY revenue growth, EBITDA ($B).\n\n# --- Data ---\ninc = income_statement(period=BalanceSheetTimeframe.quarterly)\n\n# --- Derived Metrics ---\n# Diluted EPS (raw dollars)\neps = inc.diluted_eps\n\n# Revenue in billions USD\nrev_bn = inc.revenue / 1e9\n\n# Revenue QoQ growth: (rev - rev_prev) / rev_prev\nrev_prev = inc.revenue >> 1\nrev_qoq = (inc.revenue - rev_prev) / rev_prev\n\n# Revenue YoY growth: (rev - rev_4q_ago) / rev_4q_ago\nrev_4q = inc.revenue >> 4\nrev_yoy = (inc.revenue - rev_4q) / rev_4q\n\n# EBITDA in billions USD\nebitda_bn = inc.ebitda / 1e9\n\n# --- Output ---\ncs_summary_table(\n    title='Magnificent 7 — Latest Quarterly Financials',\n    agg=AggregationType.Last,\n    category='Fundamentals',\n    schema=TableReportSchema(\n        title='Quarterly Income Statement',\n        include_timestamp=False,\n        columns=[\n            ColumnSpec(title='Diluted EPS ($)', type=CardRenderType.DecimalFormat, dp=2),\n            ColumnSpec(title='Revenue ($B)', type=CardRenderType.DecimalFormat, dp=2),\n            ColumnSpec(title='Rev QoQ Growth', type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title='Rev YoY Growth', type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title='EBITDA ($B)', type=CardRenderType.DecimalFormat, dp=2)\n        ]\n    )\n)(eps, rev_bn, rev_qoq, rev_yoy, ebitda_bn)\n",
+   "data_foundation": "Daily",
+   "thread_id": "f8859e49-b56c-4a49-9b99-43b8fa885f24"
+}

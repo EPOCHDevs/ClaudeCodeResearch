@@ -1,0 +1,12 @@
+{
+  "name": "DS Cluster D01: Market Data Source (Primary OHLCV)",
+  "description": "Tests: market_data_source()() primary OHLCV for study_assets, .o/.h/.l/.c/.v fields, SMA on stock close, volume profile, intrabar range.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D01: Market Data Source\n# =============================================================================\n# market_data_source()() is the primary OHLCV source for assets in data.assets.\n# No options — asset selection is in definition JSON.\n# For stocks/ETFs, src.c is directly usable (one row per timestamp).\n\nsrc = market_data_source()()\nopen = src.o\nhigh = src.h\nlow = src.l\nclose = src.c\nvol = src.v\n\n# === MOVING AVERAGES ON CLOSE ===\nsma_20 = ma(period=20, type=MAType.sma)(close)\nsma_50 = ma(period=50, type=MAType.sma)(close)\n\n# === INTRABAR RANGE (high - low) ===\nbar_range = high - low\navg_range = ma(period=20, type=MAType.sma)(bar_range)\n\n# === VOLUME MOVING AVERAGE ===\nvol_ma = ma(period=20, type=MAType.sma)(vol)\nvol_ratio = vol / vol_ma\n\n# === CLOSE-TO-CLOSE RETURNS ===\nret = returns(close)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Close with SMA(20) and SMA(50)\",\n    category=\"Price\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Close\", color=Color.White),\n        LineSeriesSpec(name=\"SMA 20\", color=Color.Cyan),\n        LineSeriesSpec(name=\"SMA 50\", color=Color.Orange)\n    ])\n)(x_values=index(), y_values=(close, sma_20, sma_50))\n\nxy_lines(\n    title=\"Average True Range (20-bar)\",\n    category=\"Price\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Bar Range\", color=Color.Yellow),\n        LineSeriesSpec(name=\"Avg Range\", color=Color.Red)\n    ])\n)(x_values=index(), y_values=(bar_range, avg_range))\n\nxy_lines(\n    title=\"Volume Ratio (vol / 20d MA)\",\n    category=\"Volume\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Vol Ratio\", color=Color.Green)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=1.0, title=\"Average\"),\n        ReferenceLine(value=2.0, title=\"2x Avg\")\n    ])\n)(x_values=index(), y_values=vol_ratio)\n\nhistogram(\n    title=\"Daily Returns Distribution\",\n    category=\"Returns\",\n    bins=50\n)(ret)\n"
+}

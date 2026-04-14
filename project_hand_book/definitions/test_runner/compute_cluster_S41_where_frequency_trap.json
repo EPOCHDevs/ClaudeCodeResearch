@@ -1,0 +1,12 @@
+{
+  "name": "Compute Cluster S41: Where-Literal Frequency Trap",
+  "description": "Tests: where(cond, 1.0) always returns 100% mean (WRONG for frequency), ternary 1.0 if cond else 0.0 for correct hit rate, Count vs Mean aggregation on sparse vs dense flags.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S41: Where-Literal Frequency Trap\n# Tests: where(cond, 1.0) vs ternary for frequency/hit-rate\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nret = returns(close)\n\n# === SIGNAL ===\nis_bullish = ret > 0\n\n# === WRONG: where(cond, literal) for frequency ===\n# Mean of where(is_bullish, 1.0) = mean([1.0, 1.0, ...]) = 100% always\nbull_where = where(is_bullish, 1.0)\n\n# === CORRECT: ternary for frequency ===\n# Mean of [1.0, 0.0, 0.0, 1.0, ...] = actual hit rate\nbull_ternary = 1.0 if is_bullish else 0.0\n\n# === CORRECT USE OF WHERE: filtering a metric to event bars ===\nbull_ret = where(is_bullish, ret)\n\n# === REPORTERS ===\ncards(\n    category='Frequency Trap',\n    layout=CardLayout(title='Where vs Ternary Comparison', cells=[\n        ColumnSpec(title='where(cond, 1.0) Mean (WRONG)', card_agg=AggregationType.Mean, type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(title='Ternary Mean (CORRECT)', card_agg=AggregationType.Mean, type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(title='Bull Return Mean', card_agg=AggregationType.Mean, type=CardRenderType.PercentFormat, dp=4)\n    ])\n)(bull_where, bull_ternary, bull_ret)\n\nxy_lines(\n    title='Ternary Bull Flag (correct frequency)',\n    category='Frequency Trap',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Bull Flag', color=Color.Green)\n    ])\n)(x_values=index(), y_values=bull_ternary)\n"
+}

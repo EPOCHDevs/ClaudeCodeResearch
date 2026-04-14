@@ -1,0 +1,13 @@
+{
+  "name": "Compute Cluster S20: Top-K Selection (select + cs_select)",
+  "description": "Tests: select() builtin for top/bottom N count mode, cs_select for percent mode, cross-sectional rotation with momentum ranking.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "GLD-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S20: Top-K Selection\n# Tests: select() count mode, cs_select percent mode, rotation\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === MOMENTUM METRIC ===\nret_1mo = returns(close, 21)\nret_3mo = returns(close, 63)\nmomentum = ret_3mo\n\n# === SELECT: count mode (top/bottom N) ===\n# select() builtin: pick top N assets by metric\nis_top_1 = select(momentum, n=1, direction=SelectDirection.Top)\nis_bottom_1 = select(momentum, n=1, direction=SelectDirection.Bottom)\n\n# === CS_SELECT: percent mode (top/bottom %) ===\nis_top_50pct = cs_select(direction='top', mode='percent', k=50)(momentum)\n\n# === REPORTERS ===\ncs_lines(\n    title='3M Momentum by Asset',\n    category='Selection'\n)(x_values=index(), y_values=momentum)\n\ncs_lines(\n    title='Top-1 Selection Flag',\n    category='Selection'\n)(x_values=index(), y_values=1.0 if is_top_1 else 0.0)\n\ncards(\n    category='Selection',\n    layout=CardLayout(title='Selection Counts', cells=[\n        ColumnSpec(title='Bars in Top 1', card_agg=AggregationType.Count, type=CardRenderType.IntegerFormat),\n        ColumnSpec(title='Bars in Bottom 1', card_agg=AggregationType.Count, type=CardRenderType.IntegerFormat),\n        ColumnSpec(title='Bars in Top 50%', card_agg=AggregationType.Count, type=CardRenderType.IntegerFormat)\n    ])\n)(where(is_top_1, close), where(is_bottom_1, close), where(is_top_50pct, close))\n"
+}

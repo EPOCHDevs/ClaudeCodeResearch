@@ -1,0 +1,11 @@
+{
+  "name": "DS Cluster S24: Futures Continuation (All 7 Inputs Required)",
+  "description": "Tests: futures_continuation with all 7 OHLCV+OI+Symbol inputs, LiquidityBased rollover, NoAdjustment. Outputs: .c, .carry, .spread, .dte. Pass-through on stocks.",
+  "data": {
+    "assets": [
+      "ES-Futures"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER S24: Futures Continuation — All 7 Inputs Required\n# =============================================================================\n# S24 rule: futures_continuation requires ALL 7 inputs: o, h, l, c, v, oi, s\n# Empty inputs → \"missing input(o)\" compile error.\n\nsrc = market_data_source()()\n\n# === DEFAULT: LiquidityBased + NoAdjustment ===\ncont = futures_continuation(\n    s_rollover_method=RolloverType.LiquidityBased,\n    s_adjustment_method=AdjustmentType.NoAdjustment,\n    i_offset=0\n)(src.o, src.h, src.l, src.c, src.v, src.oi, src.s)\n\nclose = cont.c\ncarry = cont.carry\ndte = cont.dte\nspread = cont.spread\noi = cont.oi\n\n# === SMA on continuation output (NOT on raw src) ===\nma_20 = sma(close, 20)\nma_50 = sma(close, 50)\n\n# === REPORTERS ===\nxy_lines(\n    title='ES Continuation Close + MAs',\n    category='Continuation',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Close', color=Color.White),\n        LineSeriesSpec(name='SMA 20', color=Color.Blue),\n        LineSeriesSpec(name='SMA 50', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=(close, ma_20, ma_50))\n\nxy_lines(\n    title='Calendar Carry (Front - Back)',\n    category='Continuation',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Carry', color=Color.Cyan)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[ReferenceLine(value=0, title='Zero')])\n)(x_values=index(), y_values=carry)\n\nxy_lines(\n    title='Days to Expiry',\n    category='Continuation',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='DTE', color=Color.Green)\n    ])\n)(x_values=index(), y_values=dte)\n\nxy_lines(\n    title='Open Interest',\n    category='Continuation',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='OI', color=Color.Purple)\n    ])\n)(x_values=index(), y_values=oi)\n"
+}

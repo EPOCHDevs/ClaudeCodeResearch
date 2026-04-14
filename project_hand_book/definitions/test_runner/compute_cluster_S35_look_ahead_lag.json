@@ -1,0 +1,12 @@
+{
+  "name": "Compute Cluster S35: Look-Ahead Lag Consistency",
+  "description": "Tests: >> 1 lag on Donchian bands and ADX filter for look-ahead prevention, consistency rule (lag ALL components when ANY is lagged), breakout strategy with proper lag.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S35: Look-Ahead Lag Consistency\n# Tests: lag all signals consistently, no mixing lagged and unlagged\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === DONCHIAN CHANNEL ===\ndonchian = donchian_channel(src.h, src.l, window=20)\nupper = donchian.donchian_upper\nlower = donchian.donchian_lower\n\n# === ADX TREND FILTER ===\nadx_val = adx(src.h, src.l, 14)\n\n# === CORRECT: lag ALL components consistently ===\nupper_prev = upper >> 1\nlower_prev = lower >> 1\nadx_prev = adx_val >> 1\ntrending = adx_prev > 25\n\n# Breakout signals with ALL components lagged\nlong_sig = (close > upper_prev) and trending\nshort_sig = (close < lower_prev) and trending\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=long_sig, short_entry=short_sig)\nposition_size(type=SizeType.percent)(size=20)\nstop_loss(unit=StopUnit.percent)(distance=5)\n\n# === REPORTERS ===\nxy_lines(\n    title='Donchian Bands (lagged 1 bar)',\n    category='Look-Ahead Guard',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Close', color=Color.Blue),\n        LineSeriesSpec(name='Upper (prev)', color=Color.Green),\n        LineSeriesSpec(name='Lower (prev)', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(close, upper_prev, lower_prev))\n\nxy_lines(\n    title='ADX (lagged 1 bar)',\n    category='Look-Ahead Guard',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='ADX (prev)', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=adx_prev)\n"
+}

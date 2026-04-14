@@ -1,0 +1,9 @@
+{
+  "name": "Compute Cluster S27: Percent Scaling",
+  "description": "Tests: PercentFormat multiplies raw by 100. Pass raw decimal (0.456) to display as 45.6%. Use DecimalFormat for pre-scaled values.",
+  "data": {
+    "assets": ["SPY-Stocks"],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S27: Percent Scaling\n# PercentFormat multiplies raw by 100. Pass raw decimal (0.456) -> displays \"45.6%\".\n# DecimalFormat for pre-scaled values.\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nret = returns(close)\ncum_ret = cumulative_returns(close)\nvol = volatility(close, period=21)\n\n# Summary table showing percent-scaled metrics\nsummary_table(\n    title='Return Metrics (PercentFormat)',\n    category='Formatting',\n    columns=TableSchema(columns=[\n        ColumnSpec(name='Cumulative Return', type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(name='Volatility', type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(name='Daily Return', type=CardRenderType.PercentFormat, dp=3)\n    ])\n)(cum_ret, vol, ret)\n"
+}

@@ -247,14 +247,6 @@
       "start": "2020-01-01",
       "end": "2024-12-31"
     },
-    "spy_ism_reaction_research": {
-      "start": "2020-01-01",
-      "end": "2024-12-31"
-    },
-    "spy_ism_intraday_research": {
-      "start": "2024-01-01",
-      "end": "2025-01-01"
-    },
     "spy_claims_yield_curve_research": {
       "start": "2018-01-01",
       "end": "2024-12-31"
@@ -464,6 +456,130 @@
     },
     "ea_hypothetical_6040_returns_with_drawdowns_research": {
       "start": "2019-01-01",
+      "end": "2024-12-31"
+    },
+    "ct_es_overnight_ib_close_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ct_es_page1_auction_opening_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ct_es_page2_open_vs_prev_range_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ct_es_volume_range_distributions_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "qqq_ib_low_reversal_probability_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "qqq_ib_low_reversal_timing_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "spy_morning_dip_reversal_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "spy_opening_range_extension_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ds_cluster_S03_forward_fill_intraday": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ds_cluster_D07_indicators_intraday": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ds_cluster_D08_calendar_intraday": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ds_cluster_D11_events_intraday": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ds_cluster_D12_sentiment_intraday": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "lwc_test_event_markers_1h_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "lwc_test_event_markers_1m_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "lwc_test_intraday_sessions_research": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ds_cluster_S10e_intraday_typed_resample_variants": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ds_cluster_S13_session_windows": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "ds_cluster_S24_futures_continuation": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "ds_cluster_S25_rollover_method": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "ds_cluster_S26_price_adjustment": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "ds_cluster_D18_crypto_asset_ref": {
+      "start": "2021-01-01",
+      "end": "2024-12-31"
+    },
+    "event_marker_S19_phantom_event_guard": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "exec_cluster_E14_session_execution": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "signal_cluster_S14_eod_filtering": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "repro_downsample_basic": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "repro_downsample_sparse_bug": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "repro_i5036_corr_timeout": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "repro_i5036_corr_timeout_fixed": {
+      "start": "2024-06-01",
+      "end": "2025-01-01"
+    },
+    "b02d5d37-be38-406d-b2ab-c406e8f73d76": {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    "eb304d67-5ebb-435e-9bfd-281554f785c5": {
+      "start": "2020-01-01",
       "end": "2024-12-31"
     }
   }

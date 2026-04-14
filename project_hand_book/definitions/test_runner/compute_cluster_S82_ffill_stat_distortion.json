@@ -1,0 +1,9 @@
+{
+  "name": "Compute Cluster S82: ffill Stat Distortion (histogram/boxplot)",
+  "description": "Tests: sparse monthly data histogram without ffill distortion — minimal companion to S48.",
+  "data": {
+    "assets": ["SPY-Stocks"],
+    "source": "polygon"
+  },
+  "source": "src = study_assets()()\nclose = src.c\n\nret = returns(close)\nmonthly_ret = resample(ret, target_timeframe=\"1M\", agg=[\"Sum\"])\n\n# CORRECT: sparse monthly data → histogram without ffill\nhistogram(\n    title='Monthly Return Distribution (sparse)',\n    category='Distributions',\n    bins=HistogramBinsSchema(bin_count=20)\n)(monthly_ret)\n\n# Stats on sparse data — no ffill distortion\nsummary_table(\n    title='Monthly Return Stats (no ffill)',\n    category='Stats',\n    columns=TableSchema(columns=[\n        ColumnSpec(name='Monthly Return', type=CardRenderType.PercentFormat, dp=2)\n    ])\n)(monthly_ret)\n"
+}

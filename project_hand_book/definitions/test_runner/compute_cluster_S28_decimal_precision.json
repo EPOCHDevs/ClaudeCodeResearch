@@ -1,0 +1,9 @@
+{
+  "name": "Compute Cluster S28: Decimal Precision Calibration",
+  "description": "Tests: dp calibration by data type: returns dp=2, prices dp=2, ratios dp=1, z-scores dp=2, counts dp=0.",
+  "data": {
+    "assets": ["SPY-Stocks"],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S28: Decimal Precision Calibration\n# dp calibration by data type: returns dp=2, prices dp=2, ratios dp=1,\n# z-scores dp=2, counts dp=0.\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nret = returns(close)\nz = zscore(close, period=60)\nvol = volatility(close, period=21)\n\nsummary_table(\n    title='Decimal Precision Calibration',\n    category='Formatting',\n    columns=TableSchema(columns=[\n        ColumnSpec(name='Price', type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(name='Return', type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(name='Z-Score', type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(name='Vol (ann)', type=CardRenderType.PercentFormat, dp=2)\n    ])\n)(close, ret, z, vol)\n"
+}

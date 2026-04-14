@@ -1,0 +1,1 @@
+{"name":"test_double_call","description":"test","data":{"assets":["SPY-Stocks"],"source":"polygon"},"source":"src = study_assets()()\nclose = src.c\nxy_lines(title=\"Test\", category=\"Test\", series=LineSeriesSchema(series=[LineSeriesSpec(name=\"Close\", color=Color.Blue)]))(x_values=index(), y_values=close)\n"}
