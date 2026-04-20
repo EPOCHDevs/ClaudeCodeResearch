@@ -1,0 +1,17 @@
+{
+   "name": "Inverse Volatility Weighted Portfolio (SPY/TLT/GLD/DBC)",
+   "description": "Weekly rebalanced long-only portfolio across SPY, TLT, GLD, and DBC using inverse volatility weighting. 63-day realized volatility (annualized) determines each asset's weight — lower vol assets get higher allocation. Rebalances every Monday. No trend filter, no stops, no leverage. Measures risk-adjusted returns and drawdown across full history.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/market_data"
+   },
+   "source": "\n# =============================================================================\n# Inverse Volatility Weighted Portfolio — SPY / TLT / GLD / DBC\n# Always long all 4 ETFs, rebalanced weekly using inverse-vol weights.\n# 63-day annualized realized vol determines allocation.\n# =============================================================================\n\n# --- Data ---\nsrc = study_assets()\n\n# --- Volatility ---\n# 63-day annualized realized volatility per asset\nvol_63 = volatility(src.c, method=VolMethod.annualized, period=63)\n\n# --- Allocation ---\n# All assets always active (unconditional hold)\nalways_active = is_valid(src.c)\n\n# Inverse volatility weights — cross-sectional, normalized to sum to 1\nw = inv_vol_weight(max_weight=1.0, min_volatility=0.0)(active_mask=always_active, volatility=vol_63)\n\n# --- Rebalance Trigger ---\n# Weekly rebalance on Monday (every ~5 trading days)\nrebal = day_of_week(DayOfWeek.Monday)\n\n# --- Execution ---\n# Long-only: always hold all 4 assets\nlong_and_short_zone()(long_entry=always_active)\n\n# Size by inverse-vol weight, rebalance weekly\nposition_size(type=SizeType.percent)(size=w.weight * 100, rebalance_on=rebal)\n",
+   "data_foundation": "Daily",
+   "thread_id": "6cc269ba-59b9-4f6d-b040-bb03301dba5e"
+}

@@ -1,8 +1,0 @@
-Title: How is the U.S. Economy Performing?
-Topic: This chart displays quarterly Real GDP annualized growth rates for the past 3 years alongside the Atlanta Fed's GDPNow forecast for upcoming quarters, providing a snapshot of recent and projected U.S. economic performance.
-Question: What has the recent trajectory of U.S. GDP growth looked like, and what does the Atlanta Fed's GDPNow model forecast for upcoming quarters?
-Key Takeaways:
-- Real GDP grew at 1.4% pace in Q4 2025, and the Atlanta Fed GDPNow Forecast anticipates annualized growth of 4.2% in Q1 2026.
-- The economy experienced a negative quarter in Q1 2025 at -0.6%, but bounced back strongly through the remainder of 2025 with growth of 1.4% in Q4.
-- Growth has been uneven, ranging from a high of 4.7% (Q2 2023) to the contraction in early 2025, reflecting shifting economic conditions including interest rate impacts and consumer spending patterns.
-Source: ExhibitA for Advice

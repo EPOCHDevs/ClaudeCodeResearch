@@ -1,9 +1,0 @@
-Title: Computer Hardware Industry Relative Price/Performance and 32-Bit Multi-User Micro Evolution
-Source: AMFX 12DEC25.pdf (page 5)
-Date: 2025-12-12
-Type: chart
-
-Insight: These charts illustrate the evolution of computer hardware pricing and performance across different manufacturers (IBM, DEC, Compaq, microVAX) and processor families (MOT, Intel, HP) from the late 1970s through the 1980s, showing how relative price-to-performance ratios changed as computing technology advanced.
-
-Context (below):
-Final Thoughts

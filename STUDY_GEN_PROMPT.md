@@ -712,8 +712,8 @@ hist_ret_6m = roc(period=126)(close)
 hist_ret_12m = roc(period=252)(close)
 
 # Volatility
-vol_21d = volatility(period=21)(close)
-vol_63d = volatility(period=63)(close)
+vol_21d = volatility(close, method=VolMethod.annualized, period=21)
+vol_63d = volatility(close, method=VolMethod.annualized, period=63)
 
 # Returns segmented by prediction status
 ret_predicted_div = where(predict_dividend, fwd_ret_1m)

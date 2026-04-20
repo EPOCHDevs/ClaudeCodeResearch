@@ -1,8 +1,0 @@
-Title: Average Calendar-Year Path of the S&P 500
-Topic: This chart compares the 2026 S&P 500 year-to-date performance path against the historical average calendar-year path from 1950 to 2025, showing how the current year's trajectory aligns with seasonal norms.
-Question: How does the S&P 500's performance in 2026 compare to the average calendar-year path since 1950?
-Key Takeaways:
-- The historical average calendar-year path of the S&P 500 (1950-2025) shows a general upward trend through the year, with the bulk of gains typically accruing in the second half, ending the year around 9-10% on average.
-- The 2026 S&P 500 path was tracking at approximately 0.49% year-to-date early in the year, running below the historical average path at that point.
-- Seasonality can be used as a framework to view markets but does not predict future outcomes; each market cycle is unique and individual years often deviate meaningfully from the average.
-Source: ExhibitA for Advice

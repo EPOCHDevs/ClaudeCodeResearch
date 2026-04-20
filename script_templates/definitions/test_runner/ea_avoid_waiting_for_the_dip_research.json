@@ -1,12 +1,1 @@
-{
-   "name": "avoid-waiting-for-the-dip",
-   "description": "Trading days between each 5% pullback in the S&P 500, showing intervals are unpredictable and can stretch for extended periods.",
-   "data": {
-      "assets": [
-         "SPY-Stocks"
-      ],
-      "source": "polygon"
-   },
-   "source": "# Avoid Waiting for the Dip\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\nrunning_max = cumulative(agg=AggregationType.Max)(close)\ndrawdown = (close - running_max) / running_max\n\n# Detect 5% pullback events\nhit_5pct = crossunder(drawdown, -0.05)\ndays_since_pullback = barssince(hit_5pct)\n\nbar_ts = index()\n\nxy_lines(\n    title='Avoid Waiting for \"the Dip\"',\n    category='1. Overview',\n    area=True,\n    y_axis_label='# of Trading Days Since Last 5% Pullback in the S&P 500',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='# of Trading Days Since a 5% Pullback in the S&P 500', color=Color.Blue)\n    ])\n)(bar_ts, days_since_pullback * 1.0)\n",
-   "global_timeframe": "1D"
-}
+{"name":"avoid-waiting-for-the-dip","description":"Trading days between each 5% pullback in the S&P 500, showing intervals are unpredictable and can stretch for extended periods.","data":{"assets":["SPY-Stocks"],"source":"polygon"},"source":"# Avoid Waiting for the Dip\nsrc = study_assets()\nclose = src.c\n\nrunning_max = cumulative(agg=AggregationType.Max)(close)\ndrawdown = (close - running_max) / running_max\n\n# Detect 5% pullback events\nhit_5pct = crossunder(drawdown, -0.05)\ndays_since_pullback = barssince(hit_5pct)\n\nbar_ts = index()\n\nxy_lines(\n    title='Avoid Waiting for \"the Dip\"',\n    category='1. Overview',\n    area=True,\n    y_axis_label='# of Trading Days Since Last 5% Pullback in the S&P 500',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='# of Trading Days Since a 5% Pullback in the S&P 500', color=Color.Blue)\n    ])\n)(bar_ts, days_since_pullback * 1.0)\n"}

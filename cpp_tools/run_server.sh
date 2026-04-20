@@ -18,7 +18,7 @@ set -e
 SCRIPT_NAME="run_server"
 TARGET="epoch_stratifyx_server"
 DEFAULT_PORT=9000
-NUM_JOBS=$(( $(nproc) > 8 ? 8 : $(nproc) ))
+NUM_JOBS=$(nproc)
 
 # Default to release build
 BUILD_MODE="release"

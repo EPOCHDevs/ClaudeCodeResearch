@@ -1,0 +1,13 @@
+{
+   "name": "amfx-crude-geopolitical-2024-research",
+   "description": "amFX reproduction (13JUN25 p1): NYMEX Crude Oil Oct-Nov 2024 showing the Iran-Israel geopolitical reaction. The 68-to-78 move took weeks in Oct 2024. Key annotations: Iran launches 200 ballistic missiles (Oct 1), Israel retaliates and verbal de-escalation (late Oct). The original also shows a Jun 2025 intraday panel where the same move happened in one hour, but we reproduce only the Oct-Nov 2024 daily panel. Source: amFX 13JUN25 newsletter (Brent Donnelly, Spectra Markets).",
+   "data": {
+      "assets": [
+         "CL-Futures"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: CRUDE OIL OCT-NOV 2024 GEOPOLITICAL REACTION\n# =============================================================================\n# Reproduces the top panel of page 1 chart from amFX 13JUN25 newsletter.\n# NYMEX Crude Oct-Nov 2024: the $68 to $78 rally took several weeks.\n# Iran launched 200 ballistic missiles (Oct 1) triggering the move.\n# Israel retaliated and verbal de-escalation led to fade.\n# The Jun 2025 intraday panel (same move in 1 hour) cannot be reproduced\n# due to data availability, so we focus on the daily Oct-Nov 2024 view.\n# =============================================================================\n\nsrc = market_data_source()()\ncont = futures_continuation(\n    s_rollover_method=RolloverType.FirstOfMonth,\n    s_adjustment_method=AdjustmentType.NoAdjustment\n)(src.o, src.h, src.l, src.c, src.v, src.oi, src.s)\n\nclose = cont.c\nidx = index()\n\nxy_lines(\n    title='NYMEX Crude Oct/Nov 2024: The 68-to-78 Move Took Weeks',\n    category='Crude Geopolitical',\n    y_axis_label='Price (USD/bbl)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='WTI Close', color=Color.Blue)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=68.0, title='$68 Floor (Iran Missiles)', color=Color.Red, dash_style=DashStyle.Dash),\n        ReferenceLine(value=78.0, title='$78 Peak (Israel Retaliation)', color=Color.Red, dash_style=DashStyle.Dash),\n        ReferenceLine(value=73.0, title='$73 Mid-Range', color=Color.Gray, dash_style=DashStyle.Dot)\n    ]),\n    order=0\n)(x_values=idx, y_values=close)\n"
+}

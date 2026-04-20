@@ -96,15 +96,15 @@
       "end": "2024-12-31"
     },
     "ct_session_structure_research": {
-      "start": "2022-01-01",
+      "start": "2024-01-01",
       "end": "2025-01-01"
     },
     "ct_opening_level_touch_research": {
-      "start": "2022-01-01",
+      "start": "2024-01-01",
       "end": "2025-01-01"
     },
     "ct_ib_close_analysis_research": {
-      "start": "2022-01-01",
+      "start": "2024-01-01",
       "end": "2025-01-01"
     },
     "ea_sp500_with_recessions_research": {
@@ -228,7 +228,7 @@
       "end": "2024-12-31"
     },
     "gc_nfp_intraday_research": {
-      "start": "2023-06-01",
+      "start": "2024-06-01",
       "end": "2025-01-01"
     },
     "aapl_post_earnings_drift_research": {
@@ -240,7 +240,7 @@
       "end": "2024-12-31"
     },
     "zb_cpi_intraday_research": {
-      "start": "2023-06-01",
+      "start": "2024-06-01",
       "end": "2025-01-01"
     },
     "spy_fed_rate_reaction_research": {

@@ -1,0 +1,13 @@
+{
+   "name": "amfx-gme-microstructure-research",
+   "description": "amFX reproduction (13JUN25 p3): GameStop (GME) 1-minute chart showing an unusual microstructure anomaly on Jun 12, 2025. A massive resting bid at $21.54 absorbed all selling for hours, creating a perfectly flat horizontal line. Described as 'one of the weirdest 1-minute charts I have seen in a while.' Shows the sharp decline from ~$24 to $21.54, the extended flat line, then late-day activity. Source: amFX 13JUN25 newsletter (Brent Donnelly, Spectra Markets).",
+   "data": {
+      "assets": [
+         "GME-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1Min",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: GAMESTOP 1-MINUTE MICROSTRUCTURE ANOMALY\n# =============================================================================\n# Reproduces page 3 chart from amFX 13JUN25 newsletter.\n# GME 1-minute chart for Jun 12, 2025 showing massive resting bid\n# at $21.54 that created a perfectly flat line for hours.\n# Sharp selloff from ~$24+ to $21.54, then flat, then bounce/break.\n# 'One of the weirdest 1-minute charts I have seen in a while.'\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nidx = index()\n\nxy_lines(\n    title='GameStop 1-Minute: The $21.54 Resting Bid Anomaly',\n    category='GME Microstructure',\n    y_axis_label='Price (USD)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='GME Close', color=Color.Blue)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=21.54, title='$21.54 Massive Bid', color=Color.Red, dash_style=DashStyle.Solid),\n        ReferenceLine(value=22.00, title='$22.00', color=Color.Gray, dash_style=DashStyle.Dot),\n        ReferenceLine(value=23.00, title='$23.00', color=Color.Gray, dash_style=DashStyle.Dot)\n    ]),\n    order=0\n)(x_values=idx, y_values=close)\n"
+}

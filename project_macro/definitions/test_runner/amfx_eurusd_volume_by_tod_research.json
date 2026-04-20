@@ -1,0 +1,13 @@
+{
+   "name": "amfx-eurusd-volume-by-tod-research",
+   "description": "amFX reproduction (24JAN23 p1): EURUSD spot volume by time of day (hourly buckets, UTC). Shows four structural volume spikes: (1) London open ~7-8 UTC, (2) US data releases ~13:30 UTC, (3) Options expiry ~14-15 UTC, (4) WMR Fix ~16 UTC (the largest spike). Computed from 1-minute EURUSD data averaged by hour of day.",
+   "data": {
+      "assets": [
+         "EURUSD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1Min",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: EURUSD VOLUME BY TIME OF DAY (24JAN23 p1)\n# =============================================================================\n# Original chart shows indexed volume by time of day with 4 labeled spikes:\n#   1. London open (~7 UTC / 2am NY)\n#   2. US data releases (~13:30 UTC / 8:30am NY)\n#   3. Options expiry (~14-15 UTC / 9-10am NY)\n#   4. WMR Fix (~16 UTC / 11am NY) - LARGEST spike\n# We use 1-minute EURUSD data, extract hour of day, and average volume.\n# =============================================================================\n\nsrc = market_data_source()()\n\n# Volume and hour extraction from 1-min bars\nvol = src.v\nhour_of_day = datetime_extract(component=DatetimeExtractionType.hour)(index())\n\n# Use hour as label for xy_bars aggregation\n# agg=Mean averages volume across all days for each hour bucket\nxy_bars(\n    agg=AggregationType.Mean,\n    title='EURUSD Volume by Hour of Day (UTC): Where Is the Fix?',\n    category='FX Volume',\n    x_axis_label='Hour (UTC)',\n    y_axis_label='Avg Volume (ticks)',\n    y_axis_format=CardRenderType.IntegerFormat,\n    x_category_type=CategoryAxisType.Exact,\n    data_labels=True,\n    series=BarSeriesSchema(series=[\n        BarSeriesSpec(name='Avg Volume', color=Color.Blue)\n    ]),\n    order=0\n)(vol, label=hour_of_day)\n"
+}

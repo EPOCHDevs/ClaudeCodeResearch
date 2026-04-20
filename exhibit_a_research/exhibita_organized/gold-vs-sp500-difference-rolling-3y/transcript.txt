@@ -1,8 +1,0 @@
-Title: Cycles of Gold vs S&P 500 Performance
-Topic: This chart illustrates the rolling 3-year performance difference between gold and the S&P 500 since 2003, showing how leadership between the two assets has shifted across market cycles.
-Question: How has the relative performance of gold versus the S&P 500 evolved over rolling 3-year periods, and where does it stand now?
-Key Takeaways:
-- As of February 27, 2026, the rolling 3-year performance spread shows gold outperforming the S&P 500 by 103.2%, representing an exceptionally wide gap in gold's favor.
-- The spread has historically rotated between gold outperformance and equity outperformance, with notable gold strength around 2007-2012 and again in the current period starting around 2023-2026.
-- The chart highlights that relative performance between gold and equities is cyclical, and recognizing these shifts may help investors maintain diversified portfolios across different asset classes.
-Source: ExhibitA for Advice

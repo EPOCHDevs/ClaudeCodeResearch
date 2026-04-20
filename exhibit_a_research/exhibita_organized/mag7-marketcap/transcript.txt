@@ -1,8 +1,0 @@
-Title: Putting Mag7 Market Cap Into Perspective
-Topic: This chart compares the combined market capitalization of the Magnificent 7 stocks versus the combined market cap of the bottom 433 stocks in the S&P 500, visualized as a pie chart to show the extreme concentration.
-Question: How does the combined market cap of just 7 companies compare to the remaining 433 stocks in the S&P 500?
-Key Takeaways:
-- As of July 24, 2025, the combined market cap of just 7 companies (the Mag 7) at $18.8 trillion equals that of the bottom 433 S&P 500 stocks, also at $18.8 trillion, illustrating extreme market concentration.
-- While the Mag 7 average approximately $2.7 trillion each, the bottom 433 stocks average just $43 billion in market cap, highlighting the massive scale gap between the top and bottom of the index.
-- This visualization powerfully demonstrates how concentrated equity markets have become, serving as a reminder that index performance can mask what is happening beneath the surface and underscoring the importance of diversification.
-Source: ExhibitA for Advice

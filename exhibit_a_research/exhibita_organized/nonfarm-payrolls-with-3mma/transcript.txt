@@ -1,8 +1,0 @@
-Title: A Look at Monthly Job Growth
-Topic: Monthly change in nonfarm payrolls with a 3-month moving average over the past 2 years. This chart tracks the net number of jobs added or lost in the U.S. economy each month (excluding government, farm, and non-profit employees), providing a key measure of economic health.
-Question: How has monthly U.S. job growth trended recently, and what does the 3-month moving average reveal about the labor market's trajectory?
-Key Takeaways:
-- The change in nonfarm payrolls was 130,000 (130k) in January 2026, with the 3-month moving average at 78,000 (78k), indicating a notable deceleration in the pace of job creation compared to the stronger gains seen in 2024.
-- Job growth has been volatile month-to-month, with some months showing strong gains above 200k and others posting negative readings (such as the -146k dip), underscoring the importance of looking at the 3-month moving average for a clearer trend.
-- The overall downward trend in the moving average from mid-2024 levels suggests the labor market is gradually cooling, which is a key signal for Federal Reserve policy decisions and broader economic outlook.
-Source: ExhibitA for Advice

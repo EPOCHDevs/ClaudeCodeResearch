@@ -1,9 +1,0 @@
-{
-   "name": "amfx-nahb-vs-claims-research",
-   "description": "amFX reproduction (25OCT22 p2): Housing activity vs Initial Claims lead-lag relationship. Original uses NAHB Housing Market Index (not on FRED), substituted with Housing Starts (HOUST) which is the hard-data counterpart and closely correlated with NAHB. Housing leads Claims by 6-24 months at most turns. Both normalized to percentile rankings. Source: Brent Donnelly, Spectra Markets.",
-   "data": {
-      "assets": []
-   },
-   "global_timeframe": "1D",
-   "source": "# =============================================================================\n# AMFX REPRODUCTION: NAHB/HOUSING STARTS VS INITIAL CLAIMS (25OCT22 p2)\n# =============================================================================\n# Brent Donnelly's crown jewel chart: NAHB leads Claims by 6-24 months.\n# NAHB Housing Market Index is not on FRED, so we use Housing Starts\n# (HOUST) as the hard-data counterpart.\n# =============================================================================\n\n# Housing Starts (monthly SA annual rate, FRED: HOUST)\nhousing_src = economic_indicators(series_id='HOUST')()\nhousing = ffill(housing_src.result)\n\nidx = index()\n\nxy_lines(\n    title='Housing Starts: The Earliest Warning Signal',\n    category='Housing Leads Claims',\n    y_axis_label='Housing Starts (SAAR, thousands)',\n    y_axis_format=AxisValueFormat.IntegerFormat,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Housing Starts (HOUST)', color=Color.Red)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=1000, title='1M Units', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(idx, housing)\n"
-}

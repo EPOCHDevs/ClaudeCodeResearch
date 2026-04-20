@@ -8,7 +8,7 @@ BIN="$BUILD_DIR/bin/$TARGET"
 # Build the binary
 echo "Building $TARGET..."
 cd "$BUILD_DIR"
-ninja -j$(( $(nproc) > 8 ? 8 : $(nproc) )) "$TARGET"
+ninja -j$(nproc) "$TARGET"
 echo "Build complete."
 
 "$BIN"

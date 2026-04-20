@@ -1,8 +1,0 @@
-Title: Understanding The Rule of 72
-Topic: This chart demonstrates the Rule of 72, which shows the relationship between an investment's annual rate of return and the number of years it takes to double in value (72 divided by the annual return equals years to double).
-Question: How long does it take for an investment to double in value at different annual rates of return?
-Key Takeaways:
-- The Rule of 72 provides a simple formula: divide 72 by the annual rate of return to estimate the number of years needed to double an investment. At 1% it takes 72 years, while at 6% it takes approximately 12 years, and at 9% it takes about 8 years.
-- The chart shows a steep inverse curve -- higher annual returns dramatically reduce the time needed to double, with the most impactful gains occurring when moving from very low returns (1-4%) to moderate returns (6-10%).
-- It is important for investors to keep the Rule of 72 in mind when setting portfolio growth expectations, as the number of years it would take money to double is directly tied to the expected annual return.
-Source: ExhibitA for Advice

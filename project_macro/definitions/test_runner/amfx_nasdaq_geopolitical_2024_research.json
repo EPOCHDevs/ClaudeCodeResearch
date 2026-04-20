@@ -1,0 +1,13 @@
+{
+   "name": "amfx-nasdaq-geopolitical-2024-research",
+   "description": "amFX reproduction (13JUN25 p1): NASDAQ 100 (QQQ) Sep-Nov 2024 showing geopolitical event reactions. Iran missile launch (~Oct 1), Israel retaliation (~Oct 26), US election (Nov 5), MSFT/META earnings disappoint (~Oct 30). Key insight: geopolitical Iran/Israel events barely moved markets, while earnings and election drove the real moves. Source: amFX 13JUN25 newsletter (Brent Donnelly, Spectra Markets).",
+   "data": {
+      "assets": [
+         "QQQ-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: NASDAQ SEP-NOV 2024 GEOPOLITICAL EVENTS\n# =============================================================================\n# Reproduces page 1 chart from amFX 13JUN25 newsletter.\n# NASDAQ (QQQ proxy) line chart showing Sep-Nov 2024 price action.\n# Key events: Iran missile launch, Israel retaliation, US election,\n# MSFT/META earnings disappoint. Geopolitics = noise, fundamentals matter.\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nidx = index()\n\n# Moving averages for context\nma20 = ma(period=20)(close)\n\nxy_lines(\n    title='NASDAQ Sep-Nov 2024: Geopolitics vs Fundamentals',\n    category='NASDAQ Geopolitical',\n    y_axis_label='QQQ Price (USD)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='QQQ Close', color=Color.Blue),\n        LineSeriesSpec(name='20d MA', color=Color.Gray, dash_style=DashStyle.Dot)\n    ]),\n    order=0\n)(x_values=idx, y_values=(close, ma20))\n"
+}

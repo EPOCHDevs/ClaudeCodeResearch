@@ -1,10 +1,1 @@
-{
-   "name": "quits-vs-hires-us-economy",
-   "description": "JOLTS quit rate vs hire rate tracking labor market dynamics and the balance between voluntary departures and new hires.",
-   "data": {
-      "assets": [],
-      "source": "polygon"
-   },
-   "source": "# Quits vs Hires in the U.S. Economy\nquit_src = economic_indicators(series_id='JTSQUR')()\nhire_src = economic_indicators(series_id='JTSHIR')()\n\nquit_filled = ffill(quit_src.result)\nhire_filled = ffill(hire_src.result)\n\nbar_ts = index()\n\nxy_lines(\n    title='Quits vs Hires in the U.S. Economy',\n    category='1. Labor Market',\n    y_axis_label='Rate (%)',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=1,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Total Quits', color=Color.Blue),\n        LineSeriesSpec(name='Total Hires', color=Color.Gray)\n    ])\n)(bar_ts, quit_filled, hire_filled)\n",
-   "global_timeframe": "1D"
-}
+{"name":"quits-vs-hires-us-economy","description":"JOLTS quit rate vs hire rate tracking labor market dynamics and the balance between voluntary departures and new hires.","data":{"assets":[],"source":"polygon"},"source":"# Quits vs Hires in the U.S. Economy\nquit_src = economic_indicators(series_id=\"JTSQUR\")\nhire_src = economic_indicators(series_id=\"JTSHIR\")\n\nquit_filled = ffill(quit_src.result)\nhire_filled = ffill(hire_src.result)\n\nbar_ts = index()\n\nxy_lines(\n    title='Quits vs Hires in the U.S. Economy',\n    category='1. Labor Market',\n    y_axis_label='Rate (%)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=1,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Total Quits', color=Color.Blue),\n        LineSeriesSpec(name='Total Hires', color=Color.Gray)\n    ])\n)(bar_ts, quit_filled, hire_filled)\n"}

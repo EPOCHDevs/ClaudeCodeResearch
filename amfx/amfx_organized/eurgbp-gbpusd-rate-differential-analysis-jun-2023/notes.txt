@@ -1,9 +1,0 @@
-Title: EURGBP vs Germany/UK 10-year Rate Differential and GBPUSD vs UK/USA 10-year Rate Differential
-Source: AMFX 12JUN23.pdf (page 1)
-Date: 2023-06-12
-Type: chart
-
-Insight: These dual charts illustrate the inverse relationship between currency pairs and interest rate differentials, with annotations highlighting the UK CPI release impact on both exchange rates in April 2023.
-
-Context (above):
-6 ÷ 2(1+2) = x

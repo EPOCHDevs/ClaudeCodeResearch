@@ -1,8 +1,0 @@
-Title: A Look at Stock Market Sentiment
-Topic: This chart displays the AAII Sentiment Survey spread (bullish sentiment minus bearish sentiment, in percentage points) since 1988, providing a long-term view of how investor sentiment has oscillated between optimism and pessimism.
-Question: What is the current state of investor sentiment, and how does it compare to historical extremes?
-Key Takeaways:
-- The bull-bear sentiment spread has fluctuated dramatically over the decades, ranging from roughly +50% (extreme optimism) to below -50% (extreme pessimism), with the spread standing at approximately -6.0% as of late February 2026.
-- Extreme sentiment readings in either direction have historically coincided with market turning points, though timing remains unpredictable, making sentiment a useful but imperfect contrarian indicator.
-- Sentiment surveys provide a snapshot of current investor psychology but should be viewed as one data point among many; they do not reliably predict near-term market direction on their own.
-Source: ExhibitA for Advice

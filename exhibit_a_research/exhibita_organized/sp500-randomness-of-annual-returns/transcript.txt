@@ -1,8 +1,0 @@
-Title: The Randomness of Stock Returns
-Topic: This scatter plot displays every S&P 500 annual return from 1928 to 2025 (with the 2026 year-to-date return shown as the most recent data point), illustrating the volatility and unpredictability of stock market returns from year to year.
-Question: Is there a predictable pattern to S&P 500 annual returns, or are they essentially random from year to year?
-Key Takeaways:
-- Annual returns of the S&P 500 are scattered widely, ranging from roughly +50% to nearly -50%, with no consistent upward or downward trajectory visible from year to year.
-- As of 2026, the S&P 500 has produced a year-to-date price return of 0.49%, shown as the most recent data point on the scatter plot.
-- The randomness highlights that the market has not followed a consistent pattern, reinforcing the idea that trying to time the market based on prior year returns is unreliable.
-Source: ExhibitA for Advice

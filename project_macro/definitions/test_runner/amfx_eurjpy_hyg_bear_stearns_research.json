@@ -1,0 +1,13 @@
+{
+   "name": "amfx-eurjpy-hyg-bear-stearns-research",
+   "description": "amFX reproduction (16JUN22 p5): EURJPY vs HYG during Bear Stearns crisis (Feb-Apr 2008). Forced liquidation case study -- when JPM bought Bear Stearns and liquidated ~10B EURJPY over 3 days, EURJPY completely decoupled from risk assets. HYG and risky assets made a V-bottom while EURJPY kept getting hammered. Z-score normalized overlay shows the divergence.",
+   "data": {
+      "assets": [
+         "HYG-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: EURJPY VS HYG BEAR STEARNS CRISIS (16JUN22 p5)\n# =============================================================================\n# Legendary forced-liquidation case study from Brent Donnelly.\n# Feb-Apr 2008: JPM buys Bear Stearns for $2/share, liquidates ~10B EURJPY.\n# EURJPY decouples from risk assets for days -- HYG V-bottoms but EURJPY\n# keeps getting hammered by forced selling that ignores correlations.\n#\n# Z-score normalization puts both on same scale for visual overlay.\n# =============================================================================\n\nsrc = market_data_source()()\nhyg_close = src.c\n\n# EURJPY from fx_pairs\neurjpy = fx_pairs(ticker='EURJPY')()\neurjpy_close = eurjpy.c\n\nidx = index()\n\n# =============================================================================\n# Normalize both for overlay\n# =============================================================================\nhyg_z = zscore(window=60)(hyg_close)\neurjpy_z = zscore(window=60)(eurjpy_close)\n\n# =============================================================================\n# CHART 1: Normalized Overlay (Z-Score)\n# =============================================================================\nxy_lines(\n    title='EURJPY vs HYG: When Forced Selling Breaks All Correlations',\n    category='Bear Stearns Crisis',\n    y_axis_label='Z-Score (60d)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='EURJPY (Z-Score)', color=Color.Blue),\n        LineSeriesSpec(name='HYG High Yield (Z-Score)', color=Color.Gray)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0, title='Mean', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(idx, eurjpy_z, hyg_z)\n"
+}

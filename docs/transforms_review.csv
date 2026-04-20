@@ -1,224 +1,122 @@
-reviewed,id,name,layer,category,package,inputs,outputs,options,comments
-[ ],bar_gap,Bar Gap,L3 Registered,ControlFlow,Compute,4,5,fill_percent min_gap_size,
-[ ],barssince,Bars Since,L1 Builtin,ControlFlow,Compute,1,1,-,
-[ ],cusum,CUSUM Change Point Detector,L3 Registered,ControlFlow,Compute,1,5,threshold drift use_std_threshold std_multiplier,
-[ ],day_of_week,Day of Week,L1 Builtin,ControlFlow,Sessions,0,1,weekday,
-[ ],falling,Falling,L1 Builtin,ControlFlow,Compute,1,1,length,
-[ ],hold_until,Hold Until,L1 Builtin,ControlFlow,Compute,2,1,-,
-[ ],holiday,Holiday Effect,L3 Registered,ControlFlow,Sessions,0,1,days_before days_after holiday_calendar include_special_closes,
-[ ],is_period_boundary,Is Period Boundary,L3 Registered,ControlFlow,Sessions,1,1,period boundary ordinal day_anchor day_of_month month_anchor offset timezone,
-[ ],keyword_match,Keyword Match,L3 Registered,ControlFlow,NLP,1,1,keywords,
-[ ],month_of_year,Month of Year,L1 Builtin,ControlFlow,Sessions,0,1,month,
-[ ],quarter,Quarter,L1 Builtin,ControlFlow,Sessions,0,1,quarter,
-[ ],rising,Rising,L1 Builtin,ControlFlow,Compute,1,1,length,
-[ ],session_gap,Session Gap,L3 Registered,ControlFlow,Sessions,4,5,fill_percent,
-[ ],session_window,Session Window,L3 Registered,ControlFlow,Sessions,6,9,agg,
-[ ],string_check,String Check,L3 Registered,ControlFlow,NLP,1,1,operation,
-[ ],string_contains,String Contains,L3 Registered,ControlFlow,NLP,1,1,operation pattern,
-[ ],switch,Switch,L1 Builtin,ControlFlow,Compute,2,1,-,
-[ ],turn_of_month,Turn of Month,L3 Registered,ControlFlow,Sessions,0,2,days_before days_after,
-[ ],valuewhen,Value When,L1 Builtin,ControlFlow,Compute,2,1,occurrence,
-[ ],week_of_month,Week of Month,L1 Builtin,ControlFlow,Sessions,0,1,week,
-[ ],futures_continuation,Futures Continuation,L3 Registered,DataPrep,MarketData,7,10,s_rollover_method s_adjustment_method i_offset spread_depth,
-[ ],analyst_ratings,Analyst Ratings,L1 Builtin,DataSource,Fundamental,0,11,-,
-[ ],balance_sheet,Balance Sheet,L1 Builtin,DataSource,Fundamental,0,29,period,
-[ ],cash_flow,Cash Flow,L1 Builtin,DataSource,Fundamental,0,23,period,
-[ ],cs_news,Cross-Sectional News,L3 Registered,DataSource,News,0,3,tickers channels channels_match_mode tags tags_match_mode author_any_of,
-[ ],dividends,Dividends,L1 Builtin,DataSource,Fundamental,0,8,dividend_type,
-[ ],earnings,Earnings,L1 Builtin,DataSource,Fundamental,0,14,-,
-[ ],economic_calendar,Economic Calendar,L3 Registered,DataSource,Macroeconomics,0,1,source release_id security_type term,
-[ ],economic_indicators,Economic Indicators,L1 Builtin,DataSource,Macroeconomics,0,1,series_id eia_route eia_data_frequency,
-[ ],economic_revisions,Economic Revisions,L1 Builtin,DataSource,Macroeconomics,0,4,series_id,
-[ ],income_statement,Income Statement,L1 Builtin,DataSource,Fundamental,0,31,period,
-[ ],ipos,IPOs,L1 Builtin,DataSource,CorporateEvents,0,5,-,
-[ ],news,News,L3 Registered,DataSource,News,0,3,channels channels_match_mode tags tags_match_mode author_any_of tickers,
-[ ],short_interest,Short Interest,L1 Builtin,DataSource,CorporateEvents,0,3,-,
-[ ],short_volume,Short Volume,L1 Builtin,DataSource,CorporateEvents,0,5,-,
-[ ],splits,Stock Splits,L1 Builtin,DataSource,CorporateEvents,0,5,-,
-[ ],ticker_events,Ticker Events,L1 Builtin,DataSource,CorporateEvents,0,2,-,
-[ ],cppi,CPPI,L3 Registered,Executor,Execution,0,0,multiplier floor_pct,
-[ ],kelly,Kelly,L3 Registered,Executor,Execution,0,0,fraction min_trades fallback_pct,
-[ ],long_and_short_zone,Long & Short Zone,L3 Registered,Executor,Execution,2,1,hold_long hold_short strict_hold,
-[ ],optimal_f,Optimal f,L3 Registered,Executor,Execution,0,0,min_trades fallback_pct max_leverage,
-[ ],position_size,Position Size,L3 Registered,Executor,Execution,2,1,type,
-[ ],risk_unit,Risk Unit,L3 Registered,Executor,Execution,4,3,risk_mode rr_ratio min_size max_size lot_size size_scalar contract_multiplier stop_unit,
-[ ],rollover_policy,Rollover Policy,L3 Registered,Executor,Execution,1,1,-,
-[ ],stop_loss,Stop Loss,L3 Registered,Executor,Execution,1,1,unit,
-[ ],take_profit,Take Profit,L3 Registered,Executor,Execution,2,2,unit r_levels exit_pcts,
-[ ],tipp,TIPP,L3 Registered,Executor,Execution,0,0,multiplier floor_pct,
-[ ],trailing_stop,Trailing Stop,L3 Registered,Executor,Execution,2,2,step,
-[ ],highestbars,Highest Bars,L1 Builtin,Indicator,Compute,1,1,period,
-[ ],intraday_returns,Intraday Returns,L1 Builtin,Indicator,Compute,2,1,return_type,
-[ ],lowestbars,Lowest Bars,L1 Builtin,Indicator,Compute,1,1,period,
-[ ],pivot_point_sr,Pivot Point Support & Resistance,L2 Macro,Indicator,Compute,3,7,-,
-[ ],price_profile,Price Profile,L3 Registered,Indicator,Compute,4,6,window_size tick_size value_area_pct mode ib_periods,
-[ ],dbscan,DBSCAN,L3 Registered,ML,MachineLearning,1,3,epsilon min_points window_size step window_type min_training_samples,
-[ ],hmm,Hidden Markov Model,L3 Registered,ML,MachineLearning,1,2,num_states max_iterations tolerance window_size step window_type min_training_samples,
-[ ],kmeans,K-Means Clustering,L3 Registered,ML,MachineLearning,1,2,num_clusters max_iterations window_size step window_type min_training_samples,
-[ ],lightgbm_classifier,LightGBM Classifier,L3 Registered,ML,MachineLearning,2,2,num_estimators learning_rate num_leaves min_data_in_leaf max_depth boosting_type lambda_l1 lambda_l2 window_size step window_type min_training_samples,
-[ ],lightgbm_regressor,LightGBM Regressor,L3 Registered,ML,MachineLearning,2,1,num_estimators learning_rate num_leaves min_data_in_leaf max_depth boosting_type lambda_l1 lambda_l2 window_size step window_type min_training_samples,
-[ ],logistic_l1,Logistic L1,L3 Registered,ML,MachineLearning,2,3,C epsilon window_size step window_type min_training_samples,
-[ ],logistic_l2,Logistic L2,L3 Registered,ML,MachineLearning,2,3,C epsilon window_size step window_type min_training_samples,
-[ ],ml_minmax,ML Min-Max,L3 Registered,ML,MachineLearning,1,1,window_size step window_type min_training_samples,
-[ ],ml_robust,ML Robust,L3 Registered,ML,MachineLearning,1,1,window_size step window_type min_training_samples,
-[ ],ml_zscore,ML Z-Score,L3 Registered,ML,MachineLearning,1,1,window_size step window_type min_training_samples,
-[ ],pca,PCA,L3 Registered,ML,MachineLearning,1,2,n_components window_size step window_type min_training_samples,
-[ ],svr_l1,SVR L1,L3 Registered,ML,MachineLearning,2,1,C epsilon window_size step window_type min_training_samples,
-[ ],svr_l2,SVR L2,L3 Registered,ML,MachineLearning,2,1,C epsilon window_size step window_type min_training_samples,
-[ ],arg_max,ArgMax (Timestamp),L1 Builtin,Math,Compute,1,1,expanding,
-[ ],arg_min,ArgMin (Timestamp),L1 Builtin,Math,Compute,1,1,expanding,
-[ ],arg_minmax,ArgMinMax (Timestamps),L3 Registered,Math,Compute,1,2,expanding,
-[ ],decay,Linear Decay,L1 Builtin,Math,Compute,1,1,period,
-[ ],edecay,Exponential Decay,L1 Builtin,Math,Compute,1,1,period,
-[ ],stderr,Standard Error Over Period,L1 Builtin,Math,Compute,1,1,period,
-[ ],ao,Awesome Oscillator,L1 Builtin,Momentum,Compute,2,1,-,
-[ ],apo,Absolute Price Oscillator,L1 Builtin,Momentum,Compute,1,1,short_period long_period,
-[ ],bop,Balance of Power,L1 Builtin,Momentum,Compute,4,1,-,
-[ ],cci,Commodity Channel Index,L1 Builtin,Momentum,Compute,3,1,period,
-[ ],cmo,Chande Momentum Oscillator,L1 Builtin,Momentum,Compute,1,1,period,
-[ ],cs_momentum,Cross-Sectional Momentum,L3 Registered,Momentum,Compute,1,1,group_by,
-[ ],fisher,Fisher Transform,L3 Registered,Momentum,Compute,2,2,period,
-[ ],fosc,Forecast Oscillator,L1 Builtin,Momentum,Compute,1,1,period,
-[ ],macd,Moving Average Convergence/Divergence,L2 Macro,Momentum,Compute,1,3,short_period long_period signal_period,
-[ ],mfi,Money Flow Index,L1 Builtin,Momentum,Compute,4,1,period,
-[ ],msw,Mesa Sine Wave,L3 Registered,Momentum,Compute,1,2,period,
-[ ],ppo,Percentage Price Oscillator,L1 Builtin,Momentum,Compute,1,1,short_period long_period,
-[ ],psar,Parabolic SAR,L1 Builtin,Momentum,Compute,2,1,acceleration_factor_step acceleration_factor_maximum,
-[ ],psl,Psychological Support Levels (PSL),L1 Builtin,Momentum,Compute,2,1,period,
-[ ],qqe,Quantitative Qualitative Estimation (QQE),L3 Registered,Momentum,Compute,1,4,avg_period smooth_period width_factor,
-[ ],roc,Rate of Change,L1 Builtin,Momentum,Compute,1,1,period,
-[ ],rocr,Rate of Change Ratio,L1 Builtin,Momentum,Compute,1,1,period,
-[ ],rsi,Relative Strength Index,L1 Builtin,Momentum,Compute,1,1,period,
-[ ],stoch,Stochastic Oscillator,L2 Macro,Momentum,Compute,3,2,k_period k_slowing_period d_period,
-[ ],stochrsi,Stochastic RSI,L1 Builtin,Momentum,Compute,1,1,period,
-[ ],trix,Trix,L1 Builtin,Momentum,Compute,1,1,period,
-[ ],ultosc,Ultimate Oscillator,L1 Builtin,Momentum,Compute,3,1,short_period medium_period long_period,
-[ ],willr,Williams %R,L1 Builtin,Momentum,Compute,3,1,period,
-[ ],black_litterman,Black-Litterman,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type tau risk_aversion annualization max_weight,
-[ ],equal_weight,Equal Weight,L3 Registered,Portfolio,PortfolioAllocation,1,1,max_weight,
-[ ],herc,Hierarchical Equal Risk Contribution,L3 Registered,Portfolio,PortfolioAllocation,1,1,linkage lookback step_size window_type max_k risk_measure max_weight,
-[ ],hrp,Hierarchical Risk Parity,L3 Registered,Portfolio,PortfolioAllocation,1,1,linkage lookback step_size window_type max_weight,
-[ ],inv_vol_weight,Inverse Volatility Weight,L3 Registered,Portfolio,PortfolioAllocation,2,1,max_weight min_volatility,
-[ ],max_diversification,Maximum Diversification,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type max_weight,
-[ ],max_sharpe,Maximum Sharpe Ratio,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type risk_free_rate annualization max_weight,
-[ ],min_cvar,Minimum CVaR,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type alpha max_weight,
-[ ],min_semivariance,Minimum Semivariance,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type benchmark max_weight,
-[ ],min_variance,Minimum Variance,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type max_weight,
-[ ],risk_budgeting,Risk Budgeting,L3 Registered,Portfolio,PortfolioAllocation,2,1,lookback step_size window_type max_weight,
-[ ],risk_parity,Risk Parity,L3 Registered,Portfolio,PortfolioAllocation,1,1,lookback step_size window_type max_iter tol max_weight,
-[ ],bos_choch,Break of Structure & Change of Character,L3 Registered,PriceAction,SMC,6,4,close_break,
-[ ],fair_value_gap,Fair Value Gap,L3 Registered,PriceAction,SMC,4,4,join_consecutive,
-[ ],liquidity,Liquidity,L3 Registered,PriceAction,SMC,4,4,range_percent,
-[ ],order_blocks,Order Blocks,L3 Registered,PriceAction,SMC,6,6,close_mitigation,
-[ ],previous_high_low,Previous High Low,L3 Registered,PriceAction,SMC,2,4,interval type,
-[ ],qstick,Qstick,L1 Builtin,PriceAction,Compute,2,1,period,
-[ ],retracements,Retracements,L3 Registered,PriceAction,SMC,4,3,-,
-[ ],swing_highs_lows,Swing Highs and Lows,L3 Registered,PriceAction,SMC,2,2,swing_length,
-[ ],boxplot,Boxplot - ONE PER ASSET,L3 Registered,Reporter,Distributions,2,0,mode title x_axis_label y_axis_label category show_outliers whisker_iqr colors fill_color median_color median_width stem_color stem_width whisker_color whisker_width whisker_length outlier_color outlier_line_color outlier_line_width outlier_radius line_width show_data_labels data_label_format y_axis_format y_axis_dp x_category_type order series_names,
-[ ],bubble,Bubble Chart - ONE PER ASSET,L3 Registered,Reporter,Scatter,3,0,title x_axis_label y_axis_label category min_size max_size y_axis_format y_axis_dp x_axis_format x_axis_dp size_by reference_lines series_name color order,
-[ ],cs_bars,Cross-Sectional Bars - ONE FOR ALL ASSETS,L3 Registered,Reporter,Bars,3,0,mode agg title x_axis_label y_axis_label category vertical stack_type data_labels stack_labels border_radius color_by_value y_axis_format y_axis_dp x_category_type bar_width point_padding group_padding y_plot_bands x_plot_bands sort_by_value order colors series_names reference_lines overlay_series label_as_x_axis filters max_assets,
-[ ],cs_boxplot,Cross-Sectional Boxplot - ONE FOR ALL ASSETS,L3 Registered,Reporter,Distributions,1,0,mode title x_axis_label y_axis_label category show_outliers whisker_iqr colors fill_color median_color median_width stem_color stem_width whisker_color whisker_width whisker_length outlier_color outlier_line_color outlier_line_width outlier_radius line_width show_data_labels data_label_format y_axis_format y_axis_dp x_category_type order metric_names filters max_assets,
-[ ],cs_bubble,Cross-Sectional Bubble Chart - ONE FOR ALL ASSETS,L3 Registered,Reporter,Scatter,2,0,title x_axis_label y_axis_label category min_size max_size y_axis_format y_axis_dp x_axis_format x_axis_dp size_by reference_lines colors order filters max_assets,
-[ ],cs_gauge,Cross-Sectional Gauge - ONE FOR ALL ASSETS,L3 Registered,Reporter,Cards,1,0,title category agg min max value_type decimal_places solid color use_traffic_light_colors categories order,
-[ ],cs_heatmap,Cross-Sectional Heatmap - ONE FOR ALL ASSETS,L3 Registered,Reporter,Heatmaps,1,0,mode agg title category min_color max_color null_color show_data_labels data_label_format border_width border_color color_axis_min color_axis_max color_stops order value_format filters max_assets,
-[ ],cs_histogram,Cross-Sectional Histogram - ONE FOR ALL ASSETS,L3 Registered,Reporter,Distributions,1,0,title bins bin_width x_axis_label y_axis_label category fill_color fill_opacity show_analytics reference_lines y_plot_bands y_axis_format y_axis_dp x_axis_format x_axis_dp order filters max_assets,
-[ ],cs_labeled_bubble,Cross-Sectional Labeled Bubble - ONE FOR ALL ASSETS,L3 Registered,Reporter,Scatter,3,0,title x_axis_label y_axis_label category x_reference_lines y_reference_lines y_axis_format y_axis_dp x_axis_format x_axis_dp agg data_labels colors min_size max_size size_by filters max_assets order,
-[ ],cs_labeled_lines,Cross-Sectional Labeled Lines - ONE FOR ALL ASSETS,L3 Registered,Reporter,Lines,1,0,title x_axis_label y_axis_label category x_labels y_reference_lines y_axis_format y_axis_dp agg smooth data_labels colors filters max_assets order,
-[ ],cs_labeled_scatter,Cross-Sectional Labeled Scatter - ONE FOR ALL ASSETS,L3 Registered,Reporter,Scatter,2,0,title x_axis_label y_axis_label category x_reference_lines y_reference_lines y_plot_bands x_plot_bands y_axis_format y_axis_dp x_axis_format x_axis_dp agg data_labels colors show_trend_line filters max_assets order,
-[ ],cs_lines,Cross-Sectional Lines - ONE FOR ALL ASSETS,L3 Registered,Reporter,Lines,2,0,title y_axis_label y_axis_format y_axis_dp category stack_type smooth area step log_scale y_plot_bands x_plot_bands x_axis_label x_axis_format x_axis_dp line_width dash_style reference_lines data_labels colors filters max_assets agg agg_filtered order,
-[ ],cs_pie,Cross-Sectional Pie Chart - ONE FOR ALL ASSETS,L3 Registered,Reporter,Cards,1,0,title category inner_size colors agg max_assets order,
-[ ],cs_scatter,Cross-Sectional Scatter - ONE FOR ALL ASSETS,L3 Registered,Reporter,Scatter,2,0,title x_axis_label y_axis_label category y_axis_format y_axis_dp x_axis_format x_axis_dp reference_lines y_plot_bands x_plot_bands agg colors filters max_assets order,
-[ ],cs_summary_table,Cross-Sectional Summary Table - ONE FOR ALL ASSETS,L3 Registered,Reporter,Tables,1,0,title category agg filters max_assets order schema transpose,
-[ ],gauge,Gauge Chart - ONE PER ASSET,L3 Registered,Reporter,Cards,1,0,title category agg min max value_type decimal_places solid color use_traffic_light_colors categories order,
-[ ],heatmap,Heatmap - ONE PER ASSET,L3 Registered,Reporter,Heatmaps,4,0,agg title category y_axis_label x_axis_label min_color max_color null_color show_data_labels data_label_format border_width border_color color_axis_min color_axis_max color_stops order value_format x_category_type y_category_type,
-[ ],histogram,Histogram - ONE PER ASSET,L3 Registered,Reporter,Distributions,1,0,title bins bin_width x_axis_label y_axis_label category fill_color fill_opacity show_analytics reference_lines y_plot_bands y_axis_format y_axis_dp x_axis_format x_axis_dp order,
-[ ],labeled_bubble,Labeled Bubble - ONE PER ASSET,L3 Registered,Reporter,Scatter,1,0,title x_axis_label y_axis_label category points x_reference_lines y_reference_lines y_axis_format y_axis_dp x_axis_format x_axis_dp min_size max_size size_by order,
-[ ],labeled_lines,Labeled Lines - ONE PER ASSET,L3 Registered,Reporter,Lines,1,0,title x_axis_label y_axis_label category series y_reference_lines y_axis_format y_axis_dp smooth data_labels order,
-[ ],labeled_scatter,Labeled Scatter - ONE PER ASSET,L3 Registered,Reporter,Scatter,1,0,title x_axis_label y_axis_label category points x_reference_lines y_reference_lines y_plot_bands x_plot_bands y_axis_format y_axis_dp x_axis_format x_axis_dp show_trend_line order,
-[ ],pie,Pie Chart - ONE PER ASSET,L3 Registered,Reporter,Cards,2,0,title category inner_size colors order,
-[ ],summary_table,Summary Table - ONE PER ASSET,L3 Registered,Reporter,Tables,1,0,mode layout category order,
-[ ],xy_bars,XY Bars - ONE PER ASSET,L3 Registered,Reporter,Bars,3,0,mode agg title x_axis_label y_axis_label category vertical stack_type data_labels stack_labels border_radius color_by_value y_axis_format y_axis_dp x_category_type bar_width point_padding group_padding y_plot_bands x_plot_bands sort_by_value order series overlay_series reference_lines,
-[ ],xy_lines,XY Lines - ONE PER ASSET,L3 Registered,Reporter,Lines,4,0,title y_axis_label y_axis_format y_axis_dp category stack_type smooth area step log_scale y_plot_bands x_plot_bands x_axis_label x_axis_format x_axis_dp series reference_lines x_category_type data_labels overlay_series split_by_label order,
-[ ],xy_scatter,XY Scatter - ONE PER ASSET,L3 Registered,Reporter,Scatter,2,0,title x_axis_label y_axis_label category y_axis_format y_axis_dp x_axis_format x_axis_dp reference_lines y_plot_bands x_plot_bands series show_trend_line order,
-[ ],cs_factor_analysis,Cross-Sectional Factor Analysis,L3 Registered,Statistical,Compute,2,4,method min_obs ir_window,
-[ ],cs_first_last,Cross-Sectional First/Last,L3 Registered,Statistical,Compute,1,2,group_by,
-[ ],cs_rank_quantile,Cross-Sectional Rank Quantile,L3 Registered,Statistical,Compute,1,1,ascending,
-[ ],engle_granger,Engle-Granger Cointegration,L3 Registered,Statistical,Compute,2,9,window adf_lag significance,
-[ ],ewm_cov,Exponentially Weighted Moving Covariance,L1 Builtin,Statistical,Compute,2,1,span,
-[ ],finance_ratio,Financial Ratio,L3 Registered,Statistical,Compute,18,1,ratio_type period,
-[ ],frac_diff,Fractional Differentiation (FFD),L3 Registered,Statistical,Compute,1,1,d threshold,
-[ ],half_life_ar1,Half-Life AR(1),L3 Registered,Statistical,Compute,1,3,window,
-[ ],hurst_exponent,Hurst Exponent (Expanding),L1 Builtin,Statistical,Compute,1,1,min_period,
-[ ],johansen,Johansen Cointegration,L3 Registered,Statistical,Compute,1,6,num_vars window lag_p det_order significance,
-[ ],kalman_filter,Kalman Filter,L3 Registered,Statistical,Compute,1,9,model_type process_noise obs_noise initial_state_cov confidence_level,
-[ ],linear_fit,Linear Fit (Rolling OLS),L3 Registered,Statistical,Compute,2,3,window,
-[ ],multi_linear_fit,Multi-Linear Fit (Multi-Factor Regression),L3 Registered,Statistical,Compute,2,4,num_vars window,
-[ ],nlargest,N Largest,L1 Builtin,Statistical,Compute,1,1,n,
-[ ],nsmallest,N Smallest,L1 Builtin,Statistical,Compute,1,1,n,
-[ ],percentrank,Percent Rank,L1 Builtin,Statistical,Compute,1,1,period,
-[ ],rolling_adf,Rolling ADF Test,L3 Registered,Statistical,Compute,1,6,window adf_lag significance deterministic,
-[ ],rolling_arima,Rolling ARIMA Forecast,L3 Registered,Statistical,Compute,1,7,p d q with_constant max_iterations tolerance confidence_level window_size step_size window_type forecast_horizon min_training_samples,
-[ ],rolling_hurst_exponent,Rolling Hurst Exponent,L1 Builtin,Statistical,Compute,1,1,window,
-[ ],streak_length,Streak Length,L1 Builtin,Statistical,Compute,1,1,direction,
-[ ],winsorize,Winsorize (Time-Series),L3 Registered,Statistical,Compute,1,1,lower_limit upper_limit,
-[ ],zscore,Z-Score,L3 Registered,Statistical,Compute,1,1,window,
-[ ],adx,Average Directional Movement Index,L1 Builtin,Trend,Compute,2,1,period,
-[ ],adxr,Average Directional Movement Rating,L1 Builtin,Trend,Compute,2,1,period,
-[ ],alligator,Bill Williams Alligator,L3 Registered,Trend,Compute,1,3,jaw teeth lips apply_offset,
-[ ],aroon,Aroon,L2 Macro,Trend,Compute,2,2,period,
-[ ],aroonosc,Aroon Oscillator,L1 Builtin,Trend,Compute,2,1,period,
-[ ],avgprice,Average Price,L1 Builtin,Trend,Compute,4,1,-,
-[ ],calendar_shift,Calendar Shift,L1 Builtin,Trend,Compute,1,1,period,
-[ ],di,Directional Indicator,L3 Registered,Trend,Compute,3,2,period,
-[ ],dm,Directional Movement,L3 Registered,Trend,Compute,2,2,period,
-[ ],dpo,Detrended Price Oscillator,L1 Builtin,Trend,Compute,1,1,period,
-[ ],dx,Directional Movement Index,L1 Builtin,Trend,Compute,2,1,period,
-[ ],forward_returns,Forward Returns,L1 Builtin,Trend,Compute,1,1,period return_type,
-[ ],ichimoku,Ichimoku Kinko Hyo,L2 Macro,Trend,Compute,3,5,p_tenkan p_kijun p_senkou_b,
-[ ],md,Mean Deviation Over Period,L1 Builtin,Trend,Compute,1,1,period,
-[ ],medprice,Median Price,L1 Builtin,Trend,Compute,2,1,-,
-[ ],supertrend,SuperTrend,L2 Macro,Trend,Compute,3,2,atr_period multiplier,
-[ ],typprice,Typical Price,L1 Builtin,Trend,Compute,3,1,-,
-[ ],vhf,Vertical Horizontal Filter,L1 Builtin,Trend,Compute,1,1,period,
-[ ],vidya,Variable Index Dynamic Average,L3 Registered,Trend,Compute,1,1,short_period long_period alpha,
-[ ],vortex,Vortex Indicator,L3 Registered,Trend,Compute,3,2,period,
-[ ],vwma,Volume Weighted Moving Average,L1 Builtin,Trend,Compute,2,1,period,
-[ ],wcprice,Weighted Close Price,L1 Builtin,Trend,Compute,3,1,-,
-[ ],datetime_diff,Datetime Difference,L3 Registered,Utility,Compute,2,1,unit,
-[ ],datetime_extract,Datetime Extract,L3 Registered,Utility,Compute,1,1,component timezone,
-[ ],keyword_count,Keyword Count,L3 Registered,Utility,NLP,1,1,keywords,
-[ ],keyword_score,Keyword Score,L3 Registered,Utility,NLP,1,1,keywords,
-[ ],string_case,String Case,L3 Registered,Utility,NLP,1,1,operation,
-[ ],string_trim,String Trim,L3 Registered,Utility,NLP,1,1,operation trim_chars,
-[ ],topic_classify,Topic Classify,L3 Registered,Utility,NLP,1,1,topics,
-[ ],acceleration_bands,Acceleration Bands,L3 Registered,Volatility,Compute,3,3,period multiplier,
-[ ],atr,Average True Range,L1 Builtin,Volatility,Compute,3,1,period,
-[ ],bband_percent,Bollinger Bands %B,L1 Builtin,Volatility,Compute,3,1,-,
-[ ],bband_width,Bollinger Bands Width,L1 Builtin,Volatility,Compute,3,1,-,
-[ ],bbands,Bollinger Bands,L2 Macro,Volatility,Compute,1,3,period stddev,
-[ ],chande_kroll_stop,Chande Kroll Stop,L3 Registered,Volatility,Compute,3,2,p_period q_period multiplier,
-[ ],chandelier_exit,Chandelier Exit,L3 Registered,Volatility,Compute,3,3,length atr_length multiplier use_close,
-[ ],cvi,Chaikins Volatility,L1 Builtin,Volatility,Compute,2,1,period,
-[ ],donchian_channel,Donchian Channel,L2 Macro,Volatility,Compute,2,3,window,
-[ ],elders_thermometer,Elder's Market Thermometer,L3 Registered,Volatility,Compute,2,4,period buy_factor sell_factor,
-[ ],keltner_channels,Keltner Channels,L2 Macro,Volatility,Compute,3,2,roll_period band_multiplier,
-[ ],mass,Mass Index,L1 Builtin,Volatility,Compute,2,1,period,
-[ ],natr,Normalized Average True Range,L1 Builtin,Volatility,Compute,3,1,period,
-[ ],price_distance,Price Distance,L1 Builtin,Volatility,Compute,4,1,-,
-[ ],rolling_garch,Rolling GARCH Volatility,L3 Registered,Volatility,Compute,1,7,p q distribution max_iterations tolerance window_size step_size window_type forecast_horizon min_training_samples,
-[ ],tr,True Range,L1 Builtin,Volatility,Compute,3,1,-,
-[ ],ulcer_index,Ulcer Index,L1 Builtin,Volatility,Compute,1,1,period use_sum,
-[ ],volatility,Annualized Historical Volatility,L2 Macro,Volatility,Compute,1,1,period,
-[ ],volatility_estimator,Volatility Estimator,L3 Registered,Volatility,Compute,4,1,type period trading_periods,
-[ ],ad,Accumulation/Distribution Line,L1 Builtin,Volume,Compute,4,1,-,
-[ ],adosc,Accumulation/Distribution Oscillator,L1 Builtin,Volume,Compute,4,1,short_period long_period,
-[ ],emv,Ease of Movement,L1 Builtin,Volume,Compute,3,1,-,
-[ ],kvo,Klinger Volume Oscillator,L1 Builtin,Volume,Compute,4,1,short_period long_period,
-[ ],marketfi,Market Facilitation Index,L1 Builtin,Volume,Compute,3,1,-,
-[ ],nvi,Negative Volume Index,L1 Builtin,Volume,Compute,2,1,-,
-[ ],obv,On Balance Volume,L1 Builtin,Volume,Compute,2,1,-,
-[ ],pvi,Positive Volume Index,L1 Builtin,Volume,Compute,2,1,-,
-[ ],trade_count,Trade Count,L1 Builtin,Volume,Compute,0,1,-,
-[ ],vosc,Volume Oscillator,L1 Builtin,Volume,Compute,1,1,short_period long_period,
-[ ],vwap,VWAP,L1 Builtin,Volume,Compute,0,1,-,
-[ ],wad,Williams Accumulation/Distribution,L1 Builtin,Volume,Compute,3,1,-,
+id,name,category,package,layer,num_inputs,num_outputs,num_options,tags
+bar_gap,Bar Gap,ControlFlow,Compute,3,4,5,2,indicator; gap; intraday; price-action; liquidity-gap; fair-value-gap; imbalance; gap-up; gap-down; FVG
+cusum,CUSUM Change Point Detector,ControlFlow,Compute,3,1,5,4,cusum; change-point; structural-break; regime; detection
+holiday,Holiday Effect,ControlFlow,Sessions,3,0,1,4,calendar; holiday; seasonal; pre-holiday; post-holiday; Ariel-1990; Lakonishok-Smidt; Independence-Day; Thanksgiving; Christmas; Labor-Day; reduced-volume; sentiment; short-covering; anomaly; timing; USFederalHoliday; low-liquidity; rally; entry-filter
+is_period_boundary,Is Period Boundary,ControlFlow,Sessions,3,1,1,8,datetime; calendar; rebalancing; period; boundary; month-start; month-end; quarter-end; year-end; opex; turn-of-month; window-dressing; tax-loss-harvesting; first-monday; last-friday; t-minus-1; signal; boolean; trigger; schedule
+keyword_match,Keyword Match,ControlFlow,NLP,3,1,1,1,nlp; text; keyword; match; pattern; boolean; signal; event-detection; news; headline; filing; 8-k; earnings; litigation; screening; compliance; binary; dictionary
+session_gap,Session Gap,ControlFlow,Sessions,3,4,5,1,indicator; gap; session; overnight; price-action; gap-fill; breakaway-gap; exhaustion-gap; common-gap; gap-up; gap-down; opening-gap
+session_window,Session Window,ControlFlow,Sessions,3,6,9,1,calendar; intraday; session; ohlcv; overnight-drift; opening-reversal; closing-auction; power-hour; U-shaped-volume; market-microstructure; NFP; London-session; NewYork-session; Tokyo-session; kill-zone; overnight-return; gap; event-driven; FX-sessions; extended-hours; Admati-Pfleiderer; macro-release; volatility-spike
+string_check,String Check,ControlFlow,NLP,3,1,1,1,string; text; validate; type; boolean
+string_contains,String Contains,ControlFlow,NLP,3,1,1,2,string; text; search; pattern; boolean
+turn_of_month,Turn of Month,ControlFlow,Sessions,3,0,2,2,calendar; seasonal; month; turn-of-month; anomaly; pension-flow; institutional; rebalancing; payroll; Ariel-1987; Lakonishok-Smidt; month-end; month-start; intramonth; timing; entry-filter; position-sizing; emerging-markets
+futures_continuation,Futures Continuation,DataPrep,MarketData,3,7,10,4,futures; continuation; rollover; panama-canal
+cs_news,Cross-Sectional News,DataSource,News,3,0,3,6,news; data-source; cross-sectional; reference; sentiment; headlines; sector-news; peer-news; multi-ticker; macro-news; competitor-tracking
+news,News,DataSource,News,3,0,3,6,news; data-source; sentiment; headlines; articles; nlp; text-analysis; media; press-release; market-news; corporate-announcement; sentiment-score; news-driven
+cppi,CPPI,Executor,Execution,3,0,0,2,sizing; dynamic; insurance; cppi; sink; portfolio-insurance; downside-protection; cushion; black-jones; deleveraging; floor-protection; dynamic-allocation
+kelly,Kelly,Executor,Execution,3,0,0,3,sizing; dynamic; kelly; optimal; sink; kelly-criterion; edge-based; growth-optimal; half-kelly; fractional-kelly; win-rate; payoff-ratio
+long_and_short_zone,Long & Short Zone,Executor,Execution,3,2,1,3,zone; long; short; dual; state-based; trade; hold; pead; signal-executor; position-management; holding-period; entry-signal; direction; momentum-trigger; event-hold
+optimal_f,Optimal f,Executor,Execution,3,0,0,3,sizing; dynamic; optimal-f; vince; sink; ralph-vince; twr; geometric-growth; max-loss-normalized; empirical-sizing
+position_size,Position Size,Executor,Execution,3,2,1,1,sizing; position-size; sink; dynamic-sizing; weight; notional; unit-sizing; equity-percent; allocation
+risk_unit,Risk Unit,Executor,Execution,3,4,3,8,sizing; risk; stop-loss; take-profit; position-size; sink; atomic; fx; pips; risk-per-trade; fixed-fractional; r-multiple; risk-reward; risk-based-sizing; contract-multiplier
+rollover_policy,Rollover Policy,Executor,Execution,3,1,1,0,executor; futures; rollover; contract; roll-detection; front-month; position-liquidation; continuous-futures; expiry; contract-switch; futures-continuation
+stop_loss,Stop Loss,Executor,Execution,3,1,1,1,exit; stop-loss; risk-management; sink; fixed-stop; atr-stop; percentage-stop; capital-preservation; risk-control; protective-stop; disaster-stop; distance-based
+take_profit,Take Profit,Executor,Execution,3,2,2,3,exit; take-profit; tiered; sink; r-multiple; tiered-exit; partial-exit; profit-target; reward-target; scaling-out; multi-level
+tipp,TIPP,Executor,Execution,3,0,0,2,sizing; dynamic; insurance; tipp; ratchet; sink; ratcheting-floor; estep-kritzman; high-water-mark; portfolio-insurance; downside-protection; dynamic-allocation
+trailing_stop,Trailing Stop,Executor,Execution,3,2,2,1,exit; trailing-stop; dynamic; sink; chandelier-exit; atr-trailing; dynamic-stop; profit-protection; trend-following-exit; stepped-trailing; activation-distance; ratcheting-stop
+price_profile,Price Profile,Indicator,Compute,3,4,6,5,volume; profile; market-structure; support-resistance; microstructure; tpo; market-profile; poc; value-area; initial-balance; auction-theory; fair-value
+dbscan,DBSCAN,ML,MachineLearning,3,1,3,6,dbscan; ml; clustering; anomaly; adaptive
+hmm,Hidden Markov Model,ML,MachineLearning,3,1,2,7,hmm; hmm; ml; sequence; probabilistic; regime; rolling
+kmeans,K-Means Clustering,ML,MachineLearning,3,1,2,6,kmeans; ml; clustering; adaptive; regime
+lightgbm_classifier,LightGBM Classifier,ML,MachineLearning,3,2,2,12,lightgbm; ml; classification; adaptive
+lightgbm_regressor,LightGBM Regressor,ML,MachineLearning,3,2,1,12,lightgbm; ml; regression; adaptive
+logistic_l1,Logistic L1,ML,MachineLearning,3,2,3,6,liblinear; ml; classification; l1; lasso
+logistic_l2,Logistic L2,ML,MachineLearning,3,2,3,6,liblinear; ml; classification; l2; ridge
+ml_minmax,ML Min-Max,ML,MachineLearning,3,1,1,4,preprocessing; ml; normalization; minmax
+ml_robust,ML Robust,ML,MachineLearning,3,1,1,4,preprocessing; ml; normalization; robust
+ml_zscore,ML Z-Score,ML,MachineLearning,3,1,1,4,preprocessing; ml; normalization; zscore
+pca,PCA,ML,MachineLearning,3,1,2,5,pca; ml; decomposition; factor; adaptive
+svr_l1,SVR L1,ML,MachineLearning,3,2,1,6,liblinear; ml; regression; l1; svr
+svr_l2,SVR L2,ML,MachineLearning,3,2,1,6,liblinear; ml; regression; l2; svr
+arg_minmax,ArgMinMax (Timestamps),Math,Compute,3,1,2,1,argmin; argmax; timestamp; location; expanding; cumulative; tuple; peak-trough; range; high-low; min-max-timing
+cs_momentum,Cross-Sectional Momentum,Momentum,Compute,3,1,1,1,indicator; cross-sectional; momentum; relative-performance; multi-asset; portfolio-rotation; jegadeesh-titman; relative-strength; winner-loser; market-momentum; universe-return; breadth
+fisher,Fisher Transform,Momentum,Compute,3,2,2,1,indicator; fisher; transform; oscillator
+msw,Mesa Sine Wave,Momentum,Compute,3,1,2,1,indicator; msw; cycle; sine-wave
+qqe,Quantitative Qualitative Estimation (QQE),Momentum,Compute,3,1,4,3,indicator; momentum; qqe; rsi-based; smoothed-rsi; volatility-bands; trend-following; signal-generation; oscillator; adaptive-bands; fibonacci; atr-based; entry-exit
+black_litterman,Black-Litterman,Portfolio,PortfolioAllocation,3,1,1,7,allocation; weight; black-litterman; bayesian; optimization; cross-sectional; portfolio
+equal_weight,Equal Weight,Portfolio,PortfolioAllocation,3,1,1,1,allocation; weight; equal-weight; cross-sectional; portfolio
+herc,Hierarchical Equal Risk Contribution,Portfolio,PortfolioAllocation,3,1,1,7,allocation; weight; herc; hierarchical; clustering; erc; cross-sectional; portfolio
+hrp,Hierarchical Risk Parity,Portfolio,PortfolioAllocation,3,1,1,5,allocation; weight; hrp; hierarchical; clustering; cross-sectional; portfolio
+inv_vol_weight,Inverse Volatility Weight,Portfolio,PortfolioAllocation,3,2,1,2,allocation; weight; inverse-volatility; risk-parity; cross-sectional; portfolio
+max_diversification,Maximum Diversification,Portfolio,PortfolioAllocation,3,1,1,4,allocation; weight; diversification; optimization; cross-sectional; portfolio
+max_sharpe,Maximum Sharpe Ratio,Portfolio,PortfolioAllocation,3,1,1,6,allocation; weight; max-sharpe; tangency; optimization; cross-sectional; portfolio
+min_cvar,Minimum CVaR,Portfolio,PortfolioAllocation,3,1,1,5,allocation; weight; cvar; tail-risk; optimization; cross-sectional; portfolio
+min_semivariance,Minimum Semivariance,Portfolio,PortfolioAllocation,3,1,1,5,allocation; weight; semivariance; downside-risk; optimization; cross-sectional; portfolio
+min_variance,Minimum Variance,Portfolio,PortfolioAllocation,3,1,1,4,allocation; weight; min-variance; optimization; cross-sectional; portfolio
+risk_budgeting,Risk Budgeting,Portfolio,PortfolioAllocation,3,2,1,4,allocation; weight; risk-budgeting; optimization; cross-sectional; portfolio
+risk_parity,Risk Parity,Portfolio,PortfolioAllocation,3,1,1,6,allocation; weight; risk-parity; erc; cross-sectional; portfolio; optimization
+bos_choch,Break of Structure & Change of Character,PriceAction,SMC,3,6,4,1,smc; price-action; market-structure; technical; trend; reversal
+fair_value_gap,Fair Value Gap,PriceAction,SMC,3,4,4,1,smc; price-action; gap; imbalance; technical; institutional-zones
+liquidity,Liquidity,PriceAction,SMC,3,4,4,1,smc; price-action; liquidity; technical; cluster; stop-hunt
+order_blocks,Order Blocks,PriceAction,SMC,3,6,6,1,smc; price-action; order-block; institutional; technical; support-resistance
+previous_high_low,Previous High Low,PriceAction,SMC,3,2,4,2,smc; price-action; high-low; technical; breakout; intraday
+retracements,Retracements,PriceAction,SMC,3,4,3,0,smc; price-action; retracement; fibonacci; technical; pullback
+swing_highs_lows,Swing Highs and Lows,PriceAction,SMC,3,2,2,1,smc; price-action; swing; pivot; technical; market-structure
+boxplot,Boxplot - ONE PER ASSET,Reporter,Distributions,3,2,0,28,report; chart; boxplot; box-and-whisker; distribution; statistics; visualization; quartile; percentile; median; iqr; interquartile; outlier; outliers; spread; dispersion; variability; range; five-number-summary; grouped; side-by-side; dashboard
+bubble,Bubble Chart - ONE PER ASSET,Reporter,Scatter,3,3,0,15,report; chart; bubble; visualization; 3d; three-dimensional; size; multi-factor; risk-return; volatility; xyz; weighted; magnitude; portfolio; exposure; dimensional-analysis
+cs_bars,Cross-Sectional Bars - ONE FOR ALL ASSETS,Reporter,Bars,3,3,0,29,report; chart; bar; cross-sectional; comparison; ranking; multi-asset
+cs_boxplot,Cross-Sectional Boxplot - ONE FOR ALL ASSETS,Reporter,Distributions,3,1,0,30,report; chart; boxplot; box-and-whisker; distribution; statistics; visualization; cross-sectional; comparison; ranking; multi-asset; quartile; percentile; median; iqr; interquartile; outlier; outliers; spread; dispersion; variability; range; five-number-summary; asset-comparison; universe; dashboard
+cs_bubble,Cross-Sectional Bubble Chart - ONE FOR ALL ASSETS,Reporter,Scatter,3,2,0,16,report; chart; bubble; cs-bubble; visualization; cross-sectional; 3d; comparison; asset-comparison; magnitude; size; multi-asset; temporal; time-series; volatility; activity
+cs_gauge,Cross-Sectional Gauge - ONE FOR ALL ASSETS,Reporter,Cards,3,1,0,12,report; chart; gauge; kpi; metric; single-value; indicator; speedometer; dashboard; cross-sectional; market-wide; composite; sentiment
+cs_heatmap,Cross-Sectional Heatmap - ONE FOR ALL ASSETS,Reporter,Heatmaps,3,1,0,18,report; chart; heatmap; correlation; visualization; cross-sectional; matrix; pairwise; diversification; risk; multi-asset; correlation-matrix; comparison; color-coded; grid
+cs_histogram,Cross-Sectional Histogram - ONE FOR ALL ASSETS,Reporter,Distributions,3,1,0,18,report; chart; histogram; distribution; visualization; cross-sectional; comparison; multi-asset; overlay; frequency; bins; spread; shape
+cs_labeled_bubble,Cross-Sectional Labeled Bubble - ONE FOR ALL ASSETS,Reporter,Scatter,3,3,0,19,report; chart; bubble; cs-bubble; visualization; cross-sectional; labeled; comparison; asset-comparison; factor; aggregation; multi-asset; xyz-plot; data-labels; size-encoded
+cs_labeled_lines,Cross-Sectional Labeled Lines - ONE FOR ALL ASSETS,Reporter,Lines,3,1,0,15,report; chart; lines; cs-lines; visualization; cross-sectional; labeled; categorical; comparison; asset-comparison; multi-asset; yield-curve; term-structure; profile; data-labels
+cs_labeled_scatter,Cross-Sectional Labeled Scatter - ONE FOR ALL ASSETS,Reporter,Scatter,3,2,0,19,report; chart; scatter; cs-scatter; visualization; cross-sectional; labeled; comparison; asset-comparison; factor; aggregation; multi-asset; point-cloud; xy-plot; correlation; data-labels
+cs_lines,Cross-Sectional Lines - ONE FOR ALL ASSETS,Reporter,Lines,3,2,0,25,report; chart; line; cross-sectional; comparison; aggregation
+cs_pie,Cross-Sectional Pie Chart - ONE FOR ALL ASSETS,Reporter,Cards,3,1,0,7,report; chart; pie; donut; composition; proportion; allocation; breakdown; part-of-whole; dashboard; cross-sectional; multi-asset; allocation
+cs_scatter,Cross-Sectional Scatter - ONE FOR ALL ASSETS,Reporter,Scatter,3,2,0,16,report; chart; scatter; cs-scatter; visualization; cross-sectional; comparison; asset-comparison; factor; cluster; ranking; aggregation; multi-asset; point-cloud; xy-plot; correlation; relationship
+cs_summary_table,Cross-Sectional Summary Table - ONE FOR ALL ASSETS,Reporter,Tables,3,1,0,8,report; table; cross-sectional; comparison; multi-asset
+gauge,Gauge Chart - ONE PER ASSET,Reporter,Cards,3,1,0,12,report; chart; gauge; kpi; metric; single-value; indicator; speedometer; dashboard
+heatmap,Heatmap - ONE PER ASSET,Reporter,Heatmaps,3,4,0,19,report; chart; heatmap; visualization; matrix; grid; color-coded; seasonality; calendar; monthly-returns; pattern; density; dashboard
+histogram,Histogram - ONE PER ASSET,Reporter,Distributions,3,1,0,16,report; chart; histogram; distribution; visualization; frequency; bins; binning; spread; shape; skew; skewness; kurtosis; fat-tail; tail-risk; density; grouped; bucketed; range; count; occurrences
+labeled_bubble,Labeled Bubble - ONE PER ASSET,Reporter,Scatter,3,1,0,15,report; chart; bubble; visualization; labeled; xyz-plot; data-points; individual-labels; size-encoded
+labeled_lines,Labeled Lines - ONE PER ASSET,Reporter,Lines,3,1,0,11,report; chart; lines; visualization; labeled; categorical; yield_curve; term-structure
+labeled_scatter,Labeled Scatter - ONE PER ASSET,Reporter,Scatter,3,1,0,15,report; chart; scatter; visualization; labeled; correlation; point-cloud; xy-plot; data-points; individual-labels
+pie,Pie Chart - ONE PER ASSET,Reporter,Cards,3,2,0,5,report; chart; pie; donut; composition; proportion; allocation; breakdown; part-of-whole; dashboard
+summary_table,Summary Table - ONE PER ASSET,Reporter,Tables,3,1,0,4,report; table; summary; grid
+xy_bars,XY Bars - ONE PER ASSET,Reporter,Bars,3,3,0,25,report; chart; bar; grouped; stacked; categorical; column-chart; dashboard
+xy_lines,XY Lines - ONE PER ASSET,Reporter,Lines,3,4,0,22,report; chart; line; dashboard
+xy_scatter,XY Scatter - ONE PER ASSET,Reporter,Scatter,3,2,0,14,report; chart; scatter; xy-scatter; visualization; correlation; relationship; bivariate; point-cloud; regression; factor-exposure; multi-series; marker; xy-plot; data-points; trend; pattern; outlier; association
+cs_factor_analysis,Cross-Sectional Factor Analysis,Statistical,Compute,3,2,4,3,cross-sectional; factor; ic; information-coefficient; t-stat; ir; research; alpha-research; grinold-kahn; fundamental-law; alphalens; factor-decay; signal-evaluation; spearman; pearson; kendall
+cs_first_last,Cross-Sectional First/Last,Statistical,Compute,3,1,2,1,cross-sectional; first; last; selection; multi-asset; boundary; tuple-output; range
+cs_rank_quantile,Cross-Sectional Rank Quantile,Statistical,Compute,3,1,1,1,cross-sectional; ranking; percentile; quantile; factor; normalized-rank; uniform-score; multi-factor; composite
+engle_granger,Engle-Granger Cointegration,Statistical,Compute,3,2,9,3,cointegration; pairs-trading; hedge-ratio; spread; engle-granger; statistics; nobel-prize; ols-regression; mean-reversion; spread-construction; two-step-test; residual-stationarity; long-run-equilibrium
+finance_ratio,Financial Ratio,Statistical,Compute,3,18,1,2,fundamentals; ratios; financial-analysis; valuation
+frac_diff,Fractional Differentiation (FFD),Statistical,Compute,3,1,1,2,statistics; stationarity; memory; fracdiff; ffd; machine-learning; feature-engineering; lopez-de-prado; aifml; differentiation; time-series-transform; predictive-memory; unit-root-removal; fixed-width-window; ml-preprocessing
+half_life_ar1,Half-Life AR(1),Statistical,Compute,3,1,3,1,cointegration; mean-reversion; pairs-trading; half-life; ar1; statistics; ornstein-uhlenbeck; speed-of-reversion; holding-period; position-sizing; spread-analysis; exit-timing; autoregressive
+johansen,Johansen Cointegration,Statistical,Compute,3,1,6,5,cointegration; johansen; vecm; multivariate; statistics; trace-test; max-eigenvalue; cointegrating-rank; basket-trading; triangular-arbitrage; multi-asset-spread; eigenvalue-decomposition
+kalman_filter,Kalman Filter,Statistical,Compute,3,1,9,5,kalman; filter; state-space; trend; noise
+linear_fit,Linear Fit (Rolling OLS),Statistical,Compute,3,2,3,1,statistics; regression; ols; linear; pairs-trading; hedge-ratio
+multi_linear_fit,Multi-Linear Fit (Multi-Factor Regression),Statistical,Compute,3,2,4,2,statistics; regression; ols; multi-factor; fama-french; factor-exposure; alpha
+rolling_adf,Rolling ADF Test,Statistical,Compute,3,1,6,4,cointegration; stationarity; unit-root; adf; statistics; mackinnon; dickey-fuller; hypothesis-test; time-series; mean-reversion-test; spread-monitoring; regime-detection; p-value
+rolling_arima,Rolling ARIMA Forecast,Statistical,Compute,3,1,7,12,arima; forecast; rolling; walk-forward; adaptive
+winsorize,Winsorize (Time-Series),Statistical,Compute,3,1,1,2,outliers; normalization; robust; statistics; time-series; percentile-clipping; outlier-handling; data-cleaning; preprocessing; winsorization; tail-clipping
+zscore,Z-Score,Statistical,Compute,3,1,1,1,indicator; statistics; normalization; standardization
+alligator,Bill Williams Alligator,Trend,Compute,3,1,3,4,indicator; trend; bill-williams; alligator; smma; wilder-smoothing; trend-identification; ranging-market; trending-market; triple-ma; moving-average; entry-timing; momentum-confirmation
+di,Directional Indicator,Trend,Compute,3,3,2,1,indicator; di; trend; directional-indicator
+dm,Directional Movement,Trend,Compute,3,2,2,1,indicator; dm; trend; directional-movement
+vidya,Variable Index Dynamic Average,Trend,Compute,3,1,1,3,overlay; vidya; moving-average; variable-index
+vortex,Vortex Indicator,Trend,Compute,3,3,2,1,indicator; trend; vortex; vi-plus; vi-minus; trend-strength; trend-direction; crossover; dual-line; botes-siepman; momentum; trend-reversal; ohlc-based
+datetime_diff,Datetime Difference,Utility,Compute,3,2,1,1,datetime; difference; duration; temporal; elapsed-time; recency; staleness; lag; holding-period; dte; days-to-expiry; event-study; pead; time-since; settlement; distance; interval; age
+datetime_extract,Datetime Extract,Utility,Compute,3,1,1,2,datetime; calendar; temporal; timezone; extract; year; month; day; hour; quarter; day-of-week; week; leap-year; seasonal; intraday; session; weekday-effect; anomaly; component; iso
+keyword_count,Keyword Count,Utility,NLP,3,1,1,1,nlp; text; keyword; count; frequency; integer; density; intensity; attention; disclosure; 10-k; md-and-a; fomc; risk-mentions; normalization; sparse; forward-fill
+keyword_score,Keyword Score,Utility,NLP,3,1,1,1,nlp; text; keyword; score; weighted; decimal; sentiment; severity; polarity; loughran-mcdonald; risk-scoring; custom-dictionary; alpha; ic; weighting; bull-bear; tone; negation-blind
+string_case,String Case,Utility,NLP,3,1,1,1,string; text; case; uppercase; lowercase
+string_trim,String Trim,Utility,NLP,3,1,1,2,string; text; trim; whitespace; clean
+topic_classify,Topic Classify,Utility,NLP,3,1,1,1,nlp; text; classify; topic; category; string; categorization; routing; thematic; esg; earnings; legal; mna; macro; deterministic; interpretable; audit; compliance; news-routing
+acceleration_bands,Acceleration Bands,Volatility,Compute,3,3,3,2,indicator; volatility; bands; acceleration-bands; price-envelope; breakout; overbought-oversold; range-based; adaptive-bands; volatility-envelope; support-resistance; channel
+chande_kroll_stop,Chande Kroll Stop,Volatility,Compute,3,3,2,3,indicator; volatility; trailing-stop; chande-kroll; atr-based; risk-management; exit-strategy; adaptive-stop; trend-following; position-management; stop-loss; dynamic-exit
+chandelier_exit,Chandelier Exit,Volatility,Compute,3,3,3,4,volatility; trailing-stop; atr; exit; trend; lebeau; position-management; risk-management; volatility-stop
+elders_thermometer,Elder's Market Thermometer,Volatility,Compute,3,2,4,3,indicator; volatility; elders-thermometer; alexander-elder; market-activity; true-range; ema-smoothed; buy-sell-signals; temperature-reading; activity-measure; range-based; signal-generation
+rolling_garch,Rolling GARCH Volatility,Volatility,Compute,3,1,7,10,garch; volatility; rolling; walk-forward; adaptive
+volatility_estimator,Volatility Estimator,Volatility,Compute,3,4,1,3,indicator; volatility; risk; technical; range-based; ohlc; garman-klass; parkinson; yang-zhang; hodges-tompkins; annualized; realized-volatility; position-sizing; options-pricing; risk-management

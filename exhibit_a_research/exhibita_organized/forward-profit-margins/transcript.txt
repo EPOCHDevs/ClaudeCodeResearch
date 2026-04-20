@@ -1,8 +1,0 @@
-Title: A Look at Forward Profit Margins
-Topic: Forward profit margins based on consensus estimates for the next 12 months of net income and revenue for the S&P 500 (Large Cap), S&P 400 (Mid Cap), and S&P 600 (Small Cap) since 2004. This chart shows analyst expectations for future profitability across market cap segments.
-Question: What are analysts forecasting for profit margins across large-cap, mid-cap, and small-cap U.S. companies over the next 12 months?
-Key Takeaways:
-- As of February 27, 2026, forward profit margins are 14.60% for the S&P 500 (Large Cap), 8.37% for the S&P 400 (Mid Cap), and 6.70% for the S&P 600 (Small Cap).
-- Forward margins for large-cap companies have climbed to their highest levels in 20 years, reflecting strong expected profitability driven by sectors like technology and communications.
-- The persistent gap between large-cap forward margins and those of mid-cap and small-cap companies suggests analysts expect scale and sector composition advantages to continue favoring the largest U.S. companies.
-Source: ExhibitA for Advice

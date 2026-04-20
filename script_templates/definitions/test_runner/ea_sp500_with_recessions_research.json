@@ -1,10 +1,1 @@
-{
-   "name": "sp500-with-recessions",
-   "description": "S&P 500 performance with recession periods highlighted, showing long-term upward trajectory despite recurring recessions.",
-   "data": {
-      "assets": [],
-      "source": "polygon"
-   },
-   "source": "# S&P 500 with Recession Periods\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\n\nrec_src = economic_indicators(series_id='RECPROUSM156N')()\nrec_filled = ffill(rec_src.result)\n\nis_recession = rec_filled > 30\nrec_shade = 1000000.0 if is_recession else 0.0 / 0.0\n\nbar_ts = index()\n\nxy_lines(\n    title='S&P 500 with Recession Periods Shaded',\n    category='1. S&P 500 with Recessions',\n    y_axis_label='S&P 500 Index (Log Scale)',\n    log_scale=True,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='S&P 500', color=Color.Blue),\n        LineSeriesSpec(name='Recession Periods', color=Color.Gray, is_band=true)\n    ])\n)(bar_ts, spy_c, rec_shade)\n",
-   "global_timeframe": "1D"
-}
+{"name":"sp500-with-recessions","description":"S&P 500 performance with recession periods highlighted, showing long-term upward trajectory despite recurring recessions.","data":{"assets":[],"source":"polygon"},"source":"# S&P 500 with Recession Periods\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\n\nrec_src = economic_indicators(series_id=\"RECPROUSM156N\")\nrec_filled = ffill(rec_src.result)\n\nis_recession = rec_filled > 30\nrec_shade = 1000000.0 if is_recession else 0.0 / 0.0\n\nbar_ts = index()\n\nxy_lines(\n    title='S&P 500 with Recession Periods Shaded',\n    category='1. S&P 500 with Recessions',\n    y_axis_label='S&P 500 Index (Log Scale)',\n    log_scale=True,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='S&P 500', color=Color.Blue),\n        LineSeriesSpec(name='Recession Periods', color=Color.Gray, is_band=true)\n    ])\n)(bar_ts, spy_c, rec_shade)\n"}

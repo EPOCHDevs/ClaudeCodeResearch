@@ -1,8 +1,0 @@
-Title: How Has The S&P 500 Performed During Government Shutdowns?
-Topic: This chart tracks how the S&P 500 performed during all past U.S. government shutdowns since 1980, showing the market return during each shutdown period.
-Question: Do government shutdowns historically lead to negative stock market returns?
-Key Takeaways:
-- In 8 of the past 11 shutdowns since 1980, the S&P 500 actually generated a positive return, showing that markets have often looked past the political noise.
-- The largest positive return during a shutdown was approximately 10.27% (Jan 2018), while the worst was about -2.09% (Oct 1990), indicating returns have varied widely but skewed positive.
-- Short-term political events like government shutdowns have not consistently dictated market direction, reinforcing that tuning out the noise has historically been more effective than reacting to it.
-Source: ExhibitA for Advice

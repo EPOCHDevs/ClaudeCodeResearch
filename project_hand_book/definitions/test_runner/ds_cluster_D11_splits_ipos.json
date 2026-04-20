@@ -1,11 +1,11 @@
 {
   "name": "DS Cluster D11b: Splits, IPOs, Ticker Events",
-  "description": "Tests: splits outputs, ipos outputs, ticker_events outputs. All sparse corporate event sources.",
+  "description": "Tests: splits outputs, ipos outputs, ticker_events outputs. All sparse corporate event sources. Run with: --start 2024-05-01 --end 2024-08-31 (NVDA 10:1 split on 2024-06-10).",
   "data": {
     "assets": [
-      "AAPL-Stocks"
+      "NVDA-Stocks"
     ],
     "source": "polygon"
   },
-  "source": "# =============================================================================\n# DS CLUSTER D11b: Splits, IPOs, Ticker Events\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SPLITS ===\nsp = splits()()\nhad_split = is_valid(sp.split_ratio)\n\n# === IPOs ===\nipo = ipos()()\nhad_ipo = is_valid(ipo.final_issue_price)\n\n# === TICKER EVENTS ===\nte = ticker_events()()\nhad_event = is_valid(te.event_type)\n\n# === REPORTERS ===\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.ArrowUpIcon,\n        schemas=[\n            ColumnSpec(title=\"Ratio\", dp=1, type=CardRenderType.DecimalFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"Split\"\n    )\n)(sp.split_ratio, had_split)\n\nhistogram(category=\"Events\", title=\"Close\", bins=20)(close)\n"
+  "source": "# =============================================================================\n# DS CLUSTER D11b: Splits, IPOs, Ticker Events\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SPLITS ===\nsp = splits()()\nhad_split = is_valid(sp.split_ratio)\n\n# === IPOs ===\nipo = ipos()()\nhad_ipo = is_valid(ipo.final_issue_price)\n\n# === TICKER EVENTS ===\nte = ticker_events()()\nhad_event = is_valid(te.event_type)\n\n# === REPORTERS ===\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.ArrowUpIcon,\n        schemas=[\n            ColumnSpec(title=\"Ratio\", dp=1, type=CardRenderType.DecimalFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"Split\"\n    )\n)((sp.split_ratio, had_split))\n\nhistogram(category=\"Events\", title=\"Close\", bins=20)(close)\n"
 }

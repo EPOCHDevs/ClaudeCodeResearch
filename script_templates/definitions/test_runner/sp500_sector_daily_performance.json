@@ -1,0 +1,21 @@
+{
+  "name": "S&P 500 Sector Daily Performance Heatmap",
+  "description": "Daily simple return heatmap across all 11 GICS sector ETFs (XLK, XLF, XLE, XLV, XLI, XLY, XLP, XLB, XLRE, XLC, XLU). Heatmap shows daily returns with diverging Red\u2192White\u2192Green color scale clamped at \u00b12%. Summary table shows Avg Daily Return, Std Dev, Best Day, and Worst Day per sector.",
+  "data": {
+    "assets": [
+      "XLK-Stocks",
+      "XLF-Stocks",
+      "XLE-Stocks",
+      "XLV-Stocks",
+      "XLI-Stocks",
+      "XLY-Stocks",
+      "XLP-Stocks",
+      "XLB-Stocks",
+      "XLRE-Stocks",
+      "XLC-Stocks",
+      "XLU-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "\n# S&P 500 Sector Daily Performance Heatmap\n# Tracks daily simple returns across all 11 GICS sector ETFs\n# Heatmap: date \u00d7 sector, diverging Red\u2192White\u2192Green, clamped \u00b12%\n# Table: Avg Return, Std Dev, Best Day, Worst Day per sector\n\n# --- Data ---\nsrc = study_assets()\n\n# --- Daily Simple Returns ---\ndaily_ret = (src.c - (src.c >> 1)) / (src.c >> 1)\n\n# --- Heatmap: Daily Returns by Sector \u00d7 Date ---\n# cs_heatmap in values mode: one row per asset, x-axis = time\n# Color: Red (negative) \u2192 White (zero) \u2192 Green (positive), clamped \u00b12%\ncs_heatmap(\n    mode=HeatmapMode.values,\n    agg=AggregationType.Last,\n    title=\"Which Sectors Are Moving \u2014 and How Much?\",\n    category=\"Sector Performance\",\n    color_stops=ColorStopSchema(stops=[\n        ColorStop(value=0.0, color=Color.Red),\n        ColorStop(value=0.5, color=Color.White),\n        ColorStop(value=1.0, color=Color.Green)\n    ]),\n    color_axis_min=-0.02,\n    color_axis_max=0.02,\n    show_data_labels=False,\n    max_assets=11,\n    value_format=CardRenderType.PercentFormat,\n    order=1\n)(daily_ret)\n\n# --- Summary Table: Per-Sector Return Statistics ---\n# Avg daily return, std dev, best day, worst day\n# Rolling aggregates over the full window (rolling form preserves per-asset series)\n# FIX: expanding agg(src, Type, cross_sectional=False) collapses multi-asset to single series\navg_ret = agg(daily_ret, 10, AggregationType.Mean)\nstd_ret = agg(daily_ret, 10, AggregationType.Std)\nbest_day = agg(daily_ret, 10, AggregationType.Max)\nworst_day = agg(daily_ret, 10, AggregationType.Min)\n\ncs_summary_table(\n    agg=AggregationType.Last,\n    title=\"Sector Return Statistics \u2014 Sorted by Avg Daily Return\",\n    category=\"Sector Performance\",\n    order=0,\n    schema=TableReportSchema(\n        title=\"Sector Return Statistics\",\n        include_timestamp=False,\n        columns=[\n            ColumnSpec(title=\"Avg Daily Return\", type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title=\"Std Dev\", type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title=\"Best Day\", type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title=\"Worst Day\", type=CardRenderType.PercentFormat, dp=2)\n        ]\n    ),\n    filters=AssetFilterSchema(filters=[\n        AssetFilter(column=0, count=11, rank=AssetFilterRank.Top)\n    ])\n)(avg_ret, std_ret, best_day, worst_day)\n"
+}

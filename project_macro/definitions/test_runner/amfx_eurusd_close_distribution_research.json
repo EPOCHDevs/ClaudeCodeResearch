@@ -1,0 +1,13 @@
+{
+   "name": "amfx-eurusd-close-distribution-research",
+   "description": "amFX reproduction (20AUG24 p2): Distribution of daily EURUSD closes above 1.08 since Aug 2022. Histogram shows closes binned in 50-pip increments, revealing that closes above 1.1100 are extremely rare (only ~9 in 2 years). The tapering right tail makes the 'rarified air' thesis visually obvious.",
+   "data": {
+      "assets": [
+         "EURUSD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: EURUSD CLOSE DISTRIBUTION (20AUG24 p2)\n# =============================================================================\n# Brent Donnelly's \"rarified air\" thesis:\n# - EURUSD distribution of daily closes above 1.08 since Aug 2022\n# - Only ~9 closes above 1.1100 in 2 years\n# - Peak frequency around 1.0850 (11 closes)\n# - The sparse right tail shows statistical rarity of current levels\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# Filter: only keep closes above 1.08, NaN otherwise\nfiltered_close = close if close > 1.08 else 0.0 / 0.0\n\nhistogram(\n    title='Distribution of Daily EURUSD Closes >1.08 Since Aug 2022',\n    category='EURUSD Distribution',\n    x_axis_label='EURUSD Close Price',\n    y_axis_label='Count of Daily Closes',\n    bin_width=0.005,\n    fill_color=Color.Blue,\n    fill_opacity=0.9,\n    x_axis_format=CardRenderType.DecimalFormat,\n    x_axis_dp=4,\n    y_axis_format=CardRenderType.IntegerFormat,\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=1.1100, title='1.1100 Rare Zone', color=Color.Red, dash_style=DashStyle.Dash, vertical=True)\n    ]),\n    order=0\n)(filtered_close)\n"
+}

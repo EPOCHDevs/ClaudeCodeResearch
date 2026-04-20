@@ -1,8 +1,0 @@
-Title: A Short-Term View Of U.S. Treasury Yields
-Topic: 2-Year and 10-Year U.S. Treasury yields over the short term (past 2 years). This chart provides a closer look at recent movements in these key benchmark interest rates, capturing the Fed's rate decisions and shifting market expectations.
-Question: How have 2-year and 10-year U.S. Treasury yields moved over the past two years, and what is the current relationship between them?
-Key Takeaways:
-- As of February 27, 2026, the 10-year Treasury yield was 3.98% and the 2-year Treasury yield was 3.39%, with the yield curve having uninverted as the 2-year yield has fallen more sharply than the 10-year.
-- The 2-year yield has declined significantly from above 5% in early-to-mid 2024 to around 3.39%, reflecting market expectations for Federal Reserve rate cuts and easing monetary policy.
-- The 10-year yield has been more stable, trading in a range roughly between 3.5% and 4.8% over the period, indicating that longer-term growth and inflation expectations have remained relatively anchored even as short-term rate expectations shifted.
-Source: ExhibitA for Advice

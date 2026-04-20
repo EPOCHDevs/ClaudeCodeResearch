@@ -1,12 +1,11 @@
 {
-  "name": "sp500-since-1990-with-and-without-dividends",
-  "description": "Growth of $1 in the S&P 500 with and without dividends reinvested, showing the compounding power of dividends.",
-  "data": {
-    "assets": [
-      "SPY-Stocks"
-    ],
-    "source": "polygon"
-  },
-  "source": "# The Importance of Dividends\nsrc = market_data_source()()\nclose = src.c\nprev_close = close >> 1\n\n\n# Load dividend data (sparse: only fires on ex-dividend dates)\ndiv_data = dividends()()\ndiv_amt = div_data.split_adjusted_cash_amount\nhas_div = is_valid(div_amt)\ndiv_today = div_amt if has_div else 0.0\n\n# Daily total return (with dividends reinvested)\n# On ex-date: total return = (close + dividend) / prev_close - 1\n# On other days: total return = close / prev_close - 1 (same as price return)\ndaily_total_ret = (close + div_today - prev_close) / prev_close\n\n# Growth of $1: cumulative product of (1 + daily return)\nprice_growth = returns(type=ReturnsType.cumulative)(close) + 1\ntotal_growth = cumulative(agg=AggregationType.Product)(1 + daily_total_ret)\n\nbar_ts = index()\n\nxy_lines(\n    title='Growth of $1 in the S&P 500 With and Without Dividends Reinvested',\n    category='1. Dividend Impact',\n    y_axis_label='Growth of $1 in the S&P 500',\n    y_axis_format=AxisValueFormat.MonetaryFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='With Dividends Reinvested', color=Color.Blue),\n        LineSeriesSpec(name='Price Only (No Dividends)', color=Color.Gray)\n    ])\n)(bar_ts, total_growth, price_growth)\n",
-  "global_timeframe": "1D"
+   "name": "sp500-since-1990-with-and-without-dividends",
+   "description": "Growth of $1 in the S&P 500 with and without dividends reinvested, showing the compounding power of dividends.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon"
+   },
+   "source": "# The Importance of Dividends\nsrc = study_assets()\nclose = src.c\nprev_close = close >> 1\n\n\n# Load dividend data (sparse: only fires on ex-dividend dates)\ndiv_data = dividends()\ndiv_amt = div_data.split_adjusted_cash_amount\nhas_div = is_valid(div_amt)\ndiv_today = div_amt if has_div else 0.0\n\n# Daily total return (with dividends reinvested)\n# On ex-date: total return = (close + dividend) / prev_close - 1\n# On other days: total return = close / prev_close - 1 (same as price return)\ndaily_total_ret = (close + div_today - prev_close) / prev_close\n\n# Growth of $1: cumulative product of (1 + daily return)\nprice_growth = returns(close, type=ReturnsType.cumulative) + 1\ntotal_growth = cumulative(agg=AggregationType.Product)(1 + daily_total_ret)\n\nbar_ts = index()\n\nxy_lines(\n    title='Growth of $1 in the S&P 500 With and Without Dividends Reinvested',\n    category='1. Dividend Impact',\n    y_axis_label='Growth of $1 in the S&P 500',\n    y_axis_format=CardRenderType.MonetaryFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='With Dividends Reinvested', color=Color.Blue),\n        LineSeriesSpec(name='Price Only (No Dividends)', color=Color.Gray)\n    ])\n)(bar_ts, total_growth, price_growth)\n"
 }

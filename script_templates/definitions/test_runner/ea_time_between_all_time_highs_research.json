@@ -1,10 +1,1 @@
-{
-   "name": "time-between-all-time-highs",
-   "description": "Trading days between each new all-time high, showing how long investors have waited for new peaks.",
-   "data": {
-      "assets": [],
-      "source": "polygon"
-   },
-   "source": "# Time Between S&P 500 All Time Highs\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\nclose = ffill(spy_c)\n\nrunning_max = cumulative(agg=AggregationType.Max)(close)\nis_ath = close >= running_max\n\n# Days since last ATH (multiply by 1.0 to cast integer to decimal for chart)\ndays_since_ath = barssince()(is_ath) * 1.0\n\nbar_ts = index()\n\nxy_lines(\n    title='Time Between S&P 500 All Time Highs',\n    category='1. All-Time High Gaps',\n    y_axis_label='# Trading Days Between S&P 500 All Time Highs',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=0,\n    area=True,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Trading Days Between S&P 500 All Time Highs', color=Color.Blue)\n    ])\n)(bar_ts, days_since_ath)\n",
-   "global_timeframe": "1D"
-}
+{"name":"time-between-all-time-highs","description":"Trading days between each new all-time high, showing how long investors have waited for new peaks.","data":{"assets":[],"source":"polygon"},"source":"# Time Between S&P 500 All Time Highs\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\nclose = ffill(spy_c)\n\nrunning_max = cumulative(agg=AggregationType.Max)(close)\nis_ath = close >= running_max\n\n# Days since last ATH (multiply by 1.0 to cast integer to decimal for chart)\ndays_since_ath = barssince()(is_ath) * 1.0\n\nbar_ts = index()\n\nxy_lines(\n    title='Time Between S&P 500 All Time Highs',\n    category='1. All-Time High Gaps',\n    y_axis_label='# Trading Days Between S&P 500 All Time Highs',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=0,\n    area=True,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Trading Days Between S&P 500 All Time Highs', color=Color.Blue)\n    ])\n)(bar_ts, days_since_ath)\n"}

@@ -1,10 +1,1 @@
-{
-   "name": "sp500-showing-all-time-highs",
-   "description": "S&P 500 with all-time high markers, showing that new highs are a regular and frequent occurrence.",
-   "data": {
-      "assets": [],
-      "source": "polygon"
-   },
-   "source": "# All Time Highs in the S&P 500 are Common\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\nclose = ffill(spy_c)\n\nrunning_max = cumulative(agg=AggregationType.Max)(close)\nis_ath = close >= running_max\nath_flag = 1.0 if is_ath else 0.0\n\n# Price only on ATH days (NaN elsewhere) for dot overlay\nath_price = close if is_ath else 0.0 / 0.0\n\nbar_ts = index()\n\nxy_lines(\n    title='All Time Highs in the S&P 500 are Common',\n    category='1. All-Time Highs',\n    y_axis_label='S&P 500 (Log Scale)',\n    log_scale=True,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='S&P 500 Price', color=Color.Blue),\n        LineSeriesSpec(name='ATH', color=Color.Gray, marker=MarkerSymbol.CircleMarker)\n    ])\n)(bar_ts, close, ath_price)\n",
-   "global_timeframe": "1D"
-}
+{"name":"sp500-showing-all-time-highs","description":"S&P 500 with all-time high markers, showing that new highs are a regular and frequent occurrence.","data":{"assets":[],"source":"polygon"},"source":"# All Time Highs in the S&P 500 are Common\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\nclose = ffill(spy_c)\n\nrunning_max = cumulative(agg=AggregationType.Max)(close)\nis_ath = close >= running_max\nath_flag = 1.0 if is_ath else 0.0\n\n# Price only on ATH days (NaN elsewhere) for dot overlay\nath_price = close if is_ath else 0.0 / 0.0\n\nbar_ts = index()\n\nxy_lines(\n    title='All Time Highs in the S&P 500 are Common',\n    category='1. All-Time Highs',\n    y_axis_label='S&P 500 (Log Scale)',\n    log_scale=True,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='S&P 500 Price', color=Color.Blue),\n        LineSeriesSpec(name='ATH', color=Color.Gray, marker=MarkerSymbol.CircleMarker)\n    ])\n)(bar_ts, close, ath_price)\n"}

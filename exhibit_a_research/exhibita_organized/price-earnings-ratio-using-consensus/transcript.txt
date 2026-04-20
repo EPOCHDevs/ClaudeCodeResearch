@@ -1,8 +1,0 @@
-Title: A Look at Forward Valuations
-Topic: This chart shows the forward price-to-earnings (P/E) ratio using consensus expected earnings per share over the next 12 months for the S&P 500, S&P 400, and S&P 600 from 1999 through early 2026, offering a forward-looking view of equity market valuations.
-Question: What are the current forward P/E ratios for large-cap, mid-cap, and small-cap indices, and how do they compare historically?
-Key Takeaways:
-- The S&P 500 has the highest forward P/E at 21.5x, compared to 16.9x for the S&P 400 (mid cap) and 15.5x for the S&P 600 (small cap), reflecting a persistent and growing valuation premium for large-cap equities.
-- The S&P 500's forward P/E of 21.5x is near the upper end of its 25-year historical range, suggesting the market is pricing in robust future earnings growth expectations for large-cap companies.
-- The meaningful valuation discount for mid-cap and small-cap indices (forward P/E ratios around 15-17x) may represent a relative value opportunity, particularly if earnings growth broadens beyond large-cap leaders.
-Source: ExhibitA for Advice
