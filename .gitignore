@@ -34,3 +34,16 @@ futures-projhect
 **/research_studies/
 *.arrow
 *.zip
+
+# Generated job output
+job_data/
+
+# dump_metadata outputs (regenerated from stratifyx server)
+docs/epochscript.ebnf
+docs/schemas.txt
+docs/schemas.json
+docs/transform_metadata.json
+docs/enums.json
+docs/assets.json
+docs/index_constituents.json
+docs/fred_series.json
