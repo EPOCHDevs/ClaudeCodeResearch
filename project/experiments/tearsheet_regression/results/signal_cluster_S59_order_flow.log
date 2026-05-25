@@ -1,0 +1,35 @@
+[ERROR] 2026-03-23 04:15:22.069 AuthCredentialsProvider [133133274299520] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:15:22.077 AuthCredentialsProvider [133133274299520] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:15:22.080] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:15:22.080] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/signal_cluster_S59_order_flow.json
+[2026-03-23 04:15:22.080] [info] [generate_job_data.cpp:241] Study: Signal Cluster S59: Order Flow & Market Structure
+[2026-03-23 04:15:22.080] [info] [generate_job_data.cpp:242] Output: signal_cluster_S59_order_flow
+[2026-03-23 04:15:22.080] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:15:22.080] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:15:22.080] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:15:22.080] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:15:22.080] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:15:22.082] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:15:22.085] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:15:22.167] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:15:22.167] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:15:22.170] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:15:22.182] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:15:22.182] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:15:22.183] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:15:22.183] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:15:22.185] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:15:22.187] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:15:22.198] [info] [job_persister.cpp:109] Persisting job data for user test_runner job signal_cluster_S59_order_flow to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S59_order_flow
+[2026-03-23 04:15:22.199] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S59_order_flow/config.json
+[2026-03-23 04:15:22.199] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S59_order_flow/metadata.json
+[2026-03-23 04:15:22.200] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job signal_cluster_S59_order_flow (total: 101482 bytes)
+[2026-03-23 04:15:22.200] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job signal_cluster_S59_order_flow
+[2026-03-23 04:15:22.201] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S59_order_flow/manifest.json
+
+=== Generation Complete ===
+Study: Signal Cluster S59: Order Flow & Market Structure
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S59_order_flow"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S59_order_flow/tearsheets"

@@ -1,0 +1,14 @@
+[ERROR] 2026-03-23 03:58:19.621 AuthCredentialsProvider [126651197865088] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 03:58:19.628 AuthCredentialsProvider [126651197865088] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 03:58:19.631] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 03:58:19.631] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/37edc2f9-83fb-437d-ba22-6c2bfc875712.json
+[2026-03-23 03:58:19.631] [info] [generate_job_data.cpp:241] Study: SMA Crossover Strategy — SPY
+[2026-03-23 03:58:19.631] [info] [generate_job_data.cpp:242] Output: 37edc2f9-83fb-437d-ba22-6c2bfc875712
+[2026-03-23 03:58:19.631] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 03:58:19.631] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 03:58:19.631] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 03:58:19.631] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 03:58:19.631] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 03:58:19.632] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 03:58:19.635] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+Study failed: Pipeline error: filesystem error: cannot create directories: Permission denied [/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data/PriceBars/Stocks/daily_rth]

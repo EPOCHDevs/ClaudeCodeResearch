@@ -1,0 +1,13 @@
+{
+   "name": "USD/CAD SMA Crossover - Fixed Units 1H",
+   "description": "SMA crossover strategy on USD/CAD using 20, 50, 200-period SMAs on 1H bars. Long when 20 crosses above 50 or 200, short when crossing below. Position sizing: 300,000 units for 20×50 crosses, 600,000 units for 20×200 crosses. Exit at 100 pips profit OR 50 pips stop loss.",
+   "data": {
+      "assets": [
+         "^USDCAD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# USD/CAD SMA Crossover Strategy\n# Long/Short entries on SMA crossovers with fixed unit sizing\n# 20x50 crosses = 300,000 units, 20x200 crosses = 600,000 units\n# Take profit: 100 pips (0.01), Stop loss: 50 pips (0.005)\n\n# Data source - 1H bars\nsrc = market_data_source(timeframe=1H)()\nclose = src.c\n\n# Calculate SMAs\nsma_20 = ma(period=20, type=MAType.sma)(close)\nsma_50 = ma(period=50, type=MAType.sma)(close)\nsma_200 = ma(period=200, type=MAType.sma)(close)\n\n# Entry signals - crossover/crossunder\n# 20x50 crossover/crossunder signals\nlong_20x50 = crossover(sma_20, sma_50)\nshort_20x50 = crossunder(sma_20, sma_50)\n\n# 20x200 crossover/crossunder signals\nlong_20x200 = crossover(sma_20, sma_200)\nshort_20x200 = crossunder(sma_20, sma_200)\n\n# Combined entry signals\nlong_entry = long_20x50 or long_20x200\nshort_entry = short_20x50 or short_20x200\n\n# Position sizing based on which cross triggered\n# 300,000 for 20x50, 600,000 for 20x200\n# When both signals occur, take the larger size (20x200)\nlong_size = 600000 if long_20x200 else (300000 if long_20x50 else 0)\nshort_size = 600000 if short_20x200 else (300000 if short_20x50 else 0)\n\n# Determine position size (positive for long, negative for short)\nposition_units = long_size if long_entry else (-short_size if short_entry else 0)\n\n# Entry/exit zone logic\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\n\n# Position sizing with unit type\nposition_size(type=SizeType.unit)(size=abs(position_units))\n\n# Stop loss: 50 pips = 0.005 price movement\nstop_loss(unit=StopUnit.pips)(distance=50)\n\n# Take profit: 100 pips = 0.01 price movement\ntake_profit(unit=StopUnit.pips)(distance=100)\n\n# Visualization - SMA lines\ntimeseries_lines(\n    title=\"SMA Crossover Signals\",\n    category=\"Indicators\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"SMA 20\", color=Color.Blue),\n        LineSeriesSpec(name=\"SMA 50\", color=Color.Orange),\n        LineSeriesSpec(name=\"SMA 200\", color=Color.Red)\n    ])\n)(sma_20, sma_50, sma_200)\n",
+   "global_timeframe": "1H"
+}

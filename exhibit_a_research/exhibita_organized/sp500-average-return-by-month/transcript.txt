@@ -1,8 +1,0 @@
-Title: Average Return by Month in the S&P 500
-Topic: This bar chart shows the average monthly return of the S&P 500 for each calendar month since 1950, revealing seasonal patterns and historical tendencies in equity market performance.
-Question: Which months have historically been the strongest and weakest for the S&P 500, and what seasonal patterns exist?
-Key Takeaways:
-- November (1.85%), April (1.43%), and December (1.39%) have historically been the strongest months for the S&P 500, while September (-0.62%) is the only month with a negative average return.
-- The so-called "Sell in May" pattern is partially supported: summer months (June through September) tend to show weaker average returns, with September standing out as the worst month historically.
-- January (-0.05%) has a near-zero average return, challenging the popular "January Effect" narrative, while the year-end rally (October through December) shows consistently strong performance.
-Source: ExhibitA for Advice

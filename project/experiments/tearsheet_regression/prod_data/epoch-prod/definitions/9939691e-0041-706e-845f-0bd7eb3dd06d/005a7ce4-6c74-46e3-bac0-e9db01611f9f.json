@@ -1,0 +1,13 @@
+{
+   "name": "Short-Only Donchian Breakout – USDJPY",
+   "description": "Short-only Turtle-style Donchian channel breakout strategy on USD/JPY daily bars. Short entry when close breaks below the prior bar's 55-day Donchian lower band (lowest low) with ADX(14) > 20 trend filter. Exit short when close touches/crosses above the prior bar's 20-day upper band. Position sizing: fixed 2% equity allocation per trade, no stop loss.",
+   "data": {
+      "assets": [
+         "^USDJPY-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Short-Only Donchian Channel Breakout Strategy – USDJPY\n# Entry: Close breaks below prior bar's 55-day Donchian lower band + ADX(14) > 20\n# Exit:  Close touches/crosses above prior bar's 20-day Donchian upper band\n# Sizing: Fixed 2% equity allocation per trade, no stop loss\n\n# --- Data Source ---\nsrc = market_data_source()()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# --- Donchian Channels ---\n# 55-period channel for entry signals\ndc55 = donchian_channel(window=55)(h=high, l=low)\ndc55_lower = dc55.donchian_lower\n\n# 20-period channel for exit signals\ndc20_exit = donchian_channel(window=20)(h=high, l=low)\ndc20_exit_upper = dc20_exit.donchian_upper\n\n# --- Lag bands by 1 bar to avoid look-ahead bias ---\n# Today's close is compared against YESTERDAY's channel levels\ndc55_lower_prev = dc55_lower >> 1\ndc20_exit_upper_prev = dc20_exit_upper >> 1\n\n# --- ADX Trend Filter ---\nadx_val = adx(period=14)(h=high, l=low)\ntrending = adx_val > 20\n\n# --- Short Entry Signal ---\n# Short entry: close breaks below prior bar's 55-day lower band\nshort_breakout = close < dc55_lower_prev\n\n# --- Short Exit Signal ---\n# Exit short: close touches/crosses above prior bar's 20-day upper band\nexit_short = close >= dc20_exit_upper_prev\n\n# --- Combine entry + exit using hold_until ---\n# Hold short state from breakout (with ADX filter) until 20-day exit fires\nshort_state = hold_until()(enter=short_breakout and trending, exit=exit_short)\n\n# --- Event marker for short breakout signals ---\nevent_marker(schema=EventMarkerSchema(\n    title=\"Short Breakout\",\n    icon=Icon.TrendingDownIcon,\n    schemas=[\n        ColumnSpec(title=\"Close\", type=CardRenderType.DecimalFormat, dp=3, card_slot=CardSlot.Hero),\n        ColumnSpec(title=\"ADX(14)\", type=CardRenderType.DecimalFormat, dp=2, card_slot=CardSlot.Details),\n        ColumnSpec(title=\"Filter\", table_is_filter=True, table_visible=False)\n    ]\n))(close, adx_val, short_breakout)\n\n# --- Execution ---\nlong_and_short_zone()(short_entry=short_state)\n\n# Fixed 2% equity allocation per trade, no stop loss\nposition_size(type=SizeType.percent)(size=2)\n",
+   "global_timeframe": "1D"
+}

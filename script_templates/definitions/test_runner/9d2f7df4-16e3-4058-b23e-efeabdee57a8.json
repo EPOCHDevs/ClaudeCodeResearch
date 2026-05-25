@@ -1,0 +1,16 @@
+{
+  "name": "Weekly Inverse-Volatility Portfolio (SPY/TLT/GLD/DBC)",
+  "description": "Weekly rebalanced inverse-volatility portfolio across SPY, TLT, GLD, and DBC. Computes 21-day annualized realized volatility for each asset, weights inversely proportional to vol, caps individual weights at 40% (renormalized), and rebalances on the first trading day of each week. Long-only, always fully invested, no leverage. Auto-generated tearsheet provides equity curve, drawdown, Sharpe, Sortino, Calmar, and monthly returns heatmap.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "TLT-Stocks",
+      "GLD-Stocks",
+      "DBC-Stocks"
+    ],
+    "source": "polygon",
+    "cache_dir": "/home/ubuntu/EpochDev/ClaudeCodeResearch/script_templates/market_data"
+  },
+  "source": "\n# ============================================================================\n# Weekly Inverse-Volatility Portfolio: SPY / TLT / GLD / DBC\n# ----------------------------------------------------------------------------\n# Rebalances weekly (first trading day of week). Weights = 1/vol, capped at 40%.\n# Long-only, always fully invested, no stops, no leverage.\n# ============================================================================\n\n# --- Data ---\nsrc = study_assets()\n\n# --- Volatility (21-day annualized, decimal fraction) ---\n# volatility() takes close prices and internally computes returns then annualizes (S47)\nvol_21 = volatility(src.c, method=VolMethod.annualized, period=21)\n\n# --- Rebalance Trigger: first trading day of each week ---\nts = index().value\nis_rebal = is_period_boundary(period=PeriodType.week, boundary=BoundaryType.start)(ts)\n\n# --- Inverse-Volatility Weights (cross-sectional, capped at 40%) ---\n# inv_vol_weight takes (active_mask: Boolean, volatility: Decimal)\n# max_weight=0.4 caps each asset at 40% and renormalizes\n# All assets always active (long-only, fully invested)\nalways_active = is_valid(vol_21)\nweights = inv_vol_weight(max_weight=0.4)(active_mask=always_active, volatility=vol_21)\n\n# Fallback: if vol unavailable, equal weight (25% each for 4 assets)\n# inv_vol_weight returns 0 when active_mask=False; coalesce to equal weight\nraw_weight = weights.weight * 100\nfinal_weight = coalesce(raw_weight, 25.0)\n\n# --- Execution ---\n# Long-only: persistent True entry, no short side\nlong_and_short_zone()(long_entry=always_active)\n\n# Position sizing: percent of equity, rebalance only on weekly boundary\nposition_size(type=SizeType.percent)(size=final_weight, rebalance_on=is_rebal)\n",
+  "data_foundation": "Daily"
+}

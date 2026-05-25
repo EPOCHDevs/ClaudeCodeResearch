@@ -1,10 +1,9 @@
 {
-  "name": "tactical-approaches-can-lead-to-significant-gains",
-  "description": "Growth of $1: staying invested vs hypothetically missing the worst days, showing the theoretical value of avoiding losses.",
-  "data": {
-    "assets": [],
-    "source": "polygon"
-  },
-  "source": "# A Tactical Approach Can Lead To Significant Gains\n# Growth of $1 in the S&P 500 missing the worst days\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\n\ndaily_ret = returns()(spy_c)\n\n# Identify the worst 50 and 100 days by daily return (global scan)\nis_worst50 = nsmallest(n=50)(daily_ret)\nis_worst100 = nsmallest(n=100)(daily_ret)\n\n# Zero out returns on worst days\nret_skip50 = boolean_select_number(is_worst50, 0, daily_ret)\nret_skip100 = boolean_select_number(is_worst100, 0, daily_ret)\n\n# Compound growth of $1: cumprod(1 + daily_return)\ngrowth_full = returns(type=ReturnsType.cumulative)(spy_c) + 1\ngrowth_skip50 = cumulative(agg=AggregationType.Product)(1 + ret_skip50)\ngrowth_skip100 = cumulative(agg=AggregationType.Product)(1 + ret_skip100)\n\nbar_ts = index()\n\nxy_lines(\n    title='Growth of $1 in the S&P 500 Missing the Worst Days',\n    category='1. Tactical Analysis',\n    y_axis_label='Growth of $1 in the S&P 500 (Log Scale)',\n    y_axis_format=AxisValueFormat.MonetaryFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Invested All Days', color=Color.Blue),\n        LineSeriesSpec(name='Missed Worst 50 Days', color=Color.Gray),\n        LineSeriesSpec(name='Missed Worst 100 Days', color=Color.Silver)\n    ])\n)(bar_ts, growth_full, growth_skip50, growth_skip100)\n",
-  "global_timeframe": "1D"
+   "name": "tactical-approaches-can-lead-to-significant-gains",
+   "description": "Growth of $1: staying invested vs hypothetically missing the worst days, showing the theoretical value of avoiding losses.",
+   "data": {
+      "assets": [],
+      "source": "polygon"
+   },
+   "source": "# A Tactical Approach Can Lead To Significant Gains\n# Growth of $1 in the S&P 500 missing the worst days\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\n\ndaily_ret = returns()(spy_c)\n\n# Identify the worst 50 and 100 days by daily return (global scan)\nis_worst50 = nsmallest(n=50)(daily_ret)\nis_worst100 = nsmallest(n=100)(daily_ret)\n\n# Zero out returns on worst days\nret_skip50 = boolean_select_number(is_worst50, 0, daily_ret)\nret_skip100 = boolean_select_number(is_worst100, 0, daily_ret)\n\n# Compound growth of $1: cumprod(1 + daily_return)\ngrowth_full = returns(spy_c, type=ReturnsType.cumulative) + 1\ngrowth_skip50 = cumulative(agg=AggregationType.Product)(1 + ret_skip50)\ngrowth_skip100 = cumulative(agg=AggregationType.Product)(1 + ret_skip100)\n\nbar_ts = index()\n\nxy_lines(\n    title='Growth of $1 in the S&P 500 Missing the Worst Days',\n    category='1. Tactical Analysis',\n    y_axis_label='Growth of $1 in the S&P 500 (Log Scale)',\n    y_axis_format=CardRenderType.MonetaryFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Invested All Days', color=Color.Blue),\n        LineSeriesSpec(name='Missed Worst 50 Days', color=Color.Gray),\n        LineSeriesSpec(name='Missed Worst 100 Days', color=Color.Silver)\n    ])\n)(bar_ts, growth_full, growth_skip50, growth_skip100)\n"
 }

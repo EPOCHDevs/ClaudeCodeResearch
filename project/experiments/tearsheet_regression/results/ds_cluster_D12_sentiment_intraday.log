@@ -1,0 +1,34 @@
+[ERROR] 2026-03-23 04:05:49.144 AuthCredentialsProvider [127892468878464] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:05:49.151 AuthCredentialsProvider [127892468878464] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:05:49.154] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:05:49.154] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_D12_sentiment_intraday.json
+[2026-03-23 04:05:49.154] [info] [generate_job_data.cpp:241] Study: DS Cluster D12: Market Sentiment (Intraday — ffill_day for daily sources)
+[2026-03-23 04:05:49.154] [info] [generate_job_data.cpp:242] Output: ds_cluster_D12_sentiment_intraday
+[2026-03-23 04:05:49.154] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:05:49.154] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:05:49.154] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:05:49.154] [info] [generate_job_data.cpp:251] Timeframe: 1Min
+[2026-03-23 04:05:49.154] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:05:49.156] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:05:49.159] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:05:49.199] [warning] [cache_orchestrator.cpp:432] ShortVolume for AAPL-Stocks requested from 2020-01-01 but data only exists from 2024-02-06 (asset may not have existed). Returning available data.
+[2026-03-23 04:05:49.548] [warning] [cache_orchestrator.cpp:945] loadDayBuckets: AAPL-Stocks is missing 58 weekday files in range [2020-01-01 - 2025-12-31]. First missing: 2020-01-01, Last missing: 2025-12-25. Data may have gaps.
+[2026-03-23 04:05:53.116] [info] [IReporter::TransformData] xy_lines rows=467988
+[2026-03-23 04:05:53.116] [info] [IReporter::TransformData] xy_lines rows=467988
+[2026-03-23 04:05:53.116] [info] [IReporter::GetDashboard] xy_lines rows=467988
+[2026-03-23 04:05:53.116] [info] [IReporter::GetDashboard] xy_lines rows=467988
+[2026-03-23 04:05:54.329] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:05:54.350] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:05:57.635] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_D12_sentiment_intraday to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D12_sentiment_intraday
+[2026-03-23 04:05:57.661] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D12_sentiment_intraday/config.json
+[2026-03-23 04:05:57.661] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D12_sentiment_intraday/metadata.json
+[2026-03-23 04:05:57.667] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_D12_sentiment_intraday (total: 14978683 bytes)
+[2026-03-23 04:05:57.667] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_D12_sentiment_intraday
+[2026-03-23 04:05:57.668] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D12_sentiment_intraday/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster D12: Market Sentiment (Intraday — ffill_day for daily sources)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D12_sentiment_intraday"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D12_sentiment_intraday/tearsheets"

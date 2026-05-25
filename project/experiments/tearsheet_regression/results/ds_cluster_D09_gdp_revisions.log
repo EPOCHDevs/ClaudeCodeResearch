@@ -1,0 +1,33 @@
+[ERROR] 2026-03-23 04:03:04.667 AuthCredentialsProvider [128923329932416] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:03:04.675 AuthCredentialsProvider [128923329932416] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:03:04.678] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:03:04.678] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_D09_gdp_revisions.json
+[2026-03-23 04:03:04.678] [info] [generate_job_data.cpp:241] Study: DS Cluster D09: GDP Revisions (known heavy revisions)
+[2026-03-23 04:03:04.678] [info] [generate_job_data.cpp:242] Output: ds_cluster_D09_gdp_revisions
+[2026-03-23 04:03:04.678] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:03:04.678] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:03:04.678] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:03:04.678] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:03:04.678] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:03:05.584] [info] [fred_series.cpp:82] Loaded 840371 FRED series from: /home/ubuntu/EpochDev/EpochBackend/build/data/fred_series.parquet.gzip
+[2026-03-23 04:03:09.215] [info] [fred_series.cpp:101] Processed 840371 FRED series
+[2026-03-23 04:03:09.386] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:03:09.389] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=EconomicRevisions
+[2026-03-23 04:03:09.768] [info] [fred_revisions_client.cpp:89] FRED revisions: series=GDPC1 initial=25 obs, latest=25 obs
+[2026-03-23 04:03:09.769] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:03:09.785] [info] [IReporter::TransformData] histogram rows=1518
+[2026-03-23 04:03:09.785] [info] [IReporter::GetDashboard] histogram rows=1518
+[2026-03-23 04:03:09.786] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:03:09.798] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_D09_gdp_revisions to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D09_gdp_revisions
+[2026-03-23 04:03:09.799] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D09_gdp_revisions/config.json
+[2026-03-23 04:03:09.799] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D09_gdp_revisions/metadata.json
+[2026-03-23 04:03:09.799] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_D09_gdp_revisions (total: 2334 bytes)
+[2026-03-23 04:03:09.799] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_D09_gdp_revisions
+[2026-03-23 04:03:09.800] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D09_gdp_revisions/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster D09: GDP Revisions (known heavy revisions)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D09_gdp_revisions"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D09_gdp_revisions/tearsheets"

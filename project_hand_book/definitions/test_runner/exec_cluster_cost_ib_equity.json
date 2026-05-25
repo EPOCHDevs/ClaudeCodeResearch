@@ -1,10 +1,13 @@
 {
-   "name": "Exec Cluster Cost: IB Equity — PerShare Commission + SpreadBased Slippage",
-   "description": "Tests: PerShare commission ($0.005/share, $1 min, 0.5% max) + SpreadBased slippage. Run with --cost ib_equity",
-   "data": {
-      "assets": ["AAPL-Stocks", "MSFT-Stocks", "GOOG-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC CLUSTER COST: Interactive Brokers Equity Commission\n# Run with: --cost ib_equity --cash 100000\n# Validates: PerShare commission with min/max, SpreadBased slippage (ADV-tiered)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: Momentum top-K ===\nmom = roc(period=63)(close)\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\nis_top = cs_select(direction=CSSelectDirection.top, mode=CSSelectMode.count, k=2)(mom)\n\nenter = is_new_month and is_top\nexit = is_new_month and not is_top\nheld = hold_until()(enter=enter, exit=exit)\nweights = equal_weight()(active_mask=held)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\nstop_loss(unit=StopUnit.percent)(distance=8)\n",
-   "global_timeframe": "1D"
+  "name": "Exec Cluster Cost: IB Equity \u2014 PerShare Commission + SpreadBased Slippage",
+  "description": "Tests: PerShare commission ($0.005/share, $1 min, 0.5% max) + SpreadBased slippage. Run with --cost ib_equity",
+  "data": {
+    "assets": [
+      "AAPL-Stocks",
+      "MSFT-Stocks",
+      "GOOG-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER COST: Interactive Brokers Equity Commission\n# Run with: --cost ib_equity --cash 100000\n# Validates: PerShare commission with min/max, SpreadBased slippage (ADV-tiered)\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SIGNAL: Momentum top-K ===\nmom = roc(close, 63)\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\nis_top = cs_select(direction=CSSelectDirection.top, mode=CSSelectMode.count, k=2)(mom)\n\nenter = is_new_month and is_top\nexit = is_new_month and not is_top\nheld = hold_until(enter, exit)\nweights = equal_weight()(active_mask=held)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\nstop_loss(unit=StopUnit.percent)(distance=8)\n"
 }

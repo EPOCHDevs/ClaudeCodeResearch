@@ -1,0 +1,104 @@
+[ERROR] 2026-03-23 04:13:22.805 AuthCredentialsProvider [133401437142144] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:22.813 AuthCredentialsProvider [133401437142144] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:22.816] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:22.816] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_histogram_handbook.json
+[2026-03-23 04:13:22.816] [info] [generate_job_data.cpp:241] Study: reporter_cluster_histogram_handbook
+[2026-03-23 04:13:22.816] [info] [generate_job_data.cpp:242] Output: reporter_cluster_histogram_handbook
+[2026-03-23 04:13:22.816] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:22.816] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:22.816] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:22.816] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:22.816] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:22.818] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:22.821] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.899] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.900] [info] [IReporter::GetDashboard] cs_histogram rows=1508
+[2026-03-23 04:13:22.901] [info] [IReporter::GetDashboard] cs_histogram rows=1508
+[2026-03-23 04:13:22.902] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.902] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.902] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.902] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.902] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.902] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.902] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.903] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.903] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.903] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.903] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.903] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.904] [info] [IReporter::GetDashboard] cs_histogram rows=1508
+[2026-03-23 04:13:22.905] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.905] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.905] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.905] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.905] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.905] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.905] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.905] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.905] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.905] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.905] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.906] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.906] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.907] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.907] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.907] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.908] [info] [IReporter::GetDashboard] cs_histogram charts=1 tables=0
+[2026-03-23 04:13:22.908] [info] [IReporter::GetDashboard] cs_histogram charts=1 tables=0
+[2026-03-23 04:13:22.908] [info] [IReporter::GetDashboard] cs_histogram charts=1 tables=0
+[2026-03-23 04:13:22.910] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.910] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.910] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:13:22.910] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.910] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.910] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:13:22.911] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.911] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:13:22.911] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:22.943] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_histogram_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_histogram_handbook
+[2026-03-23 04:13:22.944] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_histogram_handbook/config.json
+[2026-03-23 04:13:22.944] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_histogram_handbook/metadata.json
+[2026-03-23 04:13:22.947] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_histogram_handbook (total: 82609 bytes)
+[2026-03-23 04:13:22.947] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_histogram_handbook
+[2026-03-23 04:13:22.948] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_histogram_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_histogram_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_histogram_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_histogram_handbook/tearsheets"

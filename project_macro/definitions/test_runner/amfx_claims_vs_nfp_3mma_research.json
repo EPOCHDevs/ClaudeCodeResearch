@@ -1,0 +1,9 @@
+{
+   "name": "amfx-claims-vs-nfp-3mma-research",
+   "description": "amFX reproduction (25OCT22 p2): US Initial Claims vs 3-month moving average of NFP monthly change. Even after smoothing NFP with a 3MMA, Claims are still more timely at turning points. Both normalized to percentile rankings. Claims inverted. Source: Brent Donnelly, Spectra Markets.",
+   "data": {
+      "assets": []
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: INITIAL CLAIMS VS 3-MONTH AVG NFP (25OCT22 p2)\n# =============================================================================\n# Even after smoothing NFP with a 3-month moving average, it is STILL\n# not as timely as raw weekly Initial Claims.\n# =============================================================================\n\n# Total Nonfarm Payrolls (monthly, FRED: PAYEMS)\npayems_src = economic_indicators(series_id='PAYEMS')()\nnfp_change = returns(type=ReturnsType.monetary)(payems_src.result)\nnfp = ffill(nfp_change)\n\n# 3-month moving average of NFP change (~63 trading days)\nnfp_3mma = ma(period=63)(nfp)\n\nidx = index()\n\nxy_lines(\n    title='NFP 3-Month Average: Still Noisy and Laggy',\n    category='Claims vs NFP 3MMA',\n    y_axis_label='NFP 3MMA (thousands)',\n    y_axis_format=CardRenderType.IntegerFormat,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='NFP 3-Month MA', color=Color.Orange)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0, title='Zero', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(idx, nfp_3mma)\n"
+}

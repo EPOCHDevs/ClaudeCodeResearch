@@ -1,0 +1,14 @@
+{
+   "name": "NUE / X Steel Pairs Trade",
+   "description": "Pairs trading strategy for Nucor (NUE) vs US Steel (X). Computes the NUE–X price spread, then z-scores it over a 60-day rolling window. When the z-score drops below –2 (spread compressed), go long NUE and short X expecting mean reversion. Exit when z-score crosses back above 0. Equal 50% allocation per leg.",
+   "data": {
+      "assets": [
+         "NUE-Stocks",
+         "X-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# NUE / X Steel Pairs Trading Strategy\n# Spread: NUE close - X close\n# Z-score: 60-day rolling window\n# Entry: z < -2  (spread compressed → long NUE, short X)\n# Exit:  z crosses above 0 (mean reversion achieved)\n# Sizing: 50% per leg (equal dollar)\n\n# --- Data ---\nsrc = market_data_source()()\n\n# Load reference prices for both legs (identical on every asset)\nnue_ref = reference_stocks(ticker=\"NUE\")()\nx_ref   = reference_stocks(ticker=\"X\")()\n\nnue_close = nue_ref.c\nx_close   = x_ref.c\n\n# --- Spread & Z-Score ---\nspread = nue_close - x_close\nz = zscore(window=60)(spread)\n\n# --- Entry / Exit Signals ---\n# Entry pulse: z drops below -2\nentry_pulse = z < -2\n\n# Exit pulse: z crosses back above 0\nexit_pulse = crossover(z, 0)\n\n# Hold state from entry to exit (persist across bars)\npair_active = hold_until()(enter=entry_pulse, exit=exit_pulse)\n\n# --- Asset Routing ---\n# Route long signal to NUE, short signal to X\nis_nue = is_asset_ref(ticker=\"NUE\")()\nis_x   = is_asset_ref(ticker=\"X\")()\n\nlong_entry  = pair_active and is_nue   # Long NUE when pair is active\nshort_entry = pair_active and is_x     # Short X when pair is active\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\nposition_size(type=SizeType.percent)(size=50)\n",
+   "global_timeframe": "1D"
+}

@@ -1,8 +1,0 @@
-Title: Historical Growth of the U.S. Economy
-Topic: This chart shows U.S. Real Gross Domestic Product (seasonally adjusted annual rate) quarterly since 1950, measuring the total value of goods and services produced in the economy adjusted for inflation.
-Question: How has the overall size of the U.S. economy grown over the past seven decades in real (inflation-adjusted) terms?
-Key Takeaways:
-- As of the most recent data point, total U.S. Real GDP was $24.11 trillion, reflecting decades of cumulative economic expansion.
-- Real GDP data going back to 1950 reveals the cyclical nature of the U.S. economy with periods of growth and stagnation, but the long-term trajectory has been consistently higher.
-- The chart shows an exponential growth curve that has steepened notably since the 2000s, with a visible but brief contraction during the 2020 pandemic followed by a rapid recovery.
-Source: ExhibitA for Advice

@@ -1,8 +1,0 @@
-Title: A Tactical Approach Can Lead To Significant Gains
-Topic: This chart compares the growth of $1 in the S&P 500 since 1950 across three scenarios: staying invested all days, missing the worst 50 days, and missing the worst 100 days, showing the theoretical value of avoiding the market's worst-performing days.
-Question: How much could investment returns improve if the worst market days were avoided?
-Key Takeaways:
-- A $1 investment in the S&P 500 since 1950, staying invested all days, would have grown to $413; missing the worst 50 days would have grown to $19,881; and missing the worst 100 days would have resulted in a total growth of approximately $66,168 (shown as $50,049 area on chart).
-- While staying invested at all times provides steady growth, strategically avoiding the worst market days has led to far higher theoretical returns, highlighting the potential value of selective market timing if it were possible.
-- This striking difference highlights how avoiding the worst downturns can potentially improve long-term returns, reinforcing the selective power of tactical market timing -- though in practice, identifying the worst days in advance is extremely difficult.
-Source: ExhibitA for Advice

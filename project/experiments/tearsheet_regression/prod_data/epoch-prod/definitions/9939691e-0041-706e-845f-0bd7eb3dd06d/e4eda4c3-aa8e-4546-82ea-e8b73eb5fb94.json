@@ -1,0 +1,16 @@
+{
+   "name": "US Steel Momentum Long/Short",
+   "description": "Cross-sectional momentum long/short strategy on 4 US steel stocks (NUE, STLD, X, CLF). Ranks by 6-month (126-day) rate of change, goes long the top 2 and short the bottom 2, equal-weighted at 25% per position, rebalanced monthly.",
+   "data": {
+      "assets": [
+         "NUE-Stocks",
+         "STLD-Stocks",
+         "X-Stocks",
+         "CLF-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# US Steel Momentum Long/Short Strategy\n#\n# RULES:\n# - Universe: 4 US steel stocks (NUE, STLD, X, CLF)\n# - Signal: 6-month momentum (126-day Rate of Change)\n# - Selection: Long top 2, Short bottom 2 by momentum\n# - Weighting: Equal weight within long/short portfolios (25% per stock)\n# - Rebalancing: Monthly (first trading day)\n\n# Data source - DAILY\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# 6-month momentum (126 trading days)\nmomentum_6m = roc(period=126)(close)\n\n# Cross-sectional selection: top 2 by momentum (long), bottom 2 (short)\nis_top_2 = cs_select(direction=CSSelectDirection.top, mode=CSSelectMode.count, k=2)(momentum_6m)\nis_bottom_2 = cs_select(direction=CSSelectDirection.bottom, mode=CSSelectMode.count, k=2)(momentum_6m)\n\n# Detect first trading day of month\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# Monthly rebalance signals for LONG positions\nenter_long = is_new_month and is_top_2\nexit_long = is_new_month and not is_top_2\nheld_long = hold_until()(enter=enter_long, exit=exit_long)\n\n# Monthly rebalance signals for SHORT positions\nenter_short = is_new_month and is_bottom_2\nexit_short = is_new_month and not is_bottom_2\nheld_short = hold_until()(enter=enter_short, exit=exit_short)\n\n# Entry/Exit zones (long-short strategy)\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Equal weight across ALL active positions (both long and short)\nis_active = held_long or held_short\nweights = equal_weight()(is_active)\n\n# Position sizing - rebalance on first trading day of month\n# 4 active positions → 25% each; direction from long_and_short_zone\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\n",
+   "global_timeframe": "1D"
+}

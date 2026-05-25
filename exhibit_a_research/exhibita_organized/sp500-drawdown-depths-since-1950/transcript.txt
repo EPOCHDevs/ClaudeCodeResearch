@@ -1,8 +1,0 @@
-Title: Volatility is a Part of Investing
-Topic: This chart shows the total number of 5%, 10%, 20%, 30%, 40%, and 50% drawdowns in the S&P 500 since 1950, emphasizing that market volatility at all scales is an inevitable part of investing.
-Question: How frequently do drawdowns of various magnitudes occur in the S&P 500, and should investors expect them?
-Key Takeaways:
-- Small drawdowns are extremely common: there have been 72 drawdowns of 5% or more and 26 drawdowns of 10% or more since 1950, making them a routine part of the investing experience.
-- Larger drawdowns are less frequent but still occur: there have been 11 drawdowns of 20% or more, 6 of 30% or more, 3 of 40% or more, and 1 of 50% or more since 1950.
-- Despite the frequency of drawdowns at all levels, the S&P 500's long-term trajectory has remained positive, suggesting that embracing volatility and staying invested can help investors achieve their long-term portfolio goals.
-Source: ExhibitA for Advice

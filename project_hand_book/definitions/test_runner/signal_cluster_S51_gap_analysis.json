@@ -1,10 +1,11 @@
 {
-   "name": "Signal Cluster S51: Gap Analysis (Bar Gap on Daily)",
-   "description": "Tests: bar_gap(fill_percent, min_gap_size) on daily bars. Session_gap requires intraday — tested in signal_cluster_intraday_validation.",
-   "data": {
-      "assets": ["SPY-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# SIGNAL CLUSTER S51: Bar Gap on Daily\n# session_gap requires intraday — see signal_cluster_intraday_validation\n# =============================================================================\n\nsrc = market_data_source()()\n\n# === BAR GAP (works on any timeframe) ===\nbg = bar_gap(fill_percent=100, min_gap_size=0.1)(o=src.o, h=src.h, l=src.l, c=src.c)\n\n# === REPORTERS ===\nxy_lines(\n    title='Bar Gap Size (%)',\n    category='Gaps',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Gap Size', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=bg.gap_size)\n\nxy_lines(\n    title='Gap Retrace',\n    category='Gaps',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Retrace', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=bg.gap_retrace)\n",
-   "global_timeframe": "1D"
+  "name": "Signal Cluster S51: Gap Analysis (Bar Gap on Daily)",
+  "description": "Tests: bar_gap(fill_percent, min_gap_size) on daily bars. Session_gap requires intraday \u2014 tested in signal_cluster_intraday_validation.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# SIGNAL CLUSTER S51: Bar Gap on Daily\n# session_gap requires intraday \u2014 see signal_cluster_intraday_validation\n# =============================================================================\n\nsrc = study_assets()\n\n# === BAR GAP (works on any timeframe) ===\nbg = bar_gap(fill_percent=100, min_gap_size=0.1)(o=src.o, h=src.h, l=src.l, c=src.c)\n\n# === REPORTERS ===\nxy_lines(\n    title='Bar Gap Size (%)',\n    category='Gaps',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Gap Size', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=bg.gap_size)\n\nxy_lines(\n    title='Gap Retrace',\n    category='Gaps',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Retrace', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=bg.gap_retrace)\n"
 }

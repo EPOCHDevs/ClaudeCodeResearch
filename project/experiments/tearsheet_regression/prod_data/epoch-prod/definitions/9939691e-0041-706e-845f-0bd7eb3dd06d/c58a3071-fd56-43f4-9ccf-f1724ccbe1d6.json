@@ -1,0 +1,23 @@
+{
+   "name": "Industrials Momentum Breakout",
+   "description": "Cross-sectional momentum breakout strategy on 11 US Industrials stocks. Entry when close breaks above the 60-day Donchian upper band, selects top 5 breakout candidates by 60-day momentum. Equal-weight allocation (20% each), weekly rebalance. Exits when a stock is no longer in the top 5 breakout candidates.",
+   "data": {
+      "assets": [
+         "XLI-Stocks",
+         "CAT-Stocks",
+         "GE-Stocks",
+         "HON-Stocks",
+         "MMM-Stocks",
+         "UNP-Stocks",
+         "RTX-Stocks",
+         "LMT-Stocks",
+         "EMR-Stocks",
+         "ETN-Stocks",
+         "FDX-Stocks"
+      ],
+      "source": "Norgate",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Industrials Momentum Breakout — Cross-Sectional Rotational Strategy\n# =============================================================================\n# Momentum breakout strategy on US Industrials stocks using 60-day Donchian\n# Channels for breakout detection and cross-sectional ranking for selection.\n#\n# Universe: XLI, CAT, DE, GE, HON, MMM, UNP, RTX\n#\n# RULES:\n# - Breakout: Close > Prior bar's 60-day Donchian Upper Band\n# - Ranking: 60-day Rate of Change (momentum) across all assets\n# - Selection: Top 5 breakout candidates by momentum each week\n# - Weighting: Equal weight (1/5 = 20% each)\n# - Rebalance: Weekly (first trading day of each week)\n# - Exit: When a stock is no longer in the top 5 at weekly rebalance\n# =============================================================================\n\n# =============================================================================\n# DATA SOURCE\n# =============================================================================\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# =============================================================================\n# INDICATORS\n# =============================================================================\n\n# 60-Day Donchian Channel (highest high / lowest low over 60 days)\ndonchian = donchian_channel(window=60)(src.h, src.l)\nupper_band = donchian.bbands_upper\n\n# Lag band by 1 bar to avoid look-ahead bias\n# Today's high contributes to today's channel — compare against PRIOR bar\nupper_band_prior = upper_band >> 1\n\n# 60-Day Rate of Change for momentum ranking\nmomentum_60d = roc(period=60)(close)\n\n# =============================================================================\n# BREAKOUT DETECTION & CROSS-SECTIONAL SELECTION\n# =============================================================================\n\n# Breakout: Close above prior bar's 60-day Donchian upper band\nbreakout = close > upper_band_prior\n\n# Mask momentum to only breakout stocks (non-breakout → null, excluded from ranking)\n# This ensures cs_select only considers stocks with active breakouts\nrank_signal = where(breakout, momentum_60d)\n\n# Cross-sectional selection: top 5 breakout candidates by momentum\n# Null values (non-breakout stocks) are excluded from the ranking automatically\nis_top_5 = cs_select(direction=CSSelectDirection.top, mode=CSSelectMode.count, k=5)(rank_signal)\n\n# =============================================================================\n# WEEKLY REBALANCE SIGNALS\n# =============================================================================\n\n# Detect first trading day of each week\nis_new_week = is_period_boundary(period=PeriodType.week)(index())\n\n# Enter when stock is in top 5 at week start, exit when it leaves\nenter_long = is_new_week and is_top_5\nexit_long = is_new_week and not is_top_5\n\n# Hold position from weekly entry until next weekly exit\nheld_signal = hold_until()(enter=enter_long, exit=exit_long)\n\n# =============================================================================\n# EXECUTION\n# =============================================================================\n\n# Long-only zone\nlong_and_short_zone()(long_entry=held_signal)\n\n# Equal weight across selected stocks (1/N of active positions)\nweights = equal_weight()(held_signal)\n\n# Position sizing — equal weight, rebalance only on weekly boundary\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D"
+}

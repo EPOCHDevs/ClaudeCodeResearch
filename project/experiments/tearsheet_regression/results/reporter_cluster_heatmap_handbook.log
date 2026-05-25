@@ -1,0 +1,320 @@
+[ERROR] 2026-03-23 04:13:21.194 AuthCredentialsProvider [131531176021120] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:21.202 AuthCredentialsProvider [131531176021120] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:21.205] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:21.205] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_heatmap_handbook.json
+[2026-03-23 04:13:21.205] [info] [generate_job_data.cpp:241] Study: reporter_cluster_heatmap_handbook
+[2026-03-23 04:13:21.205] [info] [generate_job_data.cpp:242] Output: reporter_cluster_heatmap_handbook
+[2026-03-23 04:13:21.205] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:21.205] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:21.205] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:21.205] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:21.205] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:21.212] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:21.218] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:21.290] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.290] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.298] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.298] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.298] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.298] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.298] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.298] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.302] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.302] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.302] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.302] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.302] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.302] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.303] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.304] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.305] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.305] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.305] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.306] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.306] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.307] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.307] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.307] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.307] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.307] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.307] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.307] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.307] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.308] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.308] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.310] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.310] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.311] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.311] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.311] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.311] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.311] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.313] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.313] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.314] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.314] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.314] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.314] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.315] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.316] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.316] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.317] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.317] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.318] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.318] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.318] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.318] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.318] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.320] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.320] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.321] [info] [IReporter::GetDashboard] cs_heatmap rows=1508
+[2026-03-23 04:13:21.321] [info] [IReporter::GetDashboard] cs_heatmap charts=1 tables=0
+[2026-03-23 04:13:21.321] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.321] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.321] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.321] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.321] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.324] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.324] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.324] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.324] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.325] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.325] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.325] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.325] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.325] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.325] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.325] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.325] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.329] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.329] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.329] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.329] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.329] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.329] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.330] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.330] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.330] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.331] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.332] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.332] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.334] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.334] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.334] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.334] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.335] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.335] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.335] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.335] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.335] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.335] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.335] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.335] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.336] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.336] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.336] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.336] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.336] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.336] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.336] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.336] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.336] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.337] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.337] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.337] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.337] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.337] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.337] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.340] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.340] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.340] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.341] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.341] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.341] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.343] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.343] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.343] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.346] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.346] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.346] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.347] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.347] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.347] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.348] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.348] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.348] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.349] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.349] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.349] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.350] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.350] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.350] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.350] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.350] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.350] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.352] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.353] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.353] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.353] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.353] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.353] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.353] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.353] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.353] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.354] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.354] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.354] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.357] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.357] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.357] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.359] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.359] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.359] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.360] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.360] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.360] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.360] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.360] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.360] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.362] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.362] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.362] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.364] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.364] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.364] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.365] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.365] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.365] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.365] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.365] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.365] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.365] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.365] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.365] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.365] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.365] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.365] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.366] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.366] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.366] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.367] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.367] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.367] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.368] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.368] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.368] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.371] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.371] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.371] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.371] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.371] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.371] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.374] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.374] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.374] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.376] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.376] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.376] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.376] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.376] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.376] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.377] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.377] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.377] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.377] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.377] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.377] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.380] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.380] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.380] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.380] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.380] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.380] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.381] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.381] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.381] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.382] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.382] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.382] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.382] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.382] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.382] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.386] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.386] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.386] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.387] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.387] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.387] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.390] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.390] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.390] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.393] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.393] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.393] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.394] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.394] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.394] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.394] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.394] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.394] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.394] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.394] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.394] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.395] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.395] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.395] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.400] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.400] [info] [IReporter::TransformData] heatmap rows=1508
+[2026-03-23 04:13:21.400] [info] [IReporter::GetDashboard] heatmap rows=1508
+[2026-03-23 04:13:21.403] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.403] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.406] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.407] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.409] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.410] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.410] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.412] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.413] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.413] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.414] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.414] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.416] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.418] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.421] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+[2026-03-23 04:13:21.422] [info] [IReporter::GetDashboard] heatmap charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:21.457] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_heatmap_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_heatmap_handbook
+[2026-03-23 04:13:21.460] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_heatmap_handbook/config.json
+[2026-03-23 04:13:21.460] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_heatmap_handbook/metadata.json
+[2026-03-23 04:13:21.466] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_heatmap_handbook (total: 316555 bytes)
+[2026-03-23 04:13:21.466] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_heatmap_handbook
+[2026-03-23 04:13:21.475] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_heatmap_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_heatmap_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_heatmap_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_heatmap_handbook/tearsheets"

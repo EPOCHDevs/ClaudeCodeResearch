@@ -1,10 +1,13 @@
 {
-   "name": "Exec Cluster E03: Position Sizing Modes — Percent, Unit, Notional",
-   "description": "Tests: position_size with all 3 type modes (percent, unit, notional) + equal_weight + rebalance_on",
-   "data": {
-      "assets": ["SPY-Stocks", "QQQ-Stocks", "GLD-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC CLUSTER E03: Position Sizing Modes\n# Tests: position_size percent/unit/notional, equal_weight, rebalance_on\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: SMA trend filter ===\nsma_200 = ma(period=200, type=MAType.sma)(close)\nis_above = close > sma_200\nis_below = close < sma_200\n\n# === REBALANCE BOUNDARY ===\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# === ENTRY/EXIT gated to rebalance ===\nenter_long = is_new_month and is_above\nexit_long = is_new_month and is_below\nheld = hold_until()(enter=enter_long, exit=exit_long)\n\n# === EQUAL WEIGHT across active assets ===\nweights = equal_weight()(active_mask=held)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\n\n# E03: percent mode with equal_weight + rebalance_on\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\n\n# Protective stop\nstop_loss(unit=StopUnit.percent)(distance=10)\n",
-   "global_timeframe": "1D"
+  "name": "Exec Cluster E03: Position Sizing Modes \u2014 Percent, Unit, Notional",
+  "description": "Tests: position_size with all 3 type modes (percent, unit, notional) + equal_weight + rebalance_on",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "GLD-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER E03: Position Sizing Modes\n# Tests: position_size percent/unit/notional, equal_weight, rebalance_on\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SIGNAL: SMA trend filter ===\nsma_200 = ma(period=200, type=MAType.sma)(close)\nis_above = close > sma_200\nis_below = close < sma_200\n\n# === REBALANCE BOUNDARY ===\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# === ENTRY/EXIT gated to rebalance ===\nenter_long = is_new_month and is_above\nexit_long = is_new_month and is_below\nheld = hold_until(enter_long, exit_long)\n\n# === EQUAL WEIGHT across active assets ===\nweights = equal_weight()(active_mask=held)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\n\n# E03: percent mode with equal_weight + rebalance_on\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\n\n# Protective stop\nstop_loss(unit=StopUnit.percent)(distance=10)\n"
 }

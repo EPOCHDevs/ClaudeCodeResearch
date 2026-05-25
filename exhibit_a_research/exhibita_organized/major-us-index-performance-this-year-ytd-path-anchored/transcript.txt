@@ -1,8 +1,0 @@
-Title: Major U.S. Index Performance Path In 2025
-Topic: This chart tracks the 2025 full-year total return path of the S&P 500, Dow Jones Industrial Average, and NASDAQ Composite, showing how each index performed throughout the calendar year.
-Question: How did the major U.S. stock indices perform over the course of 2025, and what was the trajectory of their returns?
-Key Takeaways:
-- The NASDAQ Composite led all three indices with a 21.1% total return for 2025, followed by the S&P 500 at 17.9% and the Dow Jones Industrial Average at 14.9%.
-- All three indices experienced notable volatility mid-year, with drawdowns of roughly 10-20% before recovering strongly in the second half.
-- The performance paths diverged meaningfully, with the NASDAQ pulling ahead in the final months of the year, reflecting stronger returns from growth and technology sectors.
-Source: ExhibitA for Advice

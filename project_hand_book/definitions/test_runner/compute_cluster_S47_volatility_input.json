@@ -1,0 +1,9 @@
+{
+  "name": "Compute Cluster S47: Volatility Input (Price Not Returns)",
+  "description": "Tests: volatility() expects price levels not returns. Feed close directly. Shows 21d, 60d, 252d realized volatility.",
+  "data": {
+    "assets": ["SPY-Stocks"],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S47: Volatility Input (Price Not Returns)\n# volatility() expects close prices (internally computes returns then\n# annualizes). Feed close directly.\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# CORRECT: feed price directly\nvol_21 = volatility(close, method=VolMethod.annualized, period=21)\nvol_60 = volatility(close, method=VolMethod.annualized, period=60)\nvol_252 = volatility(close, method=VolMethod.annualized, period=252)\n\nxy_lines(\n    title='Realized Volatility (21/60/252d)',\n    category='Volatility',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='21d Vol', color=Color.Red),\n        LineSeriesSpec(name='60d Vol', color=Color.Orange),\n        LineSeriesSpec(name='252d Vol', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=(vol_21, vol_60, vol_252))\n"
+}

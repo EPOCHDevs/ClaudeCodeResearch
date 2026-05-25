@@ -1,0 +1,13 @@
+{
+   "name": "AAPL SMA 9/21 Crossover",
+   "description": "Simple moving average crossover strategy for Apple Inc using a 9-period fast SMA and 21-period slow SMA. Goes long when the fast SMA crosses above the slow SMA (golden cross) and goes short when the fast SMA crosses below the slow SMA (death cross).",
+   "data": {
+      "assets": [
+         "AAPL-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# AAPL SMA 9/21 Crossover Strategy\n# Long on golden cross (fast > slow), Short on death cross (fast < slow)\n\n# Data source\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# Calculate SMAs\nfast_sma = ma(period=9, type=MAType.sma)(close)\nslow_sma = ma(period=21, type=MAType.sma)(close)\n\n# Entry signals\ngolden_cross = crossover(fast_sma, slow_sma)\ndeath_cross = crossunder(fast_sma, slow_sma)\n\n# Long and short zone - always in market, flipping between positions\nlong_and_short_zone()(long_entry=golden_cross, short_entry=death_cross)\n\n# Equal weight position sizing (100% allocation)\nposition_size(type=SizeType.percent)(size=100)\n\n# Visualization\ntimeseries_lines(\n    title=\"Price & Moving Averages\",\n    category=\"Strategy\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Close\", color=Color.White),\n        LineSeriesSpec(name=\"SMA 9\", color=Color.Blue),\n        LineSeriesSpec(name=\"SMA 21\", color=Color.Orange)\n    ])\n)(close, fast_sma, slow_sma)\n",
+   "global_timeframe": "1D"
+}

@@ -1,0 +1,31 @@
+[ERROR] 2026-03-23 04:06:09.600 AuthCredentialsProvider [126653696322688] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:06:09.608 AuthCredentialsProvider [126653696322688] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:06:09.611] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:06:09.611] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_D15_news.json
+[2026-03-23 04:06:09.611] [info] [generate_job_data.cpp:241] Study: DS Cluster D15: News + Cross-Sectional News
+[2026-03-23 04:06:09.611] [info] [generate_job_data.cpp:242] Output: ds_cluster_D15_news
+[2026-03-23 04:06:09.611] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:06:09.611] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:06:09.611] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:06:09.611] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:06:09.611] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:06:09.612] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:06:09.615] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=News
+[2026-03-23 04:06:09.860] [warning] [api_cache_dataloader.cpp:644] cs_news fetch failed for tickers=MSFT_GOOGL: No data available - fetch returned 0 rows
+[2026-03-23 04:06:09.860] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:09:52.564] [info] [IReporter::TransformData] histogram rows=2057
+[2026-03-23 04:09:52.564] [info] [IReporter::GetDashboard] histogram rows=2057
+[2026-03-23 04:09:52.565] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:09:52.581] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_D15_news to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D15_news
+[2026-03-23 04:09:52.585] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D15_news/config.json
+[2026-03-23 04:09:52.585] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D15_news/metadata.json
+[2026-03-23 04:09:52.585] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_D15_news (total: 2328 bytes)
+[2026-03-23 04:09:52.585] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_D15_news
+[2026-03-23 04:09:52.593] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D15_news/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster D15: News + Cross-Sectional News
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D15_news"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D15_news/tearsheets"

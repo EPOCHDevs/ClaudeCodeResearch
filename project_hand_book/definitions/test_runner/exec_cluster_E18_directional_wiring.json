@@ -1,10 +1,12 @@
 {
-   "name": "Exec Cluster E18: Long-Only Directional Wiring",
-   "description": "Tests: long-only wiring (no short_entry), hold_long with exit via SL/TP only",
-   "data": {
-      "assets": ["SPY-Stocks", "QQQ-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC CLUSTER E18: Long-Only Directional Wiring\n# Tests: E18 — omit short_entry for long-only strategy\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: RSI oversold buy ===\nrsi_val = rsi(period=14)(close)\nentry = rsi_val < 30\n\n# === EXECUTION ===\n# E18: Long-only — only wire long_entry, NO short_entry\n# E01: Use hold_long to keep position for minimum 10 bars\nlong_and_short_zone(hold_long=10)(long_entry=entry)\n\n# Fixed percent sizing\nposition_size(type=SizeType.percent)(size=25)\n\n# Exits only — no opposing signal exit\natr_val = atr(period=14)(src.h, src.l, src.c)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 2)\ntake_profit(unit=StopUnit.percent)(distance=8)\n",
-   "global_timeframe": "1D"
+  "name": "Exec Cluster E18: Long-Only Directional Wiring",
+  "description": "Tests: long-only wiring (no short_entry), hold_long with exit via SL/TP only",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER E18: Long-Only Directional Wiring\n# Tests: E18 \u2014 omit short_entry for long-only strategy\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SIGNAL: RSI oversold buy ===\nrsi_val = rsi(close, 14)\nentry = rsi_val < 30\n\n# === EXECUTION ===\n# E18: Long-only \u2014 only wire long_entry, NO short_entry\n# E01: Use hold_long to keep position for minimum 10 bars\nlong_and_short_zone(hold_long=10)(long_entry=entry)\n\n# Fixed percent sizing\nposition_size(type=SizeType.percent)(size=25)\n\n# Exits only \u2014 no opposing signal exit\natr_val = atr(src.h, src.l, src.c, 14)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 2)\ntake_profit(unit=StopUnit.percent)(distance=8)\n"
 }

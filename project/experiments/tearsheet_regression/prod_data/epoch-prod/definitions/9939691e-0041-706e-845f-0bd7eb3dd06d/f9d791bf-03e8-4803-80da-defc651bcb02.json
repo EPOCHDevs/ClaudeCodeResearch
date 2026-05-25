@@ -1,0 +1,17 @@
+{
+   "name": "Weekly Inverse-Vol Portfolio with Trend Filter",
+   "description": "Volatility-scaled portfolio across SPY, TLT, GLD, and DBC with a 200-day SMA trend filter. Inverse-volatility weighting with 21-day realized vol lookback, rebalanced weekly on Mondays. Assets trading below their 200-day SMA are excluded and their allocation moves to cash (not redistributed). 100% invested only when all 4 assets are above trend.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Weekly Inverse-Volatility Portfolio\n# Universe: SPY, TLT, GLD, DBC\n# Weighting: Inverse volatility (21-day realized vol)\n# Rebalance: Weekly on Monday open\n# Allocation: 100% fully invested across all 4 assets\n\n# --- Data ---\nsrc = market_data_source()()\nclose = src.c\n\n# --- Rebalance Detection ---\n# Fire on Monday (start of each trading week)\nis_new_week = is_period_boundary(period=PeriodType.week, day_anchor=DayAnchorType.monday)(index())\n\n# --- Trend Filter ---\n# 200-day SMA: only hold asset if close > SMA 200, else move to cash\nsma_200 = ma(period=200, type=MAType.sma)(close)\nabove_trend = is_valid(sma_200) and close > sma_200\n\n# --- Volatility Estimation ---\n# 21-day annualized realized volatility (feeds close prices per S47)\nvol_21d = volatility(period=21)(close)\n\n# --- Inverse-Volatility Weights ---\n# All assets always active (always long all 4)\nalways_active = True\n\n# inv_vol_weight computes w_i = (1/vol_i) / sum(1/vol_j) across active assets\n# Weights sum to 1.0 across the 4 assets\nbase_weights = inv_vol_weight()(active_mask=always_active, volatility=vol_21d)\n\n# Apply trend filter: zero weight if below 200-day SMA → allocation goes to cash\n# (not redistributed to other assets)\ntrend_mask = 1.0 if above_trend else 0.0\nweights = base_weights * trend_mask\n\n# --- Signal: Always Long ---\n# Long signal gated by trend: enter on rebalance if above SMA, exit if below\nenter_long = is_new_week and above_trend\nexit_long = is_new_week and not above_trend\nheld_long = hold_until()(enter=enter_long, exit=exit_long)\n\n# --- Execution ---\n# 1. Zone: always long, no short leg\nlong_and_short_zone()(long_entry=held_long)\n\n# 2. Sizing: inv-vol weights × 100 = percent of equity, locked between rebalances\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D",
+   "thread_id": "8fec1dea-4f0a-4f3c-a794-6214b6da3dca"
+}

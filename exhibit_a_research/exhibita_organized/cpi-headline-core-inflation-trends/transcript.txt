@@ -1,8 +1,0 @@
-Title: Headline and Core Inflation Trends
-Topic: This chart shows the year-over-year change in Headline vs Core Consumer Price Index (CPI) since 1960, representing the total change in consumer prices including and excluding volatile food and energy categories.
-Question: What are the current headline and core CPI inflation rates, and how do they compare to historical inflation cycles?
-Key Takeaways:
-- As of January 2026, Headline CPI year-over-year was 2.4%, while Core CPI year-over-year (excluding food and energy) was 2.5%, both trending near but still above the Fed's 2% target.
-- The chart reveals that the 2022 inflation spike (peaking near 9%) was the highest since the early 1980s, but has since come down dramatically through 2023-2025.
-- The Federal Reserve uses inflation data to set monetary policy, adjusting interest rates to manage inflation and support economic stability, making CPI one of the most closely watched economic indicators.
-Source: ExhibitA for Advice

@@ -1,8 +1,0 @@
-Title: Presidents Don't Control Markets
-Topic: This chart displays the S&P 500 annualized performance by presidential term along with the maximum drawdown experienced during each term, spanning from Roosevelt to the present, demonstrating that market returns have no consistent pattern tied to political party.
-Question: Is there a consistent relationship between the political party of the U.S. president and stock market performance?
-Key Takeaways:
-- The average S&P 500 annualized return under Republicans is 3.5% and under Democrats is 11.6%, but the variation within each party is enormous, making party affiliation a poor predictor of market returns.
-- Market returns and volatility have varied widely across presidential terms with no consistent pattern tied to political party, underscoring the importance of focusing on long-term goals rather than making portfolio decisions based on election cycles.
-- Maximum drawdowns have occurred under presidents of both parties, with some of the largest declines happening during broader economic crises (Great Depression, 2008 financial crisis, COVID-19) that transcend any single administration's policies.
-Source: ExhibitA for Advice

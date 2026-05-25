@@ -1,0 +1,383 @@
+[ERROR] 2026-03-23 04:13:15.168 AuthCredentialsProvider [132496040328320] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:15.176 AuthCredentialsProvider [132496040328320] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:15.179] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:15.179] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_bars_handbook.json
+[2026-03-23 04:13:15.179] [info] [generate_job_data.cpp:241] Study: reporter_cluster_bars_handbook
+[2026-03-23 04:13:15.179] [info] [generate_job_data.cpp:242] Output: reporter_cluster_bars_handbook
+[2026-03-23 04:13:15.179] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:15.179] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:15.179] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:15.179] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:15.179] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:15.190] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:15.197] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:15.265] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.266] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.267] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.267] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.275] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.275] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.275] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.275] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.275] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.275] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.277] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.277] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.277] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.277] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.277] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.277] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.277] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.277] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.277] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.277] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.277] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.279] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.279] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.279] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.279] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.281] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.281] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.281] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.281] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.281] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.281] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.282] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.282] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.282] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.282] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.282] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.282] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.283] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.283] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.283] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.283] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.283] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.283] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.283] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.283] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.283] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.283] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.283] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.285] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.285] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.285] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.285] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.285] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.285] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.285] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.285] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.285] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.285] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.286] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.286] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.286] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.286] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.286] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.286] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.286] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.286] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.287] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.287] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.287] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.287] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.287] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.288] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.289] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.289] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.289] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.289] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.289] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.289] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.289] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.289] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.289] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.289] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.289] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.289] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.290] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.290] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.290] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.290] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.291] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.292] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.292] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.292] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.292] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.292] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.292] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.292] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.292] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.292] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.292] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.292] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.293] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.293] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.293] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.293] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.293] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.293] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.294] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.294] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.294] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.294] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.294] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.294] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.294] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.294] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.294] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.295] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.295] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.295] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.296] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.296] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.296] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.296] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.296] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.296] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.296] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.296] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.296] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.296] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.296] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.296] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.296] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.296] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.297] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.297] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.297] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.297] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.297] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.298] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.298] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.298] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.298] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.298] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.298] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.298] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.298] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.298] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.299] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.299] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.299] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.299] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.299] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.299] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.299] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.299] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.299] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.300] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.300] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.300] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.300] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.300] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.300] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.300] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.300] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.300] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.301] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.301] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.301] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.301] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.301] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.301] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.301] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.301] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.301] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.301] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.302] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.302] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.302] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.302] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.302] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.302] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.302] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.302] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.302] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.303] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.303] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.303] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.303] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.304] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.304] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.304] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.304] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.304] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.304] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.304] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.304] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.304] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.305] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.305] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.305] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.305] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.305] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.305] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.305] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.306] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.306] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.306] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.306] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.306] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.306] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.306] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.307] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.307] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.307] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.307] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.307] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.307] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.309] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.309] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.309] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.309] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.309] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.309] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.309] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.310] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.310] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.310] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.310] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.310] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.310] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.310] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.311] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.311] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.311] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.311] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.312] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.312] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.313] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.313] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.313] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.313] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.314] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.314] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.314] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.314] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.314] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.314] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.314] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.314] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.314] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.314] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.314] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.314] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.314] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.315] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.315] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.315] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.315] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.315] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.316] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.316] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.316] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.316] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.318] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.318] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.318] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.319] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.319] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.319] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.319] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.319] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.319] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.319] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.320] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.320] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+[2026-03-23 04:13:15.320] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.321] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.322] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.322] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.322] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.322] [warning] [xy_bars] Skipped 1437 rows with null/NaN/Inf labels out of 1508
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.322] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.323] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.323] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.323] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.323] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.323] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.323] [info] [IReporter::TransformData] xy_bars rows=1508
+[2026-03-23 04:13:15.323] [info] [IReporter::GetDashboard] xy_bars rows=1508
+[2026-03-23 04:13:15.323] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.323] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.323] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.323] [info] [IReporter::GetDashboard] xy_bars charts=1 tables=0
+[2026-03-23 04:13:15.324] [info] [IReporter::GetDashboard] cs_bars rows=1508
+[2026-03-23 04:13:15.324] [info] [IReporter::GetDashboard] cs_bars charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:15.362] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_bars_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bars_handbook
+[2026-03-23 04:13:15.366] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bars_handbook/config.json
+[2026-03-23 04:13:15.366] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bars_handbook/metadata.json
+[2026-03-23 04:13:15.374] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_bars_handbook (total: 200697 bytes)
+[2026-03-23 04:13:15.374] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_bars_handbook
+[2026-03-23 04:13:15.388] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bars_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_bars_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bars_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_bars_handbook/tearsheets"

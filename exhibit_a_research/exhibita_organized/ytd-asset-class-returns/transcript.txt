@@ -1,8 +1,0 @@
-Title: Asset Class Returns In 2026
-Topic: This chart illustrates the year-to-date (YTD) returns of various asset classes in 2026, providing a snapshot of how different investments have performed so far in the current year.
-Question: How are different asset classes performing year-to-date in 2026, and which are leading or lagging?
-Key Takeaways:
-- Gold continues to lead as the best performing asset class in 2026 YTD with a return of 22.1%, followed by Emerging Markets at 14.4% and Commodities at 13.9%.
-- Bitcoin is the worst performing asset class YTD in 2026 with a significant decline of -25.0%, while other categories like U.S. Large Cap Growth (0.7%) and Cash (0.6%) show near-flat returns.
-- International and commodity-oriented investments are outperforming U.S. equities so far in 2026, with Developed International Stocks at 9.7%, U.S. Mid Cap at 8.3%, and U.S. Real Estate at 8.1%, suggesting continued diversification benefits.
-Source: ExhibitA for Advice

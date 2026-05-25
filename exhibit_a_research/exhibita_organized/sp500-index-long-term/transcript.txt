@@ -1,8 +1,0 @@
-Title: A Long-Term View Of Stocks
-Topic: This chart provides a look at the long-term performance of the S&P 500 Index since 1928 on a logarithmic scale, showing how the index has grown over nearly a century from single digits to 6,879.
-Question: What does the long-term growth trajectory of the S&P 500 look like across nearly 100 years of market history?
-Key Takeaways:
-- The S&P 500 has grown from under 10 in 1928 to 6,879, demonstrating powerful long-term compounding despite multiple major crises including the Great Depression, dot-com bust, and 2008 financial crisis.
-- Periods of significant decline (1929-1932, 2000-2002, 2007-2009) were eventually followed by strong recoveries, contributing to the overall upward trajectory of the market.
-- The chart emphasizes the importance of staying focused on a long-term investment goal and maintaining a disciplined strategy, as short-term market fluctuations are eventually overcome by the historical upward trend.
-Source: ExhibitA for Advice

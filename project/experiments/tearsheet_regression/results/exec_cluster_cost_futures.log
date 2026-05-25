@@ -1,0 +1,23 @@
+[ERROR] 2026-03-23 04:11:14.890 AuthCredentialsProvider [126111860268160] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:11:14.898 AuthCredentialsProvider [126111860268160] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:11:14.901] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:11:14.901] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/exec_cluster_cost_futures.json
+[2026-03-23 04:11:14.901] [info] [generate_job_data.cpp:241] Study: Exec Cluster Cost: Futures — Per-Contract Commission + Tick Slippage
+[2026-03-23 04:11:14.901] [info] [generate_job_data.cpp:242] Output: exec_cluster_cost_futures
+[2026-03-23 04:11:14.901] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:11:14.901] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:11:14.901] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:11:14.901] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:11:14.901] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:11:14.902] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:11:14.906] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+Study completed successfully
+[2026-03-23 04:11:15.630] [info] [job_persister.cpp:109] Persisting job data for user test_runner job exec_cluster_cost_futures to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_futures
+[2026-03-23 04:11:15.777] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_futures/config.json
+[2026-03-23 04:11:15.777] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_futures/metadata.json
+[2026-03-23 04:11:15.778] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_futures/manifest.json
+
+=== Generation Complete ===
+Study: Exec Cluster Cost: Futures — Per-Contract Commission + Tick Slippage
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_futures"
+Type: Research Study

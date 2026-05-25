@@ -1,0 +1,35 @@
+[ERROR] 2026-03-23 04:03:11.632 AuthCredentialsProvider [134423905660032] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:03:11.640 AuthCredentialsProvider [134423905660032] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:03:11.643] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:03:11.643] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_D10_fundamentals.json
+[2026-03-23 04:03:11.643] [info] [generate_job_data.cpp:241] Study: DS Cluster D10: Fundamentals (Balance Sheet, Income Statement, Cash Flow)
+[2026-03-23 04:03:11.643] [info] [generate_job_data.cpp:242] Output: ds_cluster_D10_fundamentals
+[2026-03-23 04:03:11.643] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:03:11.643] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:03:11.643] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:03:11.643] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:03:11.643] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:03:11.645] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:03:11.648] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:03:12.035] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:03:12.035] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:03:12.036] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:03:12.036] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:03:12.041] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:03:12.041] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:03:12.042] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:03:12.042] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:03:12.043] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:03:12.059] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_D10_fundamentals to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D10_fundamentals
+[2026-03-23 04:03:12.061] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D10_fundamentals/config.json
+[2026-03-23 04:03:12.061] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D10_fundamentals/metadata.json
+[2026-03-23 04:03:12.061] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_D10_fundamentals (total: 101530 bytes)
+[2026-03-23 04:03:12.061] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_D10_fundamentals
+[2026-03-23 04:03:12.063] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D10_fundamentals/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster D10: Fundamentals (Balance Sheet, Income Statement, Cash Flow)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D10_fundamentals"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D10_fundamentals/tearsheets"

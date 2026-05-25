@@ -1,10 +1,11 @@
 {
-    "name": "DS Cluster D10: Fundamentals (Annual + TTM + Cash Flow)",
-    "description": "Tests: balance_sheet annual, income_statement trailing_twelve_months, cash_flow quarterly/annual/ttm.",
-    "data": {
-        "assets": ["AAPL-Stocks"],
-        "source": "polygon"
-    },
-    "source": "# =============================================================================\n# DS CLUSTER D10: Fundamentals — Annual, TTM, Cash Flow\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === BALANCE SHEET ANNUAL ===\nbs_a = balance_sheet(period=ReportingPeriod.annual)()\nassets_a = ffill(bs_a.total_assets)\n\n# === INCOME STATEMENT ANNUAL ===\ninc_a = income_statement(period=ReportingPeriod.annual)()\nrev_a = ffill(inc_a.revenue)\n\n# === INCOME STATEMENT TTM ===\ninc_ttm = income_statement(period=ReportingPeriod.trailing_twelve_months)()\nrev_ttm = ffill(inc_ttm.revenue)\n\n# === CASH FLOW QUARTERLY ===\ncf_q = cash_flow(period=ReportingPeriod.quarterly)()\ncfo_q = ffill(cf_q.ncf_operating)\n\n# === CASH FLOW ANNUAL ===\ncf_a = cash_flow(period=ReportingPeriod.annual)()\ncfo_a = ffill(cf_a.ncf_operating)\n\n# === CASH FLOW TTM ===\ncf_ttm = cash_flow(period=ReportingPeriod.trailing_twelve_months)()\ncfo_ttm = ffill(cf_ttm.ncf_operating)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Total Assets (Annual)\",\n    category=\"Fundamentals\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Annual\", color=Color.Blue)\n    ])\n)(x_values=index(), y_values=assets_a)\n\nxy_lines(\n    title=\"Operating Cash Flow: Q vs Annual vs TTM\",\n    category=\"Fundamentals\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Quarterly\", color=Color.Green),\n        LineSeriesSpec(name=\"Annual\", color=Color.Blue),\n        LineSeriesSpec(name=\"TTM\", color=Color.Red)\n    ])\n)(x_values=index(), y_values=(cfo_q, cfo_a, cfo_ttm))\n",
-    "global_timeframe": "1D"
+  "name": "DS Cluster D10: Fundamentals (Annual + TTM + Cash Flow)",
+  "description": "Tests: balance_sheet annual, income_statement trailing_twelve_months, cash_flow quarterly/annual/ttm.",
+  "data": {
+    "assets": [
+      "AAPL-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D10: Fundamentals \u2014 Annual, TTM, Cash Flow\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === BALANCE SHEET ANNUAL ===\nbs_a = balance_sheet(period=ReportingPeriod.annual)()\nassets_a = ffill(bs_a.total_assets)\n\n# === INCOME STATEMENT ANNUAL ===\ninc_a = income_statement(period=ReportingPeriod.annual)()\nrev_a = ffill(inc_a.revenue)\n\n# === INCOME STATEMENT TTM ===\ninc_ttm = income_statement(period=ReportingPeriod.trailing_twelve_months)()\nrev_ttm = ffill(inc_ttm.revenue)\n\n# === CASH FLOW QUARTERLY ===\ncf_q = cash_flow(period=ReportingPeriod.quarterly)()\ncfo_q = ffill(cf_q.ncf_operating)\n\n# === CASH FLOW ANNUAL ===\ncf_a = cash_flow(period=ReportingPeriod.annual)()\ncfo_a = ffill(cf_a.ncf_operating)\n\n# === CASH FLOW TTM ===\ncf_ttm = cash_flow(period=ReportingPeriod.trailing_twelve_months)()\ncfo_ttm = ffill(cf_ttm.ncf_operating)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Total Assets (Annual)\",\n    category=\"Fundamentals\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Annual\", color=Color.Blue)\n    ])\n)(x_values=index(), y_values=assets_a)\n\nxy_lines(\n    title=\"Operating Cash Flow: Q vs Annual vs TTM\",\n    category=\"Fundamentals\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Quarterly\", color=Color.Green),\n        LineSeriesSpec(name=\"Annual\", color=Color.Blue),\n        LineSeriesSpec(name=\"TTM\", color=Color.Red)\n    ])\n)(x_values=index(), y_values=(cfo_q, cfo_a, cfo_ttm))\n"
 }

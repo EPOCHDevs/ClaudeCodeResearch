@@ -1,0 +1,12 @@
+{
+  "name": "Compute Cluster S09: Rolling Windows (Period-to-Timeframe Reference)",
+  "description": "Tests: rolling window period mapping (252=1yr, 126=6mo, 63=3mo, 21=1mo, 5=1wk), NaN warmup on first period-1 bars, multiple-period SMA comparison.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S09: Rolling Windows\n# Tests: period-to-timeframe mapping, NaN warmup\n# Daily: 252=1yr, 126=6mo, 63=3mo, 21=1mo, 5=1wk\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === ROLLING WINDOWS AT STANDARD PERIODS ===\nsma_1wk = ma(period=5, type=MAType.sma)(close)\nsma_1mo = ma(period=21, type=MAType.sma)(close)\nsma_3mo = ma(period=63, type=MAType.sma)(close)\nsma_6mo = ma(period=126, type=MAType.sma)(close)\nsma_1yr = ma(period=252, type=MAType.sma)(close)\n\n# === ROLLING VOLATILITY AT DIFFERENT HORIZONS ===\nvol_1mo = volatility(close, method=VolMethod.annualized, period=21)\nvol_3mo = volatility(close, method=VolMethod.annualized, period=63)\nvol_1yr = volatility(close, method=VolMethod.annualized, period=252)\n\n# === REPORTERS ===\nxy_lines(\n    title='SMA Ladder (5, 21, 63, 126, 252)',\n    category='Rolling Windows',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='1W (5)', color=Color.Green),\n        LineSeriesSpec(name='1M (21)', color=Color.Blue),\n        LineSeriesSpec(name='3M (63)', color=Color.Cyan),\n        LineSeriesSpec(name='6M (126)', color=Color.Orange),\n        LineSeriesSpec(name='1Y (252)', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(sma_1wk, sma_1mo, sma_3mo, sma_6mo, sma_1yr))\n\nxy_lines(\n    title='Rolling Volatility (21d, 63d, 252d)',\n    category='Rolling Windows',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='1M Vol', color=Color.Green),\n        LineSeriesSpec(name='3M Vol', color=Color.Blue),\n        LineSeriesSpec(name='1Y Vol', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(vol_1mo, vol_3mo, vol_1yr))\n"
+}

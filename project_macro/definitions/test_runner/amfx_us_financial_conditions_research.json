@@ -1,0 +1,9 @@
+{
+   "name": "amfx-us-financial-conditions-research",
+   "description": "amFX reproduction (24JAN23 p6): US Financial Conditions Index (Chicago Fed NFCI, negated to match Bloomberg convention: positive = loose, negative = tight). Shows how financial conditions eased back to Feb 2022 levels by Jan 2023, despite aggressive Fed hikes. The V-shaped recovery from trough undermined the 'tightening is working' narrative.",
+   "data": {
+      "assets": []
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: US FINANCIAL CONDITIONS INDEX (24JAN23 p6)\n# =============================================================================\n# Chicago Fed NFCI (weekly) negated to match Bloomberg convention:\n#   positive = loose, negative = tight\n# =============================================================================\n\n# Chicago Fed National Financial Conditions Index (weekly)\nnfci_src = economic_indicators(series_id='NFCI')()\nnfci_filled = ffill(nfci_src.result)\n\n# Negate to match Bloomberg convention (positive = loose)\nfci = 0.0 - nfci_filled\n\nidx = index()\n\nxy_lines(\n    title='US Financial Conditions: How Tight Is Policy Really?',\n    category='Financial Conditions',\n    y_axis_label='Index (positive = loose)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Financial Conditions (neg. NFCI)', color=Color.Blue)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0.0, title='Neutral', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(idx, fci)\n"
+}

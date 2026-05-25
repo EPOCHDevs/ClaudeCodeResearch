@@ -194,30 +194,37 @@ Rebuilds server, generates grammars, fetches all documentation to `docs/`:
 
 ---
 
-## C++ Testing
+## C++ Build & Test
 
-Run Catch3 unit tests using `cpp_tools/run_tests.sh`. Builds with **ASAN by default**.
+Use `cpp_tools/run_target.sh` to build any CMake target. Use `--run` to also execute it.
+`cpp_tools/run_tests.sh` is a backward-compatible wrapper that adds `--run` automatically.
 
 ### Quick Usage
 
 ```bash
-# Run single test (builds with ASAN)
-./cpp_tools/run_tests.sh epoch_frame_test
+# Build a library (no --run)
+./cpp_tools/run_target.sh -j64 epoch_script
 
-# Run multiple tests
-./cpp_tools/run_tests.sh epoch_frame_test epoch_script_test
+# Build + run tests
+./cpp_tools/run_target.sh -j64 --run epoch_script_test
 
-# Use release build instead of ASAN
-./cpp_tools/run_tests.sh --release epoch_trading_test
+# Build + run with tag filter
+./cpp_tools/run_target.sh -j64 --run epoch_script_test -- "[compiler]"
 
-# Limit parallel build jobs
-./cpp_tools/run_tests.sh -j4 epoch_frame_test
+# Build multiple targets at once
+./cpp_tools/run_target.sh -j64 epoch_script epoch_trading
+
+# ASAN build
+./cpp_tools/run_target.sh --asan -j64 --run epoch_frame_test
 
 # Skip build, just run existing executable
-./cpp_tools/run_tests.sh --no-build epoch_empyrical_test
+./cpp_tools/run_target.sh --no-build --run epoch_script_test
 
-# List available test targets
-./cpp_tools/run_tests.sh --list
+# List known test targets
+./cpp_tools/run_target.sh --list-tests
+
+# Backward-compatible wrapper (auto-adds --run)
+./cpp_tools/run_tests.sh -j64 epoch_script_test -- "[compiler]"
 ```
 
 ### Passing Catch3 Arguments
@@ -226,16 +233,16 @@ Use `--` to pass arguments to the Catch3 test executable:
 
 ```bash
 # List all test cases
-./cpp_tools/run_tests.sh epoch_frame_test -- --list-tests
+./cpp_tools/run_target.sh --run epoch_frame_test -- --list-tests
 
 # Run tests with specific tag
-./cpp_tools/run_tests.sh epoch_frame_test -- "[datetime]"
+./cpp_tools/run_target.sh --run epoch_frame_test -- "[datetime]"
 
 # Show successful tests
-./cpp_tools/run_tests.sh epoch_frame_test -- -s
+./cpp_tools/run_target.sh --run epoch_frame_test -- -s
 
 # Run specific test by name
-./cpp_tools/run_tests.sh epoch_frame_test -- "Test Max Drawdown"
+./cpp_tools/run_target.sh --run epoch_frame_test -- "Test Max Drawdown"
 ```
 
 ### Available Test Targets

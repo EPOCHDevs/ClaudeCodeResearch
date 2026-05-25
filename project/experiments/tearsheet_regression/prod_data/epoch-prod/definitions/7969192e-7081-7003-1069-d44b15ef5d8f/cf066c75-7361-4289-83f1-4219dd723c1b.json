@@ -1,0 +1,13 @@
+{
+   "name": "BTC/USD Long-Short on US 10Y Yield Changes",
+   "description": "Long/short BTC strategy based on US 10-year Treasury yield momentum. Goes long BTC when yields are falling (negative 10-day ROC) and short BTC when yields are rising (positive 10-day ROC), with automatic reversals on signal flips.",
+   "data": {
+      "assets": [
+         "^BTCUSD-Crypto"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# BTC/USD Long-Short on US 10Y Yield Changes\n# Long when yields falling (ROC < 0), Short when yields rising (ROC > 0)\n\n# Market data source for BTC\nsrc = market_data_source(timeframe=4H)()\nclose = src.c\n\n# Load US 10-Year Treasury yield data\nyield_data = common_economic_indicators(category=MacroEconomicsIndicator.Treasury10Y)()\nyield_value = yield_data.result\n\n# Forward-fill yield data to align with 4H bars\nyield_filled = ffill(yield_value)\n\n# Calculate 10-day rate of change on yield\n# Note: At 4H timeframe, 10 days = 60 bars (6 bars per day * 10 days)\nyield_roc = roc(period=60)(yield_filled)\n\n# Entry signals based on yield momentum\n# Long when yields falling (negative ROC)\nlong_signal = yield_roc < 0\n\n# Short when yields rising (positive ROC)\nshort_signal = yield_roc > 0\n\n# Long and short zones with automatic reversals\nlong_and_short_zone()(long_entry=long_signal, short_entry=short_signal)\n\n# Position sizing - 100% allocation\nposition_size(type=SizeType.percent)(size=100)\n\n# Visualization - Yield ROC\ntimeseries_lines(\n    title=\"US 10Y Yield ROC (10-day)\",\n    category=\"Indicators\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Yield ROC\", color=Color.Blue)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0, title=\"Zero Line\", color=Color.Gray, dash_style=DashStyle.Dash)\n    ])\n)(yield_roc)\n\n# Visualization - Filled Yield\ntimeseries_lines(\n    title=\"US 10Y Treasury Yield (Forward-Filled)\",\n    category=\"Indicators\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"10Y Yield\", color=Color.Amber)\n    ])\n)(yield_filled)\n",
+   "global_timeframe": "4H"
+}

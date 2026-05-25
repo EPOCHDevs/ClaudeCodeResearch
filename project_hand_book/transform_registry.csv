@@ -1,0 +1,398 @@
+id,package,internalUse,grammar,materializes_from
+cs_bars,Bars,False,cs_bars — Cross-Sectional Bars - ONE FOR ALL ASSETS,
+xy_bars,Bars,False,xy_bars — XY Bars - ONE PER ASSET,
+cards,Cards,True,,deprecated:use gauge
+cs_cards,Cards,True,,deprecated:use cs_gauge
+cs_gauge,Cards,False,cs_gauge — Cross-Sectional Gauge - ONE FOR ALL ASSETS,
+cs_pie,Cards,False,cs_pie — Cross-Sectional Pie Chart - ONE FOR ALL ASSETS,
+gauge,Cards,False,gauge — Gauge Chart - ONE PER ASSET,
+pie,Cards,False,pie — Pie Chart - ONE PER ASSET,
+ipos,CorporateEvents,True,ipo = ipos(),in_ebnf:ipo = ipos()
+short_interest,CorporateEvents,True,si = short_interest(),in_ebnf:si = short_interest()
+short_volume,CorporateEvents,True,sv = short_volume(),in_ebnf:sv = short_volume()
+splits,CorporateEvents,True,sp = splits(),in_ebnf:sp = splits()
+ticker_events,CorporateEvents,True,te = ticker_events()       # String: .event_type .ticker,in_ebnf:te = ticker_events()
+boxplot,Distributions,False,boxplot — Boxplot - ONE PER ASSET,
+cs_boxplot,Distributions,False,cs_boxplot — Cross-Sectional Boxplot - ONE FOR ALL ASSETS,
+cs_histogram,Distributions,False,cs_histogram — Cross-Sectional Histogram - ONE FOR ALL ASSETS,
+histogram,Distributions,False,histogram — Histogram - ONE PER ASSET,
+cppi,Execution,False,cppi — CPPI,
+kelly,Execution,False,kelly — Kelly,
+long_and_short_zone,Execution,False,long_and_short_zone — Long & Short Zone,
+optimal_f,Execution,False,optimal_f — Optimal f,
+position_size,Execution,False,position_size — Position Size,
+risk_unit,Execution,False,risk_unit — Risk Unit,
+rollover_policy,Execution,False,rollover_policy — Rollover Policy,
+stop_loss,Execution,False,stop_loss — Stop Loss,
+take_profit,Execution,False,take_profit — Take Profit,
+tipp,Execution,False,tipp — TIPP,
+trailing_stop,Execution,False,trailing_stop — Trailing Stop,
+analyst_ratings,Fundamental,True,rat = analyst_ratings(),in_ebnf:rat = analyst_ratings()
+balance_sheet,Fundamental,True,bs = balance_sheet(period=BalanceSheetTimeframe.quarterly),in_ebnf:bs = balance_sheet(period=...)
+cash_flow,Fundamental,True,cf = cash_flow(period=BalanceSheetTimeframe.quarterly),in_ebnf:cf = cash_flow(period=...)
+dividends,Fundamental,True,div = dividends(dividend_type=DividendType.CD),in_ebnf:div = dividends()
+earnings,Fundamental,True,earn = earnings(),in_ebnf:earn = earnings()
+income_statement,Fundamental,True,inc = income_statement(period=BalanceSheetTimeframe.quarterly),in_ebnf:inc = income_statement(period=...)
+cs_heatmap,Heatmaps,False,cs_heatmap — Cross-Sectional Heatmap - ONE FOR ALL ASSETS,
+heatmap,Heatmaps,False,heatmap — Heatmap - ONE PER ASSET,
+cs_labeled_lines,Lines,False,cs_labeled_lines — Cross-Sectional Labeled Lines - ONE FOR ALL ASSETS,
+cs_lines,Lines,False,cs_lines — Cross-Sectional Lines - ONE FOR ALL ASSETS,
+labeled_lines,Lines,False,labeled_lines — Labeled Lines - ONE PER ASSET,
+timeseries_lines,Lines,True,,deprecated:use xy_lines
+xy_lines,Lines,False,xy_lines — XY Lines - ONE PER ASSET,
+dbscan,MachineLearning,False,dbscan — DBSCAN,
+hmm,MachineLearning,False,hmm — Hidden Markov Model,
+kmeans,MachineLearning,False,kmeans — K-Means Clustering,
+lightgbm_classifier,MachineLearning,False,lightgbm_classifier — LightGBM Classifier,
+lightgbm_regressor,MachineLearning,False,lightgbm_regressor — LightGBM Regressor,
+logistic_l1,MachineLearning,False,logistic_l1 — Logistic L1,
+logistic_l2,MachineLearning,False,logistic_l2 — Logistic L2,
+ml_minmax,MachineLearning,False,ml_minmax — ML Min-Max,
+ml_robust,MachineLearning,False,ml_robust — ML Robust,
+ml_zscore,MachineLearning,False,ml_zscore — ML Z-Score,
+pca,MachineLearning,False,pca — PCA,
+svr_l1,MachineLearning,False,svr_l1 — SVR L1,
+svr_l2,MachineLearning,False,svr_l2 — SVR L2,
+common_indicators,Macroeconomics,True,,macro:macro_data(MacroEconomicsIndicator.X)
+common_treasury_auctions,Macroeconomics,True,,separate_transform:NOT_macro_of_economic_calendar
+economic_calendar,Macroeconomics,True,"tsy = economic_calendar(source=CalendarSource.Treasury,",in_ebnf:cal = economic_calendar(source=...)
+economic_indicators,Macroeconomics,True,"econ = economic_indicators(series_id=""CPIAUCSL"")",in_ebnf:econ = economic_indicators(series_id=...)
+economic_revisions,Macroeconomics,True,"rev = economic_revisions(series_id=""PAYEMS"")",in_ebnf:rev = economic_revisions(series_id=...)
+common_crypto_pairs,MarketData,True,,macro:reference_assets(crypto(...)) select-dropdown variant
+common_fx_pairs,MarketData,True,,macro:reference_assets(fx(...)) select-dropdown variant
+common_indices,MarketData,True,,macro:reference_assets(stock(...)) select-dropdown variant
+common_reference_futures,MarketData,True,,macro:reference_assets(futures(...)) select-dropdown variant
+common_reference_stocks,MarketData,True,,macro:reference_assets(stock(...)) select-dropdown variant
+crypto_pairs,MarketData,True,,macro:reference_assets(crypto(...))
+extended_market_data_source,MarketData,True,,macro:study_assets(trading_hours=Extended)
+futures_continuation,MarketData,False,futures_continuation — Futures Continuation,
+fx_pairs,MarketData,True,,macro:reference_assets(fx(...))
+indices,MarketData,True,,macro:reference_assets(stock('^...'))
+market_data_source,MarketData,True,,macro:study_assets()
+reference_futures,MarketData,True,,macro:reference_assets(futures(...))
+reference_stocks,MarketData,True,,macro:reference_assets(stock(...))
+keyword_count,NLP,False,keyword_count — Keyword Count,
+keyword_match,NLP,False,keyword_match — Keyword Match,
+keyword_score,NLP,False,keyword_score — Keyword Score,
+string_case,NLP,False,string_case — String Case,
+string_check,NLP,False,string_check — String Check,
+string_contains,NLP,False,string_contains — String Contains,
+string_trim,NLP,False,string_trim — String Trim,
+topic_classify,NLP,False,topic_classify — Topic Classify,
+cs_news,News,False,cs_news — Cross-Sectional News,
+news,News,False,news — News,
+black_litterman,PortfolioAllocation,False,black_litterman — Black-Litterman,
+equal_weight,PortfolioAllocation,False,equal_weight — Equal Weight,
+herc,PortfolioAllocation,False,herc — Hierarchical Equal Risk Contribution,
+hrp,PortfolioAllocation,False,hrp — Hierarchical Risk Parity,
+inv_vol_weight,PortfolioAllocation,False,inv_vol_weight — Inverse Volatility Weight,
+max_diversification,PortfolioAllocation,False,max_diversification — Maximum Diversification,
+max_sharpe,PortfolioAllocation,False,max_sharpe — Maximum Sharpe Ratio,
+min_cvar,PortfolioAllocation,False,min_cvar — Minimum CVaR,
+min_semivariance,PortfolioAllocation,False,min_semivariance — Minimum Semivariance,
+min_variance,PortfolioAllocation,False,min_variance — Minimum Variance,
+risk_budgeting,PortfolioAllocation,False,risk_budgeting — Risk Budgeting,
+risk_parity,PortfolioAllocation,False,risk_parity — Risk Parity,
+bos_choch,SMC,False,bos_choch — Break of Structure & Change of Character,
+fair_value_gap,SMC,False,fair_value_gap — Fair Value Gap,
+liquidity,SMC,False,liquidity — Liquidity,
+order_blocks,SMC,False,order_blocks — Order Blocks,
+previous_high_low,SMC,False,previous_high_low — Previous High Low,
+retracements,SMC,False,retracements — Retracements,
+swing_highs_lows,SMC,False,swing_highs_lows — Swing Highs and Lows,
+bubble,Scatter,False,bubble — Bubble Chart - ONE PER ASSET,
+cs_bubble,Scatter,False,cs_bubble — Cross-Sectional Bubble Chart - ONE FOR ALL ASSETS,
+cs_labeled_bubble,Scatter,False,cs_labeled_bubble — Cross-Sectional Labeled Bubble - ONE FOR ALL ASSETS,
+cs_labeled_scatter,Scatter,False,cs_labeled_scatter — Cross-Sectional Labeled Scatter - ONE FOR ALL ASSETS,
+cs_scatter,Scatter,False,cs_scatter — Cross-Sectional Scatter - ONE FOR ALL ASSETS,
+labeled_bubble,Scatter,False,labeled_bubble — Labeled Bubble - ONE PER ASSET,
+labeled_scatter,Scatter,False,labeled_scatter — Labeled Scatter - ONE PER ASSET,
+xy_scatter,Scatter,False,xy_scatter — XY Scatter - ONE PER ASSET,
+day_of_week,Sessions,True,day_of_week(DayOfWeek.Monday)   month_of_year(Month.January),in_ebnf:day_of_week(DayOfWeek.Monday)
+holiday,Sessions,False,holiday — Holiday Effect,
+is_period_boundary,Sessions,False,is_period_boundary — Is Period Boundary,
+month_of_year,Sessions,True,day_of_week(DayOfWeek.Monday)   month_of_year(Month.January),in_ebnf:month_of_year(Month.January)
+quarter,Sessions,True,quarter(Quarter.Q1)             week_of_month(WeekOfMonth.First),in_ebnf:quarter(Quarter.Q1)
+session_gap,Sessions,False,session_gap — Session Gap,
+session_window,Sessions,False,session_window — Session Window,
+turn_of_month,Sessions,False,turn_of_month — Turn of Month,
+week_of_month,Sessions,True,quarter(Quarter.Q1)             week_of_month(WeekOfMonth.First),in_ebnf:week_of_month(WeekOfMonth.First)
+cs_summary_table,Tables,False,cs_summary_table — Cross-Sectional Summary Table - ONE FOR ALL ASSETS,
+summary_table,Tables,False,summary_table — Summary Table - ONE PER ASSET,
+abandoned_baby_bear,epoch-script,True,,candle:candlestick_pattern()
+abandoned_baby_bull,epoch-script,True,,candle:candlestick_pattern()
+abs,epoch-script,True,fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10,in_ebnf
+acos,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+ad,epoch-script,True,"fn(h, l, c, v):  ad  wcprice          fn(h, l, v):  emv  marketfi",in_ebnf
+add,epoch-script,True,zscore(cross_sectional=True)(src)         # add flag to rolling zscore,in_ebnf
+adosc,epoch-script,True,"adosc(h, l, c, v, short_period=3, long_period=10)",in_ebnf
+adx,epoch-script,True,"fn(h, l, N):  adx  adxr  dx  cvi  mass  aroonosc  psl",in_ebnf
+adxr,epoch-script,True,"fn(h, l, N):  adx  adxr  dx  cvi  mass  aroonosc  psl",in_ebnf
+ao,epoch-script,True,"fn(c, v):  obv  nvi  pvi              fn(src):  ao",in_ebnf
+apo,epoch-script,True,"apo(src, short_period=12, long_period=26)   ppo(src, short_period=12, long_period=26)",in_ebnf
+arg_max,epoch-script,True,arg_max(src) → Timestamp             arg_min(src) → Timestamp,in_ebnf
+arg_min,epoch-script,True,arg_max(src) → Timestamp             arg_min(src) → Timestamp,in_ebnf
+aroon,epoch-script,True,"au, ad_val = aroon(h, l, period=14)",in_ebnf
+aroonosc,epoch-script,True,"fn(h, l, N):  adx  adxr  dx  cvi  mass  aroonosc  psl",in_ebnf
+asin,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+asset_spec,epoch-script,True,,NOT_IN_EBNF:L3 asset_spec() → .min_tick .multiplier .sector etc
+atan,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+atr,epoch-script,True,"fn(h, l, c, N):  atr  natr  cci  willr",in_ebnf
+avgprice,epoch-script,True,"fn(o, h, l, c):  avgprice  bop  price_distance",in_ebnf
+barssince,epoch-script,True,"barssince(cond) → Int                     hold_until(enter, exit) → Bool",in_ebnf
+basic_volatility,epoch-script,True,,"NOT_IN_EBNF:L3 fn(type=BasicVolatilityType.X,period=N)(close)"
+bband_percent,epoch-script,True,"bband_percent(upper, mid, lower)       bband_width(upper, mid, lower)",in_ebnf
+bband_width,epoch-script,True,"bband_percent(upper, mid, lower)       bband_width(upper, mid, lower)",in_ebnf
+bbands,epoch-script,True,"upper, mid, lower = bbands(src.c, period=20, stddev=2.0)",in_ebnf
+beta,epoch-script,True,"corr(a, b, window=60)   cov(a, b, window=60)   beta(a, b, window=252)",in_ebnf
+big_black_candle,epoch-script,True,,candle:candlestick_pattern()
+big_white_candle,epoch-script,True,,candle:candlestick_pattern()
+black_marubozu,epoch-script,True,,candle:candlestick_pattern()
+bool_false,epoch-script,True,,constant
+bool_true,epoch-script,True,,constant
+boolean_select_boolean,epoch-script,True,,typed:boolean_select()
+boolean_select_number,epoch-script,True,,typed:boolean_select()
+boolean_select_string,epoch-script,True,,typed:boolean_select()
+boolean_select_timestamp,epoch-script,True,,typed:boolean_select()
+bop,epoch-script,True,"fn(o, h, l, c):  avgprice  bop  price_distance",in_ebnf
+calendar_shift,epoch-script,True,"calendar_shift(src, ""1M"")    # durations: ""1D"" ""1W"" ""1M"" ""3M"" ""1Y"" ""-7D"" (negative=lead)",in_ebnf
+cci,epoch-script,True,"fn(h, l, c, N):  atr  natr  cci  willr",in_ebnf
+ceil,epoch-script,True,fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10,in_ebnf
+cmo,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+conditional_select_boolean,epoch-script,True,,typed:conditional_select()
+conditional_select_number,epoch-script,True,,typed:conditional_select()
+conditional_select_string,epoch-script,True,,typed:conditional_select()
+conditional_select_timestamp,epoch-script,True,,typed:conditional_select()
+cos,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+cosh,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+crossany,epoch-script,True,"crossover(a, b) → Bool    crossunder(a, b) → Bool    crossany(a, b) → Bool",in_ebnf
+crossover,epoch-script,True,"crossover(a, b) → Bool    crossunder(a, b) → Bool    crossany(a, b) → Bool",in_ebnf
+crossunder,epoch-script,True,"crossover(a, b) → Bool    crossunder(a, b) → Bool    crossany(a, b) → Bool",in_ebnf
+cs_agg,epoch-script,True,,cs_impl:agg(cross_sectional=True)
+cs_quantile,epoch-script,True,,"cs_impl:quantile(src,q)"
+cs_rank,epoch-script,True,,cs_impl:rank(src)
+cs_select,epoch-script,True,,"macro:select(src,n=5,direction=SelectDirection.Top)"
+cs_weighted_mean,epoch-script,True,,"cs_impl:weighted_mean(src,w)"
+cs_winsorize,epoch-script,True,,cs_impl:winsorize(cross_sectional=True)
+cs_zscore,epoch-script,True,,cs_impl:zscore(cross_sectional=True)
+cumulative,epoch-script,True,"agg(src, Agg.X)                          — expanding (cumulative, no warmup NaN)",in_ebnf
+cvi,epoch-script,True,"fn(h, l, N):  adx  adxr  dx  cvi  mass  aroonosc  psl",in_ebnf
+decay,epoch-script,True,decay  edecay  stderr  ulcer_index,in_ebnf
+dema,epoch-script,True,ema  sma  wma  hma  dema  tema  kama  trima  wilders  zlema,in_ebnf
+div,epoch-script,True,div = dividends(dividend_type=DividendType.CD),in_ebnf
+doji,epoch-script,True,"patterns=[CandlestickPattern.doji, CandlestickPattern.hammer])",in_ebnf
+donchian_channel,epoch-script,True,"du, dl, dm = donchian_channel(h, l, window=20)",in_ebnf
+downsample,epoch-script,True,"# downsample agg: agg=[""Last""] (default). upsample how: how=""ffill""",in_ebnf
+dpo,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+dragonfly_doji,epoch-script,True,,candle:candlestick_pattern()
+dx,epoch-script,True,"fn(h, l, N):  adx  adxr  dx  cvi  mass  aroonosc  psl",in_ebnf
+e,epoch-script,True,,constant
+edecay,epoch-script,True,decay  edecay  stderr  ulcer_index,in_ebnf
+ema,epoch-script,True,"signal = src.c > ema(src.c, 20)        # boolean expression",in_ebnf
+emv,epoch-script,True,"fn(h, l, c, v):  ad  wcprice          fn(h, l, v):  emv  marketfi",in_ebnf
+engulfing_bear,epoch-script,True,,candle:candlestick_pattern()
+engulfing_bull,epoch-script,True,,candle:candlestick_pattern()
+eq,epoch-script,True,,operator:==
+evening_doji_star,epoch-script,True,,candle:candlestick_pattern()
+evening_star,epoch-script,True,,candle:candlestick_pattern()
+ewm_corr,epoch-script,True,"ewm_corr(a, b, span=20)   ewm_cov(a, b, span=20)",in_ebnf
+ewm_cov,epoch-script,True,"ewm_corr(a, b, span=20)   ewm_cov(a, b, span=20)",in_ebnf
+exp,epoch-script,True,fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10,in_ebnf
+falling,epoch-script,True,"rising(src, length=1) → Bool   falling(src, length=1) → Bool",in_ebnf
+ffill,epoch-script,True,"# downsample agg: agg=[""Last""] (default). upsample how: how=""ffill""",in_ebnf
+ffill_boolean,epoch-script,True,,typed:ffill()
+ffill_day,epoch-script,True,"str(x)    ffill(x, limit=0) — forward fill    ffill_day(x) — fill, reset daily",in_ebnf
+ffill_day_boolean,epoch-script,True,,typed:ffill()
+ffill_day_number,epoch-script,True,,typed:ffill()
+ffill_day_string,epoch-script,True,,typed:ffill()
+ffill_day_timestamp,epoch-script,True,,typed:ffill()
+ffill_number,epoch-script,True,,typed:ffill()
+ffill_string,epoch-script,True,,typed:ffill()
+ffill_timestamp,epoch-script,True,,typed:ffill()
+first_non_null_boolean,epoch-script,True,,typed:first_non_null()
+first_non_null_number,epoch-script,True,,typed:first_non_null()
+first_non_null_string,epoch-script,True,,typed:first_non_null()
+first_non_null_timestamp,epoch-script,True,,typed:first_non_null()
+floor,epoch-script,True,fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10,in_ebnf
+forward_returns,epoch-script,True,"forward_returns(src, N, return_type=ReturnsType.simple)",in_ebnf
+fosc,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+four_price_doji,epoch-script,True,,candle:candlestick_pattern()
+gravestone_doji,epoch-script,True,,candle:candlestick_pattern()
+group_by,epoch-script,True,,"NOT_IN_EBNF:option param on quantile/weighted_mean, not standalone"
+group_by_boolean,epoch-script,True,,typed:group_by()
+group_by_number,epoch-script,True,,typed:group_by()
+group_by_string,epoch-script,True,,typed:group_by()
+gt,epoch-script,True,,operator:>
+gte,epoch-script,True,,operator:>=
+hammer,epoch-script,True,"patterns=[CandlestickPattern.doji, CandlestickPattern.hammer])",in_ebnf
+hanging_man,epoch-script,True,,candle:candlestick_pattern()
+highestbars,epoch-script,True,"streak_length(src) → Int             highestbars(src, N) → Int   lowestbars(src, N) → Int",in_ebnf
+hma,epoch-script,True,ema  sma  wma  hma  dema  tema  kama  trima  wilders  zlema,in_ebnf
+hold_until,epoch-script,True,"barssince(cond) → Int                     hold_until(enter, exit) → Bool",in_ebnf
+hurst_exponent,epoch-script,True,"hurst_exponent(src, min_period=20)   rolling_hurst_exponent(src, window)",in_ebnf
+ichimoku,epoch-script,True,"tenkan, kijun, span_a, span_b, chikou = ichimoku(h, l, c)",in_ebnf
+index,epoch-script,True,()  []  .     call / index / attr,in_ebnf
+intraday_returns,epoch-script,True,"psar(h, l)   intraday_returns(c, o, return_type=ReturnsType.simple)",in_ebnf
+inverted_hammer,epoch-script,True,,candle:candlestick_pattern()
+is_asset_ref,epoch-script,True,,macro:is_study_asset() lowers to this
+is_null,epoch-script,True,is_valid(x) → Bool   is_null(x) → Bool   isna(x) → Bool   notna(x) → Bool,in_ebnf
+is_valid,epoch-script,True,is_valid(x) → Bool   is_null(x) → Bool   isna(x) → Bool   notna(x) → Bool,in_ebnf
+kama,epoch-script,True,ema  sma  wma  hma  dema  tema  kama  trima  wilders  zlema,in_ebnf
+keltner_channels,epoch-script,True,"ku, kl = keltner_channels(h, l, c, period=20, multiplier=2.0)",in_ebnf
+kvo,epoch-script,True,"kvo(c, v, short_period=34, long_period=55)",in_ebnf
+lag_boolean,epoch-script,True,,typed:lag()
+lag_number,epoch-script,True,,typed:lag()
+lag_string,epoch-script,True,,typed:lag()
+lag_timestamp,epoch-script,True,,typed:lag()
+linreg,epoch-script,True,,"NOT_IN_EBNF:fn(src,N) rolling regression value"
+linregintercept,epoch-script,True,,"NOT_IN_EBNF:fn(src,N) rolling regression intercept"
+linregslope,epoch-script,True,,"NOT_IN_EBNF:fn(src,N) rolling regression slope"
+ln,epoch-script,True,fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10,in_ebnf
+ln10,epoch-script,True,,constant
+ln2,epoch-script,True,,constant
+log10,epoch-script,True,fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10,in_ebnf
+log10e,epoch-script,True,,constant
+log2e,epoch-script,True,,constant
+logical_and,epoch-script,True,,operator:and
+logical_and_not,epoch-script,True,"logical_xor(a, b) → Bool     logical_and_not(a, b) → Bool",in_ebnf
+logical_not,epoch-script,True,,operator:not
+logical_or,epoch-script,True,,operator:or
+logical_xor,epoch-script,True,"logical_xor(a, b) → Bool     logical_and_not(a, b) → Bool",in_ebnf
+long_legged_doji,epoch-script,True,,candle:candlestick_pattern()
+lowestbars,epoch-script,True,"streak_length(src) → Int             highestbars(src, N) → Int   lowestbars(src, N) → Int",in_ebnf
+lt,epoch-script,True,,operator:<
+lte,epoch-script,True,,operator:<=
+ma,epoch-script,True,,"impl_target:ema(src,N)/sma(src,N)/etc lower to ma(type=X,period=N)"
+macd,epoch-script,True,"a, b, c = macd(src.c)                  # tuple unpacking",in_ebnf
+marketfi,epoch-script,True,"fn(h, l, c, v):  ad  wcprice          fn(h, l, v):  emv  marketfi",in_ebnf
+marubozu,epoch-script,True,,candle:candlestick_pattern()
+mass,epoch-script,True,"fn(h, l, N):  adx  adxr  dx  cvi  mass  aroonosc  psl",in_ebnf
+max,epoch-script,True,,agg_impl:Agg.Max
+md,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+medprice,epoch-script,True,"fn(h, l, c):  tr  wad  typprice       fn(h, l):  medprice",in_ebnf
+mfi,epoch-script,True,"fn(h, l, c, v, N):  mfi",in_ebnf
+min,epoch-script,True,"switch(index, v0, v1, ...) — 0-indexed selector, min 2 args",in_ebnf
+modulo,epoch-script,True,,operator:%
+mom,epoch-script,True,,"NOT_IN_EBNF:fn(src,N) momentum (diff lowers to this)"
+morning_doji_star,epoch-script,True,,candle:candlestick_pattern()
+morning_star,epoch-script,True,,candle:candlestick_pattern()
+mul,epoch-script,True,* / %         mul / div / mod    left,in_ebnf
+natr,epoch-script,True,"fn(h, l, c, N):  atr  natr  cci  willr",in_ebnf
+negative_one,epoch-script,True,,constant
+neq,epoch-script,True,,operator:!=
+nlargest,epoch-script,True,"nlargest(src, N)  nsmallest(src, N)",in_ebnf
+nsmallest,epoch-script,True,"nlargest(src, N)  nsmallest(src, N)",in_ebnf
+null_boolean,epoch-script,True,,typed:null()
+null_number,epoch-script,True,,typed:null()
+null_string,epoch-script,True,,typed:null()
+null_timestamp,epoch-script,True,,typed:null()
+number,epoch-script,True,,constant
+nvi,epoch-script,True,"fn(c, v):  obv  nvi  pvi              fn(src):  ao",in_ebnf
+obv,epoch-script,True,"fn(c, v):  obv  nvi  pvi              fn(src):  ao",in_ebnf
+one,epoch-script,True,,constant
+percentile_select_boolean,epoch-script,True,,typed:percentile_select()
+percentile_select_number,epoch-script,True,,typed:percentile_select()
+percentile_select_string,epoch-script,True,,typed:percentile_select()
+percentile_select_timestamp,epoch-script,True,,typed:percentile_select()
+percentrank,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+phi,epoch-script,True,,constant
+pi,epoch-script,True,,constant
+pivot_point_sr,epoch-script,True,"pp, r1, s1, r2, s2, r3, s3 = pivot_point_sr(h, l, c)",in_ebnf
+pivot_wider,epoch-script,True,,"NOT_IN_EBNF:L3 fn(lookback=N)(key_col, value_col)"
+pivot_wider_boolean,epoch-script,True,,typed:pivot_wider()
+pivot_wider_number,epoch-script,True,,typed:pivot_wider()
+pivot_wider_string,epoch-script,True,,typed:pivot_wider()
+pivot_wider_timestamp,epoch-script,True,,typed:pivot_wider()
+power_op,epoch-script,True,,operator:**
+ppo,epoch-script,True,"apo(src, short_period=12, long_period=26)   ppo(src, short_period=12, long_period=26)",in_ebnf
+price_distance,epoch-script,True,"fn(o, h, l, c):  avgprice  bop  price_distance",in_ebnf
+psar,epoch-script,True,"psar(h, l)   intraday_returns(c, o, return_type=ReturnsType.simple)",in_ebnf
+psl,epoch-script,True,"fn(h, l, N):  adx  adxr  dx  cvi  mass  aroonosc  psl",in_ebnf
+pvi,epoch-script,True,"fn(c, v):  obv  nvi  pvi              fn(src):  ao",in_ebnf
+qstick,epoch-script,True,"fn(src, vol, N):  vwma     fn(o, c, N):  qstick",in_ebnf
+reference_assets,epoch-script,True,"spy, eur, cl = reference_assets(",in_ebnf
+returns,epoch-script,True,"returns(src)  returns(src, N, type=ReturnsType.simple)",in_ebnf
+rising,epoch-script,True,"rising(src, length=1) → Bool   falling(src, length=1) → Bool",in_ebnf
+roc,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+rocr,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+rolling_corr,epoch-script,True,,"pair_impl:corr(a,b,window)"
+rolling_cov,epoch-script,True,,"pair_impl:cov(a,b,window)"
+rolling_hurst_exponent,epoch-script,True,"hurst_exponent(src, min_period=20)   rolling_hurst_exponent(src, window)",in_ebnf
+round,epoch-script,True,fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10,in_ebnf
+rsi,epoch-script,True,"r = rsi(src.c, 14)                               # builtin (Layer 1)",in_ebnf
+shooting_star,epoch-script,True,,candle:candlestick_pattern()
+sin,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+sinh,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+sma,epoch-script,True,smoothed = src.c | sma(20) | ema(10)   # pipeline = ema(10)(sma(20)(src.c)),in_ebnf
+spinning_top,epoch-script,True,,candle:candlestick_pattern()
+sqrt,epoch-script,True,fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10,in_ebnf
+sqrt2,epoch-script,True,,constant
+sqrt3,epoch-script,True,,constant
+sqrt5,epoch-script,True,,constant
+star,epoch-script,True,,candle:candlestick_pattern()
+static_cast_to_boolean,epoch-script,True,,typed:static_cast()
+static_cast_to_decimal,epoch-script,True,,typed:static_cast()
+static_cast_to_integer,epoch-script,True,,typed:static_cast()
+static_cast_to_string,epoch-script,True,,typed:static_cast()
+static_cast_to_timestamp,epoch-script,True,,typed:static_cast()
+stddev,epoch-script,True,"upper, mid, lower = bbands(src.c, period=20, stddev=2.0)",in_ebnf
+stderr,epoch-script,True,decay  edecay  stderr  ulcer_index,in_ebnf
+stoch,epoch-script,True,"k, d = stoch(h, l, c, k_period=5, d_period=3)",in_ebnf
+stochrsi,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+str,epoch-script,True,"str(x)    ffill(x, limit=0) — forward fill    ffill_day(x) — fill, reset daily",in_ebnf
+streak_length,epoch-script,True,"streak_length(src) → Int             highestbars(src, N) → Int   lowestbars(src, N) → Int",in_ebnf
+string_concat,epoch-script,True,,compiler_plumbing
+study_assets,epoch-script,True,src = study_assets(),in_ebnf
+sub,epoch-script,True,+ -           add / sub          left,in_ebnf
+sum,epoch-script,True,,agg_impl:Agg.Sum
+supertrend,epoch-script,True,"line, direction = supertrend(h, l, c, atr_period=10, multiplier=3.0)",in_ebnf
+switch,epoch-script,True,"switch(index, v0, v1, ...) — 0-indexed selector, min 2 args",in_ebnf
+switch_boolean,epoch-script,True,,typed:switch()
+switch_number,epoch-script,True,,typed:switch()
+switch_string,epoch-script,True,,typed:switch()
+switch_timestamp,epoch-script,True,,typed:switch()
+tan,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+tanh,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+tema,epoch-script,True,ema  sma  wma  hma  dema  tema  kama  trima  wilders  zlema,in_ebnf
+text,epoch-script,True,,constant
+three_black_crows,epoch-script,True,,candle:candlestick_pattern()
+three_white_soldiers,epoch-script,True,,candle:candlestick_pattern()
+timestamp_scalar,epoch-script,True,,"NOT_IN_EBNF:constructor Timestamp(value=..., timezone=...)"
+todeg,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+torad,epoch-script,True,sin  cos  tan  acos  asin  atan  sinh  cosh  tanh  todeg  torad,in_ebnf
+tr,epoch-script,True,"fn(h, l, c):  tr  wad  typprice       fn(h, l):  medprice",in_ebnf
+trade_count,epoch-script,True,"vwap()  trade_count() → Int  is_study_asset() → Bool  # 0-input, datasource-aware",in_ebnf
+trima,epoch-script,True,ema  sma  wma  hma  dema  tema  kama  trima  wilders  zlema,in_ebnf
+trix,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+trunc,epoch-script,True,fn(x):  abs  ceil  floor  round  sqrt  trunc  exp  ln  log10,in_ebnf
+tsf,epoch-script,True,,"NOT_IN_EBNF:fn(src,N) time series forecast"
+tuple_expand,epoch-script,True,,compiler_plumbing
+tuple_index,epoch-script,True,,typed:tuple_index()
+tuple_index_bool,epoch-script,True,,typed:tuple_index()
+tuple_index_string,epoch-script,True,,typed:tuple_index()
+tuple_index_timestamp,epoch-script,True,,typed:tuple_index()
+tuple_pack,epoch-script,True,,compiler_plumbing
+typprice,epoch-script,True,"fn(h, l, c):  tr  wad  typprice       fn(h, l):  medprice",in_ebnf
+ulcer_index,epoch-script,True,decay  edecay  stderr  ulcer_index,in_ebnf
+ultosc,epoch-script,True,"ultosc(h, l, c, period1=7, period2=14, period3=28)",in_ebnf
+upsample,epoch-script,True,"# downsample agg: agg=[""Last""] (default). upsample how: how=""ffill""",in_ebnf
+upsample_by_interpolate,epoch-script,True,,NOT_IN_EBNF:L3 separate from resample (limit_direction option)
+valuewhen,epoch-script,True,"nz(src, fallback=0) — replace null        valuewhen(cond, src, occurrence=0)",in_ebnf
+var,epoch-script,True,,agg_impl:Agg.Var
+vhf,epoch-script,True,rsi  trix  cmo  fosc  roc  rocr  stochrsi  dpo  vhf  md  percentrank,in_ebnf
+volatility,epoch-script,True,"vol = volatility(src.c, method=VolMethod.annualized, period=14)",in_ebnf
+vosc,epoch-script,True,"vosc(v, short_period=12, long_period=26)",in_ebnf
+vwap,epoch-script,True,"vwap()  trade_count() → Int  is_study_asset() → Bool  # 0-input, datasource-aware",in_ebnf
+vwma,epoch-script,True,"fn(src, vol, N):  vwma     fn(o, c, N):  qstick",in_ebnf
+wad,epoch-script,True,"fn(h, l, c):  tr  wad  typprice       fn(h, l):  medprice",in_ebnf
+wcprice,epoch-script,True,"fn(h, l, c, v):  ad  wcprice          fn(h, l, v):  emv  marketfi",in_ebnf
+where_boolean,epoch-script,True,,typed:where()
+where_number,epoch-script,True,,typed:where()
+where_string,epoch-script,True,,typed:where()
+where_timestamp,epoch-script,True,,typed:where()
+white_marubozu,epoch-script,True,,candle:candlestick_pattern()
+wilders,epoch-script,True,ema  sma  wma  hma  dema  tema  kama  trima  wilders  zlema,in_ebnf
+willr,epoch-script,True,"fn(h, l, c, N):  atr  natr  cci  willr",in_ebnf
+wma,epoch-script,True,ema  sma  wma  hma  dema  tema  kama  trima  wilders  zlema,in_ebnf
+zero,epoch-script,True,,constant
+zlema,epoch-script,True,ema  sma  wma  hma  dema  tema  kama  trima  wilders  zlema,in_ebnf

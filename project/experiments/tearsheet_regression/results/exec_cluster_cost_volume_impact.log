@@ -1,0 +1,23 @@
+[ERROR] 2026-03-23 04:11:21.671 AuthCredentialsProvider [130374555688064] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:11:21.679 AuthCredentialsProvider [130374555688064] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:11:21.682] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:11:21.682] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/exec_cluster_cost_volume_impact.json
+[2026-03-23 04:11:21.682] [info] [generate_job_data.cpp:241] Study: Exec Cluster Cost: Volume Impact — PerShare Commission + Almgren-Chriss
+[2026-03-23 04:11:21.682] [info] [generate_job_data.cpp:242] Output: exec_cluster_cost_volume_impact
+[2026-03-23 04:11:21.682] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:11:21.682] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:11:21.682] [info] [generate_job_data.cpp:250] Assets: 2
+[2026-03-23 04:11:21.682] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:11:21.682] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:11:21.684] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:11:21.687] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 2 assets
+Study completed successfully
+[2026-03-23 04:11:21.788] [info] [job_persister.cpp:109] Persisting job data for user test_runner job exec_cluster_cost_volume_impact to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_volume_impact
+[2026-03-23 04:11:21.789] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_volume_impact/config.json
+[2026-03-23 04:11:21.789] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_volume_impact/metadata.json
+[2026-03-23 04:11:21.789] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_volume_impact/manifest.json
+
+=== Generation Complete ===
+Study: Exec Cluster Cost: Volume Impact — PerShare Commission + Almgren-Chriss
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_cost_volume_impact"
+Type: Research Study

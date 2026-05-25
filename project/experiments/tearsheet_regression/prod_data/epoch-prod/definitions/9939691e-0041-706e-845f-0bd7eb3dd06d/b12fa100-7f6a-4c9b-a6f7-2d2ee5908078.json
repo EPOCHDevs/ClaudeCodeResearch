@@ -1,0 +1,13 @@
+{
+   "name": "SMA Crossover Strategy - USD/JPY",
+   "description": "50/200 SMA crossover on USD/JPY daily bars. Long when 50-day SMA crosses above 200-day SMA, flat otherwise. Full allocation long-only.",
+   "data": {
+      "assets": [
+         "^USDJPY-FX"
+      ],
+      "source": "Norgate",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# SMA Crossover Strategy - EUR/USD\n# 50/200 SMA crossover on EUR/USD daily bars\n# Long when 50-day SMA > 200-day SMA, flat otherwise\n# Full allocation long-only\n\n# --- Data ---\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# --- Signal Logic ---\n# Fast (50-day) and Slow (200-day) SMA\nfast_sma = ma(period=50, type=MAType.sma)(close)\nslow_sma = ma(period=200, type=MAType.sma)(close)\n\n# Trend signal: bullish when fast > slow\nis_bullish = fast_sma > slow_sma\nis_bearish = fast_sma < slow_sma\n\n# Hold position between crossover events\nheld = hold_until()(enter=is_bullish, exit=is_bearish)\n\n# --- Execution (long-only, full allocation) ---\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=100)\n",
+   "global_timeframe": "1D"
+}

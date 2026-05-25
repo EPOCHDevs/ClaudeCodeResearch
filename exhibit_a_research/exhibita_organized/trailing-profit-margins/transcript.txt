@@ -1,8 +1,0 @@
-Title: A Look at Trailing Profit Margins
-Topic: Trailing profit margins based on the past 12 months of net income and revenue for the S&P 500 (Large Cap), S&P 400 (Mid Cap), and S&P 600 (Small Cap) since 2004. This chart tracks the efficiency and profitability of businesses across different market capitalization segments over time.
-Question: How have trailing profit margins for large-cap, mid-cap, and small-cap U.S. companies trended over the past 20 years, and where do they stand today?
-Key Takeaways:
-- As of February 27, 2026, trailing profit margins stand at 13.80% for the S&P 500 (Large Cap), 7.52% for the S&P 400 (Mid Cap), and 5.69% for the S&P 600 (Small Cap).
-- Over the past 20 years, trailing profit margins have generally trended upward for large-cap companies, while mid-cap and small-cap margins have remained more range-bound, with large caps consistently showing higher margins.
-- Profit margin trends provide insight into overall corporate efficiency and profitability, and the widening gap between large-cap and smaller-cap margins suggests large companies have increasingly benefited from scale advantages and operational efficiencies.
-Source: ExhibitA for Advice

@@ -1,0 +1,13 @@
+{
+   "name": "amfx-eurusd-equity-ratio",
+   "description": "amFX reproduction (17JUN22 p2): EURUSD vs Europe/USA equity ratio. Original uses SX7P (Euro Stoxx Banks) / ES (S&P 500 futures). Proxy: EUFN (iShares MSCI Europe Financials) / SPY. European equities outperforming US = capital flows supporting EUR. Co-movement Feb-Jun 2022, divergence favoring EUR is the buy signal. Third leg of Donnelly's EUR buy thesis alongside BTP-Bund spread and rate differentials.",
+   "data": {
+      "assets": [
+         "EURUSD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: EURUSD vs EU/US EQUITY RATIO (17JUN22 p2)\n# =============================================================================\n# Brent Donnelly's third pillar of EUR buy thesis:\n# - European equities outperforming US equities → EUR supportive\n# - Original: SX7P (Euro Stoxx Banks) / ESc1 (S&P 500 futures)\n# - Proxy: EUFN (iShares MSCI Europe Financials ETF) / SPY\n# - Co-movement visible Feb-Jun 2022; recent divergence favors EUR\n# - Admitted as \"useless real-time indicator\" but adds weight of evidence\n# =============================================================================\n\nsrc = market_data_source()()\neurusd = src.c\nidx = index()\n\n# European financials ETF (proxy for SX7P Euro Stoxx Banks)\neufn = reference_stocks(ticker='EUFN')()\neufn_close = eufn.c\n\n# S&P 500 ETF (proxy for ES futures)\nspy = common_reference_stocks(ticker=ReferenceStock.SPY)()\nspy_close = spy.c\n\n# EU/US equity ratio: EUFN / SPY\n# Multiplied by 100 for readability\neq_ratio = eufn_close / spy_close * 100\n\n# =============================================================================\n# CHART 1: EURUSD and Equity Ratio Overlay\n# =============================================================================\nxy_lines(\n    title='Is European Equity Outperformance Signaling EUR Strength?',\n    category='EUR Equity Flows',\n    y_axis_label='EU/US Equity Ratio (EUFN/SPY x100)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='EU/US Equity Ratio', color=Color.Blue),\n        LineSeriesSpec(name='EURUSD', color=Color.Gray)\n    ]),\n    order=0\n)(x_values=idx, y_values=(eq_ratio, eurusd))\n"
+}

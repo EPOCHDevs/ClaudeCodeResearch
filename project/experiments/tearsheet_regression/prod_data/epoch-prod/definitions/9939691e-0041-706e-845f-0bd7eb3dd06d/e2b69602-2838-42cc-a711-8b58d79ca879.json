@@ -1,0 +1,17 @@
+{
+   "name": "Metals & Mining: Is Momentum Persistent or Spike-Driven?",
+   "description": "Rolling 63-day (quarterly) return comparison for CENX, AA, and NEM with SPY as a market benchmark. Shows whether recent momentum in metals/mining stocks has been sustained or driven by one-off spikes. Includes a cross-sectional summary table with the latest 63-day return for each stock.",
+   "data": {
+      "assets": [
+         "CENX-Stocks",
+         "AA-Stocks",
+         "NEM-Stocks",
+         "SPY-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Metals & Mining Momentum Persistence\n# Rolling 63-day returns for CENX, AA, NEM vs SPY benchmark\n# Question: Is momentum sustained or spike-driven?\n\n# --- Data ---\nsrc = market_data_source()()\nclose = src.c\n\n# --- Rolling 63-Day Return ---\nret_63d = returns(period=63)(close)\n\n# --- Annualized Volatility of 63d Returns (measures return stability) ---\nret_63d_vol = stddev(period=252)(ret_63d)\n\n# --- Timestamp for x-axis ---\nts = index()\n\n# --- Chart: All assets overlaid on one chart ---\n# Question: \"Has momentum been persistent or spike-driven?\"\ncs_lines(\n    title='Has Momentum Been Persistent or Spike-Driven?',\n    category='Momentum',\n    y_axis_label='63-Day Return',\n    y_axis_format=CardRenderType.PercentFormat,\n    y_axis_dp=1,\n    colors=[Color.Blue, Color.Cyan, Color.Orange, Color.Gray],\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=0.0, color=Color.Slate, dash_style=DashStyle.Dash, title='Zero')\n    ]),\n    order=1\n)(x_values=ts, y_values=ret_63d)\n\n# --- Summary Table: Current snapshot per stock ---\n# Question: \"Where does each stock's momentum stand right now?\"\ncs_summary_table(\n    agg=AggregationType.Last,\n    schema=TableReportSchema(columns=[\n        ColumnSpec(title='63-Day Return', type=CardRenderType.PercentFormat, dp=1),\n        ColumnSpec(title='Return Volatility (1Y)', type=CardRenderType.PercentFormat, dp=1),\n        ColumnSpec(title='Close', type=CardRenderType.MonetaryFormat, dp=2)\n    ]),\n    category='Momentum',\n    order=2\n)(ret_63d, ret_63d_vol, close)\n",
+   "global_timeframe": "1D",
+   "thread_id": "a515863b-d6d2-4cf4-ba79-acb46aebe175"
+}

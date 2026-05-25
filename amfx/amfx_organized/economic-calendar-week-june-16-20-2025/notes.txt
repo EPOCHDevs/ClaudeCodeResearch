@@ -1,9 +1,0 @@
-Title: Economic Calendar for Week of June 16-20, 2025
-Source: AMFX 13JUN25.pdf (page 4)
-Date: 2025-06-13
-Type: table
-
-Insight: Weekly calendar of major economic data releases and central bank decisions across multiple regions (US, UK, Eurozone, Canada, and Asia) with event times listed in NYC timezone.
-
-Context (above):
-Trading Calendar for the week of June 16, 2025

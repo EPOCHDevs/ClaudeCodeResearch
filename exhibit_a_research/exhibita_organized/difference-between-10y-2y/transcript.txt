@@ -1,8 +1,0 @@
-Title: Is the Yield Curve Inverted or Uninverted?
-Topic: The difference (spread) between the 10-Year and 2-Year U.S. Treasury yields since 1988. This chart tracks the yield spread as a key recession indicator, showing periods of inversion (negative spread) and normalization (positive spread) over several decades.
-Question: Is the U.S. Treasury yield curve currently inverted, and what does the 10-year minus 2-year spread tell us about recession risk?
-Key Takeaways:
-- As of February 27, 2025, the yield spread stood at 0.57%, meaning the yield curve is uninverted (positive), with the 10-year yield higher than the 2-year yield, which is generally considered a healthier economic signal.
-- The yield curve was notably inverted from mid-2022 through late 2024, one of the longest and deepest inversions in modern history, which historically has preceded economic recessions.
-- When the spread inverts (the 2-year yield exceeds the 10-year yield), it raises concerns about a potential recession, as it often indicates that investors are seeking the safety of long-term investments and reflecting uncertainty about short-term economic conditions.
-Source: ExhibitA for Advice

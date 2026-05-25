@@ -1,0 +1,12 @@
+{
+  "name": "Event Marker S19: Phantom Event Guard (session.closed + is_valid)",
+  "description": "Tests S19 phantom event guard: session.closed fires on gap days, is_valid(session.open) filters them. Validates .opened/.closed mutual exclusivity. Run over a period with holidays (MLK Day Jan 15).",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "data_foundation": "Intraday",
+  "source": "# =============================================================================\n# EVENT MARKER S19: Phantom Event Guard\n# Tests: session.closed on gap days, is_valid(session.open) filter,\n#        .opened/.closed mutual exclusivity\n# Run period MUST include a holiday (Jan 15 = MLK Day) to verify phantom guard\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# === RTH SESSION ===\nrth = session_window(session=SessionType.EquityRTHSession)(src.o, src.h, src.l, src.c)\n\n# === S19 PATTERN: Guard .closed with is_valid(session.open) ===\n# CORRECT: filters phantom close events on gap/holiday days\nreal_close = rth.closed and is_valid(rth.open)\n\n# UNGUARDED: bare .closed \u2014 may fire on gap days\nbare_close = rth.closed\n\n# === MEASURED VALUES (at session close) ===\nrth_range = rth.high - rth.low\nrth_return = (rth.close - rth.open) / rth.open\n\n# === GUARDED EVENT OUTPUTS ===\nguarded_range = where(real_close, rth_range)\nguarded_return = where(real_close, rth_return)\n\n# === REPORTERS ===\n\n# Guarded event marker \u2014 should have clean data, no phantom events\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.AlertCircleIcon,\n        schemas=[\n            ColumnSpec(title=\"RTH Range\", dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(title=\"RTH Return\", dp=4, type=CardRenderType.PercentFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"Guarded RTH Close (S19)\"\n    )\n)((guarded_range, guarded_return, real_close))\n\n# RTH range line for visual context\nxy_lines(\n    title=\"RTH Range\",\n    category=\"Sessions\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Range\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=rth_range)\n"
+}

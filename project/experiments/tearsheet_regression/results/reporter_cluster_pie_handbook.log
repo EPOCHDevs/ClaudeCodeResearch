@@ -1,0 +1,136 @@
+[ERROR] 2026-03-23 04:13:25.852 AuthCredentialsProvider [123503330765952] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:25.860 AuthCredentialsProvider [123503330765952] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:25.863] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:25.863] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_pie_handbook.json
+[2026-03-23 04:13:25.863] [info] [generate_job_data.cpp:241] Study: reporter_cluster_pie_handbook
+[2026-03-23 04:13:25.863] [info] [generate_job_data.cpp:242] Output: reporter_cluster_pie_handbook
+[2026-03-23 04:13:25.863] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:25.863] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:25.863] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:25.863] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:25.863] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:25.867] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:25.871] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:25.942] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.942] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.945] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.945] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.946] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.946] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.946] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.947] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.947] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.947] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.948] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.948] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.948] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.948] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.950] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.950] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.950] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.950] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.951] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.951] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.952] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.952] [info] [IReporter::GetDashboard] cs_pie charts=0 tables=0
+[2026-03-23 04:13:25.955] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.955] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.957] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.957] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.958] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.958] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.958] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.958] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.960] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.961] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.963] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.963] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.966] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.966] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.967] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.967] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.967] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.967] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.967] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.967] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.967] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.967] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.968] [info] [IReporter::GetDashboard] cs_pie rows=1508
+[2026-03-23 04:13:25.968] [info] [IReporter::GetDashboard] cs_pie charts=1 tables=0
+[2026-03-23 04:13:25.968] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.968] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.969] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.975] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.975] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.975] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.975] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.975] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.975] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.978] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.979] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.980] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.980] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.985] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.985] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.985] [info] [IReporter::TransformData] pie rows=1508
+[2026-03-23 04:13:25.985] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.985] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.985] [info] [IReporter::GetDashboard] pie rows=1508
+[2026-03-23 04:13:25.986] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.986] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.986] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.987] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.989] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.990] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.990] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.990] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+[2026-03-23 04:13:25.990] [info] [IReporter::GetDashboard] pie charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:26.023] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_pie_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_pie_handbook
+[2026-03-23 04:13:26.027] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_pie_handbook/config.json
+[2026-03-23 04:13:26.027] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_pie_handbook/metadata.json
+[2026-03-23 04:13:26.028] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_pie_handbook (total: 38838 bytes)
+[2026-03-23 04:13:26.028] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_pie_handbook
+[2026-03-23 04:13:26.031] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_pie_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_pie_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_pie_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_pie_handbook/tearsheets"

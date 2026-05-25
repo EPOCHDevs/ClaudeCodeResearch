@@ -1,10 +1,13 @@
 {
-   "name": "Exec Cluster E05: Kelly Criterion Half-Kelly Sizing",
-   "description": "Tests: kelly half-Kelly sizing with crossover signals",
-   "data": {
-      "assets": ["SPY-Stocks", "QQQ-Stocks", "GLD-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC TEST: Kelly Criterion Dynamic Sizing\n# Tests: E05 (kelly with fraction=0.5)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: Simple EMA crossover ===\nfast = ma(period=20, type=MAType.ema)(close)\nslow = ma(period=50, type=MAType.ema)(close)\n\nis_bullish = fast > slow\nis_bearish = fast < slow\n\nheld_long = hold_until()(enter=is_bullish, exit=is_bearish)\nheld_short = hold_until()(enter=is_bearish, exit=is_bullish)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# E05: Half-Kelly sizing (conservative)\nkelly(fraction=0.5, min_trades=20, fallback_pct=10)\n\n# Fixed stop for risk control\nstop_loss(unit=StopUnit.percent)(distance=8)\n",
-   "global_timeframe": "1D"
+  "name": "Exec Cluster E05: Kelly Criterion Half-Kelly Sizing",
+  "description": "Tests: kelly half-Kelly sizing with crossover signals",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "GLD-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC TEST: Kelly Criterion Dynamic Sizing\n# Tests: E05 (kelly with fraction=0.5)\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SIGNAL: Simple EMA crossover ===\nfast = ma(period=20, type=MAType.ema)(close)\nslow = ma(period=50, type=MAType.ema)(close)\n\nis_bullish = fast > slow\nis_bearish = fast < slow\n\nheld_long = hold_until(is_bullish, is_bearish)\nheld_short = hold_until(is_bearish, is_bullish)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# E05: Half-Kelly sizing (conservative)\nkelly(fraction=0.5, min_trades=20, fallback_pct=10)\n\n# Fixed stop for risk control\nstop_loss(unit=StopUnit.percent)(distance=8)\n"
 }

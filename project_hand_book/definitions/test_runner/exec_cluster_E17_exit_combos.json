@@ -1,10 +1,12 @@
 {
-   "name": "Exec Cluster E17: Triple Exit Stack — SL + Trail + TP",
-   "description": "Tests: stacking stop_loss + trailing_stop + take_profit (first triggered wins)",
-   "data": {
-      "assets": ["SPY-Stocks", "QQQ-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC CLUSTER E17: Triple Exit Stack (First Triggered Wins)\n# Tests: stop_loss + trailing_stop + take_profit coexistence\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === VOLATILITY ===\natr_val = atr(period=14)(src.h, src.l, src.c)\n\n# === SIGNAL: Donchian breakout ===\ndonchian = donchian_channel(window=20)(src.h, src.l)\nupper = donchian.donchian_upper >> 1\nlower = donchian.donchian_lower >> 1\n\nentry_long = close > upper\nentry_short = close < lower\nheld_long = hold_until()(enter=entry_long, exit=entry_short)\nheld_short = hold_until()(enter=entry_short, exit=entry_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Fixed sizing (NOT risk_unit, so we can use standalone stops)\nposition_size(type=SizeType.percent)(size=15)\n\n# E17: Triple exit stack — first triggered wins\n# 1. Disaster stop (floor)\nstop_loss(unit=StopUnit.percent)(distance=5)\n\n# 2. Trail tightens as trade profits (with activation)\ntrailing_stop()(distance=atr_val * 2, activation=atr_val)\n\n# 3. Cap at 15% profit\ntake_profit(unit=StopUnit.percent)(distance=15)\n",
-   "global_timeframe": "1D"
+  "name": "Exec Cluster E17: Triple Exit Stack \u2014 SL + Trail + TP",
+  "description": "Tests: stacking stop_loss + trailing_stop + take_profit (first triggered wins)",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER E17: Triple Exit Stack (First Triggered Wins)\n# Tests: stop_loss + trailing_stop + take_profit coexistence\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === VOLATILITY ===\natr_val = atr(src.h, src.l, src.c, 14)\n\n# === SIGNAL: Donchian breakout ===\ndonchian = donchian_channel(src.h, src.l, window=20)\nupper = donchian.donchian_upper >> 1\nlower = donchian.donchian_lower >> 1\n\nentry_long = close > upper\nentry_short = close < lower\nheld_long = hold_until(entry_long, entry_short)\nheld_short = hold_until(entry_short, entry_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Fixed sizing (NOT risk_unit, so we can use standalone stops)\nposition_size(type=SizeType.percent)(size=15)\n\n# E17: Triple exit stack \u2014 first triggered wins\n# 1. Disaster stop (floor)\nstop_loss(unit=StopUnit.percent)(distance=5)\n\n# 2. Trail tightens as trade profits (with activation)\ntrailing_stop()(distance=atr_val * 2, activation=atr_val)\n\n# 3. Cap at 15% profit\ntake_profit(unit=StopUnit.percent)(distance=15)\n"
 }

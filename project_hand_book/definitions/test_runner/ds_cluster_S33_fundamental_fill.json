@@ -1,0 +1,12 @@
+{
+  "name": "DS Cluster S33: Fundamental Fill (Quarterly to Daily via ffill)",
+  "description": "Tests: ffill for quarterly earnings to daily, PE ratio construction from sparse EPS, is_valid for observation detection, where for sparse metric gating.",
+  "data": {
+    "assets": [
+      "AAPL-Stocks",
+      "MSFT-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER S33: Fundamental Fill\n# Tests: ffill for quarterly\u2192daily, PE ratio, sparse fundamental data\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === QUARTERLY EARNINGS \u2192 DAILY ===\ninc = income_statement(period=ReportingPeriod.quarterly)()\neps_raw = inc.basic_eps\nrevenue_raw = inc.revenue\n\n# ffill: carry quarterly value forward until next report\neps = ffill(eps_raw)\nrevenue = ffill(revenue_raw)\n\n# === PE RATIO from sparse EPS ===\n# Annualize quarterly EPS (multiply by 4)\nannual_eps = eps * 4\npe_ratio = where(annual_eps > 0, close / annual_eps)\n\n# === OBSERVATION DETECTION ===\nhad_earnings = is_valid(eps_raw)\n\n# === REPORTERS ===\nxy_lines(\n    title='EPS (ffilled from quarterly)',\n    category='Fundamental Fill',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='EPS (annualized)', color=Color.Green)\n    ])\n)(x_values=index(), y_values=annual_eps)\n\nxy_lines(\n    title='Trailing PE Ratio',\n    category='Fundamental Fill',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='PE', color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=pe_ratio)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.FileTextIcon,\n        schemas=[\n            ColumnSpec(title='EPS', dp=2, type=CardRenderType.DecimalFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title='Earnings Report'\n    )\n)((eps_raw, had_earnings))\n"
+}

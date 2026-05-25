@@ -1,10 +1,11 @@
 {
-    "name": "DS Cluster D15: News + Cross-Sectional News",
-    "description": "Tests: news with tickers option, cs_news with required tickers list.",
-    "data": {
-        "assets": ["AAPL-Stocks"],
-        "source": "polygon"
-    },
-    "source": "# =============================================================================\n# DS CLUSTER D15: News + Cross-Sectional News\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SINGLE-ASSET NEWS ===\nn = news()()\nhad_news = is_valid(n.title)\n\n# === CROSS-SECTIONAL NEWS (requires tickers) ===\ncsn = cs_news(tickers=[\"MSFT\", \"GOOGL\"])()\nhad_cs_news = is_valid(csn.title)\n\n# === REPORTERS ===\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.NewspaperIcon,\n        schemas=[\n            ColumnSpec(title=\"Close\", dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"News\"\n    )\n)(close, had_news)\n\nhistogram(category=\"News\", title=\"Close on News Days\", bins=20)(where(had_news, close))\n",
-    "global_timeframe": "1D"
+  "name": "DS Cluster D15: News + Cross-Sectional News",
+  "description": "Tests: news with tickers option, cs_news with required tickers list.",
+  "data": {
+    "assets": [
+      "AAPL-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D15: News + Cross-Sectional News\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SINGLE-ASSET NEWS ===\nn = news()()\nhad_news = is_valid(n.title)\n\n# === CROSS-SECTIONAL NEWS (requires tickers) ===\ncsn = cs_news(tickers=[\"MSFT\", \"GOOGL\"])()\nhad_cs_news = is_valid(csn.title)\n\n# === REPORTERS ===\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.NewspaperIcon,\n        schemas=[\n            ColumnSpec(title=\"Close\", dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title=\"News\"\n    )\n)((close, had_news))\n\nhistogram(category=\"News\", title=\"Close on News Days\", bins=20)(where(had_news, close))\n"
 }

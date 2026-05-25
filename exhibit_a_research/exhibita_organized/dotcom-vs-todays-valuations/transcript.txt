@@ -1,8 +1,0 @@
-Title: Are We In A Bubble? Valuations In Dotcom Bubble vs Today
-Topic: This chart compares forward P/E ratios for blue chip stocks at the peak of the dotcom bubble (March 2000) versus their current valuations today, examining whether current market conditions resemble the tech bubble.
-Question: How do today's blue-chip tech stock valuations compare to the extreme levels seen during the dotcom bubble peak?
-Key Takeaways:
-- At the March 2000 dotcom peak, leading tech names like Cisco and Oracle traded at extreme valuation multiples with forward P/E ratios well above 100x (Cisco at ~130x, Oracle at ~120x), far exceeding anything seen today.
-- Today's largest S&P 500 constituents (Nvidia, Apple, Microsoft) trade at significantly lower forward P/E levels, generally in the 20x-35x range, suggesting valuations are more grounded.
-- While valuations have expanded, the comparison highlights that today's market environment is supported by stronger fundamentals, more diversified earnings, and greater profitability than during the 2000 cycle.
-Source: ExhibitA for Advice

@@ -1,0 +1,17 @@
+{
+   "name": "Weekly Inverse Volatility Portfolio",
+   "description": "Volatility-scaled portfolio across SPY, TLT, GLD, and DBC. Weights are inversely proportional to each asset's 63-day realized volatility, rebalanced weekly. 100% fully invested — lower-vol assets receive higher allocation. Measures risk-adjusted returns and drawdowns via auto-generated tearsheet.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Weekly Inverse Volatility Portfolio\n# SPY, TLT, GLD, DBC — weighted by inverse of 63-day realized vol\n# Rebalanced weekly, 100% fully invested, long-only\n\n# --- Data ---\nsrc = market_data_source()()\nclose = src.c\n\n# --- Volatility (63-day, annualized) ---\n# volatility() takes close prices directly (internally computes returns + annualizes)\nvol_63 = volatility(period=63)(close)\n\n# --- Rebalance Detection ---\nis_new_week = is_period_boundary(period=PeriodType.week)(index())\n\n# --- Signal: Always long all 4 assets ---\n# Gate entry/exit to weekly rebalance dates\n# All assets always held — enter on first rebalance, never exit\nalways_long = True\nheld = hold_until()(enter=is_new_week and always_long, exit=False)\n\n# --- Inverse Volatility Weights ---\n# inv_vol_weight: weight = (1/vol_i) / sum(1/vol_j) for all active assets\n# max_weight=0.5 prevents any single asset from dominating\ninv_vol_wt = inv_vol_weight(max_weight=0.5)(active_mask=held, volatility=vol_63)\n\n# --- Execution ---\n# Long-only: all assets always long\nlong_and_short_zone()(long_entry=held)\n\n# Size as percent of equity, rebalance only on weekly boundary\nposition_size(type=SizeType.percent)(size=inv_vol_wt.weight * 100, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D",
+   "thread_id": "1856a4a9-234c-4130-9896-43176b221fc4"
+}

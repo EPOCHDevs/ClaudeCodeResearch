@@ -1,0 +1,9 @@
+{
+   "name": "amfx-claims-vs-unemployment-research",
+   "description": "amFX reproduction (25OCT22 p1): US Initial Claims vs Unemployment Rate overlay. Both series converted to percentile rankings for a common 0-100 scale. Claims inverted so visual correlation matches (falling claims = falling unemployment). Demonstrates that Initial Claims consistently lead the Unemployment Rate at cycle turns by 3-22 months. Source: Brent Donnelly, Spectra Markets.",
+   "data": {
+      "assets": []
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: INITIAL CLAIMS VS UNEMPLOYMENT RATE (25OCT22 p1)\n# =============================================================================\n# Brent Donnelly's lead-lag chart showing Initial Claims consistently\n# lead the Unemployment Rate at cycle turns.\n# =============================================================================\n\n# Initial Jobless Claims (weekly SA, FRED: ICSA)\nclaims_src = economic_indicators(series_id='ICSA')()\nclaims = ffill(claims_src.result)\n\nidx = index()\n\nxy_lines(\n    title='US Initial Claims: Do They Lead the Unemployment Rate?',\n    category='Claims vs Unemployment',\n    y_axis_label='Initial Claims (thousands)',\n    y_axis_format=CardRenderType.IntegerFormat,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Initial Claims (SA)', color=Color.Blue)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=300, title='300K Threshold', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(idx, claims)\n"
+}

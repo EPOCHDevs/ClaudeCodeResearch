@@ -1,0 +1,13 @@
+{
+   "name": "USDCHF Mean Reversion Low Volatility",
+   "description": "Mean reversion strategy on USDCHF using daily ATR as volatility filter. Enters long when volatility is low (daily ATR below its 10-period MA) and price is 1% below 50-period SMA. Exits when price crosses back above 50-SMA. Uses risk-based position sizing with 2% stop distance.",
+   "data": {
+      "assets": [
+         "^USDCHF-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# USDCHF Mean Reversion Low Volatility Strategy\n# Entry: Low daily ATR + price 1% below 50-SMA\n# Exit: Price crosses back above 50-SMA\n# Risk: 2% risk per trade, 2% stop distance\n\n# 4H data source (primary timeframe)\nsrc = market_data_source(timeframe=4H)()\nclose = src.c\n\n# Daily ATR for volatility filter (computed on 1D timeframe)\ndaily_atr = atr(period=14, timeframe=1D)()\n\n# 10-period MA of daily ATR (inherits 1D timeframe from input)\ndaily_atr_ma = ma(period=10, type=MAType.sma)(daily_atr)\n\n# Low volatility filter on daily timeframe: ATR below its 10-period MA\nlow_volatility_1d = daily_atr < daily_atr_ma\n\n# Upsample the boolean to 4H by converting to numeric first\n# 1.0 for low vol, 0.0 for high vol\nlow_vol_numeric = 1.0 if low_volatility_1d else 0.0\n\n# Upsample to 4H using interpolation (which will forward-fill for step function)\nlow_vol_upsampled = upsample_by_interpolate(target_timeframe=4H)(low_vol_numeric)\n\n# Convert back to boolean\nlow_vol_4h = low_vol_upsampled > 0.5\n\n# 50-period SMA on 4H bars\nsma_50 = ma(period=50, type=MAType.sma)(close)\n\n# Entry condition: low volatility AND price at least 1% below 50-SMA\nprice_below_sma = close < sma_50 * 0.99\nentry_signal = low_vol_4h and price_below_sma\n\n# Exit condition: price crosses back above 50-SMA\nexit_signal = crossover(close, sma_50)\n\n# Hold signal from entry to exit\nheld_signal = hold_until()(enter=entry_signal, exit=exit_signal)\n\n# Long zone executor\nlong_and_short_zone()(long_entry=held_signal)\n\n# Risk-based position sizing: 2% risk, 2% stop distance\n# stop_distance = 2% of price = close * 0.02\nstop_distance = close * 0.02\nrisk_unit(stop_unit=\"percent\")(risk_pct=2, stop_distance=stop_distance)\n",
+   "global_timeframe": "4H"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Exec Cluster E16: Wiring Order (Full Executor Chain)",
+  "description": "Tests: mandatory executor wiring order — long_and_short_zone first, then position_size, then stop_loss + take_profit + trailing_stop. Validates no reporters in strategy (tearsheet auto-generated).",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "GLD-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER E16: Wiring Order\n# Tests: correct executor sequence, all exit types combined\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SIGNAL: Donchian breakout with trend filter ===\ndonchian = donchian_channel(src.h, src.l, window=20)\nupper = donchian.donchian_upper >> 1\nlower = donchian.donchian_lower >> 1\n\nadx_val = adx(src.h, src.l, 14)\ntrending = (adx_val >> 1) > 25\n\n# Persistent breakout signals (S35 lag consistency)\nlong_sig = (close > upper) and trending\nshort_sig = (close < lower) and trending\n\n# === WIRING ORDER (E16) ===\n# Step 1: Signal executor (REQUIRED, FIRST)\nlong_and_short_zone()(long_entry=long_sig, short_entry=short_sig)\n\n# Step 2: Position sizing (REQUIRED, exactly one)\nposition_size(type=SizeType.percent)(size=15)\n\n# Step 3: Exit conditions (OPTIONAL, any combo)\nstop_loss(unit=StopUnit.percent)(distance=5)\ntake_profit(unit=StopUnit.percent)(distance=12)\n\natr_val = atr(src.h, src.l, src.c, 14)\ntrailing_stop()(distance=atr_val * 2.5)\n"
+}

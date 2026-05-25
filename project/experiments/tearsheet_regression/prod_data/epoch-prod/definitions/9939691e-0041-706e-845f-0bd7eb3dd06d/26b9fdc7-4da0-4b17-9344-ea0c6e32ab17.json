@@ -1,0 +1,13 @@
+{
+   "name": "NVDA/AMD Pairs Trading - SMA Crossover",
+   "description": "Pairs trading strategy on NVDA vs AMD based on price ratio SMA crossover. Computes the NVDA/AMD daily close ratio, applies 20-day and 50-day SMAs. Goes long NVDA when the fast SMA crosses above the slow SMA (NVDA outperforming), shorts NVDA when the fast SMA crosses below the slow SMA (AMD outperforming). Always in a position — flips on each crossover. Position sized at 50% of equity per direction. AMD loaded as reference for ratio computation; only NVDA is traded.",
+   "data": {
+      "assets": [
+         "NVDA-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# NVDA/AMD Pairs Trading Strategy - SMA Crossover on Price Ratio\n# Signal: 20-day SMA vs 50-day SMA of the NVDA/AMD close ratio\n# Long NVDA when fast SMA > slow SMA (NVDA outperforming AMD)\n# Short NVDA when fast SMA < slow SMA (AMD outperforming NVDA)\n# Always in a trade — flips direction on each crossover\n# Position size: 50% of equity per direction\n\n# --- Data Sources ---\nsrc = market_data_source()()\nnvda_close = src.c\n\n# Load AMD as reference (not traded directly)\namd_ref = reference_stocks(ticker=\"AMD\")()\namd_close = amd_ref.c\n\n# --- Price Ratio ---\nratio = nvda_close / amd_close\n\n# --- Dual SMA on the Ratio ---\nfast_sma = ma(period=20, type=MAType.sma)(ratio)\nslow_sma = ma(period=50, type=MAType.sma)(ratio)\n\n# --- Crossover Signals ---\n# Crossover = fast SMA crosses above slow SMA → ratio expanding → long NVDA\ncross_up = crossover(fast_sma, slow_sma)\n# Crossunder = fast SMA crosses below slow SMA → ratio contracting → short NVDA\ncross_down = crossunder(fast_sma, slow_sma)\n\n# --- Persistent State ---\n# Hold long NVDA until crossunder fires, then hold short until crossover fires\nlong_state = hold_until()(enter=cross_up, exit=cross_down)\nshort_state = hold_until()(enter=cross_down, exit=cross_up)\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=long_state, short_entry=short_state)\n\n# 50% of equity per direction\nposition_size(type=SizeType.percent)(size=50)\n",
+   "global_timeframe": "1D"
+}

@@ -1,0 +1,14 @@
+{
+   "name": "NVDA/AMD Dollar-Neutral Pairs Strategy",
+   "description": "Dollar-neutral pairs trading strategy on NVDA and AMD. Computes the NVDA/AMD price ratio, applies 20-day and 50-day SMAs to it, and trades crossover signals. Bull cross (fast SMA > slow SMA): long NVDA, short AMD. Bear cross (fast < slow): short NVDA, long AMD. Always in a position — flips on each crossover. Each leg sized at 50% of equity for approximate dollar neutrality.",
+   "data": {
+      "assets": [
+         "NVDA-Stocks",
+         "AMD-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# NVDA/AMD Dollar-Neutral Pairs Trading Strategy\n# Signal: NVDA/AMD price ratio with 20/50 SMA crossover\n# Bull cross (fast > slow): long NVDA, short AMD\n# Bear cross (fast < slow): short NVDA, long AMD\n# Always in trade — flips on crossover, no flat periods\n# Each leg: 50% of equity\n\n# --- Data ---\n# Primary asset data (runs per asset — NVDA or AMD)\nsrc = market_data_source(timeframe=1D)()\n\n# Load both assets via reference for consistent ratio computation\nnvda_ref = reference_stocks(ticker=\"NVDA\")()\namd_ref = reference_stocks(ticker=\"AMD\")()\n\n# --- Ratio Signal (identical on both asset pages) ---\nratio = nvda_ref.c / amd_ref.c\n\n# 20-day fast SMA and 50-day slow SMA on the ratio\nfast_sma = ma(period=20, type=MAType.sma)(ratio)\nslow_sma = ma(period=50, type=MAType.sma)(ratio)\n\n# Crossover signals on the ratio SMAs\nbull_cross = crossover(fast_sma, slow_sma)   # Ratio expanding — NVDA outperforming\nbear_cross = crossunder(fast_sma, slow_sma)  # Ratio contracting — AMD outperforming\n\n# Persistent state: bull until bear fires, and vice versa\nbull_state = hold_until()(enter=bull_cross, exit=bear_cross)\nbear_state = hold_until()(enter=bear_cross, exit=bull_cross)\n\n# --- Per-Asset Signal Routing ---\n# Identify which asset is currently running\nis_nvda = is_asset_ref(ticker=\"NVDA\")()\nis_amd = is_asset_ref(ticker=\"AMD\")()\n\n# NVDA: long on bull, short on bear\n# AMD: short on bull, long on bear (opposite side)\nlong_entry = (is_nvda and bull_state) or (is_amd and bear_state)\nshort_entry = (is_nvda and bear_state) or (is_amd and bull_state)\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\n\n# 50% of equity per leg for dollar neutrality\nposition_size(type=SizeType.percent)(size=50)\n",
+   "global_timeframe": "1D"
+}

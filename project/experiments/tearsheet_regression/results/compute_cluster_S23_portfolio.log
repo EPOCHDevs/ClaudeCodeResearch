@@ -1,0 +1,34 @@
+[ERROR] 2026-03-23 04:01:10.232 AuthCredentialsProvider [140095565380736] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:01:10.240 AuthCredentialsProvider [140095565380736] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:01:10.243] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:01:10.243] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/compute_cluster_S23_portfolio.json
+[2026-03-23 04:01:10.243] [info] [generate_job_data.cpp:241] Study: Compute Cluster S23: Portfolio Optimizers
+[2026-03-23 04:01:10.243] [info] [generate_job_data.cpp:242] Output: compute_cluster_S23_portfolio
+[2026-03-23 04:01:10.243] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:01:10.243] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:01:10.243] [info] [generate_job_data.cpp:250] Assets: 5
+[2026-03-23 04:01:10.243] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:01:10.243] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:01:10.245] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:01:10.248] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 5 assets
+[2026-03-23 04:01:11.709] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:01:11.710] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:01:11.712] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:01:11.712] [info] [IReporter::GetDashboard] cs_lines rows=1508
+[2026-03-23 04:01:11.716] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:01:11.717] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:01:11.718] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+[2026-03-23 04:01:11.718] [info] [IReporter::GetDashboard] cs_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:01:11.766] [info] [job_persister.cpp:109] Persisting job data for user test_runner job compute_cluster_S23_portfolio to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S23_portfolio
+[2026-03-23 04:01:11.768] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S23_portfolio/config.json
+[2026-03-23 04:01:11.768] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S23_portfolio/metadata.json
+[2026-03-23 04:01:11.768] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job compute_cluster_S23_portfolio (total: 103593 bytes)
+[2026-03-23 04:01:11.768] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job compute_cluster_S23_portfolio
+[2026-03-23 04:01:11.770] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S23_portfolio/manifest.json
+
+=== Generation Complete ===
+Study: Compute Cluster S23: Portfolio Optimizers
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S23_portfolio"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S23_portfolio/tearsheets"

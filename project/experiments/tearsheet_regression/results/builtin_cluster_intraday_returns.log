@@ -1,0 +1,35 @@
+[ERROR] 2026-03-23 03:58:39.815 AuthCredentialsProvider [137009884945536] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 03:58:39.822 AuthCredentialsProvider [137009884945536] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 03:58:39.825] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 03:58:39.825] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/builtin_cluster_intraday_returns.json
+[2026-03-23 03:58:39.825] [info] [generate_job_data.cpp:241] Study: Builtin Cluster: Intraday Returns Variants
+[2026-03-23 03:58:39.825] [info] [generate_job_data.cpp:242] Output: builtin_cluster_intraday_returns
+[2026-03-23 03:58:39.825] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 03:58:39.825] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 03:58:39.825] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 03:58:39.825] [info] [generate_job_data.cpp:251] Timeframe: 1Min
+[2026-03-23 03:58:39.825] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 03:58:39.827] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 03:58:39.830] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:00:51.674] [info] [IReporter::TransformData] xy_lines rows=510228
+[2026-03-23 04:00:51.674] [info] [IReporter::GetDashboard] xy_lines rows=510228
+[2026-03-23 04:00:51.684] [info] [IReporter::TransformData] xy_lines rows=510228
+[2026-03-23 04:00:51.684] [info] [IReporter::GetDashboard] xy_lines rows=510228
+[2026-03-23 04:00:51.689] [info] [IReporter::TransformData] xy_lines rows=510228
+[2026-03-23 04:00:51.689] [info] [IReporter::GetDashboard] xy_lines rows=510228
+[2026-03-23 04:00:53.235] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:00:53.668] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:00:53.670] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:00:57.391] [info] [job_persister.cpp:109] Persisting job data for user test_runner job builtin_cluster_intraday_returns to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_intraday_returns
+[2026-03-23 04:00:57.421] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_intraday_returns/config.json
+[2026-03-23 04:00:57.422] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_intraday_returns/metadata.json
+[2026-03-23 04:00:57.435] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job builtin_cluster_intraday_returns (total: 32659620 bytes)
+[2026-03-23 04:00:57.435] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job builtin_cluster_intraday_returns
+[2026-03-23 04:00:57.436] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_intraday_returns/manifest.json
+
+=== Generation Complete ===
+Study: Builtin Cluster: Intraday Returns Variants
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_intraday_returns"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/builtin_cluster_intraday_returns/tearsheets"

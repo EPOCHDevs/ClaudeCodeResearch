@@ -1,8 +1,0 @@
-Title: What If You Invested at the Start of Crises?
-Topic: This chart displays the annualized return of the S&P 500 from the start of major crises (along with each crisis's maximum drawdown) since 1929, showing that long-term positive returns followed even the worst economic disasters.
-Question: What would your long-term annualized return be if you invested in the S&P 500 at the beginning of every major crisis?
-Key Takeaways:
-- Despite severe maximum drawdowns during crises (ranging from -27% to -86.2%), the S&P 500 has still produced positive annualized returns from the start of every major crisis through today, with an average of approximately 8.2%.
-- The worst drawdowns (e.g., Great Depression at -86.2%, 2007 Financial Crisis at -56.8%) were ultimately overcome, reinforcing the historical resilience of the market over long time horizons.
-- History shows that investing at the start of downturns can still generally lead to positive returns, underscoring the importance of staying committed to a long-term strategy and not being discouraged by short-term volatility.
-Source: ExhibitA for Advice

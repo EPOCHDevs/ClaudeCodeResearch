@@ -1,8 +1,0 @@
-Title: A Long-Term View Of Bonds
-Topic: This chart tracks the U.S. Bloomberg Aggregate Bond Index over the long term since 1976. It shows the historical performance trajectory of the U.S. investment-grade bond market, including government, corporate, and mortgage-backed securities.
-Question: How has the U.S. Bloomberg Aggregate Bond Index performed over the long term?
-Key Takeaways:
-- As of February 27, 2026, the Bloomberg U.S. Aggregate Bond Index is trading at 2,390, reflecting long-term growth from its inception in the mid-1970s.
-- Over the long term, the Bloomberg U.S. Aggregate Bond Index has generally provided steady returns, though the bond market can experience periods of weakness, especially during rising interest rates or inflationary periods.
-- The bond index has historically served as a stabilizing force in diversified portfolios, providing more consistent (though lower) returns compared to equities, making it an important component of balanced investment strategies.
-Source: ExhibitA for Advice

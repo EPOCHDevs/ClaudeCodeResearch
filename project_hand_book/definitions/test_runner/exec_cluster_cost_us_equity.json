@@ -1,10 +1,13 @@
 {
-   "name": "Exec Cluster Cost: US Equity — USEquity Commission + 5bps Slippage",
-   "description": "Tests: USEquity commission ($0.005/share, $1 min, SEC/TAF) + 5bps slippage. Run with --cost us_equity",
-   "data": {
-      "assets": ["SPY-Stocks", "AAPL-Stocks", "MSFT-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC CLUSTER COST: US Equity Commission + Slippage\n# Run with: --cost us_equity --cash 100000\n# Validates: USEquity per-share commission with SEC/TAF fees, BPS slippage\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: SMA crossover ===\nfast = ma(period=50, type=MAType.sma)(close)\nslow = ma(period=200, type=MAType.sma)(close)\ngolden = crossover(fast, slow)\ndeath = crossunder(fast, slow)\nheld_long = hold_until()(enter=golden, exit=death)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long)\nposition_size(type=SizeType.percent)(size=30)\n\natr_val = atr(period=14)(src.h, src.l, src.c)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 2)\ntake_profit(unit=StopUnit.percent)(distance=10)\n",
-   "global_timeframe": "1D"
+  "name": "Exec Cluster Cost: US Equity \u2014 USEquity Commission + 5bps Slippage",
+  "description": "Tests: USEquity commission ($0.005/share, $1 min, SEC/TAF) + 5bps slippage. Run with --cost us_equity",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "AAPL-Stocks",
+      "MSFT-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER COST: US Equity Commission + Slippage\n# Run with: --cost us_equity --cash 100000\n# Validates: USEquity per-share commission with SEC/TAF fees, BPS slippage\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SIGNAL: SMA crossover ===\nfast = ma(period=50, type=MAType.sma)(close)\nslow = ma(period=200, type=MAType.sma)(close)\ngolden = crossover(fast, slow)\ndeath = crossunder(fast, slow)\nheld_long = hold_until(golden, death)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held_long)\nposition_size(type=SizeType.percent)(size=30)\n\natr_val = atr(src.h, src.l, src.c, 14)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 2)\ntake_profit(unit=StopUnit.percent)(distance=10)\n"
 }

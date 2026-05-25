@@ -156,7 +156,7 @@ PARAMETRIC_ENUM_TYPES = {
 COSMETIC_ENUM_TYPES = {
     "Color",
     "DashStyle",
-    "AxisValueFormat",
+    "CardRenderType",
     "CategoryAxisType",
     "SortByValue",
     "StackType",

@@ -1,10 +1,11 @@
 {
-   "name": "Compute Cluster S07: Lag, Lead & Calendar Shift",
-   "description": "Tests: >> (lag), << (lead), calendar_shift.",
-   "data": {
-      "assets": ["SPY-Stocks"],
-      "source": "polygon"
-   },
-   "source": "src = market_data_source()()\nclose = src.c\n\nlag_1 = close >> 1\nlag_5 = close >> 5\nlead_1 = close << 1\nshifted_63d = calendar_shift(period=63D)(close)\nshifted_365d = calendar_shift(period=365D)(close)\n\nxy_lines(title='Lag/Lead/Shift', category='Temporal', series=LineSeriesSchema(series=[LineSeriesSpec(name='Close', color=Color.Blue), LineSeriesSpec(name='Lag 1', color=Color.Red), LineSeriesSpec(name='Shift 63D', color=Color.Green)]))(x_values=index(), y_values=(close, lag_1, shifted_63d))\n",
-   "global_timeframe": "1D"
+  "name": "Compute Cluster S07: Lag, Lead & Calendar Shift",
+  "description": "Tests: lag (>>), lead (<<), calendar_shift, forward_returns (price only \u2014 non-price denominator trap).",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "src = study_assets()\nclose = src.c\n\nlag_1 = close >> 1\nlag_5 = close >> 5\nlead_1 = close << 1\nshifted_63d = calendar_shift(period=63D)(close)\nshifted_365d = calendar_shift(period=365D)(close)\n\n# === FORWARD_RETURNS: % return over N bars (PRICE ONLY) ===\nfwd_ret_21 = forward_returns(close, 21)\n\n# TRAP: forward_returns on non-price (near-zero denominator) \u2192 inf\n# \u2717 forward_returns(zscore, 21)  \u2014 z-score near 0 \u2192 explosion\n# \u2713 (zscore << 21) - zscore      \u2014 forward change, safe\n\nxy_lines(title='Forward 21-bar Return', category='Temporal', series=LineSeriesSchema(series=[LineSeriesSpec(name='Fwd Return', color=Color.Green)]))(x_values=index(), y_values=fwd_ret_21)\n\nxy_lines(title='Lag/Lead/Shift', category='Temporal', series=LineSeriesSchema(series=[LineSeriesSpec(name='Close', color=Color.Blue), LineSeriesSpec(name='Lag 1', color=Color.Red), LineSeriesSpec(name='Shift 63D', color=Color.Green)]))(x_values=index(), y_values=(close, lag_1, shifted_63d))\n"
 }

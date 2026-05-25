@@ -1,0 +1,18 @@
+{
+   "name": "Steel & Metals Skip-Month Momentum L/S",
+   "description": "Cross-sectional skip-month momentum long/short strategy on 6 steel and metals stocks (NUE, STLD, X, CLF, AA, CENX). Signal: 12-month return excluding the most recent month (252d to 21d ago). Monthly rebalance: long top 3, short bottom 3, equal weight (~16.67% each), dollar-neutral (50% long / 50% short).",
+   "data": {
+      "assets": [
+         "NUE-Stocks",
+         "STLD-Stocks",
+         "X-Stocks",
+         "CLF-Stocks",
+         "AA-Stocks",
+         "CENX-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Steel & Metals Skip-Month Momentum Long/Short\n#\n# RULES:\n# - Universe: 6 steel & metals stocks (NUE, STLD, X, CLF, AA, CENX)\n# - Signal: Skip-month momentum — 12-month return excluding most recent month\n#           i.e., (close >> 21) / (close >> 252) - 1\n# - Selection: Long top 3, Short bottom 3 by skip-month momentum\n# - Weighting: Equal weight within long/short portfolios (~16.67% each)\n# - Rebalancing: Monthly (first trading day)\n# - Dollar-neutral: 50% long leg, 50% short leg\n\n# Data source - DAILY\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# Skip-month momentum: return from 252 days ago to 21 days ago\n# Skips the most recent month to avoid short-term reversal\nskip_month_mom = (close >> 21) / (close >> 252) - 1\n\n# Cross-sectional selection: top 3 by skip-month momentum (long), bottom 3 (short)\nis_top_3 = cs_select(direction=CSSelectDirection.top, mode=CSSelectMode.count, k=3)(skip_month_mom)\nis_bottom_3 = cs_select(direction=CSSelectDirection.bottom, mode=CSSelectMode.count, k=3)(skip_month_mom)\n\n# Detect first trading day of month\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# Monthly rebalance signals for LONG positions\nenter_long = is_new_month and is_top_3\nexit_long = is_new_month and not is_top_3\nheld_long = hold_until()(enter=enter_long, exit=exit_long)\n\n# Monthly rebalance signals for SHORT positions\nenter_short = is_new_month and is_bottom_3\nexit_short = is_new_month and not is_bottom_3\nheld_short = hold_until()(enter=enter_short, exit=exit_short)\n\n# Entry/Exit zones (long-short strategy)\n# long_and_short_zone handles direction: long for held_long, short for held_short\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# Equal weight across ALL active positions (both long and short)\n# position_size only takes magnitude; direction comes from long_and_short_zone\nis_active = held_long or held_short\nweights = equal_weight()(is_active)\n\n# Position sizing - ONLY rebalance on first trading day of month\n# Size is always positive; long_and_short_zone determines direction\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\n",
+   "global_timeframe": "1D"
+}

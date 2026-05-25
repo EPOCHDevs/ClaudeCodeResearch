@@ -1,0 +1,17 @@
+{
+   "name": "Weekly Inverse-Vol Portfolio: SPY / TLT / GLD / DBC",
+   "description": "Inverse-volatility weighted portfolio across SPY (equities), TLT (long bonds), GLD (gold), and DBC (commodities). Rebalances every Friday close. Each asset's weight = (1/vol_42d) / sum(1/vol_42d across all 4 assets). No position during the 42-bar warmup period. Fully invested at all times once vol is available. No stops — pure rotation strategy.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Weekly Inverse-Volatility Portfolio: SPY / TLT / GLD / DBC\n#\n# RULES:\n#   - Universe: SPY, TLT, GLD, DBC (4 assets)\n#   - Signal: 42-day rolling annualized historical volatility per asset\n#   - Weighting: w_i = (1/vol_i) / sum(1/vol_j for all j)  [manual arithmetic]\n#   - Rebalance: every Friday close (last trading day of week)\n#   - No position during 42-bar warmup (vol not yet available)\n#   - Fully invested at all times once vol is available\n#   - No stops — pure rotation / risk-parity-lite strategy\n\n# --- Data ---\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# --- Volatility (42-day rolling annualized) ---\n# volatility() expects price levels directly (not returns) — outputs annualized decimal vol\nvol_42d = volatility(period=42)(close)\n\n# --- Rebalance trigger: last trading day of each week (typically Friday) ---\nis_friday = is_period_boundary(period=PeriodType.week, boundary=BoundaryType.end)(index())\n\n# --- Inverse-vol weight numerator: 1/vol per asset ---\n# Guard: only compute when vol is valid (after 42-bar warmup)\ninv_vol = where(is_valid(vol_42d) and vol_42d > 0, 1.0 / vol_42d)\n\n# --- Cross-sectional sum of all inv_vol values (denominator) ---\n# cs_agg runs across all 4 assets at each timestamp, summing their inv_vol\ninv_vol_sum = cs_agg(type=AggregationType.Sum)(inv_vol)\n\n# --- Normalized inverse-vol weight per asset ---\n# w_i = (1/vol_i) / sum(1/vol_j)  — sums to 1.0 across all 4 assets\ninv_vol_weight = where(is_valid(inv_vol) and is_valid(inv_vol_sum) and inv_vol_sum > 0,\n                       inv_vol / inv_vol_sum)\n\n# --- Entry/exit gated to weekly rebalance ---\n# Asset is \"active\" when it has a valid weight (vol warmup complete)\nhas_weight = is_valid(inv_vol_weight) and inv_vol_weight > 0\n\n# Enter on Friday when weight is valid; exit on Friday when weight is no longer valid\nenter_long = is_friday and has_weight\nexit_long  = is_friday and not has_weight\n\n# Hold position between rebalances\nheld = hold_until()(enter=enter_long, exit=exit_long)\n\n# --- Execution: wiring order = zone → sizing ---\nlong_and_short_zone()(long_entry=held)\n\n# Position size = inv-vol weight × 100 (percent of equity)\n# Rebalance only on Fridays — weights lock between rebalances\nposition_size(type=SizeType.percent)(\n    size=inv_vol_weight * 100,\n    rebalance_on=is_friday\n)\n",
+   "global_timeframe": "1D",
+   "thread_id": "150dd26a-df5c-437a-9464-e0803e4d99b4"
+}

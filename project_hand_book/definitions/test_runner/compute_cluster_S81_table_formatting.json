@@ -1,0 +1,11 @@
+{
+  "name": "Compute Cluster S81: Table Formatting Standards",
+  "description": "Tests: CardRenderType formatting standards \u2014 11 types with asset-class conventions.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "src = study_assets()()\nclose = src.c\nret = returns(close)\nvol = volatility(close, method=VolMethod.annualized, period=21)\nz = zscore(window=60)(close)\n\nsummary_table(\n    mode=TableMode.standard,\n    category=\"Formatting\",\n    layout=SummaryTableLayout(\n      title=\"Professional Formatting Standards\",\n      row_size=1, col_size=5,\n      col_headers=[\"Price\", \"Return\", \"Vol (ann)\", \"Z-Score\", \"Vol (bps)\"],\n      cells=[\n        ColumnSpec(grid_row=0, grid_col=0, grid_agg=AggregationType.Last,\n                   type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(grid_row=0, grid_col=1, grid_agg=AggregationType.Last,\n                   type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(grid_row=0, grid_col=2, grid_agg=AggregationType.Last,\n                   type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(grid_row=0, grid_col=3, grid_agg=AggregationType.Last,\n                   type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(grid_row=0, grid_col=4, grid_agg=AggregationType.Last,\n                   type=CardRenderType.BpsFormat, dp=0)\n      ])\n)(close, ret, vol, z, vol)"
+}

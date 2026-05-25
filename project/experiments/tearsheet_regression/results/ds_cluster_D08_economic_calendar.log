@@ -1,0 +1,33 @@
+[ERROR] 2026-03-23 04:02:50.708 AuthCredentialsProvider [135617119947904] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:02:50.715 AuthCredentialsProvider [135617119947904] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:02:50.718] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:02:50.718] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_D08_economic_calendar.json
+[2026-03-23 04:02:50.718] [info] [generate_job_data.cpp:241] Study: DS Cluster D08: Economic Calendar (FRED + Treasury)
+[2026-03-23 04:02:50.718] [info] [generate_job_data.cpp:242] Output: ds_cluster_D08_economic_calendar
+[2026-03-23 04:02:50.718] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:02:50.718] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:02:50.718] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:02:50.718] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:02:50.718] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:02:50.720] [info] [fred_releases.cpp:51] Loaded 322 FRED releases from: /home/ubuntu/EpochDev/EpochBackend/build/data/fred_releases.parquet.gzip
+[2026-03-23 04:02:50.721] [info] [fred_releases.cpp:74] Processed 322 FRED releases
+[2026-03-23 04:02:51.623] [info] [fred_series.cpp:82] Loaded 840371 FRED series from: /home/ubuntu/EpochDev/EpochBackend/build/data/fred_series.parquet.gzip
+[2026-03-23 04:02:55.341] [info] [fred_series.cpp:101] Processed 840371 FRED series
+[2026-03-23 04:02:55.512] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:02:55.515] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=EconomicCalendar
+[2026-03-23 04:02:55.515] [info] [api_cache_dataloader.cpp:781] CrossSectional request [1]: category=EconomicCalendar
+[2026-03-23 04:02:55.515] [info] [api_cache_dataloader.cpp:781] CrossSectional request [2]: category=EconomicIndicator
+[2026-03-23 04:02:55.515] [info] [api_cache_dataloader.cpp:781] CrossSectional request [3]: category=EconomicCalendar
+[2026-03-23 04:02:55.515] [info] [api_cache_dataloader.cpp:781] CrossSectional request [4]: category=EconomicCalendar
+[2026-03-23 04:02:55.689] [error] [cache_orchestrator.cpp:1300] Fetch failed for calendar_src=fred [2019-12-02 - 2026-01-30]: {"error_code":400,"error_message":"Bad Request.  Variable limit is not between 1 and 1000."}
+[2026-03-23 04:02:55.690] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+Study completed successfully
+[2026-03-23 04:02:55.721] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_D08_economic_calendar to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D08_economic_calendar
+[2026-03-23 04:02:55.722] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D08_economic_calendar/config.json
+[2026-03-23 04:02:55.722] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D08_economic_calendar/metadata.json
+[2026-03-23 04:02:55.723] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D08_economic_calendar/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster D08: Economic Calendar (FRED + Treasury)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D08_economic_calendar"
+Type: Research Study

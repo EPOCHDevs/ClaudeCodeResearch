@@ -1,0 +1,13 @@
+{
+   "name": "amfx-eurusd-rate-differential",
+   "description": "amFX reproduction (17JUN22 p1): EURUSD vs Germany/USA rate differential. Original uses 5Y yields but FRED lacks daily German 5Y, so we use 10Y differential (German 10Y monthly OECD minus US 10Y daily DGS10) as proxy. Shows how rate differentials drive EURUSD -- near-perfect co-movement Jul 2021 to Jun 2022. Supports the buy-the-dip thesis when EURUSD undershoots the rate differential.",
+   "data": {
+      "assets": [
+         "EURUSD-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: EURUSD vs RATE DIFFERENTIAL (17JUN22 p1)\n# =============================================================================\n# Brent Donnelly's foundational FX driver chart:\n# - Rate differentials drive currencies\n# - Original: Germany 5Y minus US 5Y (Bloomberg DE5YT=RR, US5YT=RR)\n# - Proxy: Germany 10Y (FRED monthly IRLTLT01DEM156N) minus US 10Y (FRED daily DGS10)\n# - FRED lacks daily German 5Y yields; 10Y differential captures same dynamic\n# - EURUSD and rate diff move in tandem; divergence signals entry\n# =============================================================================\n\nsrc = market_data_source()()\neurusd = src.c\nidx = index()\n\n# German 10Y yield (monthly, OECD via FRED, ffilled to daily)\nde10_src = economic_indicators(series_id='IRLTLT01DEM156N')()\nde10 = ffill(de10_src.result)\n\n# US 10Y yield (daily, FRED, observation date indexing)\nus10_src = economic_indicators(series_id='DGS10')()\nus10 = ffill(us10_src.result)\n\n# Rate differential: Germany 10Y minus US 10Y\nrate_diff = de10 - us10\n\n# =============================================================================\n# CHART 1: EURUSD and Rate Differential Overlay\n# =============================================================================\nxy_lines(\n    title='Are Rate Differentials Signaling an EUR Recovery?',\n    category='EUR Rate Differential',\n    y_axis_label='DE-US 10Y Rate Diff (%)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='DE-US 10Y Rate Diff', color=Color.Gray),\n        LineSeriesSpec(name='EURUSD', color=Color.Blue)\n    ]),\n    order=0\n)(x_values=idx, y_values=(rate_diff, eurusd))\n"
+}

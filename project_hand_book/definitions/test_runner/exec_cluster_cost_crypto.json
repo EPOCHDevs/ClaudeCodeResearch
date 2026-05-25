@@ -1,10 +1,12 @@
 {
-   "name": "Exec Cluster Cost: Crypto — MakerTaker Commission + 10bps Slippage",
-   "description": "Tests: MakerTaker commission (2/5 bps) + 10bps slippage. Run with --cost crypto",
-   "data": {
-      "assets": ["SPY-Stocks", "QQQ-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC CLUSTER COST: Crypto-Style MakerTaker Commission\n# Run with: --cost crypto --cash 100000\n# Validates: MakerTaker commission model (2bps maker, 5bps taker), BPS slippage\n# Uses equity assets as proxy (validates cost model, not asset class)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: RSI mean reversion (high frequency for many trades) ===\nrsi_val = rsi(period=7)(close)\nentry = rsi_val < 25\nexit = rsi_val > 75\nheld = hold_until()(enter=entry, exit=exit)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=50)\nstop_loss(unit=StopUnit.percent)(distance=3)\ntake_profit(unit=StopUnit.percent)(distance=5)\n",
-   "global_timeframe": "1D"
+  "name": "Exec Cluster Cost: Crypto \u2014 MakerTaker Commission + 10bps Slippage",
+  "description": "Tests: MakerTaker commission (2/5 bps) + 10bps slippage. Run with --cost crypto",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC CLUSTER COST: Crypto-Style MakerTaker Commission\n# Run with: --cost crypto --cash 100000\n# Validates: MakerTaker commission model (2bps maker, 5bps taker), BPS slippage\n# Uses equity assets as proxy (validates cost model, not asset class)\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SIGNAL: RSI mean reversion (high frequency for many trades) ===\nrsi_val = rsi(close, 7)\nentry = rsi_val < 25\nexit = rsi_val > 75\nheld = hold_until(entry, exit)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=50)\nstop_loss(unit=StopUnit.percent)(distance=3)\ntake_profit(unit=StopUnit.percent)(distance=5)\n"
 }

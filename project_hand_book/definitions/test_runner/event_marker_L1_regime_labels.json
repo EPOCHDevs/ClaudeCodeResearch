@@ -1,0 +1,10 @@
+{
+  "name": "Event Marker L1: Regime Labels (PrimaryBadge + TextFormat)",
+  "description": "Tests L1 regime labels: conditional_select for string badge in PrimaryBadge, RSI in Hero, price in Subtitle. Daily EOD.",
+  "data": {
+    "assets": ["SPY-Stocks"],
+    "source": "polygon"
+  },
+  "data_foundation": "EndOfDay",
+  "source": "src = study_assets()\nclose = src.c\n\nrsi_14 = rsi(close, 14)\nregime_label = conditional_select(rsi_14 > 60, 'Bullish', 'Neutral')\nis_signal = rsi_14 > 60\n\nevent_marker(schema=EventMarkerSchema(title='Regime Signal', icon=Icon.AlertTriangleIcon, schemas=[\n    ColumnSpec(title='Regime', type=CardRenderType.TextFormat, card_slot=CardSlot.PrimaryBadge),\n    ColumnSpec(title='RSI', dp=1, type=CardRenderType.DecimalFormat, card_slot=CardSlot.Hero),\n    ColumnSpec(title='Close', dp=2, type=CardRenderType.MonetaryFormat, card_slot=CardSlot.Subtitle),\n    ColumnSpec(table_is_filter=True, table_visible=False)\n]))((regime_label, rsi_14, close, is_signal))\n\nxy_lines(title='RSI 14', category='Analysis', series=LineSeriesSchema(series=[\n    LineSeriesSpec(name='RSI', color=Color.Cyan)\n]))(x_values=index(), y_values=rsi_14)\n"
+}

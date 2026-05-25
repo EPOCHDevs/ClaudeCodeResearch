@@ -1,0 +1,14 @@
+{
+   "name": "NVDA/AMD Pairs Trading — Ratio MA Crossover",
+   "description": "Market-neutral pairs trading strategy for NVDA and AMD using the NVDA/AMD price ratio moving average crossover as the signal. Computes 20-day and 60-day SMA of the ratio. When the 20d MA crosses below the 60d MA (AMD gaining relative strength), goes LONG AMD / SHORT NVDA. When the 20d MA crosses back above the 60d MA, reverses to LONG NVDA / SHORT AMD. Always in a position with 50% long / 50% short for dollar-neutral execution.",
+   "data": {
+      "assets": [
+         "NVDA-Stocks",
+         "AMD-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# NVDA/AMD Pairs Trading — Ratio MA Crossover\n# Signal: NVDA/AMD price ratio with dual SMA crossover\n#\n# RULES:\n# - Compute NVDA/AMD price ratio daily\n# - 20-day SMA and 60-day SMA of the ratio\n# - 20d crosses BELOW 60d → LONG AMD, SHORT NVDA (AMD gaining relative strength)\n# - 20d crosses ABOVE 60d → LONG NVDA, SHORT AMD (NVDA gaining relative strength)\n# - Always in position — flips on each crossover (no flat periods)\n# - Dollar-neutral: 50% long + 50% short\n\n# --- Reference Data ---\n# Load NVDA and AMD price data for ratio computation on all assets\nnvda_ref = reference_stocks(ticker=\"NVDA\")()\namd_ref = reference_stocks(ticker=\"AMD\")()\n\nnvda_close = nvda_ref.c\namd_close = amd_ref.c\n\n# --- Price Ratio & Moving Averages ---\n# NVDA/AMD price ratio\nratio = nvda_close / amd_close\n\n# Dual SMA on the ratio\nratio_ma20 = ma(period=20)(ratio)\nratio_ma60 = ma(period=60)(ratio)\n\n# --- Signal Logic ---\n# 20d MA crosses BELOW 60d MA → ratio declining → AMD gaining relative strength\n# Action: LONG AMD, SHORT NVDA\namd_strong = crossunder(ratio_ma20, ratio_ma60)\n\n# 20d MA crosses ABOVE 60d MA → ratio rising → NVDA gaining relative strength\n# Action: LONG NVDA, SHORT AMD\nnvda_strong = crossover(ratio_ma20, ratio_ma60)\n\n# Persist signal state: hold AMD-strong regime until NVDA-strong fires (and vice versa)\namd_regime = hold_until()(enter=amd_strong, exit=nvda_strong)\nnvda_regime = hold_until()(enter=nvda_strong, exit=amd_strong)\n\n# --- Per-Asset Direction ---\n# Determine which asset we're running on\nis_nvda = is_asset_ref(ticker=\"NVDA\")()\nis_amd = is_asset_ref(ticker=\"AMD\")()\n\n# NVDA: long in nvda_regime, short in amd_regime\n# AMD: long in amd_regime, short in nvda_regime\nlong_entry = (is_nvda and nvda_regime) or (is_amd and amd_regime)\nshort_entry = (is_nvda and amd_regime) or (is_amd and nvda_regime)\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\n\n# Dollar-neutral: 50% of equity on each leg\nposition_size(type=SizeType.percent)(size=50)\n",
+   "global_timeframe": "1D"
+}

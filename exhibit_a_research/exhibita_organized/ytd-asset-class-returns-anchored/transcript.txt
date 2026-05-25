@@ -1,8 +1,0 @@
-Title: Asset Class Returns In 2025
-Topic: This chart illustrates the full-year 2025 returns of various asset classes including Gold, Emerging Markets, Developed International Stocks, U.S. Large Cap, Commodities, U.S. Mid Cap, U.S. Small Cap, Bonds, U.S. Large Cap Growth, Cash, and Bitcoin.
-Question: How did different asset classes perform in 2025, and which were the best and worst performers?
-Key Takeaways:
-- Gold was the best performing asset class in 2025 with a return of 63.7%, followed by Emerging Markets at 33.7% and Developed International Stocks at 31.3%.
-- Bitcoin was the worst performing asset class in 2025 with a return of -6.6%, while traditional safe havens like Cash (3.2%) and Bonds (6.0%) delivered modest positive returns.
-- U.S. equities showed moderate performance with Large Cap at 17.9%, Mid Cap at 8.7%, and Small Cap at 7.1%, while Commodities returned 17.2%, highlighting the value of geographic and asset class diversification in 2025.
-Source: ExhibitA for Advice

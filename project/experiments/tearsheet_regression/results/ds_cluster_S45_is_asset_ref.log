@@ -1,0 +1,35 @@
+[ERROR] 2026-03-23 04:10:35.297 AuthCredentialsProvider [124073237929088] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:10:35.305 AuthCredentialsProvider [124073237929088] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:10:35.308] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:10:35.308] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_S45_is_asset_ref.json
+[2026-03-23 04:10:35.308] [info] [generate_job_data.cpp:241] Study: DS Cluster S45: is_asset_ref (Asset Filtering)
+[2026-03-23 04:10:35.308] [info] [generate_job_data.cpp:242] Output: ds_cluster_S45_is_asset_ref
+[2026-03-23 04:10:35.308] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:10:35.308] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:10:35.308] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:10:35.308] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:10:35.308] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:10:35.309] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:10:35.313] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:10:35.379] [info] [Table::TransformData] start, 1508 rows, 1 columns
+[2026-03-23 04:10:35.379] [info] [IReporter::GetDashboard] cards rows=1508
+[2026-03-23 04:10:35.379] [info] [Table<Cards>] Expanding struct column 'tuple_pack_0#result'
+[2026-03-23 04:10:35.379] [info] [Table<Cards>::renderCards] start, cells=2, dfCols=2
+[2026-03-23 04:10:35.379] [info] [Table<Cards>::renderCards] cards table added successfully
+[2026-03-23 04:10:35.379] [info] [IReporter::GetDashboard] cards charts=0 tables=1
+[2026-03-23 04:10:35.380] [info] [IReporter::TransformData] histogram rows=1508
+[2026-03-23 04:10:35.380] [info] [IReporter::GetDashboard] histogram rows=1508
+[2026-03-23 04:10:35.380] [info] [IReporter::GetDashboard] histogram charts=0 tables=0
+Study completed successfully
+[2026-03-23 04:10:35.392] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_S45_is_asset_ref to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S45_is_asset_ref
+[2026-03-23 04:10:35.393] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S45_is_asset_ref/config.json
+[2026-03-23 04:10:35.393] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S45_is_asset_ref/metadata.json
+[2026-03-23 04:10:35.393] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_S45_is_asset_ref (total: 282 bytes)
+[2026-03-23 04:10:35.393] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_S45_is_asset_ref
+[2026-03-23 04:10:35.394] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S45_is_asset_ref/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster S45: is_asset_ref (Asset Filtering)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S45_is_asset_ref"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_S45_is_asset_ref/tearsheets"

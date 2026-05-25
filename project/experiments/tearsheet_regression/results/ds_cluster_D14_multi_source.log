@@ -1,0 +1,40 @@
+[ERROR] 2026-03-23 04:06:08.144 AuthCredentialsProvider [138619175316608] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:06:08.152 AuthCredentialsProvider [138619175316608] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:06:08.155] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:06:08.155] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_D14_multi_source.json
+[2026-03-23 04:06:08.155] [info] [generate_job_data.cpp:241] Study: DS Cluster D14: Multi-Source Composition
+[2026-03-23 04:06:08.155] [info] [generate_job_data.cpp:242] Output: ds_cluster_D14_multi_source
+[2026-03-23 04:06:08.155] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:06:08.155] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:06:08.155] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:06:08.155] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:06:08.155] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:06:08.157] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:06:08.161] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=EconomicIndicator
+[2026-03-23 04:06:08.161] [info] [api_cache_dataloader.cpp:781] CrossSectional request [1]: category=ReferenceAgg
+[2026-03-23 04:06:08.161] [info] [api_cache_dataloader.cpp:781] CrossSectional request [2]: category=ReferenceAgg
+[2026-03-23 04:06:08.161] [info] [api_cache_dataloader.cpp:781] CrossSectional request [3]: category=EconomicIndicator
+[2026-03-23 04:06:08.201] [warning] [cache_orchestrator.cpp:432] PriceBars for VIX-Indices requested from 2020-01-01 but data only exists from 2023-02-14 (asset may not have existed). Returning available data.
+[2026-03-23 04:06:08.219] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:06:08.265] [info] [IReporter::TransformData] histogram rows=1566
+[2026-03-23 04:06:08.266] [info] [IReporter::GetDashboard] histogram rows=1566
+[2026-03-23 04:06:08.266] [info] [IReporter::GetDashboard] histogram charts=1 tables=0
+[2026-03-23 04:06:08.267] [info] [IReporter::TransformData] xy_lines rows=1566
+[2026-03-23 04:06:08.267] [info] [IReporter::GetDashboard] xy_lines rows=1566
+[2026-03-23 04:06:08.269] [info] [IReporter::TransformData] xy_lines rows=1566
+[2026-03-23 04:06:08.269] [info] [IReporter::GetDashboard] xy_lines rows=1566
+[2026-03-23 04:06:08.270] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:06:08.271] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:06:08.285] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_D14_multi_source to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D14_multi_source
+[2026-03-23 04:06:08.286] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D14_multi_source/config.json
+[2026-03-23 04:06:08.286] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D14_multi_source/metadata.json
+[2026-03-23 04:06:08.287] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_D14_multi_source (total: 68522 bytes)
+[2026-03-23 04:06:08.287] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_D14_multi_source
+[2026-03-23 04:06:08.288] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D14_multi_source/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster D14: Multi-Source Composition
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D14_multi_source"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D14_multi_source/tearsheets"

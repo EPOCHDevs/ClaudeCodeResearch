@@ -1,0 +1,22 @@
+{
+   "name": "US Industrials/Materials Momentum Long-Only (12M)",
+   "description": "Long-only momentum strategy on 10 US industrial/materials equities (CENX, CLF, CMC, STLD, FCX, SCCO, AA, NUE, X, RS). Uses 12-month (252-day) rate of change as the momentum signal. Goes long the top 3 stocks by momentum, equal-weighted. Rebalances monthly on the first trading day, exiting any position that falls out of the top 3.",
+   "data": {
+      "assets": [
+         "CENX-Stocks",
+         "CLF-Stocks",
+         "CMC-Stocks",
+         "STLD-Stocks",
+         "FCX-Stocks",
+         "SCCO-Stocks",
+         "AA-Stocks",
+         "NUE-Stocks",
+         "X-Stocks",
+         "RS-Stocks"
+      ],
+      "source": "Norgate",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# US Industrials/Materials Momentum Long-Short Strategy\n#\n# RULES:\n# - Universe: 10 US industrial/materials equities (CENX, CLF, CMC, STLD, FCX, SCCO, AA, NUE, X, RS)\n# - Signal: 6-month momentum (126-day Rate of Change)\n# - Selection: Long top 3, Short bottom 3 by momentum\n# - Weighting: Equal weight within long/short portfolios\n# - Rebalancing: Monthly (first trading day)\n\n# Data source - DAILY\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# 6-month momentum (126 trading days)\nmomentum_12m = roc(period=252)(close)\n\n# Cross-sectional selection: top 3 by momentum (long only)\nis_top_3 = cs_select(direction=CSSelectDirection.top, mode=CSSelectMode.count, k=3)(momentum_12m)\n\n# Detect first trading day of month\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# Monthly rebalance signals for LONG positions\nenter_long = is_new_month and is_top_3\nexit_long = is_new_month and not is_top_3\nheld_long = hold_until()(enter=enter_long, exit=exit_long)\n\n# Entry zones (long-only: no short_entry)\nlong_and_short_zone()(long_entry=held_long)\n\n# Equal weight across active long positions\nweights = equal_weight()(held_long)\n\n# Position sizing - rebalance on first trading day of month\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\n",
+   "global_timeframe": "1D"
+}

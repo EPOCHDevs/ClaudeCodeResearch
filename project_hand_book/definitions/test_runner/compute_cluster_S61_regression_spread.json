@@ -1,10 +1,11 @@
 {
-   "name": "Compute Cluster S61: Regression, Hedge Ratio & Spread",
-   "description": "Tests: linear_fit(window). OLS slope (hedge ratio), intercept, residual (spread). Detrending and spread construction for pairs trading.",
-   "data": {
-      "assets": ["SPY-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# COMPUTE CLUSTER S61: Linear Fit (Rolling OLS)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\nref = reference_stocks(ticker=\"QQQ\")()\nref_close = ref.c\n\n# === LINEAR FIT: SPY = slope * QQQ + intercept ===\nfit = linear_fit(window=120)(ref_close, close)\nspread = fit.residual\nhedge = fit.slope\nintcpt = fit.intercept\n\n# === Z-SCORE THE SPREAD ===\nspread_z = zscore(window=20)(spread)\n\n# === REPORTERS ===\nxy_lines(\n    title='OLS Spread (Residual)',\n    category='Regression',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Spread', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=spread)\n\nxy_lines(\n    title='Spread Z-Score',\n    category='Regression',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Z-Score', color=Color.Purple)\n    ])\n)(x_values=index(), y_values=spread_z)\n\nxy_lines(\n    title='Rolling Hedge Ratio (Slope)',\n    category='Regression',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Hedge Ratio', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=hedge)\n",
-   "global_timeframe": "1D"
+  "name": "Compute Cluster S61: Regression, Hedge Ratio & Spread",
+  "description": "Tests: linear_fit(window). OLS slope (hedge ratio), intercept, residual (spread). Detrending and spread construction for pairs trading.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S61: Linear Fit (Rolling OLS)\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\nref = reference_stocks(ticker=\"QQQ\")()\nref_close = ref.c\n\n# === LINEAR FIT: SPY = slope * QQQ + intercept ===\nfit = linear_fit(window=120)(ref_close, close)\nspread = fit.residual\nhedge = fit.slope\nintcpt = fit.intercept\n\n# === Z-SCORE THE SPREAD ===\nspread_z = zscore(window=20)(spread)\n\n# === REPORTERS ===\nxy_lines(\n    title='OLS Spread (Residual)',\n    category='Regression',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Spread', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=spread)\n\nxy_lines(\n    title='Spread Z-Score',\n    category='Regression',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Z-Score', color=Color.Purple)\n    ])\n)(x_values=index(), y_values=spread_z)\n\nxy_lines(\n    title='Rolling Hedge Ratio (Slope)',\n    category='Regression',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Hedge Ratio', color=Color.Orange)\n    ])\n)(x_values=index(), y_values=hedge)\n"
 }

@@ -20,30 +20,21 @@ import sys
 import os
 import asyncio
 import argparse
+import json
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 
 # Add EpochAI to path for provider imports
 sys.path.insert(0, os.path.expanduser("~/EpochDev/EpochAI"))
-# Add proto path for tearsheet parsing helpers
-sys.path.insert(0, os.path.expanduser("~/EpochDev/EpochBackend/packages/epoch-protos/python"))
 
 from agent_src.providers import LocalDataProvider
-
-try:
-    from epoch_protos import table_def_pb2
-    from epoch_protos.summary import format_tearsheet_summary
-    from epoch_protos.converters import cards_to_compact_list
-    HAS_PROTOS = True
-except ImportError:
-    HAS_PROTOS = False
 
 
 def _load_provider_data(job_dir: Path, category: Optional[str] = None):
     """Load tearsheet data via LocalDataProvider.
 
     Returns (provider, categories, tearsheets) where tearsheets maps
-    category -> proto object.
+    category -> dict.
     """
     provider = LocalDataProvider(job_dir)
 
@@ -54,7 +45,7 @@ def _load_provider_data(job_dir: Path, category: Optional[str] = None):
         tearsheets = {}
         for cat in cats:
             try:
-                tearsheets[cat] = await provider.get_tearsheet_proto("", cat)
+                tearsheets[cat] = await provider.get_tearsheet_dict("", cat)
             except FileNotFoundError:
                 pass
         return cats, tearsheets
@@ -63,160 +54,192 @@ def _load_provider_data(job_dir: Path, category: Optional[str] = None):
     return provider, cats, tearsheets
 
 
-def get_cards(tearsheets: Dict) -> Dict[str, Any]:
-    """Get card metrics from tearsheets."""
-    result = {}
-    for cat, ts in tearsheets.items():
-        cards = cards_to_compact_list(ts)
-        result[cat] = {title: {"value": value, "type": vtype} for title, value, vtype in cards}
-    return result
+def _load_dashboard_schemas(job_dir: Path, categories: List[str]):
+    """Load dashboard schemas for all categories."""
+    provider = LocalDataProvider(job_dir)
 
+    async def _load():
+        schemas = {}
+        for cat in categories:
+            try:
+                schemas[cat] = await provider.get_dashboard_schema("", cat)
+            except (FileNotFoundError, Exception):
+                pass
+        return schemas
 
-def get_charts(tearsheets: Dict) -> Dict[str, List[Dict]]:
-    """Get chart info from tearsheets."""
-    result = {}
-    for cat, ts in tearsheets.items():
-        charts = []
-        for chart in ts.charts.charts:
-            chart_type_name = chart.WhichOneof('chart_type') if hasattr(chart, 'WhichOneof') else None
-            if not chart_type_name:
-                continue
-            defn = getattr(chart, chart_type_name, None)
-            if defn is None:
-                continue
-            chart_def = getattr(defn, 'chart_def', None)
-            chart_info = {
-                "title": chart_def.title if chart_def else "?",
-                "type": chart_type_name.replace('_def', ''),
-                "category": chart_def.category if chart_def else "?",
-            }
-            if chart_type_name in ('numeric_lines_def', 'lines_def'):
-                chart_info["series_count"] = len(defn.lines)
-            elif chart_type_name == 'pie_def':
-                slices = []
-                for ring in defn.data:
-                    for pt in ring.points:
-                        slices.append({"name": pt.name, "value": pt.y})
-                chart_info["slice_count"] = len(slices)
-                chart_info["slices"] = slices
-            elif chart_type_name == 'histogram_def':
-                if defn.series:
-                    chart_info["series_count"] = len(defn.series)
-                    chart_info["bin_count"] = sum(len(s.bins) for s in defn.series)
-                    bins_data = []
-                    for s in defn.series:
-                        series_bins = [{"start": b.bin_start, "end": b.bin_end, "count": b.count} for b in s.bins]
-                        bins_data.append({"name": s.name, "bins": series_bins})
-                    chart_info["histogram_series"] = bins_data
-                    if defn.HasField('analytics'):
-                        chart_info["analytics"] = {
-                            "mean": defn.analytics.mean,
-                            "std_dev": defn.analytics.std_dev,
-                            "sample_count": defn.analytics.sample_count,
-                        }
-                else:
-                    chart_info["bin_count"] = defn.bins_count
-            elif chart_type_name == 'box_plot_def':
-                chart_info["type"] = "box"
-            charts.append(chart_info)
-        result[cat] = charts
-    return result
-
-
-def get_tables(tearsheets: Dict) -> Dict[str, List[Dict]]:
-    """Get table info from tearsheets."""
-    result = {}
-    for cat, ts in tearsheets.items():
-        tables = []
-        for table in ts.tables.tables:
-            row_count = 0
-            col_count = len(table.columns)
-
-            if table.flavor == table_def_pb2.TABLE_FLAVOR_DETAILED:
-                if table.HasField('data') and table.data.rows:
-                    row_count = len(table.data.rows)
-            elif table.flavor == table_def_pb2.TABLE_FLAVOR_SUMMARY:
-                if table.HasField('layout'):
-                    row_count = table.layout.row_size
-                    col_count = table.layout.col_size
-                elif table.HasField('summary_data'):
-                    row_count = len(table.summary_data.cells)
-            elif table.flavor == table_def_pb2.TABLE_FLAVOR_CARDS:
-                if table.HasField('cards_data'):
-                    row_count = len(table.cards_data.cells)
-
-            tables.append({
-                "title": table.title,
-                "rows": row_count,
-                "cols": col_count,
-                "category": table.category,
-                "flavor": table_def_pb2.TableFlavor.Name(table.flavor) if table.flavor else "Unknown",
-            })
-        result[cat] = tables
-    return result
-
-
-def print_summary(tearsheets: Dict, verbose: bool = False) -> None:
-    """Print full tearsheet summary."""
-    for cat, ts in tearsheets.items():
-        print("=" * 70)
-        print(f"TEARSHEET: {cat}")
-        print("=" * 70)
-
-        summary = format_tearsheet_summary(ts, cat, max_cards=50)
-        print(summary)
-
-        if verbose:
-            print("\n--- Raw Card Values ---")
-            cards = cards_to_compact_list(ts)
-            for title, value, vtype in cards:
-                print(f"  {title}: {value} ({vtype})")
+    return asyncio.run(_load())
 
 
 def print_cards(tearsheets: Dict) -> None:
-    """Print card metrics."""
-    cards = get_cards(tearsheets)
-    for cat, metrics in cards.items():
-        print(f"\n{cat}:")
-        for name, info in metrics.items():
-            print(f"  {name}: {info['value']} ({info['type']})")
+    """Print card metrics from tearsheet dicts."""
+    for cat, ts in tearsheets.items():
+        cards = ts.get("cards", [])
+        if not cards:
+            continue
+        print(f"\n{'='*60}")
+        print(f"CARDS: {cat}")
+        print(f"{'='*60}")
+        for card in cards:
+            title = card.get("title", "?")
+            value = card.get("value", "?")
+            vtype = card.get("type", "?")
+            color = card.get("color", "")
+            color_str = f" [{color}]" if color else ""
+            print(f"  {title}: {value} ({vtype}){color_str}")
 
 
-def print_charts(tearsheets: Dict) -> None:
-    """Print chart info."""
-    charts = get_charts(tearsheets)
-    for cat, chart_list in charts.items():
-        print(f"\n{cat} Charts:")
-        for chart in chart_list:
-            extra = ""
-            if "slice_count" in chart:
-                total = sum(s["value"] for s in chart["slices"])
-                if total > 0:
-                    parts = [f"{s['name']}={s['value']/total*100:.1f}%" for s in chart["slices"]]
-                else:
-                    parts = [f"{s['name']}={s['value']:.2f}" for s in chart["slices"]]
-                extra = f" ({chart['slice_count']} slices: {', '.join(parts)})"
-            elif "series_count" in chart and "histogram_series" in chart:
-                extra = f" ({chart['bin_count']} bins, {chart['series_count']} series)"
-                if "analytics" in chart:
-                    a = chart["analytics"]
-                    extra += f" [mean={a['mean']:.4f}, std={a['std_dev']:.4f}, n={a['sample_count']}]"
-            elif "series_count" in chart:
-                extra = f" ({chart['series_count']} series)"
-            elif "bin_count" in chart:
-                extra = f" ({chart['bin_count']} bins)"
-            elif "box_count" in chart:
-                extra = f" ({chart['box_count']} boxes)"
-            print(f"  {chart['title']}: {chart['type']}{extra} [{chart['category']}]")
+def print_charts(tearsheets: Dict, schemas: Dict, verbose: bool = False) -> None:
+    """Print chart info from tearsheet dicts + dashboard schemas."""
+    for cat, ts in tearsheets.items():
+        schema = schemas.get(cat, {})
+        charts = schema.get("charts", [])
+        if not charts:
+            continue
+        print(f"\n{'='*60}")
+        print(f"CHARTS: {cat}")
+        print(f"{'='*60}")
+        for i, chart in enumerate(charts):
+            title = chart.get("title", "untitled")
+            chart_type = chart.get("type", "?")
+            category = chart.get("category", "?")
+            data_id = chart.get("data_id", "")
+            series = chart.get("series", [])
+            bar_series = chart.get("bar_series", [])
+            scatter_series = chart.get("scatter_series", [])
+
+            all_series = series + bar_series + scatter_series
+            series_names = [s.get("name", "?") for s in all_series]
+
+            y_axis = chart.get("y_axis", {})
+            x_axis = chart.get("x_axis", {})
+            y_label = y_axis.get("label", "")
+            y_type = y_axis.get("value_type", "")
+            ref_lines = chart.get("reference_lines", [])
+
+            print(f"\n  [{i}] {title}")
+            print(f"      Type: {chart_type} | Category: {category}")
+            if series_names:
+                print(f"      Series ({len(all_series)}): {', '.join(series_names)}")
+            if y_label:
+                print(f"      Y-axis: {y_label} ({y_type})")
+            if ref_lines:
+                for rl in ref_lines:
+                    print(f"      RefLine: value={rl.get('value')}, color={rl.get('color')}")
+            if data_id:
+                print(f"      Data: {data_id}")
+
+            # If verbose, try to load the arrow data
+            if verbose and data_id:
+                _print_chart_data_summary(tearsheets, cat, data_id, all_series)
 
 
-def print_tables(tearsheets: Dict) -> None:
-    """Print table info."""
-    tables = get_tables(tearsheets)
-    for cat, table_list in tables.items():
-        print(f"\n{cat} Tables:")
-        for table in table_list:
-            print(f"  {table['title']}: {table['rows']}x{table['cols']} [{table['category']}] {table['flavor']}")
+def _print_chart_data_summary(tearsheets: Dict, cat: str, data_id: str, series: List) -> None:
+    """Load arrow data for a chart and print summary stats."""
+    try:
+        import pyarrow.ipc as ipc
+        import pyarrow as pa
+
+        # Find the arrow file - check tearsheet dir
+        ts = tearsheets.get(cat, {})
+        # The data is typically at tearsheets/<cat>/<data_id>.arrow
+        # We need to find it from the job dir
+    except ImportError:
+        pass
+
+
+def print_tables(tearsheets: Dict, schemas: Dict) -> None:
+    """Print table info from tearsheet dicts + dashboard schemas."""
+    for cat, ts in tearsheets.items():
+        schema = schemas.get(cat, {})
+        tables = schema.get("tables", []) if schema else []
+
+        # Also check tearsheet dict for tables
+        ts_tables = ts.get("tables", [])
+        all_tables = tables or ts_tables
+
+        if not all_tables:
+            continue
+        print(f"\n{'='*60}")
+        print(f"TABLES: {cat}")
+        print(f"{'='*60}")
+        for i, table in enumerate(all_tables):
+            title = table.get("title", "untitled")
+            category = table.get("category", "?")
+            rows = table.get("rows", "?")
+            cols = table.get("cols", "?")
+
+            # For summary tables with layout
+            layout = table.get("layout", {})
+            if layout:
+                row_headers = layout.get("row_headers", [])
+                col_headers = layout.get("col_headers", [])
+                cells = layout.get("cells", [])
+                print(f"\n  [{i}] {title} [{category}]")
+                print(f"      Layout: {len(row_headers)}x{len(col_headers)}")
+                if row_headers:
+                    print(f"      Rows: {', '.join(row_headers)}")
+                if col_headers:
+                    print(f"      Cols: {', '.join(col_headers)}")
+                if cells:
+                    for cell in cells:
+                        val = cell.get("value", cell.get("formatted_value", "?"))
+                        cell_title = cell.get("title", "")
+                        r, c = cell.get("grid_row", "?"), cell.get("grid_col", "?")
+                        print(f"      [{r},{c}] {cell_title}: {val}")
+            else:
+                print(f"\n  [{i}] {title}: {rows}x{cols} [{category}]")
+
+
+def print_full_summary(tearsheets: Dict, schemas: Dict, verbose: bool = False) -> None:
+    """Print everything."""
+    for cat in tearsheets:
+        print(f"\n{'='*70}")
+        print(f"TEARSHEET: {cat}")
+        print(f"{'='*70}")
+
+        ts = tearsheets[cat]
+        schema = schemas.get(cat, {})
+
+        # Cards
+        cards = ts.get("cards", [])
+        if cards:
+            print(f"\n  --- Cards ({len(cards)}) ---")
+            for card in cards:
+                title = card.get("title", "?")
+                value = card.get("value", "?")
+                vtype = card.get("type", "")
+                print(f"    {title}: {value} ({vtype})")
+
+        # Charts
+        charts = schema.get("charts", [])
+        if charts:
+            print(f"\n  --- Charts ({len(charts)}) ---")
+            for chart in charts:
+                title = chart.get("title", "untitled")
+                ctype = chart.get("type", "?")
+                all_series = chart.get("series", []) + chart.get("bar_series", []) + chart.get("scatter_series", [])
+                names = [s.get("name", "?") for s in all_series]
+                y_label = chart.get("y_axis", {}).get("label", "")
+                data_id = chart.get("data_id", "")
+                extra = f" | y={y_label}" if y_label else ""
+                print(f"    {title}: {ctype} ({len(all_series)} series: {', '.join(names)}){extra}")
+                if data_id:
+                    print(f"      data_id={data_id}")
+
+        # Tables
+        tables = schema.get("tables", [])
+        if tables:
+            print(f"\n  --- Tables ({len(tables)}) ---")
+            for table in tables:
+                title = table.get("title", "untitled")
+                print(f"    {title}")
+
+        # Event markers
+        event_markers = schema.get("event_marker_notes", ts.get("event_markers", {}))
+        if event_markers:
+            print(f"\n  --- Event Markers ---")
+            for key, val in event_markers.items():
+                print(f"    {key}: {val}")
 
 
 def main():
@@ -229,16 +252,12 @@ def main():
     parser.add_argument("--verbose", "-v", action="store_true", help="Show raw values")
     args = parser.parse_args()
 
-    if not HAS_PROTOS:
-        print("Error: epoch_protos not installed.")
-        print("Run: pip install -e /home/adesola/EpochDev/EpochBackend/packages/epoch-protos/python")
-        sys.exit(1)
-
     if not args.job_folder.exists():
         print(f"Error: Directory not found: {args.job_folder}")
         sys.exit(1)
 
     _, cats, tearsheets = _load_provider_data(args.job_folder, args.category)
+    schemas = _load_dashboard_schemas(args.job_folder, cats)
 
     if not tearsheets:
         print(f"No tearsheets found in {args.job_folder}")
@@ -247,11 +266,11 @@ def main():
     if args.cards:
         print_cards(tearsheets)
     elif args.charts:
-        print_charts(tearsheets)
+        print_charts(tearsheets, schemas, args.verbose)
     elif args.tables:
-        print_tables(tearsheets)
+        print_tables(tearsheets, schemas)
     else:
-        print_summary(tearsheets, args.verbose)
+        print_full_summary(tearsheets, schemas, args.verbose)
 
 
 if __name__ == "__main__":

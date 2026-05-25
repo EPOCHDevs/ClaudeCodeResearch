@@ -1,8 +1,0 @@
-Title: How Often The S&P 500 Has Stayed Near Record Highs
-Topic: This chart tracks the number of consecutive trading days the S&P 500 has stayed within 3% of its all-time highs since 1950, highlighting periods of extended market strength.
-Question: How often and for how long has the S&P 500 remained close to its all-time highs throughout history?
-Key Takeaways:
-- The S&P 500 has historically experienced extended periods near record highs, with the most notable sustained streak occurring in the late 1990s when the market stayed within 3% of all-time highs for over 350 consecutive trading days.
-- As of February 22, 2025, the S&P 500 had been within 3% of its all-time high for approximately 70 consecutive trading days, a meaningful but modest streak by historical standards.
-- While markets have historically remained near record highs for extended periods during strong economic cycles, investors should remember that conditions can change and past trends may not repeat.
-Source: ExhibitA for Advice

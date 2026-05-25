@@ -1,0 +1,16 @@
+{
+  "name": "Weekly Inverse-Volatility Portfolio (SPY/TLT/GLD/DBC)",
+  "description": "Long-only weekly-rebalanced portfolio across SPY, TLT, GLD, and DBC. Weights are inverse of 21-day annualized realized volatility, normalized to sum to 100% with a 40% per-asset cap. Rebalances every Monday (first trading day of the week). No stop-loss or take-profit \u2014 rebalancing is the sole exit mechanism. Auto-generated tearsheet for performance measurement.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "TLT-Stocks",
+      "GLD-Stocks",
+      "DBC-Stocks"
+    ],
+    "source": "polygon",
+    "cache_dir": "/home/ubuntu/EpochDev/ClaudeCodeResearch/script_templates/market_data"
+  },
+  "source": "\n# =============================================================================\n# Weekly Inverse-Volatility Portfolio: SPY, TLT, GLD, DBC\n# =============================================================================\n# Weights = 1/vol(21d), normalized, capped at 40% per asset.\n# Rebalance weekly on Monday open. Long-only, no stops.\n# =============================================================================\n\n# --- Data ---\nsrc = study_assets()\n\n# --- Volatility (21-day annualized) ---\n# volatility() takes close prices and computes annualized vol internally (skill S47)\nvol_21 = volatility(src.c, method=VolMethod.annualized, period=21)\n\n# --- Inverse-Volatility Weights ---\n# inv_vol_weight: cross-sectional inverse-vol weighting with 40% cap\n# All assets always active (long-only buy-and-hold with rebalancing)\nalways_active = src.c > 0\nweights = inv_vol_weight(max_weight=0.4, min_volatility=0.01)(active_mask=always_active, volatility=vol_21)\n\n# --- Rebalance Trigger: Weekly on Monday ---\nts = index().value\nis_rebal = is_period_boundary(period=PeriodType.week, boundary=BoundaryType.start, day_anchor=DayAnchorType.monday)(ts)\n\n# --- Execution ---\n# Long-only: all assets always held long, rebalanced weekly\nlong_and_short_zone()(long_entry=always_active)\n\n# Position sizing: vol-scaled weights, rebalance only on Mondays\nposition_size(type=SizeType.percent)(size=weights.weight * 100, rebalance_on=is_rebal)\n",
+  "data_foundation": "Daily"
+}

@@ -1,0 +1,310 @@
+[0;34m=== Phase 1: Tearsheet Regression Test ===[0m
+
+[0;32mFound 29 studies with 37 tearsheets[0m
+
+  [0;34m323d59a9-a3d8-4436-8110-17d3f2f4400b[0m (1 categories: MSFT-Stocks)
+  [0;34m5d066d8d-df95-4cca-9aad-1d5d727a40d8[0m (1 categories: MSFT-Stocks)
+  [0;34ma2908a55-8ca5-48d7-b0ef-5b2bd447ee2a[0m (1 categories: NVDA-Stocks)
+  [0;34maapl_valuation_multiples_peer_comparison_research[0m (7 categories: ALL, AAPL-Stocks, MSFT-Stocks, AMZN-Stocks, META-Stocks, GOOGL-Stocks, NVDA-Stocks)
+  [0;34mamzn_downside_rate_shock_scenario_research[0m (1 categories: AMZN-Stocks)
+  [0;34mmsft_return_decomposition_research[0m (1 categories: MSFT-Stocks)
+  [0;34mnvda_earnings_revenue_acceleration_research[0m (1 categories: NVDA-Stocks)
+  [0;34mt1_01_aapl_post_earnings_drift_surprise_research[0m (1 categories: AAPL-Stocks)
+  [0;34mt1_02_tlt_cpi_impact_research[0m (1 categories: TLT-Stocks)
+  [0;34mt1_02b_tlt_cpi_intraday_research[0m (3 categories: ZB-Futures, TLT-Stocks, ZN-Futures)
+  [0;34mt1_03_spy_fed_rate_decision_research[0m (1 categories: SPY-Stocks)
+  [0;34mt1_04_aapl_analyst_rating_drift_research[0m (1 categories: AAPL-Stocks)
+  [0;34mt1_05_gc_nfp_gold_impact_research[0m (1 categories: GC-Futures)
+  [0;34mt1_05b_bars_test_daily[0m (1 categories: AAPL-Stocks)
+  [0;34mt1_05b_gc_nfp_intraday_research[0m (1 categories: GC-Futures)
+  [0;34mt1_06_spy_dividend_exdate_research[0m (1 categories: SPY-Stocks)
+  [0;34mt1_07_spy_yield_curve_inversion_research[0m (1 categories: SPY-Stocks)
+  [0;34mt1_08_spy_ism_manufacturing_research[0m (1 categories: SPY-Stocks)
+  [0;34mt1_08b_spy_ism_intraday_research[0m (1 categories: SPY-Stocks)
+  [0;34mt1_09_eurusd_cpi_impact_research[0m (1 categories: ^EURUSD-FX)
+  [0;34mt1_09b_eurusd_cpi_intraday_research[0m (1 categories: ^EURUSD-FX)
+  [0;34mt1_10_tsla_short_volume_spike_research[0m (1 categories: TSLA-Stocks)
+  [0;34mt2_01_aapl_earnings_rating_double_event_research[0m (1 categories: AAPL-Stocks)
+  [0;34mt2_02_tlt_cpi_fed_double_event_research[0m (1 categories: TLT-Stocks)
+  [0;34mt2_03_nvda_earnings_volatility_research[0m (1 categories: NVDA-Stocks)
+  [0;34mt2_04_spy_claims_yield_curve_research[0m (1 categories: SPY-Stocks)
+  [0;34mt2_05_tsla_short_interest_earnings_research[0m (1 categories: TSLA-Stocks)
+  [0;34mt2_06_aapl_gross_margin_drift_research[0m (1 categories: AAPL-Stocks)
+  [0;34mtsla_sentiment_vs_fundamental_deterioration_research[0m (1 categories: TSLA-Stocks)
+
+[0;32mPrepared 29 definitions in /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner[0m
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: 323d59a9-a3d8-4436-8110-17d3f2f4400b[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/323d59a9-a3d8-4436-8110-17d3f2f4400b.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/323d59a9-a3d8-4436-8110-17d3f2f4400b
+run_phase1_regenerate.sh: line 137: 62360 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/323d59a9-a3d8-4436-8110-17d3f2f4400b_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: 5d066d8d-df95-4cca-9aad-1d5d727a40d8[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/5d066d8d-df95-4cca-9aad-1d5d727a40d8.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/5d066d8d-df95-4cca-9aad-1d5d727a40d8
+run_phase1_regenerate.sh: line 137: 62388 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/5d066d8d-df95-4cca-9aad-1d5d727a40d8_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: a2908a55-8ca5-48d7-b0ef-5b2bd447ee2a[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/a2908a55-8ca5-48d7-b0ef-5b2bd447ee2a.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/a2908a55-8ca5-48d7-b0ef-5b2bd447ee2a
+run_phase1_regenerate.sh: line 137: 62416 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/a2908a55-8ca5-48d7-b0ef-5b2bd447ee2a_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: aapl_valuation_multiples_peer_comparison_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/aapl_valuation_multiples_peer_comparison_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/aapl_valuation_multiples_peer_comparison_research
+run_phase1_regenerate.sh: line 137: 62444 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/aapl_valuation_multiples_peer_comparison_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: amzn_downside_rate_shock_scenario_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/amzn_downside_rate_shock_scenario_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/amzn_downside_rate_shock_scenario_research
+run_phase1_regenerate.sh: line 137: 62472 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/amzn_downside_rate_shock_scenario_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: msft_return_decomposition_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/msft_return_decomposition_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/msft_return_decomposition_research
+  [0;32m✓ Generated[0m
+  [0;32m✓[0m MSFT-Stocks: 9 charts, 1 tables, 1 arrow files
+
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: nvda_earnings_revenue_acceleration_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/nvda_earnings_revenue_acceleration_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/nvda_earnings_revenue_acceleration_research
+run_phase1_regenerate.sh: line 137: 62558 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/nvda_earnings_revenue_acceleration_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_01_aapl_post_earnings_drift_surprise_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_01_aapl_post_earnings_drift_surprise_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_01_aapl_post_earnings_drift_surprise_research
+run_phase1_regenerate.sh: line 137: 62586 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_01_aapl_post_earnings_drift_surprise_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_02_tlt_cpi_impact_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_02_tlt_cpi_impact_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_02_tlt_cpi_impact_research
+run_phase1_regenerate.sh: line 137: 62618 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_02_tlt_cpi_impact_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_02b_tlt_cpi_intraday_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_02b_tlt_cpi_intraday_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_02b_tlt_cpi_intraday_research
+run_phase1_regenerate.sh: line 137: 62646 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_02b_tlt_cpi_intraday_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_03_spy_fed_rate_decision_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_03_spy_fed_rate_decision_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_03_spy_fed_rate_decision_research
+run_phase1_regenerate.sh: line 137: 62674 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_03_spy_fed_rate_decision_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_04_aapl_analyst_rating_drift_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_04_aapl_analyst_rating_drift_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_04_aapl_analyst_rating_drift_research
+run_phase1_regenerate.sh: line 137: 62702 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_04_aapl_analyst_rating_drift_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_05_gc_nfp_gold_impact_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_05_gc_nfp_gold_impact_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_05_gc_nfp_gold_impact_research
+run_phase1_regenerate.sh: line 137: 62730 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_05_gc_nfp_gold_impact_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_05b_bars_test_daily[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_05b_bars_test_daily.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_05b_bars_test_daily
+run_phase1_regenerate.sh: line 137: 62758 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_05b_bars_test_daily_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_05b_gc_nfp_intraday_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_05b_gc_nfp_intraday_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_05b_gc_nfp_intraday_research
+run_phase1_regenerate.sh: line 137: 62790 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_05b_gc_nfp_intraday_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_06_spy_dividend_exdate_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_06_spy_dividend_exdate_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_06_spy_dividend_exdate_research
+run_phase1_regenerate.sh: line 137: 62818 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_06_spy_dividend_exdate_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_07_spy_yield_curve_inversion_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_07_spy_yield_curve_inversion_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_07_spy_yield_curve_inversion_research
+run_phase1_regenerate.sh: line 137: 62846 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_07_spy_yield_curve_inversion_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_08_spy_ism_manufacturing_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_08_spy_ism_manufacturing_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_08_spy_ism_manufacturing_research
+run_phase1_regenerate.sh: line 137: 62874 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_08_spy_ism_manufacturing_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_08b_spy_ism_intraday_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_08b_spy_ism_intraday_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_08b_spy_ism_intraday_research
+run_phase1_regenerate.sh: line 137: 62902 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_08b_spy_ism_intraday_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_09_eurusd_cpi_impact_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_09_eurusd_cpi_impact_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_09_eurusd_cpi_impact_research
+run_phase1_regenerate.sh: line 137: 62954 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_09_eurusd_cpi_impact_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_09b_eurusd_cpi_intraday_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_09b_eurusd_cpi_intraday_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_09b_eurusd_cpi_intraday_research
+run_phase1_regenerate.sh: line 137: 62982 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_09b_eurusd_cpi_intraday_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t1_10_tsla_short_volume_spike_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t1_10_tsla_short_volume_spike_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t1_10_tsla_short_volume_spike_research
+run_phase1_regenerate.sh: line 137: 63086 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t1_10_tsla_short_volume_spike_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t2_01_aapl_earnings_rating_double_event_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t2_01_aapl_earnings_rating_double_event_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t2_01_aapl_earnings_rating_double_event_research
+run_phase1_regenerate.sh: line 137: 63114 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t2_01_aapl_earnings_rating_double_event_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t2_02_tlt_cpi_fed_double_event_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t2_02_tlt_cpi_fed_double_event_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t2_02_tlt_cpi_fed_double_event_research
+run_phase1_regenerate.sh: line 137: 63142 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t2_02_tlt_cpi_fed_double_event_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t2_03_nvda_earnings_volatility_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t2_03_nvda_earnings_volatility_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t2_03_nvda_earnings_volatility_research
+run_phase1_regenerate.sh: line 137: 63170 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t2_03_nvda_earnings_volatility_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t2_04_spy_claims_yield_curve_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t2_04_spy_claims_yield_curve_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t2_04_spy_claims_yield_curve_research
+run_phase1_regenerate.sh: line 137: 63198 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t2_04_spy_claims_yield_curve_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t2_05_tsla_short_interest_earnings_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t2_05_tsla_short_interest_earnings_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t2_05_tsla_short_interest_earnings_research
+run_phase1_regenerate.sh: line 137: 63226 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t2_05_tsla_short_interest_earnings_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: t2_06_aapl_gross_margin_drift_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/t2_06_aapl_gross_margin_drift_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/t2_06_aapl_gross_margin_drift_research
+run_phase1_regenerate.sh: line 137: 63254 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/t2_06_aapl_gross_margin_drift_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mRunning: tsla_sentiment_vs_fundamental_deterioration_research[0m
+  Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/definitions/test_runner/tsla_sentiment_vs_fundamental_deterioration_research.json
+  Period: 2015-01-01 → 2025-12-31
+  Output: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/regenerated/research_studies/test_runner/tsla_sentiment_vs_fundamental_deterioration_research
+run_phase1_regenerate.sh: line 137: 63282 Aborted                 (core dumped) "$GENERATOR" "$def_file" --start "$start_date" --end "$end_date" --name "$study" > "$RESULTS_DIR/${study}_generate.log" 2>&1
+  [0;31m✗ Generation failed[0m
+  See: /home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results/tsla_sentiment_vs_fundamental_deterioration_research_generate.log
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+[0;34mPhase 1 Summary[0m
+[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m
+  [0;32mPassed:[0m  1
+  [0;31mFailed:[0m  28
+  [1;33mSkipped:[0m 0
+
+[0;31mFailed studies:[0m
+  [0;31m✗[0m 323d59a9-a3d8-4436-8110-17d3f2f4400b
+  [0;31m✗[0m 5d066d8d-df95-4cca-9aad-1d5d727a40d8
+  [0;31m✗[0m a2908a55-8ca5-48d7-b0ef-5b2bd447ee2a
+  [0;31m✗[0m aapl_valuation_multiples_peer_comparison_research
+  [0;31m✗[0m amzn_downside_rate_shock_scenario_research
+  [0;31m✗[0m nvda_earnings_revenue_acceleration_research
+  [0;31m✗[0m t1_01_aapl_post_earnings_drift_surprise_research
+  [0;31m✗[0m t1_02_tlt_cpi_impact_research
+  [0;31m✗[0m t1_02b_tlt_cpi_intraday_research
+  [0;31m✗[0m t1_03_spy_fed_rate_decision_research
+  [0;31m✗[0m t1_04_aapl_analyst_rating_drift_research
+  [0;31m✗[0m t1_05_gc_nfp_gold_impact_research
+  [0;31m✗[0m t1_05b_bars_test_daily
+  [0;31m✗[0m t1_05b_gc_nfp_intraday_research
+  [0;31m✗[0m t1_06_spy_dividend_exdate_research
+  [0;31m✗[0m t1_07_spy_yield_curve_inversion_research
+  [0;31m✗[0m t1_08_spy_ism_manufacturing_research
+  [0;31m✗[0m t1_08b_spy_ism_intraday_research
+  [0;31m✗[0m t1_09_eurusd_cpi_impact_research
+  [0;31m✗[0m t1_09b_eurusd_cpi_intraday_research
+  [0;31m✗[0m t1_10_tsla_short_volume_spike_research
+  [0;31m✗[0m t2_01_aapl_earnings_rating_double_event_research
+  [0;31m✗[0m t2_02_tlt_cpi_fed_double_event_research
+  [0;31m✗[0m t2_03_nvda_earnings_volatility_research
+  [0;31m✗[0m t2_04_spy_claims_yield_curve_research
+  [0;31m✗[0m t2_05_tsla_short_interest_earnings_research
+  [0;31m✗[0m t2_06_aapl_gross_margin_drift_research
+  [0;31m✗[0m tsla_sentiment_vs_fundamental_deterioration_research
+
+Aggregate: 9 charts, 1 tables, 7 cards, 1 Arrow files
+Chart types: {"Scatter": 1, "NumericLines": 7, "Histogram": 1}
+Table flavors: {"Cards": 1}
+
+Results saved to: [0;32m/home/ubuntu/EpochDev/ClaudeCodeResearch/project/experiments/tearsheet_regression/results[0m

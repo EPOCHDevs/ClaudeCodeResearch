@@ -1,0 +1,40 @@
+[ERROR] 2026-03-23 04:14:24.381 AuthCredentialsProvider [125383087946880] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:14:24.388 AuthCredentialsProvider [125383087946880] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:14:24.391] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:14:24.391] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/repro_downsample_sparse_bug.json
+[2026-03-23 04:14:24.391] [info] [generate_job_data.cpp:241] Study: Repro: downsample(max) on sparse session_window output
+[2026-03-23 04:14:24.391] [info] [generate_job_data.cpp:242] Output: repro_downsample_sparse_bug
+[2026-03-23 04:14:24.391] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:14:24.391] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:14:24.391] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:14:24.391] [info] [generate_job_data.cpp:251] Timeframe: 1Min
+[2026-03-23 04:14:24.391] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:14:24.393] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:14:24.396] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:14:24.815] [warning] [cache_orchestrator.cpp:945] loadDayBuckets: SPY-Stocks is missing 58 weekday files in range [2020-01-01 - 2025-12-31]. First missing: 2020-01-01, Last missing: 2025-12-25. Data may have gaps.
+[2026-03-23 04:14:28.352] [info] [IReporter::TransformData] xy_lines rows=510228
+[2026-03-23 04:14:28.352] [info] [IReporter::GetDashboard] xy_lines rows=510228
+[2026-03-23 04:14:29.169] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:14:44.108] [info] [IReporter::TransformData] xy_lines rows=510228
+[2026-03-23 04:14:44.108] [info] [IReporter::GetDashboard] xy_lines rows=510228
+[2026-03-23 04:14:44.909] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:14:58.658] [info] [Table::TransformData] start, 510228 rows, 1 columns
+[2026-03-23 04:14:58.658] [info] [IReporter::GetDashboard] summary_table rows=510228
+[2026-03-23 04:14:58.658] [info] [Table<Summary>] Expanding struct column 'tuple_pack_0#result'
+[2026-03-23 04:14:58.661] [info] [Table<Summary>::renderSummary] start, rows=2, cells=4, dfCols=4
+[2026-03-23 04:14:58.661] [warning] [Table<Summary>] Aggregation returned null for column '$1'
+[2026-03-23 04:14:58.661] [info] [Table<Summary>::renderSummary] table added successfully
+[2026-03-23 04:14:58.661] [info] [IReporter::GetDashboard] summary_table charts=0 tables=1
+Study completed successfully
+[2026-03-23 04:15:02.170] [info] [job_persister.cpp:109] Persisting job data for user test_runner job repro_downsample_sparse_bug to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/repro_downsample_sparse_bug
+[2026-03-23 04:15:02.205] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/repro_downsample_sparse_bug/config.json
+[2026-03-23 04:15:02.205] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/repro_downsample_sparse_bug/metadata.json
+[2026-03-23 04:15:02.211] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job repro_downsample_sparse_bug (total: 16330934 bytes)
+[2026-03-23 04:15:02.211] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job repro_downsample_sparse_bug
+[2026-03-23 04:15:02.212] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/repro_downsample_sparse_bug/manifest.json
+
+=== Generation Complete ===
+Study: Repro: downsample(max) on sparse session_window output
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/repro_downsample_sparse_bug"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/repro_downsample_sparse_bug/tearsheets"

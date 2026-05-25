@@ -1,0 +1,13 @@
+{
+   "name": "Copper/Gold Ratio ROC — SPY Long/Flat Strategy",
+   "description": "Macro signal strategy that goes long SPY when the copper/gold ratio 60-day rate of change is positive (> 0%), and flat otherwise. The copper/gold ratio (HG/GC continuous futures, unadjusted) is used as a leading indicator for economic growth expectations. Position: 100% of equity in SPY when signal is active, 0% (flat) when signal is off.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "Norgate",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Copper/Gold Ratio ROC — SPY Long/Flat Strategy\n#\n# Signal logic:\n#   - Copper/Gold ratio = HG continuous close / GC continuous close (both NoAdjustment)\n#   - 60-day ROC = (ratio / ratio_60_bars_ago) - 1\n#   - Long SPY (100% equity) when 60d ROC > 10% (0.10 in decimal)\n#   - Flat when 60d ROC <= 10%\n#\n# Both HG and GC use LiquidityBased rollover + NoAdjustment to preserve\n# true price levels for ratio computation (avoids additive adjustment distortion).\n\n# --- SPY Data (traded asset) ---\nsrc = market_data_source(timeframe=1D)()\n\n# --- HG (Copper) Reference Futures ---\n# Using common_reference_futures directly (no continuation needed for a ratio signal —\n# the ratio is used as a momentum/regime indicator, not for price-level analysis).\n# keep_last resolution is acceptable here: both legs use the same resolution method,\n# so any contract-selection noise cancels in the ratio.\nhg_ref = common_reference_futures(ticker=ReferenceFutures.HG)()\n\n# --- GC (Gold) Reference Futures ---\ngc_ref = common_reference_futures(ticker=ReferenceFutures.GC)()\n\n# --- Copper/Gold Ratio ---\n# Ratio rises when copper outperforms gold → risk-on / growth signal\ncu_au_ratio = hg_ref.c / gc_ref.c\n\n# --- 60-Day Rate of Change on the Ratio ---\n# roc outputs decimal fraction: 0.10 = 10% change\nratio_roc_60 = roc(period=60)(cu_au_ratio)\n\n# --- Signal ---\n# Long when 60d ROC > 10%, flat otherwise\nlong_signal = ratio_roc_60 > 0.0\n\n# --- Execution ---\n# Long-only: no short_entry wired (strategy is long or flat, never short)\nlong_and_short_zone()(long_entry=long_signal)\n\n# 100% of equity allocated when long, 0% when flat\nposition_size(type=SizeType.percent)(size=100)\n",
+   "global_timeframe": "1D"
+}

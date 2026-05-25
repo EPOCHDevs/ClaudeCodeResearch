@@ -1,0 +1,11 @@
+{
+  "name": "Compute Cluster S27: Percent Scaling",
+  "description": "Tests: PercentFormat multiplies raw by 100. Pass raw decimal (0.456) to display as 45.6%. Use DecimalFormat for pre-scaled values.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S27: Percent Scaling\n# PercentFormat multiplies raw by 100. Pass raw decimal (0.456) -> displays \"45.6%\".\n# DecimalFormat for pre-scaled values.\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nret = returns(close)\ncum_ret = returns(close, type=ReturnsType.cumulative)\nvol = volatility(close, method=VolMethod.annualized, period=21)\n\n# Summary table showing percent-scaled metrics\nsummary_table(\n    mode=TableMode.standard,\n    category='Formatting',\n    layout=SummaryTableLayout(\n      title='Return Metrics (PercentFormat)',\n      row_size=1, col_size=3,\n      col_headers=['Cumulative Return', 'Volatility', 'Daily Return'],\n      cells=[\n        ColumnSpec(grid_row=0, grid_col=0, grid_agg=AggregationType.Last,\n                   type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(grid_row=0, grid_col=1, grid_agg=AggregationType.Last,\n                   type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(grid_row=0, grid_col=2, grid_agg=AggregationType.Last,\n                   type=CardRenderType.PercentFormat, dp=3)\n      ])\n)(cum_ret, vol, ret)\n"
+}

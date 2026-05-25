@@ -1,0 +1,37 @@
+{
+  "ALL": {
+    "09 cs L1: Multi-Asset": "3 overlaid distributions (QQQ, DIA, SPY) at 30 bins with opacity=0.4; QQQ shows widest spread reflecting higher tech volatility",
+    "10 cs L2: Max Assets": "max_assets=2 limits to DIA and QQQ only; SPY excluded; 30 bins, opacity=0.4",
+    "11 cs L3: Percent Format": "3 assets overlaid with PercentFormat dp=2 on x-axis; same daily return data as cs_L1 but x-axis shows percentage labels"
+  },
+  "SPY-Stocks": {
+    "01 L1: Basic": "50-bin daily return histogram, x=[-0.020, 0.022] as DecimalValue; slight right skew with mode near zero",
+    "02 L2: Custom Bins": "20 bins (coarser) with Blue fill; same daily return data as L1 — fewer bars, wider bin width ~0.21%",
+    "03 L3: Bin Width": "Fixed 0.5% bin width yields ~9 bins; PercentFormat dp=1 on x-axis; clearly shows the bell-curve shape",
+    "04 L4: Analytics": "40 bins, Blue fill opacity=0.6; PercentFormat dp=2; analytics (default on) shows mode + ±1σ overlay lines",
+    "05 L5: Reference Lines": "40 bins with vertical Zero reference line (Gray Dash); PercentFormat dp=2; shows slight positive bias right of zero",
+    "06 L6: Percent Format": "Intraday range (H-L)/C distribution; 30 bins, Indigo fill; x=[0.17%, 2.71%] — right-skewed, most days under 1.5%",
+    "07 L7: Fill Styling": "60-bin log return distribution; Blue fill opacity=0.5 with analytics ON; DecimalValue x-axis, finest granularity",
+    "08 L8: Plot Bands": "30 bins with two y-axis plot bands: Low Freq [0,5] Green and High Freq [20,50] Red; highlights tail vs center frequency zones"
+  },
+  "QQQ-Stocks": {
+    "01 L1: Basic": "50-bin daily return histogram; wider spread than SPY (bin_width=0.0012 vs 0.0009) reflecting higher QQQ volatility",
+    "02 L2: Custom Bins": "20 bins, Blue fill; coarser view of QQQ returns, bin_width ~0.30% — wider than SPY's 0.21%",
+    "03 L3: Bin Width": "Fixed 0.5% bin width; PercentFormat dp=1; QQQ's wider range fills more bins than SPY/DIA",
+    "04 L4: Analytics": "40 bins with analytics overlay; Blue fill opacity=0.6; PercentFormat dp=2; mean and std lines visible",
+    "05 L5: Reference Lines": "40 bins with Zero vertical reference; PercentFormat dp=2; QQQ shows more positive-skewed distribution than SPY",
+    "06 L6: Percent Format": "Intraday range distribution; 30 bins, Indigo fill; QQQ ranges wider (bin_width ~0.11%) than DIA's 0.07%",
+    "07 L7: Fill Styling": "60-bin log returns; Blue opacity=0.5 with analytics; bin_width ~0.0010 — wider than SPY reflecting higher vol",
+    "08 L8: Plot Bands": "30 bins with Low Freq and High Freq y-bands; QQQ has more observations in the tail bands than SPY/DIA"
+  },
+  "DIA-Stocks": {
+    "01 L1: Basic": "50-bin daily return histogram; narrowest spread of the 3 (bin_width=0.0008) — DIA is the least volatile",
+    "02 L2: Custom Bins": "20 bins, Blue fill; bin_width ~0.21% — similar to SPY, much narrower than QQQ",
+    "03 L3: Bin Width": "Fixed 0.5% bin width; PercentFormat dp=1; tightest distribution — most mass concentrated in center bins",
+    "04 L4: Analytics": "40 bins with analytics; Blue fill opacity=0.6; PercentFormat dp=2; narrower std lines than SPY/QQQ",
+    "05 L5: Reference Lines": "40 bins with Zero vertical reference; PercentFormat dp=2; DIA slightly right of zero, tighter tails",
+    "06 L6: Percent Format": "Intraday range distribution; 30 bins, Indigo fill; narrowest of all 3 (bin_width ~0.075%), most days under 1%",
+    "07 L7: Fill Styling": "60-bin log returns; Blue opacity=0.5 with analytics; smallest bin_width (0.0007) — DIA tightest distribution",
+    "08 L8: Plot Bands": "30 bins with Low Freq and High Freq y-bands; DIA has highest peak frequency — most concentrated around zero"
+  }
+}

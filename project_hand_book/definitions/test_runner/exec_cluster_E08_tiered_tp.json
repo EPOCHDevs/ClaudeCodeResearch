@@ -1,10 +1,13 @@
 {
-   "name": "Exec Cluster E08: Tiered R-Multiple Take Profit",
-   "description": "Tests: take_profit with r_levels and exit_pcts for partial exits",
-   "data": {
-      "assets": ["AAPL-Stocks", "MSFT-Stocks", "GOOG-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC TEST: Tiered R-Multiple Take Profit\n# Tests: E08 (take_profit with r_levels/exit_pcts)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === VOLATILITY ===\natr_val = atr(period=14)(src.h, src.l, src.c)\n\n# === SIGNAL: RSI mean reversion ===\nrsi_val = rsi(period=14)(close)\n\n# Buy oversold, sell overbought\nentry_long = rsi_val < 30\nexit_long = rsi_val > 70\n\nheld = hold_until()(enter=entry_long, exit=exit_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held, short_entry=exit_long)\n\n# Fixed sizing\nposition_size(type=SizeType.percent)(size=20)\n\n# E07: Stop loss as floor\nstop_loss(unit=StopUnit.price)(distance=atr_val * 2)\n\n# E08: Tiered exits — 33% at 1.5R, 33% at 2R, 34% at 3R\ntake_profit(r_levels=[1.5, 2.0, 3.0], exit_pcts=[0.33, 0.33, 0.34])(\n    risk_distance=atr_val\n)\n",
-   "global_timeframe": "1D"
+  "name": "Exec Cluster E08: Tiered R-Multiple Take Profit",
+  "description": "Tests: take_profit with r_levels and exit_pcts for partial exits",
+  "data": {
+    "assets": [
+      "AAPL-Stocks",
+      "MSFT-Stocks",
+      "GOOG-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC TEST: Tiered R-Multiple Take Profit\n# Tests: E08 (take_profit with r_levels/exit_pcts)\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === VOLATILITY ===\natr_val = atr(src.h, src.l, src.c, 14)\n\n# === SIGNAL: RSI mean reversion ===\nrsi_val = rsi(close, 14)\n\n# Buy oversold, sell overbought\nentry_long = rsi_val < 30\nexit_long = rsi_val > 70\n\nheld = hold_until(entry_long, exit_long)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held, short_entry=exit_long)\n\n# Fixed sizing\nposition_size(type=SizeType.percent)(size=20)\n\n# E07: Stop loss as floor\nstop_loss(unit=StopUnit.price)(distance=atr_val * 2)\n\n# E08: Tiered exits \u2014 33% at 1.5R, 33% at 2R, 34% at 3R\ntake_profit(r_levels=[1.5, 2.0, 3.0], exit_pcts=[0.33, 0.33, 0.34])(\n    risk_distance=atr_val\n)\n"
 }

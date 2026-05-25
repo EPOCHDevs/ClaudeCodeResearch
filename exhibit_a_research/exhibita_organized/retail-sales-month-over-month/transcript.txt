@@ -1,8 +1,0 @@
-Title: Retail Sales
-Topic: This chart presents the month-over-month percentage change in retail sales along with a 3-month moving average for the past year, reflecting consumer spending patterns and economic health.
-Question: How have monthly retail sales been trending, and what does the recent data suggest about consumer spending strength?
-Key Takeaways:
-- The monthly change in retail sales in December 2025 was -0.02%, and over the past 3 months the monthly change has averaged 0.13%.
-- Retail sales showed notable variability throughout 2025, with a peak of 1.82% growth in April 2025 and a trough of -0.38% in October 2025.
-- Consistent growth in retail sales can suggest a strong economy beneficial for businesses, corporate earnings, and the stock market, while prolonged weakness may signal consumer hesitation or economic uncertainty.
-Source: ExhibitA for Advice

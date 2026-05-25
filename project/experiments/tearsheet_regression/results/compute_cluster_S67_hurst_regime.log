@@ -1,0 +1,32 @@
+[ERROR] 2026-03-23 04:01:23.658 AuthCredentialsProvider [131237227089024] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:01:23.666 AuthCredentialsProvider [131237227089024] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:01:23.669] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:01:23.670] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/compute_cluster_S67_hurst_regime.json
+[2026-03-23 04:01:23.670] [info] [generate_job_data.cpp:241] Study: Compute Cluster S67: Hurst Exponent Regime Detection
+[2026-03-23 04:01:23.670] [info] [generate_job_data.cpp:242] Output: compute_cluster_S67_hurst_regime
+[2026-03-23 04:01:23.670] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:01:23.670] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:01:23.670] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:01:23.670] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:01:23.670] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:01:23.671] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:01:23.675] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:01:23.873] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:23.873] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:23.885] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:01:23.927] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:01:23.927] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:01:23.929] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:01:23.941] [info] [job_persister.cpp:109] Persisting job data for user test_runner job compute_cluster_S67_hurst_regime to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S67_hurst_regime
+[2026-03-23 04:01:23.941] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S67_hurst_regime/config.json
+[2026-03-23 04:01:23.941] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S67_hurst_regime/metadata.json
+[2026-03-23 04:01:23.942] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job compute_cluster_S67_hurst_regime (total: 51314 bytes)
+[2026-03-23 04:01:23.942] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job compute_cluster_S67_hurst_regime
+[2026-03-23 04:01:23.943] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S67_hurst_regime/manifest.json
+
+=== Generation Complete ===
+Study: Compute Cluster S67: Hurst Exponent Regime Detection
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S67_hurst_regime"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/compute_cluster_S67_hurst_regime/tearsheets"

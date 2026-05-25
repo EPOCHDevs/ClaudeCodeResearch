@@ -1,0 +1,17 @@
+{
+   "name": "Weekly Inverse Volatility Portfolio",
+   "description": "Volatility-scaled portfolio across SPY, TLT, GLD, and DBC. Weights are inversely proportional to each asset's 63-day realized volatility, rebalanced weekly. 200-day SMA trend filter: only hold an asset if price is above its 200-day SMA — if below, that allocation moves to cash (total exposure shrinks). Max single-asset weight capped at 50%.",
+   "data": {
+      "assets": [
+         "SPY-Stocks",
+         "TLT-Stocks",
+         "GLD-Stocks",
+         "DBC-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Weekly Inverse Volatility Portfolio\n# SPY, TLT, GLD, DBC — weighted by inverse of 63-day realized vol\n# Rebalanced weekly, 100% fully invested, long-only\n\n# --- Data ---\nsrc = market_data_source()()\nclose = src.c\n\n# --- Volatility (63-day, annualized) ---\n# volatility() takes close prices directly (internally computes returns + annualizes)\nvol_63 = volatility(period=63)(close)\n\n# --- Rebalance Detection ---\nis_new_week = is_period_boundary(period=PeriodType.week)(index())\n\n# --- 200-Day SMA Trend Filter ---\nsma_200 = ma(period=200, type=MAType.sma)(close)\nabove_sma = is_valid(sma_200) and close > sma_200\n\n# --- Signal: Long only if above 200-day SMA ---\n# Gate entry/exit to weekly rebalance dates\n# Enter on rebalance if above SMA, exit on rebalance if below\nenter_long = is_new_week and above_sma\nexit_long = is_new_week and not above_sma\nheld = hold_until()(enter=enter_long, exit=exit_long)\n\n# --- Inverse Volatility Weights ---\n# Compute weights across ALL assets (always_active=True for all)\n# Then zero out assets below SMA → their allocation goes to cash\nalways_active = True\ninv_vol_wt = inv_vol_weight(max_weight=0.5)(active_mask=always_active, volatility=vol_63)\n\n# Apply trend filter: assets below SMA get 0 weight (cash)\nfinal_weight = inv_vol_wt.weight * (1.0 if held else 0.0)\n\n# --- Execution ---\n# Long-only: all assets always long\nlong_and_short_zone()(long_entry=held)\n\n# Size as percent of equity, rebalance only on weekly boundary\n# Assets below SMA have final_weight=0 → cash position\nposition_size(type=SizeType.percent)(size=final_weight * 100, rebalance_on=is_new_week)\n",
+   "global_timeframe": "1D",
+   "thread_id": "1856a4a9-234c-4130-9896-43176b221fc4"
+}

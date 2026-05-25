@@ -1,0 +1,22 @@
+{
+   "name": "Long-Only Metals & Materials Momentum",
+   "description": "Long-only cross-sectional momentum strategy on 10 US metals and materials stocks (NUE, STLD, X, CLF, FCX, SCCO, AA, CENX, RS, ATI). Ranks by 6-month (126-day) rate of change, goes long the top 3, equal-weighted at ~33% per position, rebalanced monthly on the first trading day.",
+   "data": {
+      "assets": [
+         "NUE-Stocks",
+         "STLD-Stocks",
+         "X-Stocks",
+         "CLF-Stocks",
+         "FCX-Stocks",
+         "SCCO-Stocks",
+         "AA-Stocks",
+         "CENX-Stocks",
+         "RS-Stocks",
+         "ATI-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Long-Only Metals & Materials Momentum Strategy\n#\n# RULES:\n# - Universe: 10 US metals/materials stocks (NUE, STLD, X, CLF, FCX, SCCO, AA, CENX, RS, ATI)\n# - Signal: 6-month momentum (126-day Rate of Change)\n# - Selection: Long top 3 by momentum\n# - Weighting: Equal weight (~33% per stock)\n# - Rebalancing: Monthly (first trading day)\n\n# Data source - DAILY\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\n\n# 6-month momentum (126 trading days)\nmomentum_6m = roc(period=126)(close)\n\n# Cross-sectional selection: top 3 by momentum (long)\nis_top_3 = cs_select(direction=CSSelectDirection.top, mode=CSSelectMode.count, k=3)(momentum_6m)\n\n# Detect first trading day of month\nis_new_month = is_period_boundary(period=PeriodType.month)(index())\n\n# Monthly rebalance signals for LONG positions\nenter_long = is_new_month and is_top_3\nexit_long = is_new_month and not is_top_3\nheld_long = hold_until()(enter=enter_long, exit=exit_long)\n\n# Entry zones (long-only)\nlong_and_short_zone()(long_entry=held_long)\n\n# Equal weight across active long positions\nweights = equal_weight()(held_long)\n\n# Position sizing - rebalance on first trading day of month\n# 3 active positions → ~33% each\nposition_size(type=SizeType.percent)(size=weights * 100, rebalance_on=is_new_month)\n",
+   "global_timeframe": "1D"
+}

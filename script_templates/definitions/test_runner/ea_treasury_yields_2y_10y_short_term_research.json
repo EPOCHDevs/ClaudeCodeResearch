@@ -1,10 +1,1 @@
-{
-   "name": "treasury-yields-2y-10y-short-term",
-   "description": "2-Year and 10-Year U.S. Treasury yields over the past 2 years, capturing recent Fed rate decisions and market expectations.",
-   "data": {
-      "assets": [],
-      "source": "polygon"
-   },
-   "source": "# A Short-Term View Of U.S. Treasury Yields\ny2_src = economic_indicators(series_id='DGS2')()\ny10_src = economic_indicators(series_id='DGS10')()\n\ny2_filled = ffill(y2_src.result)\ny10_filled = ffill(y10_src.result)\n\nbar_ts = index()\n\nxy_lines(\n    title='2-Year and 10-Year U.S. Treasury Yields Over The Short-Term',\n    category='1. Treasury Yields',\n    y_axis_label='Treasury Yield (%)',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='10-Year Treasury Yield (%)', color=Color.Blue),\n        LineSeriesSpec(name='2-Year Treasury Yield (%)', color=Color.Gray)\n    ])\n)(bar_ts, y10_filled, y2_filled)\n",
-   "global_timeframe": "1D"
-}
+{"name":"treasury-yields-2y-10y-short-term","description":"2-Year and 10-Year U.S. Treasury yields over the past 2 years, capturing recent Fed rate decisions and market expectations.","data":{"assets":[],"source":"polygon"},"source":"# A Short-Term View Of U.S. Treasury Yields\ny2_src = economic_indicators(series_id=\"DGS2\")\ny10_src = economic_indicators(series_id=\"DGS10\")\n\ny2_filled = ffill(y2_src.result)\ny10_filled = ffill(y10_src.result)\n\nbar_ts = index()\n\nxy_lines(\n    title='2-Year and 10-Year U.S. Treasury Yields Over The Short-Term',\n    category='1. Treasury Yields',\n    y_axis_label='Treasury Yield (%)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='10-Year Treasury Yield (%)', color=Color.Blue),\n        LineSeriesSpec(name='2-Year Treasury Yield (%)', color=Color.Gray)\n    ])\n)(bar_ts, y10_filled, y2_filled)\n"}

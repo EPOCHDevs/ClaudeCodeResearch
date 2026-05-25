@@ -1,0 +1,35 @@
+[ERROR] 2026-03-23 04:02:08.432 AuthCredentialsProvider [135986302803072] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:02:08.440 AuthCredentialsProvider [135986302803072] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:02:08.444] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:02:08.444] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/ds_cluster_D05_futures_reference.json
+[2026-03-23 04:02:08.444] [info] [generate_job_data.cpp:241] Study: DS Cluster D05: Futures Reference (curated + free-text)
+[2026-03-23 04:02:08.444] [info] [generate_job_data.cpp:242] Output: ds_cluster_D05_futures_reference
+[2026-03-23 04:02:08.444] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:02:08.444] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:02:08.444] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:02:08.444] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:02:08.444] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:02:08.445] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:02:08.449] [info] [api_cache_dataloader.cpp:781] CrossSectional request [0]: category=ReferenceAgg
+[2026-03-23 04:02:08.449] [info] [api_cache_dataloader.cpp:781] CrossSectional request [1]: category=ReferenceAgg
+[ERROR] 2026-03-23 04:02:08.473 AuthCredentialsProvider [135985975256768] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:02:08.473 AuthCredentialsProvider [135986208024256] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:02:08.481 AuthCredentialsProvider [135985975256768] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:02:08.482 AuthCredentialsProvider [135986208024256] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:02:10.176] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:02:10.369] [info] [IReporter::TransformData] xy_lines rows=1510
+[2026-03-23 04:02:10.369] [info] [IReporter::GetDashboard] xy_lines rows=1510
+[2026-03-23 04:02:10.373] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:02:10.593] [info] [job_persister.cpp:109] Persisting job data for user test_runner job ds_cluster_D05_futures_reference to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D05_futures_reference
+[2026-03-23 04:02:10.596] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D05_futures_reference/config.json
+[2026-03-23 04:02:10.596] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D05_futures_reference/metadata.json
+[2026-03-23 04:02:10.597] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job ds_cluster_D05_futures_reference (total: 37991 bytes)
+[2026-03-23 04:02:10.597] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job ds_cluster_D05_futures_reference
+[2026-03-23 04:02:10.597] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D05_futures_reference/manifest.json
+
+=== Generation Complete ===
+Study: DS Cluster D05: Futures Reference (curated + free-text)
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D05_futures_reference"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/ds_cluster_D05_futures_reference/tearsheets"

@@ -1,10 +1,13 @@
 {
-   "name": "Exec Cluster E01: Hold Duration + Strict Hold",
-   "description": "Tests: long_and_short_zone hold_long option, strict_hold=True",
-   "data": {
-      "assets": ["SPY-Stocks", "QQQ-Stocks", "GLD-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# EXEC TEST: Minimum Hold Period + Strict Hold\n# Tests: E01 (hold_long, strict_hold), E02 (signal persistence)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === SIGNAL: Breakout with ADX filter ===\ndonchian = donchian_channel(window=20)(src.h, src.l)\nupper = donchian.donchian_upper >> 1\nlower = donchian.donchian_lower >> 1\n\n# ADX trend filter\nadx_val = adx(period=14)(src.h, src.l)\ntrending = adx_val > 20\n\n# E02: hold_until to persist breakout state, then AND with filter\nbreakout_up = close > upper\nbreakout_down = close < lower\nheld_long = hold_until()(enter=breakout_up, exit=breakout_down)\nheld_short = hold_until()(enter=breakout_down, exit=breakout_up)\n\nlong_entry = held_long and trending\nshort_entry = held_short and trending\n\n# === EXECUTION ===\n# E01: Minimum 10-bar hold with strict_hold\nlong_and_short_zone(hold_long=10, hold_short=10, strict_hold=True)(\n    long_entry=long_entry, short_entry=short_entry\n)\n\n# Fixed sizing\nposition_size(type=SizeType.percent)(size=25)\n\n# ATR stop\natr_val = atr(period=14)(src.h, src.l, src.c)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 3)\n",
-   "global_timeframe": "1D"
+  "name": "Exec Cluster E01: Hold Duration + Strict Hold",
+  "description": "Tests: long_and_short_zone hold_long option, strict_hold=True",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks",
+      "GLD-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# EXEC TEST: Minimum Hold Period + Strict Hold\n# Tests: E01 (hold_long, strict_hold), E02 (signal persistence)\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === SIGNAL: Breakout with ADX filter ===\ndonchian = donchian_channel(src.h, src.l, window=20)\nupper = donchian.donchian_upper >> 1\nlower = donchian.donchian_lower >> 1\n\n# ADX trend filter\nadx_val = adx(src.h, src.l, 14)\ntrending = adx_val > 20\n\n# E02: hold_until to persist breakout state, then AND with filter\nbreakout_up = close > upper\nbreakout_down = close < lower\nheld_long = hold_until(breakout_up, breakout_down)\nheld_short = hold_until(breakout_down, breakout_up)\n\nlong_entry = held_long and trending\nshort_entry = held_short and trending\n\n# === EXECUTION ===\n# E01: Minimum 10-bar hold with strict_hold\nlong_and_short_zone(hold_long=10, hold_short=10, strict_hold=True)(\n    long_entry=long_entry, short_entry=short_entry\n)\n\n# Fixed sizing\nposition_size(type=SizeType.percent)(size=25)\n\n# ATR stop\natr_val = atr(src.h, src.l, src.c, 14)\nstop_loss(unit=StopUnit.price)(distance=atr_val * 3)\n"
 }

@@ -1,0 +1,10 @@
+{
+  "name": "Event Marker L3: Threshold Crossing (Numbers Only)",
+  "description": "Tests L3 threshold crossing: RSI overbought event with numeric-only columns (no string badge). Hero + Subtitle card slots.",
+  "data": {
+    "assets": ["SPY-Stocks"],
+    "source": "polygon"
+  },
+  "data_foundation": "EndOfDay",
+  "source": "src = study_assets()\nclose = src.c\n\nrsi_14 = rsi(close, 14)\nrsi_overbought = rsi_14 > 70\n\nevent_marker(schema=EventMarkerSchema(title='RSI Overbought', icon=Icon.AlertTriangleIcon, schemas=[\n    ColumnSpec(title='RSI Level', dp=1, type=CardRenderType.DecimalFormat, card_slot=CardSlot.Hero),\n    ColumnSpec(title='Close', dp=2, type=CardRenderType.MonetaryFormat, card_slot=CardSlot.Subtitle),\n    ColumnSpec(table_is_filter=True, table_visible=False)\n]))((rsi_14, close, rsi_overbought))\n\nxy_lines(title='RSI 14', category='Analysis', series=LineSeriesSchema(series=[\n    LineSeriesSpec(name='RSI', color=Color.Orange)\n]))(x_values=index(), y_values=rsi_14)\n"
+}

@@ -1,0 +1,60 @@
+{
+  "ALL": {
+    "08 cs_summary_table L1: Basic Schema": "3 assets with Last values: QQQ Close=409.52, SPY=475.31, DIA=376.87; RSI and SMA columns use DecimalFormat with dp=2/1",
+    "09 cs_summary_table L2: Named Columns": "Performance Overview: QQQ cumulative return 45.3% leads, SPY 23.0%, DIA 13.6%; SPY volume 122M dwarfs QQQ 42.7M and DIA 3.4M",
+    "10 cs_summary_table L3: Mean Agg": "Mean agg: daily return as PercentFormat shows QQQ 0.182% > SPY 0.092% > DIA 0.054%; volume as IntegerFormat",
+    "11 cs_summary_table L4: Max Assets": "max_assets=2 limits output to DIA and SPY (2 rows only); QQQ excluded",
+    "12 cs_summary_table L5: Comprehensive": "5-column schema with Close, Cum Return (PercentFormat), SMA 20, SMA 50, RSI 14 across 3 assets",
+    "13 cs_summary_table L6: Schema": "Schema-typed: Close, Cum Return as PercentFormat dp=2, RSI as DecimalFormat dp=1; same data as L5 subset",
+    "14 cs_summary_table L7: Transpose": "Transposed: Metric column (Close/Cum Return/RSI 14) as rows, assets (DIA/SPY/QQQ) as columns; tests Detailed+transpose path",
+    "17 cs_summary_table L8: CardRenderType Integer": "Volume as IntegerFormat: SPY 122M, QQQ 42.7M, DIA 3.4M; RSI and Close with decimal formatting",
+    "AD cs_summary_table agg=Sum": "Sum of 250 daily close prices: SPY 106842 > QQQ 86443 > DIA 85332; RSI sums ~13k range",
+    "AD cs_summary_table agg=Min": "Min close: QQQ 261.58, DIA 318.50, SPY 379.38; min RSI: DIA 24.42 (deepest oversold)",
+    "AD cs_summary_table agg=Max": "Max close: SPY 476.69 > QQQ 411.50 > DIA 377.03; max RSI: DIA 85.10 (most overbought)",
+    "AD cs_summary_table agg=Median": "Median close near mean for all 3; DIA 339.30, QQQ 357.91, SPY 428.53",
+    "AD cs_summary_table agg=Std": "Std of close: QQQ 36.83 most volatile, SPY 23.03, DIA 11.80 least; RSI std ~11-13 for all",
+    "AD cs_summary_table agg=Count": "Count: RSI>60 Days column uses conditional valuewhen \u2014 DIA=234, SPY/QQQ=236; Close always 250 (full series)",
+    "AD cs_summary_table agg=First": "First values: DIA close=331.22 RSI=57.47, QQQ=264.48 RSI=75.87, SPY=380.82 RSI=69.71 (Jan 2023 levels)",
+    "AD cs_summary_table agg=All": "All: RSI>60 Ret column \u2014 SPY=0 (not all days above RSI 60), DIA/QQQ=1; Close always 1 (all nonzero)",
+    "AD cs_summary_table agg=CountDistinct": "CountDistinct: ~244-246 unique close prices out of 250 days, ~236-237 unique RSI values",
+    "AD cs_summary_table agg=Kurtosis": "Kurtosis: DIA close=1.16 (leptokurtic), QQQ=-0.97 and SPY=-0.90 (platykurtic); RSI mildly negative for all",
+    "AD cs_summary_table agg=Mode": "Mode: most frequent close for DIA=330.35, QQQ=362.54, SPY=412.63; RSI mode = minimum RSI (sparse distribution)",
+    "AD cs_summary_table agg=Product": "Product of cum_factor (1+daily_ret): SPY=1.248, DIA=1.138, QQQ=1.548 \u2014 compound growth factor over period",
+    "AD cs_summary_table agg=Quantile": "Quantile (default 0.5 = median): close DIA=339.31, QQQ=358.07, SPY=428.28",
+    "AD cs_summary_table agg=Skew": "Skew: DIA close=0.96 (right-skewed rally), QQQ=-0.35, SPY=0.06 (near symmetric)",
+    "AD cs_summary_table agg=Var": "Variance: QQQ close=1357 (highest), SPY=530, DIA=139 (lowest); QQQ had widest price range in 2023"
+  },
+  "SPY-Stocks": {
+    "01 summary_table L1: Simple Grid": "1x1 grid: Last close = 475.31 as DecimalFormat dp=2",
+    "02 summary_table L2: Mixed Aggs": "2x2 grid: Mean daily return 0.09% (PercentFormat), cumulative 23.03%; mean volume 82M, total 20.5B (IntegerFormat)",
+    "03 summary_table L3: Row Col Headers": "2x3 grid: Close Mean=427.37, Min=379.38, Max=476.69; SMA20 tracks close with tighter range (394.70-467.45)",
+    "04 summary_table L4: Percent Format": "PercentFormat with info tooltips: mean ret 0.09%, cum ret 23.03%, RSI 68.4 as DecimalFormat",
+    "05 summary_table L5: Direct Color": "Direct color cells: daily ret Green (-0.29%), RSI Blue (68.4), period ret Red (0.09%), mean RSI plain (56.7)",
+    "06 summary_table L6: RowSpec Monthly": "4x12 rowspec by month: Jan avg +0.38%, Sep worst -0.28%; Best day in Jan +2.29%, worst in Feb -2.01%; 19-23 trading days per month",
+    "07 summary_table L7: RowSpec Color": "3x5 rowspec by DOW: Avg Return (Blue), Median (Indigo), Observations (plain); Friday best at +0.28%, Tuesday worst at -0.09%; 45-52 obs per day",
+    "15 summary_table L8: CardRenderType Percent": "PercentFormat dp=3: mean return 0.092%, best day 2.29%, worst day -2.01%",
+    "16 summary_table L9: CardRenderType Monetary": "MonetaryFormat dp=2: Close last=$475.31, avg=$427.37; SMA20 last=$467.45, avg=$427.06"
+  },
+  "QQQ-Stocks": {
+    "01 summary_table L1: Simple Grid": "1x1 grid: Last close = 409.52 as DecimalFormat dp=2",
+    "02 summary_table L2: Mixed Aggs": "2x2 grid: Mean daily return 0.18%, cumulative 45.33%; mean volume 52.4M \u2014 QQQ had strongest 2023 return",
+    "03 summary_table L3: Row Col Headers": "2x3 grid: Close Mean=345.77, Min=261.58, Max=411.50; widest price range of the 3 assets",
+    "04 summary_table L4: Percent Format": "PercentFormat: mean ret 0.18%, cum ret 45.33%, RSI 68.5",
+    "05 summary_table L5: Direct Color": "Direct color: daily ret Green (-0.43%), RSI Blue (68.5), period ret Red (0.18%)",
+    "06 summary_table L6: RowSpec Monthly": "Monthly rowspec: best month varies; QQQ shows higher peak returns than SPY/DIA reflecting tech rally",
+    "07 summary_table L7: RowSpec Color": "DOW rowspec with Blue/Indigo colors; similar day-of-week patterns to SPY",
+    "15 summary_table L8: CardRenderType Percent": "PercentFormat dp=3: mean return 0.182%, best/worst days wider than SPY reflecting higher vol",
+    "16 summary_table L9: CardRenderType Monetary": "MonetaryFormat: Close last=$409.52, avg=$345.77; SMA20 lower due to strong H2 rally"
+  },
+  "DIA-Stocks": {
+    "01 summary_table L1: Simple Grid": "1x1 grid: Last close = 376.87 \u2014 lowest of the 3 assets",
+    "02 summary_table L2: Mixed Aggs": "2x2 grid: Mean daily return 0.05%, cumulative 13.57%; DIA weakest performer; volume 3.5M (much lower than SPY/QQQ)",
+    "03 summary_table L3: Row Col Headers": "2x3 grid: Close Mean=341.33, Min=318.50, Max=377.03; tightest range \u2014 DIA is least volatile",
+    "04 summary_table L4: Percent Format": "PercentFormat: mean ret 0.05%, cum ret 13.57%, RSI 75.8 (highest RSI of all 3 \u2014 overbought at period end)",
+    "05 summary_table L5: Direct Color": "Direct color: daily ret Green (-0.04%), RSI Blue (75.8), period ret Red (0.05%)",
+    "06 summary_table L6: RowSpec Monthly": "Monthly rowspec: DIA shows tighter return dispersion; smallest best/worst days reflecting lower volatility",
+    "07 summary_table L7: RowSpec Color": "DOW rowspec with Blue/Indigo colors; observation counts match SPY (same trading calendar)",
+    "15 summary_table L8: CardRenderType Percent": "PercentFormat dp=3: mean return 0.054%, best/worst days tighter than SPY/QQQ",
+    "16 summary_table L9: CardRenderType Monetary": "MonetaryFormat: Close last=$376.87, avg=$341.33; SMA20 closer to close \u2014 less trending"
+  }
+}

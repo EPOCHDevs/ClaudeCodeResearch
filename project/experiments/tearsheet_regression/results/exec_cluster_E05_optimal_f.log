@@ -1,0 +1,23 @@
+[ERROR] 2026-03-23 04:10:52.012 AuthCredentialsProvider [125369536003200] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:10:52.020 AuthCredentialsProvider [125369536003200] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:10:52.023] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:10:52.023] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/exec_cluster_E05_optimal_f.json
+[2026-03-23 04:10:52.023] [info] [generate_job_data.cpp:241] Study: Exec Cluster E05: Optimal f Sizing — Vince Methodology
+[2026-03-23 04:10:52.023] [info] [generate_job_data.cpp:242] Output: exec_cluster_E05_optimal_f
+[2026-03-23 04:10:52.023] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:10:52.023] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:10:52.023] [info] [generate_job_data.cpp:250] Assets: 2
+[2026-03-23 04:10:52.023] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:10:52.023] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:10:52.024] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:10:52.027] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 2 assets
+Study completed successfully
+[2026-03-23 04:10:52.124] [info] [job_persister.cpp:109] Persisting job data for user test_runner job exec_cluster_E05_optimal_f to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E05_optimal_f
+[2026-03-23 04:10:52.124] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E05_optimal_f/config.json
+[2026-03-23 04:10:52.124] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E05_optimal_f/metadata.json
+[2026-03-23 04:10:52.125] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E05_optimal_f/manifest.json
+
+=== Generation Complete ===
+Study: Exec Cluster E05: Optimal f Sizing — Vince Methodology
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/exec_cluster_E05_optimal_f"
+Type: Research Study

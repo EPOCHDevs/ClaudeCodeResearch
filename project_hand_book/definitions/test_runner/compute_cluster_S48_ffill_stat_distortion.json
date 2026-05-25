@@ -1,0 +1,9 @@
+{
+  "name": "Compute Cluster S48: FFill Stat Distortion",
+  "description": "Tests: ffill duplicates sparse observations, inflating stats. Pass sparse series to summary_table/histogram; ffill only for rendering lines. Also covers S82 (same concept in compute package).",
+  "data": {
+    "assets": ["SPY-Stocks"],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S48: FFill Stat Distortion\n# ffill duplicates sparse observations, inflating stats.\n# Pass sparse series to summary_table/histogram; ffill only for rendering.\n# Also covers S82 (same concept in compute package).\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\nref = reference_stocks(ticker=\"QQQ\")()\nref_close = ref.c\n\n# Sparse series: rolling correlation\nret = returns(close)\nref_ret = returns(ref_close)\ncorr_60 = rolling_corr(window=60)(ret, ref_ret)\n\n# CORRECT: pass sparse to summary_table for stats\nsummary_table(\n    mode=TableMode.standard,\n    category='Stats',\n    layout=SummaryTableLayout(\n      title='Correlation Stats (sparse -- no ffill distortion)',\n      row_size=1, col_size=1,\n      col_headers=['Rolling Corr'],\n      cells=[\n        ColumnSpec(grid_row=0, grid_col=0, grid_agg=AggregationType.Last,\n                   type=CardRenderType.DecimalFormat, dp=3)\n      ])\n)(corr_60)\n\n# CORRECT: ffill only for line rendering\nxy_lines(\n    title='Rolling Correlation (ffill for display)',\n    category='Correlation',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Corr 60d', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=corr_60)\n"
+}

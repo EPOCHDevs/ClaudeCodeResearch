@@ -1,0 +1,9 @@
+{
+   "name": "amfx-gasoline-labor-hours-research",
+   "description": "amFX reproduction (24JAN23 p4): Gas affordability approximation. Original chart shows hours of work per gallon (gas price / hourly earnings). Since CES0500000003 is unavailable, we show nominal gas price vs CPI-adjusted real gas price as a proxy for affordability trends. The real price shows gas is not as expensive as nominal suggests.",
+   "data": {
+      "assets": []
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: GAS AFFORDABILITY (24JAN23 p4)\n# =============================================================================\n# Nominal vs CPI-adjusted gas price.\n# =============================================================================\n\n# Gas price per gallon (weekly, forward-filled to daily)\ngas_src = economic_indicators(series_id='GASREGW')()\ngas = ffill(gas_src.result)\n\n# CPI for real adjustment (monthly, forward-filled)\ncpi_src = economic_indicators(series_id='CPIAUCSL')()\ncpi = ffill(cpi_src.result)\n\n# Real gas price (CPI-adjusted, base period 2009 CPI ~ 215)\ncpi_base = 215.0\nreal_gas = gas * (cpi_base / cpi)\n\nidx = index()\n\nxy_lines(\n    title='Is Gas Really Getting More Expensive? Nominal vs Real Price',\n    category='Gas Affordability',\n    y_axis_label='Price ($/gallon)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=2,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Nominal Gas Price', color=Color.Blue),\n        LineSeriesSpec(name='Real Gas Price (CPI-Adj)', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(idx, gas, real_gas)\n"
+}

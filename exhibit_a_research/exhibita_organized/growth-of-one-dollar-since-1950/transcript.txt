@@ -1,8 +1,0 @@
-Title: Growth of $1 in the Stock Market Since 1950
-Topic: This chart tracks the growth of $1 invested in the S&P 500 since 1950, displayed on a logarithmic scale. It illustrates the remarkable long-term compounding power of staying invested in the U.S. stock market over many decades.
-Question: How much would $1 invested in the S&P 500 in 1950 be worth today?
-Key Takeaways:
-- A $1 investment in the S&P 500 since 1950 would have grown to $413 as of February 27, 2026, reflecting extraordinary compound growth over more than seven decades.
-- The chart shows key milestones along the way: $1 growing to $9, then $27, $81, $243, $729, and ultimately $413 at the current level, demonstrating the exponential nature of compounding returns.
-- The consistent upward trajectory of the S&P 500 highlights that remaining invested, even through periods of market turbulence, has provided substantial long-term returns rewarding patience and discipline.
-Source: ExhibitA for Advice

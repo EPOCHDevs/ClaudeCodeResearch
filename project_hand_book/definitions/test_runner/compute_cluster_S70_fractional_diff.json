@@ -1,10 +1,11 @@
 {
-   "name": "Compute Cluster S70: Fractional Differentiation",
-   "description": "Tests: frac_diff(d, threshold), rolling_adf(window). Memory-preserving stationarity for ML features (Lopez de Prado AIFML Ch.5). Verify stationarity with ADF.",
-   "data": {
-      "assets": ["SPY-Stocks"],
-      "source": "polygon"
-   },
-   "source": "# =============================================================================\n# COMPUTE CLUSTER S70: Fractional Differentiation\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\n\n# === FRACTIONAL DIFF AT DIFFERENT d VALUES ===\n# Note: ideally applied to log(prices), but log() transform not available.\n# frac_diff works on raw close prices too — it internally differences.\nfd_03 = frac_diff(d=0.3, threshold=1e-2)(close)\nfd_05 = frac_diff(d=0.5, threshold=1e-3)(close)\nfd_07 = frac_diff(d=0.7, threshold=1e-5)(close)\n\n# === VERIFY STATIONARITY ===\nadf_03 = rolling_adf(window=100)(fd_03)\nadf_05 = rolling_adf(window=100)(fd_05)\n\npval_03 = adf_03.p_value\npval_05 = adf_05.p_value\n\n# === REPORTERS ===\nxy_lines(\n    title='Fractional Diff: d=0.3 vs d=0.5 vs d=0.7',\n    category='FracDiff',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='d=0.3 (more memory)', color=Color.Green),\n        LineSeriesSpec(name='d=0.5 (balanced)', color=Color.Blue),\n        LineSeriesSpec(name='d=0.7 (more stationary)', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(fd_03, fd_05, fd_07))\n\nxy_lines(\n    title='ADF p-value: d=0.3 vs d=0.5',\n    category='Stationarity',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='p-value (d=0.3)', color=Color.Green),\n        LineSeriesSpec(name='p-value (d=0.5)', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=(pval_03, pval_05))\n",
-   "global_timeframe": "1D"
+  "name": "Compute Cluster S70: Fractional Differentiation",
+  "description": "Tests: frac_diff(d, threshold), rolling_adf(window). Memory-preserving stationarity for ML features (Lopez de Prado AIFML Ch.5). Verify stationarity with ADF.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S70: Fractional Differentiation\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === FRACTIONAL DIFF AT DIFFERENT d VALUES ===\n# Note: ideally applied to log(prices), but log() transform not available.\n# frac_diff works on raw close prices too \u2014 it internally differences.\nfd_03 = frac_diff(d=0.3, threshold=1e-2)(close)\nfd_05 = frac_diff(d=0.5, threshold=1e-3)(close)\nfd_07 = frac_diff(d=0.7, threshold=1e-5)(close)\n\n# === VERIFY STATIONARITY ===\nadf_03 = rolling_adf(window=100)(fd_03)\nadf_05 = rolling_adf(window=100)(fd_05)\n\npval_03 = adf_03.p_value\npval_05 = adf_05.p_value\n\n# === REPORTERS ===\nxy_lines(\n    title='Fractional Diff: d=0.3 vs d=0.5 vs d=0.7',\n    category='FracDiff',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='d=0.3 (more memory)', color=Color.Green),\n        LineSeriesSpec(name='d=0.5 (balanced)', color=Color.Blue),\n        LineSeriesSpec(name='d=0.7 (more stationary)', color=Color.Red)\n    ])\n)(x_values=index(), y_values=(fd_03, fd_05, fd_07))\n\nxy_lines(\n    title='ADF p-value: d=0.3 vs d=0.5',\n    category='Stationarity',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='p-value (d=0.3)', color=Color.Green),\n        LineSeriesSpec(name='p-value (d=0.5)', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=(pval_03, pval_05))\n"
 }

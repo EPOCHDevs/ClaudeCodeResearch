@@ -1,8 +1,0 @@
-Title: Elevated Market Volatility Is Historically Normal In Midterm Years
-Topic: This chart compares the S&P 500's average intra-year drawdown versus average full-year return across the four years of the presidential election cycle since 1950, revealing that midterm years tend to be the most volatile yet still produce positive returns.
-Question: How do market volatility and returns differ across the four years of the presidential election cycle?
-Key Takeaways:
-- Midterm years have shown the largest average intra-year drawdowns (approximately -16.2%) among the four years of the presidential cycle, yet they still produced positive average full-year returns of about 4.7%, highlighting how volatility and gains can coexist.
-- Pre-election years have historically been the strongest performers, with an average full-year return of approximately 17.2% and relatively contained intra-year drawdowns around -12.8%.
-- The first year in office and election years also delivered positive average returns (8.4% and 8.1% respectively), reinforcing that markets have historically trended upward across all phases of the presidential cycle despite varying levels of volatility.
-Source: ExhibitA for Advice

@@ -1,0 +1,9 @@
+{
+  "name": "Compute Cluster S80: Series Merging (coalesce then ffill)",
+  "description": "Tests: coalesce() BEFORE ffill for discontinued series. Order matters — first non-null wins.",
+  "data": {
+    "assets": ["SPY-Stocks"],
+    "source": "polygon"
+  },
+  "source": "src = study_assets()()\nclose = src.c\n\n# Two economic series that may overlap/discontinue\nfedfunds = economic_indicators(series_id='FEDFUNDS')().result\ndff = economic_indicators(series_id='DFF')().result\n\n# CORRECT: coalesce first (pick best source), THEN ffill\nmerged_rate = ffill(coalesce(dff, fedfunds))\n\nxy_lines(\n    title='Fed Rate (coalesce then ffill)',\n    category='Rates',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Merged Rate', color=Color.Blue)\n    ])\n)(x_values=index(), y_values=merged_rate)\n\nsummary_table(\n    mode=TableMode.standard,\n    category='Rates',\n    layout=SummaryTableLayout(\n      title='Fed Rate Stats',\n      row_size=1, col_size=1,\n      col_headers=['Rate'],\n      cells=[\n        ColumnSpec(grid_row=0, grid_col=0, grid_agg=AggregationType.Last,\n                   type=CardRenderType.DecimalFormat, dp=2)\n      ])\n)(merged_rate)\n"
+}

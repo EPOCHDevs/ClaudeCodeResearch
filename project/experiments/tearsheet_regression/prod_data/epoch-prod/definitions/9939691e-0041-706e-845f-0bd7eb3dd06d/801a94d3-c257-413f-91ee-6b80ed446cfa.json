@@ -1,0 +1,13 @@
+{
+   "name": "CAT/DE Pairs Mean-Reversion Strategy",
+   "description": "Pairs mean-reversion strategy trading CAT vs DE (Caterpillar vs Deere). Computes the CAT/DE price ratio daily, then a 60-day rolling z-score. Entry: short CAT when z-score crosses above +2 (ratio overbought), long CAT when z-score crosses below -2 (ratio oversold). Exit: z-score reverts to 0 (mean reversion achieved) or extends beyond ±3 (stop loss). Dollar-neutral sizing at 50% per leg.",
+   "data": {
+      "assets": [
+         "CAT-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# CAT/DE Pairs Mean-Reversion Strategy\n# ======================================\n# Signal: 60-day rolling z-score of the CAT/DE price ratio\n# Long CAT when z < -2 (ratio oversold), Short CAT when z > +2 (ratio overbought)\n# Exit when z reverts to 0, or capitulation stop at ±3\n# Dollar-neutral: 50% allocation per leg (CAT is the traded leg)\n\n# --- Data Sources ---\nsrc = market_data_source()()\ncat_close = src.c\n\n# DE as reference stock\nde_ref = reference_stocks(ticker=\"DE\")()\nde_close = de_ref.c\n\n# --- Price Ratio & Z-Score ---\n# CAT/DE price ratio\nprice_ratio = cat_close / de_close\n\n# 60-day rolling z-score of the ratio\nz = zscore(window=60)(price_ratio)\n\n# --- Entry Signals (pulses) ---\n# Z crosses above +2: ratio is overbought → SHORT CAT (expect ratio to fall)\nenter_short_pulse = crossover(z, 2)\n\n# Z crosses below -2: ratio is oversold → LONG CAT (expect ratio to rise)\nenter_long_pulse = crossunder(z, -2)\n\n# --- Exit Signals ---\n# Exit long: z-score crosses back up through 0 (mean reversion) OR z drops below -3 (capitulation)\nexit_long = crossover(z, 0) or z < -3\n\n# Exit short: z-score crosses back down through 0 (mean reversion) OR z rises above +3 (capitulation)\nexit_short = crossunder(z, 0) or z > 3\n\n# --- Hold State ---\n# Persist entry signals until exit conditions fire\nheld_long = hold_until()(enter=enter_long_pulse, exit=exit_long)\nheld_short = hold_until()(enter=enter_short_pulse, exit=exit_short)\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=held_long, short_entry=held_short)\n\n# 50% allocation = one leg of dollar-neutral pair\nposition_size(type=SizeType.percent)(size=50)\n",
+   "global_timeframe": "1D"
+}

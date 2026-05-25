@@ -1,0 +1,13 @@
+{
+   "name": "Copper/Gold Ratio ROC — Long GLD Strategy",
+   "description": "Macro risk-off strategy that goes long GLD (gold ETF) when the copper/gold futures ratio is falling sharply. Uses HG (copper) and GC (gold) reference futures with NoAdjustment continuation to compute the ratio. Signal: 60-day ROC of the copper/gold ratio below -10%. When the ratio drops hard (risk-off environment), the strategy enters a 100% long GLD position. Exits when the ROC reverts above -10%. Daily recheck with hold_until for state persistence.",
+   "data": {
+      "assets": [
+         "GLD-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Copper/Gold Ratio ROC — Long GLD Strategy\n# Signal: Go long GLD when the copper/gold ratio 60-day ROC < -10%\n# Rationale: A sharply falling Cu/Au ratio signals risk-off conditions,\n#            which historically favors gold as a safe-haven asset.\n#\n# Data: HG (copper) and GC (gold) reference futures, NoAdjustment\n# Position: 100% equity when long, flat otherwise\n\n# --- Primary Data Source (GLD) ---\nsrc = market_data_source()()\n\n# --- Reference Futures: Copper (HG) ---\nhg_ref = reference_futures(ticker=\"HG\")()\nhg_cont = futures_continuation(\n    s_rollover_method=RolloverType.FirstOfMonth,\n    s_adjustment_method=AdjustmentType.NoAdjustment\n)(hg_ref.o, hg_ref.h, hg_ref.l, hg_ref.c, hg_ref.v, hg_ref.oi, hg_ref.s)\n\n# --- Reference Futures: Gold (GC) ---\ngc_ref = reference_futures(ticker=\"GC\")()\ngc_cont = futures_continuation(\n    s_rollover_method=RolloverType.FirstOfMonth,\n    s_adjustment_method=AdjustmentType.NoAdjustment\n)(gc_ref.o, gc_ref.h, gc_ref.l, gc_ref.c, gc_ref.v, gc_ref.oi, gc_ref.s)\n\n# Forward-fill to handle weekends/holidays in cross-asset context\nhg_close = ffill(hg_cont.c)\ngc_close = ffill(gc_cont.c)\n\n# --- Copper/Gold Ratio ---\ncu_au_ratio = hg_close / gc_close\n\n# --- 60-Day Rate of Change on the Ratio ---\n# roc returns decimal: -10% = -0.10\nroc_60d = roc(period=60)(cu_au_ratio)\n\n# --- Signal Logic ---\n# Enter long GLD when ratio ROC falls below -10% (risk-off regime)\n# Exit when ratio ROC reverts above -10%\nenter_signal = roc_60d < -0.10\nexit_signal = roc_60d >= -0.10\n\n# Persist the signal state with hold_until\nheld_long = hold_until()(enter=enter_signal, exit=exit_signal)\n\n# --- Execution ---\n# rollover_policy required by validator when futures_continuation is present\n# GLD is the traded asset (equity ETF), but reference futures need this\nrollover_policy()(active=gc_cont.s)\nlong_and_short_zone()(long_entry=held_long)\n\n# 100% of equity when long\nposition_size(type=SizeType.percent)(size=100)\n",
+   "global_timeframe": "1D"
+}

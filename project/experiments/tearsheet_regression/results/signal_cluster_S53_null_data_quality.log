@@ -1,0 +1,37 @@
+[ERROR] 2026-03-23 04:15:16.482 AuthCredentialsProvider [126536586169472] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:15:16.490 AuthCredentialsProvider [126536586169472] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:15:16.493] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:15:16.493] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/signal_cluster_S53_null_data_quality.json
+[2026-03-23 04:15:16.493] [info] [generate_job_data.cpp:241] Study: Signal Cluster S53: Null Detection & Data Quality
+[2026-03-23 04:15:16.493] [info] [generate_job_data.cpp:242] Output: signal_cluster_S53_null_data_quality
+[2026-03-23 04:15:16.493] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:15:16.493] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:15:16.493] [info] [generate_job_data.cpp:250] Assets: 1
+[2026-03-23 04:15:16.493] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:15:16.493] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:15:16.493] [warning] [constructor_parser.cpp:114] 'is_valid' is a built-in function. Prefer is_valid(args) over is_valid()(args) syntax
+[2026-03-23 04:15:16.493] [warning] [constructor_parser.cpp:114] 'is_valid' is a built-in function. Prefer is_valid(args) over is_valid()(args) syntax
+[2026-03-23 04:15:16.493] [warning] [constructor_parser.cpp:114] 'is_null' is a built-in function. Prefer is_null(args) over is_null()(args) syntax
+[2026-03-23 04:15:16.493] [warning] [constructor_parser.cpp:114] 'is_valid' is a built-in function. Prefer is_valid(args) over is_valid()(args) syntax
+[2026-03-23 04:15:16.493] [warning] [constructor_parser.cpp:114] 'is_valid' is a built-in function. Prefer is_valid(args) over is_valid()(args) syntax
+[2026-03-23 04:15:16.494] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:15:16.497] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 1 assets
+[2026-03-23 04:15:16.566] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:15:16.566] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:15:16.567] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:15:16.567] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:15:16.568] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:15:16.569] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:15:16.580] [info] [job_persister.cpp:109] Persisting job data for user test_runner job signal_cluster_S53_null_data_quality to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S53_null_data_quality
+[2026-03-23 04:15:16.581] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S53_null_data_quality/config.json
+[2026-03-23 04:15:16.581] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S53_null_data_quality/metadata.json
+[2026-03-23 04:15:16.581] [info] [tearsheet_persistence.cpp:208] Persisted 1 tearsheets for job signal_cluster_S53_null_data_quality (total: 51300 bytes)
+[2026-03-23 04:15:16.581] [info] [job_persister.cpp:255] Successfully persisted 1 tearsheets for job signal_cluster_S53_null_data_quality
+[2026-03-23 04:15:16.582] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S53_null_data_quality/manifest.json
+
+=== Generation Complete ===
+Study: Signal Cluster S53: Null Detection & Data Quality
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S53_null_data_quality"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/signal_cluster_S53_null_data_quality/tearsheets"

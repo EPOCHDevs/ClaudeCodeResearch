@@ -1,8 +1,0 @@
-Title: Quits vs Hires in the U.S. Economy
-Topic: This chart tracks total nonfarm quits and hires in the U.S. economy since 2004, illustrating labor market dynamics and the balance between employees voluntarily leaving jobs versus new hires by employers.
-Question: How do voluntary quits compare to total hires in the U.S. labor market, and what does this ratio signal about worker confidence and labor demand?
-Key Takeaways:
-- In December 2025, total nonfarm quits were 3,204k compared to total hires of 5,293k, indicating hires significantly outpace quits.
-- When hires are increasing relative to quits, it historically signals strong demand for labor and sustained economic growth; when quits outpace hires, it may indicate employee dissatisfaction or workforce instability.
-- Both metrics experienced dramatic disruption during 2020 (COVID-19 pandemic) with sharp drops followed by rapid recovery, and the spread between them has since normalized closer to pre-pandemic levels.
-Source: ExhibitA for Advice

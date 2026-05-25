@@ -1,0 +1,35 @@
+[ERROR] 2026-03-23 04:13:13.706 AuthCredentialsProvider [126743940222080] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:13.714 AuthCredentialsProvider [126743940222080] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:13.717] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:13.717] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/lwc_test_trend_strategy.json
+[2026-03-23 04:13:13.717] [info] [generate_job_data.cpp:241] Study: LWC Test: Trend-Following Strategy
+[2026-03-23 04:13:13.717] [info] [generate_job_data.cpp:242] Output: lwc_test_trend_strategy
+[2026-03-23 04:13:13.717] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:13.717] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:13.717] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:13.717] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:13.717] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:13.718] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:13.722] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:13.796] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:13.796] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:13.796] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:13.796] [info] [IReporter::TransformData] xy_lines rows=1508
+[2026-03-23 04:13:13.796] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:13.796] [info] [IReporter::GetDashboard] xy_lines rows=1508
+[2026-03-23 04:13:13.801] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:13.801] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+[2026-03-23 04:13:13.801] [info] [IReporter::GetDashboard] xy_lines charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:13.832] [info] [job_persister.cpp:109] Persisting job data for user test_runner job lwc_test_trend_strategy to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_trend_strategy
+[2026-03-23 04:13:13.833] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_trend_strategy/config.json
+[2026-03-23 04:13:13.834] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_trend_strategy/metadata.json
+[2026-03-23 04:13:13.834] [info] [tearsheet_persistence.cpp:208] Persisted 3 tearsheets for job lwc_test_trend_strategy (total: 113901 bytes)
+[2026-03-23 04:13:13.834] [info] [job_persister.cpp:255] Successfully persisted 3 tearsheets for job lwc_test_trend_strategy
+[2026-03-23 04:13:13.835] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_trend_strategy/manifest.json
+
+=== Generation Complete ===
+Study: LWC Test: Trend-Following Strategy
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_trend_strategy"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/lwc_test_trend_strategy/tearsheets"

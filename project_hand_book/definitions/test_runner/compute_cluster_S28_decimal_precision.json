@@ -1,0 +1,11 @@
+{
+  "name": "Compute Cluster S28: Decimal Precision Calibration",
+  "description": "Tests: dp calibration by data type: returns dp=2, prices dp=2, ratios dp=1, z-scores dp=2, counts dp=0.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# COMPUTE CLUSTER S28: Decimal Precision Calibration\n# dp calibration by data type: returns dp=2, prices dp=2, ratios dp=1,\n# z-scores dp=2, counts dp=0.\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nret = returns(close)\nz = zscore(window=60)(close)\nvol = volatility(close, method=VolMethod.annualized, period=21)\n\nsummary_table(\n    mode=TableMode.standard,\n    category='Formatting',\n    layout=SummaryTableLayout(\n      title='Decimal Precision Calibration',\n      row_size=1, col_size=4,\n      col_headers=['Price', 'Return', 'Z-Score', 'Vol (ann)'],\n      cells=[\n        ColumnSpec(grid_row=0, grid_col=0, grid_agg=AggregationType.Last,\n                   type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(grid_row=0, grid_col=1, grid_agg=AggregationType.Last,\n                   type=CardRenderType.PercentFormat, dp=2),\n        ColumnSpec(grid_row=0, grid_col=2, grid_agg=AggregationType.Last,\n                   type=CardRenderType.DecimalFormat, dp=2),\n        ColumnSpec(grid_row=0, grid_col=3, grid_agg=AggregationType.Last,\n                   type=CardRenderType.PercentFormat, dp=2)\n      ])\n)(close, ret, z, vol)\n"
+}

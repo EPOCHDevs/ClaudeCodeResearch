@@ -1,0 +1,14 @@
+{
+   "name": "BTC vs ETH — 30-Day Realized Volatility",
+   "description": "Research study comparing 30-day rolling realized volatility for BTC and ETH. Computes daily log returns, then rolling 30-day standard deviation annualized by sqrt(365) for crypto's 365-day trading calendar, expressed as a percentage. Outputs a time series line chart and a summary statistics table.",
+   "data": {
+      "assets": [
+         "^BTCUSD-Crypto",
+         "^ETHUSD-Crypto"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# =============================================================================\n# BTC vs ETH — 30-Day Realized Volatility\n# =============================================================================\n# Daily log returns → rolling 30-day stddev → annualize × sqrt(365) → percentage\n# Crypto trades 365 days/year, so annualization uses sqrt(365)\n# =============================================================================\n\n# --- Data ---\nsrc = market_data_source()()\nclose = src.c\n\n# --- Daily log returns ---\nlog_ret = ln(close / (close >> 1))\n\n# --- Rolling 30-day realized volatility (annualized, as %) ---\n# stddev(30) gives rolling 30-day standard deviation of log returns\n# Multiply by sqrt(365) to annualize, then × 100 for percentage\nrv_30d = stddev(period=30)(log_ret) * sqrt(365) * 100\n\n# --- Timestamp for X-axis ---\nts = index()\n\n# =============================================================================\n# REPORTS\n# =============================================================================\n\n# Chart 1: Rolling realized vol comparison over time\ncs_lines(\n    title='BTC vs ETH — 30-Day Realized Volatility',\n    category='Volatility',\n    y_axis_label='Realized Volatility (%)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=1,\n    order=0\n)(x_values=ts, y_values=rv_30d)\n\n# Table: Summary statistics per asset\ncs_summary_table(\n    title='Realized Volatility Summary',\n    category='Volatility',\n    agg=AggregationType.Last,\n    schema=TableReportSchema(\n        title='Realized Volatility Summary',\n        columns=[\n            ColumnSpec(title='Current RV (%)', type=CardRenderType.DecimalFormat, dp=1, card_agg=AggregationType.Last),\n            ColumnSpec(title='Avg RV (%)', type=CardRenderType.DecimalFormat, dp=1, card_agg=AggregationType.Mean),\n            ColumnSpec(title='Max RV (%)', type=CardRenderType.DecimalFormat, dp=1, card_agg=AggregationType.Max),\n            ColumnSpec(title='Min RV (%)', type=CardRenderType.DecimalFormat, dp=1, card_agg=AggregationType.Min)\n        ],\n        include_timestamp=False\n    ),\n    order=1\n)(rv_30d, rv_30d, rv_30d, rv_30d)\n",
+   "global_timeframe": "1D"
+}

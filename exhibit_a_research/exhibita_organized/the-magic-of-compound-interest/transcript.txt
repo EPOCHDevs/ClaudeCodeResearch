@@ -1,8 +1,0 @@
-Title: Compound Interest, Visualized
-Topic: This chart compares how humans perceive 10% annual growth of $10,000 (linear thinking) versus what 10% annual growth actually looks like (exponential curve) over a hypothetical 20-year period.
-Question: How does the actual exponential growth of compound interest differ from the linear growth that most people intuitively expect?
-Key Takeaways:
-- Humans tend to think linearly, making it challenging to fully appreciate the power of compound interest; 10% annual growth on $10,000 reaches approximately $67,275 over 20 years, far exceeding the roughly $30,000 that linear thinking would suggest.
-- The chart demonstrates that the impact of compounding is far greater than linear growth, with the gap between perceived and actual growth widening significantly in later years.
-- Understanding that growth happens exponentially may help investors stay focused during market fluctuations and avoid emotional decisions; patience and a steady approach are essential to realizing the full potential of compound interest.
-Source: ExhibitA for Advice

@@ -1,10 +1,1 @@
-{
-   "name": "time-within-three-percent-of-all-time-highs",
-   "description": "Tracks how often the S&P 500 stays within 3% of its all-time high, highlighting periods of extended market strength.",
-   "data": {
-      "assets": [],
-      "source": "polygon"
-   },
-   "source": "# How Often The S&P 500 Has Stayed Near Record Highs\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\n\nrunning_max = cumulative(agg=AggregationType.Max)(spy_c)\npct_from_ath = (spy_c - running_max) / running_max\n\n# Is NOT within 3% of ATH?\nnot_near = pct_from_ath <= -0.03\n\n# Consecutive days within 3% of ATH (multiply by 1.0 to cast integer to decimal for chart)\nstreak = barssince()(not_near) * 1.0\n\nbar_ts = index()\n\nxy_lines(\n    title='How Often The S&P 500 Has Stayed Near Record Highs',\n    category='1. Near Record Highs',\n    y_axis_label='# Trading Days',\n    y_axis_format=AxisValueFormat.DecimalFormat,\n    y_axis_dp=0,\n    area=True,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Trading Days S&P 500 Has Stayed Within 3% of All Time Highs In A Row', color=Color.Blue)\n    ])\n)(bar_ts, streak)\n",
-   "global_timeframe": "1D"
-}
+{"name":"time-within-three-percent-of-all-time-highs","description":"Tracks how often the S&P 500 stays within 3% of its all-time high, highlighting periods of extended market strength.","data":{"assets":[],"source":"polygon"},"source":"# How Often The S&P 500 Has Stayed Near Record Highs\nspy_o, spy_h, spy_l, spy_c, spy_v, spy_vw, spy_n = common_reference_stocks(ticker=ReferenceStock.SPY)()\n\nrunning_max = cumulative(agg=AggregationType.Max)(spy_c)\npct_from_ath = (spy_c - running_max) / running_max\n\n# Is NOT within 3% of ATH?\nnot_near = pct_from_ath <= -0.03\n\n# Consecutive days within 3% of ATH (multiply by 1.0 to cast integer to decimal for chart)\nstreak = barssince()(not_near) * 1.0\n\nbar_ts = index()\n\nxy_lines(\n    title='How Often The S&P 500 Has Stayed Near Record Highs',\n    category='1. Near Record Highs',\n    y_axis_label='# Trading Days',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=0,\n    area=True,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Trading Days S&P 500 Has Stayed Within 3% of All Time Highs In A Row', color=Color.Blue)\n    ])\n)(bar_ts, streak)\n"}

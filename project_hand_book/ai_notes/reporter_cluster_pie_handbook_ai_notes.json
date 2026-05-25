@@ -1,0 +1,120 @@
+{
+  "reporter_cluster_pie_handbook_ai_notes": [
+    {
+      "category": "01 pie L1: Basic 2-Slice",
+      "description": "2-slice pie: Up / Down day distribution from binary ternary"
+    },
+    {
+      "category": "02 pie L2: 4-Way Ternary",
+      "description": "4-slice pie: Big Up / Small Up / Small Down / Big Down from nested ternary"
+    },
+    {
+      "category": "03 pie L3: Donut",
+      "description": "4-slice donut (inner=50%): Q1–Q4 volume share by quarter"
+    },
+    {
+      "category": "04 pie L4: Custom Colors",
+      "description": "3-slice pie with semantic colors: Gap Up (green) / Flat (gray) / Gap Down (red)"
+    },
+    {
+      "category": "05 pie L5: Large Donut",
+      "description": "3-slice thin donut (inner=70%): RSI regime Oversold / Neutral / Overbought"
+    },
+    {
+      "category": "06 pie L6: 5-Way Ternary",
+      "description": "5-slice pie: Mon–Fri volume by day of week from nested ternary"
+    },
+    {
+      "category": "07 pie L7: Boolean Logic",
+      "description": "2-slice pie with compound boolean: Uptrend / Consolidation via SMA50×SMA200 flags"
+    },
+    {
+      "category": "08 pie L8: Order + Donut",
+      "description": "3-slice donut (inner=40%, order=5): Low Vol / Medium Vol / High Vol range classification"
+    },
+    {
+      "category": "09a pie L9: Sort Descending",
+      "description": "4-slice pie sorted largest-first via sort_by_value=Descending"
+    },
+    {
+      "category": "09 cs_pie L1: Default Agg",
+      "description": "3-slice cross-sectional pie: price-weighted allocation using Last close"
+    },
+    {
+      "category": "10 cs_pie L2: Sum + Donut",
+      "description": "3-slice donut (inner=60%): total return contribution per asset via Sum agg"
+    },
+    {
+      "category": "11 cs_pie L3: Std + Colors",
+      "description": "3-slice pie with custom colors: volatility contribution via Std agg"
+    },
+    {
+      "category": "12 cs_pie L4: Mean",
+      "description": "3-slice pie: average volume share per asset via Mean agg"
+    },
+    {
+      "category": "13 cs_pie L5: Min + Colors",
+      "description": "3-slice donut (inner=55%) with colors: worst return per asset via Min agg"
+    },
+    {
+      "category": "14 cs_pie L6: Max Assets",
+      "description": "3-slice pie: top 2 assets by volume + Other bucket from max_assets=2"
+    },
+    {
+      "category": "15 cs_pie L7: Sort Ascending",
+      "description": "3-slice pie sorted smallest-first via sort_by_value=Ascending + Mean agg"
+    },
+    {
+      "category": "AD cs_pie agg=Max",
+      "description": "Agg diversity: Max close price per asset"
+    },
+    {
+      "category": "AD cs_pie agg=Median",
+      "description": "Agg diversity: Median close price per asset"
+    },
+    {
+      "category": "AD cs_pie agg=Count",
+      "description": "Agg diversity: observation count per asset (equal if same date range)"
+    },
+    {
+      "category": "AD cs_pie agg=First",
+      "description": "Agg diversity: first close price per asset"
+    },
+    {
+      "category": "AD cs_pie agg=All",
+      "description": "Agg diversity: All (boolean) per asset — true for all non-zero"
+    },
+    {
+      "category": "AD cs_pie agg=Any",
+      "description": "Agg diversity: Any (boolean) per asset — true if any non-zero"
+    },
+    {
+      "category": "AD cs_pie agg=CountDistinct",
+      "description": "Agg diversity: distinct close values per asset"
+    },
+    {
+      "category": "AD cs_pie agg=Kurtosis",
+      "description": "Agg diversity: kurtosis of close prices per asset"
+    },
+    {
+      "category": "AD cs_pie agg=Mode",
+      "description": "Agg diversity: most frequent close price per asset"
+    },
+    {
+      "category": "AD cs_pie agg=Product",
+      "description": "Agg diversity: product of close prices (overflows to infinity, filtered out)"
+    },
+    {
+      "category": "AD cs_pie agg=Quantile",
+      "description": "Agg diversity: quantile (median) of close prices per asset"
+    },
+    {
+      "category": "AD cs_pie agg=Skew",
+      "description": "Agg diversity: skewness of close prices per asset"
+    },
+    {
+      "category": "AD cs_pie agg=Var",
+      "description": "Agg diversity: variance of close prices per asset"
+    }
+  ]
+}

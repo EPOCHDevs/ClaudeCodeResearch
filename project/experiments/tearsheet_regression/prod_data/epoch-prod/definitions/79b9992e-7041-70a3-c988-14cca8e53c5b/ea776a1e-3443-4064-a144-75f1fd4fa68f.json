@@ -1,0 +1,15 @@
+{
+   "name": "Donchian Breakout with ATR-Based Chandelier Stop",
+   "description": "Long-only breakout strategy that enters on Donchian Channel upper band breakout and exits using either a Chandelier trailing stop or Donchian lower band breakdown. Position sizing is volatility-adjusted to risk 2% per trade.",
+   "data": {
+      "assets": [
+         "MSFT-Stocks",
+         "AAPL-Stocks",
+         "AMZN-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "# Donchian Breakout with ATR-Based Chandelier Stop\n# Long-only breakout strategy with volatility-adjusted position sizing\n\n# Data source\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# Donchian Channel (20-day)\ndc_upper, dc_middle, dc_lower = donchian_channel(window=20)()\n\n# ATR for position sizing (5-period as specified)\natr_5 = atr(period=5)()\n\n# Chandelier Exit (using 20-bar lookback with 5-period ATR and 3x multiplier)\nchandelier_long, chandelier_short, chandelier_dir = chandelier_exit(length=20, atr_length=5, multiplier=3.0)()\n\n# Entry signal: Close breaks above Donchian upper band\nlong_entry = close > dc_upper\n\n# Exit signals\nchandelier_exit_signal = crossunder(close, chandelier_long)\ntechnical_exit = close < dc_lower\nexit_signal = chandelier_exit_signal or technical_exit\n\n# Use hold_until to maintain position from entry to exit\nin_position = hold_until()(enter=long_entry, exit=exit_signal)\n\n# Position zone - long only strategy\nlong_and_short_zone()(long_entry=in_position)\n\n# Risk-based position sizing\n# Risk 2% per trade, stop distance = 3 × ATR(5)\nstop_distance = 3.0 * atr_5\nrisk_unit(stop_unit=\"price\")(risk_pct=2.0, stop_distance=stop_distance)\n\n# Event markers for trade signals\nevent_marker(\n    schema=EventMarkerSchema(\n        title=\"Trade Signals\",\n        icon=Icon.TargetIcon,\n        schemas=[\n            ColumnSpec(title=\"Long Entry\", type=CardRenderType.BooleanFormat, table_is_filter=True),\n            ColumnSpec(title=\"Chandelier Exit\", type=CardRenderType.BooleanFormat),\n            ColumnSpec(title=\"Technical Exit\", type=CardRenderType.BooleanFormat)\n        ]\n    )\n)(long_entry, chandelier_exit_signal, technical_exit)\n\n# Visualization - Price with Donchian Channel and Chandelier Stop\ntimeseries_lines(\n    title=\"Donchian Channel & Chandelier Stop\",\n    category=\"Price Action\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Close\", color=Color.Blue),\n        LineSeriesSpec(name=\"DC Upper\", color=Color.Green),\n        LineSeriesSpec(name=\"DC Lower\", color=Color.Red),\n        LineSeriesSpec(name=\"Chandelier Stop\", color=Color.Orange, dash_style=DashStyle.Dash)\n    ])\n)(close, dc_upper, dc_lower, chandelier_long)\n\n# ATR indicator panel\ntimeseries_lines(\n    title=\"ATR (5-period)\",\n    category=\"Volatility\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"ATR\", color=Color.Purple)\n    ])\n)(atr_5)\n",
+   "global_timeframe": "1D"
+}

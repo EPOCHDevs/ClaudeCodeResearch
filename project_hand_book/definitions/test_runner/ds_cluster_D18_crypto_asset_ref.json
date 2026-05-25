@@ -1,0 +1,12 @@
+{
+  "name": "DS Cluster D18: Crypto Ticker Conventions (is_asset_ref + crypto_pairs)",
+  "description": "Tests: is_asset_ref with bare crypto ticker (not ^prefix or X: prefix), asset_class filtering, crypto_pairs bare ticker, conditional logic per asset.",
+  "data": {
+    "assets": [
+      "^BTCUSD-Crypto",
+      "^ETHUSD-Crypto"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER D18: Crypto Ticker Conventions\n# =============================================================================\n# is_asset_ref uses BARE tickers \u2014 no ^prefix, no X: runtime symbols.\n# crypto_pairs also uses bare tickers.\n\nsrc = market_data_source()()\nclose = src.c\nvol = src.v\n\n# === is_asset_ref BY TICKER (bare \u2014 CORRECT) ===\nis_btc = is_asset_ref(ticker=\"^BTCUSD\")()\nis_eth = is_asset_ref(ticker=\"^ETHUSD\")()\n\n# === is_asset_ref BY ASSET CLASS ===\nis_crypto = is_asset_ref(asset_class=AssetClassUI.Crypto)()\n\n# === CONDITIONAL LOGIC: different treatment per asset ===\n# Apply different moving average periods per asset\nfast_ma = ma(period=10, type=MAType.sma)(close)\nslow_ma = ma(period=30, type=MAType.sma)(close)\n\n# BTC gets longer lookback, ETH gets shorter\nma_signal = where(is_btc, slow_ma, fast_ma)\n\n# === RETURNS ===\nret = returns(close)\ncum_ret = cumulative()(ret)\n\n# === REPORTERS ===\nxy_lines(\n    title=\"Close with Conditional MA (BTC=30d, ETH=10d)\",\n    category=\"Conventions\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Close\", color=Color.White),\n        LineSeriesSpec(name=\"Conditional MA\", color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=(close, ma_signal))\n\nxy_lines(\n    title=\"Cumulative Returns by Asset\",\n    category=\"Conventions\",\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name=\"Cum Return\", color=Color.Green)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[ReferenceLine(value=0, title=\"Flat\")])\n)(x_values=index(), y_values=cum_ret)\n\nhistogram(\n    title=\"Return Distribution (All Crypto Assets)\",\n    category=\"Conventions\",\n    bins=40\n)(ret)\n"
+}

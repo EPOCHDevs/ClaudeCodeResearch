@@ -1,10 +1,11 @@
 {
-   "name": "Compute Cluster S06: Lookback Memory",
-   "description": "Tests: valuewhen for sparse historical access.",
-   "data": {
-      "assets": ["SPY-Stocks"],
-      "source": "polygon"
-   },
-   "source": "src = market_data_source()()\nclose = src.c\nret = returns()(close)\n\n# Sparse signal\nbig_up = ret > 0.02\n\n# Last occurrence value\nlast_big = valuewhen()(big_up, close)\n\nxy_lines(title='Lookback Memory', category='Memory', series=LineSeriesSchema(series=[LineSeriesSpec(name='Last Big Up Close', color=Color.Blue)]))(x_values=index(), y_values=last_big)\n",
-   "global_timeframe": "1D"
+  "name": "Compute Cluster S06: Lookback Memory + Kleene Null Logic",
+  "description": "Tests: valuewhen sparse access, isna-or-threshold Kleene pattern (TRUE OR NULL = TRUE), first-bar anchor trap.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "src = market_data_source()()\nclose = src.c\nret = returns(close)\nts = index().value\n\n# --- Test 1: Basic valuewhen ---\nbig_up = ret > 0.02\nlast_big = valuewhen(big_up, close)\n\n# --- Test 2: Kleene null logic (isna OR threshold) ---\n# barssince returns NULL before any event. With Kleene OR:\n# isna(NULL) = TRUE, TRUE OR NULL = TRUE \u2192 first event detected.\n# Before the fix, TRUE OR NULL = NULL \u2192 first event silently dropped.\nbars_gap = barssince(big_up) >> 1\nfirst_or_gap = isna(bars_gap) or bars_gap >= 60\nnew_cluster = big_up and first_or_gap\ncluster_price = where(new_cluster, close)\ncluster_year = where(new_cluster, datetime_extract(component=DatetimeExtractionType.year)(ts))\n\n# --- Test 3: cumulative First anchor (safe alternative to shifted-bool) ---\nbaseline = cumulative(close, agg=AggregationType.First)\nret_from_start = close / baseline - 1\n\n# --- Outputs ---\nxy_lines(title=\"Lookback Memory\", category=\"S06 Memory\", series=LineSeriesSchema(series=[LineSeriesSpec(name=\"Last Big Up Close\", color=Color.Blue)]), order=0)(ts, last_big)\n\nxy_bars(mode=BarMode.labeled, agg=AggregationType.Last, title=\"Cluster Starts (Kleene Test)\", category=\"S06 Memory\", color_by_value=True, data_labels=True, order=1)(values=cluster_price, label=cluster_year)\n\nxy_lines(title=\"Return from Start (Anchor Test)\", category=\"S06 Memory\", series=LineSeriesSchema(series=[LineSeriesSpec(name=\"Cumulative Return\", color=Color.Green)]), y_axis_format=CardRenderType.PercentFormat, order=2)(ts, ret_from_start)\n"
 }

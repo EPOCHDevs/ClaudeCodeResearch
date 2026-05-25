@@ -1,0 +1,13 @@
+{
+  "name": "Exec Cluster E14: Session Execution (RTH, Custom Window, Morning Dip)",
+  "description": "Tests: session_window with EquityRTHSession, custom session for initial balance, session .opened/.closed pulses, hold_until for session entry/exit.",
+  "data": {
+    "assets": [
+      "SPY-Stocks",
+      "QQQ-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "data_foundation": "Intraday",
+  "source": "# =============================================================================\n# EXEC CLUSTER E14: Session Execution\n# Tests: session_window, custom sessions, morning dip pattern\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\n\n# === RTH SESSION ===\nrth = session_window(session=SessionType.EquityRTHSession)(src.o, src.h, src.l, src.c)\nday_open = rth.open\nrth_range = rth.high - rth.low\n\n# === INITIAL BALANCE (first 30 min) ===\nib = session_window(\n    session=Session(start='09:30', end='10:00', tz='America/New_York')\n)(src.o, src.h, src.l, src.c)\nib_high = ffill_day(where(ib.closed, ib.high))\nib_low = ffill_day(where(ib.closed, ib.low))\n\n# === MORNING DIP PATTERN ===\ntrade_window = session_window(\n    session=Session(start='09:45', end='10:30', tz='America/New_York')\n)(src.o, src.h, src.l, src.c)\n\ndip = trade_window.open < day_open\nentry = trade_window.opened and dip\nexit_sig = trade_window.closed\nheld = hold_until(entry, exit_sig)\n\n# === EXECUTION ===\nlong_and_short_zone()(long_entry=held)\nposition_size(type=SizeType.percent)(size=25)\nstop_loss(unit=StopUnit.percent)(distance=2)\ntake_profit(unit=StopUnit.percent)(distance=3)\n\n# === REPORTERS ===\nxy_lines(\n    title='RTH Range',\n    category='Sessions',\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Range', color=Color.Cyan)\n    ])\n)(x_values=index(), y_values=rth_range)\n\nevent_marker(\n    schema=EventMarkerSchema(\n        icon=Icon.ClockIcon,\n        schemas=[\n            ColumnSpec(title='IB High', dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(title='IB Low', dp=2, type=CardRenderType.MonetaryFormat),\n            ColumnSpec(table_is_filter=True, table_visible=False)\n        ],\n        title='IB Closed'\n    )\n)((ib_high, ib_low, ib.closed))\n"
+}

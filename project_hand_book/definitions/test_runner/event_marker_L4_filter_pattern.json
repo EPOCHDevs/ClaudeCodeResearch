@@ -1,0 +1,10 @@
+{
+  "name": "Event Marker L4: Filter Pattern (Core Wiring Rule)",
+  "description": "Tests L4 filter pattern: boolean filter as last input with table_is_filter=True. Two metric columns (DecimalFormat + PercentFormat) plus filter column.",
+  "data": {
+    "assets": ["SPY-Stocks"],
+    "source": "polygon"
+  },
+  "data_foundation": "EndOfDay",
+  "source": "src = study_assets()\nclose = src.c\nhigh = src.h\nlow = src.l\n\nrsi_14 = rsi(close, 14)\ndaily_range = (high - low) / close\nis_triggered = rsi_14 > 65\n\nevent_marker(schema=EventMarkerSchema(title='Overbought + Range', icon=Icon.ZapIcon, schemas=[\n    ColumnSpec(title='RSI', dp=1, type=CardRenderType.DecimalFormat, card_slot=CardSlot.Hero),\n    ColumnSpec(title='Range %', dp=2, type=CardRenderType.PercentFormat, card_slot=CardSlot.Subtitle),\n    ColumnSpec(table_is_filter=True, table_visible=False)\n]))((rsi_14, daily_range, is_triggered))\n\nxy_lines(title='RSI 14', category='Analysis', series=LineSeriesSchema(series=[\n    LineSeriesSpec(name='RSI', color=Color.Red)\n]))(x_values=index(), y_values=rsi_14)\n"
+}

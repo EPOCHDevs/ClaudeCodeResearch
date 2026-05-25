@@ -1,0 +1,13 @@
+{
+   "name": "amfx-spx-nope-etf-contrarian-research",
+   "description": "amFX reproduction (29MAY24 p3 top): SPX (SPY) price late 2021 to mid-2024, showing NOPE bearish ETF launch near the Oct 2022 bottom as a contrarian product launch indicator. The bearish product launched approximately three weeks before stocks bottomed, illustrating that when a financial product is created to monetize a prevailing trend, it often signals trend exhaustion.",
+   "data": {
+      "assets": [
+         "SPY-Stocks"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: SPX with NOPE ETF Launch (29MAY24 p3 top)\n# =============================================================================\n# The NOPE bearish ETF launched ~Oct 2022, approximately three weeks before\n# stocks bottomed. When a financial product is launched to monetize a trend,\n# it often signals trend exhaustion. SPX went from ~3,600 to ~5,300.\n# Reference price at NOPE launch: ~3,650 (Oct 2022 bottom area)\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nidx = index()\n\n# Moving averages for trend context\nma50 = ma(period=50)(close)\nma200 = ma(period=200)(close)\n\nxy_lines(\n    title='SPX Late 2021 to Now: Did the Bearish ETF Mark the Bottom?',\n    category='Product Launch Contrarian',\n    y_axis_label='SPY Price (USD)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=0,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='SPY Close', color=Color.Blue),\n        LineSeriesSpec(name='50d MA', color=Color.Sky, dash_style=DashStyle.Dot),\n        LineSeriesSpec(name='200d MA', color=Color.Gray, dash_style=DashStyle.Dash)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=360.0, title='NOPE Bearish ETF Launches (~Oct 2022)', color=Color.Red, dash_style=DashStyle.Dash)\n    ]),\n    order=0\n)(x_values=idx, y_values=(close, ma50, ma200))\n"
+}

@@ -1,8 +1,0 @@
-Title: # of 10% Pullbacks by Different Stock / Bond Splits
-Topic: This chart shows the number of 10% or more pullbacks experienced by different stock (S&P 500) / bond (U.S. Bloomberg Agg) portfolio allocations since 1990, illustrating how adding bonds reduces the frequency of significant drawdowns.
-Question: How does the stock/bond allocation mix in a portfolio affect the frequency of 10% or greater pullbacks?
-Key Takeaways:
-- A 100% stock portfolio experienced 14 pullbacks of 10% or more since 1990, while a 90/10 stock/bond split experienced 12, and an 80/20 split experienced 11, showing that even modest bond allocations reduce drawdown frequency.
-- More balanced allocations dramatically reduce pullback frequency: a 50/50 split experienced 7 pullbacks, a 30/70 split experienced only 4, and a 10/90 or 0/100 bond-heavy portfolio experienced just 1 pullback of 10% or more.
-- Historically, more aggressive stock-heavy allocations have resulted in more frequent pullbacks, while adding bonds to a portfolio has provided a meaningful cushion against large drawdowns.
-Source: ExhibitA for Advice

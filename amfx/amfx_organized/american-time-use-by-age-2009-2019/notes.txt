@@ -1,9 +1,0 @@
-Title: Who Americans spend their time with, by age
-Source: AMFX 22JUL22.pdf (page 4)
-Date: 2022-07-22
-Type: chart
-
-Insight: Time spent with friends declines significantly after age 25, while time spent alone increases substantially through adulthood, peaking around age 80.
-
-Context (below):
-The “time spent with friends” line is disappointing

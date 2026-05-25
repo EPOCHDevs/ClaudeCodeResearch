@@ -1,0 +1,55 @@
+{
+  "ALL": {
+    "07 cs_boxplot L1: Simple": "3 assets (DIA, QQQ, SPY) daily returns as PercentValue dp=2; QQQ widest IQR (med=0.14%), DIA tightest (med=0.07%)",
+    "08 cs_boxplot L2: Custom Colors": "Blue=QQQ, Indigo=DIA, Gray=SPY; same data as L1 — QQQ has widest box and most positive median",
+    "09 cs_boxplot L3: Multi-Metric": "6 paired boxes: Daily Return + Intraday Range per asset; intraday range always positive (DIA med=0.88%, QQQ med=1.30%, SPY med=0.95%)",
+    "10 cs_boxplot L4: Filtered": "max_assets=2 limits to DIA and SPY; QQQ excluded; both show similar median returns ~0.07%",
+    "13 cs_boxplot L5: BpsFormat": "Intraday range in BpsValue; QQQ highest (med=130bps), SPY mid (med=95bps), DIA lowest (med=88bps)",
+    "18 cs_boxplot L6: Reference Lines": "Zero horizontal reference line (Gray Dot) on daily returns; all 3 assets have positive medians above the zero line",
+    "19 cs_boxplot L7: Sort By Value": "Ascending sort by median: SPY (0.073%) < DIA (0.074%) < QQQ (0.140%); confirms QQQ strongest 2023 performer",
+    "20 cs_boxplot L8: Horizontal": "Same 3-asset daily returns displayed horizontally (vertical=false); categories on y-axis, values on x-axis",
+    "21 cs_boxplot L9: Y Plot Bands": "Tight Range band [-1%, 1%] Blue opacity=0.1 on daily returns; most of IQR falls within the band, outliers extend beyond"
+  },
+  "SPY-Stocks": {
+    "01 boxplot L1: Grouped Basic": "12 monthly boxes; Jan best (med=0.36%), Sep worst (med=-0.22%); PercentValue with 2dp; positive skew in H2",
+    "02 boxplot L2: Grouped DayOfWeek": "5 DOW boxes; Thu best (med=0.27%), Tue worst (med=-0.01%); similar IQR across weekdays",
+    "03 boxplot L3: Grouped Styling": "Same monthly data as L1 with custom box styling (fill_color=Blue, median_color=White, stem_dash=Dash)",
+    "04 boxplot L4: Variadic": "3 boxes comparing SMA 20/50/200; DecimalValue; SMA 50 highest median ($433), SMA 200 lowest ($426)",
+    "05 boxplot L5: Outlier Control": "Monthly returns with show_outliers=false and wider whisker_length=75%; no outlier markers plotted",
+    "06 boxplot L6: Data Labels": "Monthly returns with data labels (default on); median labels above each box — Jan 0.36%, Sep -0.22%; data_label_format customizable",
+    "11 boxplot L7: DecimalFormat": "SMA 20 by month as DecimalValue; Dec highest (med=$458), Jan lowest (med=$395); clear uptrend through 2023",
+    "12 boxplot L8: MonetaryFormat": "Same SMA variadic data as L4 but displayed as MonetaryValue ($); SMA 50 med=$433, SMA 200 med=$426",
+    "14 boxplot L9: Reference Lines": "Monthly returns with Zero Line (Red Dash) horizontal reference; 7 of 12 months have positive medians",
+    "15 boxplot L10: Sort By Value": "Monthly returns sorted descending: Jan (0.36%) > Dec (0.35%) > ... > Sep (-0.22%); best months cluster in winter",
+    "16 boxplot L11: Horizontal": "Same monthly returns rendered horizontally (vertical=false); 12 boxes read top-to-bottom instead of left-to-right",
+    "17 boxplot L12: Y Plot Bands": "Monthly returns with Normal Range band [-2%, 2%] Green opacity=0.15; all whiskers fall within the band"
+  },
+  "QQQ-Stocks": {
+    "01 boxplot L1: Grouped Basic": "12 monthly boxes; Jan best (med=0.65%), Aug worst (med=-0.14%); QQQ has wider IQR than SPY/DIA across all months",
+    "02 boxplot L2: Grouped DayOfWeek": "5 DOW boxes; Mon best (med=0.34%), Wed flattest (med=0.03%); wider spread than SPY reflecting tech volatility",
+    "03 boxplot L3: Grouped Styling": "Same monthly data as L1 with custom styling; Blue fill, White median line, Dash stem",
+    "04 boxplot L4: Variadic": "3 SMA boxes; SMA 50 highest median ($364), SMA 200 lowest ($347); wider spread between SMAs than SPY",
+    "05 boxplot L5: Outlier Control": "Monthly returns, no outlier markers, 75% whisker length; QQQ's wider tails absorbed into extended whiskers",
+    "06 boxplot L6: Data Labels": "Monthly medians labeled; Jan 0.65% highest, Aug -0.14% lowest; labels show QQQ's stronger positive months",
+    "11 boxplot L7: DecimalFormat": "SMA 20 by month; Dec highest (med=$392), Jan lowest (med=$280); steeper uptrend than SPY through 2023",
+    "12 boxplot L8: MonetaryFormat": "SMA variadic as MonetaryValue; SMA 50 med=$364, SMA 200 med=$347 — wider SMA gap than SPY reflecting trending market",
+    "14 boxplot L9: Reference Lines": "Monthly returns with Zero Line (Red Dash); 9 of 12 months above zero — QQQ more consistently positive than SPY",
+    "15 boxplot L10: Sort By Value": "Sorted descending: Jan (0.65%) > Mar (0.50%) > Oct (0.39%) > ... > Aug (-0.14%); tech rally front-loaded to Q1",
+    "16 boxplot L11: Horizontal": "Monthly returns horizontal; wider boxes visible compared to SPY/DIA when rendered side-by-side",
+    "17 boxplot L12: Y Plot Bands": "Normal Range [-2%, 2%] Green band; QQQ whiskers extend slightly beyond the band edges on some months"
+  },
+  "DIA-Stocks": {
+    "01 boxplot L1: Grouped Basic": "12 monthly boxes; Jan best (med=0.30%), Sep worst (med=-0.19%); DIA has narrowest IQR of all 3 assets",
+    "02 boxplot L2: Grouped DayOfWeek": "5 DOW boxes; Mon best (med=0.17%), Wed worst (med=-0.12%); tightest spread — DIA least volatile by day",
+    "03 boxplot L3: Grouped Styling": "Same monthly data with custom styling; Blue fill, White median, Dash stems — narrower boxes than SPY/QQQ",
+    "04 boxplot L4: Variadic": "3 SMA boxes; SMA 50 med=$339, SMA 200 med=$339 — SMAs cluster tightly reflecting DIA's narrow 2023 range",
+    "05 boxplot L5: Outlier Control": "Monthly returns, no outliers, 75% whiskers; DIA's tight distribution means fewer outliers to suppress",
+    "06 boxplot L6: Data Labels": "Monthly medians labeled; Jan 0.30%, Sep -0.19%; DIA labels show the smallest monthly differences of the 3",
+    "11 boxplot L7: DecimalFormat": "SMA 20 by month; Dec highest (med=$360), Mar lowest (med=$328); DIA's flattest SMA progression, ~10% range",
+    "12 boxplot L8: MonetaryFormat": "SMA variadic as MonetaryValue; all 3 SMAs cluster near $338-339 — DIA's price was range-bound in 2023",
+    "14 boxplot L9: Reference Lines": "Monthly returns with Zero Line (Red Dash); 7 months positive, same split as SPY but with smaller magnitudes",
+    "15 boxplot L10: Sort By Value": "Sorted descending: Jan (0.30%) > Jul (0.28%) > Dec (0.25%) > ... > Sep (-0.19%); DIA weakest overall returns",
+    "16 boxplot L11: Horizontal": "Monthly returns horizontal; noticeably narrower boxes than SPY/QQQ — DIA's low-vol nature clearly visible",
+    "17 boxplot L12: Y Plot Bands": "Normal Range [-2%, 2%] Green band; all DIA whiskers comfortably within the band — no months approach the edges"
+  }
+}

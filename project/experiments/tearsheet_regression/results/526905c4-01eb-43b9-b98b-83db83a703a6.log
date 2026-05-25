@@ -1,0 +1,14 @@
+[ERROR] 2026-03-23 03:58:23.140 AuthCredentialsProvider [131892426058880] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 03:58:23.148 AuthCredentialsProvider [131892426058880] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 03:58:23.151] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 03:58:23.151] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/526905c4-01eb-43b9-b98b-83db83a703a6.json
+[2026-03-23 03:58:23.151] [info] [generate_job_data.cpp:241] Study: EMA 20/100 Crossover Strategy — AAPL & MSFT
+[2026-03-23 03:58:23.151] [info] [generate_job_data.cpp:242] Output: 526905c4-01eb-43b9-b98b-83db83a703a6
+[2026-03-23 03:58:23.151] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 03:58:23.151] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 03:58:23.151] [info] [generate_job_data.cpp:250] Assets: 2
+[2026-03-23 03:58:23.151] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 03:58:23.151] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 03:58:23.152] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 03:58:23.155] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 2 assets
+Study failed: Pipeline error: filesystem error: cannot create directories: Permission denied [/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data/PriceBars/Stocks/daily_rth]

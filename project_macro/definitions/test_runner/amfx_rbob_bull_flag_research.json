@@ -1,0 +1,13 @@
+{
+   "name": "amfx-rbob-bull-flag-research",
+   "description": "amFX reproduction (02AUG23 p3): RBOB gasoline Dec 2022-Aug 2023 with bull flag context. TV chart shows native candlesticks for RB-Futures. Dashboard shows close price with breakout reference levels. LIMITATION: Diagonal trendlines (the converging flag pattern) cannot be drawn in EpochScript — only horizontal reference lines are supported. The flag target ~$2.90-3.00 and key support/resistance levels are shown as horizontal references instead.",
+   "data": {
+      "assets": [
+         "RB-Futures"
+      ],
+      "source": "polygon",
+      "cache_dir": "/home/adesola/EpochDev/ClaudeCodeResearch/project/market_data"
+   },
+   "global_timeframe": "1D",
+   "source": "# =============================================================================\n# AMFX REPRODUCTION: RBOB GASOLINE BULL FLAG (02AUG23 p3)\n# =============================================================================\n# RBOB gasoline with bull flag reference levels.\n# Diagonal trendlines not supported — horizontal lines mark key levels.\n# =============================================================================\n\nsrc = market_data_source()()\ncont = futures_continuation(\n    s_rollover_method=RolloverType.LiquidityBased,\n    s_adjustment_method=AdjustmentType.NoAdjustment\n)(src.o, src.h, src.l, src.c, src.v, src.oi, src.s)\n\nclose = cont.c\nidx = index()\n\nxy_lines(\n    title='RBOB Gasoline: Bull Flag Breakout Levels',\n    category='Price Structure',\n    y_axis_label='Price (USD/gal)',\n    y_axis_format=CardRenderType.DecimalFormat,\n    y_axis_dp=4,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='RBOB Close', color=Color.Blue)\n    ]),\n    reference_lines=ReferenceLineSchema(lines=[\n        ReferenceLine(value=2.90, title='$2.90 Flag High', color=Color.Red, dash_style=DashStyle.Solid),\n        ReferenceLine(value=2.60, title='$2.60 Flag Low', color=Color.Purple, dash_style=DashStyle.Dash),\n        ReferenceLine(value=2.20, title='$2.20 Pole Base', color=Color.Gray, dash_style=DashStyle.Dot)\n    ]),\n    order=0\n)(x_values=idx, y_values=close)\n"
+}

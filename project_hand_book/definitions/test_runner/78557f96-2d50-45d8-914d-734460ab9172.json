@@ -1,0 +1,23 @@
+{
+  "name": "S&P 500 Sector Performance Dashboard",
+  "description": "Cross-sectional analysis of all 11 SPDR sector ETFs. Heatmap shows average monthly returns by sector over time (MonthYear grid). Summary table provides Total Return, Avg Daily Return, Annualized Volatility, Sharpe, Sortino, Max Drawdown, Best/Worst Day, and Win Rate per sector.",
+  "data": {
+    "assets": [
+      "XLK-Stocks",
+      "XLF-Stocks",
+      "XLE-Stocks",
+      "XLV-Stocks",
+      "XLI-Stocks",
+      "XLY-Stocks",
+      "XLP-Stocks",
+      "XLB-Stocks",
+      "XLRE-Stocks",
+      "XLC-Stocks",
+      "XLU-Stocks"
+    ],
+    "source": "polygon",
+    "cache_dir": "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/market_data"
+  },
+  "source": "\n# S&P 500 Sector Daily Performance Dashboard\n# All 11 SPDR sector ETFs \u2014 heatmap + comprehensive summary table\n# -------------------------------------------------------------------\n\n# --- Data ---\nsrc = study_assets()\n\n# --- Daily Returns ---\ndaily_ret = returns(src.c)\n\n# --- Cumulative equity curve for drawdown & total return ---\n# (1 + r) compounded\nequity = cumulative(1 + daily_ret, agg=AggregationType.Product)\ntotal_ret = equity - 1\n\n# --- Max Drawdown ---\n# Running max of equity, then drawdown = (equity / running_max) - 1\nrunning_max = agg(equity, AggregationType.Max)\ndrawdown = (equity / running_max) - 1\nmax_dd = agg(drawdown, AggregationType.Min)\n\n# --- Annualized Volatility ---\n# std of daily returns * sqrt(252)\ndaily_std = agg(daily_ret, AggregationType.Std)\nann_vol = daily_std * 15.8745  # sqrt(252)\n\n# --- Sharpe Ratio (assuming 0 risk-free rate) ---\navg_ret = agg(daily_ret, AggregationType.Mean)\nann_ret = avg_ret * 252\nsharpe = ann_ret / ann_vol\n\n# --- Sortino Ratio ---\n# Downside deviation: std of negative returns only, annualized\nneg_ret = where(daily_ret < 0, daily_ret)\nneg_std = agg(neg_ret, AggregationType.Std)\nann_neg_std = neg_std * 15.8745\nsortino = ann_ret / ann_neg_std\n\n# --- Best / Worst Day ---\nbest_day = agg(daily_ret, AggregationType.Max)\nworst_day = agg(daily_ret, AggregationType.Min)\n\n# --- Win Rate (fraction of positive days) ---\nis_positive = where(daily_ret > 0, 1.0)\npos_count = agg(is_positive, AggregationType.Count)\ntotal_count = agg(daily_ret, AggregationType.Count)\nwin_rate = pos_count / total_count\n\n# --- CHART 1: Cross-Sectional Heatmap (MonthYear x Sector) ---\ncs_heatmap(\n    mode=HeatmapMode.values,\n    y_axis=CategoryAxisType.MonthYear,\n    agg=AggregationType.Mean,\n    value_format=CardRenderType.PercentFormat,\n    title=\"Which Sectors Ran Hot or Cold Each Month?\",\n    category=\"Sector Performance\",\n    x_axis_label=\"Sector\",\n    y_axis_label=\"Month\",\n    order=0\n)(values=daily_ret)\n\n# --- CHART 2: Cross-Sectional Summary Table ---\ncs_summary_table(\n    agg=AggregationType.Last,\n    title=\"Sector Performance Scorecard\",\n    category=\"Sector Performance\",\n    order=1,\n    schema=TableReportSchema(\n        title=\"Sector Performance Scorecard\",\n        include_timestamp=False,\n        columns=[\n            ColumnSpec(title='Total Return', type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title='Avg Daily Ret', type=CardRenderType.PercentFormat, dp=3),\n            ColumnSpec(title='Ann. Volatility', type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title='Sharpe', type=CardRenderType.DecimalFormat, dp=2),\n            ColumnSpec(title='Sortino', type=CardRenderType.DecimalFormat, dp=2),\n            ColumnSpec(title='Max Drawdown', type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title='Best Day', type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title='Worst Day', type=CardRenderType.PercentFormat, dp=2),\n            ColumnSpec(title='Win Rate', type=CardRenderType.PercentFormat, dp=1)\n        ]\n    )\n)(total_ret, avg_ret, ann_vol, sharpe, sortino, max_dd, best_day, worst_day, win_rate)\n",
+  "data_foundation": "Daily"
+}

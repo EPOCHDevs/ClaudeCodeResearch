@@ -1,10 +1,11 @@
 {
-    "name": "DS Cluster S39: Downsample Sparse Series",
-    "description": "Tests: ffill before downsample on sparse where()-filtered data. Without ffill, monthly buckets are mostly NaN.",
-    "data": {
-        "assets": ["SPY-Stocks"],
-        "source": "polygon"
-    },
-    "source": "# =============================================================================\n# DS CLUSTER S39: Downsample Sparse Series\n# =============================================================================\n\nsrc = market_data_source()()\nclose = src.c\nrets = returns()(close)\n\n# === SPARSE SERIES: only positive return days ===\nup_days = rets > 0\nup_rets = where(up_days, rets)\n\n# === WRONG: downsample sparse → mostly NaN months ===\n# sparse_monthly = downsample(target_timeframe=1M, how=NumericDownsampleAgg.max)(up_rets)\n\n# === CORRECT: ffill first, then downsample ===\nfilled_up = ffill(up_rets)\nfilled_monthly = downsample(target_timeframe=1M, how=NumericDownsampleAgg.last)(filled_up)\n\n# === ALSO CORRECT: sum daily returns directly (no sparsity issue with sum) ===\nmonthly_sum = downsample(target_timeframe=1M, how=NumericDownsampleAgg.sum)(up_rets)\n\n# === REPORTERS ===\nhistogram(\n    title=\"Monthly Up Returns (ffill'd last)\",\n    category=\"Sparse\",\n    bins=20\n)(filled_monthly)\n\nhistogram(\n    title=\"Monthly Up Returns (sum, handles sparse)\",\n    category=\"Sparse\",\n    bins=20\n)(monthly_sum)\n",
-    "global_timeframe": "1D"
+  "name": "DS Cluster S39: Downsample Sparse Series",
+  "description": "Tests: ffill before downsample on sparse where()-filtered data. Without ffill, monthly buckets are mostly NaN.",
+  "data": {
+    "assets": [
+      "SPY-Stocks"
+    ],
+    "source": "polygon"
+  },
+  "source": "# =============================================================================\n# DS CLUSTER S39: Downsample Sparse Series\n# =============================================================================\n\nsrc = study_assets()\nclose = src.c\nrets = returns(close)\n\n# === SPARSE SERIES: only positive return days ===\nup_days = rets > 0\nup_rets = where(up_days, rets)\n\n# === WRONG: downsample sparse \u2192 mostly NaN months ===\n# sparse_monthly = resample(up_rets, target_timeframe=1M, agg=[\"Max\"])\n\n# === CORRECT: ffill first, then downsample ===\nfilled_up = ffill(up_rets)\nfilled_monthly = resample(filled_up, target_timeframe=1M, agg=[\"Last\"])\n\n# === ALSO CORRECT: sum daily returns directly (no sparsity issue with sum) ===\nmonthly_sum = resample(up_rets, target_timeframe=1M, agg=[\"Sum\"])\n\n# === REPORTERS ===\nhistogram(\n    title=\"Monthly Up Returns (ffill'd last)\",\n    category=\"Sparse\",\n    bins=20\n)(filled_monthly)\n\nhistogram(\n    title=\"Monthly Up Returns (sum, handles sparse)\",\n    category=\"Sparse\",\n    bins=20\n)(monthly_sum)\n"
 }

@@ -1,0 +1,13 @@
+{
+   "name": "Ichimoku Cloud Trend Following - USDJPY",
+   "description": "Trend-following strategy on USD/JPY using Ichimoku Cloud signals on daily bars. Long entry when Tenkan-sen crosses above Kijun-sen AND close is above the Kumo (above both Senkou Span A and B). Short entry when Tenkan-sen crosses below Kijun-sen AND close is below the Kumo (below both spans). Exits via 2x ATR(14) trailing stop. Position sizing: 100% of equity per trade. Standard Ichimoku parameters: Tenkan=9, Kijun=26, Senkou B=52.",
+   "data": {
+      "assets": [
+         "^USDJPY-FX"
+      ],
+      "source": "polygon",
+      "cache_dir": "/app/cache/market_data"
+   },
+   "source": "\n# Ichimoku Cloud Trend-Following Strategy on USD/JPY\n# Entry: TK cross + price above/below Kumo (cloud)\n# Exit: 2x ATR(14) trailing stop\n# Sizing: 100% of equity per trade\n# Ichimoku params: Tenkan=9, Kijun=26, Senkou B=52\n\n# --- Data Source ---\nsrc = market_data_source(timeframe=1D)()\nclose = src.c\nhigh = src.h\nlow = src.l\n\n# --- Ichimoku Kinko Hyo (standard parameters) ---\nichi = ichimoku(p_tenkan=9, p_kijun=26, p_senkou_b=52)(high, low, close)\ntenkan = ichi.tenkan      # Conversion line (9-period midpoint)\nkijun = ichi.kijun        # Base line (26-period midpoint)\nsenkou_a = ichi.senkou_a  # Cloud boundary A (forward-displaced)\nsenkou_b = ichi.senkou_b  # Cloud boundary B (forward-displaced)\n\n# --- Cloud position filters ---\n# Close above BOTH senkou spans = above the cloud\nabove_cloud = close > senkou_a and close > senkou_b\n\n# Close below BOTH senkou spans = below the cloud\nbelow_cloud = close < senkou_a and close < senkou_b\n\n# --- TK Cross signals (pulse) ---\ntk_bull_cross = crossover(tenkan, kijun)    # Tenkan crosses above Kijun\ntk_bear_cross = crossunder(tenkan, kijun)   # Tenkan crosses below Kijun\n\n# --- Persist cross state with hold_until ---\n# Hold bullish state from TK bull cross until TK bear cross fires\nbull_state = hold_until()(enter=tk_bull_cross, exit=tk_bear_cross)\n# Hold bearish state from TK bear cross until TK bull cross fires\nbear_state = hold_until()(enter=tk_bear_cross, exit=tk_bull_cross)\n\n# --- Entry signals: persistent state AND cloud filter ---\nlong_entry = bull_state and above_cloud\nshort_entry = bear_state and below_cloud\n\n# --- ATR for trailing stop ---\natr_val = atr(period=14)(high, low, close)\n\n# --- Execution ---\nlong_and_short_zone()(long_entry=long_entry, short_entry=short_entry)\nposition_size(type=SizeType.percent)(size=100)\ntrailing_stop()(distance=atr_val * 2)\n",
+   "global_timeframe": "1D"
+}

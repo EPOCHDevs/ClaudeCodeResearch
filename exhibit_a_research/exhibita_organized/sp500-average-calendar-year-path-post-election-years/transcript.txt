@@ -1,8 +1,0 @@
-Title: Average Midterm Year Path of the S&P 500
-Topic: This chart compares the 2026 S&P 500 year-to-date path against the historical average midterm year S&P 500 path from 1950 to 2022, examining how markets typically behave during post-election (midterm) years within the presidential cycle.
-Question: How does the S&P 500 typically perform during post-election years, and how is 2026 tracking against that historical pattern?
-Key Takeaways:
-- Midterm years have historically followed a distinct seasonal pattern, often reflecting heightened uncertainty earlier in the year followed by improving momentum later in the cycle, with the average path ending around 4-5% for the year.
-- The 2026 S&P 500 was tracking at about 0.49% year-to-date early in the year, while the historical midterm year average showed a tendency for stronger performance later in the year.
-- This chart is a historical reference point, not a forecast; individual years often deviate meaningfully from the average, reinforcing the importance of maintaining a long-term perspective through different market cycles.
-Source: ExhibitA for Advice

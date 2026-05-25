@@ -1,8 +1,0 @@
-Title: Major U.S. Index Performance in 2025
-Topic: This bar chart presents the full-year 2025 total return for the S&P 500, Dow Jones Industrial Average, and NASDAQ Composite, providing a clear side-by-side comparison of annual index performance.
-Question: What were the total returns for the S&P 500, Dow, and NASDAQ Composite for the full year 2025?
-Key Takeaways:
-- The NASDAQ Composite delivered the highest return at 21.1%, outperforming both the S&P 500 (17.9%) and the Dow Jones Industrial Average (14.9%).
-- All three major indices posted strong double-digit gains in 2025, reflecting broad-based strength in the U.S. equity market.
-- The spread between the best (NASDAQ) and worst (Dow) performing index was approximately 6 percentage points, indicating meaningful divergence across market segments.
-Source: ExhibitA for Advice

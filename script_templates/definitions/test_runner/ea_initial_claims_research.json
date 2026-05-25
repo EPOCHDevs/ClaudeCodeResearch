@@ -5,6 +5,5 @@
       "assets": [],
       "source": "polygon"
    },
-   "source": "# Job Loss in the United States - Initial Claims\nclaims_src = economic_indicators(series_id='ICSA')()\nclaims_thousands = ffill(claims_src.result) / 1000\n\nbar_ts = index()\n\nxy_lines(\n    title='Job Loss in the United States',\n    category='1. Employment',\n    y_axis_label='Thousands of Persons',\n    y_axis_format=AxisValueFormat.IntegerFormat,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Initial Unemployment Claims', color=Color.Blue)\n    ])\n)(bar_ts, claims_thousands)\n",
-   "global_timeframe": "1D"
+   "source": "# Job Loss in the United States - Initial Claims\nclaims_src = economic_indicators(series_id=\"ICSA\")\nclaims_thousands = ffill(claims_src.result) / 1000\n\nbar_ts = index()\n\nxy_lines(\n    title='Job Loss in the United States',\n    category='1. Employment',\n    y_axis_label='Thousands of Persons',\n    y_axis_format=CardRenderType.IntegerFormat,\n    series=LineSeriesSchema(series=[\n        LineSeriesSpec(name='Initial Unemployment Claims', color=Color.Blue)\n    ])\n)(bar_ts, claims_thousands)\n"
 }

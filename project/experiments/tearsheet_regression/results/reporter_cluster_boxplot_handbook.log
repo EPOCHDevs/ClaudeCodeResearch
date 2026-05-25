@@ -1,0 +1,108 @@
+[ERROR] 2026-03-23 04:13:16.725 AuthCredentialsProvider [132137680776320] Failed to resolve role arn during sts web identity provider initialization.
+[ERROR] 2026-03-23 04:13:16.733 AuthCredentialsProvider [132137680776320] Failed to resolve role arn during sts web identity provider initialization.
+[2026-03-23 04:13:16.736] [info] [generate_job_data.cpp:239] === Execution Configuration ===
+[2026-03-23 04:13:16.736] [info] [generate_job_data.cpp:240] Definition: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/definitions/test_runner/reporter_cluster_boxplot_handbook.json
+[2026-03-23 04:13:16.736] [info] [generate_job_data.cpp:241] Study: reporter_cluster_boxplot_handbook
+[2026-03-23 04:13:16.736] [info] [generate_job_data.cpp:242] Output: reporter_cluster_boxplot_handbook
+[2026-03-23 04:13:16.736] [info] [generate_job_data.cpp:243] Period: 2020-01-01 to 2025-12-31
+[2026-03-23 04:13:16.736] [info] [generate_job_data.cpp:244] Type: Research Study
+[2026-03-23 04:13:16.736] [info] [generate_job_data.cpp:250] Assets: 3
+[2026-03-23 04:13:16.736] [info] [generate_job_data.cpp:251] Timeframe: 1D
+[2026-03-23 04:13:16.736] [info] [generate_job_data.cpp:252] Output Dir: /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book
+[2026-03-23 04:13:16.739] [info] [factory.cpp:76] Creating API+cache dataloader from epoch_data_sdk
+[2026-03-23 04:13:16.743] [info] [api_cache_dataloader.cpp:880] Batch 1/1: loading 3 assets
+[2026-03-23 04:13:16.821] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.822] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.822] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.822] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.822] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.822] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.821] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.824] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.824] [info] [IReporter::GetDashboard] cs_boxplot rows=1508
+[2026-03-23 04:13:16.824] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.824] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.824] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.823] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.827] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.827] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.827] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.827] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.828] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.828] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.828] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.828] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.828] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.828] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.828] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.828] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.828] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.828] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.828] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.829] [info] [IReporter::GetDashboard] cs_boxplot charts=1 tables=0
+[2026-03-23 04:13:16.830] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.830] [info] [IReporter::GetDashboard] cs_boxplot rows=1508
+[2026-03-23 04:13:16.830] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.830] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.831] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.831] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.831] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.831] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.831] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.831] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.831] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.831] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.831] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.832] [info] [IReporter::TransformData] boxplot rows=1508
+[2026-03-23 04:13:16.832] [info] [IReporter::GetDashboard] boxplot rows=1508
+[2026-03-23 04:13:16.832] [info] [IReporter::GetDashboard] cs_boxplot rows=1508
+[2026-03-23 04:13:16.832] [info] [IReporter::GetDashboard] cs_boxplot rows=1508
+[2026-03-23 04:13:16.833] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.834] [info] [IReporter::GetDashboard] cs_boxplot rows=1508
+[2026-03-23 04:13:16.834] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.834] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.835] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.837] [info] [IReporter::GetDashboard] cs_boxplot charts=1 tables=0
+[2026-03-23 04:13:16.837] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.837] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.837] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.837] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.838] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.838] [info] [IReporter::GetDashboard] cs_boxplot charts=1 tables=0
+[2026-03-23 04:13:16.838] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.838] [info] [IReporter::GetDashboard] cs_boxplot charts=1 tables=0
+[2026-03-23 04:13:16.838] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.838] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.838] [info] [IReporter::GetDashboard] boxplot charts=1 tables=0
+[2026-03-23 04:13:16.838] [info] [IReporter::GetDashboard] cs_boxplot charts=1 tables=0
+Study completed successfully
+[2026-03-23 04:13:16.872] [info] [job_persister.cpp:109] Persisting job data for user test_runner job reporter_cluster_boxplot_handbook to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_boxplot_handbook
+[2026-03-23 04:13:16.874] [info] [job_persister.cpp:191] Wrote job config to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_boxplot_handbook/config.json
+[2026-03-23 04:13:16.874] [info] [job_persister.cpp:225] Wrote job metadata to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_boxplot_handbook/metadata.json
+[2026-03-23 04:13:16.875] [info] [tearsheet_persistence.cpp:208] Persisted 4 tearsheets for job reporter_cluster_boxplot_handbook (total: 176135 bytes)
+[2026-03-23 04:13:16.875] [info] [job_persister.cpp:255] Successfully persisted 4 tearsheets for job reporter_cluster_boxplot_handbook
+[2026-03-23 04:13:16.878] [info] [job_persister.cpp:356] Wrote manifest to /home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_boxplot_handbook/manifest.json
+
+=== Generation Complete ===
+Study: reporter_cluster_boxplot_handbook
+Output: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_boxplot_handbook"
+Type: Research Study
+Tearsheets: "/home/ubuntu/EpochDev/ClaudeCodeResearch/project_hand_book/research_studies/test_runner/reporter_cluster_boxplot_handbook/tearsheets"

@@ -1,8 +1,0 @@
-Title: Win Ratio by Different Stock / Bond Splits
-Topic: This chart shows the rolling yearly win ratio (percentage of positive rolling yearly returns) for different stock (S&P 500) and bond (U.S. Bloomberg Aggregate) allocation splits since 1990. It illustrates how shifting the allocation between stocks and bonds affects the likelihood of achieving positive annual returns.
-Question: How does the stock-to-bond allocation ratio impact the win ratio (percentage of positive yearly returns)?
-Key Takeaways:
-- Portfolios with a higher bond allocation (e.g., 80% U.S. Bloomberg Agg Bond / 20% S&P 500) have historically demonstrated a higher win ratio (90.6%) compared to portfolios with a higher stock allocation (e.g., 100% S&P 500 at 83.1%).
-- The win ratios across allocations range from 83.1% (100% stocks) to 91.8% (20% stocks / 80% bonds), with a gradual increase as bond allocation rises, before slightly declining at 100% bonds (85.3%).
-- This chart is helpful for illustrating investment outcomes based solely on a portfolio's stock-to-bond split, showing that a moderate bond allocation has historically increased the frequency of positive return years.
-Source: ExhibitA for Advice

@@ -1,8 +1,0 @@
-Title: Most Years are Not "Average" for the S&P 500
-Topic: This chart sorts all S&P 500 annual returns from highest to lowest since 1928, highlighting the years where returns fell between 5% and 10% to show how rare "average" return years actually are.
-Question: How often does the S&P 500 actually deliver a return close to its long-term average of roughly 5-10%?
-Key Takeaways:
-- Most years' returns are either much higher or much lower than the "average" return of 5-10%, with the distribution far from evenly spread out.
-- There have only been about six instances where the S&P 500 returned between 5% and 10%, demonstrating that "average" return years are extremely rare.
-- The chart makes clear that investors should expect wide variability in any given year and not anchor expectations to the historical average annual return.
-Source: ExhibitA for Advice
